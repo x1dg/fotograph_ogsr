@@ -96,7 +96,7 @@ angle_offset			= 1.570790,1.570790,3.92699
 
 use_sound_anm = interface\item_usage\conserva_use
 
-[sard]:identity_immunities
+[sard]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 				= "food and drugs\sard"
@@ -143,7 +143,7 @@ angle_offset			= 1.570790,1.570790,3.92699
 
 use_sound_anm = interface\item_usage\conserva_use
 
-[tush]:identity_immunities
+[tush]:food
 GroupControlSection	        = spawn_group
 discovery_dependency =
 $spawn 				= "food and drugs\tush"
@@ -192,7 +192,7 @@ use_sound_anm = interface\item_usage\conserva_use
 
 ;----------------
 
-[paek1]:identity_immunities
+[paek1]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 				= "food and drugs\paek1"
@@ -237,7 +237,7 @@ animation_slot		        = 4
 ;hud item
 hud = wpn_vodka_hud
 
-[paek11]:identity_immunities
+[paek11]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 				= "food and drugs\paek11"
@@ -284,7 +284,7 @@ hud = wpn_vodka_hud
 
 ;----------------
 
-[paek2]:identity_immunities
+[paek2]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 				= "food and drugs\paek2"
@@ -329,7 +329,7 @@ animation_slot		        = 4
 ;hud item
 hud = wpn_vodka_hud
 
-[paek21]:identity_immunities
+[paek21]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 				= "food and drugs\paek21"
@@ -374,7 +374,7 @@ animation_slot		        = 4
 ;hud item
 hud = wpn_vodka_hud
 
-[paek22]:identity_immunities
+[paek22]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 				= "food and drugs\paek22"
@@ -419,7 +419,7 @@ animation_slot		        = 4
 ;hud item
 hud = wpn_vodka_hud
 
-[paek23]:identity_immunities
+[paek23]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 				= "food and drugs\paek23"
@@ -488,14 +488,14 @@ can_trade               = false
 
 ;-------------------------МИНЕРАЛКА---------------------------
 
-[mineral]:identity_immunities
+[mineral]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\mineral"
 $prefetch 		= 8
 class			= II_BOTTL
 cform			= skeleton
-visual			= equipments\mineral.ogf
+visual			= dynamics\weapons\wpn_eat\world_models\drinks\wpn_voda.ogf
 description		= "Минеральная вода из чистых горных родников."
 inv_name		= "Минеральная вода"
 inv_name_short		= "Минеральная вода"
@@ -523,11 +523,13 @@ animation_slot		= 4
 ;hud item
 hud = wpn_vodka_hud
 
+use_sound_anm = interface\item_usage\vodka_use
+
 ;-------------------------------------------------------------------
 ;-----------------------------ГАЛЕТЫ--------------------------------
 ;-------------------------------------------------------------------
 
-[galet]:identity_immunities
+[galet]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\galet"
@@ -574,7 +576,7 @@ angle_offset		= 1.570790,1.570790,3.92699
 
 ;----------------------------------------
 
-[galet_s]:galet
+[galet_s]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\galet_s"
@@ -604,7 +606,7 @@ eat_portions_num = 1
 
 ;--------------------------------------------------------------------------
 
-[ogirki]:identity_immunities
+[ogirki]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\ogirki"
@@ -653,7 +655,7 @@ angle_offset		= 1.570790,1.570790,3.92699
 
 ;--------------------------------------------------------------------------
 
-[meat]:identity_immunities
+[meat]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\meat"
@@ -700,7 +702,7 @@ angle_offset		= 1.570790,1.570790,3.92699
 
 ;--------------------------ПИВО-------------------------
 
-[chernigov]:identity_immunities
+[chernigov]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\chernigov"
@@ -746,9 +748,11 @@ bone_name		= bip01_r_hand
 position_offset		= 0.0,0.0,0.0
 angle_offset		= 1.570790,1.570790,3.92699
 
+use_sound_anm = interface\item_usage\drink_beer_use
+
 ;----------------------------------------------------------------
 
-[old_melnik]:identity_immunities
+[old_melnik]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\old_melnik"
@@ -794,9 +798,11 @@ bone_name		= bip01_r_hand
 position_offset		= 0.0,0.0,0.0
 angle_offset		= 1.570790,1.570790,3.92699
 
+use_sound_anm = interface\item_usage\drink_beer_use
+
 ;--------------------------------vino--------------------------------
 
-[kagor]:identity_immunities
+[kagor]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\kagor"
@@ -892,7 +898,7 @@ angle_offset		= 1.570790,1.570790,3.92699
 
 ;--------------------------------------------------------------------------
 
-[shprots]:identity_immunities
+[shprots]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\shprots"
@@ -937,9 +943,11 @@ bone_name		= bip01_r_hand
 position_offset		= 0.0,0.0,0.0
 angle_offset		= 1.570790,1.570790,3.92699
 
+use_sound_anm = interface\item_usage\conserva_use
+
 ;--------------------------------------------------------------------------
 
-[pashtet]:identity_immunities
+[pashtet]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\pashtet"
@@ -984,9 +992,11 @@ bone_name		= bip01_r_hand
 position_offset		= 0.0,0.0,0.0
 angle_offset		= 1.570790,1.570790,3.92699
 
+use_sound_anm = interface\item_usage\conserva_use
+
 ;--------------------------------------------------------------------------
 
-[pringles]:identity_immunities
+[pringles]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\pringles"
@@ -1033,7 +1043,7 @@ angle_offset		= 1.570790,1.570790,3.92699
 
 ;--------------------------------------------------------------------------
 
-[zel_goroshek]:identity_immunities
+[zel_goroshek]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\zel_goroshek"
@@ -1078,9 +1088,11 @@ bone_name		= bip01_r_hand
 position_offset		= 0.0,0.0,0.0
 angle_offset		= 1.570790,1.570790,3.92699
 
+use_sound_anm = interface\item_usage\conserva_use
+
 ;--------------------------------------------------------------------------
 
-[gribki]:identity_immunities
+[gribki]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\gribki"
@@ -1125,9 +1137,11 @@ bone_name		= bip01_r_hand
 position_offset		= 0.0,0.0,0.0
 angle_offset		= 1.570790,1.570790,3.92699
 
+use_sound_anm = interface\item_usage\conserva_use
+
 ;--------------------------------------------------------------------------
 
-[kilka]:identity_immunities
+[kilka]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\kilka"
@@ -1172,9 +1186,11 @@ bone_name		= bip01_r_hand
 position_offset		= 0.0,0.0,0.0
 angle_offset		= 1.570790,1.570790,3.92699
 
+use_sound_anm = interface\item_usage\conserva_use
+
 ;--------------------------------------------------------------------------
 
-[sguschenka]:identity_immunities
+[sguschenka]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\sguschenka"
@@ -1223,7 +1239,7 @@ angle_offset		= 1.570790,1.570790,3.92699
 
 ;--------------------------------------------------------------------------
 
-[konfeta]:identity_immunities
+[konfeta]:food
 GroupControlSection	= spawn_group
 discovery_dependency =
 $spawn 			= "food and drugs\konfeta"

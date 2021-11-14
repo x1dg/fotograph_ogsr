@@ -24,6 +24,8 @@ anm_bore					= vodka_hands_eat_invtrans, vodka_wpn_eat
 [anm_vodka_new]:anm_vodka
 
 [anm_cognac]:anm_vodka
+visual			= dynamics\weapons\wpn_eat\world_models\vodki\vodka_kazaki_world
+hud							= anm_vodka_hud
 
 [anm_energy_drink]:anm_base
 visual				= dynamics\weapons\wpn_eat\world_models\banki\banka_nonstop_world.ogf
@@ -46,15 +48,27 @@ anm_idle_moving				= banka_1_hands_eat_invtrans, banka_1_wpn_eat
 anm_idle_sprint				= banka_1_hands_eat_invtrans, banka_1_wpn_eat
 anm_bore					= banka_1_hands_eat_invtrans, banka_1_wpn_eat
 
-[anm_pivo]:anm_base
+[anm_chernigov]:anm_base
 visual		= dynamics\weapons\wpn_eat\world_models\butilki_steklo\butilka_steklo_pripiat_world.ogf
-hud							= anm_pivo_hud
+hud							= anm_chernigov_hud
 
 cam_effect = itemuse_anm_effects\banka_use.anm
 anim_timing = 2750
 item_used_timing = 2750
 
-[anm_pivo_hud]:anm_base_hud
+[anm_chernigov_hud]:anm_base_hud
+hands_position              = -0.0055,-0.06, 0.34
+hands_position_16x9         = -0.0055,-0.06, 0.34
+
+[anm_old_melnik]:anm_base
+visual		= dynamics\weapons\wpn_eat\world_models\butilki_steklo\butilka_steklo_pripiat_world.ogf
+hud							= anm_old_melnik_hud
+
+cam_effect = itemuse_anm_effects\banka_use.anm
+anim_timing = 2750
+item_used_timing = 2750
+
+[anm_old_melnik_hud]:anm_base_hud
 hands_position              = -0.0055,-0.06, 0.34
 hands_position_16x9         = -0.0055,-0.06, 0.34
 
@@ -67,17 +81,15 @@ anm_idle_moving				= butilka_steklo_1_hands_eat_alt_1_invtrans, butilka_steklo_1
 anm_idle_sprint				= butilka_steklo_1_hands_eat_alt_1_invtrans, butilka_steklo_1_wpn_eat_alt_1
 anm_bore					= butilka_steklo_1_hands_eat_alt_1_invtrans, butilka_steklo_1_wpn_eat_alt_1
 
-[anm_pivo_a]:anm_pivo
-
-[anm_voda]:anm_base
+[anm_mineral]:anm_base
 visual						= dynamics\weapons\wpn_eat\world_models\drinks\wpn_voda.ogf
-hud							= anm_voda_hud
+hud							= anm_mineral_hud
 
 cam_effect = itemuse_anm_effects\vodka_use.anm
 anim_timing = 3650
 item_used_timing = 3650
 
-[anm_voda_hud]:anm_base_hud
+[anm_mineral_hud]:anm_base_hud
 hands_position              = -0.0055,-0.09, 0.27
 hands_position_16x9         = -0.0055,-0.09, 0.27
 
