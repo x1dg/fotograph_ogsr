@@ -1,0 +1,2506 @@
+----------
+-- чтение формы из нет-пакета --------------------------Restrictors------------------
+----------
+function r_shape(packet)
+	local s
+	local st = {}
+	st.count = packet:r_u8()
+	st.shapes = {}
+	for i=1, st.count do
+		s = {}
+		s.type = packet:r_u8()
+		if s.type == 0 then
+			s.center = packet:r_vec3()
+			s.radius = packet:r_float()
+		else
+			s.axis_x = packet:r_vec3()
+			s.axis_y = packet:r_vec3()
+			s.axis_z = packet:r_vec3()
+			s.offset = packet:r_vec3()
+		end
+		st.shapes[i] = s
+	end
+	return st
+end
+
+----------
+-- запись формы в нет-пакет
+----------
+function w_shape(packet, st)
+	local s
+	packet:w_u8(st.count)
+	for i=1, st.count do
+		s = st.shapes[i]
+		packet:w_u8(s.type)
+		if s.type == 0 then
+			packet:w_vec3(s.center)
+			packet:w_float(s.radius)
+		else
+			packet:w_vec3(s.axis_x)
+			packet:w_vec3(s.axis_y)
+			packet:w_vec3(s.axis_z)
+			packet:w_vec3(s.offset)
+		end
+	end
+end
+
+----------
+-- перепаковка нет-пакета созданного скриптом рестрикта
+----------
+function rewrite_restrictor(sobj, custom, radius)
+	local packet = net_packet()
+	sobj:STATE_Write(packet)
+	local game_vertex_id	= packet:r_u16()
+	local distance		= packet:r_float()
+	local direct_control	= packet:r_s32()
+	local level_vertex_id	= packet:r_s32()
+	local object_flags		= packet:r_s32()
+	local custom_data		= packet:r_stringZ()
+	local story_id		= packet:r_s32()
+	local spawn_story_id	= packet:r_s32()
+	local shape		= r_shape(packet)
+	local restrictor_type	= packet:r_u8()
+
+	custom_data = custom
+	shape = {}
+	shape.count = 1
+	shape.shapes = {}
+	shape.shapes[1] = {}
+	shape.shapes[1].type = 0
+	shape.shapes[1].center = vector():set(0,0,0)
+	shape.shapes[1].radius = radius
+
+	packet:w_u16(game_vertex_id)
+	packet:w_float(distance)
+	packet:w_s32(direct_control)
+	packet:w_s32(level_vertex_id)
+	packet:w_s32(object_flags)
+	packet:w_stringZ(custom_data)
+	packet:w_s32(story_id)
+	packet:w_s32(spawn_story_id)
+	w_shape(packet, shape)
+	packet:w_u8(restrictor_type)
+	sobj:STATE_Read(packet, packet:w_tell() - packet:r_tell())
+end
+
+----------------------------------------------------------------------Anoms---------
+function get_story_id_not_replay() 
+ local ST 
+ ST = xr_logic.pstor_retrieve(db.actor, "ScriptAnomId", 0) 
+ if type(ST) ~= "number" or ST == nil then 
+ ST = 9000 
+ xr_logic.pstor_store(db.actor, "ScriptAnomId", ST) 
+ end 
+ if type(ST) == "number" or ST ~= nil then 
+ ST = ST + 1 
+ xr_logic.pstor_store(db.actor, "ScriptAnomId", ST) 
+ end 
+ return tonumber(ST) 
+ end 
+
+function create_anom(name_anom, posit_anom, lvid_anom, gvid_anom, radius_anom, power_anom)
+ local sobj = alife():create(name_anom, posit_anom, lvid_anom, gvid_anom) 
+
+ -----------------------write---------------------- 
+ local packet = net_packet() 
+ sobj:STATE_Write(packet) 
+
+ -----------------------load----------------------- 
+ -- cse_alife_object 
+ local game_vertex_id = packet:r_u16() 
+ local distance = packet:r_float() 
+ local direct_control = packet:r_u32() 
+ local level_vertex_id = packet:r_u32() 
+ local object_flags = packet:r_u32() 
+ local custom_data = packet:r_stringZ() 
+ local story_id = packet:r_u32() 
+ local spawn_story_id = packet:r_u32() 
+
+ -- cse_shape 
+ local shape_count = packet:r_u8() 
+ for i=1,shape_count do 
+ local shape_type = packet:r_u8() 
+ if shape_type == 0 then 
+ -- sphere 
+ local center = packet:r_vec3() 
+ local radius = packet:r_float() 
+ else 
+ -- box 
+ local box = packet:r_matrix() 
+ end 
+ end 
+
+ -- cse_alife_space_restrictor 
+ local restrictor_type = packet:r_u8() 
+
+ -- cse_alife_custom_zone 
+ local max_power = packet:r_float() 
+ local owner_id = packet:r_u32() 
+ local enabled_time = packet:r_u32() 
+ local disabled_time = packet:r_u32() 
+ local start_time_shift = packet:r_u32() 
+
+ -- cse_alife_anomalous_zone 
+ local offline_interactive_radius = packet:r_float() 
+ local artefact_spawn_count = packet:r_u16() 
+ local artefact_position_offset = packet:r_u32() 
+
+ -- se_zone_anom 
+ local last_spawn_time_present = packet:r_u8() 
+
+ if (string.find (name_anom, 'zone_zharka_static') ~= nil 
+ or string.find (name_anom, 'zone_witches_galantine') ~= nil 
+ or string.find (name_anom, 'zone_mosquito_bald') ~= nil 
+ or string.find (name_anom, 'zone_mincer') ~= nil 
+ or string.find (name_anom, 'zone_gravi_zone') ~= nil 
+ or string.find (name_anom, 'zone_buzz') ~= nil ) 
+ and packet:r_elapsed() ~= 0 then 
+ abort("left=%d", left) 
+ end 
+
+ ---------------------------save-------------------- 
+ -- cse_alife_object 
+ packet:w_begin(game_vertex_id) 
+ packet:w_float(distance) 
+ packet:w_u32(direct_control) 
+ packet:w_u32(level_vertex_id) 
+ object_flags = bit_not(193) 
+ packet:w_u32(object_flags) 
+ packet:w_stringZ(custom_data) 
+ packet:w_u32(get_story_id_not_replay()) 
+ packet:w_u32(get_story_id_not_replay()) 
+
+ -- cse_shape 
+ packet:w_u8(1) -- количество фигур 
+ packet:w_u8(0) -- тип фигуры: сфера 
+ packet:w_vec3(vector():set(0, 0, 0)) 
+ if radius_anom ~= nil then 
+ packet:w_float(radius_anom) 
+ else 
+ packet:w_float(1.0) 
+ end 
+
+ -- cse_alife_space_restrictor 
+ packet:w_u8(restrictor_type) 
+
+ -- cse_alife_custom_zone 
+ if power_anom ~= nil then 
+ packet:w_float(power_anom) 
+ else 
+ packet:w_float(max_power) 
+ end 
+ packet:w_u32(owner_id) 
+ packet:w_u32(enabled_time) 
+ packet:w_u32(disabled_time) 
+ packet:w_u32(start_time_shift) 
+
+ -- cse_alife_anomalous_zone 
+ packet:w_float(offline_interactive_radius) 
+ packet:w_u16(artefact_spawn_count) 
+ packet:w_u32(artefact_position_offset) 
+
+ -- se_zone_anom 
+ packet:w_u8(last_spawn_time_present) 
+
+ ------------------------read------------------------ 
+ packet:r_seek(0) 
+ sobj:STATE_Read(packet, packet:w_tell()) 
+end
+ ------------------
+ 
+function gra_spawn() 
+	create_anom('zone_no_gravity', vector():set(-257.655,19.886,263.024),543303,680, 10, 1) 
+end
+
+function dark_anom_spawn() 
+	create_anom('zone_mosquito_bald', vector():set(296.285,-4.289,-43.254),1393925,790, 4, 1)
+	create_anom('zone_mincer', vector():set(297.633,-2.397,-60.215),1396416,790, 4, 1)
+	create_anom('zone_gravi_zone', vector():set(327.936,-1.656,-66.437),1451384,790, 4, 1)
+	create_anom('zone_mosquito_bald', vector():set(333.689,-4.391,-53.296),1463041,790, 5, 1)
+	create_anom('zone_mincer', vector():set(343.273,-5.071,-45.638),1480143,790, 6, 1)
+	create_anom('zone_gravi_zone', vector():set(323.130,-6.794,-39.466),1443924,790, 4, 1)
+	create_anom('zone_mosquito_bald', vector():set(315.788,-6.642,-37.316),1430051,790, 3, 1)
+	create_anom('zone_mincer', vector():set(282.466,3.872,-77.676),1370027,790, 4, 1)
+	create_anom('zone_gravi_zone', vector():set(290.226,2.488,-78.296),1383733,790, 4, 1)
+	create_anom('zone_mosquito_bald', vector():set(296.091,1.546,-77.203),1393881,790, 4, 1)
+	create_anom('zone_mincer', vector():set(302.022,1.737,-78.815),1404101,790, 4, 1)
+	create_anom('zone_gravi_zone', vector():set(306.096,2.858,-82.496),1411877,790, 4, 1)
+	create_anom('zone_mosquito_bald', vector():set(311.080,4.809,-87.841),1420881,790, 4, 1)
+	create_anom('zone_mincer', vector():set(324.115,5.673,-89.932),1445070,790, 4, 1)
+	create_anom('zone_gravi_zone', vector():set(334.084,4.310,-86.412),1462994,790, 5, 1)
+	create_anom('zone_mosquito_bald', vector():set(342.089,3.322,-82.753),1478775,790, 5, 1)
+	create_anom('zone_mincer', vector():set(348.424,1.969,-76.294),1490759,790, 5, 1)
+	create_anom('zone_gravi_zone', vector():set(355.851,1.147,-67.457),1504180,790, 5, 1)
+	create_anom('zone_mosquito_bald', vector():set(346.156,-3.114,-54.009),1486797,790, 5, 1)
+	create_anom('zone_mincer', vector():set(343.983,-6.358,-34.876),1481482,790, 5, 1)
+	create_anom('zone_gravi_zone', vector():set(342.984,-6.448,-17.503),1480183,790, 5, 1)
+	create_anom('zone_mosquito_bald', vector():set(350.527,-6.063,-21.751),1494813,790, 5, 1)
+	create_anom('zone_mincer', vector():set(336.549,-6.043,-11.428),1468401,790, 5, 1)
+	create_anom('zone_mosquito_bald', vector():set(305.057,-3.314,-11.282),1410686,790, 5, 1)
+	create_anom('zone_mincer', vector():set(299.584,-2.998,-15.014),1400310,790, 5, 1)
+	create_anom('zone_gravi_zone', vector():set(302.022,1.737,-78.815),1404101,790, 5, 1)
+	create_anom('zone_mosquito_bald', vector():set(295.893,-3.923,-26.275),1393948,790, 5, 1)
+	create_anom('zone_mincer', vector():set(280.301,1.520,-64.966),1364929,790, 5, 1)
+	create_anom('zone_gravi_zone', vector():set(287.198,-0.878,-60.661),1377513,790, 5, 1)
+	create_anom('zone_mosquito_bald', vector():set(302.022,1.737,-78.815),1404101,790, 4, 1)
+	create_anom('zone_witches_galantine', vector():set(323.924,-3.572,-0.261),1445197,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(324.164,-5.271,-8.276),1445185,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(303.728,-5.463,-28.432),1408058,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(313.214,-5.934,-43.270),1424808,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(299.555,-4.213,-48.608),1400262,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(324.164,-5.271,-8.276),1445185,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(303.450,-2.960,-59.068),1408016,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(300.787,-0.622,-69.845),1402818,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(314.330,-1.621,-66.625),142374,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(311.603,2.218,-80.594),1422170,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(328.533,3.023,-82.859),1452658,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(332.115,-0.617,-70.215),1459152,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(341.933,1.149,-75.071),1477479,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(341.349,-2.775,-58.212),1477503,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(350.521,0.367,-67.960),1494748,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(352.557,-2.514,-51.899),1498760,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(360.977,1.560,-64.379),1514926,790, 3, 1)
+	create_anom('zone_witches_galantine', vector():set(369.312,0.996,-49.366),1530876,790, 3, 1)
+end
+
+function checking_use_item(obj)
+	local actor = db.actor
+	local sect = obj:section()
+	if sect == "c_doc1" and not has_alife_info("c1_est") then actor:give_info_portion("c1_est")
+	elseif sect == "c_doc2" and not has_alife_info("c2_est") then actor:give_info_portion("c2_est")
+	elseif sect == "c_doc3" and not has_alife_info("c3_est") then actor:give_info_portion("c3_est")
+	elseif sect == "c_doc4" and not has_alife_info("c4_est") then actor:give_info_portion("c4_est")
+	elseif sect == "c_doc5" and not has_alife_info("c5_est") then actor:give_info_portion("c5_est")
+	elseif sect == "c_doc6" and not has_alife_info("c6_est") then actor:give_info_portion("c6_est")
+	elseif sect == "c_doc7" and not has_alife_info("c7_est") then actor:give_info_portion("c7_est")
+	elseif sect == "c_doc8" and not has_alife_info("c8_est") then actor:give_info_portion("c8_est")
+	elseif sect == "c_doc9" and not has_alife_info("c9_est") then actor:give_info_portion("c9_est")
+	elseif sect == "c_doc10" and not has_alife_info("c10_est") then actor:give_info_portion("c10_est")
+	elseif sect == "c_doc11" and not has_alife_info("c11_est") then actor:give_info_portion("c11_est")
+	elseif sect == "korona" and not has_alife_info("korona_est") then actor:give_info_portion("korona_est")
+    elseif sect == "academ_flash" and not has_alife_info("flesh_in") then
+		actor:give_info_portion("flesh_in")
+	elseif sect == "exo_outfit_fake" then 
+                actor:give_info_portion("prom_popal")
+		amk.drop_item(actor,obj)
+		amk.remove_item(obj)
+                pooo_sound()
+	end
+end
+
+function pro_info()
+	local actor = db.actor
+	local lname = level.name()
+	if actor then
+		if has_alife_info("gretavis_enemy") and not has_alife_info("archiv_oblom") and not has_alife_info("kayman_oblom") and not has_alife_info("remont_oblom") then
+			actor:give_info_portion("archiv_oblom")
+			actor:give_info_portion("kayman_oblom")
+			actor:give_info_portion("remont_oblom")
+		elseif has_alife_info("greta_inv_enemy") and not has_alife_info("archiv_oblom") and not has_alife_info("kayman_oblom") and not has_alife_info("remont_oblom") then
+			actor:give_info_portion("archiv_oblom")
+			actor:give_info_portion("kayman_oblom")
+			actor:give_info_portion("remont_oblom")
+		elseif has_alife_info("soldaty_enemy") and has_alife_info("kayman_radio") and not has_alife_info("archiv_shema") and not has_alife_info("archiv_oblom") and not has_alife_info("kayman_oblom") and not has_alife_info("remont_oblom") then
+			actor:give_info_portion("archiv_oblom")
+			actor:give_info_portion("kayman_oblom")
+			actor:give_info_portion("remont_oblom")
+		elseif has_alife_info("uchen_enemy") and has_alife_info("radio_start") and not has_alife_info("kayman_docs_est") and not has_alife_info("kayman_oblom") and not has_alife_info("remont_oblom") then
+			actor:give_info_portion("kayman_oblom")
+			actor:give_info_portion("remont_oblom")
+		elseif lname == "promzone" and not has_alife_info("prom_zasada") then
+			actor:give_info_portion("prom_zasada")
+		elseif lname == "deadcity" and not has_alife_info("mg_zasada") then
+			actor:give_info_portion("mg_zasada")
+		elseif lname == "dyshlo" and has_alife_info("lch_aver_dyshlo") and not has_alife_info("start_f_island") then
+			actor:give_info_portion("start_f_island")
+		elseif has_alife_info("utug_pomer")	and not has_alife_info("skin_ended") then
+			actor:give_info_portion("skin_ended") utug_bratan()
+		end
+	end
+end
+
+function info_cal(info_id)
+	local actor = db.actor
+	if info_id and actor and string.sub(info_id, 1, 3) ~= "ui_" then
+		get_console():execute(string.format('load ~[ex_test] Получен инфопоршень: %s',info_id))
+	end
+end
+
+function poet_docs_otdal(info_id)
+	new_dialog.out_item_much("c_doc1",1)
+	new_dialog.out_item_much("c_doc2",1)
+	new_dialog.out_item_much("c_doc3",1)
+	new_dialog.out_item_much("c_doc4",1)
+	new_dialog.out_item_much("c_doc5",1)
+	new_dialog.out_item_much("c_doc6",1)
+	new_dialog.out_item_much("c_doc7",1)
+	new_dialog.out_item_much("c_doc8",1)
+	new_dialog.out_item_much("c_doc9",1)
+	new_dialog.out_item_much("c_doc10",1)
+	new_dialog.out_item_much("c_doc11",1)
+end
+
+function create_level_changer(
+p_story_id,   -- STORY_ID нового level_changer (понадобится нам позже)
+p_position,   -- вектор, координаты точки, в которой будет располагаться центр нового level_changer
+p_lvertex_id, -- level_vertext_id - идентифицируют уровень, на котором будет создан level_changer
+p_gvertex_id, -- game_vertext_id
+
+p_dest_lv,    -- level_vertex_id - идентифицируют уровень, на который level_changer будет перебрасывать игрока 
+p_dest_gv,    -- game_vertex_id
+p_dest_pos,   -- координаты точки, в которой на новом уровне окажется игрок
+p_dest_dir,   -- направрение взгляда игрока
+p_dest_level, -- название уровня, например "L11_Pripyat"
+p_silent      -- следует задать 1, чтобы подавить вопрос о смене уровня (автоматический переход)
+)
+
+local sobj = alife():create("level_changer",p_position,p_lvertex_id,p_gvertex_id)
+level.map_add_object_spot(sobj.id,"level_changer","")
+local packet = net_packet()
+sobj:STATE_Write(packet)
+
+local game_vertex_id = packet:r_u16()
+local cse_alife_object__unk1_f32 = packet:r_float()
+local cse_alife_object__unk2_u32 = packet:r_u32()
+local level_vertex_id = packet:r_u32()
+local object_flags = packet:r_u32()
+local custom_data = packet:r_stringZ()
+local story_id = packet:r_u32()
+local spawn_story_id = packet:r_u32()
+
+local shape_count = packet:r_u8()
+for i=1,shape_count do
+local shape_type = packet:r_u8()
+if shape_type == 0 then
+local center = packet:r_vec3()
+local radius = packet:r_float()
+else
+local axis_x_x = packet:r_float()
+local axis_x_y = packet:r_float()
+local axis_x_z = packet:r_float()
+local axis_y_x = packet:r_float()
+local axis_y_y = packet:r_float()
+local axis_y_z = packet:r_float()
+local axis_z_x = packet:r_float()
+local axis_z_y = packet:r_float()
+local axis_z_z = packet:r_float()
+local offset_x = packet:r_float()
+local offset_y = packet:r_float()
+local offset_z = packet:r_float()
+end
+end
+
+local restrictor_type = packet:r_u8()
+local dest_game_vertex_id = packet:r_u16() 
+local dest_level_vertex_id = packet:r_u32() 
+local dest_position = packet:r_vec3()
+local dest_direction = packet:r_vec3()
+local dest_level_name = packet:r_stringZ()
+local dest_graph_point = packet:r_stringZ()
+local silent_mode = packet:r_u8()
+
+packet:w_begin(game_vertex_id) -- game_vertex_id
+packet:w_float(cse_alife_object__unk1_f32)
+packet:w_u32(cse_alife_object__unk2_u32) 
+packet:w_u32(level_vertex_id) -- level_vertex_id
+packet:w_u32( bit_not(193) ) -- object_flags = -193 = 0xFFFFFF3E
+packet:w_stringZ(custom_data)
+packet:w_u32(p_story_id) -- story_id
+packet:w_u32(spawn_story_id)
+packet:w_u8(1) -- количество фигур
+-- packet:w_u8(0) -- тип фигуры: сфера
+-- packet:w_vec3(vector():set(0, 0, 0)) -- sphere_center
+-- packet:w_float(3.0)
+packet:w_u8(1) -- тип фигуры: box
+packet:w_float(2) -- axis_x_x
+packet:w_float(0) -- axis_x_y
+packet:w_float(0) -- axis_x_z
+packet:w_float(0) -- axis_y_x
+packet:w_float(4) -- axis_y_y
+packet:w_float(0) -- axis_y_z
+packet:w_float(0) -- axis_z_x
+packet:w_float(0) -- axis_z_y
+packet:w_float(4) -- axis_z_z
+packet:w_float(0) -- offset_x
+packet:w_float(0) -- offset_y
+packet:w_float(0) -- offset_z
+packet:w_u8(3) -- restrictor_type
+packet:w_u16(p_dest_gv) -- destination game_vertex_id
+packet:w_s32(p_dest_lv) -- destination level_vertex_id
+packet:w_vec3(p_dest_pos) -- destination position
+packet:w_vec3(p_dest_dir) -- destination direction (направление взгляда)
+packet:w_stringZ(p_dest_level) -- destination level name
+packet:w_stringZ("start_actor_02") -- some string, always const
+packet:w_u8(p_silent) -- 1 for silent level changing
+
+packet:r_seek(0)
+sobj:STATE_Read(packet,packet:w_tell())
+level.add_pp_effector ("teleport.ppe",2006,false)
+end
+
+-- bar-promzone
+function c_lc_1()
+	local actor = db.actor
+	create_level_changer(65001,actor:position(),actor:level_vertex_id(),actor:game_vertex_id(),29640,835,vector():set(-104.21,6.051,508.209),vector():set(0.39,0,-0.92),"promzone",1)
+end
+
+-- promzone-swamp
+function c_lc_2()
+	local actor = db.actor
+	create_level_changer(65002,actor:position(),actor:level_vertex_id(),actor:game_vertex_id(),1749642,799,vector():set(276.793,11.611,287.174),vector():set(0.39,0,-0.92),"swamp",1)
+end
+
+--swamp-mk
+function c_lc_3()
+	local actor = db.actor
+	create_level_changer(65003,actor:position(),actor:level_vertex_id(),actor:game_vertex_id(),3905,616,vector():set(-633.272,18.516,-170.759),vector():set(0.39,0,-0.92),"predbannik",1)
+end
+
+--mk-hr
+function c_lc_4()
+	local actor = db.actor
+	create_level_changer(65004,actor:position(),actor:level_vertex_id(),actor:game_vertex_id(),42075,1513,vector():set(-303.241,0.109,-366.774),vector():set(0.39,0,-0.92),"hiding_road",1)
+end
+
+--hr-x16
+function c_lc_5()
+	local actor = db.actor
+	create_level_changer(65005,actor:position(),actor:level_vertex_id(),actor:game_vertex_id(),7072,324,vector():set(114.979,24.538,-19.755),vector():set(0.999,0,-0.009),"l08u_brainlab",1)
+end
+
+--x16-МГ
+function c_lc_6()
+	local actor = db.actor
+	create_level_changer(65006,actor:position(),actor:level_vertex_id(),actor:game_vertex_id(),27780,1179,vector():set(-333.241,-0.247,-168.744),vector():set(0,0,0),"deadcity",1)
+end
+
+---МГ-ЧД
+function c_lc_7()
+	local actor = db.actor
+	create_level_changer(65007,actor:position(),actor:level_vertex_id(),actor:game_vertex_id(),27598,0,vector():set(-244.599,13.413,-266.352),vector():set(0,0,0),"dyshlo",1)
+end
+
+--ЧД-Prip
+function c_lc_8()
+	local actor = db.actor
+	create_level_changer(65008,actor:position(),actor:level_vertex_id(),actor:game_vertex_id(),597,480,vector():set(-160.858,-2.397,33.403),vector():set(0,0,0),"l11_pripyat",1)
+end
+
+--Prip-Х10
+function c_lc_9()
+	local actor = db.actor
+	create_level_changer(65009,actor:position(),actor:level_vertex_id(),actor:game_vertex_id(),3073,337,vector():set(-22.33,-8.989,15.783),vector():set(0.033, 0,0.99),"l10u_bunker",1)
+end
+
+--Х10-X18
+function c_lc_10()
+	local actor = db.actor
+	create_level_changer(65010,actor:position(),actor:level_vertex_id(),actor:game_vertex_id(),2980,110,vector():set(1.729,9.31,-5.005),vector():set(0.033,0,0.99),"l04u_labx18",1)
+end
+
+--X18-forest
+function c_lc_11()
+	local actor = db.actor
+	create_level_changer(65011,actor:position(),actor:level_vertex_id(),actor:game_vertex_id(),771184,784,vector():set(-57.349,30.951,408.98),vector():set(0.033,0,0.99),"aver",1)
+end
+
+function noise_spawn()
+	alife():create("sound_object01",vector():set(158.018,15.508,114.943),41517,210)
+end
+
+function zov1_spawn()
+	alife():create("sound_object_zov1",vector():set(124.311,1.118,48.753),35291,234)
+end
+
+function zov2_spawn()
+	alife():create("sound_object_zov2",vector():set(124.398,1.001,49.467),35292,234)
+end
+
+function archiv_spawn()
+	local sobj = alife():create("archivarius",vector():set(210.335,12.108,17.596),804539,1654)
+	local params = sobj and amk.read_stalker_params(sobj)
+	if params then
+		params.custom = "[logic]\ncfg = scripts\\foto\\archiv.ltx"
+		params.sid = 30328
+		amk.write_stalker_params(params,sobj)
+	end
+end
+
+function del_noise()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "sound_object01" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function radio_nagrada(first_speaker, second_speaker)
+        dialogs.relocate_item_section(second_speaker, "wpn_m79", "in", 1)
+	dialogs.relocate_item_section(second_speaker, "wpn_thompson_1928", "in", 1)
+        flamethrower.relocate_n_items_section(second_speaker, "ammo_m209", "in", 3)
+        dialogs.relocate_money(first_speaker, 10000,"in")
+end
+
+function del_zov1()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "sound_object_zov1" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function del_zov2()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "sound_object_zov2" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function noise_message()
+	news_manager.send_tip(db.actor,"НУ КАК ВЫ МОЖЕТЕ СЛУШАТЬ РАДИО С ТАКИМИ ПОМЕХАМИ???\\nЖЕЛАЮЩИЕ ПОМОЧЬ С РЕМОНТОМ РАДИОУЗЛА,\\nОБРАЩАЙТЕСЬ В БАР К ДЯДЕ МИШЕ.",nil,nil,30000)
+end
+
+function create_noise_restr()
+	local sobj = alife():create("space_restrictor",vector():set(176.058,-0.002,104.787),44519,188)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\noise_restr.ltx"
+		rewrite_restrictor(sobj,custom,10)
+	end
+end
+
+function restr_zov_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(128.372,1.174,47.959),35775,234)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_zov.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+end
+
+function create_zov1_restr()
+	local sobj = alife():create("space_restrictor",vector():set(129.912,0.174,46.809),36075,234)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\zov1_restr.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function create_zov2_restr()
+	local sobj = alife():create("space_restrictor",vector():set(124.311,1.118,48.753),35291,234)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\zov2_restr.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function create_zov3_restr()
+	local sobj = alife():create("space_restrictor",vector():set(124.398,0.001,49.467),35292,234)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\zov3_restr.ltx"
+		rewrite_restrictor(sobj,custom,2.7)
+	end
+end
+
+function hw_restr_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(116.946,0.076,35.086),34051,255)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\hw_restr.ltx"
+		rewrite_restrictor(sobj,custom,15)
+	end
+end
+
+function zub_spawn()
+	local sobj = alife():create("zubarev",vector():set(124.838,8.636,-67.833),375878,1353)
+	local params = sobj and amk.read_stalker_params(sobj)
+	if params then
+		params.custom = "[logic]\ncfg = scripts\\foto\\zubarev.ltx"
+		params.sid = 30329
+		amk.write_stalker_params(params,sobj)
+	end
+end
+
+function strange_spawn()
+	alife():create("strange_killer",vector():set(120.086,8.699,-64.558),374857,1353)
+end
+
+function poet_spawn()
+	alife():create("poet",vector():set(116.946,0.076,35.086),34051,255)
+end
+
+function greta_inv_spawn()
+	local sim = alife()
+	sim:create("greta_invis",vector():set(-406.152,1.067,58.440),170031,777)
+	sim:create("korona",vector():set(-408.995,2.587,58.440),165032,777)
+end
+
+function greta_vis_spawn()
+	alife():create("greta_vis",vector():set(-406.200,1.068,58.450),170031,777)
+end
+
+function gretainv_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "greta_invis" then
+			sim:release(sobj,true)
+			db.actor:give_info_portion("greta_vis_spawn_info")
+			break
+		end
+	end
+end
+
+function gretavis_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "greta_vis" then
+			sim:release(sobj,true)
+			db.actor:give_info_portion("skazal_opoet")
+			break
+		end
+	end
+end
+
+function valter_shot()
+	local snd_obj = xr_sound.get_safe_sound_object([[forest\new\walther]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function letter_est(first_speaker, second_speaker)
+	dialogs.relocate_item_section(second_speaker,"letter_greta","in")
+end
+
+function trans_greta()
+	local actor = db.actor
+	level.add_cam_effector("camera_effects\\prison_1.anm", 25, false, "")
+	level.add_pp_effector("yantar_underground_psi.ppe", 2007, false)
+	level.add_pp_effector ("teleport.ppe", 65014, false)
+	local snd_obj = xr_sound.get_safe_sound_object([[forest\new\mandra]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+	level.add_cam_effector("camera_effects\\hit_back_left.anm", 26, false, "")
+	actor:set_actor_position(vector():set(-409.995,2.587,58.440))
+	actor:set_actor_direction(vector():set(0.931,0.000,-0.363))
+	actor:give_info_portion("gretainv_del_info")
+end
+
+function letter_have(task,objective)
+	return new_dialog.item_much("letter_greta",1) ~= false
+end
+
+function tarakan_est(task,objective)
+	return new_dialog.item_much("tarakan_lich1",2) ~= false
+end
+
+function korona_have(task,objective)
+	return new_dialog.item_much("korona",1) ~= false
+end
+
+function shema_have(task,objective)
+	return new_dialog.item_much("shema_radio",1) ~= false
+end
+
+function zhurnal_have(task,objective)
+	return new_dialog.item_much("zhurnal",1) ~= false
+end
+
+function radio_have(task,objective)
+	return new_dialog.item_much("usilok",1) ~= false
+end
+
+function korona_out(task,objective)
+	if has_alife_info("korona_shep") then
+		if new_dialog.item_much("korona",1) ~= true then
+			db.actor:give_info_portion("korona_dropped")
+			-- закроем окно инвентаря если оно открыто
+			local inv_wnd =level.main_input_receiver()
+			if inv_wnd then
+				inv_wnd:GetHolder():start_stop_menu(inv_wnd, true)
+			end
+		end
+	end
+end
+
+function del_korona()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "korona" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function restr_korona_spawn() 
+	local sobj = alife():create("space_restrictor",vector():set(216.624,16.550,-13.721),815132,1654)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_kor.ltx"
+		rewrite_restrictor(sobj,custom,3.5)
+	end
+end
+
+function letter_otdal(first_speaker,second_speaker)
+	flamethrower.relocate_n_items_section(second_speaker,"letter_greta","out",1)
+end
+
+function otdal_tarakanov(first_speaker,second_speaker)
+	flamethrower.relocate_n_items_section(second_speaker,"tarakan_lich1","out",2)
+end
+
+function radio_otdal(first_speaker,second_speaker)
+	new_dialog.out_item_much("usilok",1)
+end
+
+function zhurnal_shema(first_speaker,second_speaker)
+	dialogs.relocate_item_section(second_speaker,"zhurnal","in")
+	dialogs.relocate_item_section(second_speaker,"shema_radio","in")
+end
+
+function docs_otdal(first_speaker,second_speaker)
+	dialogs.relocate_item_section(second_speaker,"zhurnal","out")
+	dialogs.relocate_item_section(second_speaker,"shema_radio","out")
+end
+
+function usilok_poluchil(first_speaker,second_speaker)
+	dialogs.relocate_item_section(second_speaker,"usilok","in")
+end
+
+function irokez_spawn()
+	alife():create("irokez_kombez",vector():set(419.116,-0.078,103.794),1050615,1699)
+end
+
+function shepel_spawn()
+	alife():create("shepel",vector():set(215.421677,16.550621,-8.661325),813971,1654)
+end
+
+function sheps_spawn()
+	local sim = alife()
+	sim:create("shep1",vector():set(216.624023,16.550220,-13.721671),815132,1654)
+	sim:create("shep2",vector():set(212.803925,16.549610,-11.881807),809157,1654)
+	sim:create("shep3",vector():set(211.650543,16.550213,-8.980402),806800,1654)
+	db.actor:give_info_portion("skazal_prizrak")
+end
+
+function shep_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "shepel" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function shep1_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "shep1" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function shep2_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "shep2" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function shep3_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "shep3" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+	db.actor:give_info_portion("skazal_prapor")
+end
+
+function kill_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "strange_killer" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function teleport_poet()
+	local actor = db.actor
+	level.add_pp_effector ("teleport.ppe",30331,false)
+	actor:set_actor_position(vector():set(116.922104,-0.001268,33.562363))
+	actor:set_actor_direction(vector():set(-0.016999,0.000000,0.999856))
+	local snd_obj = xr_sound.get_safe_sound_object([[anomaly\teleport_work_1]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function hit_poet()
+	level.add_cam_effector("camera_effects\\prison_1.anm",25,false,"")
+	level.add_pp_effector("yantar_underground_psi.ppe",2007,false)
+	level.add_pp_effector("total_recall.ppe",2008,false)
+	local snd_obj = xr_sound.get_safe_sound_object([[affects\hit_fist]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+	level.add_cam_effector("camera_effects\\hit_back_left.anm",26,false,"")
+end
+
+function hit_sound()
+	local snd_obj = xr_sound.get_safe_sound_object([[affects\hit_fist]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function en_mov(actor,npc)
+	level.enable_input()
+end
+
+function hide_w()
+	db.actor:activate_slot(5)
+	level.disable_input()
+end
+
+function skin_hide_w()
+	db.actor:activate_slot(7)
+end
+
+function del_info_weap()
+	db.actor:disable_info_portion("weap_on")
+end
+
+function check_weap()
+	local actor = db.actor
+	local slot = actor:active_slot()
+	if slot == 0 or slot == 1 or slot == 2 or slot == 3 then
+		actor:give_info_portion("weap_on")
+	 end
+end
+
+function check_kont()
+	local actor = db.actor
+	local slot = actor:active_slot()
+	if slot == 0 or slot == 1 or slot == 2 then
+	actor:give_info_portion("kont_gun")
+	end
+end
+
+function poet_c4(obj)
+	local actor = db.actor
+	local apos = actor:position()
+	local h = hit()
+	h.draftsman = actor
+	h.direction = vector():set(0,0,0)
+	h:bone("bip01_spine")
+	h.type = hit.explosion
+	h.power = 0.6
+	h.impulse = 500
+	actor:hit(h)
+	amk_particle.amk_particle({particle="explosions\\explosion_fuelcan",pos=apos,sound=[[weapons\t_rgd5_explosion]]})
+	level.add_pp_effector("amk_shoot.ppe",2011,false)
+end
+
+function explose_gg()
+	db.actor:kill(db.actor)
+--	amk_particle.amk_particle:stop()
+end
+
+--pre_restrict_bar
+function restr_tp1_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(426.409,15.029,-430.858),99283,290)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tp1.ltx"
+		rewrite_restrictor(sobj,custom,4.5)
+	end
+end
+
+function tp1_spawn()--в конце бара
+	local sim = alife()
+	local custom
+	local sobj = sim:create("space_restrictor",vector():set(421.006,14.576,-431.737),98890,290)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\ambient\\bar\\amb25_restr.ltx"
+		rewrite_restrictor(sobj,custom,4.6)
+	end
+	sobj = sim:create("space_restrictor",vector():set(5.084,16.037,-376.794),201328,946)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\ambient\\promzone\\amb108_restr.ltx"
+		rewrite_restrictor(sobj,custom,28)
+	end
+	sim:create("c_tp1",vector():set(421.098,14.816,-438.331),98933,290)
+end
+
+function tp1_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp1" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function tp1b_spawn()
+	alife():create("c_tp1b",vector():set(-103.451,5.370,503.730),30437,835)
+end
+
+function tp1b_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp1b" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+--lc to promzone
+function restr_tele1_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(408.085,13.240,-452.417),95907,290)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele1.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function restr_tele1b_spawn() 
+	local sobj = alife():create("space_restrictor",vector():set(-104.210,1.051,508.209),29640,835)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele1b.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function ruk1_spawn()
+	alife():create("ruk1",vector():set(-103.451,1.370,503.730),30437,835)
+end
+
+--pre_restrict_promzone
+function restr_tp2_spawn()
+	local sim = alife()
+	local sobj = sim:create("space_restrictor",vector():set(5.039,16.038,-385.236),201316,946)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tp2.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+	sim:create("m_gigant_e",vector():set(-104.210,1.051,508.209),29640,835)
+	local snd_obj = xr_sound.get_safe_sound_object([[ambient\new\actor_53]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+--в конце промзоны
+function tp2_spawn()
+	alife():create("c_tp2",vector():set(-1.906,16.041,-397.443),186226,942)
+end
+
+function tp2_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp2" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function tp2b_spawn()
+	alife():create("c_tp2b",vector():set(281.971,7.525,284.879),1761695,799)
+end
+
+function tp2b_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp2b" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+--lc to swamp
+function restr_tele2_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(0.299,16.058,-414.684),190659,973)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele2.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function restr_tele2b_spawn()
+local sobj = alife():create("space_restrictor",vector():set(276.793,3.611,287.174),1749642,799)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele2b.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function ruk2_spawn()
+	alife():create("ruk2",vector():set(281.971,4.535,284.879),1761695,799)
+end
+
+--pre_restrict_swamp
+function restr_tp3_spawn()
+	local sim = alife()
+	local sobj = sim:create("space_restrictor",vector():set(174.896,1.765,-296.808),1528786,798)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tp3.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+	sobj = sim:create("space_restrictor",vector():set(278.340,1.487,261.110),1754181,799)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\ambient\\swamp\\amb82_restr.ltx"
+		rewrite_restrictor(sobj,custom,7)
+	end
+end
+
+--в конце болота
+function tp3_spawn()
+	alife():create("c_tp3",vector():set(187.277,3.235,-296.235),1556404,798)
+end
+
+function tp3_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp3" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function tp3b_spawn()
+	alife():create("c_tp3b",vector():set(-624.608,20.287,-177.809),9217,616)
+end
+
+function tp3b_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp3b" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+--lc to МК
+function restr_tele3_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(198.753,4.032,-295.714),1580658,798)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele3.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function restr_tele3b_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(-633.272,18.516,-170.759),3905,616)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele3b.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function ruk3_spawn()
+	alife():create("ruk3",vector():set(-624.608,14.377,-177.809),9217,616)
+end
+
+--pre_restrict_mk
+function restr_tp4_spawn()
+	local sim = alife()
+	local sobj = sim:create("space_restrictor",vector():set(18.719,-5.092,403.741),973073,734)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tp4.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+	sobj = sim:create("space_restrictor",vector():set(20.594,-5.108,406.527),975246,734)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\ambient\\pred\\amb86_restr.ltx"
+		rewrite_restrictor(sobj,custom,15)
+	end
+	local snd_obj = xr_sound.get_safe_sound_object([[ambient\new\actor_56]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+--в конце MK
+function tp4_spawn()
+	alife():create("c_tp4",vector():set(34.053,-6.658,411.091),997737,734)
+end
+
+function tp4_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp4" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function tp4b_spawn()
+	alife():create("c_tp4b",vector():set(-308.815,3.913,-375.114),38500,1513)
+end
+
+function tp4b_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp4b" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+--lc to hr
+function grav_restr_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(-257.545,19.886,263.024),543303,680)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\grav_restr.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function restr_tele4b_spawn()
+	local sim = alife()
+	local sobj = sim:create("space_restrictor",vector():set(-303.241,0.109,-366.774),42075,1513)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele4b.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-300.227,0.285,-367.026),43928,1513)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\ambient\\hiding_road\\amb102_restr.ltx"
+		rewrite_restrictor(sobj,custom,5)
+	end
+end
+
+function ruk4_spawn()
+	alife():create("ruk4",vector():set(-308.815,0.613,-375.114),38500,1513)
+end
+
+function bloo6_spawn()
+	local sim = alife()
+	sim:create("bloodsucker_weak",vector():set(-259.719,19.873,262.617),540027,680)
+	sim:create("bloodsucker_normal",vector():set(-259.173,20.082,265.407),541146,680)
+	sim:create("doberman",vector():set(-256.287,20.233,265.998),545471,680)
+	sim:create("dog_green",vector():set(-254.360,19.987,263.046),548785,680)
+	sim:create("dog_green",vector():set(-256.055,19.962,260.609),545458,680)
+end
+
+--pre_restrict_hr
+function restr_tp5_spawn()
+	local sim = alife()
+	local sobj = sim:create("space_restrictor",vector():set(464.174,-0.077,125.207),1064903,1701)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tp5.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+	sobj = sim:create("space_restrictor",vector():set(388.962,-0.079,90.821),1029808,1698)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\new\\restr\\restr_komb.ltx"
+		rewrite_restrictor(sobj,custom,150)
+	end
+end
+
+--в конце hr
+function tp5_spawn()
+	alife():create("c_tp5",vector():set(453.835,-0.077,122.050),1062917,1701)
+end
+
+function tp5_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp5" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function tp5b_spawn()
+	alife():create("c_tp5b",vector():set(111.002,27.537,-18.446),6993,324)
+end
+
+function tp5b_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp5b" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+--lc to x16
+function restr_tele5_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(91.019,0.208,-62.616),615179,1619)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele5.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function restr_tele5b_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(114.979,24.538,-19.755),7072,324)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele5b.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function ruk5_spawn()
+	alife():create("ruk5",vector():set(110.282,24.535,-20.448),6992,324)
+end
+
+--pre_restrict_x16
+function restr_tp6_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(-51.380,19.181,7.887),2063,310)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tp6.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+	local snd_obj = xr_sound.get_safe_sound_object([[ambient\new\actor_brain]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+--в конце x16
+function tp6_spawn()
+	alife():create("c_tp6",vector():set(-41.530,19.181,5.610),2693,310)
+end
+
+function tp6_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp6" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function tp6b_spawn()
+	alife():create("c_tp6b",vector():set(-333.888,2.082,-177.817),27388,1179)
+end
+
+function tp6b_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp6b" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+--lc to МГ
+function restr_tele6_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(-41.637,19.183,9.410),2704,310)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele6.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function restr_tele6b_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(-333.241,-0.247,-168.744),27780,1179)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele6b.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function ruk6_spawn()
+	alife():create("ruk6",vector():set(-333.888,-0.082,-177.817),27388,1179)
+end
+
+--pre_restrict_МГ
+function restr_tp7_spawn()
+	local sim = alife()
+	local sobj = sim:create("space_restrictor",vector():set(11.667,-9.688,211.098),305794,1246)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tp7.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-100.964,2.789,-11.237),209906,1239)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\ambient\\deadcity\\amb76_restr.ltx"
+		---мертвый город---
+		rewrite_restrictor(sobj,custom,279)
+	end
+end
+
+--в конце МГ
+function tp7_spawn()
+	alife():create("c_tp7",vector():set(13.833,-9.698,223.375),307586,1316)
+end
+
+function tp7_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp7" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function tp7b_spawn()
+	alife():create("c_tp7b",vector():set(-251.305,16.114,-273.351),20656,0)
+end
+
+function tp7b_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp7b" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+--lc to ЧД
+function restr_tele7_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(14.851,-9.853,233.936),308208,1316)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele7.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function restr_tele7b_spawn() 
+	local sobj = alife():create("space_restrictor",vector():set(-244.599,13.413,-266.352),27598,0)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele7b.ltx"
+		rewrite_restrictor(sobj, custom, 2.0)
+	end
+end
+
+function ruk7_spawn()
+	alife():create("ruk7",vector():set(-251.305,14.134,-273.351),20656,0)
+end
+
+--pre_restrict_ЧД
+function restr_tp8_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(191.280,16.660,226.035),499198,1)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tp8.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+end
+
+--в конце ЧД
+function tp8_spawn()
+	alife():create("c_tp8",vector():set(203.522,16.659,235.675),513034,1)
+end
+
+function tp8_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp8" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function tp8b_spawn()
+	alife():create("c_tp8b",vector():set(-167.376,0.004,31.349),80,480)
+end
+
+function tp8b_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp8b" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+--lc to prip
+function restr_tele8_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(216.262,22.459,259.658),526802,1)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele8.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function restr_tele8b_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(-160.858,-2.397,33.403),597,480)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele8b.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function ruk8_spawn()
+	alife():create("ruk8",vector():set(-167.376,-2.214,31.349),80,480)
+end
+
+--pre_restrict_prip
+function restr_tp9_spawn()
+	local sim = alife()
+	local sobj = sim:create("space_restrictor",vector():set(124.808,-1.054,-65.782),232676,580)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tp9.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+	sobj = sim:create("space_restrictor",vector():set(177.227,-2.218,99.123),255738,560)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\ambient\\pripyat\\amb79_restr.ltx"
+		---после взятия подсказки_8---
+		rewrite_restrictor(sobj,custom,340)
+	end
+end
+
+--в конце prip
+function tp9_spawn()
+	alife():create("c_tp9",vector():set(133.309,-2.392,-61.647),235492,580)
+end
+
+function tp9_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp9" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function tp9b_spawn()
+	alife():create("c_tp9b",vector():set(-25.638,-6.807,11.392),2566,337)
+end
+
+function tp9b_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp9b" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+--lc to x10
+function restr_tele9_spawn() 
+	local sobj = alife():create("space_restrictor",vector():set(154.305,-2.275,-57.626),246289,585)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele9.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function restr_tele9b_spawn()
+	local sim = alife()
+	local sobj = sim:create("space_restrictor",vector():set(-22.330,-8.989,15.783),3073,337)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele9b.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-22.735,-8.990,19.207),3077,336)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\ambient\\bunker\\amb38_restr.ltx"
+		---появление в х10---
+		rewrite_restrictor(sobj,custom,5)
+	end
+end
+
+function ruk9_spawn()
+	alife():create("ruk9",vector():set(-25.638,-8.807,11.392),2566,337)
+end
+
+--pre_restrict_x10
+function restr_tp10_spawn()
+	local sim = alife()
+	local sobj = sim:create("space_restrictor",vector():set(-21.150,-23.519,-15.455),3432,448)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_code.ltx"
+		rewrite_restrictor(sobj,custom,2.3)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-30.939,-23.517,-20.360),2185,371)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tp10.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+end
+
+--в конце x10
+function tp10_spawn()
+	alife():create("c_tp10",vector():set(-31.031,-23.516,-10.385),2196,372)
+end
+
+function tp10_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp10" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function tp10b_spawn()
+	alife():create("c_tp10b",vector():set(-8.261,10.312,-7.849),1776,111)
+end
+
+function tp10b_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp10b" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+--lc to x18
+function restr_tele10_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(-37.773,-23.520,1.403),1665,332)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele10.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function restr_tele10b_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(1.729,9.310,-5.005),2980,110)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele10b.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function ruk10_spawn()
+	alife():create("ruk10",vector():set(-8.261,9.332,-7.849),1776,111)
+end
+
+--pre_restrict_x18
+function restr_tp11_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(4.916,-12.363,8.296),4080,157)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tp11.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+end
+
+--в конце x18
+function tp11_spawn()
+	alife():create("c_tp11",vector():set(16.111,-12.430,7.262),5239,157)
+end
+
+function tp11_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp11" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function tp11b_spawn()
+	alife():create("c_tp11b",vector():set(-62.760,31.518,402.597),761389,784)
+end
+
+function tp11b_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp11b" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+--lc to aver
+function restr_tele11_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(16.261,-12.430,18.663),5258,156)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele11.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function restr_tele11b_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(-57.349,30.951,408.980),771184,784)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele11b.ltx"
+		rewrite_restrictor(sobj,custom,2)
+	end
+end
+
+function ruk11_spawn()
+	alife():create("ruk11",vector():set(-62.760,27.838,402.597),761389,784)
+end
+
+function restr_tp12_spawn() --excavat
+	local sobj = alife():create("space_restrictor",vector():set(316.201,-13.688,-266.341),1431068,791)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tp12.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+end
+
+function tp12_spawn()
+	local sim = alife()
+	local custom
+	local sobj = sim:create("space_restrictor",vector():set(-407.158,0.919,59.520),167528,777)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\ambient\\aver\\amb40_restr.ltx"
+		---грета---
+		rewrite_restrictor(sobj,custom,7.0)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-370.873,3.945,59.765),230680,777)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\ambient\\aver\\amb41_restr.ltx"
+		rewrite_restrictor(sobj,custom,2.0)
+	end
+	sim:create("c_tp12",vector():set(325.998,-5.852,-251.662),1448617,791)
+end
+
+function tp12_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "c_tp12" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+function restr_tele12_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(-375.731,2.247,67.153),222480,777)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_tele12.ltx"
+		rewrite_restrictor(sobj,custom,15)
+	end
+end
+
+function port_to_dark()
+	local actor = db.actor
+	level.add_pp_effector("teleport.ppe",65012,false)
+	actor:set_actor_position(vector():set(322.649,-6.990,-21.656))
+	actor:set_actor_direction(vector():set(-0.016999,0.000000,0.999856))
+	local snd_obj = xr_sound.get_safe_sound_object([[anomaly\teleport_work_1]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function port_greta()
+	local actor = db.actor
+	level.add_pp_effector("teleport.ppe",65013,false)
+	actor:set_actor_position(vector():set(-394.866,0.843,68.251))
+	actor:set_actor_direction(vector():set(-0.998883,0.000000,-0.047257))
+	local snd_obj = xr_sound.get_safe_sound_object([[anomaly\teleport_work_1]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function restr_tp_dark1_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(322.649,-6.990,-21.656),1442732,790)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_dark1.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+end
+
+function restr_dark_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(336.067,-6.106,-33.275),1467035,790)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_dark.ltx"
+		rewrite_restrictor(sobj,custom,65)
+	end
+end
+
+function restr_zvuk_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(312.257,-4.011,-55.475),1423487,790)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_zvuk.ltx"
+		rewrite_restrictor(sobj,custom,5)
+	end
+end
+
+function restr_zvuk1_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(312.534,-6.276,-22.319),1424838,790)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_zvuk1.ltx"
+		rewrite_restrictor(sobj,custom,35)
+	end
+end
+
+function restr_zvuk2_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(355.649,0.070,-61.935),1504188,790)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\restr_zvuk2.ltx"
+		rewrite_restrictor(sobj,custom,5)
+	end
+end
+
+function dark_start()
+	level.add_pp_effector("dark.ppe", 1779, true)
+	level.add_pp_effector("dark.ppe", 1780, true)
+	level.add_pp_effector("dark.ppe", 1781, true)
+	get_console():execute("unbind cam_2")
+	get_console():execute("unbind cam_3")
+	db.actor:give_info_portion("pnv_out")
+end
+
+function dark_stop()
+	level.remove_pp_effector(1779)
+	level.remove_pp_effector(1780)
+	level.remove_pp_effector(1781)
+	get_console():execute("bind cam_2 kF10")
+	get_console():execute("bind cam_3 kF11")
+	db.actor:give_info_portion("pnv_in")
+end
+
+function pnv_no()
+	db.actor:disable_info_portion("pnv_in")
+end
+
+function pnv_yes()
+	db.actor:disable_info_portion("pnv_out")
+end
+
+function kurs()
+	news_manager.send_tip(db.actor,"Не ходи кругами. Придерживайся какого-нибудь курса.",nil,nil,15000)
+end
+
+function gg_zub()
+	local snd_obj = xr_sound.get_safe_sound_object([[new\gg_zub]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+
+-- Нанесение хита и обездвиживание
+function power_off()
+	--наносим пси-удар
+	--boryan67.GG_hit()
+	--обездвиживание
+	db.actor.power = -db.actor.power + 0.05
+end
+
+-- засада в МК
+function mk_zasada_del()
+	local sim = alife()
+	local obj,sobj
+	for i = 1, 65534 do
+		obj = level.object_by_id(i)
+		if obj and obj:section() == "mk_zasada" then
+			sobj = sim:object(i)
+			if sobj then
+				sim:release(sobj,true)
+				break
+			end
+		end
+	end
+end
+
+function mk_zasada_change()
+	local sim = alife()
+	sim:create("m_controller_senator", vector():set(-27.519,8.952,-236.388),900229,728) 
+	sim:create("m_controller_senator1", vector():set(-27.876,8.951,-234.617),899121,728)
+	sim:create("m_controller_senator2", vector():set(-19.818,8.953,-235.628),912514,728)
+	power_off()
+end	
+
+-- постановка засады в МК
+function set_mk_zasada()
+	local sim = alife()
+	local sobj = sim:create("space_restrictor",vector():set(-22.961,8.952,-235.437),907014,728)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\foto\\restr\\mk_zasada_restr.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-22.961,8.952,-235.437),907014,728)
+	if sobj then 
+		custom = "[logic]\ncfg = scripts\\foto\\restr\\mk_zasada_restr_1.ltx" 
+		rewrite_restrictor(sobj,custom,5)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-22.961,8.952,-235.437),907014,728)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\foto\\restr\\mk_zasada_restr_2.ltx" 
+		rewrite_restrictor(sobj,custom,7)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-22.961,8.952,-235.437),907014,728)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\foto\\restr\\mk_zasada_restr_3.ltx" 
+		rewrite_restrictor(sobj,custom,30)
+	end
+		sim:create("mk_zasada",vector():set(-22.961,8.952,-235.437),907014,728)
+end
+
+function mk_essential()
+	db.actor:set_actor_position(vector():set(-23.793,8.945,-236.054))
+	db.actor:set_actor_direction(vector():set(0.788163,0.000000,0.615467))
+end
+
+-- Засада в Промзоне
+
+
+function prom_zasada_change()
+	local sim = alife()
+	sim:create("m_controller_senator",vector():set(68.538,20.038,-133.196),328079,1018) 
+	sim:create("m_controller_senator1",vector():set(65.404,20.039,-130.085),328079,1018)
+	sim:create("m_controller_senator2",vector():set(69.989,20.186,-125.728),328079,1018)
+	power_off()
+end	
+
+
+function set_prom_zasada()
+	local se_obj = alife():create("space_restrictor",vector():set(71.037,20.339,-130.546),328079,1018) 
+	local custom = "[logic]\ncfg = scripts\\foto\\restr\\prom_zasada_restr_2.ltx" 
+	rewrite_restrictor(se_obj, custom, 5.0)
+
+	alife():create("exo_outfit_fake",vector():set(71.039,20.349,-130.546),328079,1018)
+end
+
+function pooo_sound()
+   local snd_obj = xr_sound.get_safe_sound_object([[new\petrograf_pooo]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+-- Засада в МГ
+function mg_zasada_del()
+	local sim = alife()
+	local obj,sobj
+	for i = 1, 65534 do
+		obj = level.object_by_id(i)
+		if obj and obj:section() == "mg_zasada" then
+			local sobj = sim:object(i)
+			if sobj then
+				sim:release(sobj,true)
+				break
+			end
+		end
+	end
+end
+
+function mg_zasada_change()
+	local sim = alife()
+	sim:create("m_controller_senator",vector():set(1.748,15.624,83.211),298718,1362)
+	sim:create("m_controller_senator1",vector():set(4.255,15.626,80.718),300134,1362)
+	sim:create("m_controller_senator2",vector():set(2.255,15.626,81.105),298712,1362)
+	power_off()
+end
+
+
+function set_mg_zasada()
+	local sim = alife()
+	local sobj = sim:create("space_restrictor",vector():set(4.361,15.624,83.131),299196,1362)
+	if sobj then
+	local custom = "[logic]\ncfg = scripts\\foto\\restr\\mg_zasada_restr.ltx" 
+		rewrite_restrictor(sobj,custom,3)
+	end	
+	sobj = sim:create("space_restrictor",vector():set(4.361,15.624,83.131),299196,1362)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\foto\\restr\\mg_zasada_restr_1.ltx" 
+		rewrite_restrictor(sobj,custom,5)
+	end
+	sobj = sim:create("space_restrictor",vector():set(4.361,15.624,83.131),299196,1362)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\foto\\restr\\mg_zasada_restr_2.ltx" 
+		rewrite_restrictor(sobj,custom,7)
+	end
+	sobj = sim:create("space_restrictor",vector():set(4.361,15.624,83.131),299196,1362)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\foto\\restr\\mg_zasada_restr_3.ltx" 
+		rewrite_restrictor(sobj,custom,60)
+	end
+	sim:create("mg_zasada",vector():set(4.361,15.624,83.131),299196,1362)
+end
+
+function mg_essential()
+	db.actor:set_actor_position(vector():set(3.177,15.624,81.741))
+	db.actor:set_actor_direction(vector():set(0.564111,0.000000,0.825699))
+end
+
+-----------------------------Irokez----------------------------
+
+function da_40()
+	return db.actor:money() >= 39990
+end
+
+function net_40()
+	return db.actor:money() < 39990
+end
+
+function otdal_40(t1,t2)
+	local npc = t1
+	if npc:id() == db.actor:id() then
+		npc = t2
+	end
+	dialogs.relocate_money(npc,39990,"out")
+end
+
+function sms_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(415.911,10.760,73.325),1048435,1698)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\sms_komb.ltx"
+		rewrite_restrictor(sobj,custom,5)
+		news_manager.send_tip(db.actor,"Поднимись справа от входа в туннель до дерева. Там и найдёшь свой костюмчик.",nil,nil,30000)
+	end
+end
+
+function combic()
+alife():create("white_outfit",vector():set(415.911,10.770,73.325),1048435,1698)
+snd_obj = xr_sound.get_safe_sound_object([[ambient\new\actor_komb]])
+snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function irokez_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "irokez_kombez" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+------------------------Irokez_end--------------------------
+
+function del_c_lcs()
+ local sim = alife()
+ local sobj
+ for i = 65001, 65011 do
+  sobj = sim:story_object(i)
+  if sobj then
+   sim:release(sobj,true)
+  end
+ end
+end
+
+------------------------Island--------------------------
+
+function dysh_sms()
+	local sobj = alife():create("space_restrictor",vector():set(261.576,29.756,48.454),573279,0)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\sms_dysh.ltx"
+		rewrite_restrictor(sobj,custom,60)
+	end
+end
+
+function spawn_restrov()
+	local sim = alife()
+	local custom
+	local sobj = sim:create("space_restrictor",vector():set(-152.571,12.971,186.588),126603,1)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\new\\restr\\und_island.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-152.571,12.971,186.588),126603,1)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\new\\restr\\und_island_sound.ltx"
+		rewrite_restrictor(sobj,custom,15)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-159.810,14.799,182.142),118993,1)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\new\\restr\\act_island.ltx"
+		rewrite_restrictor(sobj,custom,25)
+	end
+end
+
+function message_to_sahar()
+	news_manager.send_tip(db.actor, "%c[10,5,255,10]Профессор, это Фотограф! Я нашёл вашу летающую штуковину, но рядом никого из людей нет. Одни монстры.", nil, nil, 20000)
+end
+
+function sms_sah_flesh()
+	news_manager.send_tip(db.actor, "%c[10,5,255,10]Профессор, это Фотограф! Я обнаружил труп академика. Сожалею. У него только есть флешка с какой-то информацией. Отдам её вашему коллеге Ормонту. Он, слава Богу, жив.", nil, nil, 30000)
+end
+
+function message_from_sahar_2()
+	news_manager.send_tip(db.actor, "%c[0,128,128,255]Фотограф, это Сахаров. Мы высылали спасательную команду на вертолёте в тот район, но они разбились. Ещё один мой коллега профессор Ормонт еле выкарабкался и прячется недалеко от разбившейся вертушки. Я ему постоянно шлю сообщения, что вы идёте к нему на помощь.  Уважаемый, я Вас очень прошу отыскать его. Должно быть он серьёзно ранен и ждёт любой человеческой помощи.", nil, "saharov", 20000)
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\08_dyshlo\ormont_poisk]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function sms_flesh_back()
+	news_manager.send_tip(db.actor, "%c[0,128,128,255]Фотограф, это Сахаров. Я бесконечно благодарен Вам за помощь. Передайте, пожалуйста, флешку Ормонту. Ещё раз спасибо за всё.", nil, "saharov", 25000)
+end
+
+function blast()
+	local actor = db.actor
+	if actor then
+		local pos = actor:position()
+		local particle = particles_object([[amk_anoms\bold_blast]])
+		local snd_obj = xr_sound.get_safe_sound_object([[anomaly\gravi_blowout2]])
+		particle:play_at_pos(pos)
+		snd_obj:play_at_pos(db.actor,pos)
+		--level.disable_input()
+	end
+end
+
+function lift()
+	local actor = db.actor
+	level.add_pp_effector ("teleport.ppe", 30331, false)
+	local snd_obj = xr_sound.get_safe_sound_object([[anomaly\teleport_work_1]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+	if actor then
+		level.add_pp_effector ("blink.ppe", 9112, false)
+		local pos = vector():set(-152.72406005859,22.07590675354,188.43330383301) 
+		actor:set_actor_position(pos)
+	end
+end
+
+function skala()
+	local actor = db.actor
+	level.add_pp_effector ("teleport.ppe", 30331, false)
+	local snd_obj = xr_sound.get_safe_sound_object([[anomaly\teleport_work_1]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+	if actor then
+		level.add_pp_effector ("blink.ppe", 9112, false)
+		local pos = vector():set(-25.673098,29.998055,-122.653603) 
+		actor:set_actor_position(pos)
+	end
+end
+
+function orm_spawn()
+	local sobj = alife():create("ormont",vector():set(-217.914,10.653,-244.415),55284,0)
+	if sobj then
+		local tbl = amk.read_stalker_params(sobj)
+		if tbl then
+			tbl.health = 0.0899999961256981
+			tbl.updhealth = 0.0899999961256981
+			amk.write_stalker_params(tbl,sobj)
+		end
+	end
+end
+
+function iof_spawn()
+	--local sobj = alife():create("ioffe",vector():set(-149.217,20.850,182.786),130410,1)
+	local sobj = alife():create("ioffe",vector():set(-141.086,19.578,181.332),138853,1)
+	if sobj then
+		local tbl = amk.read_stalker_params(sobj)
+		if tbl then
+                        tbl.sid = 9707
+			tbl.health = 0
+			tbl.updhealth = 0
+			amk.write_stalker_params(tbl,sobj)
+		end
+	end
+end
+
+function island_skala()
+	local sim = alife()
+	local custom
+	local sobj = sim:create("space_restrictor",vector():set(-149.25805664063,22.168643951416,179.26412963867),130405,1)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\new\\restr\\port_island.ltx"
+		rewrite_restrictor(sobj,custom,1)
+	end
+end
+
+function scan_monster()
+	local dist = 30	-- дистанция в метрах
+	local actor = db.actor
+	local obj, sobj
+	if not actor or not actor:alive() then
+		return
+	end
+	for a = 1,65535 do
+		obj = level.object_by_id(a)	-- ищем на уровне
+		sobj = alife():object(a)
+		if sobj and obj and IsMonster(sobj) and obj:alive() and obj:position():distance_to(actor:position()) < dist then
+			return	-- есть хоть один живой в радиусе
+		end
+	end
+	-- нет живых монстров в радиусе
+	if not has_alife_info("enable_voice") then
+		actor:give_info_portion("enable_voice")
+	end
+end
+
+local tbl_marksman = {
+{
+	position = {x=-160.052826,y=16.633885,z=217.854401},
+    lv = 118274,
+    gv = 1,
+	sect = "marksman1"
+    },
+{
+    position = {x=-177.912903,y=17.130827,z=206.783218},
+    lv = 99062,
+    gv = 1,
+	sect = "marksman2"
+    },
+{
+    position = {x=-201.556824,y=17.083298,z=188.734756},
+    lv = 73241,
+    gv = 1,
+	sect = "marksman3"
+    },
+{
+    position = {x=-196.239166,y=14.616874,z=165.503922},
+    lv = 79252,
+    gv = 1,
+	sect = "marksman4"
+    }
+}
+-- создаем случайного стрелка
+function marksman_rnd()
+	-- при каждом вызове добиваемся гарантированного неповторения
+	local x = amk.load_variable("marksman",nil)	-- читаем переменную
+	local y
+	repeat
+		y = math.random(table.getn(tbl_marksman))	-- выбираем случайного стрелка
+	until x ~= y	-- повторяем если совпало
+	amk.save_variable("marksman",y)	-- сохраняем значение
+	local a = tbl_marksman[y]	-- получаем данные из таблицы
+	local sim = alife()
+	local sobj = sim:create(a.sect, vector():set(a.position.x,a.position.y,a.position.z), a.lv, a.gv)	-- создаем стрелка	
+	if sobj then
+		amk.save_variable("marksman_id",sobj.id)	-- запоминаем ID	
+	end
+end
+-- удаляем стрелка если он смотался
+function marksman_del()
+	amk.del_variable("marksman")	-- удаляем переменную
+	local sobj_id = amk.load_variable("marksman_id",nil)	-- читаем ид
+	if sobj_id then
+		local sim = alife()
+		local sobj = sim:object(sobj_id)	-- получаем серверный объект
+		if sobj then
+			sim:release(sobj,true)	-- удаляем серверный объект
+		end
+		amk.del_variable("marksman_id")	-- удаляем переменную
+	end
+end
+-- зачищаем переменные стрелка если он убит
+function marksman_clear()
+	amk.del_variable("marksman")	-- удаляем переменную
+	amk.del_variable("marksman_id")	-- удаляем переменную
+end
+
+--Таймер ожидания появления острова
+function check_time_ostrov()
+	amk.g_start_timer("ostrov_wait",0,0,0.4,0)
+end
+
+function flesh_academ_have(task,objective)
+	return new_dialog.item_much("academ_flash",1) ~= false
+end
+
+function flesh_peredal(first_speaker,second_speaker)
+	new_dialog.out_item_much("academ_flash",1)
+end
+
+function orm_for_del()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "ormont" then
+			sim:release(sobj,true)
+			break
+		end
+	end
+end
+
+--Таймер ожидания инфо о переходе
+function check_time_ormont()
+	amk.g_start_timer("ormont_wait",0,0,2,0)
+end
+
+function saharov_island_nagrada(first_speaker, second_speaker)
+        dialogs.relocate_item_section(second_speaker, "detector_elite_sak", "in", 1)
+end
+
+function bazar()
+	local sim = alife()
+	local custom
+	local sobj = sim:create("space_restrictor",vector():set(-25.673098,29.998055,-122.653603),263638,0)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\new\\restr\\bazar_restr.ltx"
+		rewrite_restrictor(sobj,custom,3)
+	end
+	sim:create("mercd1",vector():set(-23.251287,29.998600,-119.980339),266729,0)
+	sim:create("mercd2",vector():set(-22.379089,29.998783,-116.485924),267497,0)
+	sim:create("mercd3",vector():set(-18.449453,29.998989,-117.670677),272135,0)
+	sim:create("mercd4",vector():set(-13.852438,29.998989,-116.463684),276767,0)
+end
+
+function skin_restr_vhod_spawn()
+	local sobj = alife():create("space_restrictor",vector():set(-212.666,17.243,248.198),612161,688)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\new\\restr\\skin_restr_vhod.ltx"
+		rewrite_restrictor(sobj,custom,10)
+	end
+end
+
+function kont_vhod_spawn()
+	local sim = alife()
+	sim:create("catcher_vhod1",vector():set(-234.362,17.035,235.317),579691,688)
+	sim:create("catcher_vhod2",vector():set(-235.836,17.125,235.639),577517,688)
+	sim:create("catcher_vhod3",vector():set(-239.776,17.208,240.599),570966,688)
+	sim:create("catcher_prison1",vector():set(-273.556,10.371,228.585),518006,672)
+	sim:create("catcher_prison2",vector():set(-269.538,11.323,228.961),524455,672)
+	sim:create("catcher_main",vector():set(-274.856,10.827,222.699),515833,672)
+	sim:create("utyug",vector():set(-270.240,10.711,219.745),523335,672)
+	sim:create("irokez_skin",vector():set(455.900,-0.077,130.629),1063352,1701)
+end
+
+function prokol_restr_spawn()
+    local sim = alife()
+    local custom
+	local sobj = sim:create("space_restrictor",vector():set(-227.671,16.879,239.396),590465,688)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\new\\restr\\prokol_restr.ltx"
+		rewrite_restrictor(sobj,custom,10)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-227.671,16.879,239.396),590465,688)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\new\\restr\\prokol_restr1.ltx" 
+		rewrite_restrictor(sobj,custom,9)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-266.249,10.406,240.908),530000,682)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\new\\restr\\prokol_middle_restr.ltx" 
+		rewrite_restrictor(sobj,custom,16)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-266.249,10.406,240.908),530000,682)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\new\\restr\\prokol_middle_restr1.ltx" 
+		rewrite_restrictor(sobj,custom,16)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-272.273,10.641,221.939),520114,672)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\new\\restr\\prokol_prison_restr.ltx" 
+		rewrite_restrictor(sobj,custom,6)
+	end
+	sobj = sim:create("space_restrictor",vector():set(-272.273,10.641,221.939),520114,672)
+	if sobj then
+		custom = "[logic]\ncfg = scripts\\new\\restr\\prokol_prison_restr1.ltx" 
+		rewrite_restrictor(sobj,custom,6)
+	end
+	create_anom('zone_shkura_1', vector():set(-272.408,10.627,221.602), 520114, 672, 0.2, 0.0001)
+    create_anom('zone_shkura', vector():set(-263.923,16.045,236.134), 533304, 679, 0.0, 0.0001)
+    create_anom('zone_shkura', vector():set(-279.612,13.201,237.544), 509537, 672, 0.0, 0.0001)
+    create_anom('zone_shkura', vector():set(-250.341,16.233,236.939), 554401, 679, 0.0, 0.0001)
+end
+
+function vkarmane_20()
+	return db.actor:money() >= 20000
+end
+
+function vkarmane_30()
+	return db.actor:money() >= 30000
+end
+
+function ne_vkarmane_20()
+	return db.actor:money() < 20000
+end
+
+function ne_vkarmane_30()
+	return db.actor:money() < 30000
+end
+
+function skin_obmen_20(t1,t2)
+	local npc = t1
+	if npc:id() == db.actor:id() then
+		npc = t2
+	end
+	dialogs.relocate_money(npc,20000,"out")
+	dialogs.relocate_item_section(npc,"kont_skin","in")
+end
+
+function skin_obmen_30(t1,t2)
+	local npc = t1
+	if npc:id() == db.actor:id() then
+		npc = t2
+	end
+	dialogs.relocate_money(npc,30000,"out")
+	dialogs.relocate_item_section(npc,"kont_skin","in")
+end
+
+function kontry_enemy()
+    level.add_pp_effector ("contra5.ppe", 30339, false)
+	local snd_obj = xr_sound.get_safe_sound_object([[ambient\new\kon_trap]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+	clear_kont()
+	kont_reorg()
+end
+
+function kontry_enemy_less()
+    level.add_pp_effector ("contra5.ppe", 30339, false)
+	local snd_obj = xr_sound.get_safe_sound_object([[ambient\new\kon_trap]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+	clear_kont_less()
+	kont_reorg_less()
+end
+
+    local tbl_sect = {
+	['catcher_vhod3'] = true,	-- дополнить по образу и подобию
+	['catcher_vhod2'] = true,
+	['catcher_vhod1'] = true,
+	['catcher_prison1'] = true,
+	['catcher_prison2'] = true,
+	['catcher_main'] = true
+}
+
+function clear_kont(...)
+	local sobj, sect
+	local sim = alife()
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj then
+			sect = sobj:section_name()
+			if sect and tbl_sect[sect]~=nil then
+				sim:release(sobj,true)
+			end		
+		end
+	end			
+end
+
+function kont_reorg()
+	local sim = alife()
+	sim:create("m_controller_normal",vector():set(-234.362,17.035,235.317),579691,688)
+	sim:create("m_controller_normal",vector():set(-235.836,17.125,235.639),577517,688)
+	sim:create("m_controller_normal",vector():set(-239.776,17.208,240.599),570966,688)
+	sim:create("m_controller_normal",vector():set(-273.556,10.371,228.585),518006,672)
+	sim:create("m_controller_normal",vector():set(-269.538,11.323,228.961),524455,672)
+	sim:create("m_controller_normal_skin",vector():set(-274.856,10.827,222.699),515833,672)
+end
+
+local tbl_sectl = {
+	['catcher_vhod3'] = true,	
+	['catcher_vhod2'] = true,
+	['catcher_vhod1'] = true,
+	['catcher_prison1'] = true,
+	['catcher_prison2'] = true
+}
+
+function clear_kont_less(...)
+	local sobj, sect
+	local sim = alife()
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj then
+			sect = sobj:section_name()
+			if sect and tbl_sectl[sect]~=nil then
+				sim:release(sobj,true)
+			end		
+		end
+	end			
+end
+
+function kont_reorg_less()
+	local sim = alife()
+	sim:create("m_controller_normal",vector():set(-234.362,17.035,235.317),579691,688)
+	sim:create("m_controller_normal",vector():set(-235.836,17.125,235.639),577517,688)
+	sim:create("m_controller_normal",vector():set(-239.776,17.208,240.599),570966,688)
+	sim:create("m_controller_normal",vector():set(-273.556,10.371,228.585),518006,672)
+	sim:create("m_controller_normal",vector():set(-269.538,11.323,228.961),524455,672)
+end
+
+local tbl_exo = {
+{
+    position={x=124.65629577637,y=9.4375343322754,z=-92.531703186035},
+    lv=439685,
+    gv=1112
+    },
+{
+    position={x=109.47286987305,y=9.7626628875732,z=-100.98972320557},
+    lv=410258,
+    gv=1075
+    },
+{
+    position={x=27.660795974731,y=18.955379104614,z=-86.134239196777},
+    lv=252404,
+    gv=990
+    },
+{
+    position={x=81.451705932617,y=24.637512207031,z=-128.99038696289},
+    lv=328078,
+    gv=1018
+	},
+{
+    position={x=66.208106994629,y=24.03825378418,z=-131.91413879395},
+    lv=328078,
+    gv=1018
+    }
+}
+-- спавним экзу
+function exo_spawn(...)
+	local a = tbl_exo[math.random(table.getn(tbl_exo))]
+	alife():create("exo_outfit", vector():set(a.position.x,a.position.y,a.position.z), a.lv, a.gv)
+end
+
+function utug_bratan()
+    local snd_obj = xr_sound.get_safe_sound_object([[ambient\new\actor_74]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+end

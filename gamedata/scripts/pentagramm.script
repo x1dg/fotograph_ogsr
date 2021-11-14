@@ -1,0 +1,272 @@
+--[[---------------------------------------------------------------------------------------------------------------------------------
+ File			: pentagramm.script
+ Description	: Процедуры обработки зон-пентаграмм
+ Copyright		: 2013 © boryan67
+ Author			: boryan67 - scripts & mauvais - particles, sounds
+ Last edit		: 11.09.2013
+--]]------------------------------------------------------------------------------------------------------------------------------------
+local max_dist = 3	-- радиус пентаграммы
+local particle, sound
+
+-- таблица координат и свойств пентаграмм
+local tbl_pentagram = {
+[1]={pos=vector():set(-38.330,-4.578,-1.650), lv=4781, gv=30, 
+	sect="penta_red", speech="ambient\\new\\actor_penta1",
+	help="help_red", snd_help="characters_voice\\scenario\\backup\\help_red",
+	tbl={"izlom_hand","mutant_tail_cat","ks_talisman_03"},
+	part={"mauvais\\penta_red_active2","mauvais\\penta_red_active1","mauvais\\penta_red_active"},
+	sound={"anomaly\\penta_red_act2","anomaly\\penta_red_act1","anomaly\\penta_red_act"},
+	info="pentagramm_01"
+	},
+[2]={pos=vector():set(-0.920,-16.344,60.897), lv=2739, gv=163, 
+	sect="penta_green", speech="ambient\\new\\actor_penta2",
+	help="help_green", snd_help="characters_voice\\scenario\\backup\\help_green",
+	tbl={"mutant_dog_tail","mutant_chimera_kogot","ks_talisman_02"},
+	part={"mauvais\\penta_green_active2","mauvais\\penta_green_active1","mauvais\\penta_green_active"},
+	sound={"anomaly\\penta_green_act2","anomaly\\penta_green_act1","anomaly\\penta_green_act"},
+	info="pentagramm_02"
+	},
+[3]={pos=vector():set(-33.275,-7.800,-22.171), lv=1755, gv=311, 
+	sect="penta_yellow", speech="ambient\\new\\actor_penta3", 
+	help="help_yellow", snd_help="characters_voice\\scenario\\backup\\help_yellow",
+	tbl={"mutant_boar_leg","mutant_psevdodog_tail","ks_talisman_05"},
+	part={"mauvais\\penta_yellow_active2","mauvais\\penta_yellow_active1","mauvais\\penta_yellow_active"},
+	sound={"anomaly\\penta_yellow_act2","anomaly\\penta_yellow_act1","anomaly\\penta_yellow_act"},
+	info="pentagramm_03"
+	},
+[4]={pos=vector():set(-23.123,-23.519,-15.398), lv=2930, gv=448, 
+	sect="penta_blue", speech="ambient\\new\\actor_penta4", 
+	help="help_blue", snd_help="characters_voice\\scenario\\backup\\help_blue",
+	tbl={"mutant_flesh_eye","vypolzen_hrebet","ks_talisman_06"},
+	part={"mauvais\\penta_blue_active2","mauvais\\penta_blue_active1","mauvais\\penta_blue_active"},
+	sound={"anomaly\\penta_blue_act2","anomaly\\penta_blue_act1","anomaly\\penta_blue_act"},
+	info="pentagramm_04"
+	}
+}
+
+-- таблица всех реагентов
+local tbl_reagent = {
+["izlom_hand"] = true,
+["ks_talisman_02"] = true,
+["ks_talisman_03"] = true,
+["ks_talisman_05"] = true,
+["ks_talisman_06"] = true,
+["mutant_boar_leg"] = true,
+["mutant_chimera_kogot"] = true,
+["mutant_dog_tail"] = true,
+["mutant_flesh_eye"] = true,
+["mutant_psevdodog_tail"] = true,
+["mutant_tail_cat"] = true,
+["vypolzen_hrebet"] = true
+}
+
+local posX10, lvX10, gvX10 = vector():set(20.913,-8.990,5.826), 8691, 352 -- позиция Шубина в Х-10
+
+-- старт пентаграмм
+function penta_start()
+	penta_spawn(1)
+end
+-- создание пентаграмм
+function penta_spawn(num)
+	local sim = alife()
+	local penta = tbl_pentagram[num] 	-- получили данные пентаграммы
+	local sobj = sim:create(penta.sect, penta.pos, penta.lv, penta.gv)	-- создаем пентаграмму
+	if sobj then
+		amk.save_variable("PentaID", sobj.id)	-- сохраняем ИД
+		amk.save_variable("PentaAct", num)		-- сохраняем номер активной пентаграммы
+		amk.save_table("Reag_"..tostring(sobj.id), penta.tbl)	-- запомним реагенты
+	end
+	-- создадим рестриктор
+	local custom = "[logic]\ncfg = scripts\\foto\\restr\\penta_restr.ltx"
+	sobj = sim:create("space_restrictor",penta.pos, penta.lv, penta.gv)	-- создаем рестриктор
+	val_test.rewrite_restrictor(sobj, custom, 3.6)
+end
+
+-- произносим реплику
+function penta_speech()
+	local active = amk.load_variable("PentaAct", nil)	-- читаем номер активной пентаграммы
+	if active then
+		local penta = tbl_pentagram[active] 	-- получили данные пентаграммы
+		local sound = sound_object(penta.speech)
+		if sound then
+			sound:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+		end
+		db.actor:give_info_portion(penta.info)
+	end
+end
+
+-- обработчик падения предметов
+function on_item_drop(item)
+	if not has_alife_info("shubin_pentagramm_dialog_start") or has_alife_info("shubin_pentagramm_dialog_have") then 
+		return 
+	end
+	local sect = item:section()	-- получили секцию предмета
+	-- обрабатывать только, если это один из наших реагентов:
+	if tbl_reagent[sect] then
+		local id = amk.load_variable("PentaID", nil)	-- читаем ИД активной пентаграммы
+		local active = amk.load_variable("PentaAct", nil)	-- читаем номер активной пентаграммы
+		if not active or not id then
+			return
+		end
+		local dist,inv_wnd,penta,pos,sobj
+		local obj = level.object_by_id(id)	-- проверим наличие на уровне
+		if not obj then	-- нет пентаграммы на уровне
+			return
+		end
+		-- начнем проверку на конкретные предметы
+		local reagent = amk.load_table("Reag_"..tostring(id), nil)
+		-- посчитаем количество реагентов
+		local cnt = #reagent
+		local sim = alife()
+		for k,v in pairs(reagent) do
+			-- если это один из наших реагентов:
+			if sect == v then
+				penta = tbl_pentagram[active] 	-- получили данные пентаграммы
+				pos = penta.pos	-- получили позицию пентаграммы
+				dist = db.actor:position():distance_to(pos)	-- расчитываем расстояние до центра
+				if dist > max_dist then	-- предмет упал слишком далеко
+					return
+				end
+				sobj = sim:object(item:id())
+				if sobj then
+					sim:release(sobj,true)				-- удаляем предмет
+					table.remove(reagent,k)
+					amk.save_table("Reag_"..tostring(id), reagent)	-- запомним реагенты
+					-- закроем окно инвентаря если оно открыто
+					local inv_wnd = level.main_input_receiver()
+					if inv_wnd then
+						inv_wnd:GetHolder():start_stop_menu(inv_wnd, true)
+					end
+					-- эффект поглощения реагента
+					sound = sound_object(penta.sound[cnt])
+					if sound then
+						sound:play_at_pos(db.actor, pos)
+					end
+					particle = particles_object(penta.part[cnt])
+					if particle then
+						particle:play_at_pos(pos)
+					end
+					cnt = cnt - 1
+					-- все реагенты исчерпаны, включим таймер до подсказки 
+					if cnt == 0 then
+						amk.start_timer("penta_timer", 3)
+					end
+				end
+			end
+		end
+	end
+end
+
+-- обработчик таймера
+function penta_timer()
+	local active = amk.load_variable("PentaAct", nil)	-- читаем номер активной пентаграммы
+	local id = amk.load_variable("PentaID", nil)	-- читаем ИД активной пентаграммы
+	if not active or not id then
+		return
+	end
+	local help_id = amk.load_variable("HelpID", nil)	-- читаем ИД подсказки
+	local sim = alife()
+	local sobj,penta
+	if help_id then	-- время вышло, удалим подсказку
+		sobj = sim:object(help_id)
+		if sobj then
+			sim:release(sobj,true)
+		end
+		amk.del_variable("HelpID")
+		-- удалим текущую пентаграмму
+		sobj = sim:object(id)
+		if sobj then
+			sim:release(sobj,true)
+			amk.del_variable("Reag_"..tostring(id))
+		end
+		-- создадим новую если нужно
+		active = active + 1	-- увеличим счетчик
+		if active <= table.getn(tbl_pentagram) then	-- записи в таблице не исчерпаны	
+			penta_spawn(active)	-- создадим следующую пентаграмму
+			return
+		end
+	else 	-- подсказки нет, нужно создать
+		penta = tbl_pentagram[active] 	-- получили данные пентаграммы
+		sobj = sim:create(penta.help, penta.pos, penta.lv, penta.gv)	-- создаем подсказку
+		if sobj then
+			local sound = sound_object(penta.snd_help)	-- озвучим подсказку
+			if sound then
+				sound:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+			end
+			amk.save_variable("HelpID", sobj.id)	-- сохраняем ИД подсказки
+			amk.start_timer("penta_timer", 17)	-- запуск таймера подсказки
+		end
+		return
+	end
+	-- Пентаграммы пройдены, пора спавнить Шубина-человека.
+	sobj = alife():create("shubin2",posX10,lvX10,gvX10) --создадим Шубина
+    if sobj then
+		amk.save_variable("Shubin2ID", sobj.id) --сохраняем ИД  
+	end
+	-- выдадим поршень окончания исследования пентаграмм
+	db.actor:give_info_portion("shubin_pentagramm_dialog_have")
+	-- удалим переменные
+	amk.del_variable("PentaID")
+	amk.del_variable("PentaAct")
+end
+
+-- спавн Шубина-призрака в X10
+function shubin_x10_spawn(param1, param2)
+	local sobj = alife():create("shubin_x10",posX10,lvX10,gvX10) --создадим Шубина
+    if sobj then
+		amk.save_variable("ShubinX10ID", sobj.id) --сохраняем ИД  
+		level.add_pp_effector ("blink.ppe", 9115, false) --создадим вспышку
+		particle = particles_object("anomaly2\\group_items\\mauv_shubin")
+		if particle then
+			particle:play_at_pos(pos)
+		end
+	end
+end
+
+-- удаление Шубина-призрака в X10
+function del_shubin_x10(actor, obj)
+	local shubinx10_id = amk.load_variable("ShubinX10ID", nil)
+	if shubinx10_id then
+		local sobj = alife():object(shubinx10_id)
+		local obj = level.object_by_id(shubinx10_id)
+		if obj then
+			local pos = obj:position()
+			particle = particles_object("anomaly2\\group_items\\mauv_shubin_exit")
+			if particle then
+				particle:play_at_pos(pos)
+			end
+		end
+		if sobj then --Шубин в Х10 существует
+			alife():release(sobj,true) --удаляем серверный объект
+			amk.del_variable("ShubinX10ID")
+			if has_alife_info("shubin_enemy2") then 
+				local snd_obj = xr_sound.get_safe_sound_object([[characters_voice\scenario\backup\shubin_wound]])
+				snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+			end 
+		end 
+	end
+end
+--****************************************************************************************************************
+--[[
+shubin_pentagramm_dialog_start --начало задания
+shubin_pentagramm_dialog_have --последняя пентаграмма исследована
+shubin_pentagramm_dialog_done --сдача Шубину задания
+--]]
+-- для тестирования
+-- получить все реагенты
+function all_reagent()
+	local penta, tbl, sobj
+	for a=1, 4 do
+		penta = tbl_pentagram[a] 	-- получили данные пентаграммы
+		tbl = penta.tbl	-- получили таблицу реагентов
+		for a=1,3 do
+			sobj=alife():create(tbl[a], db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+	end
+end
+
+function sms_pentagramm()
+news_manager.send_tip(db.actor, "%c[255,255,75,75]Найдена пентаграмма.\\nИнформация о ней записана в ПДА, в разделе 'Журнал'.", nil, nil, 20000) 
+end
+
+--****************************************************************************************************************

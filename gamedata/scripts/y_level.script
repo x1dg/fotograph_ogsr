@@ -1,0 +1,586 @@
+function create_level_changer(
+p_story_id, -- STORY_ID нового level_changer (понадобится нам позже)
+p_position, -- вектор, координаты точки, в которой будет располагаться центр нового level_changer
+p_lvertex_id, -- level_vertext_id - идентифицируют уровень, на котором будет создан level_changer
+p_gvertex_id, -- game_vertext_id 
+
+p_dest_lv, -- level_vertex_id - идентифицируют уровень, на который level_changer будет перебрасывать игрока 
+p_dest_gv, -- game_vertex_id
+p_dest_pos, -- координаты точки, в которой на новом уровне окажется игрок
+p_dest_dir, -- направрение взгляда игрока
+p_dest_level, -- название уровня, например "L11_Pripyat"
+p_silent -- следует задать 1, чтобы подавить вопрос о смене уровня (автоматический переход)
+)
+local obj = alife():create("level_changer", p_position, p_lvertex_id, p_gvertex_id)
+
+level.map_add_object_spot(obj.id, "level_changer", "")
+
+local packet = net_packet()
+obj:STATE_Write(packet)
+
+-- свойства cse_alife_object
+local game_vertex_id = packet:r_u16()
+local cse_alife_object__unk1_f32 = packet:r_float()
+local cse_alife_object__unk2_u32 = packet:r_u32()
+local level_vertex_id = packet:r_u32()
+local object_flags = packet:r_u32()
+local custom_data = packet:r_stringZ()
+local story_id = packet:r_u32()
+local spawn_story_id = packet:r_u32()
+
+-- свойства cse_shape
+local shape_count = packet:r_u8()
+for i=1,shape_count do
+local shape_type = packet:r_u8()
+if shape_type == 0 then
+-- sphere
+local center = packet:r_vec3()
+local radius = packet:r_float()
+else
+-- box
+local axis_x_x = packet:r_float()
+local axis_x_y = packet:r_float()
+local axis_x_z = packet:r_float()
+local axis_y_x = packet:r_float()
+local axis_y_y = packet:r_float()
+local axis_y_z = packet:r_float()
+local axis_z_x = packet:r_float()
+local axis_z_y = packet:r_float()
+local axis_z_z = packet:r_float()
+local offset_x = packet:r_float()
+local offset_y = packet:r_float()
+local offset_z = packet:r_float()
+end
+end
+
+-- свойства cse_alife_space_restrictor
+local restrictor_type = packet:r_u8()
+
+-- свойства cse_level_changer
+local dest_game_vertex_id = packet:r_u16() 
+local dest_level_vertex_id = packet:r_u32() 
+local dest_position = packet:r_vec3()
+local dest_direction = packet:r_vec3()
+local dest_level_name = packet:r_stringZ()
+local dest_graph_point = packet:r_stringZ()
+local silent_mode = packet:r_u8()
+
+
+packet:w_begin(game_vertex_id) -- game_vertex_id
+packet:w_float(cse_alife_object__unk1_f32)
+packet:w_u32(cse_alife_object__unk2_u32) 
+packet:w_u32(level_vertex_id) -- level_vertex_id
+packet:w_u32( bit_not(193) ) -- object_flags = -193 = 0xFFFFFF3E
+packet:w_stringZ(custom_data)
+packet:w_u32(p_story_id) -- story_id
+packet:w_u32(spawn_story_id)
+
+packet:w_u8(1) -- количество фигур
+-- packet:w_u8(0) -- тип фигуры: сфера
+-- packet:w_vec3(vector():set(0, 0, 0)) -- sphere_center
+-- packet:w_float(3.0)
+packet:w_u8(1) -- тип фигуры: box
+packet:w_float(2) -- axis_x_x
+packet:w_float(0) -- axis_x_y
+packet:w_float(0) -- axis_x_z
+packet:w_float(0) -- axis_y_x
+packet:w_float(4) -- axis_y_y
+packet:w_float(0) -- axis_y_z
+packet:w_float(0) -- axis_z_x
+packet:w_float(0) -- axis_z_y
+packet:w_float(4) -- axis_z_z
+packet:w_float(0) -- offset_x
+packet:w_float(0) -- offset_y
+packet:w_float(0) -- offset_z
+
+packet:w_u8(3) -- restrictor_type
+
+packet:w_u16(p_dest_gv) -- destination game_vertex_id
+packet:w_s32(p_dest_lv) -- destination level_vertex_id
+packet:w_vec3(p_dest_pos) -- destination position
+packet:w_vec3(p_dest_dir) -- destination direction (направление взгляда)
+packet:w_stringZ(p_dest_level) -- destination level name
+packet:w_stringZ("start_actor_02") -- some string, always const
+packet:w_u8(p_silent) -- 1 for silent level changing
+
+packet:r_seek(0)
+obj:STATE_Read(packet, packet:w_tell())
+news_manager.send_tip(db.actor, "Новый путь", nil, nil, 20000)
+end
+
+----------------------------------F.O.T.O.G.R.A.F------------------------------
+
+function lch_road_swamp_road()
+	-- создается переход из Полигона на Болота
+	if (not has_alife_info(	"road_swamp" )) then
+level_new.create_level_changer(30226, vector():set( -288.639,-0.076,90.831 ),52716, 1516,
+        439042, 
+        797,
+        vector():set(-326.259,2.274,63.844),
+        vector():set(0,-1.5,0),"swamp",0)
+        db.actor:give_info_portion("road_swamp")
+	end
+	-- создается переход из Болот на Полигон
+	if (not has_alife_info(	"swamp_road" )) then
+level_new.create_level_changer(30241, vector():set( 291.528,6.923,65.638 ),1781007, 799,
+        62401, 
+        1516,
+        vector():set(-276.383,-0.076,102.466),
+        vector():set(0,-1.5,0),"hiding_road",0)
+        db.actor:give_info_portion("swamp_road")
+	end
+end
+
+
+function lch_mk_road_mk()
+	-- создается переход из МК на Полигон
+	if (not has_alife_info(	"lch_mk_road" )) then
+level_new.create_level_changer(30346, vector():set( 99.762,38.201,240.594 ),1099924, 766,
+        85121, 
+        1520,
+        vector():set(-249.870,1.595,-334.193),
+        vector():set(0,-1.0,0),"hiding_road",0)
+        db.actor:give_info_portion("lch_mk_road")
+	end
+	-- создается переход с Полигона в МК
+	if (not has_alife_info(	"lch_road_mk" )) then
+level_new.create_level_changer(30347, vector():set( -277.612,1.495,-340.010 ),60734, 1520,
+        1086792, 
+        766,
+        vector():set(91.210,36.281,253.368),
+        vector():set(0,0,0),"predbannik",0)
+        db.actor:give_info_portion("lch_road_mk")
+	end
+end
+
+
+function lch_mk_prom()
+	-- создается переход из МК в Промзону
+	if (not has_alife_info(	"lch_mk_prom" )) then
+level_new.create_level_changer(30225, vector():set( -574.206,18.707,422.968 ),69791, 619,
+        240937, 
+        984,
+        vector():set(23.763,5.237,-631.241),
+        vector():set(0,0,0),"promzone",0)
+        db.actor:give_info_portion("lch_mk_prom")
+	end
+end
+
+
+function lch_aver_road()
+	-- создается переход из Леса на Полигон
+	if (not has_alife_info(	"lch_aver_road" )) then
+level_new.create_level_changer(30220, vector():set( 413.273,-9.210,-318.836 ),1615179, 795,
+        992981, 
+        1692,
+        vector():set(345.519,0.001,441.831),
+        vector():set(0,2.0,0),"hiding_road",0)
+        db.actor:give_info_portion("lch_aver_road")
+	end
+end
+
+
+function lch_road_aver()
+	-- создается переход из Полигона в Лес
+	if (not has_alife_info(	"lch_road_aver" )) then
+level_new.create_level_changer(30243, vector():set( 359.436,-0.001,448.796 ),1005312, 1692,
+        1564133, 
+        795,
+        vector():set(386.826,-9.349,-319.510),
+        vector():set(0,1.5,0),"aver",0)
+        db.actor:give_info_portion("lch_road_aver")
+	end
+end
+
+ 
+function lch_prom_aver()
+	-- создается переход из Промзоны в Лес
+	if (not has_alife_info(	"lch_prom_aver" )) then
+level_new.create_level_changer(30239, vector():set( 218.540,-1.182,30.827 ),123, 800,
+        309010, 
+        778,
+        vector():set(-326.309,1.693,-375.657),
+        vector():set(0,0,0),"aver",0)
+        db.actor:give_info_portion("lch_prom_aver")
+	end
+end
+
+
+function lch_bar_swamp_bar()
+	-- создается переход из Бара на Болота
+	if (not has_alife_info(	"lch_bar_swamp" )) then
+level_new.create_level_changer(30307, vector():set( 73.213,-6.721,-176.994 ),45850, 282,
+        1186973, 
+        799,
+        vector():set(18.588,3.294,291.970),
+        vector():set(0,-3.0,0),"swamp",0)
+        db.actor:give_info_portion("lch_bar_swamp")
+	end
+	-- создается переход из Болот в Бар
+	if (not has_alife_info(	"lch_swamp_bar" )) then
+level_new.create_level_changer(30308, vector():set( 37.652,2.123,297.472 ),1228572, 799,
+        45867, 
+        174,
+        vector():set(92.272,-0.637,-132.336),
+        vector():set(0,0,0),"l05_bar",0)
+        db.actor:give_info_portion("lch_swamp_bar")
+	end
+end
+
+
+function lch_bar_mg()
+	-- создается переход из Бара в Мёртвый Город
+	if (not has_alife_info(	"lch_bar_mg" )) then
+level_new.create_level_changer(20015, vector():set( 5.463,-5.050,339.704 ),17983, 247,
+        245818, 
+        1278,
+        vector():set(-61.694,0.597,-218.139),
+        vector():set(0,0,0),"deadcity",0)
+        db.actor:give_info_portion("lch_bar_mg")
+	end
+end
+
+
+function lch_mg_bar()
+	-- создается переход из Мёртвого Города в Бар
+	if (not has_alife_info(	"lch_mg_bar" )) then
+level_new.create_level_changer(20016, vector():set( -60.516,0.809,-232.407 ),247318, 1278,
+        21537, 
+        246,
+        vector():set(-21.847,0.662,321.823),
+        vector():set(0,0,0),"l05_bar",0)
+        db.actor:give_info_portion("lch_mg_bar")
+	end
+end
+
+
+function lch_bar_aver()
+	-- создается переход из Бара в Лес
+	if (not has_alife_info(	"lch_bar_aver" )) then
+level_new.create_level_changer(20017, vector():set( 401.265,25.653,-109.493 ),74103, 285,
+        178635, 
+        777,
+        vector():set(-400.834,41.159,91.099),
+        vector():set(0,-3.0,0),"aver",0)
+        db.actor:give_info_portion("lch_bar_aver")
+	end
+end
+
+
+function lch_aver_bar()
+	-- создается переход из Леса в Бар
+	if (not has_alife_info(	"lch_aver_bar" )) then
+level_new.create_level_changer(20018, vector():set( -410.312,43.454,96.175 ),162587, 777,
+        74103, 
+        285,
+        vector():set(371.089,25.461,-93.988),
+        vector():set(0,0,0),"l05_bar",0)
+        db.actor:give_info_portion("lch_aver_bar")
+	end
+end
+
+
+function lch_mg_aver_mg()
+	-- создается переход из МГ в Лес
+	if (not has_alife_info(	"lch_mg_aver" )) then
+level_new.create_level_changer(20019, vector():set( 183.521,-5.947,-53.960 ),386856, 1360,
+        183813, 
+        775,
+        vector():set(-398.580,57.469,390.027),
+        vector():set(0,-1.5,0),"aver",0)
+        db.actor:give_info_portion("lch_mg_aver")
+	end
+	-- создается переход из Леса в МГ
+	if (not has_alife_info(	"lch_aver_mg" )) then
+level_new.create_level_changer(20020, vector():set( -400.865,57.927,369.347 ),178919, 775,
+        384521, 
+        1360,
+        vector():set(168.404,-9.266,-54.624),
+        vector():set(0,0,0),"deadcity",0)
+        db.actor:give_info_portion("lch_aver_mg")
+	end
+end
+
+
+function lch_swamp_aground_swamp()
+	-- создается переход из Болот в подземелья НИИ
+	if (not has_alife_info(	"lch_swamp_aground" )) then
+        create_level_changer(20021, vector():set( -62.430,2.282,270.568 ),1009656, 797,
+        21, 
+        18,
+        vector():set(-126.231,-4.004,-140.490),
+        vector():set(0,-1.5,0),"l03u_agr_underground",0)
+        db.actor:give_info_portion("lch_swamp_aground")
+	end
+	-- создается переход из Подземелий НИИ на Болота
+	if (not has_alife_info(	"lch_aground_swamp" )) then
+        create_level_changer(20022, vector():set( -130.126,-3.475,-139.024 ),4, 109,
+        1014158, 
+        797,
+        vector():set(-60.256,2.245,276.051),
+        vector():set(0,0,0),"swamp",1)
+        db.actor:give_info_portion("lch_aground_swamp")
+	end
+end
+
+
+function lch_prom_aground_prom()
+	-- создается переход из Промзоны в подземелья НИИ
+	if (not has_alife_info(	"lch_prom_aground" )) then
+        create_level_changer(20023, vector():set( -116.134,21.664,-78.838 ),16180, 832,
+        4810, 
+        13,
+        vector():set(-38.168,-4.060,35.578),
+        vector():set(0,-3.0,0),"l03u_agr_underground",0)
+        db.actor:give_info_portion("lch_prom_aground")
+	end
+	-- создается переход из Подземелий НИИ в Промзону
+	if (not has_alife_info(	"lch_aground_prom" )) then
+        create_level_changer(20024, vector():set( -38.715,-3.568,39.876 ),4725, 23,
+        30718, 
+        832,
+        vector():set(-102.839,21.645,-83.832),
+        vector():set(0,-1.5,0),"promzone",1)
+        db.actor:give_info_portion("lch_aground_prom")
+	end
+end
+
+
+function lch_aground_x16_aground()
+	-- создается переход из Подземелий НИИ в Х-16
+	if (not has_alife_info(	"lch_aground_x16" )) then
+        create_level_changer(20025, vector():set( -74.611,-6.872,-75.272 ),3151, 16,
+        7535, 
+        320,
+        vector():set(143.126,54.046,-13.404),
+        vector():set(0,-1.5,0),"l08u_brainlab",0)
+        db.actor:give_info_portion("lch_aground_x16")
+	end
+	-- создается переход из Х-16 в Подземелья НИИ 
+	if (not has_alife_info(	"lch_x16_aground" )) then
+        create_level_changer(20026, vector():set( 113.417,4.904,-18.791 ),7049, 324,
+        3439, 
+        16,
+        vector():set(-69.785,-6.876,-74.405),
+        vector():set(0,0,0),"l03u_agr_underground",0)
+        db.actor:give_info_portion("lch_x16_aground")
+	end
+end
+
+
+function lch_x16_dyshlo_x16()
+	-- создается переход из Х-16 в Дышло
+	if (not has_alife_info(	"lch_x16_dyshlo" )) then
+        create_level_changer(20027, vector():set( -134.348,14.745,-17.263 ),54, 309,
+        1538, 
+        0,
+        vector():set(-288.082,21.440,-19.627),
+        vector():set(0,-1.5,0),"dyshlo",1)
+        db.actor:give_info_portion("lch_x16_dyshlo")
+	end
+	-- создается переход из Дышло в Х-16 
+	if (not has_alife_info(	"lch_dyshlo_x16" )) then
+        create_level_changer(20028, vector():set( -304.900,22.479,-29.476 ),718, 0,
+        30, 
+        309,
+        vector():set(-128.983,21.564,-25.157),
+        vector():set(0,-3.0,0),"l08u_brainlab",1)
+        db.actor:give_info_portion("lch_dyshlo_x16")
+	end
+end
+
+
+function lch_x16_x10_x16()
+	-- создается переход из Х-16 в Х-10
+	if (not has_alife_info(	"lch_x16_x10" )) then
+        create_level_changer(20029, vector():set( -41.446,19.184,9.890 ),2705, 310,
+        5831, 
+        325,
+        vector():set(-0.051,-7.283,-77.487),
+        vector():set(0,0,0),"l10u_bunker",0)
+        db.actor:give_info_portion("lch_x16_x10")
+	end
+	-- создается переход из Х-10 в Х-16 
+	if (not has_alife_info(	"lch_x10_x16" )) then
+        create_level_changer(20030, vector():set( -0.276,-7.450,-86.005 ),5819, 454,
+        2681, 
+        310,
+        vector():set(-41.209,19.180,2.972),
+        vector():set(0,1.5,0),"l08u_brainlab",1)
+        db.actor:give_info_portion("lch_x10_x16")
+	end
+end
+
+
+function lch_x10_x18_x10()
+	-- создается переход из Х-10 в Х-18
+	if (not has_alife_info(	"lch_x10_x18" )) then
+        create_level_changer(20031, vector():set( 7.553,-23.557,15.511 ),7695, 437,
+        1847, 
+        111,
+        vector():set(-7.693,18.049,0.498),
+        vector():set(0,-1.5,0),"l04u_labx18",0)
+        db.actor:give_info_portion("lch_x10_x18")
+	end
+	-- создается переход из Х-18 в Х-10 
+	if (not has_alife_info(	"lch_x18_x10" )) then
+        create_level_changer(20032, vector():set( -1.500,9.314,-13.181 ),2521, 168,
+        7570, 
+        438,
+        vector():set(6.787,-23.524,23.413),
+        vector():set(0,0,0),"l10u_bunker",0)
+        db.actor:give_info_portion("lch_x18_x10")
+	end
+end
+
+
+function lch_x18_aver_x18()
+	-- создается переход из Х-18 в Лес
+	if (not has_alife_info(	"lch_x18_aver" )) then
+        create_level_changer(20033, vector():set( -28.762,-10.785,-15.141 ),614, 155,
+        153876, 
+        777,
+        vector():set(-415.168,0.716,61.155),
+        vector():set(0,-1.5,0),"aver",0)
+        db.actor:give_info_portion("lch_x18_aver")
+	end
+	-- создается переход из Леса в Х-18 
+	if (not has_alife_info(	"lch_aver_x18" )) then
+        create_level_changer(20034, vector():set( -423.451,-3.578,64.966 ),142958, 777,
+        652, 
+        155,
+        vector():set(-27.041,-10.818,-8.134),
+        vector():set(0,0,0),"l04u_labx18",1)
+        db.actor:give_info_portion("lch_aver_x18")
+	end
+end
+
+
+function lch_aver_dyshlo()
+	-- создается переход из Леса в Дышло
+	if (not has_alife_info(	"lch_aver_dyshlo" )) then
+        create_level_changer(20035, vector():set( 306.876,-33.386,431.067 ),1413827, 792,
+        573279, 
+        0,
+        vector():set(261.576,29.756,48.454),
+        vector():set(0,1.6,0),"dyshlo",0)
+        db.actor:give_info_portion("lch_aver_dyshlo")
+	end
+end
+
+
+function lch_dyshlo_aver()
+	-- создается переход из Дышло в Лес 
+	if (not has_alife_info(	"lch_dyshlo_aver" )) then
+        create_level_changer(20036, vector():set( 278.899,29.779,53.223 ),581623, 1,
+        1415085, 
+        792,
+        vector():set(307.113,-36.670,404.491),
+        vector():set(0,-3.0,0),"aver",0)
+        db.actor:give_info_portion("lch_dyshlo_aver")
+	end
+end
+
+function lch_dyshlo_prip_dyshlo()
+	-- создается переход из Дышло в Припять
+	if (not has_alife_info(	"lch_dyshlo_prip" )) then
+        create_level_changer(20037, vector():set( 244.086,24.111,262.033 ),556479, 1,
+        127351, 
+        467,
+        vector():set(20.923,-2.391,-276.437),
+        vector():set(0,0,0),"l11_pripyat",0)
+        db.actor:give_info_portion("lch_dyshlo_prip")
+	end
+	-- создается переход из Припяти в Дышло 
+	if (not has_alife_info(	"lch_prip_dyshlo" )) then
+        create_level_changer(20038, vector():set( 20.414,-2.391,-291.233 ),126480, 467,
+        538924, 
+        1,
+        vector():set(227.294,22.056,247.206),
+        vector():set(0,2.0,0),"dyshlo",0)
+        db.actor:give_info_portion("lch_prip_dyshlo")
+	end
+end
+
+function lch_prip_peschera_prip()
+	-- создается переход из Припяти в Пещеру
+	if (not has_alife_info(	"lch_prip_peschera" )) then
+        create_level_changer(20039, vector():set( -120.786,-3.693,101.045 ),6241, 555,
+        6765, 
+        1431,
+        vector():set(-374.156,84.815,208.802),
+        vector():set(0,3.0,0),"av_peshera",0)
+        db.actor:give_info_portion("lch_prip_peschera")
+	end
+	-- создается переход из Пещеры в Припять 
+	if (not has_alife_info(	"lch_peschera_prip" )) then
+        create_level_changer(20040, vector():set( -386.846,86.131,191.913 ),3762, 1431,
+        6101, 
+        555,
+        vector():set(-124.611,-3.473,104.048),
+        vector():set(0,-2.0,0),"l11_pripyat",1)
+        db.actor:give_info_portion("lch_peschera_prip")
+	end
+end
+
+function lch_peschera_sar_peschera()
+	-- создается переход из Пещеры в Саркофаг
+	if (not has_alife_info(	"lch_peschera_sar" )) then
+        create_level_changer(20041, vector():set( 164.673,42.961,386.508 ),172618, 1506,
+        55, 
+        1365,
+        vector():set(-29.186,0.217,34.079),
+        vector():set(0,-1.5,0),"l12u_sarcofag",0)
+        db.actor:give_info_portion("lch_peschera_sar")
+	end
+	-- создается переход из Саркофога в Пещеру 
+	if (not has_alife_info(	"lch_sar_peschera" )) then
+        create_level_changer(20042, vector():set( -29.874,0.233,46.370 ),52, 1364,
+        172549, 
+        1506,
+        vector():set(155.249,43.416,387.610),
+        vector():set(0,1.0,0),"av_peshera",0)
+        db.actor:give_info_portion("lch_sar_peschera")
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

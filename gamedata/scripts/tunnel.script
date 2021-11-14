@@ -1,0 +1,286 @@
+--[[---------------------------------------------------------------
+ File          : tunnel.script
+ Description   : Передача оружия и патронов через пространственно-временной тоннель
+ Copyright     : 2012 © boryan67
+ Author        : lsclon & boryan67(Dracula)
+ Last edit     : 29.01.2013
+--]]----------------------------------------------------------------
+
+-- позиции телепортов
+local start_pos,start_lv,start_gv = vector():set(271.952,-8.785,31.462),899450,1675
+local finish_pos,finish_lv,finish_gv = vector():set(-75.187,-6.880,-71.439),3117,16
+
+-- стартовый рестриктор
+function start_restr()
+	local sobj = alife():create("space_restrictor",start_pos,start_lv,start_gv)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\foto\\restr\\tunnel_start.ltx"
+		val_test.rewrite_restrictor(sobj,custom,10)
+	end
+end
+
+-- стартовый туннель
+function start_tele()
+	local sobj = alife():create("zone_teleport",start_pos,start_lv,start_gv)
+	if sobj then
+		-- запоминаем id зоны-телепорта
+		amk.save_variable("tunnel_zone",sobj.id)
+	end
+end
+
+-- спавн незнакомца
+function start_stranger()
+	local sobj = alife():create("tunnel_set",start_pos,start_lv,start_gv)
+	if sobj then
+		-- запоминаем id нпс-приемника
+		amk.save_variable("tunnel_npc",sobj.id)
+	end
+end
+
+-- Обработчик упавших предметов, ловим подходящие предметы
+function on_item_drop(obj)
+	-- если еще нет квеста - выходим
+	if not has_alife_info("tunnel_open") or not obj then
+		return
+	end
+	local actor_pos = db.actor:position()
+	-- если ГГ дальше 7 метров от центра, то не попали в туннель
+	if not actor_pos or actor_pos:distance_to(start_pos) > 7 then
+		return
+	end
+	-- запросим серверный объект
+	local sim = alife()
+	local sobj = sim:object(obj:id())
+	if sobj then
+		local sect = obj:section()
+		local tabl,data = {},{}
+		-- если оружие и мы его еще не сохраняли
+		if isWeapon(obj) and not amk.load_variable("tunnel_wpn",nil) then
+			-- исключим гранаты
+			if sect=="grenade_rgd5" or sect=="grenade_f1" then
+				return
+			end
+			-- читаем и запоминаем данные
+			tabl = get_weapon_data(sobj)
+			if tabl then
+				data.ammo_type = tabl.ammo_type     -- тип патронов в магазине
+				data.ammo_count = tabl.ammo_elapsed -- число патронов в магазине
+				data.addons = tabl.addon_flags      -- навесы
+				data.cond = tabl.condition          -- состояние оружия
+				data.sect = sect                    -- секция оружия
+				--сохраняем данные
+				amk.save_table("tunnel_wpn",data)
+				-- удаляем оружие
+				sim:release(sobj,true)
+				return
+			end
+		end
+		-- не оружие, проверим класс объекта на патроны
+		-- если еще не сохраняли патроны - отрабатываем
+		if not amk.load_variable("tunnel_ammo",nil) and get_clsid(obj) == clsid.wpn_ammo then
+			-- читаем и запоминаем данные
+			tabl = get_ammo_params(sobj)
+			if tabl then
+				data.ammo_num = tabl.ammo_left -- число патронов в пачке
+				data.sect = sect               -- секция патронов
+				amk.save_table("tunnel_ammo",data)
+				-- удаляем патроны
+				sim:release(sobj,true)
+			end
+		end
+	end
+end
+
+-- финишный рестриктор
+function finish_restr()
+	local sobj = alife():create("space_restrictor",finish_pos,finish_lv,finish_gv)
+	if sobj then
+		local custom = "[logic]\ncfg = scripts\\foto\\restr\\tunnel_finish.ltx"
+		val_test.rewrite_restrictor(sobj,custom,10)
+	end
+end
+
+-- финишный телепорт
+function finish_tele()
+	local sobj = alife():create("zone_teleport",finish_pos,finish_lv,finish_gv)
+	if sobj then
+		-- запоминаем id зоны-телепорта
+		amk.save_variable("tunnel_zone",sobj.id)
+	end
+end
+
+-- финишный незнакомец
+function finish_stranger()
+	local sobj = alife():create("tunnel_set_finish",finish_pos,finish_lv,finish_gv)
+	if sobj then
+		-- запоминаем id нпс-передатчика
+		amk.save_variable("tunnel_npc",sobj.id)
+	end
+end
+
+-- спавн сохраненных предметов
+function transfer()
+	-- читаем секцию оружия
+	local spawn = amk.load_table("tunnel_wpn")
+	local sect = spawn and spawn.sect
+	local sobj,tabl
+	-- оружие есть
+	if sect then
+		sobj = alife():create(sect,finish_pos,finish_lv,finish_gv)
+		if sobj then
+			-- читаем и запоминаем данные
+			tabl = get_weapon_data(sobj)
+			if tabl then
+				tabl.ammo_type = spawn.ammo_type     -- тип патронов в магазине
+				tabl.condition = spawn.cond          -- состояние оружия
+				tabl.ammo_elapsed = spawn.ammo_count -- число патронов в магазине
+				tabl.addon_flags = spawn.addons      -- навесы
+				--сохраняем данные
+				set_weapon_data(tabl,sobj)
+			end
+		end
+		amk.del_variable("tunnel_wpn")
+	end
+	-- читаем секцию патронов
+	spawn = amk.load_table("tunnel_ammo")
+	sect = spawn and spawn.sect
+	-- патроны есть
+	if sect and spawn.ammo_num > 0 then
+		se_respawn.create_ammo(sect,finish_pos,finish_lv,finish_gv,65535,spawn.ammo_num)
+		amk.del_variable("tunnel_ammo")
+	end
+end
+
+-- удаление телепортов
+function dell_tele()
+	local sim = alife()
+	-- читаем id зоны-телепорта
+	local id = amk.load_variable("tunnel_zone",nil)
+	local sobj = id and sim:object(id)
+	if sobj then
+		alife():release(sobj,true)
+		amk.del_variable("tunnel_zone")
+	end
+end
+
+-- удаление незнакомца
+function dell_stranger()
+	local sim = alife()
+	-- читаем id зоны-телепорта
+	local id = amk.load_variable("tunnel_npc",nil)
+	local sobj = id and sim:object(id)
+	if sobj then
+		alife():release(sobj,true)
+		amk.del_variable("tunnel_npc")
+	end
+end
+
+
+---' Нетпакеты. Только здесь и сейчас. '---
+function get_weapon_data(sobj)
+	local stpk = net_packet()
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(0)
+	local t = {}
+	parse_object_packet(t,stpk)
+	parse_visual_packet(t,stpk)
+	parse_item_packet(t,stpk)
+	parse_item_weapon_packet(t,stpk)
+	return t
+end
+
+function get_ammo_params(sobj)
+	local stpk = net_packet()
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(0)
+	local t = {}
+	parse_object_packet(t,stpk)
+	parse_visual_packet(t,stpk)
+	parse_item_packet(t,stpk)
+	parse_item_ammo_packet(t,stpk)
+	return t
+end
+
+function parse_object_packet(ret,stpk)
+	ret.gvid = stpk:r_u16()
+	ret.obf32u1 = stpk:r_float()
+	ret.obs32u2 = stpk:r_s32()
+	ret.lvid = stpk:r_s32()
+	ret.oflags = stpk:r_s32()
+	ret.custom = stpk:r_stringZ()
+	ret.sid = stpk:r_s32()
+	ret.obs32u3 = stpk:r_s32()
+	return ret
+end
+
+function parse_visual_packet(ret,stpk)
+	ret.visual = stpk:r_stringZ()
+	ret.vsu8u1 = stpk:r_u8()
+	return ret
+end
+
+function parse_item_packet(ret,stpk)
+	ret.condition = stpk:r_float()
+	return ret
+end
+
+function parse_item_weapon_packet(ret,stpk)
+	ret.ammo_current = stpk:r_u16()
+	ret.ammo_elapsed = stpk:r_u16()
+	ret.weapon_state = stpk:r_u8()
+	ret.addon_flags = stpk:r_u8()
+	ret.ammo_type = stpk:r_u8()
+	return ret
+end
+
+function parse_item_ammo_packet(ret,stpk)
+	ret.ammo_left = stpk:r_u16()
+	return ret
+end
+
+function set_weapon_data(t,sobj)
+	local stpk = net_packet()
+	fill_object_packet(t,stpk)
+	fill_visual_packet(t,stpk)
+	fill_item_packet(t,stpk)
+	fill_item_weapon_packet(t,stpk)
+	local size = stpk:w_tell()
+	stpk:r_seek(0)
+	sobj:STATE_Read(stpk,size)
+end
+
+function fill_object_packet(ret,stpk)
+	stpk:w_u16(ret.gvid)
+	stpk:w_float(ret.obf32u1)
+	stpk:w_s32(ret.obs32u2)
+	stpk:w_s32(ret.lvid)
+	stpk:w_s32(ret.oflags)
+	stpk:w_stringZ(ret.custom)
+	stpk:w_s32(ret.sid)
+	stpk:w_s32(ret.obs32u3)
+end
+
+function fill_visual_packet(ret,stpk)
+	stpk:w_stringZ(ret.visual)
+	stpk:w_u8(ret.vsu8u1)
+end
+
+function fill_item_packet(ret,stpk)
+	stpk:w_float(ret.condition)
+	return ret
+end
+
+function fill_item_weapon_packet(ret,stpk)
+	stpk:w_u16(ret.ammo_current)
+	stpk:w_u16(ret.ammo_elapsed)
+	stpk:w_u8(ret.weapon_state)
+	stpk:w_u8(ret.addon_flags)
+	stpk:w_u8(ret.ammo_type)
+	return ret
+end
+
+function tunnel_otbros()
+local actor = db.actor
+actor:set_actor_position(vector():set(271.890,-7.825,27.941)) --3.5 м от туннеля
+actor:set_actor_direction(vector():set(0,0,0))
+end

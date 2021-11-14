@@ -1,0 +1,501 @@
+		---- ***Зона трансформации кристаллов*** ----
+		--- **Реализация - lsclon for FOTOGRAF** ---
+			    -- * Version 5 * --
+--[[	Таблицы:
+activating_agent - таблица кристаллов для активации зоны
+cam_effect - эффекты камеры
+inv_reagent - таблица доп.компонентов для проверки в инвентаре ГГ
+pp_effect - визуальные эффекты зоны
+reagent_agent - таблица доп.компонентов и соответствущих им активаторов
+sound_zone - звуковое приветствие
+transform_data - таблица "рецептов" для трансформации
+transform_koef - коэффицент от сложности игры
+	Настройка:
+chance_fail - шанс неудачи(0,8,16,24 в зависимости от сложности игры), рандомно вернет один из компонентов
+desc_zone - установка меток на обнаруженные зоны
+only_pair - реагирование зоны только при наличии пары "активатор-реагент"/true, или только активатора/false
+	Функции:
+zone_not_act - проверка отсутствия таймера активации рецепта
+zone_not_off - проверка отсутствия таймера отключения зоны
+zone_not_rec - проверка отсутствия таймера заданных рецептов
+zone_act - секция логики рестриктора sr_psy_antenna@act - активация рецепта
+zone_rec - секция логики рестриктора sr_psy_antenna@rec - выбор возможных рецептов трансформации
+zone_wel - секция логики рестриктора sr_psy_antenna@wel - если зона не активна приветствуем ГГ при наличии активатора в зоне
+zone_trans - секция логики рестриктора sr_psy_antenna@trans - собственно трансформация
+--]]
+
+--- Таблицы и переменные --------------------------------------------------
+local activating_agent = {
+	[0] = {
+		['ks_active_08'] = true
+		},
+	[1] = {
+		['ks_active_01'] = true,
+		['ks_active_02'] = true,
+		['ks_active_03'] = true
+		},
+	[2] = {
+		['ks_active_04'] = true,
+		['ks_active_05'] = true,
+		['ks_active_06'] = true
+		},
+	[3] = {
+		['ks_active_07'] = true,
+		['ks_active_08'] = true,
+		['ks_active_09'] = true
+		},
+	[4] = {
+		['ks_active_10'] = true,
+		['ks_active_11'] = true,
+		['ks_active_12'] = true
+		},
+	[5] = {
+		['ks_absolut_01'] = true,
+		['ks_absolut_04'] = true,
+		['ks_absolut_10'] = true
+		},
+	[6] = {
+		['ks_absolut_03'] = true,
+		['ks_absolut_08'] = true,
+		['ks_absolut_09'] = true
+		},
+	[7] = {
+		['ks_talisman_01'] = true,
+		['ks_talisman_05'] = true,
+		['ks_talisman_06'] = true
+		},
+	[8] = {
+		['ks_talisman_02'] = true,
+		['ks_talisman_03'] = true,
+		['ks_talisman_04'] = true
+		}
+	}
+local cam_effect = {
+	[5] = "camera_effects\\hit_front.anm",
+	[6] = "camera_effects\\hit_left.anm",
+	[7] = "camera_effects\\shell_shock.anm",
+	[8] = "camera_effects\\fatigue.anm"
+	}
+local inv_reagent = {
+	[7] = {'el_chimera_kogot','izlom_hand','mutant_hand_kontroler'},
+	[8] = {'deathclaw_rog','fire_chimera_kogot','vypolzen_hribet'}
+	}
+local pp_effect = {
+	[0] = "dead_zone.ppe",
+	[1] = "rename.ppe",
+	[2] = "amk_shoot.ppe",
+	[3] = "dead_zone.ppe",
+	[4] = "psy_antenna.ppe",
+	[5] = "nightvision_good.ppe",
+	[6] = "nightvision.ppe",
+	[7] = "psy_antenna_indoor.ppe",
+	[8] = "monolith_off.ppe"
+	}
+local reagent_agent = {
+--[[ Заполнение:
+	{[дополнительный компонент] = соответствующий ему кристалл активации}
+--]]
+	[0] = {
+		['ks_reagent_08'] = 'ks_active_08'
+		},
+	[1] = {
+		['ks_reagent_01'] = 'ks_active_01',
+		['ks_reagent_02'] = 'ks_active_02',
+		['ks_reagent_03'] = 'ks_active_03'
+		},
+	[2] = {
+		['ks_reagent_04'] = 'ks_active_04',
+		['ks_reagent_05'] = 'ks_active_05',
+		['ks_reagent_06'] = 'ks_active_06'
+		},
+	[3] = {
+		['ks_reagent_07'] = 'ks_active_07',
+		['ks_reagent_08'] = 'ks_active_08',
+		['ks_reagent_09'] = 'ks_active_09'
+		},
+	[4] = {
+		['ks_reagent_10'] = 'ks_active_10',
+		['ks_reagent_11'] = 'ks_active_11',
+		['ks_reagent_12'] = 'ks_active_12'
+		},
+	[5] = {
+		['ks_absolut_02'] = 'ks_absolut_01',
+		['ks_absolut_05'] = 'ks_absolut_04',
+		['ks_absolut_06'] = 'ks_absolut_10'
+		},
+	[6] = {
+		['ks_absolut_07'] = 'ks_absolut_08',
+		['ks_absolut_11'] = 'ks_absolut_03',
+		['ks_absolut_12'] = 'ks_absolut_09'
+		},
+	[7] = {
+		['el_chimera_kogot'] = 'ks_talisman_01',
+		['izlom_hand'] = 'ks_talisman_06',
+		['mutant_hand_kontroler'] = 'ks_talisman_05'
+		},
+	[8] = {
+		['deathclaw_rog'] = 'ks_talisman_04',
+		['fire_chimera_kogot'] = 'ks_talisman_03',
+		['vypolzen_hribet'] = 'ks_talisman_02'
+		}
+	}
+local sound_zone = {
+	[0] = "crystal_zones\\electro",
+	[1] = "crystal_zones\\boolean",
+	[2] = "crystal_zones\\drops",
+	[3] = "crystal_zones\\electro",
+	[4] = "crystal_zones\\fire",
+	[5] = "crystal_zones\\fly",
+	[6] = "crystal_zones\\horror",
+	[7] = "crystal_zones\\swist",
+	[8] = "crystal_zones\wind"
+}
+local transform_data = {
+--[[ Заполнение:
+	{кристалл активации "рецепта",дополнительный компонент(количество не лимитировано),абсолют на выходе}
+	--кристаллы активации не должны повторятся!!!
+	--если приветствие производится по наличию пары 'активатор - реагент', то количество дополнительных компонентов для активатора ограничено одним реагентом!!!
+--]]
+	[0] = {
+		{'ks_active_08','ks_reagent_08','ks_absolut_11'}
+		},
+	[1] = {
+		{'ks_active_01','ks_reagent_01','ks_absolut_12'},
+		{'ks_active_02','ks_reagent_02','ks_absolut_08'},
+		{'ks_active_03','ks_reagent_03','ks_absolut_04'}
+		},
+	[2] = {
+		{'ks_active_04','ks_reagent_04','ks_absolut_07'},
+		{'ks_active_05','ks_reagent_05','ks_absolut_10'},
+		{'ks_active_06','ks_reagent_06','ks_absolut_09'}
+		},
+	[3] = {
+		{'ks_active_07','ks_reagent_07','ks_absolut_05'},
+		{'ks_active_08','ks_reagent_08','ks_absolut_11'},
+		{'ks_active_09','ks_reagent_09','ks_absolut_06'}
+		},
+	[4] = {
+		{'ks_active_10','ks_reagent_10','ks_absolut_03'},
+		{'ks_active_11','ks_reagent_11','ks_absolut_01'},
+		{'ks_active_12','ks_reagent_12','ks_absolut_02'}
+		},
+	[5] = {
+		{'ks_absolut_01','ks_absolut_02','ks_talisman_02'},
+		{'ks_absolut_04','ks_absolut_05','ks_talisman_01'},
+		{'ks_absolut_10','ks_absolut_06','ks_talisman_03'}
+		},
+	[6] = {
+		{'ks_absolut_03','ks_absolut_11','ks_talisman_04'},
+		{'ks_absolut_08','ks_absolut_07','ks_talisman_06'},
+		{'ks_absolut_09','ks_absolut_12','ks_talisman_05'}
+		},
+	[7] = {
+		{'ks_talisman_01','el_chimera_kogot','ks_obereg_01'},
+		{'ks_talisman_05','mutant_hand_kontroler','ks_obereg_03'},
+		{'ks_talisman_06','izlom_hand','ks_obereg_02'}
+		},
+	[8] = {
+		{'ks_talisman_02','vypolzen_hribet','ks_obereg_05'},
+		{'ks_talisman_03','fire_chimera_kogot','ks_obereg_04'},
+		{'ks_talisman_04','deathclaw_rog','ks_obereg_06'}
+		}
+	}
+local transform_koef = {
+	[0]=1.0,
+	[1]=0.92,
+	[2]=0.84,
+	[3]=0.76
+}
+local zone_desc = {
+	[1] = "Зона трансмутации Абсолютов №1",
+	[2] = "Зона трансмутации Абсолютов №2",
+	[3] = "Зона трансмутации Абсолютов №3",
+	[4] = "Зона трансмутации Абсолютов №4",
+	[5] = "Зона трансмутации Талисманов №1",
+	[6] = "Зона трансмутации Талисманов №2",
+	[7] = "Зона трансмутации Оберегов №1",
+	[8] = "Зона трансмутации Оберегов №2"
+}
+local chance_fail = 1
+local desc_zone = true
+local only_pair = true
+--- Таблицы и переменные ------------------------------------------ end ---
+
+--- Основные Функции ------------------------------------------------------
+function zone_not_act(actor,zone)
+	local zone_id = zone and zone:id()
+	local act_zone_id = 'act_zone'..zone_id
+	local timer_zone_act = zone_id and amk.has_timer(act_zone_id)
+	return not timer_zone_act
+end
+
+function zone_not_off(actor,zone)
+	local zone_id = zone and zone:id()
+	local off_zone_id = 'off_zone'..zone_id
+	local timer_zone_off = zone_id and amk.has_timer(off_zone_id)
+	return not timer_zone_off
+end
+
+function zone_wel(actor,zone,tab)
+	local activ_sect,lobj,lobj_pos,lobj_sect
+	local activing,reagent = {},{}
+	local actor = db.actor
+	local flag = false
+	local num = tab[1]
+	local agent_reagent = reagent_agent[num]
+	local prosible_agent = activating_agent[num]
+	local zone_pos = zone and zone:position()
+	-- Зона не видит зверушкины лапки в инвентаре, поэтому поищем их у ГГ
+	if num > 6 and only_pair then
+		local item,item_sect
+		local item_reagent = inv_reagent[num]
+		for i = 1, #item_reagent do
+			item = actor:object(item_reagent[i])
+			item_sect = item and item:section()
+			if item_sect then
+				activ_sect = agent_reagent[item_sect]
+				if not reagent[activ_sect] then
+					reagent[activ_sect] = true
+				end
+			end
+		end
+	end
+	-- Провеерим объекты в зоне
+	for i = 1, 65534 do
+		lobj = level.object_by_id(i)
+		lobj_pos = lobj and lobj:position()
+		lobj_sect = lobj_pos and lobj:section()
+		-- Если есть хоть один активирующий элемент в пределах зоны:
+		if lobj_sect and zone:inside(lobj_pos) then
+			-- Первичный вариант приветствия по наличию только активатора:
+			if prosible_agent[lobj_sect] and not only_pair then
+				flag = true
+				do break end
+			else
+			-- Вариант приветствия по наличию пары: активатор - реагент. !!!Количество реагентов для активатора ограничено одним компонентом!!!
+			-- Если это реагент проверим активирующий элемент:
+				if agent_reagent[lobj_sect] then
+					activ_sect = agent_reagent[lobj_sect]
+					if activing[activ_sect] then
+						flag = true
+						do break end
+					else
+						if not reagent[activ_sect] then
+							reagent[activ_sect] = true
+						end
+					end
+				end
+				-- Если это активирующий элемент проверим реагент:
+				if prosible_agent[lobj_sect] then
+					if reagent[lobj_sect] then
+						flag = true
+						do break end
+					else
+						if not activing[lobj_sect] then
+							activing[lobj_sect] = true
+						end
+					end
+				end
+			end
+		end
+	end
+	-- Очистим таблицы
+	activing,reagent = {},{}
+	-- Если нашлась хоть одна пара в пределах зоны - отыграем партикли:
+	local effect_pp,effect_cam
+	if flag then
+		local effect_pp = pp_effect[num]
+		level.add_pp_effector(effect_pp,1973,true)
+		local effect_cam = cam_effect[num]
+		if effect_cam then
+		   level.add_cam_effector(effect_cam,1974,true,"")
+		end
+		local sound = sound_zone[num]
+		local snd_obj = xr_sound.get_safe_sound_object(sound)
+		snd_obj:play_no_feedback(actor,sound_object.s2d,0,vector(),1.0)
+		if num > 6 then
+			news_manager.send_tip(actor,"%c[255,255,140,30]Найдена пси-зона, в которой можно синтезировать Оберег.",nil,nil,12000)
+		end
+	end
+end
+
+function zone_act(actor,zone,tab)
+	local lobj,lobj_pos,lobj_sect
+	local num = tab[1]
+	local prosible_agent = activating_agent[num]
+	-- Проверим, нет ли в зоне объектов для активации:
+	local act = {}
+	for i = 1, 65534 do
+		lobj = level.object_by_id(i)
+		lobj_pos = lobj and not lobj:parent() and lobj:position()
+		lobj_sect = lobj_pos and lobj:section()
+		if lobj_sect and zone:inside(lobj_pos) then
+			if prosible_agent[lobj_sect] == true then
+				-- Внесем объект в таблицу:
+				table.insert(act,lobj_sect)
+			end
+		end
+	end
+	-- Если есть объекты для активации - выбирем рандомно один:
+	local act_count = #act
+	if act_count > 0 then
+		local zone_id = zone and zone:id()
+		local act_zone_id = 'act_zone'..zone_id
+		local comp_data_id = 'comp_data'..zone_id
+		local comp_id = 'comp'..zone_id
+		local revers_comp_id = 'revers_comp'..zone_id
+		-- Удалим ненужные таблицы:
+		amk.del_variable(comp_data_id)
+		amk.del_variable(comp_id)
+		amk.del_variable(revers_comp_id)
+		-- Составим таблицу необходимых компонентов:
+		local rand_act = math.random(1,act_count)
+		local act_obj = act[rand_act]
+		local comp_data = {}
+		local data_count,unit
+		local trans_data = transform_data[num]
+		local rec_count = #trans_data
+		for i = 1, rec_count do
+			if act_obj == trans_data[i][1] then
+				data_count = #trans_data[i]
+				for c = 1, data_count do
+					if c == data_count then
+						comp_data['absolut'] = trans_data[i][c]
+					else
+						unit = trans_data[i][c]
+						comp_data[unit] = true
+					end
+				end
+				do break end
+			end
+		end
+		-- Сохраним таблицу компонентов и запустим таймер активации:
+		amk.save_table(comp_data_id,comp_data)
+		amk.start_timer(act_zone_id,60)
+	end
+end
+
+function zone_trans(actor,zone,tab)
+	local actor = db.actor
+	local zone_id = zone and zone:id()
+	local comp_data_id = 'comp_data'..zone_id
+	local comp_id = 'comp'..zone_id
+	local revers_comp_id = 'revers_comp'..zone_id
+	-- Проверим готовность к преобразованию:
+	local id_comp = amk.load_table(comp_id)
+	local revers_comp = amk.load_table(revers_comp_id)
+	local trans_comp = amk.load_table(comp_data_id)
+	-- Если нет готовности:
+	if not id_comp[1] then
+		-- Проверим, нет ли объектов для трансмутации, и составим таблицу объектов по ИД:
+		local comp_count = 0
+		local lobj,lobj_id,lobj_pos,lobj_sect
+		for k, v in pairs(trans_comp) do
+			if v == true then
+				comp_count = comp_count + 1
+			end
+		end
+		for i = 1, 65534 do
+			if comp_count > 0 then
+				lobj = level.object_by_id(i)
+				lobj_pos = lobj and not lobj:parent() and lobj:position()
+				lobj_id = lobj_pos and lobj:id()
+				lobj_sect = lobj_id and lobj:section()
+				if lobj_sect and zone:inside(lobj_pos) then
+					if trans_comp[lobj_sect] == true then
+						trans_comp[lobj_sect] = false
+						table.insert(id_comp,lobj_id)
+						table.insert(revers_comp,lobj_sect)
+						comp_count = comp_count - 1
+					end
+				end
+			else
+				amk.save_table(comp_id,id_comp)
+				amk.save_table(revers_comp_id,revers_comp)
+				do break end
+			end
+		end
+	-- Если всё готово:
+	else
+		local absolut,info_rec,sobj,str,type
+		local id_count = #id_comp
+		local fail_rand = math.random()
+		local num = tab[1]
+		local off_zone_id = 'off_zone'..zone_id
+		local sim = alife()
+		local zone_pos = zone_id and zone:position()
+		-- Удаление:
+		for i = 1, id_count do
+			sobj = sim:object(id_comp[i])
+			if sobj then
+				amk_particle.amk_particle({particle='anomaly2\\electra2_blast',pos=sobj.position,sound='anomaly\\electra_idle1'})
+				sim:release(sobj,true)
+			end
+		end
+		-- Неудача/абсолют:
+		if fail_rand > chance_fail*transform_koef[level.get_game_difficulty()] and num ~= 0 then
+			local fail_count = #revers_comp
+			local revers_rand = math.random(1,fail_count)
+			absolut = revers_comp[revers_rand]
+		else
+			absolut = trans_comp['absolut']
+			info_rec = 'ex_transform_rec_'..absolut
+			news_manager.send_tip(actor,"%c[255,255,235,0]Процесс преобразования прошёл успешно!",nil,nil,10000)
+			type = 'trans_zone'..num
+			if desc_zone and zone_id and level.map_has_object_spot(zone_id,type) == 0 and num ~= 0 then
+				str = zone_desc[num]
+				level.map_add_object_spot_ser(zone_id,type,str)
+			end
+			if info_rec and not actor:has_info(info_rec) and num ~= 0 then
+				actor:give_info_portion(info_rec)
+				news_manager.send_tip(actor,"%c[255,255,75,75]Полученный рецепт записан в ПДА.\\n%c[default]Доступен для просмотра в разделе 'Журнал'.",nil,nil,20000)
+			end
+		end
+		local new_pos = vector():set(zone_pos.x+(math.random()*2-1),zone_pos.y+1,zone_pos.z+(math.random()*2-1))
+		-- Что б не спавнились под ногами ГГ:
+		if actor and new_pos and new_pos:distance_to(actor:position()) < 0.5 then
+			local offset = math.random()*2-1
+			if offset > -0.5 and offset < 0 then
+				offset = -0.5
+			elseif offset < 0.5 and offset >= 0 then
+				offset = 0.5
+			end
+			new_pos = vector():set(new_pos.x+offset,new_pos.y,new_pos.z+offset)
+		end
+		local lv = zone:level_vertex_id()
+		local gv = zone:game_vertex_id()
+		sim:create(absolut,new_pos,lv,gv)
+		-- закроем окно инвентаря если оно открыто
+		local inv_wnd =level.main_input_receiver()
+		if inv_wnd then
+			inv_wnd:GetHolder():start_stop_menu(inv_wnd, true)
+		end
+		-- Все сделано - отключим зону и очистим таблицы:
+		-- Время отключения. Абсолюты - 1/1.5, Талисманы - 2/2.5, Обереги - 3/3.5 часа
+		local sec = 1620
+		if num < 5 then
+			sec = 900
+		elseif num > 6 then
+			sec = 2340
+		end
+		local timer = sec + ((math.random()*360)-180)
+		amk.start_timer(off_zone_id,timer)
+		amk.del_variable(comp_data_id)
+		amk.del_variable(comp_id)
+		amk.del_variable(revers_comp_id)
+	end
+end
+--- Основные Функции ---------------------------------------------- end ---
+
+function sms_saharov1()
+	news_manager.send_tip(db.actor,"%c[255,255,235,0]В ПДА, в раздел 'Журнал',\\nдобавлена информация о способах преобразования Кристаллов и Минералов.",nil,nil,15000)
+end
+
+function sms_saharov2()
+	news_manager.send_tip(db.actor,"%c[255,255,235,0]В ПДА, в раздел 'Журнал',\\nдобавлена информация о способе преобразования Талисманов.", nil,nil,15000)
+end
+
+function sound_oblom()
+	local snd_obj = xr_sound.get_safe_sound_object([[new\vizg]])
+	snd_obj:play_no_feedback(db.actor,sound_object.s2d,0,vector(),1.0)
+end

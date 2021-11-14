@@ -1,0 +1,1338 @@
+--========================================== Считывание данных с вертолетов ==========================================
+-- Таблица координат аппаратуры упавших вертушек - 10 штук
+local tbl_heli = {
+--deadcity
+{
+    position={x=-41.699,y=-9.315,z=245.221},
+    lv=337289,
+    gv=1331,
+	custom="[logic]\ncfg = scripts\\foto\\restr\\heli_restr.ltx"
+    },
+--aver
+{
+    position={x=-294.606,y=42.698,z=412.434},
+    lv=365361,
+    gv=775,
+	custom="[logic]\ncfg = scripts\\foto\\restr\\heli_restr.ltx"
+    },
+--bar
+{
+    position={x=58.555252,y=-0.001548,z=66.956802},
+    lv=27218,
+    gv=241,
+	custom="[logic]\ncfg = scripts\\foto\\restr\\heli_bar_restr.ltx"
+    },
+---prom
+{
+    position={x=-61.177277,y=20.577452,z=-260.383148},
+    lv=91048,
+    gv=886,
+	custom="[logic]\ncfg = scripts\\foto\\restr\\heli_prom_restr.ltx"
+    },
+-- swamp
+{
+    position={x=46.750762939453,y=1.4823042154312,z=-137.31983947754},
+    lv=1248141,
+    gv=798,
+	custom="[logic]\ncfg = scripts\\foto\\restr\\heli_restr.ltx"
+    },
+-- dyshlo
+{
+    position={x=-192.67472839355,y=10.288857460022,z=-233.53411865234},
+    lv=82424,
+    gv=0,
+	custom="[logic]\ncfg = scripts\\foto\\restr\\heli_restr.ltx"
+    },
+-- l11_pripyat
+{
+    position={x=-88.917289733887,y=-2.3909533023834,z=37.817939758301},
+    lv=23247,
+    gv=478,
+	custom="[logic]\ncfg = scripts\\foto\\restr\\heli_restr.ltx"
+    },
+-- l11_pripyat
+{
+    position={x=-13.423360824585,y=0.6906555891037,z=347.95849609375},
+    lv=86398,
+    gv=495,
+	custom="[logic]\ncfg = scripts\\foto\\restr\\heli_restr.ltx"
+    },
+-- predbannik
+{
+    position={x=-327.65985107422,y=-6.3009042739868,z=349.45538330078},
+    lv=437639,
+    gv=663,
+	custom="[logic]\ncfg = scripts\\foto\\restr\\heli_restr.ltx"
+    },
+-- predbannik
+{
+    position={x=-561.49383544922,y=20.233194351196,z=418.1731262207},
+    lv=88538,
+    gv=619,
+	custom="[logic]\ncfg = scripts\\foto\\restr\\heli_restr.ltx"
+    }
+}
+
+function set_heli_restr()
+	local sobj, a
+	local sim = alife()
+	for x=1,table.getn(tbl_heli) do 
+		a=tbl_heli[x] 
+		sobj = sim:create("space_restrictor", vector():set(a.position.x,a.position.y,a.position.z), a.lv, a.gv) 
+		val_test.rewrite_restrictor(sobj, a.custom, 3.2)
+	end 
+end
+
+-- счетчик исследованных вертушек
+function count()
+	local cnt = amk.load_variable("heli_count",nil)	
+	if not cnt then		
+		cnt = 1	
+	else
+		cnt = cnt + 1	
+	end
+	if cnt < table.getn(tbl_heli) then	
+		amk.save_variable("heli_count",cnt)	
+		news_manager.send_tip(db.actor, "Копирование данных завершено успешно.", nil, nil, 5000) -- выдаем сообщение
+	else
+		amk.del_variable("heli_count")	
+		db.actor:give_info_portion("heli_all")	
+		news_manager.send_tip(db.actor, "Карта памяти заполнена.", nil, nil, 5000) -- выдаем сообщение
+	end
+end
+
+function read_sound()
+	local snd_obj = xr_sound.get_safe_sound_object([[new\upload_start]])
+	snd_obj:play_at_pos(db.actor, db.actor:position())
+end
+
+function priborchik_poluchil(first_speaker, second_speaker)
+	dialogs.relocate_item_section(second_speaker, "load_detector", "in")
+end
+
+function priborchik_have(first_speaker, second_speaker)
+	return new_dialog.item_much("load_detector",1) ~= false
+end
+
+function priborchik_otdal(first_speaker, second_speaker)
+	new_dialog.out_item_much("load_detector",1)
+	dialogs.relocate_money(first_speaker, 25000,"in")
+end
+
+function vertoblom_spawn()
+local sim = alife()
+sim:create("prom_pseudodog_00",vector():set(-78.843254,7.212838,194.976746),63993,872)
+sim:create("prom_pseudodog_01",vector():set(-70.959831,8.467693,210.011673),77106,872)
+sim:create("prom_pseudodog_02",vector():set(-107.666443,8.472002,218.840607),25447,833)
+sim:create("prom_ruk",vector():set(-94.250694,8.472929,211.650116),41485,849)
+sim:create("bar_ruk",vector():set(21.977196,-12.148690,-199.955109),45850,282)
+sim:create("naem_mg_01",vector():set(-42.604530,-4.680447,-190.107422),262413,1276)
+sim:create("naem_mg_02",vector():set(-42.457127,-4.270785,-165.482162),262448,1289)
+sim:create("naem_mg_03",vector():set(-35.777439,-4.452134,-158.533981),26769,1289)
+end
+
+function promzasada_spawn()
+local sim = alife()
+sim:create("maroder_prom_01",vector():set(-27.686277,19.867495,-253.540115),141744,924)
+sim:create("maroder_prom_02",vector():set(-28.160500,20.560978,-259.505493),141735,924)
+sim:create("maroder_prom_03",vector():set(-28.420261,21.012035,-265.993988),140640,924)
+end
+
+function barzasada_spawn()
+local sim = alife()
+sim:create("naem_bar_01",vector():set(42.062580,-0.001864,66.125145),29236,241)
+sim:create("naem_bar_02",vector():set(43.196465,-0.000896,52.055515),29236,241)
+sim:create("naem_bar_03",vector():set(51.128185,-0.001461,42.140671),29236,241)
+end
+--================================================= Крысолов ==============================================
+-- реплика ГГ при виде мышиного кубла
+function mouse_speech(actor, obj)
+	local sound = sound_object("ambient\\new\\actor_mouseg1")
+	if sound then
+		sound:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	end
+end
+-- реплика ГГ при попадании в кубло
+function mouse_speech_hit(actor, obj)
+	local sound = sound_object("ambient\\new\\actor_mouseg2")
+	if sound then
+		sound:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	end
+end
+-- создание мышиного кубла
+function mouse_create()
+	local sim = alife()
+	local pos, lv, gv = vector():set(25.892,-3.172,-3.292), 983575, 744
+	local custom = "[logic]\ncfg = scripts\\foto\\restr\\mouse_restr.ltx"
+	an_spawn("zone_mouse",3,pos,lv,gv,0.1)	-- создаем зону
+	local sobj = sim:create("space_restrictor",pos,lv,gv)	-- создаем рестриктор
+	val_test.rewrite_restrictor(sobj, custom, 4.5)
+	custom = "[logic]\ncfg = scripts\\foto\\restr\\mouse_restr1.ltx"
+	sobj = sim:create("space_restrictor",pos,lv,gv)	-- создаем рестриктор
+	val_test.rewrite_restrictor(sobj, custom, 2.9)
+end
+-- получение дудки
+function krisalov_dudka(first_speaker, second_speaker)
+	dialogs.relocate_item_section(second_speaker,"dudka","in")
+	flamethrower.relocate_n_items_section(second_speaker,"ammo_12x70_buck","in",3)
+	flamethrower.relocate_n_items_section(second_speaker,"grenade_f1","in",2)
+end
+-- прекондишен наличия мышей
+function mouse_have(first_speaker, second_speaker)
+	return new_dialog.item_much("mutant_mouse",13) ~= false
+end
+-- прекондишен пользования дудкой
+function dudka_used(first_speaker, second_speaker)
+	return has_alife_info("krisalov_dudka_used")
+end
+-- прекондишен не пользования дудкой
+function dudka_not_used(first_speaker, second_speaker)
+	return not has_alife_info("krisalov_dudka_used")
+end
+-- отдаем мышей 
+function krisalov_mouse(first_speaker, second_speaker)
+	new_dialog.out_item_much("mutant_mouse",13)
+end
+-- получаем коньяк
+function krisalov_cognac(first_speaker, second_speaker)
+	dialogs.relocate_item_section(second_speaker,"cognac","in")
+end
+-- включаем таймер
+function krisalov_timer(first_speaker, second_speaker)
+	amk.g_start_timer("krisa_timer", 0, 2, 0)	-- заводим таймер на 2 часа
+end
+-- включаем таймер1
+function krisalov_timer1(first_speaker, second_speaker)
+	amk.g_start_timer("krisa_timer1", 0, 1, 0)	-- заводим таймер на 1 час
+end
+-- прекондишен наличия мышей
+function krisalov_has_mouse(first_speaker, second_speaker)
+	return has_alife_info("krisalov_has_mouse")
+end
+-- прекондишен отсутствия мышей
+function krisalov_dont_has_mouse(first_speaker, second_speaker)
+	return not has_alife_info("krisalov_has_mouse")
+end
+-- получаем микстуру
+function krisalov_badyaga(first_speaker, second_speaker)
+	dialogs.relocate_item_section(second_speaker,"nastoyka","in")
+end
+-- пьем микстуру
+function drink_badyaga(first_speaker, second_speaker)
+	game.start_tutorial("gluk_01")	-- прокрутим фильмец
+end
+-- постпроцесс после приема микстуры
+function stopper()	
+	level.add_cam_effector("camera_effects\\drunk.anm", 15, false)
+	level.add_cam_effector("camera_effects\\prison_1.anm", 16, false)
+	--level.add_pp_effector("snd_shock.ppe", 2012, false)
+	--level.add_pp_effector("duality_circle.ppe", 2013, false)
+end
+-- проверка на необходимость удаления кубла
+function check_kublo()
+	if not has_alife_info("zone_mouse_release") and has_alife_info("krisalov_dudka") and level.name()~="predbannik" then
+		db.actor:give_info_portion("zone_mouse_release")
+	end
+end
+-- удаление кубла
+function mouse_release()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "zone_mouse" then
+		    sim:release(sobj,true)
+            break
+		end
+	end
+end
+
+--========================================== Кресты Шубина ==========================================
+-- таблица координат зон обнаружения
+local tbl_find = {
+	----МИРОТВОРЧЕСКИЙ КОРПУС------
+	{"find_good",vector():set(-48.991,13.567,135.425), 867579, 724},	-- 1
+	{"find_good",vector():set(-39.253,12.915,132.294), 880588, 724},	-- 2
+	{"find_bad",vector():set(-47.897,13.434,126.125), 867565, 724},		-- 3
+	----БОЛОТА---------
+	{"find_bad",vector():set(-77.599,3.061,242.264), 974587, 797},		-- 4
+	----ПРОМЗОНА------
+	{"find_bad",vector():set(6.698,11.809,-572.327), 204143, 965},		-- 5
+	{"find_good",vector():set(191.050,5.300,-196.293), 499616, 1147},	-- 6
+	{"find_bad",vector():set(170.382,6.500,374.120), 484118, 1141},		-- 7
+	----ЛЕС----
+	{"find_bad",vector():set(144.145,-0.441,-355.681), 1120283, 788},	-- 8
+	----БАР-------
+	{"find_bad",vector():set(212.687,0.375,-56.850), 52165, 269},		-- 9
+	{"find_good",vector():set(236.447,-0.066,-28.782), 59683, 265},		-- 10
+	{"find_good",vector():set(230.825,-0.100,52.979), 59075, 177},		-- 11
+	{"find_good",vector():set(31.613,-0.100,179.352), 20166, 243}		-- 12
+}
+-- таблица координат зон души
+local tbl_soul = {
+	----МИРОТВОРЧЕСКИЙ КОРПУС------
+	{"soul_good",vector():set(-51.238,16.657,135.906), 863434, 724,"af_shubin_artgood"},
+	{"soul_good",vector():set(-41.402,16.191,133.089), 878414, 724,"af_shubin_artgood"},
+	{"soul_bad",vector():set(-50.126,16.761,126.970), 864449, 724,"af_shubin_artbad"},
+	----БОЛОТА---------
+	{"soul_bad",vector():set(-75.131,5.626,242.349), 982120, 797,"af_shubin_artbad"},
+	----ПРОМЗОНА------
+	{"soul_bad",vector():set(8.721,15.001,-574.152), 207153, 965,"af_shubin_artbad"},
+	{"soul_good",vector():set(189.147,8.595,-196.273), 499127, 1147,"af_shubin_artgood"},
+	{"soul_bad",vector():set(168.206,9.502,372.234), 481448, 1141,"af_shubin_artbad"},
+	----ЛЕС----
+	{"soul_bad",vector():set(144.419,2.611,-353.173), 1120286, 788,"af_shubin_artbad"},
+	----БАР-------
+	{"soul_bad",vector():set(214.461,3.575,-58.645), 52680, 269,"af_shubin_artbad"},
+	{"soul_good",vector():set(236.158,2.753,-31.058), 60648, 267,"af_shubin_artgood"},
+	{"soul_good",vector():set(230.730,2.853,50.584), 59071, 177,"af_evergy1_false"},
+	{"soul_good",vector():set(34.108,3.000,179.997), 20610, 243,"af_shubin_artgood"}
+}
+-- спавн рестрикторов зон
+function spawn_krest_zone()
+	local custom = "[logic]\ncfg = scripts\\foto\\restr\\krest_restr"
+	local custom_end = ".ltx"
+	local zone, sobj, str
+	local radius = 7	-- радиус зон
+	local count = amk.load_variable("KrestStep", 0)
+	if count == 0 then
+		-- начало, спавним МК
+		for a=1, 3 do
+			zone = tbl_find[a]	-- выбираем строку параметров из таблицы
+			sobj = alife():create("space_restrictor",zone[2],zone[3],zone[4])	-- создаем зону
+			str = custom..tostring(a)..custom_end
+			val_test.rewrite_restrictor(sobj, str, radius)
+		end	
+		-- создадим рестриктор для реплики
+		local pos, lv, gv = vector():set(-48.991,11.567,135.425), 867579, 724 
+		sobj = alife():create("space_restrictor",pos,lv,gv)	-- создаем 
+		val_test.rewrite_restrictor(sobj, "[logic]\ncfg = scripts\\foto\\restr\\krest_restr.ltx", 60)
+	elseif count == 1 then
+		--спавним Болото
+		local a = 4
+		zone = tbl_find[a]	-- выбираем строку параметров из таблицы
+		sobj = alife():create("space_restrictor",zone[2],zone[3],zone[4])	-- создаем зону
+		str = custom..tostring(a)..custom_end
+		val_test.rewrite_restrictor(sobj, str, radius)
+		--спавним Промзону
+		for a=5, 7 do
+			zone = tbl_find[a]	-- выбираем строку параметров из таблицы
+			sobj = alife():create("space_restrictor",zone[2],zone[3],zone[4])	-- создаем зону
+			str = custom..tostring(a)..custom_end
+			val_test.rewrite_restrictor(sobj, str, radius)
+		end	
+		-- спавним Лес
+		local a = 8
+		zone = tbl_find[a]	-- выбираем строку параметров из таблицы
+		sobj = alife():create("space_restrictor",zone[2],zone[3],zone[4])	-- создаем зону
+		str = custom..tostring(a)..custom_end
+		val_test.rewrite_restrictor(sobj, str, radius)
+		-- спавним Бар
+		for a=9, 12 do
+			zone = tbl_find[a]	-- выбираем строку параметров из таблицы
+			sobj = alife():create("space_restrictor",zone[2],zone[3],zone[4])	-- создаем зону
+			str = custom..tostring(a)..custom_end
+			val_test.rewrite_restrictor(sobj, str, radius)
+		end	
+		-- создадим рестриктор для реплики
+		local pos, lv, gv = vector():set(212.687,0.375,-56.850), 52165, 269  
+		sobj = alife():create("space_restrictor",pos,lv,gv)	-- создаем 
+		val_test.rewrite_restrictor(sobj, "[logic]\ncfg = scripts\\foto\\restr\\krest_restr.ltx", 65)
+	end
+end
+-- спавн зоны обнаружения при входе в рестриктор
+function spawn_find_zone(actor, obj, p)
+	local zone = tbl_find[ p[1] ]	-- выбираем строку параметров из таблицы
+	local sobj = alife():create(zone[1],zone[2],zone[3],zone[4])	-- создаем зону
+	if sobj then
+		amk.save_variable("KrestID",sobj.id)	-- сохраним ИД
+	end
+end
+-- удаление зоны по таймеру
+function del_zone(actor, obj, p)
+	local id = amk.load_variable("KrestID", nil)
+	if id then
+		local sobj = alife():object(id)
+		if sobj then
+			alife():release(sobj,true)-- удаляем серверный объект
+			amk.save_variable("KrestID", nil)
+		end			
+	end
+end
+-- спавн зоны души по сигналу дудки
+function spawn_soul_zone(actor, obj, p)
+	local zone = tbl_soul[ p[1] ]	-- выбираем строку параметров из таблицы
+	local sobj = alife():create(zone[1],zone[2],zone[3],zone[4])	-- создаем зону
+	if sobj then
+		amk.save_variable("KrestID",sobj.id)	-- сохраним ИД
+	end
+end
+-- спавн артефакта
+function spawn_art(actor, obj, p)
+	local zone = tbl_soul[ p[1] ]	-- выбираем строку параметров из таблицы
+	local sobj = alife():create(zone[5],zone[2],zone[3],zone[4])	-- создаем артефакт
+end
+-- удаление финальной зоны по таймеру
+function del_krest_zone(actor, obj, p)
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and (sobj:section_name()=="krest_good" or sobj:section_name()=="krest_bad") then
+		    sim:release(sobj,true)
+			break
+		end
+	end
+	local count = amk.load_variable("KrestStep", 0)
+	count = count + 1	-- увеличиваем счетчик зон
+	if count == 11 then		-- все зоны пройдены
+		db.actor:give_info_portion("krest_finish")	-- выдаем поршень
+		-- толкаем речь 
+		local sound = sound_object("ambient\\new\\actor_krest_end")
+		if sound then
+			sound:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+		end
+		amk.save_variable("KrestStep", nil)	-- чистим переменную
+	else
+		amk.save_variable("KrestStep",count)	-- сохраняем счетчик
+	end
+end
+-- убиваем актера
+function kill_actor(actor, obj, p)
+	local actor = db.actor
+	if actor then
+		actor:kill(actor)
+	end
+	-- выдаем реплику после смерти
+	local sound = sound_object("ambient\\new\\actor_krest_dead")
+	if sound then
+		sound:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	end
+end
+-- таблица подмен предметов
+local tbl_exchange = {
+	['statya_false'] = 'statya',
+	['af_evergy1_false'] = 'evergy1_true',
+	['af_evergy2_false'] = 'ammo_5.5x40_ucen',
+	['af_evergy3_false'] = 'evergy1_true',
+	['af_evergy4_false'] = 'young_d',
+	['af_evergy5_false'] = 'evergy3_true',
+	['af_evergy6_false'] = 'wpn_ak00u',
+	['af_evergy7_false'] = 'pribor_zh',
+	['af_evergy8_false'] = 'pribor_zh',
+	['af_evergy9_false'] = 'evergy2_true',
+	['af_evergy10_false'] = 'evergy4_true',
+	['af_evergy11_false'] = 'evergy3_true',
+	['af_evergy12_false'] = 'evergy3_true',
+	['af_evergy14_false'] = 'evergy1_true',
+	['af_evergy15_false'] = 'evergy4_true',
+	['af_evergy16_false'] = 'young_d'
+}
+-- получение предмета
+function take_item(obj)
+	local sect = obj:section()
+	if sect and tbl_exchange[sect] ~= nil then	-- если подняли фейк
+		local sim = alife()
+		local sobj = sim:object(obj:id())
+		if sobj then
+			sim:release(sobj,true)	-- удаляем фейк
+			sobj=alife():create(tbl_exchange[sect], db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+			if sect == 'statya_false' then return end
+			if sect ~= 'af_evergy1_false' then
+				-- включаем эффекторы подбора ложного арта
+				level.add_cam_effector("camera_effects\\shell_shock.anm", 25, false)
+				level.add_pp_effector("necropolis.ppe", 4002, false)
+			end
+		end
+	elseif obj:section()=="mutant_mouse" then
+		if new_dialog.item_much("mutant_mouse",13) ~= false and not has_alife_info("actor_has_mouse") then
+			db.actor:give_info_portion("actor_has_mouse")
+		end
+	elseif sect == "af_evergy_true" then
+		-- включаем эффекторы подбора правильного арта
+		level.add_cam_effector("camera_effects\\earthquake.anm", 25, false)
+		level.add_pp_effector("monolith_off.ppe", 4004, false)
+	elseif sect == "max_ruk" then
+		if not has_alife_info("max_ruk_have") then
+			db.actor:give_info_portion("max_ruk_have")
+		end
+	end
+end
+
+-- реплика на фейк-артефакт
+function speech_fake(actor, obj, p)
+	local sound = sound_object("ambient\\new\\actor_false")
+	if sound then
+		sound:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	end
+end
+local tbl_speech = {
+	["predbannik"] = "ambient\\new\\actor_krest_1",
+	["l05_bar"] = "ambient\\new\\actor_krest_5"
+}
+-- реплики на локациях
+function speech_krest(actor, obj, p)
+	local lname=level.name()	-- получим имя уровня
+	local sound = sound_object(tbl_speech[lname])
+	if sound then
+		sound:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	end
+end
+-- получаем дудку и Душелов
+function dushelov_in(first_speaker, second_speaker)
+	-- выдаем инвентарь
+	dialogs.relocate_item_section(second_speaker,"dudka_shu","in")
+	dialogs.relocate_item_section(second_speaker,"dushelov","in")
+	-- спавним зоны-кресты
+	spawn_krest_zone()
+end
+-- отдаем дудку 
+function dushelov_out(first_speaker, second_speaker)
+	dialogs.relocate_item_section(second_speaker,"dudka_shu","out")
+	--dialogs.relocate_item_section(second_speaker,"dushelov","out")
+end
+
+-- ----------------------------------------------------------------------------------
+-- ----------------------------------- МГ параллельный мир --------------------------
+-- ----------------------------------------------------------------------------------
+
+local tbl_mg = amk.load_table("mg_tbl",nil)	or {}	-- таблица идов компонентов параллельного мира
+
+-- сохранение идов в таблицу
+function store_id(sobj)
+	if sobj then
+		table.insert(tbl_mg, sobj.id)	-- сохраним ИД в таблицу
+		amk.save_table("mg_tbl",tbl_mg)	-- сохраним таблицу
+	end
+end
+
+-- фиксатор объектов
+function FixObject(arg, id, obj)
+	if obj then 
+		local pshell = obj:get_physics_shell()
+        if  pshell then 
+			local element = pshell:get_element_by_order(0)
+			if element and not element:is_fixed() then 
+				element:fix()
+            end
+        end
+    end
+end
+
+-- Начальный спавн в МГ после исхода немцев
+function mg_start_spawn()
+	local sobj
+	-- спавним рестриктор блокировки перехода в Лес
+	local pos, lv, gv = vector():set(183.521,-5.947,-53.960 ),386856, 1360
+	sobj = alife():create("space_restrictor",pos,lv,gv)	-- создаем 
+	val_test.rewrite_restrictor(sobj, "[logic]\ncfg = scripts\\foto\\restr\\mg_block.ltx", 15)
+	-- спавним рестриктор реплики на лестнице
+	pos, lv, gv = vector():set(-0.770,10.237,41.618), 297216, 1324 -- координаты точки
+	sobj = alife():create("space_restrictor",pos,lv,gv)	-- создаем 
+	val_test.rewrite_restrictor(sobj, "[logic]\ncfg = scripts\\foto\\restr\\mg_stairway.ltx", 2)
+	-- спавним прибор
+	pos, lv, gv = vector():set(7.770,15.624,36.174), 297216, 1324 -- координаты точки 
+	sobj=alife():create("pribor_mg1", pos, lv, gv) -- Спавним прибор в квартире
+	if sobj then
+		amk.save_variable("pribor_mg1", sobj.id)
+		level.client_spawn_manager():add(sobj.id, 0, this.FixObject, 0)	-- фиксируем объект
+	end
+	-- спавним Петровича
+	sobj = alife():create("petrovige",vector():set(8.096271,15.624468,37.180599),297216,1324)
+	store_id(sobj)
+end
+
+-- перефиксация прибора
+function fix_pribor()
+	local sobj_id = amk.load_variable("pribor_mg1", nil)
+	if sobj_id then
+		local sobj = alife():object(sobj_id)
+        if sobj then
+            level.client_spawn_manager():add(sobj.id, 0, this.FixObject, 0)
+        end		
+	end
+	if has_alife_info('block_grenade') then hide_grenade() 
+        end
+end
+
+-- прячем гранаты
+function hide_grenade()
+	local actor = db.actor
+	if actor and actor:active_slot()~=nil and actor:active_item()~= nil then 
+		local obj = actor:active_item()
+		if obj then
+			local sect = obj:section()
+			if sect and (string.find(sect, 'grenade_') or string.find(sect, 'wpn_binoc')) then
+				actor:activate_slot(5)
+			end
+		end
+	end
+end
+
+-- удаление Варвары
+function varvara_release(actor, obj, p)
+	local sim = alife()
+	local id = amk.load_variable("VarvaraID",nil)
+	local sobj = id and sim:object(id)
+	if sobj then
+		sim:release(sobj,true)
+	end
+	amk.del_variable("VarvaraID")
+end
+
+-- блокируем переход из МГ
+function break_mg_lc(actor, obj, p)
+	local actor = db.actor
+	local pos = vector():set(131.0353,8.3637,-74.7372) -- координаты точки телепортации
+	if actor and actor:alive() then	-- если актер еще живой
+		level.add_pp_effector ("blink.ppe", 9112, false)
+		actor:set_actor_position(pos)	-- отбрасываем от перехода	
+		-- выдаем реплику
+		local sound 
+		if not has_alife_info("mg_1_jump") then
+			sound = sound_object("ambient\\new\\actor_65")	 
+			db.actor:give_info_portion("mg_1_jump")
+		elseif not has_alife_info("mg_2_jump") then
+			sound = sound_object("ambient\\new\\actor_66")	 
+			db.actor:give_info_portion("mg_2_jump")	
+		elseif not has_alife_info("mg_3_jump") then
+			sound = sound_object("ambient\\new\\actor_67")	 
+			db.actor:give_info_portion("mg_3_jump")			
+		end
+		if sound then
+			sound:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+		end
+	end
+end
+
+-- условие для диалога - наличие артефакта у ГГ
+function check_art(first_speaker, second_speaker)
+	return new_dialog.item_much("af_evergy_true",1) ~= false
+end
+
+-- условие для диалога - отсутствие артефакта у ГГ
+function no_check_art(first_speaker, second_speaker)
+	return new_dialog.item_much("af_evergy_true",1) == false
+end
+
+-- передача арта Петровичу
+function transfer_art(first_speaker, second_speaker)
+	new_dialog.out_item_much("af_evergy_true",1)
+end
+
+-- передача прибора Варваре
+function transfer_pribor(first_speaker, second_speaker)
+	new_dialog.out_item_much("pribor_wu",1)
+end
+
+-- активация прибора
+local particle, sound
+function pribor_active(first_speaker, second_speaker)
+	-- партиклы и звук включения прибора
+	particle = particles_object("mauvais\\anomaly\\pribor_mg")
+	sound = sound_object("anomaly\\pribor_mg00")
+	local pos = vector():set(7.770,16.134,36.174)
+	if particle and pos then
+		particle:play_at_pos(pos)
+	end	
+	if sound and pos then
+		sound:play_at_pos(db.actor, pos)
+	end
+end
+
+-- реплика после 1-го диалога
+function speech_after_1_dialog(first_speaker, second_speaker)
+	sound = sound_object("ambient\\new\\actor_63")
+	if sound then
+		sound:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	end
+end
+
+-- реплика после осмотра статьи
+function speech_statya()
+	if not has_alife_info("mg_statya") then
+		sound = sound_object("ambient\\new\\actor_statya")
+		if sound then
+			sound:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+		end
+		db.actor:give_info_portion("mg_statya")
+	end
+end
+
+-- реплика поле применения артефакта
+function speech_evergy2_true()
+	if not has_alife_info("evergy2_true") then
+		sound = sound_object("ambient\\new\\actor_evergy2_true")
+		if sound then
+			sound:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+		end
+		db.actor:give_info_portion("evergy2_true")
+	end
+end
+
+-- создание параллельного мира
+function parallel_spawn(first_speaker, second_speaker)
+	-- включаем эффекторы активации
+	level.add_pp_effector("deadcity_wake.ppe", 4000, false)
+	
+	-- спавним аномалии
+	local pos, lv, gv, sobj
+	-- спавним рестр на проводах
+	sobj = alife():create("space_restrictor",vector():set(-0.323374,13.812342,47.444431),297217,1324)
+	local custom = "[logic]\ncfg = scripts\\ambient\\deadcity\\amb77_restr.ltx"
+	val_test.rewrite_restrictor(sobj, custom, 2.0)	
+	store_id(sobj)
+	-- аномалия 1
+	pos, lv, gv = vector():set(-106.669,3.760,-48.480), 204288, 1254 -- координаты точки 
+	sobj = an_spawn("text_dead01",0.0,pos,lv,gv,0.0001)	-- создаем зону td_1
+	store_id(sobj)
+	-- аномалия 2
+	pos, lv, gv = vector():set(30.257,1.867,51.515), 319445, 1324 -- координаты точки
+	sobj = an_spawn("text_dead02",0.0,pos,lv,gv,0.0001)	-- создаем зону td_2
+	store_id(sobj)
+	-- аномалия 3
+	pos, lv, gv = vector():set(-143.000,3.542,-66.867), 174902, 1232 -- координаты точки
+	sobj = an_spawn("text_dead03",0.0,pos,lv,gv,0.0001)	-- создаем зону td_3
+	store_id(sobj)
+	-- аномалия 4
+	pos, lv, gv = vector():set(-80.822,1.633,-9.444), 229471, 1268 -- координаты точки
+	sobj = an_spawn("text_dead04",0.0,pos,lv,gv,0.0001)	-- создаем зону td_4
+	store_id(sobj)
+	-- аномалия 5
+	pos, lv, gv = vector():set(-4.129,1.079,64.641), 294249, 1324 -- координаты точки
+	sobj = an_spawn("text_dead05",0.0,pos,lv,gv,0.0001)	-- создаем зону td_5
+	store_id(sobj)
+	-- аномалия 6
+	pos, lv, gv = vector():set(-196.313,1.347,-22.934), 133879, 1215 -- координаты точки
+	sobj = an_spawn("text_dead06",0.0,pos,lv,gv,0.0001)	-- создаем зону td_6
+	store_id(sobj)
+	-- аномалия 7
+	pos, lv, gv = vector():set(-130.409,1.080,21.771), 184732, 1236 -- координаты точки
+	sobj = an_spawn("text_dead07",0.0,pos,lv,gv,0.0001)	-- создаем зону td_7
+	store_id(sobj)
+	-- аномалия 8
+	pos, lv, gv = vector():set(-43.110,5.934,-17.615), 261402, 1293 -- координаты точки
+	sobj = an_spawn("text_dead08",0.0,pos,lv,gv,0.0001)	-- создаем зону td_8
+	store_id(sobj)
+	-- аномалия 9
+	pos, lv, gv = vector():set(-61.416,1.079,-119.778), 245959, 1277 -- координаты точки
+	sobj = an_spawn("arr_s",0.0,pos,lv,gv,0.0001)	-- создаем зону arrow_south
+	store_id(sobj)
+	-- аномалия 10
+	pos, lv, gv = vector():set(74.346,1.069,19.439), 351086, 1347 -- координаты точки
+	sobj = an_spawn("arr_e",0.0,pos,lv,gv,0.0001)	-- создаем зону arrow_east
+	store_id(sobj)
+	-- аномалия 11
+	pos, lv, gv = vector():set(-255.596,1.669,12.412), 82706, 1196 -- координаты точки
+	sobj = an_spawn("arr_w",0.0,pos,lv,gv,0.0001)	-- создаем зону arrow_west
+	store_id(sobj)
+	-- аномалия 9a
+	pos, lv, gv = vector():set(-62.818,3.584,-139.652), 244518, 1275 -- координаты точки
+	sobj = an_spawn("guard_mg",5.0,pos,lv,gv,0.5)	-- создаем зону guard_south
+	store_id(sobj)
+	-- аномалия 10a
+	pos, lv, gv = vector():set(95.601,3.273,20.796), 364742, 1347 -- координаты точки
+	sobj = an_spawn("guard_mg",5.0,pos,lv,gv,0.5)	-- создаем зону guard_east
+	store_id(sobj)
+	-- аномалия 11a
+	pos, lv, gv = vector():set(-267.633,2.587,12.279), 72179, 1196 -- координаты точки
+	sobj = an_spawn("guard_mg",5.0,pos,lv,gv,0.5)	-- создаем зону guard_west
+	store_id(sobj)
+	-- аномалия 12
+	pos, lv, gv = vector():set(33.547,1.200,-82.213), 322605, 1327 -- координаты точки
+	sobj = an_spawn("klassik",1.5,pos,lv,gv,0.0001)	-- создаем зону klassik
+	store_id(sobj)
+	-- аномалия 12a
+	pos, lv, gv = vector():set(33.547,1.450,-82.213), 322605, 1327 -- координаты точки
+	sobj = an_spawn("mg_gravy_low",4.5,pos,lv,gv,0.0001)	-- создаем зону mg_gravy_low
+	store_id(sobj)
+	-- аномалия 13-1
+	pos, lv, gv = vector():set(-45.362,1.449,-82.473), 260109, 1284 -- координаты точки
+	sobj = an_spawn("mg_gravy",25.5,pos,lv,gv,0.0001)	-- создаем зону mg_gravy (школа)
+	store_id(sobj)
+	-- аномалия 13-2
+	pos, lv, gv = vector():set(-176.274,2.520,-35.001), 148175, 1215 -- координаты точки
+	sobj = an_spawn("mg_gravy",25.5,pos,lv,gv,0.0001)	-- создаем зону mg_gravy (двор, где мебель)
+	store_id(sobj)
+	-- аномалия 13-3
+	pos, lv, gv = vector():set(-38.599,1.281,56.425), 266531, 1285 -- координаты точки
+	sobj = an_spawn("mg_gravy",25.5,pos,lv,gv,0.0001)	-- создаем зону mg_gravy (выход из дворов, где САМ)
+	store_id(sobj)
+	-- аномалия 13-4
+	pos, lv, gv = vector():set(-126.656,1.280,-74.319), 187526, 1240 -- координаты точки
+	sobj = an_spawn("mg_gravy",25.5,pos,lv,gv,0.0001)	-- создаем зону mg_gravy (у горкома, возле ларька)
+	store_id(sobj)
+	-- аномалия 13-5
+	pos, lv, gv = vector():set(-129.928,1.281,18.957), 184732, 1236 -- координаты точки
+	sobj = an_spawn("mg_gravy",25.5,pos,lv,gv,0.0001)	-- создаем зону mg_gravy (убирайся)
+	store_id(sobj)
+	-- аномалия 13-1а
+	pos, lv, gv = vector():set(-45.362,1.549,-82.473), 260109, 1284 -- координаты точки
+	sobj = an_spawn("elm",6.0,pos,lv,gv,0.0001)	-- создаем зону mg_gravy (школа)
+	store_id(sobj)
+	-- аномалия 13-2а
+	pos, lv, gv = vector():set(-176.274,2.620,-35.001), 148175, 1215 -- координаты точки
+	sobj = an_spawn("elm",3.0,pos,lv,gv,0.0001)	-- создаем зону mg_gravy (двор, где мебель)
+	store_id(sobj)
+	-- аномалия 13-3а
+	pos, lv, gv = vector():set(-38.599,1.381,56.425), 266531, 1285 -- координаты точки
+	sobj = an_spawn("elm",3.0,pos,lv,gv,0.0001)	-- создаем зону mg_gravy (выход из дворов, где САМ)
+	store_id(sobj)
+	-- аномалия 13-4а
+	pos, lv, gv = vector():set(-126.656,1.380,-74.319), 187526, 1240 -- координаты точки
+	sobj = an_spawn("elm",3.0,pos,lv,gv,0.0001)	-- создаем зону mg_gravy (у горкома, возле ларька)
+	store_id(sobj)
+	-- аномалия 13-5а
+	pos, lv, gv = vector():set(-129.928,1.381,18.957), 184732, 1236 -- координаты точки
+	sobj = an_spawn("elm",3.0,pos,lv,gv,0.0001)	-- создаем зону mg_gravy (убирайся)
+	store_id(sobj)
+	-- Аномалия Солнце
+	pos, lv, gv = vector():set(-97.602,2.790,-11.600), 213375, 1268 -- координаты точки 
+	sobj = an_spawn("sun_mg",0.0,pos,lv,gv,0.0001)	-- создаем зону  sun_mg
+	store_id(sobj)
+	-- Аномалия прятки
+	pos, lv, gv = vector():set(-5.647,2.015,-75.146), 293162, 1310 -- координаты точки 
+	sobj = an_spawn("darkness_00",5.0,pos,lv,gv,0.0001)	-- создаем зону pryatky	
+	store_id(sobj)
+	-- "Источник"
+	pos, lv, gv = vector():set(-303.673,9.999,-209.073), 313788, 1330 -- координаты точки 
+	sobj = an_spawn("mg_gravy_art",4.0,pos,lv,gv,0.0001)	-- создаем зону источник
+	store_id(sobj)
+	-- "Туман на болоте"
+	pos, lv, gv = vector():set(-266.515,-8.019,181.690), 73050, 1187 -- координаты точки 
+	sobj = an_spawn("fog_elm_00",0.0,pos,lv,gv,0.02)	-- создаем зону FOG_00	
+	store_id(sobj)
+	-- "Низины_1" (рядом со школой)
+	pos, lv, gv = vector():set(94.717,-7.756,-151.779), 363759, 1354 -- координаты точки 
+	sobj = an_spawn("gravy_elm_00",0.0,pos,lv,gv,0.02)	-- создаем зону gravy_elm_00
+	store_id(sobj)
+	pos, lv, gv = vector():set(94.717,-7.656,-151.779), 363759, 1354 -- координаты точки 
+	sobj = an_spawn("mg_gravy",20.0,pos,lv,gv,0.0001)	-- создаем зону mg_gravy	
+	store_id(sobj)
+	pos, lv, gv = vector():set(94.717,-7.556,-151.779), 363759, 1354 -- координаты точки 
+	sobj = an_spawn("gravy_elm_01",1.5,pos,lv,gv,0.0001)	-- создаем зону gravy_elm_01
+	store_id(sobj)
+	-- "Низины_2" (где искомый арт)
+	pos, lv, gv = vector():set(-367.713,-7.244,-212.699), 47837, 1184 -- координаты точки 
+	sobj = an_spawn("gravy_elm_00",0.0,pos,lv,gv,0.02)	-- создаем зону gravy_elm_00
+	store_id(sobj)
+	pos, lv, gv = vector():set(-367.713,-7.144,-212.699), 47837, 1184 -- координаты точки 
+	sobj = an_spawn("mg_gravy",20.0,pos,lv,gv,0.0001)	-- создаем зону mg_gravy
+	store_id(sobj)
+	pos, lv, gv = vector():set(-367.713,-7.044,-212.699), 47837, 1184 -- координаты точки 
+	sobj = an_spawn("gravy_elm_01",1.5,pos,lv,gv,0.0001)	-- создаем зону gravy_elm_01
+	store_id(sobj)
+	-- "Низины_3" (между туманом и холодильником)
+	pos, lv, gv = vector():set(-80.956,-10.002,208.696), 229128, 1283 -- координаты точки 
+	sobj = an_spawn("gravy_elm_00",0.0,pos,lv,gv,0.02)	-- создаем зону gravy_elm_00
+	store_id(sobj)
+	pos, lv, gv = vector():set(-80.956,-9.902,208.696), 229128, 1283 -- координаты точки 
+	sobj = an_spawn("mg_gravy",20.0,pos,lv,gv,0.0001)	-- создаем зону mg_gravy	
+	store_id(sobj)
+	pos, lv, gv = vector():set(-80.956,-9.802,208.696), 229128, 1283 -- координаты точки 
+	sobj = an_spawn("gravy_elm_01",1.5,pos,lv,gv,0.0001)	-- создаем зону gravy_elm_01
+	store_id(sobj)
+	-- "Низины_4" (за колючкой)
+	pos, lv, gv = vector():set(104.859,-10.017,166.462), 350767, 1343 -- координаты точки 
+	sobj = an_spawn("gravy_elm_00",0.0,pos,lv,gv,0.02)	-- создаем зону gravy_elm_00
+	store_id(sobj)
+	pos, lv, gv = vector():set(104.859,-9.917,166.462), 350767, 1343 -- координаты точки 
+	sobj = an_spawn("mg_gravy",20.0,pos,lv,gv,0.0001)	-- создаем зону mg_gravy
+	store_id(sobj)
+	pos, lv, gv = vector():set(104.859,-9.817,166.462), 350767, 1343 -- координаты точки 
+	sobj = an_spawn("gravy_elm_01",1.5,pos,lv,gv,0.0001)	-- создаем зону gravy_elm_01
+	store_id(sobj)
+	-- "Низины_5" (за туманом за колючкой)
+	pos, lv, gv = vector():set(-364.182,-11.296,239.094), 56142, 1191 -- координаты точки 
+	sobj = an_spawn("gravy_elm_00",0.0,pos,lv,gv,0.02)	-- создаем зону gravy_elm_00
+	store_id(sobj)
+	pos, lv, gv = vector():set(-364.182,-11.196,239.094), 56142, 1191 -- координаты точки 
+	sobj = an_spawn("mg_gravy",20.0,pos,lv,gv,0.0001)	-- создаем зону mg_gravy	
+	store_id(sobj)
+	pos, lv, gv = vector():set(-364.182,-11.096,239.094), 56142, 1191 -- координаты точки 
+	sobj = an_spawn("gravy_elm_01",1.5,pos,lv,gv,0.0001)	-- создаем зону gravy_elm_01
+	store_id(sobj)
+	-- Летающие шары
+	pos, lv, gv = vector():set(-97.602,2.790,-11.600), 213375, 1268 -- координаты точки 
+	sobj = an_spawn("fly_balls",0.0,pos,lv,gv,0.0001)	-- создаем зону fly_balls	
+	store_id(sobj)
+	-- "Приборчик"
+	pos, lv, gv = vector():set(7.770,15.624,36.174), 297216, 1324 -- координаты точки 
+	sobj = an_spawn("pr_activ",0.0,pos,lv,gv,0.0001)	-- создаем зону прибора	
+	store_id(sobj)
+
+-- спавн артефактов
+	pos, lv, gv = vector():set(-47.362,1.649,-77.473), 260109, 1284 -- координаты точки 
+	sobj=alife():create("af_evergy4_false", pos, lv, gv) -- грави-школа
+	pos, lv, gv = vector():set(-43.362,1.649,-85.473), 260109, 1284 -- координаты точки 
+	sobj=alife():create("af_evergy10_false", pos, lv, gv) -- грави-школа
+	pos, lv, gv = vector():set(-39.449,1.481,77.751), 265934, 1287 -- координаты точки 
+	sobj=alife():create("af_evergy2_false", pos, lv, gv) -- грави-выход со двора
+	pos, lv, gv = vector():set(-35.599,1.481,59.425), 266531, 1285 -- координаты точки 
+	sobj=alife():create("af_evergy4_false", pos, lv, gv) -- грави-выход со двора
+	pos, lv, gv = vector():set(-128.656,1.480,-70.319), 187526, 1240 -- координаты точки 
+	sobj=alife():create("af_evergy2_false", pos, lv, gv) -- грави-горком-ларёк
+	pos, lv, gv = vector():set(-120.656,1.480,-76.319), 187526, 1240 -- координаты точки 
+	sobj=alife():create("af_evergy10_false", pos, lv, gv) -- грави-горком-ларёк
+	pos, lv, gv = vector():set(-7.734,2.575,96.198), 293798, 1322 -- координаты точки 
+	sobj=alife():create("af_evergy3_false", pos, lv, gv) -- двор, где трубы
+	pos, lv, gv = vector():set(-1.605,11.448,57.488), 296250, 1324 -- координаты точки 
+	sobj=alife():create("af_evergy16_false", pos, lv, gv) -- двор, где провода
+	pos, lv, gv = vector():set(33.547,1.500,-83.213), 322605, 1327 -- координаты точки 
+	sobj=alife():create("af_evergy10_false", pos, lv, gv) -- классики
+	pos, lv, gv = vector():set(-144.122,9.233,-7.363), 173709, 1236 -- координаты точки 
+	sobj=alife():create("af_evergy7_false", pos, lv, gv) -- развалины на площади (запад
+	pos, lv, gv = vector():set(-34.943,6.291,1.509), 269514, 1293 -- координаты точки 
+	sobj=alife():create("af_evergy2_false", pos, lv, gv) -- развалины на площади (восток
+	pos, lv, gv = vector():set(-95.468,5.000,-92.408), 218871, 1265 -- координаты точки 
+	sobj=alife():create("af_evergy2_false", pos, lv, gv) -- фонтан
+	pos, lv, gv = vector():set(-22.606,6.340,-61.370), 279890, 1304 -- координаты точки 
+	sobj=alife():create("af_evergy9_false", pos, lv, gv) -- школа
+	pos, lv, gv = vector():set(-60.818,3.584,-145.652), 244518, 1275 -- координаты точки 
+	sobj=alife():create("af_evergy14_false", pos, lv, gv) -- южный СТРАЖ
+	pos, lv, gv = vector():set(-62.818,3.584,-145.652), 244518, 1275 -- координаты точки 
+	sobj=alife():create("af_evergy11_false", pos, lv, gv) -- южный СТРАЖ
+	pos, lv, gv = vector():set(-262.633,2.587,17.279), 72179, 1196 -- координаты точки 
+	sobj=alife():create("af_evergy11_false", pos, lv, gv) -- западный СТРАЖ!
+	pos, lv, gv = vector():set(-213.553,6.399,36.774), 119868, 1223 -- координаты точки 
+	sobj=alife():create("af_evergy12_false", pos, lv, gv) -- дом западный СТРАЖ!
+	pos, lv, gv = vector():set(93.395,1.369,14.538), 360327, 1347 -- координаты точки 
+	sobj=alife():create("af_evergy12_false", pos, lv, gv) -- ВОСТОЧНЫЙ СТРАЖ
+	pos, lv, gv = vector():set(61.626,4.496,35.437), 343066, 1335 -- координаты точки 
+	sobj=alife():create("af_evergy11_false", pos, lv, gv) -- дом ВОСТОЧНЫЙ СТРАЖ
+	pos, lv, gv = vector():set(-302.786,13.598,-208.840), 313788, 1330 -- координаты точки 
+	sobj=alife():create("af_evergy_true", pos, lv, gv) -- настоящий "источник энергии"!
+	pos, lv, gv = vector():set(-262.572,-7.711,171.618), 76704, 1195 -- координаты точки 
+	sobj=alife():create("af_evergy6_false", pos, lv, gv) -- зона тумана!
+	pos, lv, gv = vector():set(113.238,-9.698,165.567), 360858, 1348 -- координаты точки 
+	sobj=alife():create("af_evergy8_false", pos, lv, gv) -- "Низины_4" (за колючкой)!	
+	pos, lv, gv = vector():set(97.144,-9.717,169.547), 360858, 1348 -- координаты точки 
+	sobj=alife():create("af_evergy16_false", pos, lv, gv) -- "Низины_4" (за колючкой)!	
+	pos, lv, gv = vector():set(-94.339,-9.803,208.407), 216512, 1245 -- координаты точки 
+	sobj=alife():create("af_evergy5_false", pos, lv, gv) -- "Низины_3" (между туманом и холодильником)!
+	pos, lv, gv = vector():set(-101.352,-7.149,207.834), 208884, 1245 -- координаты точки 
+	sobj=alife():create("af_evergy15_false", pos, lv, gv) -- "Низины_3" (между туманом и холодильником)!
+	pos, lv, gv = vector():set(-369.328,-6.824,-197.565), 22423, 1179 -- координаты точки 
+	sobj=alife():create("af_evergy15_false", pos, lv, gv) -- "Низины_2" (где искомый арт)!
+	pos, lv, gv = vector():set(-365.596,-7.616,-217.844), 22423, 1179 -- координаты точки 
+	sobj=alife():create("af_evergy16_false", pos, lv, gv) -- "Низины_2" (где искомый арт)!
+	pos, lv, gv = vector():set(91.616,-7.759,-145.130), 362177, 1354 -- координаты точки 
+	sobj=alife():create("af_evergy5_false", pos, lv, gv) -- "Низины_1" (рядом со школой)!
+	pos, lv, gv = vector():set(101.859,-7.682,-158.344), 367443, 1354 -- координаты точки 
+	sobj=alife():create("af_evergy15_false", pos, lv, gv) -- "Низины_1" (рядом со школой)!
+	pos, lv, gv = vector():set(-372.440,-10.585,216.857), 56142, 1191 -- координаты точки 
+	sobj=alife():create("af_evergy14_false", pos, lv, gv) -- "Низины_5" !
+	pos, lv, gv = vector():set(-354.912,-10.807,224.309), 56142, 1191 -- координаты точки 
+	sobj=alife():create("af_evergy15_false", pos, lv, gv) -- "Низины_5" !
+	pos, lv, gv = vector():set(-364.182,-10.0596,239.094), 56142, 1191 -- координаты точки 
+	sobj=alife():create("af_evergy12_false", pos, lv, gv) -- "Низины_5" !
+	pos, lv, gv = vector():set(-332.403,-4.592,28.745), 28430, 1176 -- координаты точки 
+	sobj=alife():create("af_evergy8_false", pos, lv, gv) -- Рядом со стражем западным в кустах !
+	pos, lv, gv = vector():set(-208.915,7.342,-104.571), 123731, 1206 -- координаты точки 
+	sobj=alife():create("af_evergy5_false", pos, lv, gv) -- Крыша домика во дворе с нограви !
+	pos, lv, gv = vector():set(-169.755,3.899,-43.076), 154742, 1225 -- координаты точки 
+	sobj=alife():create("af_evergy4_false", pos, lv, gv) -- зона нограви во дворе !
+	pos, lv, gv = vector():set(-171.276,3.870,-24.879), 153700, 1225 -- координаты точки 
+	sobj=alife():create("af_evergy10_false", pos, lv, gv) -- зона нограви во дворе !
+	pos, lv, gv = vector():set(-135.636,1.681,19.256), 184144, 1236 -- координаты точки 
+	sobj=alife():create("af_evergy3_false", pos, lv, gv) -- зона нограви убирайся !
+	
+	-- спавним Варвару
+	sobj = alife():create("varvara",vector():set(3.378602,15.625038,31.860179),297216,1324)
+	if sobj then
+		amk.save_variable("VarvaraID",sobj.id)	-- сохраним ИД Варвары
+	end
+	-- меняем погоду
+	db.actor:give_info_portion("parallel_mg")
+end
+
+-- удаление объектов параллельного мира
+function parallel_release(first_speaker, second_speaker)
+	-- включаем эффекторы деактивации
+	level.add_pp_effector("deadcity_wake_old.ppe", 4001, false)
+	
+	local sobj, sect
+	local sim = alife()
+	-- возвращаем погоду
+	db.actor:disable_info_portion("parallel_mg")
+	-- удаляем аномалии
+	for a=1, table.getn(tbl_mg) do
+		sobj = sim:object(tbl_mg[a])
+		if sobj then
+			sim:release(sobj,true)
+		end
+	end
+	tbl_mg = {}
+	amk.del_variable("mg_tbl")
+	-- удаляем арты и оружие
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj then
+			sect = sobj:section_name()
+			if (sect and string.find(sect, 'af_evergy') and string.find(sect, '_false')) 
+				or sect=="pribor_zh" 
+				or sect=="evergy2_true" 
+				or sect=="wpn_ak00u" 
+				or sect=="zapis_w"
+				or sect=="statya"
+				or sect=="ammo_5.5x40_ucen" then
+					sim:release(sobj,true)
+			end		
+		end
+	end	
+	-- удаляем прибор
+	local id = amk.load_variable("pribor_mg1",nil)
+	local sobj = id and sim:object(id)
+	if sobj then
+		sim:release(sobj,true)
+	end
+	amk.del_variable("pribor_mg1")	
+end
+-- ----------------------------------------------- ПЕЩЕРА ------------------------------------------------
+-- спавним аномалии в Пещере
+function spawn_peschera()
+	pos, lv, gv = vector():set(-324.914,70.517,149.640), 31534, 1444 -- координаты точки 
+	an_spawn("trap_02c",0.0,pos,lv,gv,0.0001)	-- создаем зону hair-eye3
+	pos, lv, gv = vector():set(-324.588,67.517,235.384), 31673, 1446 -- координаты точки 
+	an_spawn("trap_02",0.0,pos,lv,gv,0.0001)	-- создаем зону hair-eye2
+	pos, lv, gv = vector():set(-247.646,69.517,234.266), 85387, 1463 -- координаты точки 
+	an_spawn("trap_02a",0.0,pos,lv,gv,0.0001)	-- создаем зону hair-eye1
+	pos, lv, gv = vector():set(-248.211,68.517,150.245), 84797, 1462 -- координаты точки 
+	an_spawn("trap_02b",0.0,pos,lv,gv,0.0001)	-- создаем зону hair-eye0
+	pos, lv, gv = vector():set(-291.821,60.444,219.572), 55743, 1458 -- координаты точки
+	an_spawn("trap_03",0.0,pos,lv,gv,0.0001)	-- создаем зону stars
+	pos, lv, gv = vector():set(-308.987,61.772,200.646), 42016, 1458 -- координаты точки
+	an_spawn("trap_04",0.0,pos,lv,gv,0.0001)	-- создаем зону moln (справа
+	pos, lv, gv = vector():set(-317.614,42.473,209.604), 35956, 1446 -- координаты точки
+	an_spawn("trap_05",0.0,pos,lv,gv,0.0001)	-- создаем зону moln_n (справа
+	pos, lv, gv = vector():set(-263.626,61.659,200.132), 75149, 1458 -- координаты точки
+	an_spawn("trap_04",0.0,pos,lv,gv,0.0001)	-- создаем зону moln (слева
+	pos, lv, gv = vector():set(-256.875,42.580,209.604), 79694, 1463 -- координаты точки
+	an_spawn("trap_05",0.0,pos,lv,gv,0.0001)	-- создаем зону moln_n (слева
+	pos, lv, gv = vector():set(-254.849,42.600,190.825), 80932, 1459 -- координаты точки
+	an_spawn("trap_05",0.0,pos,lv,gv,0.0001)	-- создаем зону moln_n (сзади слева
+	pos, lv, gv = vector():set(-317.103,42.059,190.290), 37213, 1453 -- координаты точки
+	an_spawn("trap_05",0.0,pos,lv,gv,0.0001)	-- создаем зону moln_n (сздади справа
+	pos, lv, gv = vector():set(-246.742,42.059,200.508), 86202, 1463 -- координаты точки
+	an_spawn("trap_07",0.0,pos,lv,gv,0.0001)	-- создаем зону moln_n (сбоку слева
+	pos, lv, gv = vector():set(-326.515,42.059,200.508), 31234, 1446 -- координаты точки
+	an_spawn("trap_07",0.0,pos,lv,gv,0.0001)	-- создаем зону moln_n (сбоку справа
+	pos, lv, gv = vector():set(-264.536,42.059,200.508), 74625, 1459 -- координаты точки
+	an_spawn("trap_08",0.0,pos,lv,gv,0.0001)	-- создаем зону moln_n (inside слева
+	pos, lv, gv = vector():set(-309.245,42.059,200.508), 42012, 1454 -- координаты точки
+	an_spawn("trap_08",0.0,pos,lv,gv,0.0001)	-- создаем зону moln_n (inside справа
+	pos, lv, gv = vector():set(-374.588,53.517,270.249), 6827, 1433 -- координаты точки 
+	an_spawn("trap_11",1.0,pos,lv,gv,0.0001)	-- создаем зону plenka_ice
+	pos, lv, gv = vector():set(-192.375,77.553,107.148), 123357, 1484 -- координаты точки 
+	an_spawn("trap_11",1.0,pos,lv,gv,0.0001)	-- создаем зону plenka_ice
+	pos, lv, gv = vector():set(-225.016,95.721,309.687), 102025, 1465 -- координаты точки 
+	an_spawn("trap_11a",1.0,pos,lv,gv,0.0001)	-- создаем зону plenka_ice
+	pos, lv, gv = vector():set(-398.966,40.020,223.409), 1357, 1429 -- координаты точки 
+	an_spawn("trap_01a",1.5,pos,lv,gv,0.0001)	-- создаем зону plenka_trap01a
+	pos, lv, gv = vector():set(-336.221,39.486,296.687), 26143, 1429 -- координаты точки 
+	an_spawn("trap_01b",1.5,pos,lv,gv,0.0001)	-- создаем зону plenka_trap01b
+	pos, lv, gv = vector():set(-257.191,41.779,296.564), 79850, 1472 -- координаты точки 
+	an_spawn("trap_01b",1.5,pos,lv,gv,0.0001)	-- создаем зону plenka_trap01b
+	pos, lv, gv = vector():set(-248.019,24.323,84.898), 85169, 1477 -- координаты точки 
+	an_spawn("trap_01b",1.5,pos,lv,gv,0.0001)	-- создаем зону plenka_trap01b
+	pos, lv, gv = vector():set(-140.237,26.708,449.645), 145501, 1492 -- координаты точки 
+	an_spawn("trap_10",11.5,pos,lv,gv,0.3)	-- создаем зону sphere
+	pos, lv, gv = vector():set(126.905,40.492,389.960), 171471, 1506 -- координаты точки 
+	an_spawn("trap_09",1.0,pos,lv,gv,0.0001)	-- создаем зону капли-юг
+	pos, lv, gv = vector():set(128.434,40.647,404.173), 171733, 1506 -- координаты точки 
+	an_spawn("trap_09",1.0,pos,lv,gv,0.0001)	-- создаем зону капли-север
+	pos, lv, gv = vector():set(153.334,44.895,388.280), 172532, 1506 -- координаты точки 
+	an_spawn("trap_09a",1.0,pos,lv,gv,0.0001)	-- создаем зону капли-выход
+	pos, lv, gv = vector():set(146.263,42.973,389.894), 172477, 1506 -- координаты точки 
+	an_spawn("trap_09b",1.0,pos,lv,gv,0.0001)	-- создаем зону капли-выход-звук
+	pos, lv, gv = vector():set(137.967,40.195,395.639), 172340, 1506 -- координаты точки 
+	an_spawn("trap_09a",1.0,pos,lv,gv,0.0001)	-- создаем зону капли-выход
+	pos, lv, gv = vector():set(121.941,40.949,397.892), 170736, 1506 -- координаты точки 
+	an_spawn("trap_09a",1.0,pos,lv,gv,0.0001)	-- создаем зону капли-выход
+	pos, lv, gv = vector():set(114.875,41.511,399.484), 170263, 1506 -- координаты точки 
+	an_spawn("trap_09c",1.0,pos,lv,gv,0.0001)	-- создаем зону капли-выход-звук
+	pos, lv, gv = vector():set(107.754,41.839,403.362), 169416, 1506 -- координаты точки 
+	an_spawn("trap_09a",1.0,pos,lv,gv,0.0001)	-- создаем зону капли-выход
+	pos, lv, gv = vector():set(71.506,39.529,473.772), 163188, 1502 -- координаты точки 
+	an_spawn("trap_06a",1.0,pos,lv,gv,0.0001)	-- создаем зону "wall" трещина 1
+	pos, lv, gv = vector():set(60.701,41.575,475.116), 131192, 1498 -- координаты точки 
+	an_spawn("trap_06a",1.0,pos,lv,gv,0.0001)	-- создаем зону "wall" трещина 2
+	pos, lv, gv = vector():set(-78.488,38.932,445.683), 153686, 1495 -- координаты точки 
+	an_spawn("trap_06",1.5,pos,lv,gv,0,0001)	-- создаем зону "wall" (рядом с золотой сферой)
+	pos, lv, gv = vector():set(-151.781,17.729,281.129), 143426, 1491 -- координаты точки 
+	an_spawn("trap_06b",1.5,pos,lv,gv,0,0001)	-- создаем зону "wall" (начало внизу)
+	pos, lv, gv = vector():set(130.095,41.134,428.663), 171869, 1506 -- координаты точки 
+	an_spawn("trap_06c",1.5,pos,lv,gv,0,0001)	-- создаем зону "wall" (teleport)
+end
+
+-- ----------------------------------- Лесник ----------------------------
+-- проверка на наличие настойки
+function nastoyka_have(first_speaker, second_speaker)
+	return new_dialog.item_much("nastoyka",2) ~= false
+end
+-- получение вознаграждения
+function ded_evro(first_speaker, second_speaker)
+	new_dialog.out_item_much("nastoyka",2)
+	dialogs.relocate_item_section(first_speaker,"euro","in")
+end
+
+
+-- ---------------------------------------------Лабиринт Макса -------------------------------------------
+-- таблицы порядка прохождения пробок
+local tbl_exit = {
+	[1] = {2,5,4,1,3},
+	[2] = {5,4,1,3,2}
+}
+-- таблицы координат точек выброса из пробок
+local tbl_in = {
+	[1] = vector():set(-41.381763458252,2.539398431778,274.2248840332),
+	[2] = vector():set(-104.60994720459,1.2385536432266,258.97064208984),
+	[3] = vector():set(2.351749420166,3.1380705833435,263.08898925781),
+	[4] = vector():set(10.030694961548,-0.92744517326355,273.2763671875),
+	[5] = vector():set(-26.933506011963,1.4174120426178,274.73556518555)
+}
+local tbl_out = {
+	[1] = vector():set(-61.150344848633,2.5396547317505,274.4875793457),
+	[2] = vector():set(-92.8486328125,0.23988220095634,258.70816040039),
+	[3] = vector():set(9.4497146606445,-0.76008802652359,263.17111206055),
+	[4] = vector():set(8.8761739730835,-0.76214480400085,265.54077148438), 
+	[5] = vector():set(-21.530372619629,-0.96148157119751,281.92971801758)
+}
+-- таблица координат телепортов
+local tbl_fuse = {
+	[1] = {vector():set(-50.820205688477,2.539130449295,274.37142944336), 107038, 889},
+	[2] = {vector():set(-97.961303710938,0.33897194862366,258.86978149414), 37106, 864},
+	[3] = {vector():set(5.5022120475769,0.6972238779068,263.13177490234), 203613, 963},
+	[4] = {vector():set(9.9859266281128,-0.76211017370224,268.80960083008), 212618, 963},
+	[5] = {vector():set(-23.690941619873,-0.42527949810028,278.16485595703), 152293, 944}
+}
+-- таблица координат переключателей
+local tbl_switch = {
+	[1] = {vector():set(-40.145050048828,-0.96058177947998,281.98077392578), 124486, 944},
+	[2] = {vector():set(-54.899837493896,-0.96035528182983,239.01078796387), 101428, 863}
+}
+-- проверка Макса
+function check_max()
+	local sobj
+	-- проверим живой ли Макс
+	for i=0,65534 do 
+		sobj = alife():object(i)
+		if sobj and sobj:name()=='max' and sobj:alive() then -- живой
+			return true
+		end
+	end
+	return false
+end
+-- спавн лабиринта
+function max_spawn()
+	if not check_max() then return end	-- проверим Макса
+	-- создаем зоны-пробки
+	local custom = "[logic]\ncfg = scripts\\foto\\restr\\max_block_restr"
+	local custom_end = ".ltx"
+	local zone, sobj, str
+	local radius = 2	-- радиус зон
+	for a=1, 5 do
+		zone = tbl_fuse[a]	-- выбираем строку параметров из таблицы
+		sobj = alife():create("space_restrictor",zone[1],zone[2],zone[3])	-- создаем зону
+		str = custom..tostring(a)..custom_end
+		val_test.rewrite_restrictor(sobj, str, radius)
+	end
+	-- создаем зоны-переключатели
+	custom = "[logic]\ncfg = scripts\\foto\\restr\\max_switch_restr"
+	for a=1, 2 do
+		zone = tbl_switch[a]	-- выбираем строку параметров из таблицы
+		sobj = alife():create("space_restrictor",zone[1],zone[2],zone[3])	-- создаем зону
+		str = custom..tostring(a)..custom_end
+		val_test.rewrite_restrictor(sobj, str, radius)
+	end
+	
+	db.actor:give_info_portion("max_no_entrance")
+	
+	-- создаем рюкзак Макса
+	sobj = alife():create("max_ruk",vector():set(-77.2018,-0.6892,261.9612),66338,864)
+end
+-- переключатель конфигураций
+function max_switch(actor, obj, params)
+	local p = params[1]
+	amk.save_variable("MaxSwitch", p)	-- запомним схему прохождения
+end
+
+-- пробка
+local snd_shubin = sound_object("characters_voice\\scenario\\backup\\shubin_pz_1")
+function max_teleport(actor, obj, params)
+	local p = params[1]
+	local actor = db.actor
+	-- стадия - входа нет
+	if has_alife_info("max_no_entrance") then
+		local pos = tbl_in[p]	-- получаем координаты точки
+		actor:set_actor_position(pos)	-- отправляем туда актера
+	end
+	-- стадия - выхода нет
+	if has_alife_info("max_no_exit") then
+		local switch = amk.load_variable("MaxSwitch", 1)
+		local step = amk.load_variable("MaxStep", 1)
+		local tbl_zone_id = amk.load_table("MaxZoneID", nil) or {}
+		-- правильный выход
+		if p == tbl_exit[switch][step] then	
+			local pos, lv, gv = tbl_fuse[p][1], tbl_fuse[p][2], tbl_fuse[p][3]
+			local zone = "zone_check_2"
+			if p < 4 then
+				zone = "zone_check_1"
+			end	
+			local sobj = an_spawn(zone,1.5,pos,lv,gv,0,0001)	-- создаем зону-индикатор 
+			if sobj then
+				table.insert(tbl_zone_id, sobj.id)	-- сохраняем ИД в таблице
+				amk.save_table("MaxZoneID", tbl_zone_id)
+			end
+			step = step + 1	-- следующий шаг
+			if step > 5 then	-- все, лабиринт пройден
+				-- чистим зоны-индикаторы
+				local sim = alife()
+				for a=1, table.getn(tbl_zone_id) do
+					local sobj = sim:object(tbl_zone_id[a])
+					if sobj then
+						sim:release(sobj,true)
+					end
+				end	
+				-- удаляем переменные
+				amk.del_variable("MaxZoneID")
+				amk.del_variable("MaxStep")
+				amk.del_variable("MaxSwitch")
+				-- устанавливаем признаки завершения блокирования выхода
+				actor:disable_info_portion("max_no_exit")
+				actor:give_info_portion("max_block_end")
+			else 	-- еще не все, сохраним параметры
+				amk.save_variable("MaxStep", step)	-- сохраним шаг	
+				local pos = tbl_out[p]	-- получаем координаты точки
+				actor:set_actor_position(pos)	-- отправляем туда актера				
+			end
+		
+		-- неправильный выход
+		else 
+			local pos = tbl_out[p]	-- получаем координаты точки
+			actor:set_actor_position(pos)	-- отправляем туда актера			
+			amk.save_variable("MaxStep", 1)	-- сбросим и сохраним шаг	
+			-- чистим зоны-индикаторы
+			local sim = alife()
+			for a=1, table.getn(tbl_zone_id) do
+				local sobj = sim:object(tbl_zone_id[a])
+				if sobj then
+					sim:release(sobj,true)
+				end
+			end	
+			amk.del_variable("MaxZoneID")
+			-- Шубин смеется
+			if snd_shubin and not snd_shubin:playing() then
+				snd_shubin:play(db.actor, 0, sound_object.s2d)
+			end
+		end
+	end
+end
+
+-- выдача антирадов
+function max_antirad(first_speaker, second_speaker)
+	dialogs.relocate_item_section(second_speaker,"antirad","in")
+	dialogs.relocate_item_section(second_speaker,"antirad","in")
+	dialogs.relocate_item_section(second_speaker,"antirad","in")
+end
+-- проверка наличия рюкзака
+function max_ruk_have(first_speaker, second_speaker)
+	return new_dialog.item_much("max_ruk",1) ~= false	
+end
+-- обмен с Максом
+function max_transfer(first_speaker, second_speaker)
+	new_dialog.out_item_much("max_ruk",1)
+	dialogs.relocate_item_section(second_speaker,"treasure_item","in")
+	dialogs.relocate_item_section(second_speaker,"treasure_item","in")
+	dialogs.relocate_item_section(second_speaker,"amk_metka","in")
+	dialogs.relocate_item_section(second_speaker,"amk_metka","in")
+end
+-- ----------------------------------- TOOLS ------------------------------------- 
+-- ----------------------------------- Спавн аномалии ----------------------------
+function an_spawn(anom_name,plosh,position,level_vertex_id,game_vertex_id,powers_a,time_dangeros)
+	local con = get_console()
+	local obj = alife():create(anom_name,position,level_vertex_id,game_vertex_id)
+	local pac = net_packet()
+	obj:STATE_Write(pac)
+	local game_vertex_id = pac:r_u16()
+	local distance = pac:r_float()
+	local direction = pac:r_u32()
+	local level_vertex_id = pac:r_u32()
+	local object_flags = pac:r_s32()
+	local custom_data = pac:r_stringZ()
+	local story_id = pac:r_s32()
+	local spawn_story_id = pac:r_s32()
+	local shape_count = pac:r_u8()
+	for i=1,shape_count do
+		local shape_type = pac:r_u8()
+		if shape_type == 0 then
+			local center = pac:r_vec3()
+			local plosh = pac:r_float()
+		else
+			local box = pac:r_matrix()
+		end
+	end
+	local restrikror_type = pac:r_u8()
+	local powers = pac:r_float()
+	local owner_id = pac:r_s32()
+	local on_off_mode_enabled_time = pac:r_u32()
+	local on_off_mode_disabled_time = pac:r_u32()
+	local on_off_mode_shift_time = pac:r_u32()
+	local offline_interactive_radius = pac:r_float()
+	local artefact_spawn_places_count = pac:r_u16()
+	local artefact_position_offset = pac:r_s32()
+	local last_spawn_time_present = pac:r_u8()
+	if pac:r_elapsed()~= 0 then 
+	--   abort("left=%d",pac:r_elapsed())
+	end
+	pac:w_begin(game_vertex_id)
+	pac:w_float(distance)
+	pac:w_u32(direction)
+	pac:w_u32(level_vertex_id)
+	pac:w_u32(object_flags)
+	pac:w_stringZ(custom_data)
+	pac:w_s32(story_id)
+	pac:w_s32(spawn_story_id)
+	pac:w_u8(1)
+	pac:w_u8(0)
+	local sphere_center = vector()
+	sphere_center:set(0,0,0)
+	pac:w_vec3(sphere_center)
+	pac:w_float(plosh)
+	pac:w_u8(restrikror_type)
+	if powers_a ~= nil then 
+		powers = powers_a 
+	end
+	pac:w_float(powers)
+	if time_dangeros == nil then 
+		owner_id = bit_not(0) 
+	else 
+		owner_id = time_dangeros 
+	end
+	pac:w_u32(owner_id)
+	pac:w_u32(on_off_mode_enabled_time)
+	pac:w_u32(on_off_mode_disabled_time)
+	pac:w_u32(on_off_mode_shift_time)
+	pac:w_float(offline_interactive_radius)
+	pac:w_u16(artefact_spawn_places_count)
+	pac:w_u32(artefact_position_offset)
+	pac:w_u8(last_spawn_time_present)
+	pac:r_seek(0)
+	obj:STATE_Read(pac,pac:w_tell())
+	return obj
+end
+
+function spawn_zharks()
+	pos, lv, gv = vector():set(-183.106,1.047,399.852),12377,247 -- координаты точки 
+	an_spawn("blue_tree",0.0,pos,lv,gv,0.0001)	-- создаем зону bluetree
+	pos, lv, gv = vector():set(-191.694,0.611,399.632),12377,247 -- координаты точки 
+	an_spawn("zone_zharka_bt",0.0,pos,lv,gv,0.0001)	-- создаем зону zharka_blue
+	pos, lv, gv = vector():set(-174.468,1.506,399.645),12377,247 -- координаты точки 
+	an_spawn("zone_zharka_bt",0.0,pos,lv,gv,0.0001)	-- создаем зону zharka_blue
+	pos, lv, gv = vector():set(-183.369,1.434,391.089),12377,247 -- координаты точки 
+	an_spawn("zone_zharka_bt",0.0,pos,lv,gv,0.0001)	-- создаем зону zharka_blue
+	pos, lv, gv = vector():set(-183.465,0.641,408.311),12377,247 -- координаты точки 
+	an_spawn("zone_zharka_bt",0.0,pos,lv,gv,0.0001)	-- создаем зону zharka_blue
+end
+
+

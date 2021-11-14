@@ -1,0 +1,302 @@
+-----------------mk---------------------
+
+function music_mk01()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\01_mk\01_brityi_k_vertushke]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_mk01()
+   amk.g_start_timer("music_mk01",0,0,3,0)
+end
+
+function music_mk02()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\01_mk\02_fotik_nashli]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_mk03()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\01_mk\03_zhorik_dead]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_mk04()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\01_mk\04_vozvrashenie_krest]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+-----------------poligon-----------------
+
+function music_poligon01()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\02_poligon\01_enter]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_poligon01()
+   amk.g_start_timer("music_poligon01",0,0,3,0)
+end
+
+function music_poligon02()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\02_poligon\02_vybros]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_poligon02()
+   amk.g_start_timer("music_poligon02",0,0,4,0)
+end
+
+function music_poligon03()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\02_poligon\03_share]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_poligon03()
+   amk.g_start_timer("music_poligon03",0,0,3,0)
+end
+
+function music_poligon04()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\02_poligon\04_share]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_poligon04()
+   amk.g_start_timer("music_poligon04",0,0,2,0)
+end
+
+function music_poligon05()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\02_poligon\ploymar_road]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+----------------swamp--------------------
+
+function music_swamp01()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\03_swamp\01_start_k_doktoru]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_swamp02()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\03_swamp\02_trup_lavrova]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_swamp03()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\03_swamp\03_vtoroy_zahod]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_swamp04()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\03_swamp\04_dunya_k_doktoru]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+------------------promzone-------------------
+
+function music_prom01()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\04_promzone\01_enter1]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_prom01()
+   amk.g_start_timer("music_prom01",0,0,3,0)
+end
+
+function music_prom02()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\04_promzone\02_zahvat_fabriki]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_prom03()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\04_promzone\03_enter2]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_prom03()
+   amk.g_start_timer("music_prom03",0,0,2,0)
+end
+
+function music_prom04()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\04_promzone\04_enter3]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_prom04()
+   amk.g_start_timer("music_prom04",0,0,3,0)
+end
+
+function music_prom05() --пока не использовано
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\04_promzone\05_enter4]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+------------------------aver-------------------------
+
+function music_aver01()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\05_aver\01_perehod_01]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_aver02()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\05_aver\02_perehod_02]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_aver03()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\05_aver\03_perehod_03]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_aver04()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\05_aver\04_ozero]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_aver05()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\05_aver\05_peschera]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_aver05()
+   amk.g_start_timer("music_aver05",0,0,1,0)
+end
+
+function music_aver06()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\05_aver\06_wifi]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_aver06()
+   amk.g_start_timer("music_aver06",0,0,1,0)
+end
+
+function music_aver07()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\05_aver\07_shubin_krest]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+-------------------------bar--------------------------
+
+function music_bar01()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\06_bar\01_zahvat]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+------------------------deadcity----------------------
+
+function music_deadcity01()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\07_deadcity\01_enter]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_deadcity02()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\07_deadcity\02_trup_wulf]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_deadcity02()
+   amk.g_start_timer("music_deadcity02",0,0,2,0)
+end
+
+function music_deadcity03()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\07_deadcity\03_ishod]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_deadcity04()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\07_deadcity\04_red_palatka]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+-----------------------dyshlo-------------------------
+
+function music_dyshlo01()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\08_dyshlo\01_enter_01]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_dyshlo01()
+   amk.g_start_timer("music_dyshlo01",0,0,3,0)
+end
+
+function music_dyshlo02()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\08_dyshlo\02_enter_02]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_dyshlo03()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\08_dyshlo\03_attak]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_dyshlo04()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\08_dyshlo\ormont_way]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+-----------------------pripyat-------------------------
+
+function music_prip01()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\09_pripyat\01_enter_01]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_prip01()
+   amk.g_start_timer("music_prip01",0,0,4,0)
+end
+
+function music_prip02()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\09_pripyat\02_enter_02]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_prip02()
+   amk.g_start_timer("music_prip02",0,0,3,0)
+end
+
+------------------------u_labs--------------------------
+
+function music_electro()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\10_u_labs\01_x18_electro]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_fire()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\10_u_labs\02_x16_fire]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+-----------------------peschera-------------------------
+
+function music_peschera_enter()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\11_peschera\01_peschera_enter]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_peschera_contra()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\11_peschera\02_peschera_contra]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_peschera_contra2()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\11_peschera\03_peschera_contra]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function timer_music_peschera_contra2()
+   amk.g_start_timer("music_peschera_contra2",0,0,0.5,0)
+end
+
+-----------------------sarcofag-------------------------
+
+function music_sar_enter()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\12_sarcofag\01_sar_enter]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function music_sar_spynet()
+   local snd_obj = xr_sound.get_safe_sound_object([[mauvais\12_sarcofag\02_sar_spynet]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+
+
+

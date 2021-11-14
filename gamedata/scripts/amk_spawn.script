@@ -1,0 +1,146 @@
+--
+-- Либа спавна
+--
+-- Названия карт
+--[[
+local levels_names =
+{
+	l01_escape = "l01_escape",
+  l02_garbage = "l02_garbage",
+  l03_agroprom = l03_agroprom,
+	l03u_agr_underground=1,
+  l04_darkvalley=0,
+	l04u_labx18=1,
+  l05_bar=0,
+  l06_rostok=0,
+  l07_military=0,
+  l08_yantar=0,
+	l08u_brainlab=1,
+  l10_radar=0,
+	l10u_bunker=1,
+  l11_pripyat=0,
+  l12_stancia=0,
+	l12_stancia_2=0,
+	l12u_control_monolith=1,
+	l12u_sarcofag=1
+}]]
+--Список точек для спавна по уровням
+local maps =
+{
+	x18_1 = { x_pos = -13.74, y_pos = -10.82, z_pos = -4.30, level_vid = 1249, game_vid = 151 },
+	x18_2 = { x_pos = -39.57, y_pos = -13.01, z_pos = -15.60, level_vid = 233, game_vid =  154 },
+	x18_3 = { x_pos = -13.65, y_pos = -12.43, z_pos = -10.45, level_vid = 4780, game_vid = 157 }
+	--end
+}
+
+local spot_monsters={
+
+	x18_1={
+		{burer_weak,60,4},
+		{zombie_normal,30,5},
+		{zombie_normal,20,5},
+		{zombie_normal,20,5},
+	},
+	x18_2={
+		{burer_weak,60,4},
+		{zombie_normal,30,5},
+		{zombie_normal,20,5},
+		{zombie_normal,40,5},
+	},
+	x18_3={
+		{burer_weak,60,4},
+		{zombie_normal,30,5},
+		{zombie_normal,40,5},
+		{zombie_normal,20,5}
+	}
+
+}
+
+--level.name()
+local work_monster_lib =
+{
+	bloodsucker_normal = "bloodsucker_normal",	--Кровосос
+	burer_weak = "burer_weak",	--Бюрер
+	cat_weak = "cat_weak",	--Кот-баюн
+	chimera_weak = "chimera_weak",	--Химера
+	dog_normal = "dog_normal",	--Собака
+	fracture_weak = "fracture_weak",	--Излом
+	m_controller_normal = "m_controller_normal",	--Контролер
+	pseudodog_normal = "pseudodog_normal",	--Псевдособака
+	snork_normal = "snork_normal",	--Снорк
+	tushkano_normal = "tushkano_normal",	--Тушкан
+	--секция зомби
+	zombie_normal = "zombie_normal",	--Зомби гражданский
+	zombie_strong = "zombie_strong",	--Зомби призрак
+	zombie_trup = "zombie_trup",	--Ходячий труп, чрезвычайно живучий
+	zombie_trup2 = "zombie_trup2",	--Ходячий труп2, чрезвычайно живучий
+	zombie_weak = "zombie_weak"	--Зомби труп с лоботомией (слабый)
+	--
+}
+
+function get_map_point(map_name, position_name)
+	
+	
+end
+
+function spawn_monster(monster_type, x_pos, y_pos, z_pos, level_vid, game_vid)
+	local spawn_pos, obj
+	if x_pos == nil or y_pos == nil or z_pos == nil then
+		spawn_pos = db.actor:position()
+	else
+		spawn_pos = vector():set(x_pos, y_pos, z_pos)
+	end
+	if (level_vid == nil) then
+		level_vid = db.actor:level_vertex_id()
+	end
+	if (game_vid == nil) then
+		game_vid = db.actor:game_vertex_id()
+	end
+	if (work_monster_lib[monster_type] ~= nil) then
+		monster_type = work_monster_lib[monster_type]
+		obj = alife():create(monster_type, spawn_pos, level_vid, game_vid)
+	end
+end
+
+function point_spawn_monster(monster_type, position_name, radius)
+	if (monster_type ~=nil) and (position_name ~=nil) then
+		local obj, dx, dz, level_vid, game_vid, xpos, ypos, zpos, spawn_pos
+		if radius ~=nil then
+			dx = math.random(radius)
+			dz = math.random(radius)
+		else
+			dx = 0
+			dz = 0
+		end
+		if (work_monster_lib[monster_type] ~= nil) then
+			monster_type = work_monster_lib[monster_type]
+		else
+			return nil
+		end
+		if (maps[position_name] ~= nil) then
+			local position = maps[position_name]
+			xpos = position.x_pos + dx
+			ypos = position.y_pos
+			zpos = position.z_pos + dz
+			level_vid = position.level_vid
+			game_vid = position.game_vid
+			spawn_pos = vector():set(xpos, ypos, zpos)
+		else
+			return nil
+		end
+		obj = alife():create(monster_type, spawn_pos, level_vid, game_vid)
+		return obj
+	else
+		return nil
+	end
+end
+
+function x_spawn(point_id)
+	if spot_monsters[point_id] then
+		for k,v in pairs(spot_monsters[point_id]) do
+			if math.random() <= v[2]/100 then
+				point_spawn_monster(v[1],point_id,v[3])
+			end
+		end
+	end
+end

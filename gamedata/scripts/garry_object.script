@@ -1,0 +1,75 @@
+
+function spawn_bluetree()
+	local obj= alife():create("bluetree", vector():set(-183.106,1.047,399.852),12377,247)
+	xr_logic.pstor_store(db.actor, "iBlueTreeId", obj.id)
+	level.client_spawn_manager():add(obj.id, 0, this.FixObject, 0)
+end
+
+function palatka_spawn()
+	local obj= alife():create("palatka_red", vector():set(155.772,-9.367,-197.107),389326,1362)
+	xr_logic.pstor_store(db.actor, "iPalatkaId", obj.id)
+	level.client_spawn_manager():add(obj.id, 0, this.FixObject, 0)
+end
+
+function ostrov_spawn()
+	local obj= alife():create("ostrov",vector():set(-140.657,14.587,180.358),139623,1)
+	xr_logic.pstor_store(db.actor, "iOstrovId", obj.id)
+	level.client_spawn_manager():add(obj.id, 0, this.FixObject, 0)
+	local snd_obj = xr_sound.get_safe_sound_object([[ambient\new\actor_ostrov]])
+	snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function fix_palatka()
+	local sobj_id = xr_logic.pstor_retrieve(db.actor, "iPalatkaId", nil)
+	if sobj_id then
+		local sobj = alife():object(sobj_id)
+        if sobj then
+            level.client_spawn_manager():add(sobj.id, 0, this.FixObject, 0)
+        end		
+	end
+end
+
+function fix_island()
+	local sobj_id = xr_logic.pstor_retrieve(db.actor, "iOstrovId", nil)
+	if sobj_id then
+		local sobj = alife():object(sobj_id)
+        if sobj then
+            level.client_spawn_manager():add(sobj.id, 0, this.FixObject, 0)
+        end		
+	end
+end
+
+function fix_bluetree()
+	local sobj_id = xr_logic.pstor_retrieve(db.actor, "iBlueTreeId", nil)
+	if sobj_id then
+		local sobj = alife():object(sobj_id)
+        if sobj then
+            level.client_spawn_manager():add(sobj.id, 0, this.FixObject, 0)
+        end		
+	end
+end
+
+function FixObject(arg, id, obj)
+  if obj then 
+     local pshell = obj:get_physics_shell()
+            if  pshell then 
+            local element = pshell:get_element_by_order(0)
+            if element and not element:is_fixed() then 
+                    element:fix()
+                end
+          end
+     end
+end
+
+function palatka_trup_spawn()
+local sobj = alife():create("palatka_trup",vector():set(156.043,-9.396,-196.847),342766,1330)
+	if sobj then
+		local tbl = amk.read_stalker_params(sobj)
+		tbl.sid = 9701
+		tbl.health = 0
+		tbl.updhealth = 0
+		amk.write_stalker_params(tbl, sobj)
+	end
+end
+
+

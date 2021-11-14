@@ -1,0 +1,31 @@
+local radius = 15 --радиус круга с центром под ногами ГГ, в котором отключаются аномалии
+
+function get_anoms(npc, radius)
+	local anoms = {}
+	local pos = npc:position()
+	for i= 1, 65534 do
+		local obj = level.object_by_id(i)
+		if obj ~= nil and obj:clsid() >= 168 and obj:clsid() <= 181 then
+			local dist = pos:distance_to(obj:position())
+			if dist < radius then
+				table.insert(anoms, obj)
+			end
+		end
+	end
+	return anoms
+end
+
+function on_item_drop(item)
+	local sect = item:section()
+	if sect ~= "anom_remover" then return end
+	--dbg.log("drop anomaly remover. start removing...")
+	local anoms = get_anoms(db.actor, radius)
+	if table.getn(anoms) == 0 then
+		--dbg.log("anomaly not found")
+		return
+	end
+	for i, obj in ipairs(anoms) do
+		obj:disable_anomaly()
+		--dbg.log("anomaly[%s] disabled", obj:name())		
+	end
+end

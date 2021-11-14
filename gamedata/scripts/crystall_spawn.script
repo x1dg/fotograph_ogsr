@@ -1,0 +1,378 @@
+function check_locations()
+	-- Обрабатываем события по локациям
+	-- Миротворческий корпус -----------------------------------------------------------
+	if level.name()=="predbannik" then
+		if has_alife_info("start_crystalls") and not has_alife_info("crystall_pred_spawn") then db.actor:give_info_portion("crystall_pred_spawn") end
+		if not has_alife_info("usa_spawn") then db.actor:give_info_portion("usa_spawn") end
+		if not has_alife_info("start_syujet") then db.actor:give_info_portion("start_syujet") end
+		if has_alife_info("voronin_vstrecha_start") and not has_alife_info("brown_two_dialog_have") and not has_alife_info("brown_foto_proval") then db.actor:give_info_portion("brown_foto_proval") end	
+		if not has_alife_info ("items_random_spawn") then db.actor:give_info_portion("items_random_spawn") end
+		if not has_alife_info ("zapadlo_spawn") then db.actor:give_info_portion("zapadlo_spawn") end
+		if not has_alife_info ("encyclopedy") then db.actor:give_info_portion("encyclopedy") end 
+		if has_alife_info("shubin_dialog_3_done") and not has_alife_info("music_mk04") then db.actor:give_info_portion("music_mk04") end
+		
+	-- Испытательный полигон -----------------------------------------------------------
+	elseif level.name()=="hiding_road" then
+		if has_alife_info("start_crystalls") and not has_alife_info("crystall_road_spawn") then db.actor:give_info_portion("crystall_road_spawn") end
+		if not has_alife_info("road_baza_spawn") then db.actor:give_info_portion("road_baza_spawn") end
+		if not has_alife_info("edik_mafon_spawn") then db.actor:give_info_portion("edik_mafon_spawn") end
+		if has_alife_info("perehod_aver_road_aver") and not has_alife_info("voronin_perehod_talk") then db.actor:give_info_portion("voronin_perehod_talk") end
+		if has_alife_info("brown_two_dialog_start") and not has_alife_info("voronin_vstrecha_start") then db.actor:give_info_portion("voronin_vstrecha_start") end
+		if has_alife_info("bratan_poisk_dialog_done") and not has_alife_info("timer_road_start") then db.actor:give_info_portion("timer_road_start") end
+		if has_alife_info("brown_tri_dialog_done") and not has_alife_info("mousetrap_proval") then db.actor:give_info_portion("mousetrap_proval") end
+		if has_alife_info("ploymar_start_dialog_done") and not has_alife_info("ploymar_dva_spawn") then db.actor:give_info_portion("ploymar_dva_spawn") end
+		if has_alife_info("laba_x16_have") and not has_alife_info("brown_six_dialog_have") and not has_alife_info("brown_six_dialog_proval") then db.actor:give_info_portion("brown_six_dialog_proval") end
+		if has_alife_info("dolg_ataka_finish") and not has_alife_info("del_brown_dva") then db.actor:give_info_portion("del_brown_dva") end
+		if has_alife_info("del_brown_x18") and not has_alife_info("brown_five_spawn") then db.actor:give_info_portion("brown_five_spawn") end
+
+	-- Болота --------------------------------------------------------------------------
+	elseif level.name()=="swamp" then
+		if has_alife_info("start_crystalls") and not has_alife_info("crystall_swamp_spawn") then db.actor:give_info_portion("crystall_swamp_spawn") end
+		if not has_alife_info("lager_uchen_spawn") then db.actor:give_info_portion("lager_uchen_spawn") end
+		if has_alife_info("brown_five_dialog_start") and not has_alife_info("shpak_spawn") then db.actor:give_info_portion("shpak_spawn") end
+                if has_alife_info("lch_bar_swamp") and not has_alife_info("swamp_second_enter") then db.actor:give_info_portion("swamp_second_enter") end
+
+	-- Промзона ------------------------------------------------------------------------
+	elseif level.name()=="promzone" then
+		if has_alife_info("start_crystalls") and not has_alife_info("crystall_prom_spawn") then db.actor:give_info_portion("crystall_prom_spawn") end
+		if not has_alife_info("lukash_vstrecha_start") then db.actor:give_info_portion("lukash_vstrecha_start") end
+		if has_alife_info("mousetrap_finish") and not has_alife_info("prom_secon_enter") then db.actor:give_info_portion("prom_secon_enter") end
+
+	-- Лес -----------------------------------------------------------------------------
+	elseif level.name()=="aver" then
+		if has_alife_info("start_crystalls") and not has_alife_info("crystall_aver_spawn") then db.actor:give_info_portion("crystall_aver_spawn") end
+                if has_alife_info("osvedom_vyzov1") and not has_alife_info("aver_second_enter") then db.actor:give_info_portion("aver_second_enter") end
+                if has_alife_info("brown5_dialog_start") and not has_alife_info("shubin3_spawn") then db.actor:give_info_portion("shubin3_spawn") end
+
+	-- Бар -----------------------------------------------------------------------------
+	elseif level.name()=="l05_bar" then
+		if has_alife_info("start_crystalls") and not has_alife_info("crystall_bar_spawn") then db.actor:give_info_portion("crystall_bar_spawn") end
+		if not has_alife_info("bar_ataka_kamp_spawn") then db.actor:give_info_portion("bar_ataka_kamp_spawn") end
+		if not has_alife_info("pda_agent_aver_have") and not has_alife_info("mousetrap_proval") then db.actor:give_info_portion("mousetrap_proval") end
+		if has_alife_info("midnight_timer_finish") and not has_alife_info("bluetree_spawn") then db.actor:give_info_portion("bluetree_spawn") end
+		
+	-- Червоне Дышло -------------------------------------------------------------------
+	elseif level.name()=="dyshlo" then
+		if has_alife_info("start_crystalls") and not has_alife_info("crystall_dyshlo_spawn") then db.actor:give_info_portion("crystall_dyshlo_spawn") end
+		if has_alife_info("lch_aver_dyshlo") and not has_alife_info("dyshlo_second_enter") then db.actor:give_info_portion("dyshlo_second_enter") end
+		if has_alife_info("brown_six_dialog_start") and not has_alife_info("laba_dyshlo_have") then db.actor:give_info_portion("laba_dyshlo_have") end
+		if has_alife_info("voronin_dyshlo_attak_dialog_start") and not has_alife_info("dolg_dyshlo_spawn") then db.actor:give_info_portion("dolg_dyshlo_spawn") end
+
+	-- Мёртвый Город -------------------------------------------------------------------
+	elseif level.name()=="deadcity" then
+		if has_alife_info("start_crystalls") and not has_alife_info("crystall_mg_spawn") then db.actor:give_info_portion("crystall_mg_spawn") end
+		if not has_alife_info("german_mg_spawn") then db.actor:give_info_portion("german_mg_spawn") end
+		if has_alife_info("brom_mg_dialog_start") and not has_alife_info("red_palatka_spawn") then db.actor:give_info_portion("red_palatka_spawn") end
+
+	-- Припять -------------------------------------------------------------------------
+	elseif level.name()=="l11_pripyat" then
+		if has_alife_info("start_crystalls") and not has_alife_info("crystall_prip_spawn") then db.actor:give_info_portion("crystall_prip_spawn") end
+		if has_alife_info("lch_dyshlo_prip") and not has_alife_info("pashka_spawn") then db.actor:give_info_portion("pashka_spawn") end
+
+	-- Подземка Агропрома --------------------------------------------------------------
+	elseif level.name()=="l03u_agr_underground" then
+		if has_alife_info("start_crystalls") and not has_alife_info("crystall_aground_spawn") then db.actor:give_info_portion("crystall_aground_spawn") end
+		if has_alife_info("shpak_one_dialog_done") and not has_alife_info("agro_und_pronik") then db.actor:give_info_portion("agro_und_pronik") end
+		if has_alife_info("brown_six_dialog_start") and not has_alife_info("aground_kvest") then db.actor:give_info_portion("aground_kvest") end
+
+	-- X-10 --------------------------------------------------------------------------
+	elseif level.name()=="l10u_bunker" then
+		if has_alife_info("start_crystalls") and not has_alife_info("crystall_x10_spawn") then db.actor:give_info_portion("crystall_x10_spawn") end
+		if has_alife_info("brown_six_dialog_start") and not has_alife_info("laba_x10_have") then db.actor:give_info_portion("laba_x10_have") end
+		if has_alife_info("voronin_dolg_dialog_one_start") and not has_alife_info("brown_x10_spawn") then db.actor:give_info_portion("brown_x10_spawn") end
+		if has_alife_info("pentagramm_03") and not has_alife_info("escape_restr_spawn") then db.actor:give_info_portion("escape_restr_spawn") end
+
+	-- Х-18 -----------------------------------------------------------------------------
+	elseif level.name()=="l04u_labx18" then
+		if has_alife_info("start_crystalls") and not has_alife_info("crystall_x18_spawn") then db.actor:give_info_portion("crystall_x18_spawn") end
+		if has_alife_info("brown_four_dialog_start") and not has_alife_info("x18_uber_spawn") then db.actor:give_info_portion("x18_uber_spawn") end
+		if has_alife_info("brown_four_dialog_start") and not has_alife_info("x-18_pronik") then db.actor:give_info_portion("x-18_pronik") fotograf.x18_mafon_spawn() end
+		if has_alife_info("brown_six_dialog_start") and has_alife_info("laba_x10_have") and not has_alife_info("laba_x18_have") then db.actor:give_info_portion("laba_x18_have") end
+		if has_alife_info("del_brown_x10") and not has_alife_info("brown_x18_spawn") then db.actor:give_info_portion("brown_x18_spawn") end
+
+	-- Х-16 -----------------------------------------------------------------------------
+	elseif level.name()=="l08u_brainlab" then
+		if has_alife_info("start_crystalls") and not has_alife_info("crystall_x16_spawn") then db.actor:give_info_portion("crystall_x16_spawn") end
+		if not has_alife_info("yan_labx16_switcher_primary_new") then db.actor:give_info_portion("yan_labx16_switcher_primary_new") end
+		if has_alife_info("brown_six_dialog_start") and not has_alife_info("laba_x16_have") then db.actor:give_info_portion("laba_x16_have") end
+
+	-- Пещера ---------------------------------------------------------------------------
+	elseif level.name()=="av_peshera" then
+		if has_alife_info("start_crystalls") and not has_alife_info("crystall_peschera_spawn") then db.actor:give_info_portion("crystall_peschera_spawn") end
+
+        -- Саркофаг -------------------------------------------------------------------------
+        elseif level.name()=="l12u_sarcofag" then
+                if has_alife_info("karta_peschery") and not has_alife_info("vybralsya_izpeschery") then db.actor:give_info_portion("vybralsya_izpeschery") end
+end
+
+	-- Действия после ухода с локаций
+	-- не Миротворческий корпус -----------------------------------------------------------
+	if level.name()~="predbannik" then
+		if has_alife_info("crystall_pred_spawn") then db.actor:disable_info_portion("crystall_pred_spawn") end
+	end
+
+	-- не Испытательный полигон -----------------------------------------------------------
+	if level.name()~="hiding_road" then
+		if has_alife_info("crystall_road_spawn") then db.actor:disable_info_portion("crystall_road_spawn") end
+		if has_alife_info("mousetrap_finish") and not has_alife_info("del_osvedom") then db.actor:give_info_portion("del_osvedom") end
+		if has_alife_info("voronin_dyshlo_dialog_done") and not has_alife_info("del_voronin_car") then db.actor:give_info_portion("del_voronin_car") end
+	end
+
+	-- не Болота --------------------------------------------------------------------------
+	if level.name()~="swamp" then
+		if has_alife_info("crystall_swamp_spawn") then db.actor:disable_info_portion("crystall_swamp_spawn") end
+		if has_alife_info("kruglov_anoms_dialog_done") and not has_alife_info("check_timer_kruglov") then db.actor:give_info_portion("check_timer_kruglov") end
+	end
+
+	-- не Промзона ------------------------------------------------------------------------
+	if level.name()~="promzone" then
+		if has_alife_info("crystall_prom_spawn") then db.actor:disable_info_portion("crystall_prom_spawn") end
+		if has_alife_info("pda_agent_prom_have") and not has_alife_info("del_agents_prom") then db.actor:give_info_portion("del_agents_prom") end
+		if has_alife_info("dezertir_car_dialog_done") and not has_alife_info("del_dezertir_car") then db.actor:give_info_portion("del_dezertir_car") end
+	end
+
+	-- не Лес -----------------------------------------------------------------------------
+	if level.name()~="aver" then
+		if has_alife_info("crystall_aver_spawn") then db.actor:disable_info_portion("crystall_aver_spawn") end
+		if has_alife_info("greta_dark") and not has_alife_info("del_c_lcs") then db.actor:give_info_portion("del_c_lcs") end
+		if has_alife_info("shubin_dialog_4_done") and not has_alife_info("del_shubin3") then db.actor:give_info_portion("del_shubin3") end
+	end
+
+	-- не Бар -----------------------------------------------------------------------------
+	if level.name()~="l05_bar" then
+		if has_alife_info("crystall_bar_spawn") then db.actor:disable_info_portion("crystall_bar_spawn") end
+	end
+
+	-- не Червоне Дышло -------------------------------------------------------------------
+	if level.name()~="dyshlo" then
+		if has_alife_info("crystall_dyshlo_spawn") then db.actor:disable_info_portion("crystall_dyshlo_spawn") end
+		if has_alife_info("lch_dyshlo_aver") and not has_alife_info("ormont_del") then db.actor:give_info_portion("ormont_del") end
+        end
+
+	-- не Мертвый Город -------------------------------------------------------------------
+	if level.name()~="deadcity" then
+		if has_alife_info("crystall_mg_spawn") then db.actor:disable_info_portion("crystall_mg_spawn") end
+	end
+
+	-- не Припять -------------------------------------------------------------------------
+	if level.name()~="l11_pripyat" then
+		if has_alife_info("crystall_prip_spawn") then db.actor:disable_info_portion("crystall_prip_spawn") end
+	end
+
+	-- не Подземка Агропрома --------------------------------------------------------------
+	if level.name()~="l03u_agr_underground" then
+		if has_alife_info("crystall_aground_spawn") then db.actor:disable_info_portion("crystall_aground_spawn") end
+		if has_alife_info("agro_und_pronik") and not has_alife_info("zadan_aground_have") then db.actor:give_info_portion("aground_proval") end
+		if has_alife_info("agro_und_pronik") and (has_alife_info("ploymar_enemy") or has_alife_info("usa_enemy")) and not has_alife_info("osvedom_tri_dialog_done") then db.actor:give_info_portion("aground_proval") end
+	end
+
+	-- не Бункер --------------------------------------------------------------------------
+	if level.name()~="l10u_bunker" then
+		if has_alife_info("crystall_x10_spawn") then db.actor:disable_info_portion("crystall_x10_spawn") end
+                if has_alife_info("brown_x10_dialog_start") and not has_alife_info("del_brown_x10") then db.actor:give_info_portion("del_brown_x10") end
+	end
+
+	-- не Х-18 -----------------------------------------------------------------------------
+	if level.name()~="l04u_labx18" then
+		if has_alife_info("crystall_x18_spawn") then db.actor:disable_info_portion("crystall_x18_spawn") end
+        if has_alife_info("mozhno_x18") and not has_alife_info("ploymar_del") then fotograf.del_ploymar() end
+        if has_alife_info("broun_four_run") and not has_alife_info("del_brown_x18") then db.actor:give_info_portion("del_brown_x18") end
+	end
+
+	-- не Х-16 -----------------------------------------------------------------------------
+	if level.name()~="l08u_brainlab" then
+		if has_alife_info("crystall_x16_spawn") then db.actor:disable_info_portion("crystall_x16_spawn") end
+	end
+
+	-- не Пещера ---------------------------------------------------------------------------
+	if level.name()~="av_peshera" then
+		if has_alife_info("crystall_peschera_spawn") then db.actor:disable_info_portion("crystall_peschera_spawn")  end
+	end
+
+end	
+-- Содержимое таблиц для спавна кристаллов для каждой зоны/группы зон.
+local Table_1={
+"ks_active_01",
+"ks_active_02",
+"ks_active_03",
+"ks_reagent_07",
+"ks_reagent_08",
+"ks_reagent_09"
+}
+local Table_2={
+"ks_active_04",
+"ks_active_05",
+"ks_active_06",
+"ks_reagent_10",
+"ks_reagent_11",
+"ks_reagent_12"
+}
+local Table_3={
+"ks_active_07",
+"ks_active_08",
+"ks_active_09",
+"ks_reagent_01",
+"ks_reagent_02",
+"ks_reagent_03"
+}
+local Table_4={
+"ks_active_10",
+"ks_active_11",
+"ks_active_12",
+"ks_reagent_04",
+"ks_reagent_05",
+"ks_reagent_06"
+}
+
+-- Предфункция зачистки кристаллов перед спавном
+function crystall_clear()
+	for a=1,65534,1 do
+	    local obj=alife():object(a)
+		if obj and (string.find(obj:name(),"ks_reagent_") or (string.find(obj:name(),"ks_active_"))) then
+			local p_obj = alife():object(obj.parent_id)
+			if p_obj==nil then alife():release(obj,true) end
+		end
+	end
+end
+-- Базовая функция спавна
+function crystall_spawn(Table, x_pos, y_pos, z_pos, level_vid, game_vid, dX, dY, num)
+	if Table==nil or x_pos==nil or y_pos==nil or z_pos==nil or level_vid==nil or game_vid==nil or dX== nil or dY==nil or num==nil then return end
+	local temp,pos_x,pos_y,pos_z,spawn_pos,crystall,obj
+	for temp=1,num  do
+		crystall = Table[math.random(table.getn(Table))]
+		pos_x=x_pos+math.random(-dX,dX)	-- диапазон по х
+		pos_y=y_pos+dY -- приподнимаем метров на dY
+		pos_z=z_pos+math.random(-dX,dX)	-- диапазон по z
+		spawn_pos = vector():set(pos_x, pos_y, pos_z)
+		obj = alife():create(crystall, spawn_pos, level_vid, game_vid)
+	end
+end
+
+-- Вызов спавна 
+function crystall_mk()
+	crystall_clear()
+	crystall_spawn(Table_1, -413.353, 32.530, 188.544, 308414, 654, 30, 5, 5)
+	crystall_spawn(Table_2, -79.593, 14.532, 143.072, 820532, 724, 30, 5, math.random(3,5))
+	crystall_spawn(Table_3, 132.762, 18.310, 129.258, 1152947, 765, 25, 5, 4)
+	crystall_spawn(Table_4, -449.806, -8.165, -290.174, 252847, 642, 25, 5, math.random(4,6))
+	crystall_spawn(Table_1, -472.372, 19.150, 98.561, 220731, 637, 20, 5, 4)
+	crystall_spawn(Table_2, -262.646, 16.096, 234.623, 535514, 679, 5, 3, math.random(4,5))
+end
+
+function crystall_road()
+	crystall_clear()
+	crystall_spawn(Table_1, -354.893, 8.292, -228.594, 40844, 1517, 30, 5, 4)
+	crystall_spawn(Table_2, -23.495, 2.734, 449.068, 424960, 1577, 30, 5, math.random(4,5))
+	crystall_spawn(Table_3, 269.605, 0.073, 207.680, 895140, 1674, 25, 5, 5)
+	crystall_spawn(Table_4, 208.754, -2.930, -274.874, 801786, 1644, 20, 5, math.random(5,6))
+	crystall_spawn(Table_2, -277.936,0.073,97.810, 61234, 1516, 1, 3, math.random(1,2))
+	crystall_spawn(Table_4, 460.122, 0.073, 125.010, 1064154, 1701, 1, 2, math.random(1,2))
+end
+
+function crystall_swamp()
+	crystall_clear()
+	crystall_spawn(Table_1, -264.297, -0.166, -89.454, 577075, 797, 30, 5, 6)
+	crystall_spawn(Table_2, -90.604, 3.243, 189.360, 948988, 797, 20, 5, 5)
+	crystall_spawn(Table_3, -69.625, 2.797, -152.793, 993864, 797, 20, 5, math.random(4,6))
+	crystall_spawn(Table_4, 49.414, 2.233, -224.663, 1254218, 798, 10, 5, 5)
+end
+
+function crystall_dyshlo()
+	crystall_clear()
+	crystall_spawn(Table_1, 190.319, 17.446, 148.568, 498317, 1, 30, 5, 4)
+	crystall_spawn(Table_2, -198.168, 17.981, -32.117, 76700, 0, 20, 5, math.random(3,5))
+	crystall_spawn(Table_3, 0.388, 29.809, -200.400, 292901, 0, 20, 5, 5)
+	crystall_spawn(Table_4, 177.811, 30.176, -95.624, 484065, 0, 20, 5, math.random(4,6))
+end
+
+function crystall_mg()
+	crystall_clear()
+	crystall_spawn(Table_1, -263.297, -9.074, 128.001, 76043, 1195, 10, 5, 4)
+	crystall_spawn(Table_2, -202.832, -1.176, -173.913, 128146, 1209, 10, 5, math.random(2,4))
+        crystall_spawn(Table_3, 88.087, -7.804, -146.787, 360089, 1354, 10, 5, 3)
+        crystall_spawn(Table_4, 39.992, 1.158, 88.175, 327558, 1328, 10, 5, 5)
+end
+
+function crystall_bar()
+	crystall_clear()
+	crystall_spawn(Table_3, 95.315, 0.666, -90.171, 46449, 277, 40, 5, math.random(5,6))
+	crystall_spawn(Table_4, 204.084, 0.001, 26.749, 48939, 178, 10, 5, math.random(3,4))
+end
+
+function crystall_prip()
+	crystall_clear()
+	crystall_spawn(Table_1, -58.854, -0.692, -19.073, 42617, 594, 10, 5, math.random(2,4))
+	crystall_spawn(Table_2, -22.255, -0.142, 355.705, 76898, 495, 30, 5, 6)
+	crystall_spawn(Table_4, 115.115, -2.392, 74.330, 224745, 482, 20, 5, math.random(2,4))
+end
+
+function crystall_prom()
+	crystall_clear()
+	crystall_spawn(Table_1, 138.971, 2.587, 107.458, 450873, 1117, 15, 5, math.random(4,5))
+	crystall_spawn(Table_2, -71.346, 3.086, 336.236, 76195, 879, 20, 5, 4)
+	crystall_spawn(Table_3, -113.226, 21.739, -78.134, 19051, 832, 1, 3, 2)
+	crystall_spawn(Table_2, 8.606, 13.624, -208.249, 209034, 966, 20, 5, 6)
+	crystall_spawn(Table_4, 161.860, 9.245, -192.069, 474833, 1136, 20, 5, math.random(3,4))
+	crystall_spawn(Table_3, 188.081, 11.737, -92.074, 497754, 1144, 1, 3, math.random(1,2))
+	crystall_spawn(Table_4, 81.056, -0.334, 88.004, 358963, 1065, 1, 2, math.random(1,2))
+end
+
+function crystall_peschera()
+	crystall_clear()
+	crystall_spawn(Table_1, -294.181, 94.567, 199.811, 53659, 1437, 30, 3, 6)
+	crystall_spawn(Table_2, -308.703, 16.306, 221.203, 42080, 1439, 10, 3, math.random(3,4))
+	crystall_spawn(Table_3, -137.874, 17.833, 450.812, 145940, 1492, 10, 5, math.random(3,4))
+	crystall_spawn(Table_4, 78.312, 32.673, 436.804, 164210, 1502, 5, 2, math.random(2,3))
+	crystall_spawn(Table_4, -286.401, 42.474, 172.094, 60410, 1459, 15, 3, math.random(4,5))
+end
+
+function crystall_aver()
+	crystall_clear()
+	crystall_spawn(Table_1, 330.550, -7.378, -28.166, 1456650, 790, 40, 5, math.random(6,7))
+	crystall_spawn(Table_2, 330.183, 0.374, 248.404, 1456994, 794, 20, 5, math.random(4,5))
+	crystall_spawn(Table_3, 65.682, -44.162, 244.234, 983563, 787, 10, 5, math.random(4,5))
+	crystall_spawn(Table_4, -36.669, -42.623, -57.215, 805705, 782, 10, 5, math.random(3,4))
+	crystall_spawn(Table_4, -116.670, 19.430, 132.388, 669571, 783, 30, 5, math.random(5,6))
+	crystall_spawn(Table_2, -339.822, -26.828, 177.696, 286242, 779, 15, 5, math.random(4,5))
+	crystall_spawn(Table_1, -325.684, 47.897, 400.879, 311113, 775, 15, 5, math.random(4,5))
+	crystall_spawn(Table_3, 75.992, -8.859, -178.081, 1002180, 785, 30, 5, math.random(6,7))
+end
+
+function crystall_x10()
+	crystall_clear()
+	crystall_spawn(Table_1, -9.674, -21.907, 42.682, 4082, 415, 1, 3, math.random(1,2))
+	crystall_spawn(Table_2, 11.981, -21.907, 42.608, 8035, 422, 1, 3, math.random(1,2))
+	crystall_spawn(Table_3, -16.751, -8.947, 18.792, 3862, 336, 1, 3, math.random(1,2))
+	crystall_spawn(Table_4, -8.197, -9.829, 14.555, 4389, 347, 1, 3, math.random(1,2))
+	crystall_spawn(Table_1, -1.662, -9.287, -52.517, 5479, 358, 1, 3, math.random(1,2))
+	crystall_spawn(Table_2, -34.317, -23.518, -26.312, 1921, 371, 1, 3, math.random(1,2))
+	crystall_spawn(Table_3, -54.370, -21.893, 28.148, 682, 389, 1, 3, math.random(1,2))
+end
+
+function crystall_x16()
+	crystall_clear()
+	crystall_spawn(Table_1, 31.778, 5.584, 13.829, 4714, 317, 5, 3, math.random(3,4))
+	crystall_spawn(Table_2, -37.364, -4.120, -28.451, 2990, 314, 1, 3, math.random(1,2))
+	crystall_spawn(Table_3, -45.785, 11.563, 9.394, 2354, 312, 1, 3, math.random(1,2))
+	crystall_spawn(Table_4, -62.628, 11.564, -4.272, 1229, 310, 1, 3, math.random(1,2))
+	crystall_spawn(Table_3, -50.582, 19.184, 8.077, 2099, 310, 1, 3, math.random(1,2))
+	crystall_spawn(Table_2, -113.425, 21.565, -30.416, 243, 309, 8, 2, math.random(4,5))
+end
+
+function crystall_x18()
+	crystall_clear()
+	crystall_spawn(Table_1, 7.393, 4.354, -20.143, 3830, 116, 5, 2, math.random(3,4))
+	crystall_spawn(Table_2, -2.826, -12.016, -14.221, 2296, 134, 1, 1, math.random(1,2))
+	crystall_spawn(Table_3, -13.866, -10.812, -17.555, 1237, 152, 5, 2, math.random(2,3))
+	crystall_spawn(Table_4, 11.312, -16.343, 73.539, 4493, 165, 5, 2, math.random(2,3))
+	crystall_spawn(Table_4, 39.159, -10.814, -5.814, 7374, 137, 1, 1, math.random(1,2))
+end
+
+function crystall_aground()
+	crystall_clear()
+	crystall_spawn(Table_1, -114.872, -16.462, -50.144, 292, 56, 5, 2, math.random(2,3))
+	crystall_spawn(Table_2, -65.831, -4.501, -143.446, 3698, 3, 1, 2, math.random(1,2))
+	crystall_spawn(Table_3, -44.350, -16.463, -42.471, 4494, 40, 1, 1, math.random(1,2))
+	crystall_spawn(Table_4, -38.667, -6.357, -35.656, 4733, 33, 1, 1, math.random(1,2))
+	crystall_spawn(Table_2, -51.594, -6.553, 1.708, 4156, 27, 1, 1, math.random(1,2))
+end

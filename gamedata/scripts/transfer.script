@@ -1,0 +1,185 @@
+function create_box()
+	-- создаем контейнер-приемник inventory_box или treasure_item
+	local sobj = alife():create("aground_box",vector():set(-42.726,-4.311,12.951),4585,26) -- получаем серверный объект
+	if sobj then
+		amk.save_variable("box_gg",sobj.id) -- сохраняем ИД ящика
+	end
+end
+
+function transfer()
+-- таблица запрещенных к переносу предметов
+	local forget_items = {
+		['device_torch'] = 1,
+		['matras'] = 1,
+		['bolt'] = 1,
+		['super_outfit'] = 1,
+		['wpn_knife'] = 1,
+		['amk_metka'] = 1,
+		['wpn_binoc'] = 1
+	}
+	local actor = db.actor
+	local box_id = amk.load_variable("box_gg")
+	local box = box_id and level.object_by_id(box_id)
+	if not actor or not box then return end
+	local cnt = actor:object_count()
+	local obj,sect
+	-- почистим уровень от оружия
+	local sobj, par, map, par_id
+	local lname = level.name()
+	local sim = alife()
+	local gg = game_graph()
+	for a=1,65534,1 do
+		sobj = sim:object(a)
+		-- объект есть и это оружие
+		if sobj and gg:valid_vertex_id(sobj.m_game_vertex_id) and (isWeapon(sobj) or string.find(sobj:name(),"grenade_")) then 
+			map = sim:level_name(gg:vertex(sobj.m_game_vertex_id):level_id())
+			-- оружие на текущем уровне
+			par_id = sobj.parent_id
+			if map == lname and par_id then
+				-- безхозный ствол удалим без сожаления
+				if sobj.parent_id == 65535 then
+					sim:release(sobj,true)
+				-- исключим ГГ и наш ящик
+				elseif sobj.parent_id ~= 0 and sobj.parent_id ~= box_id then
+					-- получаем хозяина
+					par = sim:object(sobj.parent_id)
+					-- есть хозяин и это ящик или сталкер-труп
+					if par and par:clsid() == clsid.inventory_box or (IsStalker(par) and not par:alive()) then
+						sim:release(sobj,true)
+					end
+				end
+			end
+		end
+	end
+	-- перенос предметов
+	actor:give_info_portion("gps_block")
+	for i = 0, cnt do
+		obj = actor:object(i)
+		sect = obj and obj:section()
+		if sect and not forget_items[sect] then
+			actor:transfer_item(obj,box)
+		end
+	end
+	actor:disable_info_portion("gps_block")
+	-- чистка денежки
+	local iMoney = actor:money()
+	actor:give_money(-iMoney)
+end
+
+-- финальный грабеж
+function final_transfer()
+	local tbl_safe = {
+		['device_torch'] = 1,
+		['matras'] = 1,
+		['bolt'] = 1,
+		['wpn_binoc'] = 1
+	}
+	local actor = db.actor
+	if not actor then return end
+	local sim = alife()
+	local sobj, obj, sect, outfit_sect, outfit_id
+	local cnt = actor:object_count()	-- получим число объектов у актера
+	local armor = actor:get_current_outfit()	-- получим текущий пижмак
+	if armor then	-- ага, не голый
+		outfit_sect = armor:section()	-- получим секцию костюма 
+		outfit_id = armor:id()			-- получим ид конкретного костюма
+		-- допишем в таблицу исключений секцию прикида ГГ
+		tbl_safe[outfit_sect] = 2	-- запишем признак костюмчика > 1
+	end
+	-- все готово, пороемся в инвентаре ГГ
+	for i = 0, cnt do
+		obj = actor:object(i)
+		if obj then
+			sect = obj:section()					-- получим секцию объекта
+			if sect and not tbl_safe[sect] then		-- нет такой записи в таблице
+				--actor:drop_item(obj)
+				sobj = sim:object(obj:id())			-- получим серверный объект
+				if sobj then
+					sim:release(sobj,true)			-- удаляем объект
+				end
+			else									-- есть такой объект в исключениях
+				if outfit_id and tbl_safe[sect]>1 and outfit_id~=obj:id() then		-- если это костюм нужного типа, но не надетый
+					sobj = sim:object(obj:id())		-- получим серверный объект
+					if sobj then
+						sim:release(sobj,true)		-- удаляем объект
+					end			
+				end	
+			end
+		end
+	end	
+	-- чистка денежки
+	local iMoney = actor:money()
+	actor:give_money(-iMoney)
+	
+
+end
+
+----------------------------------------------
+
+local iRealFactor = system_ini():r_u32("alife", "time_factor")
+--вызов поставить на апдейт актера для повышения точности
+function GetTimeMidnight()
+	if not has_alife_info('midnight_timer_start') then return end
+	local iHours = level.get_time_hours()
+	local iMinutes = level.get_time_minutes()
+	--// чтобы не умер
+	if db.actor.health<1 then 
+		db.actor.health=1
+	end
+	local bMidnight=iHours==0 and iMinutes>=0
+	if  bMidnight then
+		level.set_time_factor(iRealFactor)
+		db.actor:disable_info_portion('midnight_timer_start')
+        db.actor:give_info_portion('midnight_timer_finish')
+	end
+end 
+
+-- зачистка лута в Саркофаге
+function sarcofag_clear()
+	-- почистим уровень от оружия
+	local sobj, par, map, par_id
+	local lname = level.name()
+	local sim = alife()
+	local gg = game_graph()
+	for a=1,65534,1 do
+		sobj = sim:object(a)
+		-- объект есть и это оружие
+		if sobj and gg:valid_vertex_id(sobj.m_game_vertex_id) and (isWeapon(sobj) or string.find(sobj:name(),"grenade_")) then 
+			map = sim:level_name(gg:vertex(sobj.m_game_vertex_id):level_id())
+			-- оружие на текущем уровне
+			par_id = sobj.parent_id
+			if map == lname and par_id then
+				-- безхозный ствол удалим без сожаления
+				if sobj.parent_id == 65535 then
+					sim:release(sobj,true)
+				-- исключим ГГ 
+				elseif sobj.parent_id ~= 0 then
+					-- получаем хозяина
+					par = sim:object(sobj.parent_id)
+					-- есть хозяин и это ящик или сталкер-труп
+					if par and par:clsid() == clsid.inventory_box or (IsStalker(par) and not par:alive()) then
+						sim:release(sobj,true)
+					end
+				end
+			end
+		end
+	end
+end
+
+--// Старт ускорения времени
+function SetSpeedTime()
+        amk.save_variable("gg_need_sleep",0)
+	level.set_time_factor(4000)
+end
+
+-- зачистка
+
+--[[
+	Для запуска выдать поршень 'можно_отслеживать_полночь'.
+	В поршне 'можно_отслеживать_полночь' вызвать экшен SetSpeedTime и по выдаче поршня начнется ускорение до полуночи.
+	По достижению полуночи таймфактор восстановится и поршень снимется, иначе эта шняга даст спать только до полуночи.
+--]]
+
+
+
+

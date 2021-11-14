@@ -1,0 +1,639 @@
+--[[---------------------------------------------------------------------------------------------------------------------------------
+ File			: petrograf.script
+ Description	: Петрограф с заданиями на поиск Пердонита и сбор коллекции минералов
+ Copyright		: 2013 © boryan67
+ Author			: boryan67 & Aleksandr44 
+ Last edit		: 29.04.2013 
+--]]----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------Поиски Пердонита-------------------------------------------------
+local tbl_perdonit = {
+-- hiding_road
+{
+    position={x=172.61572265625,y=1.0698252916336,z=-139.23889160156},
+    lv=748327,
+    gv=1647
+    },
+-- hiding_road
+{
+    position={x=88.543144226074,y=1.0479707717896,z=-357.63507080078},
+    lv=610141,
+    gv=1622
+    },
+-- hiding_road
+{
+    position={x=-174.89912414551,y=-5.3388233184814,z=-107.01147460938},
+    lv=188942,
+    gv=1540
+    },
+-- hiding_road
+{
+    position={x=-164.68869018555,y=2.2431588172913,z=384.11370849609},
+    lv=205982,
+    gv=1541
+    },
+-- hiding_road
+{
+    position={x=172.27433776855,y=2.6471498012543,z=368.39083862305},
+    lv=747963,
+    gv=1646
+    },
+-- predbannik
+{
+    position={x=-257.87197875977,y=46.727481842041,z=243.99649047852},
+    lv=543265,
+    gv=766
+    },
+-- predbannik
+{
+    position={x=-603.99633789063,y=8.6394376754761,z=-50.77428817749},
+    lv=27614,
+    gv=617
+    },
+-- predbannik
+{
+    position={x=-46.405158996582,y=3.4694020748138,z=-349.68270874023},
+    lv=870161,
+    gv=719
+    },
+-- predbannik
+{
+    position={x=165.86569213867,y=20.836605072021,z=-153.98547363281},
+    lv=1202639,
+    gv=763
+    },
+-- predbannik
+{
+    position={x=-481.03979492188,y=35.366847991943,z=450.70846557617},
+    lv=208618,
+    gv=641
+    },
+-- promzone
+{
+    position={x=-12.632257461548,y=15.557680130005,z=-502.2907409668},
+    lv=166141,
+    gv=936
+    },
+-- promzone
+{
+    position={x=131.34379577637,y=13.441551208496,z=-384.94989013672},
+    lv=441311,
+    gv=1082
+    },
+-- promzone
+{
+    position={x=-58.945083618164,y=19.942087173462,z=-281.16430664063},
+    lv=94158,
+    gv=888
+    },
+-- promzone
+{
+    position={x=-118.33624267578,y=39.830738067627,z=-124.94471740723},
+    lv=14074,
+    gv=831
+    },
+-- promzone
+{
+    position={x=11.388570785522,y=14.549026489258,z=-21.065258026123},
+    lv=215217,
+    gv=975
+    },
+-- promzone
+{
+    position={x=57.307250976563,y=10.422540664673,z=39.576301574707},
+    lv=314371,
+    gv=1037
+    },
+-- promzone
+{
+    position={x=-108.64321136475,y=20.769533157349,z=128.03788757324},
+    lv=24516,
+    gv=828
+    },
+-- promzone
+{
+    position={x=-106.59310150146,y=0.54993331432343,z=468.47161865234},
+    lv=27182,
+    gv=834
+    },
+-- aver
+{
+    position={x=-65.410255432129,y=58.616786956787,z=-438.45236206055},
+    lv=756754,
+    gv=786
+    },
+-- aver
+{
+    position={x=-46.186859130859,y=-8.0727500915527,z=-265.19577026367},
+    lv=789783,
+    gv=785
+    },
+-- aver
+{
+    position={x=422.3655090332,y=37.203380584717,z=-203.09222412109},
+    lv=1633355,
+    gv=795
+    },
+-- aver
+{
+    position={x=193.3369140625,y=14.231401443481,z=-20.095195770264},
+    lv=1207040,
+    gv=790
+    },
+-- aver
+{
+    position={x=318.37890625,y=42.173126220703,z=111.38307952881},
+    lv=1435431,
+    gv=794
+    },
+-- aver
+{
+    position={x=434.32540893555,y=44.677349090576,z=193.68988037109},
+    lv=1657195,
+    gv=794
+    },
+-- aver
+{
+    position={x=10.504376411438,y=-45.227001190186,z=121.91520690918},
+    lv=884945,
+    gv=783
+    },
+-- aver
+{
+    position={x=-403.23519897461,y=51.925880432129,z=-136.6759185791},
+    lv=174706,
+    gv=774
+    },
+-- aver
+{
+    position={x=-202.51272583008,y=28.807910919189,z=-56.87621307373},
+    lv=522513,
+    gv=782
+    },
+-- aver
+{
+    position={x=-121.55596923828,y=19.59174156189,z=128.66792297363},
+    lv=660974,
+    gv=783
+    },
+-- aver
+{
+    position={x=-241.22714233398,y=34.786666870117,z=417.40670776367},
+    lv=456746,
+    gv=779
+    },
+-- aver
+{
+    position={x=-358.20166015625,y=-14.660312652588,z=198.77239990234},
+    lv=252998,
+    gv=779
+    },
+-- deadcity
+{
+    position={x=97.540649414063,y=-7.6884956359863,z=-141.09176635742},
+    lv=365289,
+    gv=1354
+    },
+-- deadcity
+{
+    position={x=-29.6413230896,y=-5.0964007377625,z=-248.89619445801},
+    lv=273874,
+    gv=1290
+    },
+-- deadcity
+{
+    position={x=-98.628578186035,y=-5.4753756523132,z=-239.65002441406},
+    lv=211668,
+    gv=1259
+    },
+-- deadcity
+{
+    position={x=-187.54681396484,y=-1.9776397943497,z=-107.0173034668},
+    lv=140746,
+    gv=1222
+    },
+-- deadcity
+{
+    position={x=-189.32133483887,y=2.2873985767365,z=64.465339660645},
+    lv=139726,
+    gv=1223
+    },
+-- deadcity
+{
+    position={x=-352.53494262695,y=-9.5551290512085,z=-148.0749206543},
+    lv=17175,
+    gv=1178
+    },
+-- deadcity
+{
+    position={x=-375.73614501953,y=-5.386429309845,z=10.090044021606},
+    lv=5083,
+    gv=1169
+    },
+-- deadcity
+{
+    position={x=-325.57711791992,y=5.6419291496277,z=91.397048950195},
+    lv=32297,
+    gv=1180
+    },
+-- deadcity
+{
+    position={x=-256.9206237793,y=-9.1913089752197,z=114.20022583008},
+    lv=81587,
+    gv=1198
+    },
+-- deadcity
+{
+    position={x=-210.45022583008,y=-4.1686482429504,z=217.61889648438},
+    lv=122418,
+    gv=1218
+    },
+-- deadcity
+{
+    position={x=-72.310424804688,y=-9.6529855728149,z=220.22137451172},
+    lv=236973,
+    gv=1283
+    },
+-- deadcity
+{
+    position={x=-82.449691772461,y=1.5613963603973,z=105.29145812988},
+    lv=227745,
+    gv=1260
+    },
+-- deadcity
+{
+    position={x=-109.22219848633,y=1.2471309900284,z=74.436508178711},
+    lv=201677,
+    gv=1258
+    },
+-- deadcity
+{
+    position={x=-49.486763000488,y=1.0821217298508,z=46.714447021484},
+    lv=256968,
+    gv=1285
+    },
+-- deadcity
+{
+    position={x=62.200149536133,y=1.2509940862656,z=60.813442230225},
+    lv=343540,
+    gv=1339
+    },
+-- deadcity
+{
+    position={x=105.94675445557,y=-3.0932941436768,z=49.749824523926},
+    lv=369734,
+    gv=1350
+    },
+-- deadcity
+{
+    position={x=-45.661876678467,y=6.0579671859741,z=-33.123382568359},
+    lv=260157,
+    gv=1272
+    },
+-- l11_pripyat
+{
+    position={x=158.0383605957,y=-2.4159719944,z=-2.9398205280304},
+    lv=248284,
+    gv=501
+    },
+-- l11_pripyat
+{
+    position={x=55.817859649658,y=-2.3918521404266,z=-162.79327392578},
+    lv=167816,
+    gv=475
+    },
+-- l11_pripyat
+{
+    position={x=-18.11517906189,y=-2.2552261352539,z=-292.58380126953},
+    lv=80687,
+    gv=467
+    },
+-- l11_pripyat
+{
+    position={x=-52.035350799561,y=-0.77519690990448,z=-42.341251373291},
+    lv=47806,
+    gv=594
+    },
+-- l11_pripyat
+{
+    position={x=-66.822784423828,y=3.4483249187469,z=196.39273071289},
+    lv=37234,
+    gv=492
+    },
+-- l11_pripyat
+{
+    position={x=51.929534912109,y=-3.5114405155182,z=120.97863769531},
+    lv=164012,
+    gv=505
+    },
+-- l11_pripyat
+{
+    position={x=100.46329498291,y=1.568522810936,z=285.76055908203},
+    lv=211907,
+    gv=603
+    },
+-- l11_pripyat
+{
+    position={x=97.590286254883,y=-0.50750625133514,z=210.90783691406},
+    lv=208344,
+    gv=502
+    },
+-- l11_pripyat
+{
+    position={x=172.23710632324,y=-5.5373840332031,z=59.659183502197},
+    lv=253835,
+    gv=484
+    },
+-- l11_pripyat
+{
+    position={x=107.14653778076,y=0.060900032520294,z=357.90341186523},
+    lv=218479,
+    gv=496
+    },
+-- l11_pripyat
+{
+    position={x=-18.271797180176,y=-0.43922674655914,z=362.72128295898},
+    lv=81224,
+    gv=495
+    },
+-- l11_pripyat
+{
+    position={x=-48.217342376709,y=1.1592055559158,z=421.15713500977},
+    lv=51070,
+    gv=605
+    },
+-- swamp
+{
+    position={x=-47.743125915527,y=2.1367111206055,z=177.38914489746},
+    lv=1041089,
+    gv=797
+    },
+-- swamp
+{
+    position={x=37.690998077393,y=2.1651504039764,z=150.42205810547},
+    lv=1228366,
+    gv=799
+    },
+-- swamp
+{
+    position={x=97.704032897949,y=2.224634885788,z=126.58432006836},
+    lv=1361231,
+    gv=799
+    },
+-- swamp
+{
+    position={x=95.866905212402,y=2.1153357028961,z=-11.285808563232},
+    lv=1356435,
+    gv=799
+    },
+-- swamp
+{
+    position={x=89.020378112793,y=1.9270883798599,z=-94.817153930664},
+    lv=1340772,
+    gv=799
+    },
+-- swamp
+{
+    position={x=120.96467590332,y=2.1899440288544,z=-118.96581268311},
+    lv=1411574,
+    gv=798
+    },
+-- swamp
+{
+    position={x=-186.88690185547,y=-4.4932308197021,z=-135.78991699219},
+    lv=746982,
+    gv=797
+    },
+-- swamp
+{
+    position={x=-247.65434265137,y=-4.7685189247131,z=153.93070983887},
+    lv=613985,
+    gv=797
+    },
+-- dyshlo
+{
+    position={x=246.41467285156,y=23.869632720947,z=261.2600402832},
+    lv=558648,
+    gv=1
+    },
+-- dyshlo
+{
+    position={x=-85.686332702637,y=15.153673171997,z=257.04840087891},
+    lv=199839,
+    gv=1
+    },
+-- dyshlo
+{
+    position={x=-218.10693359375,y=5.1541638374329,z=-164.95495605469},
+    lv=54644,
+    gv=0
+    },
+-- dyshlo
+{
+    position={x=56.274879455566,y=29.791286468506,z=-192.44035339355},
+    lv=351484,
+    gv=0
+    },
+-- dyshlo
+{
+    position={x=175.79801940918,y=29.986568450928,z=-105.5870513916},
+    lv=481739,
+    gv=0
+    },
+-- dyshlo
+{
+    position={x=101.75354003906,y=29.881032943726,z=-110.61637878418},
+    lv=401064,
+    gv=0
+    }
+}
+-- создание Петрографа
+function create_petrograf()
+	local sobj = alife():create("petrograf",vector():set(154.014,0.001,38.760),40775,231) 
+	if sobj then
+		amk.save_variable("petrograft_id",sobj.id) -- сохраняем ИД Петрографа
+	end
+end
+-- активация Пердонита стадия 0
+function activate_0()
+	-- Читаем заклинания активации
+	local petrograft_id = amk.load_variable("petrograft_id")	-- читаем ИД Петрографа
+	if petrograft_id then
+		local obj = level.object_by_id(petrograft_id)	-- получаем клиентский объект
+		if obj then
+			local snd_obj = xr_sound.get_safe_sound_object([[new\petrograf_cheetky]])
+			snd_obj:play_at_pos(db.actor, obj:bone_position("bip01_head"))
+		end
+	end
+end
+local sound1, sound2, particle1, particle2
+-- активация Пердонита стадия 1
+function activate_1()
+	local petrograft_id = amk.load_variable("petrograft_id")	-- читаем ИД Петрографа
+	if petrograft_id then
+		local obj = level.object_by_id(petrograft_id)	-- получаем клиентский объект
+		if obj then
+			-- играем слабый разряд в позиции спины
+			sound1 = sound_object("anomaly\\amk_electra")
+			if sound1 then
+				sound1:play_at_pos(db.actor, obj:bone_position("bip01_spine2"))
+			end
+			particle1 = particles_object("mauvais\\end\\perdonit_00")
+			if particle1 then
+				particle1:play_at_pos(obj:bone_position("bip01_spine2"))
+			end
+			-- выдаем реплику
+			local snd_obj = xr_sound.get_safe_sound_object([[new\petrograf_active]])
+			snd_obj:play_at_pos(db.actor, obj:bone_position("bip01_head"))
+		end
+	end
+end
+-- активация Пердонита стадия 2
+function activate_2()
+	local petrograft_id = amk.load_variable("petrograft_id")	-- читаем ИД Петрографа
+	if petrograft_id then
+		local obj = level.object_by_id(petrograft_id)	-- получаем клиентский объект
+		if obj then
+			-- играем партиклы
+			sound1 = sound_object("anomaly\\gravi_blowoutdist")
+			if sound1 then
+				sound1:play_at_pos(db.actor, obj:bone_position("bip01_head"))
+			end
+			particle1 = particles_object("anomaly2\\gravity_blast_final00_00")
+			if particle1 then
+				particle1:play_at_pos(obj:bone_position("bip01_head"))
+			end
+			------------------
+			sound2 = sound_object("anomaly\\pux_blast")
+			if sound2 then
+				sound2:play_at_pos(db.actor, obj:bone_position("bip01_head"))
+			end
+			particle2 = particles_object("mauvais\\end\\perdonit_00")
+			if particle2 then
+				particle2:play_at_pos(obj:bone_position("bip01_head"))
+			end
+			-- выпускаем газы
+			local snd_obj = xr_sound.get_safe_sound_object([[new\petrograf_pooo]])
+			snd_obj:play_at_pos(db.actor, obj:bone_position("bip01_head"))
+		end
+	end
+end
+-- активация Пердонита стадия 3
+function activate_3()
+	local petrograft_id = amk.load_variable("petrograft_id")	-- читаем ИД Петрографа
+	if petrograft_id then
+		local obj = level.object_by_id(petrograft_id)	-- получаем клиентский объект
+		if obj then
+			-- играем сильный разряд в позиции головы
+			sound1 = sound_object("anomaly\\electra_blast1")
+			if sound1 then
+				sound1:play_at_pos(db.actor, obj:bone_position("bip01_head"))
+			end
+			particle1 = particles_object("anomaly2\\electra2_blast_p")
+			if particle1 then
+				particle1:play_at_pos(obj:bone_position("bip01_head"))
+			end
+			-- играем сильный разряд в позиции Петрографа
+			sound2 = sound_object("anomaly\\electra_blast1")
+			if sound2 then
+				sound2:play_at_pos(db.actor, obj:position())
+			end
+			particle2 = particles_object("anomaly2\\electra2_blast_p")
+			if particle2 then
+				particle2:play_at_pos(obj:position())
+			end
+		end
+	end
+end
+-- удаление Петрографа
+function remove_petrograf()
+	local petrograft_id = amk.load_variable("petrograft_id")	-- читаем ИД Петрографа
+	if petrograft_id then
+		local sobj = alife():object(petrograft_id)	-- получаем серверный объект
+		if sobj then
+			alife():release(sobj,true) -- удаляем Петрографа
+			amk.del_variable("petrograft_id")	-- чистим переменную
+		end
+	end
+	-- выдаем фразу ГГ 
+	local snd_obj = xr_sound.get_safe_sound_object([[new\petrograf_resume]])
+	snd_obj:play_at_pos(db.actor, db.actor:position())	
+end
+-- создание Пердонита
+function create_perdonit()
+	local temp = tbl_perdonit[math.random(table.getn(tbl_perdonit))]	-- получаем новую позицию из таблицы
+	local sobj = alife():create("af_perdonit",vector():set(temp.position.x,temp.position.y,temp.position.z), temp.lv, temp.gv) -- получаем серверный объект
+	if sobj then
+		amk.save_variable("perdonit_id",sobj.id) -- сохраняем ИД минерала
+	end	
+	amk.g_start_timer("perdonit_timer", 0, 1, 0)	-- заводим таймер на 1 час игрового времени
+end
+-- будем менять дислокацию минерала
+function relocate_perdonit()
+	if not has_alife_info("perdonit_enable") then -- если запрещены перемещения
+		amk.del_variable("perdonit_id")	-- чистим переменную
+		return 
+	end
+	local perdonit_id = amk.load_variable("perdonit_id")	-- читаем ИД минерала
+	if perdonit_id then		-- минерал был создан
+		local sobj = alife():object(perdonit_id)	
+		if sobj  then -- объект есть
+			alife():release(sobj,true) -- удаляем минерал		
+		end
+	end	
+	create_perdonit()	-- создаем минерал
+end
+-- прекондишен наличия Пердонита
+function has_perdonit(first_speaker, second_speaker)
+	return db.actor~=nil and db.actor:object("af_perdonit")~=nil
+end
+-- передача Пердонита
+function transfer_perdonit(first_speaker, second_speaker)
+			local cnt = db.actor:object_count()
+			local obj,sect
+			for i = 0, cnt do
+				obj = db.actor:object(i)
+				sect = obj and obj:section()
+				if sect=="af_perdonit" then
+					first_speaker:transfer_item(obj,second_speaker)	-- Передаем Пердонит Петрографу
+				end
+			end
+end
+-- коллбэк нахождения Пердонита
+function take_item(obj)
+	if obj:section()=="af_perdonit" then	-- если подняли Пердонит
+		db.actor:disable_info_portion("perdonit_enable")	-- запрещаем его перемещения
+	end
+end
+-----------------------------------------------------------Коллекция минералов------------------------------------------------------
+-- прекондишен наличия коллекции минералов
+function collect_minerals(first_speaker, second_speaker)
+	local actor = db.actor
+	if not actor then return false end
+	for a=1,12,1 do
+		if a<10 then
+			if not actor:object("ks_reagent_0"..tostring(a)) or not actor:object("ks_active_0"..tostring(a)) then return false end
+		else
+			if not actor:object("ks_reagent_"..tostring(a)) or not actor:object("ks_active_"..tostring(a)) then return false end
+		end
+	end
+	return true
+end
+-- передача коллекции
+function transfer_minerals(first_speaker, second_speaker)
+	local actor = db.actor
+	if not actor then return false end
+	for a=1,12,1 do
+		if a<10 then
+			new_dialog.out_item_much("ks_reagent_0"..tostring(a),1)
+			new_dialog.out_item_much("ks_active_0"..tostring(a),1)
+		else
+			new_dialog.out_item_much("ks_reagent_"..tostring(a),1)
+			new_dialog.out_item_much("ks_active_"..tostring(a),1)
+		end
+	end
+	dialogs.relocate_money(first_speaker, 30000,"in") --получаем деньги в награду
+end
+-- получение аванса
+function collect_priz(first_speaker, second_speaker)
+	dialogs.relocate_money(first_speaker, 30000,"in") --получаем деньги в награду
+end

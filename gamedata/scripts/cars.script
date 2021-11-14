@@ -1,0 +1,280 @@
+function kanistra_used()
+   new_dialog.out_item_key("amk_kanistra",1)
+   local snd_obj = xr_sound.get_safe_sound_object([[new\kanistra]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function kanistra_have()
+   return new_dialog.item_much("amk_kanistra",1) ~= false
+end
+
+function kanistra_otdal(first_speaker, second_speaker)
+	new_dialog.out_item_much("amk_kanistra",1)
+    dialogs.relocate_item_section(second_speaker, "key_car2", "in", 1)
+end
+
+function ballon_have()
+   return new_dialog.item_much("amk_ballon",1) ~= false
+end
+
+function ballon_otdal(first_speaker, second_speaker)
+	new_dialog.out_item_much("amk_ballon",1)
+    dialogs.relocate_item_section(second_speaker, "key_car3", "in", 1)
+end
+
+function kanistro_used()
+   new_dialog.out_item_key("amk_kanistro",1)
+   local snd_obj = xr_sound.get_safe_sound_object([[new\kanistra]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function key_car1_used()
+   new_dialog.out_item_key("key_car1",1)
+   local snd_obj = xr_sound.get_safe_sound_object([[new\klyuch]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function key_car2_used()
+   new_dialog.out_item_key("key_car2",1)
+   local snd_obj = xr_sound.get_safe_sound_object([[new\klyuch]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function key_car3_used()
+   new_dialog.out_item_key("key_car3",1)
+   local snd_obj = xr_sound.get_safe_sound_object([[new\klyuch]])
+   snd_obj:play(db.actor, 0, sound_object.s2d)
+end
+
+function instrument_case_spawn()
+   alife():create("instrument_case",vector():set(-30.198,8.953,-233.035),899123,728)
+end
+
+function instrument_case_have()
+   return new_dialog.item_much("instrument_case",1) ~= false
+end
+
+function instrument_case_otdal(first_speaker, second_speaker)
+	new_dialog.out_item_much("instrument_case",1)
+    dialogs.relocate_item_section(second_speaker, "key_car1", "in", 1)
+end
+
+---------------------------------dezertir_car-----------------------------------
+
+function dezertir_car_spawn(position, total)
+   alife():create("dezertir_car",vector():set(80.112,19.895,-277.834),355889,1049)
+end
+
+function check_dezertir_car()
+	local park_pos = vector():set(-8.666,2.983,258.498)
+	local obj, obj_pos
+	for a=1,65534,1 do 
+		obj=level.object_by_id(a)
+		if obj then
+			if obj:section()=="dezertir_car" then
+				obj_pos = obj:position()
+				return obj_pos~=nil and obj_pos:distance_to(park_pos)<=18
+			end
+		end  
+	end
+	return false
+end
+
+function check_car_in_restr(a,b)
+	local park_pos = vector():set(-8.666,2.983,258.498)
+	local obj, obj_pos
+	for a=1,65534,1 do 
+		obj = level.object_by_id(a)
+		if obj then
+			if obj:section() == "dezertir_car" then
+				obj_pos = obj:position()
+				if obj_pos~=nil and obj_pos:distance_to(park_pos)<=18 then
+					db.actor:give_info_portion("dezertir_car_mesto")
+				end
+			end
+		end  
+	end
+end
+
+function check_car_out_restr(a,b)
+	local park_pos = vector():set(-8.666,2.983,258.498)
+	local obj, obj_pos
+	for a=1,65534,1 do 
+		obj = level.object_by_id(a)
+		if obj then
+			if obj:section() == "dezertir_car" then
+				obj_pos = obj:position()
+				if obj_pos~=nil and obj_pos:distance_to(park_pos)>18 then	
+					db.actor:give_info_portion("dezertir_car_not_place")
+				end
+			end
+		end  
+	end
+end
+
+function shurup_nagrada(first_speaker, second_speaker)
+   dialogs.relocate_item_section(second_speaker, "wpn_m4", "in", 1)
+   flamethrower.relocate_n_items_section(second_speaker, "ammo_5.56x45_ap", "in", 5)
+end
+
+function del_dezertir_car()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "dezertir_car" then
+		    sim:release(sobj,true)
+            break
+		end
+	end
+end
+
+---------------------------------voronin_car-----------------------------------
+
+function voronin_car_spawn(position, total)
+   alife():create("voronin_car",vector():set(96.189,-41.803,282.790),1037417,787)
+end
+
+function sms_vorcar()
+	news_manager.send_tip(db.actor, "%c[255,255,75,75]ѕоставь машину в указанное место!", nil, nil, 12000) 
+end
+
+function check_voronin_car()
+	local park_pos = vector():set(58.494,3.003,304.743)
+	local obj, obj_pos
+	for a=1,65534,1 do 
+		obj=level.object_by_id(a)
+		if obj then
+			if obj:section()=="voronin_car" then
+				obj_pos = obj:position()
+				return obj_pos~=nil and obj_pos:distance_to(park_pos)<=18
+			end
+		end  
+	end
+	return false
+end
+
+function check_vorcar_in_restr(a,b)
+	local park_pos = vector():set(58.494,3.003,304.743)
+	local obj, obj_pos
+	for a=1,65534,1 do 
+		obj = level.object_by_id(a)
+		if obj then
+			if obj:section() == "voronin_car" then
+				obj_pos = obj:position()
+				if obj_pos~=nil and obj_pos:distance_to(park_pos)<=18 then	
+                    db.actor:give_info_portion("voronin_car_mesto")
+					break
+				end
+			end
+		end  
+	end
+end
+
+function check_vorcar_out_restr(a,b)
+	local park_pos = vector():set(58.494,3.003,304.743)
+	local obj, obj_pos
+	for a=1,65534,1 do 
+		obj = level.object_by_id(a)
+		if obj then
+			if obj:section() == "voronin_car" then
+				obj_pos = obj:position()
+				if obj_pos~=nil and obj_pos:distance_to(park_pos)>18 then 
+					db.actor:give_info_portion("voronin_car_not_place")
+					break
+				end
+			end
+		end  
+	end
+end
+
+function voronin_nagrada(first_speaker, second_speaker)
+   dialogs.relocate_item_section(second_speaker, "wpn_groza_m1", "in", 1)
+   flamethrower.relocate_n_items_section(second_speaker, "ammo_5.45x39_ap", "in", 3)
+   flamethrower.relocate_n_items_section(second_speaker, "ammo_vog-25", "in", 3)
+   flamethrower.relocate_n_items_section(second_speaker, "ammo_vog-25p", "in", 3)
+end
+
+function del_voronin_car()
+	local sim = alife()
+	local sobj
+	for a = 1, 65534 do
+		sobj = sim:object(a)
+		if sobj and sobj:section_name() == "voronin_car" then
+		    sim:release(sobj,true)
+            break
+		end
+	end
+end
+
+---------------------------------------crows & mouses---------------------------------------
+-- таблица геймвертексов и спавна по уровн€м
+-- младший вертекс, старший вертекс, секци€ спавна1, количество1, секци€ спавна2(опционально), количество2(опционально)
+local game_vertexes={
+	dyshlo = {0,1,"m_crow",50},
+	l05_bar = {169,308,"m_crow",50},
+	l11_pripyat = {456,611,"m_crow",25,"mouse",25},
+	predbannik = {612,773,"m_crow",50},
+	aver = {774,796,"m_crow",50},
+	swamp = {797,799,"m_crow",50},
+	promzone = {800,1161,"mouse",50},
+	deadcity = {1162,1362,"mouse",50},
+	hiding_road = {1507,1702,"m_crow",50}
+}
+-- анализ параметров респавна
+function respawn_aero()
+	-- почистим  сперва всех летунов в игре
+	local obj, sobj, sect
+	for a=1,65534 do
+		obj=level.object_by_id(a)
+		if obj then
+			sect=obj:section()
+			if sect and (sect=="m_crow" or sect=="mouse") then
+				obj:kill(obj)
+				sobj = alife():object(a)
+				if sobj then
+					alife():release(sobj,true)
+				end
+			end
+		end
+	end
+	-- проверим необходимость создани€ летунов
+	local lname=level.name()	-- получим им€ уровн€
+	if not game_vertexes[lname] then return end	-- возврат, если не нужно создавать ворон
+	-- заспавним летунов
+	spawn_aero(game_vertexes[lname][3], game_vertexes[lname][4])
+	-- заспавним дополнительных летунов
+	if game_vertexes[lname][5] and game_vertexes[lname][6] then
+		spawn_aero(game_vertexes[lname][5], game_vertexes[lname][6])
+	end
+end
+-- респавн летунов
+function spawn_aero(section, amount)	
+	local actor = db.actor
+	local lname=level.name()	-- получим им€ уровн€
+	local min_gv, max_gv = game_vertexes[lname][1], game_vertexes[lname][2]	-- определили минимальный и максимальный вЄртекс уровн€	
+	local offset, dist, lv_id, pos, gv_id, g1, min_dist
+	-- создаем летунов
+	repeat	
+		offset=vector():set(math.random()*6-3,0,math.random()*6-3)	-- случайный вектор направлени€
+		offset:normalize()
+		dist = math.random(20,130)	-- случайна€ дистанци€	
+		lv_id = level.vertex_in_direction(actor:level_vertex_id(),offset,dist)	-- попытка получить вертекс 
+		if lv_id then	-- вертекс получен
+			pos = level.vertex_position(lv_id)	-- получаем позицию левелвертекса
+			-- найдем ближайший геймвертекс
+			gv_id = 0
+			min_dist = 100000
+			for a = min_gv, max_gv do
+				g1 = game_graph():vertex(a):game_point()
+				if g1:distance_to(pos)<min_dist then
+					min_dist = g1:distance_to(pos)
+					gv_id = a
+				end
+			end	
+			pos.y = pos.y + 30	-- поднимем точку спавна вверх
+			sobj = alife():create(section, pos, lv_id, gv_id)
+			if sobj then amount = amount - 1 end	-- создали и уменьшили счетчик
+		end		
+	until amount<=0	
+end
