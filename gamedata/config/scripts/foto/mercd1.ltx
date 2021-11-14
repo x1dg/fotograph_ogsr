@@ -1,0 +1,68 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@merc1
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@merc1]
+path_walk = mercd1_walk
+path_look = mercd1_look
+def_state_standing = sit
+meet = no_meet
+danger = danger_condition@mercd1
+combat_ignore_cond = always
+on_info = {+shkura_start -shkur3 -spalilsa} remark@mercd1
+on_info2 = {+spalilsa} walker@enemy %=killactor%
+
+[remark@mercd1]
+anim = sit
+snd = shkura1
+meet = no_meet
+danger = danger_condition@mercd1
+combat_ignore_cond = always
+target = mercd2_walk,0
+on_signal = sound_end | remark@mercd2 %+shkur1%
+on_info = {+spalilsa} walker@enemy %=killactor%
+
+[remark@mercd2]
+anim = sit
+meet = no_meet
+danger = danger_condition@mercd1
+combat_ignore_cond = always
+target = mercd2_walk,0
+on_info = {+shkur2} remark@mercd3
+on_info2 = {+spalilsa} walker@enemy %=killactor%
+
+[remark@mercd3]
+anim = sit
+snd = shkura3
+meet = no_meet
+danger = danger_condition@mercd1
+combat_ignore_cond = always
+target = mercd2_walk,0
+on_signal = sound_end | walker@merc1 %+shkur3%
+on_info = {+spalilsa} walker@enemy %=killactor%
+
+[walker@enemy]
+path_walk = mercd1_walk
+path_look = mercd1_look
+meet = no_meet
+
+[danger_condition@mercd1]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = %+spalilsa%
+
+[death]
+on_info = %+spalilsa +mercd1_dead%
+

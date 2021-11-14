@@ -1,0 +1,58 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = camper@kruglov_swamp
+danger = danger_condition@kruglov_swamp
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[camper@kruglov_swamp]
+path_walk = kruglov_swamp_walk
+path_look = kruglov_swamp_look
+meet = no_meet
+combat_ignore_cond = always
+def_state_standing = sit
+danger = danger_condition@kruglov_swamp
+;on_info = {+soldaty_enemy} camper@kruglov_swamp1 %+uchen_enemy%
+on_actor_dist_le_nvis = 2.5 | {-kruglov_anoms_dialog_start} remark@1, {+kruglov_anoms_dialog_start} remark@2
+
+[remark@1]
+target = actor
+snd = kruglov
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@kruglov_swamp
+;on_info = {+soldaty_enemy} camper@kruglov_swamp1 %+uchen_enemy%
+on_signal = sound_end | remark@2
+
+[remark@2]
+target = actor
+meet = meet@kruglov_swamp
+combat_ignore_cond = always
+danger = danger_condition@kruglov_swamp
+;on_info = {+soldaty_enemy} camper@kruglov_swamp1 %+uchen_enemy%
+
+[camper@kruglov_swamp1]
+path_walk = kruglov_swamp_walk
+path_look = kruglov_swamp_look
+meet = no_meet
+def_state_standing = ward
+combat_ignore_cond = always
+danger = danger_condition@kruglov_swamp
+
+[danger_condition@kruglov_swamp]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@kruglov_swamp]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+uchen_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+uchen_enemy%

@@ -1,0 +1,22 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = kamp@maroder_kamp_03
+danger = danger_condition
+combat_ignore = combat_ignore
+
+[kamp@maroder_kamp_03]
+center_point = maroder_kamp_03_center
+meet = no_meet
+def_state_moving = walk
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

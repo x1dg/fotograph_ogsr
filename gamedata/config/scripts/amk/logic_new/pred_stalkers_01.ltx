@@ -1,0 +1,23 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = kamp@pred_stalkers_01
+danger = danger_condition
+combat_ignore = combat_ignore
+
+[kamp@pred_stalkers_01]
+center_point = pred_stalkers_01_center
+radius = 2.3
+meet = meet
+def_state_moving = walk
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

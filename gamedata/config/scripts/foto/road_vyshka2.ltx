@@ -1,0 +1,30 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = camper@road_vyshka2
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[camper@road_vyshka2]
+sniper = true
+def_state_campering = threat_na
+radius = 100
+path_walk = road_vyshka2_walk
+path_look = road_vyshka2_look
+danger = danger_condition@road_vyshka2
+meet = no_meet
+no_move = true
+
+[danger_condition@road_vyshka2]
+ignore_distance = 10
+ignore_distance_corpse = 0
+danger_expiration_time = 60000
+danger_inertion_time =  90000
+
+[hit]
+on_info = {=hit_by_actor} %+soldaty_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+soldaty_enemy%

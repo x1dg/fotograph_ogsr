@@ -1,0 +1,109 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-zhorik_start} walker@1, {+zhorik_start -ostalnye_poshli} walker@2, {+ostalnye_poshli -del_agent_mk_ohr1} walker@4   
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = %+agent_mk_vrag%
+
+[death]
+on_info = %+agent_mk_vrag%
+
+[walker@vrag1]
+path_walk = agent_mk_ohr1_walk
+path_look = agent_mk_ohr1_look
+meet = no_meet
+danger = danger_condition
+
+[walker@vrag2]
+path_walk = agent_mk1_ohr1_walk
+path_look = agent_mk1_ohr1_look
+meet = no_meet
+danger = danger_condition
+
+[walker@vrag3]
+path_walk = agent_mk2_ohr1_walk
+path_look = agent_mk2_ohr1_look
+meet = no_meet
+danger = danger_condition
+on_signal = agent12 | %+del_agent_mk_ohr1%
+
+[walker@1]
+path_walk = agent_mk_ohr1_walk
+path_look = agent_mk_ohr1_look
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+zhorik_start} remark@1
+on_info2 = {+agent_mk_vrag} walker@vrag1 %+agent_mk_proval%
+
+[remark@1]
+target = 30342
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 3000 | walker@2
+on_info = {+agent_mk_vrag} walker@vrag1 %+agent_mk_proval%
+
+[walker@2]
+path_walk = agent_mk1_ohr1_walk
+path_look = agent_mk1_ohr1_look
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = agent11 | walker@3
+on_info = {+agent_mk_vrag} walker@vrag2 %+agent_mk_proval%
+on_actor_dist_le_nvis = 25 | %+agent_mk_vrag +agent_mk_proval%
+
+[walker@3]
+path_walk = agent_mk1_ohr1_walk
+path_look = agent_mk1_ohr1_look
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+agent_mk_vrag} walker@vrag2 %+agent_mk_proval%
+on_info2 = {+brown_start_dialog_mesto} walker@33
+
+[walker@33]
+path_walk = agent_mk1_ohr1_walk
+path_look = agent_mk1_ohr1_look
+meet = no_meet
+danger = danger_condition
+;combat_ignore_cond = {=fighting_actor}
+on_info = {+agent_mk_vrag} walker@vrag2 %+agent_mk_proval%
+on_info2 = {+ostalnye_poshli} walker@4
+
+[walker@4]
+path_walk = agent_mk1_ohr1_walk
+path_look = agent_mk1_ohr1_look
+meet = no_meet
+danger = danger_condition
+on_timer = 4000 | walker@5
+on_info = {+agent_mk_vrag} walker@vrag3
+
+[walker@5]
+path_walk = agent_mk2_ohr1_walk
+path_look = agent_mk2_ohr1_look
+meet = no_meet
+danger = danger_condition
+on_info = {+agent_mk_vrag} walker@vrag3
+on_signal = agent12 | %+del_agent_mk_ohr1%
+
+[danger_condition]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+

@@ -1,0 +1,11 @@
+[logic]
+active = sr_idle@one
+
+[sr_idle@one]
+on_actor_inside = {+amb_dead} sr_idle@two %=play_snd(ambient\new\voda_kap11)%
+
+[sr_idle@two]
+on_timer = 360000 | sr_idle@tri
+
+[sr_idle@tri]
+on_actor_outside = sr_idle@one

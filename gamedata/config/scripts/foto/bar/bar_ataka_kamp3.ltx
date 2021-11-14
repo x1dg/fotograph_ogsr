@@ -1,0 +1,58 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-levsha_start_dialog_start} kamp@bar_ataka_kamp3, {+levsha_start_dialog_start -levsha_start_dialog_have} walker@1, {+levsha_start_dialog_have} walker@2
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+bar_ataka_vrag%
+
+[death]
+on_info = {=killed_by_actor} %+bar_ataka_vrag%
+
+[kamp@bar_ataka_kamp3]
+center_point = kamp_bar_ataka_center
+meet = no_meet
+radius = 2.5
+danger = danger_condition
+on_info = {+levsha_start_dialog_start -vse_poehali} remark@1, 
+{+levsha_start_dialog_start -levsha_start_dialog_have} walker@1,{+levsha_start_dialog_have} walker@2
+on_info2 = {+bar_ataka_vrag} %=killactor%
+
+[remark@1]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 1500 | walker@1
+
+[walker@1]
+path_walk = bar_ataka_kamp3_walk
+path_look = bar_ataka_kamp3_look
+meet = no_meet
+danger = danger_condition
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+on_info = {+levsha_start_dialog_have} walker@2
+on_info2 = {+bar_ataka_vrag} %=killactor%
+
+[walker@2]
+path_walk = bar_ataka_kamp3_walk
+path_look = bar_ataka_kamp3_look
+meet = meet
+danger = danger_condition
+on_info = {+bar_ataka_vrag} %=killactor%
+
+[danger_condition]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

@@ -1,0 +1,29 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+danger = danger_condition
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+enemy_dolg%
+
+[death]
+on_info = {=killed_by_actor} %+enemy_dolg%
+
+[walker@1]
+path_walk = aver_dolg1_walk
+path_look = aver_dolg1_look
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

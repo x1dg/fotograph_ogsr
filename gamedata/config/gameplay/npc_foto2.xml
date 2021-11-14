@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding="UTF-8"?>
+
+
+<xml>
+<character id="archivarius">
+		<class>archivarius</class>
+	</character>
+	
+<character id="archivarius_zombi">
+		<class>cit_doctor</class>
+	</character>
+	
+<character id="zubarev">
+		<class>zubarev</class>
+	</character>
+	
+<character id="zubarev_zombi">
+		<class>cit_doctor</class>
+	</character>
+	
+<character id="strange_killer">
+		<class>strange_killer</class>
+	</character>
+	
+<character id="strange_killer_zombi">
+		<class>cit_doctor</class>
+	</character>
+	
+<character id="poet">
+		<class>poet</class>
+	</character>
+	
+<character id="poet_zombi">
+		<class>cit_doctor</class>
+	</character>
+	
+<character id="greta_invis">
+		<class>greta_invis</class>
+	</character>
+	
+<character id="greta_invis_zombi">
+		<class>cit_doctor</class>
+	</character>
+	
+	<character id="greta_vis">
+		<class>greta_vis</class>
+	</character>
+	
+<character id="greta_vis_zombi">
+		<class>cit_doctor</class>
+	</character>
+	
+<character id="shep1">
+		<class>shep1_inv</class>
+	</character>
+	
+<character id="shep1_zombi">
+		<class>cit_doctor</class>
+	</character>
+	
+<character id="shep2">
+		<class>shep2_inv</class>
+	</character>
+	
+<character id="shep2_zombi">
+		<class>cit_doctor</class>
+	</character>
+	
+<character id="shep3">
+		<class>shep3_inv</class>
+	</character>
+	
+<character id="shep3_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+<character id="shepel">
+		<class>shepel</class>
+	</character>
+	
+<character id="shepel_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+<character id="mk_zasada">
+		<class>mk_zasada</class>
+	</character>
+
+<character id="mk_zasada_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+<character id="mg_zasada">
+		<class>mg_zasada</class>
+	</character>
+
+<character id="mg_zasada_zombi">
+		<class>cit_doctor</class>
+	</character>
+	
+	<character id="irokez_kombez">
+		<class>irokez_komb</class>
+	</character>
+
+<character id="irokez_kombez_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+	<character id="irokez_skin">
+		<class>irokez_skin</class>
+	</character>
+
+<character id="irokez_skin_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+<character id="utyug">
+		<class>utyuh</class>
+	</character>
+
+<character id="utyug_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+<character id="catcher_vhod1">
+		<class>catcher_vhod1</class>
+	</character>
+
+<character id="catcher_vhod1_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+<character id="catcher_vhod2">
+		<class>catcher_vhod2</class>
+	</character>
+
+<character id="catcher_vhod2_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+<character id="catcher_vhod3">
+		<class>catcher_vhod3</class>
+	</character>
+
+<character id="catcher_vhod3_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+<character id="catcher_prison1">
+		<class>catcher_prison1</class>
+	</character>
+
+<character id="catcher_prison1_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+<character id="catcher_prison2">
+		<class>catcher_prison2</class>
+	</character>
+
+<character id="catcher_prison2_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+<character id="catcher_main">
+		<class>catcher_main</class>
+	</character>
+
+<character id="catcher_main_zombi">
+		<class>cit_doctor</class>
+	</character>	
+
+<character id="ivanov_trup">
+		<class>ivanov_trup</class>
+	</character>
+	
+<character id="observer_set">
+		<class>observer_set</class>
+	</character>
+
+<character id="observer_set_zombi">
+		<class>cit_doctor</class>
+	</character>
+	
+<character id="tunnel_set">
+		<class>tunnel_set</class>
+	</character>
+
+<character id="tunnel_set_finish">
+		<class>tunnel_set_finish</class>
+	</character>
+
+	<character id="ormont">
+		<class>ormont</class>
+	</character>
+
+<character id="ormont_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+	<character id="ioffe">
+		<class>ioffe</class>
+	</character>
+
+	<character id="marksman1">
+		<class>marksman1</class>
+	</character>
+
+<character id="marksman1_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+	<character id="marksman2">
+		<class>marksman2</class>
+	</character>
+
+<character id="marksman2_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+	<character id="marksman3">
+		<class>marksman3</class>
+	</character>
+
+<character id="marksman3_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+	<character id="marksman4">
+		<class>marksman4</class>
+	</character>
+
+<character id="marksman4_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+	<character id="merc_d1">
+		<class>merc_d1</class>
+	</character>
+
+<character id="merc_d1_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+	<character id="merc_d2">
+		<class>merc_d2</class>
+	</character>
+
+<character id="merc_d2_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+	<character id="merc_d3">
+		<class>merc_d3</class>
+	</character>
+
+<character id="merc_d3_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+	<character id="merc_d4">
+		<class>merc_d4</class>
+	</character>
+
+<character id="merc_d4_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+	<character id="petrograf">
+		<class>petrograf</class>
+	</character>
+
+    <character id="petrovige">
+		<class>petrovige</class>
+	</character>
+	
+<character id="petrovige_zombi">
+		<class>cit_doctor</class>
+	</character>
+
+    <character id="varvara">
+		<class>varvara</class>
+	</character>
+	
+<character id="varvara_zombi">
+		<class>cit_doctor</class>
+	</character>	
+	
+</xml>

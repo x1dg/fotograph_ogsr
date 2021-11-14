@@ -1,0 +1,20 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@road_antigas3
+
+[walker@road_antigas3]
+path_walk = road_antigas3_walk
+path_look = road_antigas3_look
+meet = meet@road_antigas3
+danger = danger_condition@road_antigas3
+
+[danger_condition@road_antigas3]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet@road_antigas3]
+use = true
+use_wpn = false
+meet_talk_enabled = true

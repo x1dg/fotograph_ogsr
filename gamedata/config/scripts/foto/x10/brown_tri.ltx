@@ -1,0 +1,90 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-brown3_skazal} walker@1, {+brown3_skazal -shubin_in_brown} walker@2, {+shubin_in_brown -brown_zdorov} walker@3, {+brown_zdorov -brown_x10_dialog_start} walker@4, {+brown_x10_dialog_start} walker@5  
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy =kill%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+on_info2 = %+brown_tri_dead%
+
+[walker@1]
+path_walk = brown3_walk
+path_look = brown3_look
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+def_state_standing = wounded_heavy
+on_actor_dist_le_nvis = 7 | remark@wounded %+shubin_x10_spawn%
+
+[remark@wounded]
+anim = wounded_heavy
+anim_reset = false
+no_move = true
+snd = brown_wounded
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@2 %+brown3_skazal%
+
+[walker@2]
+path_walk = brown3_walk
+path_look = brown3_look
+meet = no_meet
+def_state_standing = wounded_heavy
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+shubin_in_brown} walker@3 
+
+[walker@3]
+path_walk = brown3_walk
+path_look = brown3_look
+meet = no_meet
+def_state_standing = wounded
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+brown_zdorov} remark@zdorov
+
+[remark@zdorov]
+target = actor
+snd = brown
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@4
+
+[walker@4]
+path_walk = brown3_walk
+path_look = brown3_look
+meet = meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+brown_x10_dialog_start} walker@5
+
+[walker@5]
+path_walk = brown33_walk
+path_look = brown33_look
+meet = no_meet
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+danger = danger_condition
+on_signal = browndel | %=fotograf.del_brown_x10% 
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+

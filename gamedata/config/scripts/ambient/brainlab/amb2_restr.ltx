@@ -1,0 +1,20 @@
+[logic]
+active = {-info_valbrain_03 -info_valbrain_04} sr_idle@one, {+info_valbrain_03 -info_valbrain_04} sr_idle@tri, {+info_valbrain_03 +info_valbrain_04} sr_idle@five
+
+[sr_idle@one]
+on_actor_inside = {+amb_brain} sr_idle@two %=play_snd(ambient\new\ghost_scream_1) +info_valbrain_03%
+
+[sr_idle@two]
+on_game_timer = 1200 | sr_idle@tri
+
+[sr_idle@tri]
+on_actor_inside = {+info_valbrain_03} sr_idle@four %=play_snd(ambient\new\ghost_scream_2) +info_valbrain_04%
+
+[sr_idle@four]
+on_game_timer = 1200 | sr_idle@five
+
+[sr_idle@five]
+on_actor_inside = {+info_valbrain_04} sr_idle@six %=play_snd(ambient\new\ghost_scream_3) -info_valbrain_03 -info_valbrain_04%
+
+[sr_idle@six]
+on_game_timer = 2400 | sr_idle@one 

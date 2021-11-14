@@ -1,0 +1,15 @@
+[logic]
+active = sr_idle@1
+
+[sr_idle@1]
+on_actor_inside = {+start_f_island} sr_tip 
+
+[sr_tip]
+name = dyshlo_sms_start
+type = tips
+sender = saharov
+single = true
+timeout = 5
+showtime = 30000
+on_timer = 36000 | nil %+task_island%
+

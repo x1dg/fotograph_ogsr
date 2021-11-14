@@ -1,0 +1,66 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-haron_dialog_3_done} walker@1, {+haron_dialog_3_done} walker@vyhod1
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %=killactor%
+
+[death]
+on_info = %+kill_haron%
+
+[walker@1]
+path_walk = haronchik_walk
+path_look = haronchik_look
+danger = danger_condition
+meet = no_meet
+on_actor_dist_le_nvis = 3 | {-haron_dialog_3_done} remark@1
+
+[remark@1]
+anim = ward
+target = actor
+snd = demon 
+danger = danger_condition
+meet = no_meet
+on_signal = sound_end | {-haron_dialog_3_done} walker@2
+
+[walker@2]
+path_walk = haronchik_walk
+path_look = haronchik_look
+danger = danger_condition
+meet = meet
+on_info = {+haron_dialog_3_done} walker@vyhod1
+
+[walker@vyhod1] 
+path_walk = haronchik1_walk
+path_look = haronchik1_look
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+on_signal = haronchik1 | {+haron_dialog_3_done} walker@vyhod2
+
+[walker@vyhod2] 
+path_walk = haronchik2_walk
+path_look = haronchik2_look
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+on_signal = haronchik2 | %=boryan67.del_haronchik%
+
+[danger_condition]
+ignore_distance = 5
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

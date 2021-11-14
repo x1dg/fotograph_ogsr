@@ -1,0 +1,169 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-zhorik_start_dialog_start} sleeper@bratok_sleep, {+zhorik_start_dialog_start -zhorik_start} walker@1, {+zhorik_start -agent_mk_mesto} walker@2, {+agent_mk_mesto} walker@3
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[sleeper@bratok_sleep]
+path_main = bratok_sleep_walk
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_actor_dist_le_nvis = 4 | {+zhila_start_dialog_start} remark@vstrecha %=play_snd(ambient\new\actor_jorik)% 
+
+[remark@vstrecha]
+anim = sit_ass
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 5000 | remark@1 
+
+[remark@1]
+anim = sit_ass
+target = actor
+snd = bratok_sleeper1
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | remark@11
+
+[remark@11]
+anim = sit_ass
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 2000 | remark@2
+
+[remark@2]
+anim = sit_ass
+target = actor
+snd = bratok_sleeper2
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | remark@22
+
+[remark@22]
+anim = sit_ass
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 2000 | remark@3
+
+[remark@3]
+anim = sit_ass
+target = actor
+snd = bratok_sleeper3
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@bratok_sleep
+
+[walker@bratok_sleep]
+path_walk = bratok_sleep_walk1
+path_look = bratok_sleep_look
+def_state_standing = sit_ass
+danger = danger_condition
+meet = meet
+on_info = {+zhorik_start_dialog_start} walker@1
+
+[walker@1]
+path_walk = zhorik_walk
+path_look = zhorik_look
+danger = danger_condition
+combat_ignore_cond = always
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+meet = no_meet
+on_signal = zhorik1 | remark@4 %+brown_start_dialog_have%
+
+[remark@4]
+anim = hello_wpn
+target = 30343
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = anim_end | remark@44 %+agent_govorit%
+
+[remark@44]
+target = 30343
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+agent_skazal} remark@5
+
+[remark@5]
+target = 30343
+meet = no_meet
+snd = zhorik1
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@2 %+zhorik_start%
+
+[walker@2]
+path_walk = zhorik1_walk
+path_look = zhorik1_look
+danger = danger_condition
+combat_ignore_cond = always
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+meet = no_meet
+on_signal = zhorik2 | remark@6 %+zhorik_mesto%
+
+[remark@6]
+anim = hello_wpn
+target = 30343
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 8000 | remark@mesto 
+
+[remark@mesto]
+target = 30343
+snd = zhorik2
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@3 %+agent_mk_mesto%
+
+[walker@3]
+path_walk = zhorik1_walk
+path_look = zhorik1_look
+danger = danger_condition
+combat_ignore_cond = always
+meet = no_meet
+on_info = {+zhorik_zaschita} walker@4 
+
+[walker@4]
+path_walk = zhorik1_walk
+path_look = zhorik1_look
+danger = danger_condition
+meet = no_meet
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+meet_state = sit_ass
+
+[hit]
+on_info = {=hit_by_actor} %+bratok_enemy%
+on_info2 = %+zhorik_zaschita%
+on_info3 = %=kill%
+
+[death]
+on_info = %+zhorik_dead%
+on_info2 = {=killed_by_actor} %+bratok_enemy%

@@ -1,0 +1,130 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+smith_enemy%
+
+[death]
+on_info = %+smith_dead%
+
+[walker@1]
+path_walk = smith_sar_walk
+path_look = smith_sar_look
+meet = no_meet
+def_state_standing = ward
+combat_ignore_cond = always
+danger = danger_condition
+on_actor_dist_ge_nvis = 8 | remark@finito %=fotograf.kill_actor =fotograf.del_shubin_sar%
+on_info = {+smith_mozhet_govorit} remark@1 %=fotograf.kill_monolith%
+on_info2 = {+smith_enemy} walker@3 %=killactor%
+
+[remark@1]
+anim = ward
+target = actor
+snd = smith_sar1
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | remark@meet %+smith_repliku_skazal%
+on_info2 = {+smith_enemy} walker@3 %=killactor%
+
+[remark@meet]
+anim = ward
+target = actor
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition
+on_actor_dist_ge_nvis = 8 | remark@finito %=fotograf.kill_actor =fotograf.del_shubin_sar% 
+on_info = {+smith_sar_dialog_start} remark@2 %=fotograf.no_move =fotograf.set_smith_enemy%
+on_info2 = {+smith_enemy} walker@3 %=killactor%
+
+[remark@2]
+anim = assault
+target = actor
+snd = smith_sar2
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | remark@3 %+shubin_shoot% 
+on_info = {+smith_enemy} walker@3 %=killactor%
+
+[remark@3]
+anim = assault
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_actor_dist_ge_nvis = 8 | remark@finito %=fotograf.kill_actor =fotograf.del_shubin_sar%
+;on_timer = 300 | remark@4 %=fotograf.restore_move%
+on_timer = 100 | remark@4 %=fotograf.restore_move%
+
+[remark@4]
+;anim = wounded_heavy
+anim = assault
+target = smith_sar1_look, 0
+anim_reset = false
+snd = smith_wounded
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+;on_timer = 1000 | walker@2
+;on_signal = sound_end | walker@2 
+on_signal = sound_end | remark@44
+
+[remark@44]
+anim = wounded_heavy
+target = smith_sar1_look, 0
+anim_reset = false
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_actor_dist_ge_nvis = 8 | remark@finito %=fotograf.kill_actor =fotograf.del_shubin_sar%
+on_info = {+kill_smith} remark@5 %=kill%
+
+[walker@2]
+path_walk = smith_sar_walk
+path_look = smith_sar_look
+meet = no_meet
+def_state_standing = wounded_heavy
+combat_ignore_cond = always
+danger = danger_condition
+on_actor_dist_ge_nvis = 8 | remark@finito %=fotograf.kill_actor =fotograf.del_shubin_sar%
+on_info = {+kill_smith} remark@5 %=kill% 
+
+[remark@5]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+
+[walker@3]
+path_walk = smith_sar_walk
+path_look = smith_sar_look
+meet = no_meet
+danger = danger_condition
+on_actor_dist_ge_nvis = 8 | remark@finito %=fotograf.kill_actor =fotograf.del_shubin_sar%
+
+[remark@finito]
+anim = assault
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+meet_state = ward
+

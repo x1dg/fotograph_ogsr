@@ -1,0 +1,80 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@bandit_masterohr
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@bandit_masterohr]
+path_walk = bandit_masterohr_walk
+path_look = bandit_masterohr_look
+meet = no_meet
+danger = danger_condition
+on_info = {+bratok_enemy} walker@bandit_masterohr1
+on_info2 = {+barohr_zlitsya} remark@1  
+on_actor_dist_le = 10 | {+povtor_zahod -flyer_est} remark@11
+
+[remark@1]
+anim = assault
+target = actor
+snd = bar_ohr1
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | remark@2
+on_info = {+bratok_enemy} walker@bandit_masterohr1
+
+[remark@11]
+anim = assault
+target = actor
+snd = bar_ohr3
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | %+bratok_enemy%
+on_info = {+bratok_enemy} remark@4
+
+[remark@2]
+anim = assault
+target = actor
+meet = no_meet
+danger = danger_condition
+on_timer = 5000 | {=dist_to_actor_le(15) -flyer_est} remark@3, {=dist_to_actor_ge(15)} walker@bandit_masterohr %-barohr_zlitsya +barohr_spokoyno%
+on_info = {+bratok_enemy} walker@bandit_masterohr1
+
+[remark@3]
+anim = assault
+target = actor
+snd = bar_ohr2
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | %+bratok_enemy%
+on_info = {+bratok_enemy} remark@4
+
+[remark@4]
+anim = assault
+target = actor
+meet = no_meet
+danger = danger_condition
+
+[walker@bandit_masterohr1]
+path_walk = bandit_masterohr_walk
+path_look = bandit_masterohr_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+bratok_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+bratok_enemy%

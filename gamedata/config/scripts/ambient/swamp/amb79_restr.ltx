@@ -1,0 +1,5 @@
+[logic]
+active = sr_idle@one
+
+[sr_idle@one]
+on_actor_inside = {+amb_swamp +doctor_nach_dialog_start} nil %=play_snd(ambient\new\actor_32) =val_test.del_restr% 

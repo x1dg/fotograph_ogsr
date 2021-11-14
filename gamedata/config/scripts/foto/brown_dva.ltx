@@ -1,0 +1,100 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-brown_dva_mesto} walker@1, {+brown_dva_mesto} walker@3 
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@1]
+path_walk = brown_dva_walk
+path_look = brown_dva_look
+meet = no_meet
+def_state_standing = assault
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+usa_enemy} walker@11
+on_info2 = {+polischuk_dead} remark@1 
+
+[remark@1]
+target = actor
+snd = brown
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+usa_enemy} walker@11 
+on_signal = sound_end | remark@brawn %=play_snd(ambient\new\actor_about_brawn)%
+
+[remark@brawn]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+usa_enemy} walker@11
+on_timer = 3200 | remark@brawn1 
+
+[remark@brawn1]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+usa_enemy} walker@11
+on_timer = 500 | remark@brawn2 %=fotograf.road_mir_spawn%
+
+[remark@brawn2]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+usa_enemy} walker@11
+on_timer = 500 | walker@2 
+
+[walker@2]
+path_walk = brown_dva1_walk
+path_look = brown_dva1_look
+meet = no_meet
+def_state_moving = walk
+def_state_standing = ward
+danger = danger_condition
+on_info = {+usa_enemy} walker@11
+on_signal = brmesto | remark@brawn3 %=play_snd(ambient\new\actor_about_brawn_1)%
+
+[remark@brawn3]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+usa_enemy} walker@11
+on_timer = 6200 | walker@3 %+brown_dva_mesto%
+
+[walker@3]
+path_walk = brown_dva1_walk
+path_look = brown_dva1_look
+meet = meet
+def_state_standing = ward
+danger = danger_condition
+on_info = {+usa_enemy} walker@11
+
+[walker@11]
+path_walk = brown_dva_walk
+path_look = brown_dva_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+meet_state = ward
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+on_info2 = %+brown_dead%

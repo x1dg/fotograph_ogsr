@@ -1,0 +1,17 @@
+[logic]
+active = sr_idle@one
+
+[sr_idle@one]
+on_actor_inside = {+voronin_dyshlo_dialog_start} sr_idle@two %=cars.check_vorcar_in_restr%
+
+[sr_idle@two]
+on_info = {+voronin_car_mesto} sr_idle@tri
+on_actor_outside = sr_idle@one
+
+[sr_idle@tri]
+on_timer = 500 | %=cars.check_vorcar_out_restr%
+on_info = {+voronin_car_not_place} sr_idle@four
+on_info2 = {+voronin_dyshlo_dialog_done} nil %=val_test.del_restr%
+
+[sr_idle@four]
+on_timer = 500 | sr_idle@one %=cars.sms_vorcar -voronin_car_not_place%

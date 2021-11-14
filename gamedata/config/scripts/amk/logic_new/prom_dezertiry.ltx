@@ -1,0 +1,24 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = kamp@prom_dezertiry
+danger = danger_condition
+combat_ignore = combat_ignore
+
+[kamp@prom_dezertiry]
+center_point = prom_dezertiry_center
+path_walk = prom_dezertiry_walk
+radius = 3.0
+meet = meet
+def_state_moving = run
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

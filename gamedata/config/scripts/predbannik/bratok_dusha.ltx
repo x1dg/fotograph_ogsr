@@ -1,0 +1,68 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-dusha_start} walker@1, {+dusha_start -dusha_dialog_start} walker@2, {+dusha_dialog_start} walker@3
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@1]
+path_walk = bratok_dusha_walk
+path_look = bratok_dusha_look
+meet = no_meet
+danger = danger_condition
+on_info = {+bratok_enemy} walker@11
+on_actor_dist_le = 4 | remark@1
+
+[remark@1]
+target = actor
+snd = dusha
+meet = no_meet
+danger = danger_condition
+on_info = {+bratok_enemy} walker@11
+on_signal = sound_end | walker@2 %+dusha_start% 
+
+[walker@2]
+path_walk = bratok_dusha_walk
+path_look = bratok_dusha_look
+meet = meet@1
+danger = danger_condition
+on_info = {+bratok_enemy} walker@11
+on_info2 = {+dusha_dialog_start} walker@3 
+
+[walker@3]
+path_walk = bratok_dusha_walk
+path_look = bratok_dusha_look
+meet = meet@2
+danger = danger_condition
+on_info = {+bratok_enemy} walker@11
+
+[walker@11]
+path_walk = bratok_dusha_walk
+path_look = bratok_dusha_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet@1]
+meet_dialog = dusha_dialog
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[meet@2]
+meet_dialog = dusha_dialog_est
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+bratok_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+bratok_enemy%

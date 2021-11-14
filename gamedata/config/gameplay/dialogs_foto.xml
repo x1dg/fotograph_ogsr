@@ -1,0 +1,6011 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+
+      <dialog id="dron_start_dialog">
+	           <dont_has_info>dron_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>dron_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>dron_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>dron_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>dron_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>dron_start_dialog_4</text>
+				<next>5</next>
+				</phrase>	
+        <phrase id="5">
+                <text>dron_start_dialog_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>dron_start_dialog_6</text>
+		        <give_info>dron_start_dialog_start</give_info>
+				<action>fotograf.spawn_dron_plasch</action>
+				<action>val_test.dron_plasc</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+	        <dialog id="dron_start_dialog_est">
+	           <precondition>fotograf.dron_plasch_have</precondition>
+	           <has_info>dron_start_dialog_have</has_info>			   
+	           <dont_has_info>dron_start_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>dron_start_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>dron_start_dialog_est_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>dron_start_dialog_est_2</text>
+		        <give_info>dron_start_dialog_done</give_info>
+				<give_info>story_18</give_info>
+				<action>fotograf.dron_plasch_otdal</action>
+				<action>fotograf.pruha_spawn</action>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>dron_start_dialog_est_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>dron_start_dialog_est_4</text>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="levsha_start_dialog">
+	           <dont_has_info>levsha_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>levsha_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>levsha_start_dialog_1</text>
+				<give_info>levsha_vstrecha</give_info>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>levsha_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>levsha_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>levsha_start_dialog_4</text>
+				<next>5</next>
+				</phrase>	
+        <phrase id="5">
+                <text>levsha_start_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>levsha_start_dialog_6</text>
+				<next>7</next>
+				</phrase>	
+        <phrase id="7">
+                <text>levsha_start_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>levsha_start_dialog_8</text>
+		        <give_info>levsha_start_dialog_start</give_info>
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+      <dialog id="levsha_start_dialog_est">
+	           <precondition>fotograf.levsha_bar_have</precondition>
+	           <has_info>levsha_start_dialog_have</has_info>
+	           <dont_has_info>levsha_start_dialog_est</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>levsha_start_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>levsha_start_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>levsha_start_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>levsha_start_dialog_est_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>levsha_start_dialog_est_4</text>
+				<next>5</next>
+				</phrase>	
+        <phrase id="5">
+                <text>levsha_start_dialog_est_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>levsha_start_dialog_est_6</text>
+				<next>7</next>
+				</phrase>	
+        <phrase id="7">
+                <text>levsha_start_dialog_est_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>levsha_start_dialog_est_8</text>
+		        <give_info>levsha_start_dialog_est</give_info>
+				<action>fotograf.spawn_levsha_decoder</action>
+                                <action>fotograf.spawn_bar_diggers1</action>
+                                <action>fotograf.spawn_bar_diggers2</action>
+                                <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+      <dialog id="brom_start_dialog">
+	           <dont_has_info>levsha_start_dialog_dig</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brom_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brom_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brom_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brom_start_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>brom_start_dialog_4</text>
+		        <give_info>levsha_start_dialog_dig</give_info>
+				<give_info>persona_6</give_info>
+                        <action>dialogs.break_dialog</action>
+						<action>foto2.create_noise_restr</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+	  
+      <dialog id="levsha_start_dialog_done">
+	           <has_info>levsha_start_dialog_dig</has_info>
+	           <dont_has_info>levsha_start_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>levsha_start_dialog_done_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>levsha_start_dialog_done_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>levsha_start_dialog_done_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>levsha_start_dialog_done_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>levsha_start_dialog_done_4</text>
+		        <give_info>levsha_start_dialog_done</give_info>
+				<give_info>persona_24</give_info>
+                        <give_info>bar_narod_spawn</give_info>
+						<give_info>petrograf_start</give_info>
+                        <action>fotograf.decoder_otdal</action>
+						<action>foto2.noise_spawn</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+     <dialog id="levsha_one_dialog">
+	           <has_info>drozdov_start_dialog_start</has_info>
+	           <has_info>levsha_start_dialog_done</has_info>
+	           <dont_has_info>levsha_one_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>levsha_one_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>levsha_one_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>levsha_one_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>levsha_one_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>levsha_one_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>levsha_one_dialog_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>levsha_one_dialog_6</text>
+		        <give_info>levsha_one_dialog_start</give_info>
+                <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+     <dialog id="levsha_one_dialog_est">
+	           <precondition>fotograf.levsha_crystalls_have</precondition>
+	           <has_info>levsha_one_dialog_have</has_info>
+	           <dont_has_info>levsha_one_dialog_est</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>levsha_one_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>levsha_one_dialog_est_1</text>
+				<next>21</next>
+				<next>22</next>
+				</phrase>
+        <phrase id="21">
+		        <precondition>fotograf.actor_fotik_not</precondition>
+                <text>levsha_one_dialog_est_21</text>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        <phrase id="22">
+		        <precondition>fotograf.actor_fotik_have</precondition>
+                <text>levsha_one_dialog_est_22</text>
+                <next>23</next>
+				</phrase>				
+        <phrase id="23">
+                <text>levsha_one_dialog_est_23</text>
+                <next>24</next>
+				</phrase>				
+        <phrase id="24">
+		        <precondition>fotograf.actor_fotik_have</precondition>
+                <text>levsha_one_dialog_est_24</text>
+		        <give_info>levsha_one_dialog_est</give_info>
+                <action>fotograf.levsha_crystalls_otdal</action>
+				<action>fotograf.check_time_levsha</action>
+				<action>amk_mod.start_blow_timer</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+     <dialog id="levsha_one_dialog_done">
+	           <precondition>fotograf.timer_levsha_over</precondition>
+	           <has_info>levsha_one_dialog_est</has_info>
+	           <dont_has_info>levsha_one_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>levsha_one_dialog_done_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>levsha_one_dialog_done_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>levsha_one_dialog_done_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>levsha_one_dialog_done_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>levsha_one_dialog_done_4</text>
+		        <give_info>levsha_one_dialog_done</give_info>
+				<give_info>fotokamera_upgrade</give_info>
+                <action>fotograf.levsha_fotik_dal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="lukash_start_dialog">
+	           <dont_has_info>lukash_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>lukash_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>lukash_start_dialog_1</text>
+                <give_info>lukash_vstrecha_done</give_info>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>lukash_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>lukash_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>lukash_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>lukash_start_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>lukash_start_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>lukash_start_dialog_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>lukash_start_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>lukash_start_dialog_9</text>
+				<next>10</next>
+				</phrase>
+        <phrase id="10">
+                <text>lukash_start_dialog_10</text>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>lukash_start_dialog_11</text>
+				<action>fotograf.haron_case_otdal</action>
+				<give_info>haron_case_otdal</give_info>
+				<next>12</next>
+				</phrase>
+        <phrase id="12">
+                <text>lukash_start_dialog_12</text>
+				<next>13</next>
+				</phrase>
+        <phrase id="13">
+                <text>lukash_start_dialog_13</text>
+				<next>14</next>
+				</phrase>
+        <phrase id="14">
+                <text>lukash_start_dialog_14</text>
+				<next>15</next>
+				</phrase>
+        <phrase id="15">
+                <text>lukash_start_dialog_15</text>
+				<next>16</next>
+				</phrase>
+        <phrase id="16">
+                <text>lukash_start_dialog_16</text>
+				<next>17</next>
+				</phrase>
+        <phrase id="17">
+                <text>lukash_start_dialog_17</text>
+				<next>18</next>
+				</phrase>				
+        <phrase id="18">
+                <text>lukash_start_dialog_18</text>
+		        <give_info>lukash_start_dialog_start</give_info>
+                        <action>fotograf.pda_lukash_dal</action>
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+      <dialog id="shershen_start_dialog">
+                   <has_info>lukash_start_dialog_start</has_info>
+	           <dont_has_info>shershen_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>shershen_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>shershen_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>shershen_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>shershen_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>shershen_start_dialog_4</text>
+		        <give_info>shershen_start_dialog_start</give_info>
+				<give_info>persona_8</give_info>
+                <give_info>story_16</give_info>
+                        <action>fotograf.pda_lukash_otdal</action>
+                        <action>dialogs.break_dialog</action>
+                        <action>val_test.hlam_ruk_spawn</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="lukash_first_dialog">
+                   <has_info>shershen_start_dialog_start</has_info>
+	           <dont_has_info>lukash_first_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>lukash_first_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>lukash_first_dialog_1</text>
+                <give_info>lukash_start_dialog_done</give_info>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>lukash_first_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>lukash_first_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>lukash_first_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>lukash_first_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>lukash_first_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>lukash_first_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>lukash_first_dialog_8</text>
+		        <give_info>lukash_first_dialog_start</give_info>
+                        <action>fotograf.spawn_shurup_boyci</action>
+                        <action>mauvais.music_prom02</action>						
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+      <dialog id="lukash_first_dialog_est">
+                   <precondition>fotograf.lukash_angar_have</precondition>
+                   <has_info>lukash_first_dialog_have</has_info>
+	           <dont_has_info>lukash_first_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>lukash_first_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>lukash_first_dialog_est_1</text>
+                <give_info>lukash_start_dialog_done</give_info>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>lukash_first_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>lukash_first_dialog_est_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>lukash_first_dialog_est_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>lukash_first_dialog_est_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>lukash_first_dialog_est_6</text>
+		        <give_info>lukash_first_dialog_done</give_info>
+				<give_info>persona_7</give_info>
+				<give_info>persona_21</give_info>
+				<action>fotograf.spawn_metka_lch_prom</action>
+				<action>fotograf.metka_lch_prom</action>
+                <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+	  
+      <dialog id="prom_desant_dialog">
+               <precondition>fotograf.prom_desant_have</precondition>
+               <has_info>prom_desant_have</has_info>
+	           <dont_has_info>prom_desant_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>prom_desant_dialog_0</text>
+				<next>1</next>
+				<next>2</next>
+                </phrase>
+        <phrase id="1">
+		        <dont_has_info>prom_desant_ubil</dont_has_info>
+                <text>prom_desant_dialog_1</text>
+				<next>11</next>
+				</phrase>				
+        <phrase id="11">
+                <text>prom_desant_dialog_11</text>
+				<give_info>prom_desant_done</give_info>
+                <action>dialogs.break_dialog</action>
+				</phrase>
+        <phrase id="2">
+		        <has_info>prom_desant_ubil</has_info>
+                <text>prom_desant_dialog_2</text>
+				<next>3</next>
+				</phrase>				
+        <phrase id="3">
+                <text>prom_desant_dialog_3</text>
+		        <give_info>prom_desant_done</give_info>
+				<action>fotograf.max_nagrada</action>
+                <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>		  
+	  
+---------------------------------sahar_start----------------------------------
+
+
+        <dialog id="sahar_nach_dialog">
+	           <dont_has_info>sahar_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sahar_nach_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sahar_nach_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sahar_nach_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sahar_nach_dialog_3</text>
+				<next>4</next>
+				</phrase>			
+        <phrase id="4">
+                <text>sahar_nach_dialog_4</text>
+		        <give_info>sahar_start_dialog_start</give_info>
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+        <dialog id="sahar_one_dialog">
+                   <has_info>sahar_start_dialog_start</has_info>
+                   <has_info>sahar_na_meste</has_info>
+	           <dont_has_info>sahar_start_dialog_mesto</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sahar_one_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sahar_one_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sahar_one_dialog_2</text>
+				<next>3</next>
+				</phrase>			
+        <phrase id="3">
+                <text>sahar_one_dialog_3</text>
+		        <give_info>sahar_start_dialog_mesto</give_info>
+                        <action>fotograf.sahar_crystalls_dal</action>
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+        <dialog id="sahar_two_dialog">
+                   <precondition>fotograf.sahar_absolut_have</precondition>
+                   <has_info>sahar_start_dialog_mesto</has_info>
+                   <has_info>test_kat_est</has_info>
+	           <dont_has_info>sahar_start_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sahar_two_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sahar_two_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sahar_two_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sahar_two_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>sahar_two_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>sahar_two_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>sahar_two_dialog_6</text>
+				<next>7</next>
+				</phrase>			
+        <phrase id="7">
+                <text>sahar_two_dialog_7</text>
+		        <give_info>sahar_start_dialog_done</give_info>
+				<give_info>persona_15</give_info>
+                        <action>fotograf.sahar_absolut_otdal</action>
+						<action>fotograf.road_tonnel_spawn</action>
+                        <action>y_level.lch_road_swamp_road</action>
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+        <dialog id="vasil_nach_dialog">
+               <has_info>sahar_start_dialog_done</has_info>
+	       <dont_has_info>vasil_nach_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>vasil_nach_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>vasil_nach_dialog_1</text>
+		<give_info>vasil_nayden</give_info>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>vasil_nach_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>vasil_nach_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>vasil_nach_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>vasil_nach_dialog_5</text>
+				<next>6</next>
+				</phrase>			
+        <phrase id="6">
+                <text>vasil_nach_dialog_6</text>
+		        <give_info>vasil_nach_dialog_start</give_info>
+				<give_info>persona_19</give_info>
+                <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+        <dialog id="feldsher_start_dialog">
+               <has_info>vasil_nach_dialog_start</has_info>
+	       <dont_has_info>feldsher_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>feldsher_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>feldsher_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>feldsher_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>feldsher_start_dialog_3</text>
+				<next>4</next>
+				</phrase>			
+        <phrase id="4">
+                <text>feldsher_start_dialog_4</text>
+		        <give_info>feldsher_start_dialog_start</give_info>
+				<give_info>persona_20</give_info>
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+        <dialog id="doctor_nach_dialog">
+                   <has_info>vasil_nach_dialog_start</has_info>
+		   <has_info>doctor_one_start</has_info>
+	           <dont_has_info>doctor_nach_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>doctor_nach_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>doctor_nach_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>doctor_nach_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>doctor_nach_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>doctor_nach_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>doctor_nach_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>doctor_nach_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>doctor_nach_dialog_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>doctor_nach_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>doctor_nach_dialog_9</text>
+				<next>10</next>
+				</phrase>
+        <phrase id="10">
+                <text>doctor_nach_dialog_10</text>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>doctor_nach_dialog_11</text>
+				<next>12</next>
+				</phrase>				
+        <phrase id="12">
+                <text>doctor_nach_dialog_12</text>
+		        <give_info>doctor_nach_dialog_start</give_info>
+                        <action>fotograf.lavrov_spawn</action>
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+	  
+	  
+        <dialog id="doctor_tri_dialog">
+               <precondition>fotograf.lavrov_pda_have</precondition>
+	           <has_info>lavrov_pda_have</has_info>
+	           <dont_has_info>doctor_tri_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>doctor_tri_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>doctor_tri_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>doctor_tri_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>doctor_tri_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>doctor_tri_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>doctor_tri_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>doctor_tri_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>doctor_tri_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>doctor_tri_dialog_8</text>
+		        <give_info>doctor_tri_dialog_start</give_info>
+				<give_info>persona_17</give_info>
+                        <action>fotograf.doctor_pismo_dal</action>
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+
+        <dialog id="sahar_tri_dialog">
+                   <precondition>fotograf.lavrov_pda_have</precondition>
+	           <has_info>lavrov_pda_have</has_info>
+	           <dont_has_info>sahar_tri_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sahar_tri_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sahar_tri_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sahar_tri_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sahar_tri_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>sahar_tri_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>sahar_tri_dialog_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>sahar_tri_dialog_6</text>
+		        <give_info>sahar_tri_dialog_start</give_info>
+                        <action>fotograf.lavrov_pda_otdal</action>
+						<action>amk_mod.start_blow_timer</action>
+						<action>mauvais.timer_music_poligon02</action>
+                        <action>fotograf.check_time_crystalls</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+        <dialog id="sahar_four_dialog">
+                   <precondition>fotograf.doctor_pismo_have</precondition>
+	           <has_info>doctor_tri_dialog_start</has_info>
+                   <has_info>sahar_tri_dialog_start</has_info>
+	           <dont_has_info>sahar_four_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sahar_four_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sahar_four_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sahar_four_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sahar_four_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>sahar_four_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>sahar_four_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>sahar_four_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>sahar_four_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>sahar_four_dialog_8</text>
+		        <give_info>sahar_four_dialog_start</give_info>
+                        <action>fotograf.doctor_pismo_otdal</action>
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="sahar_crystalls_dialog">
+               <precondition>fotograf.check_timer_over</precondition>
+	           <has_info>sahar_tri_dialog_start</has_info>
+	           <dont_has_info>sahar_crystalls_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sahar_crystalls_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sahar_crystalls_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sahar_crystalls_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sahar_crystalls_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>sahar_crystalls_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>sahar_crystalls_dialog_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>sahar_crystalls_dialog_6</text>
+		        <give_info>sahar_crystalls_dialog_start</give_info>
+                <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="sahar_ks_dialog">
+               <has_info>sahar_crystalls_final</has_info>
+	           <has_info>sahar_crystalls_dialog_start</has_info>
+	           <dont_has_info>sbor_recepts_ks_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sahar_ks_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sahar_ks_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sahar_ks_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sahar_ks_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>sahar_ks_dialog_4</text>
+		                <give_info>sbor_recepts_ks_start</give_info>
+                        <give_info>start_crystalls</give_info>
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="sahar_ks_dialog_est">
+	           <has_info>recept_one_est</has_info>
+			   <has_info>sbor_recepts_ks_start</has_info>
+	           <dont_has_info>sbor_recepts_ks_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sahar_ks_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sahar_ks_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sahar_ks_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sahar_ks_dialog_est_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>sahar_ks_dialog_est_4</text>
+		                <give_info>sbor_recepts_ks_done</give_info>
+                        <action>fotograf.recepts_ks_otdal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+	    
+       <dialog id="sahar_tn_dialog">
+               <has_info>sbor_recepts_ks_done</has_info>
+	           <dont_has_info>sbor_recepts_tn_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sahar_tn_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sahar_tn_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sahar_tn_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sahar_tn_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>sahar_tn_dialog_4</text>
+		                <give_info>sbor_recepts_tn_start</give_info>
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+	  
+       <dialog id="sahar_tn_dialog_est">
+	           <has_info>recept_two_est</has_info>
+               <has_info>sbor_recepts_tn_start</has_info>
+	           <dont_has_info>sbor_recepts_tn_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sahar_tn_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sahar_tn_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sahar_tn_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sahar_tn_dialog_est_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>sahar_tn_dialog_est_4</text>
+		                <give_info>sbor_recepts_tn_done</give_info>
+                        <action>fotograf.recepts_tn_otdal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+      <dialog id="sahar_og_dialog">
+               <has_info>sbor_recepts_tn_done</has_info>
+	           <dont_has_info>sbor_recepts_og_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sahar_og_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sahar_og_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sahar_og_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sahar_og_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>sahar_og_dialog_4</text>
+		                <give_info>sbor_recepts_og_start</give_info>
+						<give_info>story_12</give_info>
+                        <action>val_test.zombie_ruk_spawn</action>
+						<action>fotograf.saharov_detector_dal</action>
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="sahar_og_dialog_est">
+	           <has_info>recept_tri_est</has_info>
+               <has_info>sbor_recepts_og_start</has_info>
+	           <dont_has_info>sbor_recepts_og_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sahar_og_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sahar_og_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sahar_og_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sahar_og_dialog_est_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>sahar_og_dialog_est_4</text>
+		                <give_info>sbor_recepts_og_done</give_info>
+						<give_info>story_17</give_info>
+                        <action>val_test.kombez_trup_spawn</action>
+                        <action>fotograf.recepts_og_otdal</action>
+						<action>val_test.saharman_podarok</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+	  
+--------------------------------mk_start--------------------------------
+
+       <dialog id="sidorovich_one_dialog">
+	           <has_info>brown_start_dialog_start</has_info>
+	           <dont_has_info>sidorovich_one_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sidorovich_one_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sidorovich_one_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sidorovich_one_dialog_2</text>
+                <action>fotograf.brown_poslanie_otdal</action>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sidorovich_one_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>sidorovich_one_dialog_4</text>
+		        <give_info>sidorovich_one_dialog_start</give_info>
+                <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="borya_start_dialog">
+	           <has_info>vhod_borov</has_info>
+                   <has_info>sidorovich_one_dialog_start</has_info>
+	           <dont_has_info>borya_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>borya_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>borya_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>borya_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>borya_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>borya_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>borya_start_dialog_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>borya_start_dialog_6</text>
+		        <give_info>borya_start_dialog_start</give_info>
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+
+       <dialog id="borya_start_dialog_est">
+                   <precondition>fotograf.antirad_10_have</precondition>
+	           <has_info>borya_start_dialog_have</has_info>
+	           <dont_has_info>borya_start_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>borya_start_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>borya_start_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>borya_start_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>borya_start_dialog_est_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>borya_start_dialog_est_4</text>
+		        <give_info>borya_start_dialog_done</give_info>
+			<give_info>flyer_est</give_info>
+                        <action>fotograf.antirad_10_otdal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+
+       <dialog id="brown_one_dialog">
+	           <has_info>borya_start_dialog_start</has_info>
+                   <dont_has_info>borya_start_dialog_have</dont_has_info>
+	           <dont_has_info>brown_one_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_one_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_one_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brown_one_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brown_one_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>brown_one_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>brown_one_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>brown_one_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>brown_one_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>brown_one_dialog_8</text>
+		        <give_info>brown_one_dialog_start</give_info>
+				<give_info>persona_3</give_info>
+                        <action>fotograf.brown_cognak_dal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+
+      <dialog id="krasa_start_dialog">
+                   <has_info>brown_one_dialog_start</has_info>
+	           <dont_has_info>krasa_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>krasa_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>krasa_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>krasa_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>krasa_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>krasa_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>krasa_start_dialog_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>krasa_start_dialog_6</text>
+		        <give_info>krasa_start_dialog_start</give_info>
+                        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+
+      <dialog id="krasa_one_dialog">
+                   <has_info>krasa_start_dialog_start</has_info>
+                   <has_info>krasa_mesto2</has_info>
+	           <dont_has_info>krasa_one_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>krasa_one_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>krasa_one_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>krasa_one_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>krasa_one_dialog_3</text>
+				<next>4</next>
+				</phrase>			
+        <phrase id="4">
+                <text>krasa_one_dialog_4</text>
+		        <give_info>krasa_one_dialog_start</give_info>
+                        <action>fotograf.brown_cognak_otdal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+
+      <dialog id="krasa_two_dialog">
+                   <has_info>krasa_one_dialog_start</has_info>
+	           <dont_has_info>krasa_two_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>krasa_two_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>krasa_two_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>krasa_two_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>krasa_two_dialog_3</text>
+				<next>4</next>
+				</phrase>			
+        <phrase id="4">
+                <text>krasa_two_dialog_4</text>
+		        <give_info>krasa_two_dialog_start</give_info>
+				<give_info>persona_1</give_info>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="kladovschik_start_dialog">
+	           <has_info>krasa_two_dialog_start</has_info>
+	           <dont_has_info>kladovschik_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>kladovschik_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>kladovschik_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>kladovschik_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>kladovschik_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>kladovschik_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>kladovschik_start_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>kladovschik_start_dialog_6</text>
+				<next>7</next>
+				</phrase>				
+        <phrase id="7">
+                <text>kladovschik_start_dialog_7</text>
+		        <give_info>kladovschik_start_dialog_start</give_info>
+				<action>fotograf.spawn_bratok_dusha</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="dusha_dialog">
+	           <has_info>kladovschik_start_dialog_start</has_info>
+	           <dont_has_info>dusha_dialog_nachalo</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>dusha_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>dusha_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>dusha_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>dusha_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>dusha_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>dusha_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>dusha_dialog_6</text>
+				<next>7</next>
+				<next>8</next>
+				</phrase>				
+        <phrase id="7">
+                <text>dusha_dialog_7</text>
+		        <give_info>dusha_dialog_start</give_info>
+				<give_info>dusha_dialog_nachalo</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        <phrase id="8">
+                <text>dusha_dialog_8</text>
+		        <give_info>dusha_dialog_nachalo</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>				
+        </phrase_list>
+      </dialog>	 
+
+      <dialog id="dusha_dialog_est">
+	           <precondition>fotograf.glushak_have</precondition>
+	           <has_info>dusha_dialog_start</has_info>
+	           <has_info>dusha_dialog_have</has_info>
+	           <dont_has_info>dusha_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>dusha_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>dusha_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>dusha_dialog_est_2</text>
+				<next>3</next>
+				</phrase>				
+        <phrase id="3">
+                <text>dusha_dialog_est_3</text>
+		        <give_info>dusha_dialog_done</give_info>
+				<action>fotograf.glushak_otdal</action>
+				</phrase>				
+        </phrase_list>
+      </dialog>
+
+      <dialog id="kladovschik_start_dialog_est">
+	           <precondition>fotograf.havchik_have</precondition>
+	           <has_info>havchik_have</has_info>
+	           <has_info>kladovschik_start_dialog_start</has_info>
+	           <dont_has_info>kladovschik_start_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>kladovschik_start_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>kladovschik_start_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>kladovschik_start_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>kladovschik_start_dialog_est_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>kladovschik_start_dialog_est_4</text>
+				<next>5</next>
+				</phrase>				
+        <phrase id="5">
+                <text>kladovschik_start_dialog_est_5</text>
+		        <give_info>kladovschik_start_dialog_done</give_info>
+				<action>fotograf.havchik_otdal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+	  
+       <dialog id="fotki_devok_dialog">
+	           <has_info>zhila_vstrecha</has_info>
+	           <dont_has_info>fotki_devok_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>fotki_devok_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>fotki_devok_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>fotki_devok_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>fotki_devok_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>fotki_devok_dialog_4</text>
+				<next>41</next>
+                <next>42</next>
+				</phrase>
+        <phrase id="41">
+                <text>fotki_devok_dialog_41</text>
+				<next>51</next>
+				</phrase>
+        <phrase id="42">
+                <text>fotki_devok_dialog_42</text>
+				<next>52</next>
+				</phrase>
+        <phrase id="51">
+                <text>fotki_devok_dialog_51</text>
+				<next>61</next>
+				</phrase>
+        <phrase id="52">
+                <text>fotki_devok_dialog_52</text>
+				<next>62</next>
+				</phrase>				
+        <phrase id="61">
+                <text>fotki_devok_dialog_61</text>
+		        <give_info>fotki_devok_dialog_start</give_info>
+                        <action>fotograf.devki_vodka_barter</action>
+				</phrase>
+        <phrase id="62">
+                <text>fotki_devok_dialog_62</text>
+		        <give_info>fotki_devok_dialog_start</give_info>
+                        <action>fotograf.devki_money1_barter</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+
+       <dialog id="fotki_zastavka_dialog">
+	           <has_info>fotki_devok_dialog_start</has_info>
+	           <dont_has_info>fotki_zastavka_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>fotki_zastavka_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>fotki_zastavka_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>fotki_zastavka_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>fotki_zastavka_dialog_3</text>
+				<next>4</next>				
+				</phrase>
+        <phrase id="4">
+                <text>fotki_zastavka_dialog_4</text>
+				<next>41</next>
+                <next>42</next>
+				</phrase>
+        <phrase id="41">
+                <text>fotki_zastavka_dialog_41</text>
+				<next>51</next>
+				</phrase>
+        <phrase id="42">
+                <text>fotki_zastavka_dialog_42</text>
+				<next>52</next>
+				</phrase>
+        <phrase id="51">
+                <text>fotki_zastavka_dialog_51</text>
+				<next>61</next>
+				</phrase>
+        <phrase id="52">
+                <text>fotki_zastavka_dialog_52</text>
+				<next>62</next>
+				</phrase>				
+        <phrase id="61">
+                <text>fotki_zastavka_dialog_61</text>
+		        <give_info>fotki_zastavka_dialog_start</give_info>
+                        <action>fotograf.devki_eda_barter</action>
+				</phrase>
+        <phrase id="62">
+                <text>fotki_zastavka_dialog_62</text>
+		        <give_info>fotki_zastavka_dialog_start</give_info>
+                        <action>fotograf.devki_money2_barter</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+
+       <dialog id="flyer_dialog">
+	           <precondition>fotograf.flyer_have</precondition>
+	           <has_info>flyer_est</has_info>
+	           <dont_has_info>flyer_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>flyer_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>flyer_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>flyer_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>flyer_dialog_3</text>
+		        <give_info>flyer_dialog_start</give_info>
+				<give_info>prohod_otkryt</give_info>
+                <action>fotograf.flyer_otdal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="zhila_start_dialog">
+	           <has_info>flyer_est</has_info>
+	           <dont_has_info>zhila_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>zhila_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+		<phrase id="1">
+                <text>zhila_start_dialog_1</text>
+				<next>2</next>
+                </phrase>
+		<phrase id="2">
+                <text>zhila_start_dialog_2</text>
+				<next>3</next>
+                </phrase>
+		<phrase id="3">
+                <text>zhila_start_dialog_3</text>
+				<next>4</next>
+                </phrase>
+		<phrase id="4">
+                <text>zhila_start_dialog_4</text>
+				<next>5</next>
+                </phrase>
+		<phrase id="5">
+                <text>zhila_start_dialog_5</text>
+				<next>6</next>
+                </phrase>
+		<phrase id="6">
+                <text>zhila_start_dialog_6</text>
+				<next>7</next>
+                </phrase>
+		<phrase id="7">
+                <text>zhila_start_dialog_7</text>
+				<next>81</next>
+				<next>91</next>
+                </phrase>
+		<phrase id="81">
+		        <precondition>fotograf.vodka_zhila_net</precondition>
+                <text>zhila_start_dialog_81</text>
+				<next>82</next>
+                </phrase>
+		<phrase id="82">
+                <text>zhila_start_dialog_82</text>
+				<action>dialogs.break_dialog</action>
+                </phrase>
+		<phrase id="91">
+		        <precondition>fotograf.vodka_zhila_have</precondition>
+                <text>zhila_start_dialog_91</text>
+				<action>fotograf.drink_vodka</action>
+				<next>92</next>
+                </phrase>
+		<phrase id="92">
+                <text>zhila_start_dialog_92</text>
+				<give_info>mamasha_spawn</give_info>
+				<next>93</next>
+                </phrase>
+		<phrase id="93">
+                <text>zhila_start_dialog_93</text>
+				<next>94</next>
+                </phrase>
+		<phrase id="94">
+                <text>zhila_start_dialog_94</text>
+				<next>95</next>
+                </phrase>
+		<phrase id="95">
+                <text>zhila_start_dialog_95</text>
+				<next>96</next>
+                </phrase>
+		<phrase id="96">
+                <text>zhila_start_dialog_96</text>
+				<next>97</next>
+                </phrase>
+		<phrase id="97">
+                <text>zhila_start_dialog_97</text>
+				<next>98</next>
+                </phrase>
+		<phrase id="98">
+                <text>zhila_start_dialog_98</text>
+				<next>99</next>
+                </phrase>
+		<phrase id="99">
+                <text>zhila_start_dialog_99</text>
+				<next>100</next>
+                </phrase>
+		<phrase id="100">
+                <text>zhila_start_dialog_100</text>
+				<next>101</next>
+                </phrase>
+		<phrase id="101">
+                <text>zhila_start_dialog_101</text>
+				<next>102</next>
+                </phrase>
+		<phrase id="102">
+                <text>zhila_start_dialog_102</text>
+				<next>103</next>
+                </phrase>
+		<phrase id="103">
+                <text>zhila_start_dialog_103</text>
+				<next>104</next>
+                </phrase>
+		<phrase id="104">
+                <text>zhila_start_dialog_104</text>
+				<next>105</next>
+                </phrase>
+		<phrase id="105">
+                <text>zhila_start_dialog_105</text>
+				<give_info>zhila_start_dialog_start</give_info>
+				<give_info>persona_18</give_info>
+				<action>dialogs.break_dialog</action>
+                </phrase>	
+        </phrase_list>
+      </dialog>	
+
+       <dialog id="zhorik_start_dialog">
+	           <has_info>zhila_start_dialog_start</has_info>
+	           <dont_has_info>zhorik_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>zhorik_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>zhorik_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>zhorik_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+		<phrase id="3">
+                <text>zhorik_start_dialog_3</text>
+				<next>41</next>
+				<next>51</next>
+				</phrase>
+		<phrase id="41">
+		        <precondition>fotograf.pivo_zhorik_net</precondition>
+                <text>zhorik_start_dialog_41</text>
+				<next>42</next>
+				</phrase>
+		<phrase id="42">
+                <text>zhorik_start_dialog_42</text>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+		<phrase id="51">
+		        <precondition>fotograf.pivo_zhorik_have</precondition>
+                <text>zhorik_start_dialog_51</text>
+				<next>52</next>
+				</phrase>
+		<phrase id="52">
+                <text>zhorik_start_dialog_52</text>
+				<next>53</next>
+				</phrase>
+		<phrase id="53">
+                <text>zhorik_start_dialog_53</text>
+				<action>fotograf.drink_zhorik_pivo</action>
+				<next>54</next>
+				</phrase>
+		<phrase id="54">
+                <text>zhorik_start_dialog_54</text>
+				<next>55</next>
+				</phrase>
+		<phrase id="55">
+                <text>zhorik_start_dialog_55</text>
+				<next>56</next>
+				</phrase>
+		<phrase id="56">
+                <text>zhorik_start_dialog_56</text>
+				<next>57</next>
+				</phrase>
+		<phrase id="57">
+                <text>zhorik_start_dialog_57</text>
+				<next>58</next>
+				</phrase>
+		<phrase id="58">
+                <text>zhorik_start_dialog_58</text>
+				<next>59</next>
+				</phrase>
+		<phrase id="59">
+                <text>zhorik_start_dialog_59</text>
+				<next>60</next>
+				</phrase>
+		<phrase id="60">
+                <text>zhorik_start_dialog_60</text>
+				<next>61</next>
+				</phrase>
+		<phrase id="61">
+                <text>zhorik_start_dialog_61</text>
+				<next>62</next>
+				</phrase>
+		<phrase id="62">
+                <text>zhorik_start_dialog_62</text>
+				<next>63</next>
+				</phrase>
+		<phrase id="63">
+                <text>zhorik_start_dialog_63</text>
+				<next>64</next>
+				</phrase>
+		<phrase id="64">
+                <text>zhorik_start_dialog_64</text>
+				<next>65</next>
+				</phrase>
+		<phrase id="65">
+                <text>zhorik_start_dialog_65</text>
+				<next>66</next>
+				</phrase>	
+		<phrase id="66">
+                <text>zhorik_start_dialog_66</text>
+				<next>67</next>
+				</phrase>				
+        <phrase id="67">
+                <text>zhorik_start_dialog_67</text>
+		        <give_info>zhorik_start_dialog_start</give_info>
+				<give_info>agent_mk_spawn</give_info>
+                <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="brown_two_dialog">
+	           <precondition>fotograf.timer_brown_over</precondition>
+	           <has_info>brown_start_dialog_done</has_info>
+	           <dont_has_info>brown_two_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_two_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_two_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brown_two_dialog_2</text>
+				<next>3</next>
+				</phrase>
+		<phrase id="3">
+                <text>brown_two_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>brown_two_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>brown_two_dialog_5</text>
+				<next>6</next>
+				</phrase>
+		<phrase id="6">
+                <text>brown_two_dialog_6</text>
+				<next>7</next>
+				</phrase>
+		<phrase id="7">
+                <text>brown_two_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>brown_two_dialog_8</text>
+		        <give_info>brown_two_dialog_start</give_info>
+				<action>fotograf.spawn_metki_foto</action>
+				<action>y_level.lch_mk_road_mk</action>
+				<action>fotograf.sd_brown_dal</action>
+				<action>fotograf.metka_foto_01</action>
+                <action>fotograf.metka_foto_02</action>
+                <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+      <dialog id="brown_two_dialog_est">
+	           <has_info>brown_two_dialog_have</has_info>
+			   <has_info>brown_two_dialog_vhod</has_info>
+	           <dont_has_info>brown_two_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_two_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_two_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brown_two_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+		<phrase id="3">
+                <text>brown_two_dialog_est_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>brown_two_dialog_est_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>brown_two_dialog_est_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>brown_two_dialog_est_6</text>
+		        <give_info>brown_two_dialog_done</give_info>
+				<disable_info>fotik_take_first</disable_info>
+				<action>fotograf.sd_brown_otdal</action>
+				<action>fotograf.check_time_brown2</action>
+				</phrase>
+        </phrase_list>
+      </dialog>		  
+	  	 
+       <dialog id="baza_ukr_ohr_dialog">
+	           <precondition>fotograf.propusk1_have</precondition>
+	           <dont_has_info>baza_ukr_ohr_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>baza_ukr_ohr_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>baza_ukr_ohr_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>baza_ukr_ohr_dialog_2</text>
+		        <give_info>baza_ukr_ohr_horosho</give_info>				
+				<next>3</next>
+				</phrase>
+		<phrase id="3">
+                <text>baza_ukr_ohr_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>baza_ukr_ohr_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>baza_ukr_ohr_dialog_5</text>
+				<give_info>baza_ukr_ohr_dialog_start</give_info>
+                <action>fotograf.propusk1_done</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="voronin_start_dialog">
+	           <has_info>brown_two_dialog_start</has_info>
+	           <dont_has_info>voronin_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>voronin_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>voronin_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>voronin_start_dialog_2</text>				
+				<next>3</next>
+				</phrase>
+		<phrase id="3">
+                <text>voronin_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>voronin_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>voronin_start_dialog_5</text>
+				<next>6</next>
+				</phrase>
+		<phrase id="6">
+                <text>voronin_start_dialog_6</text>
+				<next>7</next>
+				</phrase>
+		<phrase id="7">
+                <text>voronin_start_dialog_7</text>
+				<next>8</next>
+				</phrase>
+		<phrase id="8">
+                <text>voronin_start_dialog_8</text>
+				<next>9</next>
+				</phrase>
+		<phrase id="9">
+                <text>voronin_start_dialog_9</text>
+				<next>10</next>
+				</phrase>
+		<phrase id="10">
+                <text>voronin_start_dialog_10</text>
+				<next>11</next>
+				</phrase>
+		<phrase id="11">
+                <text>voronin_start_dialog_11</text>
+				<next>12</next>
+				</phrase>				
+        <phrase id="12">
+                <text>voronin_start_dialog_12</text>
+				<give_info>voronin_start_dialog_start</give_info>
+				<give_info>persona_11</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+       <dialog id="bratan_poisk_dialog">
+	           <has_info>voronin_start_dialog_start</has_info>
+	           <dont_has_info>bratan_poisk_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>bratan_poisk_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>bratan_poisk_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>bratan_poisk_dialog_2</text>				
+				<next>3</next>
+				</phrase>
+		<phrase id="3">
+                <text>bratan_poisk_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>bratan_poisk_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>bratan_poisk_dialog_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>bratan_poisk_dialog_6</text>
+				<give_info>povar_spawn</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+	  
+       <dialog id="bratan_poisk_dialog_est">
+	           <has_info>voronin_start_dialog_start</has_info>
+	           <dont_has_info>bratan_poisk_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>bratan_poisk_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>bratan_poisk_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>bratan_poisk_dialog_est_2</text>				
+				<next>3</next>
+				</phrase>
+		<phrase id="3">
+                <text>bratan_poisk_dialog_est_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>bratan_poisk_dialog_est_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>bratan_poisk_dialog_est_5</text>
+				<next>6</next>
+				</phrase>
+		<phrase id="6">
+                <text>bratan_poisk_dialog_est_6</text>
+				<next>7</next>
+				</phrase>
+		<phrase id="7">
+                <text>bratan_poisk_dialog_est_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>bratan_poisk_dialog_est_8</text>
+				<give_info>bratan_poisk_dialog_done</give_info>
+				<give_info>story_1</give_info>
+                <action>fotograf.povar_havchik_dal</action>
+				</phrase>
+        </phrase_list>
+      </dialog> 
+
+       <dialog id="edik_ataka_dialog">
+	           <precondition>fotograf.edik_need_have</precondition>
+	           <has_info>edik_need_have</has_info>
+	           <dont_has_info>edik_need_done</dont_has_info>
+			   <dont_has_info>dezertir_oblom</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>edik_ataka_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>edik_ataka_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>edik_ataka_dialog_2</text>				
+				<next>3</next>
+				</phrase>
+		<phrase id="3">
+                <text>edik_ataka_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>edik_ataka_dialog_4</text>
+				<give_info>edik_need_done</give_info>
+				<action>fotograf.edik_ataka_dal</action>
+				</phrase>
+        </phrase_list>
+      </dialog> 
+
+       <dialog id="polischuk_start_dialog">
+	           <precondition>fotograf.povar_havchik_have</precondition>
+	           <has_info>bratan_poisk_dialog_done</has_info>
+	           <dont_has_info>polischuk_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>polischuk_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>polischuk_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>polischuk_start_dialog_2</text>				
+				<next>3</next>
+				</phrase>
+		<phrase id="3">
+                <text>polischuk_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>polischuk_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>polischuk_start_dialog_5</text>
+				<next>6</next>
+				</phrase>
+		<phrase id="6">
+                <text>polischuk_start_dialog_6</text>
+				<next>7</next>
+				</phrase>
+		<phrase id="7">
+                <text>polischuk_start_dialog_7</text>
+				<next>8</next>
+				</phrase>
+		<phrase id="8">
+                <text>polischuk_start_dialog_8</text>
+				<next>9</next>
+				</phrase>
+		<phrase id="9">
+                <text>polischuk_start_dialog_9</text>
+				<next>10</next>
+				</phrase>				
+        <phrase id="10">
+                <text>polischuk_start_dialog_10</text>
+				<give_info>polischuk_start_dialog_start</give_info>
+				<give_info>persona_10</give_info>
+				<action>fotograf.spawn_dez_mask</action>
+                <action>fotograf.povar_havchik_otdal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>  
+
+       <dialog id="dezertir_plan_dialog">
+	           <has_info>polischuk_start_dialog_start</has_info>
+			   <has_info>edik_need_done</has_info>
+	           <dont_has_info>dezertir_plan_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>dezertir_plan_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>dezertir_plan_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>dezertir_plan_dialog_2</text>				
+				<next>3</next>
+				</phrase>
+		<phrase id="3">
+                <text>dezertir_plan_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>dezertir_plan_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>dezertir_plan_dialog_5</text>
+				<next>6</next>
+				</phrase>
+		<phrase id="6">
+                <text>dezertir_plan_dialog_6</text>
+				<next>7</next>
+				</phrase>
+		<phrase id="7">
+                <text>dezertir_plan_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>dezertir_plan_dialog_8</text>
+				<give_info>dezertir_plan_dialog_start</give_info>
+				<action>dialogs.break_dialog</action>
+				<action>val_test.dezmask</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+<dialog id="dezertir_oblom_dialog">
+	           <has_info>polischuk_start_dialog_start</has_info>
+			   <has_info>edik_need_help</has_info>
+			   <dont_has_info>edik_need_done</dont_has_info>
+	           <dont_has_info>dezertir_oblom</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>dezertir_oblom_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>dezertir_oblom_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>dezertir_oblom_dialog_2</text>				
+				<next>3</next>
+				</phrase>
+		<phrase id="3">
+                <text>dezertir_oblom_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>dezertir_oblom_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>dezertir_oblom_dialog_5</text>
+				<next>6</next>
+				</phrase>
+		<phrase id="6">
+                <text>dezertir_oblom_dialog_6</text>
+				<next>7</next>
+				</phrase>
+		<phrase id="7">
+                <text>dezertir_oblom_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>dezertir_oblom_dialog_8</text>
+				<give_info>dezertir_oblom</give_info>
+				<action>dialogs.break_dialog</action>
+				<action>val_test.dezmaskoblom</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+       <dialog id="edik_dezertir_dialog">
+	           <has_info>dezertir_plan_dialog_start</has_info>
+	           <dont_has_info>dezertir_plan_dialog_nachalo</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>edik_dezertir_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>edik_dezertir_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>edik_dezertir_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>edik_dezertir_dialog_3</text>
+				<next>4</next>
+				</phrase>	
+        <phrase id="4">
+                <text>edik_dezertir_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>edik_dezertir_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>edik_dezertir_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>edik_dezertir_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>edik_dezertir_dialog_8</text>
+				<give_info>dezertir_plan_dialog_nachalo</give_info>
+                                <give_info>story_7</give_info>
+                                <action>val_test.novis_ruk_spawn</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+	  <dialog id="edik_oblom_dialog">
+	           <has_info>dezertir_oblom</has_info>
+	           <dont_has_info>edik_oblom</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>edik_oblom_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>edik_oblom_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>edik_oblom_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>edik_oblom_dialog_3</text>
+				<next>4</next>
+				</phrase>	
+        <phrase id="4">
+                <text>edik_oblom_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>edik_oblom_dialog_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>edik_oblom_dialog_6</text>
+				<give_info>edik_oblom</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="edik_dezertir_dialog_est">
+	           <precondition>fotograf.edik_aptechki_have</precondition>
+	           <has_info>edik_aptechki_have</has_info>
+	           <dont_has_info>dezertir_plan_dialog_have</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>edik_dezertir_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>edik_dezertir_dialog_est_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>edik_dezertir_dialog_est_2</text>
+				<give_info>dezertir_plan_dialog_have</give_info>
+				<action>fotograf.edik_aptechki_otdal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+       <dialog id="dezertir_plan_dialog_est">
+	           <has_info>dezertir_plan_dialog_have</has_info>
+	           <dont_has_info>dezertir_plan_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>dezertir_plan_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>dezertir_plan_dialog_est_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>dezertir_plan_dialog_est_2</text>
+				<give_info>dezertir_plan_dialog_done</give_info>
+				<give_info>persona_9</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="dezertir_plan_dialog_finish">
+	           <has_info>dezertir_plan_mesto</has_info>
+	           <has_info>dezertir_plan_dialog_done</has_info>
+	           <dont_has_info>dezertir_plan_dialog_finish</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>dezertir_plan_dialog_finish_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>dezertir_plan_dialog_finish_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>dezertir_plan_dialog_finish_2</text>
+				<give_info>dezertir_plan_dialog_finish</give_info>
+				<give_info>brown_two_dialog_vhod</give_info>
+				<action>fotograf.plan_baza_dal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+       <dialog id="smith_two_dialog">
+	           <precondition>fotograf.timer_brown2_over</precondition>
+	           <has_info>brown_two_dialog_done</has_info>
+	           <dont_has_info>smith_two_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>smith_two_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>smith_two_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>smith_two_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>smith_two_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>smith_two_dialog_4</text>
+				<next>5</next>
+				</phrase>	
+        <phrase id="5">
+                <text>smith_two_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>smith_two_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>smith_two_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>smith_two_dialog_8</text>
+				<give_info>smith_two_dialog_start</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="smith_two_dialog_est">
+	           <precondition>fotograf.actor_fotik1_have</precondition>
+	           <has_info>fotokamera_upgrade</has_info>
+	           <dont_has_info>smith_two_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>smith_two_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>smith_two_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>smith_two_dialog_est_2</text>
+				<give_info>smith_two_dialog_have</give_info>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>smith_two_dialog_est_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>smith_two_dialog_est_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>smith_two_dialog_est_5</text>
+				<next>6</next>
+				</phrase>			
+        <phrase id="6">
+                <text>smith_two_dialog_est_6</text>
+				<give_info>smith_two_dialog_done</give_info>
+				<give_info>main_task_info</give_info>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+       <dialog id="smith_two_dialog_foto">
+	           <has_info>main_task_info</has_info>
+	           <dont_has_info>smith_two_dialog_foto</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>smith_two_dialog_foto_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>smith_two_dialog_foto_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>smith_two_dialog_foto_2</text>
+				<give_info>smith_two_dialog_foto</give_info>
+				<give_info>main_foto_info</give_info>
+				<action>fotograf.smith_dal_main</action>
+				<action>fotograf.create_fotki_restr</action>
+				<action>fotograf.spawn_metki_foto2</action>
+			    <action>fotograf.metka_foto_03</action>
+				<action>fotograf.metka_foto_04</action>
+				<action>fotograf.metka_foto_05</action>
+                <action>fotograf.metka_foto_06</action>
+   				<action>fotograf.metka_foto_07</action>
+				<action>fotograf.metka_foto_08</action>
+				<action>fotograf.metka_foto_09</action>
+				<action>fotograf.metka_foto_10</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="brown_tri_dialog">
+	           <has_info>smith_two_dialog_start</has_info>
+	           <dont_has_info>brown_tri_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_tri_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_tri_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brown_tri_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brown_tri_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>brown_tri_dialog_4</text>
+				<next>5</next>
+				</phrase>	
+        <phrase id="5">
+                <text>brown_tri_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>brown_tri_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>brown_tri_dialog_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>brown_tri_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>brown_tri_dialog_9</text>
+				<next>10</next>
+				</phrase>
+        <phrase id="10">
+                <text>brown_tri_dialog_10</text>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>brown_tri_dialog_11</text>
+				<next>12</next>
+				</phrase>
+        <phrase id="12">
+                <text>brown_tri_dialog_12</text>
+				<next>13</next>
+				</phrase>
+        <phrase id="13">
+                <text>brown_tri_dialog_13</text>
+				<next>14</next>
+				</phrase>				
+        <phrase id="14">
+                <text>brown_tri_dialog_14</text>
+				<give_info>brown_tri_dialog_start</give_info>
+				<action>fotograf.sd_brown_dal</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+       <dialog id="drozdov_start_dialog">
+	           <has_info>smith_two_dialog_start</has_info>
+	           <dont_has_info>drozdov_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>drozdov_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>drozdov_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>drozdov_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>drozdov_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>drozdov_start_dialog_4</text>
+				<next>5</next>
+				</phrase>	
+        <phrase id="5">
+                <text>drozdov_start_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>drozdov_start_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>drozdov_start_dialog_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>drozdov_start_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>drozdov_start_dialog_9</text>
+				<next>10</next>
+				</phrase>
+        <phrase id="10">
+                <text>drozdov_start_dialog_10</text>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>drozdov_start_dialog_11</text>
+				<next>12</next>
+				</phrase>				
+        <phrase id="12">
+                <text>drozdov_start_dialog_12</text>
+				<give_info>drozdov_start_dialog_start</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+       <dialog id="voronin_one_dialog">
+	           <has_info>brown_tri_dialog_start</has_info>
+	           <dont_has_info>voronin_one_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>voronin_one_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>voronin_one_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>voronin_one_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>voronin_one_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>voronin_one_dialog_4</text>
+				<next>5</next>
+				</phrase>	
+        <phrase id="5">
+                <text>voronin_one_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>voronin_one_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>voronin_one_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>voronin_one_dialog_8</text>
+				<give_info>voronin_one_dialog_start</give_info>
+				<give_info>persona_12</give_info>
+				<action>fotograf.spawn_metka_lch_aver</action>
+				<give_info>haron_spawn</give_info>
+				<action>fotograf.metka_lch_aver</action>
+				<action>mauvais.timer_music_poligon03</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="brown_tri_dialog_est">
+	           <has_info>voronin_one_dialog_start</has_info>
+			   <dont_has_info>haron_start_dialog_start</dont_has_info>
+	           <dont_has_info>brown_tri_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_tri_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_tri_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brown_tri_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brown_tri_dialog_est_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>brown_tri_dialog_est_4</text>
+				<next>5</next>
+				</phrase>	
+        <phrase id="5">
+                <text>brown_tri_dialog_est_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>brown_tri_dialog_est_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>brown_tri_dialog_est_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>brown_tri_dialog_est_8</text>
+				<give_info>brown_tri_dialog_done</give_info>
+				<give_info>brown_tri_dialog_gotovo</give_info>
+				<action>fotograf.brown_mousetrap_dal</action>
+				<action>val_test.browndialog</action>				
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="brown_tri_dialog_not">
+	           <has_info>voronin_one_dialog_start</has_info>
+			   <has_info>haron_start_dialog_start</has_info>
+	           <dont_has_info>brown_tri_dialog_net</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_tri_dialog_not_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_tri_dialog_not_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brown_tri_dialog_not_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brown_tri_dialog_not_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>brown_tri_dialog_not_4</text>
+				<next>5</next>
+				</phrase>	
+        <phrase id="5">
+                <text>brown_tri_dialog_not_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>brown_tri_dialog_not_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>brown_tri_dialog_not_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>brown_tri_dialog_not_8</text>
+				<give_info>brown_tri_dialog_net</give_info>
+				<give_info>brown_tri_dialog_gotovo</give_info>
+				<action>fotograf.brown_mousetrap_dal</action>
+				<action>val_test.browndialog1</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+       <dialog id="haron_start_dialog">
+	           <has_info>voronin_one_dialog_start</has_info>
+	           <dont_has_info>haron_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>haron_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>haron_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>haron_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>haron_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>haron_start_dialog_4</text>
+				<next>5</next>
+				</phrase>	
+        <phrase id="5">
+                <text>haron_start_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>haron_start_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>haron_start_dialog_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>haron_start_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>haron_start_dialog_9</text>
+				<next>10</next>
+				</phrase>
+        <phrase id="10">
+                <text>haron_start_dialog_10</text>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>haron_start_dialog_11</text>
+				<next>12</next>
+				</phrase>					
+        <phrase id="12">
+                <text>haron_start_dialog_12</text>
+				<give_info>haron_start_dialog_start</give_info>
+				<give_info>persona_13</give_info>
+				<action>fotograf.haron_case_dal</action>
+				<action>y_level.lch_mk_prom</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+       <dialog id="osvedom_start_dialog">
+	           <has_info>pda_agent_aver_have</has_info>
+	           <dont_has_info>mousetrap_finish</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>osvedom_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>osvedom_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>osvedom_start_dialog_2</text>
+				<next>3</next>
+				</phrase>	
+        <phrase id="3">
+                <text>osvedom_start_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>osvedom_start_dialog_4</text>
+				<give_info>mousetrap_finish</give_info>
+				<give_info>story_14</give_info>
+				<action>fotograf.pda_agent_prom_otdal</action>
+				<action>fotograf.pda_agent_aver_otdal</action>
+				<action>val_test.haron_saiga_spawn</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="voronin_one_dialog_est">
+	           <has_info>perehod_aver_road_aver</has_info>
+	           <dont_has_info>voronin_one_dialog_est</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>voronin_one_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>voronin_one_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>voronin_one_dialog_est_2</text>
+				<next>3</next>
+				</phrase>	
+        <phrase id="3">
+                <text>voronin_one_dialog_est_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>voronin_one_dialog_est_4</text>
+				<give_info>voronin_one_dialog_est</give_info>
+				<give_info>story_4</give_info>
+				<action>fotograf.voronin_perehod_nagrada</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+      <dialog id="saharov_glook_dialog">
+	    <precondition>boryan67.GGHron</precondition>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>saharov_glook_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>saharov_glook_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>saharov_glook_2</text>
+				<next>3</next>
+				</phrase>	
+        <phrase id="3">
+                <text>saharov_glook_3</text>
+				<action>boryan67.Sahar_speech</action>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>saharov_glook_4</text>
+				<action>boryan67.GGnoHron</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+       <dialog id="kruglov_anoms_dialog">
+	           <dont_has_info>kruglov_anoms_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>kruglov_anoms_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>kruglov_anoms_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>kruglov_anoms_dialog_2</text>
+				<next>3</next>
+				</phrase>	
+        <phrase id="3">
+                <text>kruglov_anoms_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>kruglov_anoms_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>kruglov_anoms_dialog_5</text>
+				<next>6</next>
+				</phrase>	
+        <phrase id="6">
+                <text>kruglov_anoms_dialog_6</text>
+				<next>7</next>
+				</phrase>	
+        <phrase id="7">
+                <text>kruglov_anoms_dialog_7</text>
+				<next>8</next>
+				</phrase>	
+        <phrase id="8">
+                <text>kruglov_anoms_dialog_8</text>
+				<next>9</next>
+				</phrase>	
+        <phrase id="9">
+                <text>kruglov_anoms_dialog_9</text>
+				<next>10</next>
+				</phrase>				
+        <phrase id="10">
+                <text>kruglov_anoms_dialog_10</text>
+				<give_info>kruglov_anoms_dialog_start</give_info>
+				<action>fotograf.kruglov_pribory_dal</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+       <dialog id="kruglov_anoms_dialog_est">
+	           <has_info>all_anom_research</has_info>
+	           <dont_has_info>kruglov_anoms_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>kruglov_anoms_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>kruglov_anoms_dialog_est_1</text>
+				<next>11</next>
+				<next>2</next>
+				</phrase>
+        <phrase id="11">
+		        <precondition>fotograf.has_zond</precondition>
+                <text>kruglov_anoms_dialog_est_11</text>
+				<next>12</next>
+				</phrase>
+        <phrase id="12">
+                <text>kruglov_anoms_dialog_est_12</text>
+				<next>21</next>
+				</phrase>				
+        <phrase id="2">
+		        <precondition>fotograf.not_zond</precondition>
+                <text>kruglov_anoms_dialog_est_2</text>
+				<give_info>kruglov_anoms_dialog_done</give_info>
+				<action>fotograf.kruglov_pribor_otdal</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+	    <phrase id="21">
+                <text>kruglov_anoms_dialog_est_21</text>
+				<give_info>kruglov_anoms_dialog_done</give_info>
+				<action>fotograf.kruglov_pribor_otdal</action>
+				<action>fotograf.dell_GG_zond</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	 	  
+	  
+       <dialog id="kruglov_detector_dialog">
+	           <precondition>fotograf.timer_kruglov_over</precondition>
+			   <has_info>check_timer_kruglov</has_info>
+			   <has_info>kruglov_anoms_dialog_done</has_info>
+	           <dont_has_info>kruglov_detector_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>kruglov_detector_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>kruglov_detector_dialog_1</text>
+				<next>2</next>
+				</phrase>					
+        <phrase id="2">
+                <text>kruglov_detector_dialog_2</text>
+				<give_info>kruglov_detector_dialog_start</give_info>
+				<action>fotograf.kruglov_detector_dal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>		  
+
+      <dialog id="pruha_start_dialog">
+	    <dont_has_info>start_photo</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>pruha_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>pruha_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>pruha_2</text>
+				<next>3</next>
+				</phrase>	
+        <phrase id="3">
+                <text>pruha_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>pruha_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>pruha_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>pruha_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>pruha_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>pruha_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>pruha_9</text>
+				<next>10</next>
+				</phrase>
+        <phrase id="10">
+                <text>pruha_10</text>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>pruha_11</text>
+				<next>12</next>
+				</phrase>
+        <phrase id="12">
+                <text>pruha_12</text>
+				<next>13</next>
+				</phrase>
+        <phrase id="13">
+                <text>pruha_13</text>
+				<next>14</next>
+				</phrase>
+        <phrase id="14">
+                <text>pruha_14</text>
+				<give_info>start_photo</give_info>
+				<give_info>mk_zasada</give_info>
+				</phrase>				
+        </phrase_list>
+      </dialog>	  
+
+      <dialog id="pruha_trade_dialog">
+		<has_info>start_photo</has_info>
+	    <precondition>fotograf.photos_10_have</precondition>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>pruha_photos0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>pruha_photos1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>pruha_photos2</text>
+				<action>fotograf.pruha_trade</action>
+				</phrase>	
+        </phrase_list>
+      </dialog>	 
+
+       <dialog id="ded_start_dialog">
+			   <has_info>osvedom_vyzov1</has_info>
+	           <dont_has_info>ded_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>ded_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>ded_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>ded_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>ded_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>ded_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>ded_start_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>ded_start_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>ded_start_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>ded_start_dialog_8</text>
+				<give_info>ded_start_dialog_start</give_info>
+				<action>fotograf.spawn_osvedom_new</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="osvedom_one_dialog">
+			   <has_info>ded_start_dialog_start</has_info>
+	           <dont_has_info>osvedom_one_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>osvedom_one_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>osvedom_one_dialog_1</text>
+				<give_info>osvedom_vstrecha1</give_info>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>osvedom_one_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>osvedom_one_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>osvedom_one_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>osvedom_one_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>osvedom_one_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>osvedom_one_dialog_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>osvedom_one_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>osvedom_one_dialog_9</text>
+				<next>10</next>
+				</phrase>
+        <phrase id="10">
+                <text>osvedom_one_dialog_10</text>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>osvedom_one_dialog_11</text>
+				<next>12</next>
+				</phrase>				
+        <phrase id="12">
+                <text>osvedom_one_dialog_12</text>
+				<give_info>osvedom_one_dialog_start</give_info>
+                <give_info>hunters_spawn</give_info>
+				<action>fotograf.osvedom_aver_dal</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+       <dialog id="sut_start_dialog">
+			   <has_info>osvedom_one_dialog_start</has_info>
+	           <dont_has_info>sut_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sut_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sut_start_dialog_1</text>
+				<give_info>sut_vstrecha</give_info>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sut_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sut_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>sut_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>sut_start_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>sut_start_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>sut_start_dialog_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>sut_start_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>sut_start_dialog_9</text>
+				<next>10</next>
+				</phrase>
+        <phrase id="10">
+                <text>sut_start_dialog_10</text>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>sut_start_dialog_11</text>
+				<next>12</next>
+				</phrase>				
+        <phrase id="12">
+                <text>sut_start_dialog_12</text>
+				<give_info>sut_start_dialog_start</give_info>
+				<action>fotograf.hunter_trup_spawn</action>
+				<action>fotograf.create_katakomby_restr</action>
+				<action>mauvais.timer_music_aver05</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+	  
+      <dialog id="sut_start_dialog_est">
+	           <precondition>fotograf.hunter_case_have</precondition>
+			   <has_info>sut_start_dialog_have</has_info>
+	           <dont_has_info>sut_start_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sut_start_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sut_start_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sut_start_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sut_start_dialog_est_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>sut_start_dialog_est_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>sut_start_dialog_est_5</text>
+				<next>6</next>
+				</phrase>			
+        <phrase id="6">
+                <text>sut_start_dialog_est_6</text>
+				<give_info>sut_start_dialog_done</give_info>
+				<action>fotograf.hunter_case_otdal</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+	  
+      <dialog id="filin_poisk_dialog">
+			   <has_info>sut_start_dialog_done</has_info>
+	           <dont_has_info>filin_poisk_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>filin_poisk_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>filin_poisk_dialog_1</text>
+				<next>2</next>
+				</phrase>			
+        <phrase id="2">
+                <text>filin_poisk_dialog_2</text>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+      <dialog id="brom_about_filin_dialog">
+			   <has_info>sut_start_dialog_done</has_info>
+	           <dont_has_info>filin_poisk_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brom_about_filin_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brom_about_filin_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brom_about_filin_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brom_about_filin_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>brom_about_filin_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>brom_about_filin_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>brom_about_filin_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>brom_about_filin_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>brom_about_filin_dialog_8</text>
+				<give_info>filin_poisk_dialog_done</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+      <dialog id="filin_start_dialog">
+			   <has_info>filin_poisk_dialog_done</has_info>
+	           <dont_has_info>filin_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>filin_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>filin_start_dialog_1</text>
+				<give_info>filin_vstrecha</give_info>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>filin_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>filin_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>filin_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>filin_start_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>filin_start_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>filin_start_dialog_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>filin_start_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>filin_start_dialog_9</text>
+				<next>10</next>
+				</phrase>
+        <phrase id="10">
+                <text>filin_start_dialog_10</text>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>filin_start_dialog_11</text>
+				<next>12</next>
+				</phrase>				
+        <phrase id="12">
+                <text>filin_start_dialog_12</text>
+				<give_info>filin_start_dialog_start</give_info>
+			    <action>y_level.lch_bar_swamp_bar</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+      <dialog id="lazarev_vino_dialog">
+			   <has_info>filin_start_dialog_start</has_info>
+	           <dont_has_info>lazarev_vino_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>lazarev_vino_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>lazarev_vino_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>lazarev_vino_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>lazarev_vino_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>lazarev_vino_dialog_4</text>
+				<give_info>lazarev_vino_dialog_start</give_info>
+				<action>fotograf.tayniki_vino_spawn</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="filin_vino_dialog">
+	           <precondition>fotograf.filin_vino_have</precondition>
+			   <has_info>filin_vino_have</has_info>
+	           <dont_has_info>filin_vino_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>filin_vino_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>filin_vino_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>filin_vino_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>filin_vino_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>filin_vino_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>filin_vino_dialog_5</text>
+				<next>6</next>
+				</phrase>
+	    <phrase id="6">
+                <text>filin_vino_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>filin_vino_dialog_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>filin_vino_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>filin_vino_dialog_9</text>
+				<next>10</next>
+				</phrase>
+        <phrase id="10">
+                <text>filin_vino_dialog_10</text>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>filin_vino_dialog_11</text>
+				<next>12</next>
+				</phrase>
+        <phrase id="12">
+                <text>filin_vino_dialog_12</text>
+				<next>13</next>
+				</phrase>
+        <phrase id="13">
+                <text>filin_vino_dialog_13</text>
+				<next>14</next>
+				</phrase>				
+        <phrase id="14">
+                <text>filin_vino_dialog_14</text>
+				<give_info>filin_vino_dialog_done</give_info>
+				<action>fotograf.filin_vino_otdal</action>
+				<action>y_level.lch_bar_mg</action>
+				<action>y_level.lch_aver_bar</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+      <dialog id="filin_pribory_dialog">
+	           <precondition>fotograf.filin_pribory_have</precondition>
+	           <dont_has_info>filin_pribory_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>filin_pribory_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>filin_pribory_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>filin_pribory_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>filin_pribory_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>filin_pribory_dialog_4</text>
+				<give_info>filin_pribory_done</give_info>
+				<action>fotograf.filin_pribory_otdal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="brom_mg_dialog">
+	           <has_info>filin_vino_dialog_done</has_info>
+	           <dont_has_info>brom_mg_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brom_mg_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brom_mg_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brom_mg_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brom_mg_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>brom_mg_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>brom_mg_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>brom_mg_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>brom_mg_dialog_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>brom_mg_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>brom_mg_dialog_9</text>
+				<next>10</next>
+				</phrase>					
+        <phrase id="10">
+                <text>brom_mg_dialog_10</text>
+				<give_info>brom_mg_dialog_start</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="brom_mg_dialog_est">
+	           <precondition>fotograf.brom_mg_dialog_have</precondition>
+	           <has_info>brom_mg_dialog_have</has_info>
+	           <dont_has_info>brom_mg_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brom_mg_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brom_mg_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brom_mg_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brom_mg_dialog_est_3</text>
+				<next>4</next>
+				</phrase>					
+        <phrase id="4">
+                <text>brom_mg_dialog_est_4</text>
+				<give_info>brom_mg_dialog_done</give_info>
+				<action>fotograf.brom_mg_dialog_done</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="brom_art_dialog">
+	           <has_info>brom_mg_dialog_done</has_info>
+	           <dont_has_info>brom_art_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brom_art_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brom_art_dialog_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>brom_art_dialog_2</text>
+				<give_info>brom_art_dialog_start</give_info>
+				<action>fotograf.likvidator_spawn</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+      <dialog id="genrih_start_dialog">
+	           <has_info>filin_vino_dialog_done</has_info>
+	           <dont_has_info>genrih_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>genrih_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>genrih_start_dialog_1</text>
+				<give_info>genrih_vstrecha</give_info>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>genrih_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>genrih_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>genrih_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>genrih_start_dialog_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>genrih_start_dialog_6</text>
+				<give_info>genrih_start_dialog_start</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+      <dialog id="jagger_start_dialog">
+	           <has_info>genrih_start_dialog_start</has_info>
+	           <dont_has_info>jagger_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>jagger_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>jagger_start_dialog_1</text>
+				<give_info>jagger_vstretil</give_info>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>jagger_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>jagger_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>jagger_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>jagger_start_dialog_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>jagger_start_dialog_6</text>
+				<give_info>jagger_start_dialog_start</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+      <dialog id="madam_start_dialog">
+	           <has_info>jagger_start_dialog_start</has_info>
+	           <dont_has_info>madam_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>madam_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>madam_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>madam_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>madam_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>madam_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>madam_start_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>madam_start_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>madam_start_dialog_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>madam_start_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>madam_start_dialog_9</text>
+				<next>10</next>
+				</phrase>				
+        <phrase id="10">
+                <text>madam_start_dialog_10</text>
+				<give_info>madam_start_dialog_start</give_info>
+				<give_info>madam_actor</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="genrih_one_dialog">
+	           <has_info>madam_start_dialog_start</has_info>
+	           <dont_has_info>genrih_one_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>genrih_one_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>genrih_one_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>genrih_one_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>genrih_one_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>genrih_one_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>genrih_one_dialog_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>genrih_one_dialog_6</text>
+				<give_info>genrih_one_dialog_start</give_info>
+				<action>fotograf.wulf_trup_spawn</action>
+				<action>fotograf.genrih_dal</action>
+				<action>mauvais.timer_music_deadcity02</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+      <dialog id="madam_one_dialog">
+	           <precondition>fotograf.wulf_case_have</precondition>
+			   <has_info>wulf_case_have</has_info>
+	           <has_info>genrih_one_dialog_start</has_info>
+	           <dont_has_info>madam_one_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>madam_one_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>madam_one_dialog_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>madam_one_dialog_2</text>
+				<give_info>madam_one_dialog_start</give_info>
+				<action>fotograf.wulf_case_otdal</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="genrih_perehod_dialog">
+			   <has_info>lch_mg_aver</has_info>
+	           <dont_has_info>genrih_perehod_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>genrih_perehod_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>genrih_perehod_dialog_1</text>
+				<give_info>vyhod_mg_est</give_info>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>genrih_perehod_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>genrih_perehod_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>genrih_perehod_dialog_4</text>
+				<give_info>genrih_perehod_dialog_start</give_info>
+				<action>fotograf.metka_vzryv_spawn</action>
+				<action>fotograf.genrih_striker_dal</action>
+				<action>fotograf.check_time_mg_vyhod</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+      <dialog id="osvedom_two_dialog">
+			   <has_info>german_spasenie_gotovo</has_info>
+	           <dont_has_info>german_spasenie_finish</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>osvedom_two_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>osvedom_two_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>osvedom_two_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>osvedom_two_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>osvedom_two_dialog_4</text>
+				<give_info>german_spasenie_finish</give_info>
+				<action>fotograf.osvedom_dva_dal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="osvedom_tri_dialog">
+			   <has_info>german_spasenie_finish</has_info>
+	           <dont_has_info>osvedom_tri_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>osvedom_tri_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>osvedom_tri_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>osvedom_tri_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>osvedom_tri_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>osvedom_tri_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>osvedom_tri_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>osvedom_tri_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>osvedom_tri_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>osvedom_tri_dialog_8</text>
+				<next>9</next>
+				</phrase>	
+        <phrase id="9">
+                <text>osvedom_tri_dialog_9</text>
+				<next>10</next>
+				</phrase>				
+        <phrase id="10">
+                <text>osvedom_tri_dialog_10</text>
+				<give_info>osvedom_tri_dialog_start</give_info>
+				<action>dialogs.break_dialog</action>
+				<action>val_test.osvedom_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+      <dialog id="osvedom_tri_dialog_est">
+	           <precondition>fotograf.zadan_aground_have</precondition>
+			   <has_info>zadan_aground_have</has_info>
+	           <dont_has_info>osvedom_tri_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>osvedom_tri_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>osvedom_tri_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>osvedom_tri_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>osvedom_tri_dialog_est_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>osvedom_tri_dialog_est_4</text>
+				<give_info>osvedom_tri_dialog_done</give_info>
+				<give_info>agro_und_vernulsya</give_info>
+				<give_info>broun_piluli</give_info>
+				<action>fotograf.shema_labs_otdal</action>
+				<action>fotograf.check_time_brown_dva</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+      <dialog id="osvedom_tri_dialog_net">
+	           <precondition>fotograf.shema_labs_have</precondition>
+			   <has_info>osvedom_tri_dialog_have</has_info>
+			   <dont_has_info>osvedom_tri_dialog_done</dont_has_info>
+	           <dont_has_info>osvedom_tri_dialog_net</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>osvedom_tri_dialog_net_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>osvedom_tri_dialog_net_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>osvedom_tri_dialog_net_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>osvedom_tri_dialog_net_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>osvedom_tri_dialog_net_4</text>
+				<give_info>osvedom_tri_dialog_net</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+      <dialog id="polischuk_one_dialog">
+			   <has_info>uber_ataka_have</has_info>
+	           <dont_has_info>uber_ataka_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>polischuk_one_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>polischuk_one_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>polischuk_one_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>polischuk_one_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>polischuk_one_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>polischuk_one_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>polischuk_one_dialog_6</text>
+				<give_info>uber_ataka_done</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+      <dialog id="brown_four_dialog">
+			   <has_info>brown_dva_mesto</has_info>
+	           <dont_has_info>brown_four_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_four_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_four_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brown_four_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brown_four_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>brown_four_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>brown_four_dialog_5</text>
+				<next>6</next>
+				</phrase>
+		<phrase id="6">
+                <text>brown_four_dialog_6</text>
+				<next>7</next>
+				</phrase>
+		<phrase id="7">
+                <text>brown_four_dialog_7</text>
+				<next>8</next>
+				</phrase>
+		<phrase id="8">
+                <text>brown_four_dialog_8</text>
+				<next>9</next>
+				</phrase>
+		<phrase id="9">
+                <text>brown_four_dialog_9</text>
+				<next>10</next>
+				</phrase>
+		<phrase id="10">
+                <text>brown_four_dialog_10</text>
+				<next>11</next>
+				</phrase>				
+		<phrase id="11">
+                <text>brown_four_dialog_11</text>
+				<next>12</next>
+				</phrase>				
+        <phrase id="12">
+                <text>brown_four_dialog_12</text>
+				<give_info>brown_four_dialog_start</give_info>
+				<action>fotograf.brown_outfit_dal</action>
+				<action>fotograf.create_tunnel_restr</action>
+				<action>dialogs.break_dialog</action>
+				<action>val_test.brawn_podarok</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="ploymar_start_dialog">
+			   <has_info>brown_four_dialog_start</has_info>
+			   <dont_has_info>tank_enemy</dont_has_info>
+	           <dont_has_info>ploymar_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>ploymar_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>ploymar_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>ploymar_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>ploymar_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>ploymar_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>ploymar_start_dialog_5</text>
+				<next>6</next>
+				</phrase>
+		<phrase id="6">
+                <text>ploymar_start_dialog_6</text>
+				<next>7</next>
+				</phrase>
+		<phrase id="7">
+                <text>ploymar_start_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>ploymar_start_dialog_8</text>
+				<give_info>ploymar_start_dialog_start</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>  
+
+      <dialog id="brown_four_dialog_est">
+	           <precondition>fotograf.brown_outfit_have</precondition>
+			   <has_info>ploymar_mesto</has_info>
+			   <dont_has_info>uchen_enemy</dont_has_info>
+	           <dont_has_info>x18_vernulsya</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_four_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_four_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brown_four_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brown_four_dialog_est_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>brown_four_dialog_est_4</text>
+				<give_info>x18_vernulsya</give_info>
+				<action>fotograf.brown_outfit_otdal</action>
+				<action>val_test.create_brounploym_restr</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="brown_five_dialog">
+	           <precondition>fotograf.check_ploymar_over</precondition>
+			   <has_info>x18_vernulsya</has_info>
+			   <has_info>ploymar_finish</has_info>
+	           <dont_has_info>brown_five_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_five_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_five_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brown_five_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brown_five_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>brown_five_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>brown_five_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>brown_five_dialog_6</text>
+				<next>7</next>
+				</phrase>	
+        <phrase id="7">
+                <text>brown_five_dialog_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>brown_five_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>brown_five_dialog_9</text>
+				<next>10</next>
+				</phrase>	
+        <phrase id="10">
+                <text>brown_five_dialog_10</text>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>brown_five_dialog_11</text>
+				<next>12</next>
+				</phrase>
+        <phrase id="12">
+                <text>brown_five_dialog_12</text>
+				<next>13</next>
+				</phrase>
+        <phrase id="13">
+                <text>brown_five_dialog_13</text>
+				<next>14</next>
+				</phrase>				
+        <phrase id="14">
+                <text>brown_five_dialog_14</text>
+				<give_info>brown_five_dialog_start</give_info>
+				<action>fotograf.brown_outfit_dal</action>
+				<action>fotograf.del_stihoplet</action>
+				<action>fotograf.del_shpak</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+      <dialog id="ploymar_two_dialog">
+			   <has_info>brown_five_dialog_start</has_info>
+	           <dont_has_info>ploymar_two_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>ploymar_two_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>ploymar_two_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>ploymar_two_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>ploymar_two_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>ploymar_two_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>ploymar_two_dialog_5</text>
+				<next>6</next>
+				</phrase>
+		<phrase id="6">
+                <text>ploymar_two_dialog_6</text>
+				<next>7</next>
+				</phrase>
+		<phrase id="7">
+                <text>ploymar_two_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>ploymar_two_dialog_8</text>
+				<give_info>ploymar_two_dialog_start</give_info>
+				<give_info>shpak_buharik</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>  
+
+      <dialog id="shpak_one_dialog">
+			   <has_info>ploymar_two_dialog_start</has_info>
+			   <has_info>shpak_dialog_1_done</has_info>
+	           <dont_has_info>shpak_one_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>shpak_one_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>shpak_one_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>shpak_one_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>shpak_one_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>shpak_one_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>shpak_one_dialog_5</text>
+				<next>6</next>
+				</phrase>
+		<phrase id="6">
+                <text>shpak_one_dialog_6</text>
+				<next>7</next>
+				</phrase>
+		<phrase id="7">
+                <text>shpak_one_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>shpak_one_dialog_8</text>
+				<give_info>shpak_one_dialog_start</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog> 
+
+      <dialog id="shpak_one_dialog_est">
+	           <precondition>fotograf.shpak_one_dialog_have</precondition>
+	           <has_info>shpak_one_dialog_start</has_info>
+			   <has_info>shpak_one_dialog_have</has_info>
+	           <dont_has_info>shpak_one_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>shpak_one_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>shpak_one_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>shpak_one_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>shpak_one_dialog_est_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>shpak_one_dialog_est_4</text>
+				<give_info>shpak_one_dialog_done</give_info>
+				<action>fotograf.shpak_one_dialog_done</action>
+                <action>transfer.create_box</action>				
+				<action>y_level.lch_swamp_aground_swamp</action>	
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>  
+  
+      <dialog id="brown_six_dialog">
+	           <precondition>fotograf.check_brown_dva_over</precondition>
+			   <has_info>osvedom_tri_dialog_done</has_info>
+	           <dont_has_info>brown_six_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_six_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_six_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brown_six_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brown_six_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>brown_six_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>brown_six_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>brown_six_dialog_6</text>
+				<next>7</next>
+				</phrase>	
+        <phrase id="7">
+                <text>brown_six_dialog_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>brown_six_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>brown_six_dialog_9</text>
+				<next>10</next>
+				</phrase>
+        <phrase id="10">
+                <text>brown_six_dialog_10</text>
+				<next>11</next>
+				</phrase>	
+        <phrase id="11">
+                <text>brown_six_dialog_11</text>
+				<next>12</next>
+				</phrase>				
+        <phrase id="12">
+                <text>brown_six_dialog_12</text>
+				<give_info>brown_six_dialog_start</give_info>
+				<action>fotograf.brown_six_dialog_dal</action>
+				<action>fotograf.spawn_trup_x18</action>
+				<action>y_level.lch_aground_x16_aground</action>
+				<action>y_level.lch_x16_dyshlo_x16</action>
+				<action>y_level.lch_x16_x10_x16</action>
+				<action>y_level.lch_x10_x18_x10</action>				
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+     <dialog id="brown_six_dialog_est">
+			   <has_info>brown_six_dialog_start</has_info>
+			   <has_info>brown_six_dialog_have</has_info>
+	           <dont_has_info>brown_six_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_six_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_six_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brown_six_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brown_six_dialog_est_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>brown_six_dialog_est_4</text>
+				<give_info>brown_six_dialog_done</give_info>
+				<action>fotograf.brown_six_dialog_nagrada</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>	
+	  
+     <dialog id="brown_seven_dialog">
+			   <has_info>brown_six_dialog_done</has_info>
+	           <dont_has_info>brown_seven_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_seven_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_seven_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brown_seven_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brown_seven_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>brown_seven_dialog_4</text>
+				<give_info>brown_seven_dialog_start</give_info>
+				<action>dialogs.break_dialog</action>
+                <action>val_test.brown_dishlo</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+     <dialog id="brown_seven_dialog_est">
+	           <has_info>lch_dyshlo_aver</has_info>
+			   <has_info>brown_seven_dialog_start</has_info>
+	           <dont_has_info>brown_seven_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_seven_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_seven_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>brown_seven_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brown_seven_dialog_est_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>brown_seven_dialog_est_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>brown_seven_dialog_est_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>brown_seven_dialog_est_6</text>
+				<give_info>brown_seven_dialog_done</give_info>
+				<action>fotograf.brown_seven_dialog_nagrada</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>		  
+
+     <dialog id="voronin_dyshlo_dialog">
+			   <has_info>brown_seven_dialog_start</has_info>
+	           <dont_has_info>voronin_dyshlo_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>voronin_dyshlo_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>voronin_dyshlo_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>voronin_dyshlo_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>voronin_dyshlo_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>voronin_dyshlo_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>voronin_dyshlo_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>voronin_dyshlo_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>voronin_dyshlo_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>voronin_dyshlo_dialog_8</text>
+				<give_info>voronin_dyshlo_dialog_start</give_info>
+				<action>cars.voronin_car_spawn</action>
+				<action>dialogs.break_dialog</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+     <dialog id="voronin_dyshlo_dialog_est">
+	           <precondition>cars.check_voronin_car</precondition>
+			   <has_info>voronin_car_mesto</has_info>
+	           <dont_has_info>voronin_dyshlo_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>voronin_dyshlo_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>voronin_dyshlo_dialog_est_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>voronin_dyshlo_dialog_est_2</text>
+				<give_info>voronin_dyshlo_dialog_done</give_info>	
+                <action>cars.voronin_nagrada</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+     <dialog id="saharov_dyshlo_dialog">
+			   <has_info>voronin_dyshlo_dialog_start</has_info>
+	           <dont_has_info>saharov_dyshlo_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>saharov_dyshlo_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>saharov_dyshlo_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>saharov_dyshlo_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>saharov_dyshlo_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>saharov_dyshlo_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>saharov_dyshlo_dialog_5</text>
+				<next>6</next>
+				</phrase>					
+        <phrase id="6">
+                <text>saharov_dyshlo_dialog_6</text>
+				<give_info>saharov_dyshlo_dialog_start</give_info>
+				<action>dialogs.break_dialog</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+     <dialog id="sutuly_povodyr_dialog">
+			   <has_info>saharov_dyshlo_dialog_start</has_info>
+	           <dont_has_info>sutuly_povodyr_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>sutuly_povodyr_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>sutuly_povodyr_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>sutuly_povodyr_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>sutuly_povodyr_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>sutuly_povodyr_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>sutuly_povodyr_dialog_5</text>
+				<next>61</next>
+				<next>62</next>
+				<next>63</next>
+				<next>64</next>
+				</phrase>
+        <phrase id="61">
+		        <precondition>fotograf.valuta_net</precondition>
+                <text>sutuly_povodyr_dialog_61</text>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        <phrase id="62">
+		        <precondition>fotograf.valuta_have</precondition>
+                <text>sutuly_povodyr_dialog_62</text>
+				<next>72</next>
+				</phrase>
+        <phrase id="63">
+		        <precondition>fotograf.euro_have</precondition>
+                <text>sutuly_povodyr_dialog_63</text>
+				<next>73</next>
+				</phrase>
+        <phrase id="64">
+		        <precondition>fotograf.dollar_have</precondition>
+                <text>sutuly_povodyr_dialog_64</text>
+				<next>74</next>
+				</phrase>
+        <phrase id="72">
+                <text>sutuly_povodyr_dialog_72</text>
+				<next>81</next>
+				</phrase>
+        <phrase id="73">
+                <text>sutuly_povodyr_dialog_73</text>
+				<next>81</next>
+				</phrase>
+        <phrase id="74">
+                <text>sutuly_povodyr_dialog_74</text>
+				<next>82</next>
+				</phrase>				
+        <phrase id="81">
+                <text>sutuly_povodyr_dialog_81</text>
+				<give_info>sutuly_povodyr_dialog_start</give_info>
+				<action>fotograf.euro_otdal</action>
+				<action>dialogs.break_dialog</action>				
+				</phrase>
+        <phrase id="82">
+                <text>sutuly_povodyr_dialog_82</text>
+				<give_info>sutuly_povodyr_dialog_start</give_info>
+				<action>fotograf.dollar_otdal</action>
+				<action>dialogs.break_dialog</action>				
+				</phrase>				
+        </phrase_list>
+      </dialog>	
+
+     <dialog id="ploymar_vacsina_dialog">
+			   <has_info>brown_six_dialog_start</has_info>
+	           <dont_has_info>ploymar_vacsina_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>ploymar_vacsina_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>ploymar_vacsina_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>ploymar_vacsina_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>ploymar_vacsina_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>ploymar_vacsina_dialog_4</text>
+				<give_info>ploymar_vacsina_dialog_start</give_info>
+				<action>dialogs.break_dialog</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+     <dialog id="ploymar_vacsina_dialog_est">
+	           <precondition>fotograf.glaza_ploti_have</precondition>
+			   <has_info>ploymar_vacsina_dialog_have</has_info>
+			   <has_info>ploymar_vacsina_dialog_start</has_info>
+	           <dont_has_info>ploymar_vacsina_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>ploymar_vacsina_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>ploymar_vacsina_dialog_est_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>ploymar_vacsina_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>ploymar_vacsina_dialog_est_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>ploymar_vacsina_dialog_est_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>ploymar_vacsina_dialog_est_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>ploymar_vacsina_dialog_est_6</text>
+				<give_info>ploymar_vacsina_dialog_done</give_info>
+				<action>fotograf.glaza_ploti_otdal</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>		  
+
+     <dialog id="mario_key_dialog">
+			   <has_info>sidor_start_dialog_start</has_info>
+	           <dont_has_info>mario_key_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>mario_key_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>mario_key_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>mario_key_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>mario_key_dialog_3</text>
+				<next>4</next>
+				<next>41</next>
+				</phrase>				
+        <phrase id="4">
+                <text>mario_key_dialog_4</text>
+				<give_info>mario_key_dialog_start</give_info>
+				<action>cars.instrument_case_spawn</action>
+				<action>dialogs.break_dialog</action>				
+				</phrase>
+		<phrase id="41">
+                <text>mario_key_dialog_41</text>
+				<action>dialogs.break_dialog</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+     <dialog id="mario_key_dialog_est">
+	           <precondition>cars.instrument_case_have</precondition>
+			   <has_info>mario_key_dialog_have</has_info>
+	           <dont_has_info>mario_key_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>mario_key_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>mario_key_dialog_est_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>mario_key_dialog_est_2</text>
+				<give_info>mario_key_dialog_done</give_info>
+				<action>cars.instrument_case_otdal</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>		  
+	  
+     <dialog id="voronin_key_dialog">
+			   <has_info>voronin_start_dialog_start</has_info>
+	           <dont_has_info>voronin_key_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>voronin_key_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>voronin_key_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>voronin_key_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>voronin_key_dialog_3</text>
+				<next>4</next>
+				<next>41</next>
+				</phrase>				
+        <phrase id="4">
+                <text>voronin_key_dialog_4</text>
+				<give_info>voronin_key_dialog_start</give_info>
+				<action>dialogs.break_dialog</action>				
+				</phrase>
+		<phrase id="41">
+                <text>voronin_key_dialog_41</text>
+				<action>dialogs.break_dialog</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+     <dialog id="voronin_key_dialog_est">
+	           <precondition>cars.kanistra_have</precondition>
+			   <has_info>voronin_key_dialog_have</has_info>
+	           <dont_has_info>voronin_key_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>voronin_key_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>voronin_key_dialog_est_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>voronin_key_dialog_est_2</text>
+				<give_info>voronin_key_dialog_done</give_info>
+				<action>cars.kanistra_otdal</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+     <dialog id="polischuk_key_dialog">
+			   <has_info>polischuk_start_dialog_start</has_info>
+	           <dont_has_info>polischuk_key_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>polischuk_key_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>polischuk_key_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>polischuk_key_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>polischuk_key_dialog_3</text>
+				<next>4</next>
+				<next>41</next>
+				</phrase>				
+        <phrase id="4">
+                <text>polischuk_key_dialog_4</text>
+				<give_info>polischuk_key_dialog_start</give_info>
+				<action>dialogs.break_dialog</action>				
+				</phrase>
+		<phrase id="41">
+                <text>polischuk_key_dialog_41</text>
+				<action>dialogs.break_dialog</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+     <dialog id="polischuk_key_dialog_est">
+	           <precondition>cars.ballon_have</precondition>
+			   <has_info>polischuk_key_dialog_have</has_info>
+	           <dont_has_info>polischuk_key_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>polischuk_key_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>polischuk_key_dialog_est_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>polischuk_key_dialog_est_2</text>
+				<give_info>polischuk_key_dialog_done</give_info>
+				<action>cars.ballon_otdal</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+     <dialog id="dezertir_car_dialog">
+			   <has_info>mousetrap_finish</has_info>
+	           <dont_has_info>dezertir_car_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>dezertir_car_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>dezertir_car_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>dezertir_car_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>dezertir_car_dialog_3</text>
+				<next>4</next>
+				</phrase>	
+        <phrase id="4">
+                <text>dezertir_car_dialog_4</text>
+				<next>5</next>
+				</phrase>				
+        <phrase id="5">
+                <text>dezertir_car_dialog_5</text>
+				<next>6</next>
+				<next>61</next>
+				</phrase>				
+        <phrase id="6">
+                <text>dezertir_car_dialog_6</text>
+				<give_info>dezertir_car_dialog_start</give_info>
+				<action>cars.dezertir_car_spawn</action>
+				<action>mauvais.timer_music_prom04</action>
+				<action>dialogs.break_dialog</action>				
+				</phrase>
+		<phrase id="61">
+                <text>dezertir_car_dialog_61</text>				
+				<action>dialogs.break_dialog</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>		 
+
+     <dialog id="dezertir_car_dialog_est">
+	           <precondition>cars.check_dezertir_car</precondition>
+			   <has_info>dezertir_car_mesto</has_info>
+	           <dont_has_info>dezertir_car_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>dezertir_car_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>dezertir_car_dialog_est_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>dezertir_car_dialog_est_2</text>
+				<give_info>dezertir_car_dialog_done</give_info>	
+                <action>cars.shurup_nagrada</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+     <dialog id="dezertir_flesh_dialog">
+			   <has_info>dezertir_car_dialog_done</has_info>
+	           <dont_has_info>dezertir_flesh_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>dezertir_flesh_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>dezertir_flesh_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>dezertir_flesh_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>dezertir_flesh_dialog_3</text>
+				<next>4</next>
+				</phrase>	
+        <phrase id="4">
+                <text>dezertir_flesh_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>dezertir_flesh_dialog_5</text>
+				<next>6</next>
+				</phrase>
+		<phrase id="6">
+                <text>dezertir_flesh_dialog_6</text>
+				<next>7</next>
+				</phrase>	
+        <phrase id="7">
+                <text>dezertir_flesh_dialog_7</text>
+				<next>8</next>
+				<next>81</next>
+				</phrase>				
+        <phrase id="8">
+                <text>dezertir_flesh_dialog_8</text>
+				<give_info>dezertir_flesh_dialog_start</give_info>
+				<action>fotograf.prom_flesh_winch</action>
+				<action>dialogs.break_dialog</action>				
+				</phrase>
+		<phrase id="81">
+                <text>dezertir_flesh_dialog_81</text>				
+				<action>dialogs.break_dialog</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>	
+	  
+     <dialog id="dezertir_flesh_dialog_est">
+	           <precondition>fotograf.check_dezertir_winch</precondition>
+			   <has_info>dezertir_flesh_dialog_have</has_info>
+	           <dont_has_info>dezertir_flesh_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>dezertir_flesh_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>dezertir_flesh_dialog_est_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>dezertir_flesh_dialog_est_2</text>
+				<give_info>dezertir_flesh_dialog_done</give_info>	
+                <action>fotograf.shurup_nagrada_winch</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+     <dialog id="brown_eight_dialog">
+	           <precondition>fotograf.timer_dyshlo_over</precondition>
+			   <has_info>brown_timer_dyshlo_over</has_info>
+	           <dont_has_info>brown_eight_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_eight_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_eight_dialog_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>brown_eight_dialog_2</text>
+				<give_info>brown_eight_dialog_start</give_info>
+                <action>fotograf.del_drozdov</action>
+                <action>mauvise.timer_music_poligon04</action>				
+                <action>dialogs.break_dialog</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+     <dialog id="voronin_dyshlo_attak_dialog">
+			   <has_info>brown_eight_dialog_start</has_info>
+	           <dont_has_info>voronin_dyshlo_attak_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>voronin_dyshlo_attak_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>voronin_dyshlo_attak_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>voronin_dyshlo_attak_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>voronin_dyshlo_attak_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>voronin_dyshlo_attak_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>voronin_dyshlo_attak_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>voronin_dyshlo_attak_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>voronin_dyshlo_attak_dialog_7</text>
+				<next>8</next>
+				</phrase>
+        <phrase id="8">
+                <text>voronin_dyshlo_attak_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>voronin_dyshlo_attak_dialog_9</text>
+				<next>10</next>
+				</phrase>
+        <phrase id="10">
+                <text>voronin_dyshlo_attak_dialog_10</text>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>voronin_dyshlo_attak_dialog_11</text>
+				<next>12</next>
+				</phrase>				
+        <phrase id="12">
+                <text>voronin_dyshlo_attak_dialog_12</text>
+				<give_info>voronin_dyshlo_attak_dialog_start</give_info>
+                <give_info>actor_atak</give_info>				
+                <action>dialogs.break_dialog</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+     <dialog id="plichko_start_dialog">
+			   <has_info>voronin_dyshlo_attak_dialog_start</has_info>
+	           <dont_has_info>dolg_ataka_start</dont_has_info>
+               <dont_has_info>actor_terminator</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>plichko_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>plichko_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>plichko_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>plichko_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>plichko_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>plichko_start_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>plichko_start_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>plichko_start_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>plichko_start_dialog_8</text>
+				<give_info>dolg_ataka_start</give_info>	
+                <action>dialogs.break_dialog</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+     <dialog id="plichko_one_dialog">
+	           <precondition>fotograf.dolg_ataka_have</precondition>
+			   <has_info>dolg_ataka_have</has_info>
+			   <dont_has_info>actor_terminator</dont_has_info>
+	           <dont_has_info>dolg_ataka_finish</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>plichko_one_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>plichko_one_dialog_1</text>
+				<next>2</next>
+				</phrase>	
+        <phrase id="2">
+                <text>plichko_one_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>plichko_one_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>plichko_one_dialog_4</text>
+				<give_info>dolg_ataka_finish</give_info>
+                <action>amk_mod.start_blow_timer</action>				
+                <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>		  
+	  
+     <dialog id="plichko_tri_dialog">
+			   <has_info>dolg_ataka_finish</has_info>
+			   <has_info>blowout_end_dyshlo</has_info>
+	           <dont_has_info>plichko_tri_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>plichko_tri_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>plichko_tri_dialog_1</text>
+				<next>2</next>
+				</phrase>	
+        <phrase id="2">
+                <text>plichko_tri_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>plichko_tri_dialog_3</text>
+				<next>4</next>
+				</phrase>	
+        <phrase id="4">
+                <text>plichko_tri_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>plichko_tri_dialog_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>plichko_tri_dialog_6</text>
+				<give_info>plichko_tri_dialog_start</give_info>
+                <action>fotograf.killers6_dyshlo_spawn</action>
+                <action>foto2.varvara_spawn</action>
+                <action>foto2.petrovige_spawn</action>				
+                <action>dialogs.break_dialog</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+     <dialog id="plichko_tri_dialog_est">
+               <precondition>fotograf.plichko_tri_dialog_have</precondition>
+			   <has_info>plichko_tri_dialog_have</has_info>
+	           <dont_has_info>plichko_tri_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>plichko_tri_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>plichko_tri_dialog_est_1</text>
+				<next>2</next>
+				</phrase>	
+        <phrase id="2">
+                <text>plichko_tri_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>plichko_tri_dialog_est_3</text>
+				<next>4</next>
+				</phrase>					
+        <phrase id="4">
+                <text>plichko_tri_dialog_est_4</text>
+				<give_info>plichko_tri_dialog_done</give_info>
+                <action>fotograf.plichko_tri_dialog_done</action>					
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+     <dialog id="voronin_dolg_dialog_one">
+			   <has_info>plichko_tri_dialog_done</has_info>
+	           <dont_has_info>voronin_dolg_dialog_one_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>voronin_dolg_dialog_one_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>voronin_dolg_dialog_one_1</text>
+				<next>2</next>
+				</phrase>	
+        <phrase id="2">
+                <text>voronin_dolg_dialog_one_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>voronin_dolg_dialog_one_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>voronin_dolg_dialog_one_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>voronin_dolg_dialog_one_5</text>
+				<next>6</next>
+				</phrase>
+		<phrase id="6">
+                <text>voronin_dolg_dialog_one_6</text>
+				<next>7</next>
+				</phrase>
+		<phrase id="7">
+                <text>voronin_dolg_dialog_one_7</text>
+				<next>8</next>
+				</phrase>
+		<phrase id="8">
+                <text>voronin_dolg_dialog_one_8</text>
+				<next>9</next>
+				</phrase>
+		<phrase id="9">
+                <text>voronin_dolg_dialog_one_9</text>
+				<next>10</next>
+				<next>11</next>
+				</phrase>
+        <phrase id="10">
+                <text>voronin_dolg_dialog_one_10</text>
+				<give_info>voronin_dolg_dialog_one_start</give_info>
+				<action>dialogs.actor_set_dolg</action>
+                <action>dialogs.break_dialog</action>					
+				</phrase>
+        <phrase id="11">
+                <text>voronin_dolg_dialog_one_11</text>
+				<give_info>voronin_dolg_dialog_one_start</give_info>
+				<give_info>brown_x10_start</give_info>
+                <action>dialogs.break_dialog</action>					
+				</phrase>				
+        </phrase_list>
+      </dialog>
+	  
+     <dialog id="shubin_pentagramm_dialog">
+			   <has_info>voronin_dolg_dialog_one_start</has_info>
+	           <dont_has_info>shubin_pentagramm_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>shubin_pentagramm_dialog_0</text>
+				<next>1</next>
+				<next>2</next>
+                </phrase>
+        <phrase id="1">
+		        <has_info>shubin_enemy</has_info>
+                <text>shubin_pentagramm_dialog_1</text>				
+				<next>33</next>
+				</phrase>	
+        <phrase id="2">
+		        <dont_has_info>shubin_enemy</dont_has_info>
+                <text>shubin_pentagramm_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>shubin_pentagramm_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="33">
+                <text>shubin_pentagramm_dialog_33</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>shubin_pentagramm_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>shubin_pentagramm_dialog_5</text>
+				<next>6</next>
+				</phrase>
+		<phrase id="6">
+                <text>shubin_pentagramm_dialog_6</text>
+				<next>7</next>
+				</phrase>
+		<phrase id="7">
+                <text>shubin_pentagramm_dialog_7</text>
+				<next>8</next>
+				</phrase>
+		<phrase id="8">
+                <text>shubin_pentagramm_dialog_8</text>
+				<next>9</next>
+				</phrase>
+		<phrase id="9">
+                <text>shubin_pentagramm_dialog_9</text>
+				<next>10</next>
+				</phrase>
+		<phrase id="10">
+                <text>shubin_pentagramm_dialog_10</text>
+				<next>11</next>
+				</phrase>
+		<phrase id="11">
+                <text>shubin_pentagramm_dialog_11</text>
+				<next>12</next>
+				</phrase>
+		<phrase id="12">
+                <text>shubin_pentagramm_dialog_12</text>
+				<next>13</next>
+				</phrase>
+		<phrase id="13">
+                <text>shubin_pentagramm_dialog_13</text>
+				<next>14</next>
+				</phrase>
+		<phrase id="14">
+                <text>shubin_pentagramm_dialog_14</text>
+				<next>15</next>
+				</phrase>
+		<phrase id="15">
+                <text>shubin_pentagramm_dialog_15</text>
+				<next>16</next>
+				</phrase>
+		<phrase id="16">
+                <text>shubin_pentagramm_dialog_16</text>
+				<next>17</next>
+				</phrase>				
+        <phrase id="17">
+                <text>shubin_pentagramm_dialog_17</text>
+				<give_info>shubin_pentagramm_dialog_start</give_info>
+				<give_info>story_20</give_info>
+				<action>pentagramm.penta_start</action>
+                <action>dialogs.break_dialog</action>					
+				</phrase>				
+        </phrase_list>
+      </dialog>	  
+	  
+     <dialog id="shubin_pentagramm_dialog_est">
+			   <has_info>shubin_pentagramm_dialog_have</has_info>
+	           <dont_has_info>shubin_pentagramm_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>shubin_pentagramm_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>shubin_pentagramm_dialog_est_1</text>				
+				<next>2</next>
+				</phrase>	
+        <phrase id="2">
+                <text>shubin_pentagramm_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>shubin_pentagramm_dialog_est_3</text>
+				<next>4</next>
+				<next>5</next>
+				</phrase>				
+        <phrase id="4">
+		        <precondition>fotograf.shubin_tushki_net</precondition>
+                <text>shubin_pentagramm_dialog_est_4</text>
+                <action>dialogs.break_dialog</action>
+				</phrase>
+        <phrase id="5">
+		        <precondition>fotograf.shubin_tushki_have</precondition>
+                <text>shubin_pentagramm_dialog_est_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>shubin_pentagramm_dialog_est_6</text>
+				<next>7</next>
+				</phrase>				
+        <phrase id="7">
+                <text>shubin_pentagramm_dialog_est_7</text>
+				<give_info>shubin_pentagramm_dialog_done</give_info>
+                <action>fotograf.shubin_tushki_otdal</action>
+                <action>dialogs.break_dialog</action>				
+				</phrase>				
+        </phrase_list>
+      </dialog>	  
+
+     <dialog id="brown_x10_dialog">
+			   <has_info>shubin_pentagramm_dialog_done</has_info>
+	           <dont_has_info>brown_x10_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown_x10_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown_x10_dialog_1</text>				
+				<next>2</next>
+				</phrase>	
+        <phrase id="2">
+                <text>brown_x10_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brown_x10_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>brown_x10_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>brown_x10_dialog_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>brown_x10_dialog_6</text>
+				<give_info>brown_x10_dialog_start</give_info>
+                <action>dialogs.break_dialog</action>				
+				</phrase>				
+        </phrase_list>
+      </dialog>
+
+     <dialog id="brown5_dialog_one">
+			   <has_info>brown_five_mesto</has_info>
+			   <dont_has_info>brown_accompaniment_proval</dont_has_info>
+	           <dont_has_info>brown5_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>brown5_dialog_one_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>brown5_dialog_one_1</text>				
+				<next>2</next>
+				</phrase>	
+        <phrase id="2">
+                <text>brown5_dialog_one_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>brown5_dialog_one_3</text>
+				<next>4</next>
+				</phrase>								
+        <phrase id="4">
+                <text>brown5_dialog_one_4</text>
+				<give_info>brown5_dialog_start</give_info>
+                <action>dialogs.break_dialog</action>				
+				</phrase>				
+        </phrase_list>
+      </dialog>
+
+     <dialog id="smith_marodery_dialog">
+	           <precondition>fotograf.timer_smith_foto_over</precondition>
+			   <has_info>shubin_dialog_3_done</has_info>
+	           <dont_has_info>smith_marodery_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>smith_marodery_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>smith_marodery_dialog_1</text>				
+				<next>2</next>
+				<next>3</next>
+				</phrase>	
+        <phrase id="2">
+		        <dont_has_info>vse_foto_sdelal</dont_has_info>
+                <text>smith_marodery_dialog_2</text>
+				<next>21</next>
+				</phrase>
+		<phrase id="21">
+                <text>smith_marodery_dialog_21</text>
+				<next>22</next>
+				</phrase>
+		<phrase id="22">
+                <text>smith_marodery_dialog_22</text>
+				<give_info>smith_marodery_dialog_start</give_info>
+				<action>fotograf.spawn_mk_marodery</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        <phrase id="3">
+		        <has_info>vse_foto_sdelal</has_info>
+                <text>smith_marodery_dialog_3</text>
+				<next>31</next>
+				</phrase>
+        <phrase id="31">
+                <text>smith_marodery_dialog_31</text>
+				<next>32</next>
+				</phrase>				
+        <phrase id="32">
+                <text>smith_marodery_dialog_32</text>
+				<give_info>smith_marodery_dialog_start</give_info>
+                <action>fotograf.smith_marodery_dialog_dal</action>
+                <action>fotograf.spawn_mk_marodery</action>				
+				</phrase>				
+        </phrase_list>
+      </dialog>		  
+
+     <dialog id="pashka_one_dialog">
+			   <has_info>shubin_dialog_4_done</has_info>
+	           <dont_has_info>pashka_one_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>pashka_one_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>pashka_one_dialog_1</text>				
+				<next>2</next>
+				</phrase>	
+        <phrase id="2">
+                <text>pashka_one_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>pashka_one_dialog_3</text>
+				<next>4</next>
+				</phrase>								
+        <phrase id="4">
+                <text>pashka_one_dialog_4</text>
+				<give_info>pashka_one_dialog_start</give_info>
+                <action>dialogs.break_dialog</action>				
+				</phrase>				
+        </phrase_list>
+      </dialog>
+	  
+     <dialog id="pashka_one_dialog_est">
+	           <precondition>fotograf.pashka_sguschenka_have</precondition>
+			   <has_info>pashka_one_dialog_have</has_info>
+	           <dont_has_info>pashka_one_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>pashka_one_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>pashka_one_dialog_est_1</text>				
+				<next>2</next>
+				</phrase>	
+        <phrase id="2">
+                <text>pashka_one_dialog_est_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>pashka_one_dialog_est_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>pashka_one_dialog_est_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>pashka_one_dialog_est_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>pashka_one_dialog_est_6</text>
+				<give_info>pashka_one_dialog_done</give_info>
+				<action>fotograf.pashka_sguschenka_otdal</action>
+				<action>y_level.lch_prip_peschera_prip</action>
+                <action>dialogs.break_dialog</action>				
+				</phrase>				
+        </phrase_list>
+      </dialog>
+	  
+     <dialog id="smith_sar_dialog">
+			   <has_info>smith_mozhet_govorit</has_info>
+	           <dont_has_info>smith_sar_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>smith_sar_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>smith_sar_dialog_1</text>				
+				<next>2</next>
+				</phrase>	
+        <phrase id="2">
+                <text>smith_sar_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>smith_sar_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>smith_sar_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>smith_sar_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>smith_sar_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>smith_sar_dialog_7</text>
+				<next>8</next>
+				</phrase>	
+        <phrase id="8">
+                <text>smith_sar_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>smith_sar_dialog_9</text>
+				<next>10</next>
+				</phrase>
+        <phrase id="10">
+                <text>smith_sar_dialog_10</text>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>smith_sar_dialog_11</text>
+				<next>12</next>
+				</phrase>
+        <phrase id="12">
+                <text>smith_sar_dialog_12</text>
+				<next>13</next>
+				</phrase>	
+        <phrase id="13">
+                <text>smith_sar_dialog_13</text>
+				<next>14</next>
+				</phrase>
+        <phrase id="14">
+                <text>smith_sar_dialog_14</text>
+				<next>15</next>
+				</phrase>
+        <phrase id="15">
+                <text>smith_sar_dialog_15</text>
+				<next>16</next>
+				</phrase>				
+        <phrase id="16">
+                <text>smith_sar_dialog_16</text>
+				<give_info>smith_sar_dialog_start</give_info>
+                <action>dialogs.break_dialog</action>				
+				</phrase>				
+        </phrase_list>
+      </dialog>
+
+     <dialog id="shubin_sar_dialog">
+			   <has_info>smith_sar_dialog_start</has_info>
+	           <dont_has_info>shubin_sar_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>shubin_sar_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>shubin_sar_dialog_1</text>				
+				<next>2</next>
+				</phrase>	
+        <phrase id="2">
+                <text>shubin_sar_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>shubin_sar_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>shubin_sar_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>shubin_sar_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>shubin_sar_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>shubin_sar_dialog_7</text>
+				<next>8</next>
+				</phrase>	
+        <phrase id="8">
+                <text>shubin_sar_dialog_8</text>
+				<next>9</next>
+				</phrase>
+        <phrase id="9">
+                <text>shubin_sar_dialog_9</text>
+				<next>10</next>
+				</phrase>
+        <phrase id="10">
+                <text>shubin_sar_dialog_10</text>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>shubin_sar_dialog_11</text>
+				<next>12</next>
+				</phrase>				
+        <phrase id="12">
+                <text>shubin_sar_dialog_12</text>
+				<give_info>shubin_sar_dialog_start</give_info>
+                <action>dialogs.break_dialog</action>				
+				</phrase>				
+        </phrase_list>
+      </dialog>
+
+     <dialog id="shubin_bluetree_dialog">
+			   <has_info>shubin_sar_dialog_start</has_info>
+	           <dont_has_info>shubin_bluetree_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>shubin_bluetree_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>shubin_bluetree_dialog_1</text>				
+				<next>2</next>
+				</phrase>	
+        <phrase id="2">
+                <text>shubin_bluetree_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>shubin_bluetree_dialog_3</text>
+				<next>4</next>
+                <next>5</next>
+				</phrase>
+        <phrase id="4">
+                <text>shubin_bluetree_dialog_4</text>
+				<give_info>shubin_bluetree_dialog_start</give_info>
+				<give_info>shubin_bluetree_dialog_soglasie</give_info>
+                <action>dialogs.break_dialog</action>				
+				</phrase>				
+        <phrase id="5">
+                <text>shubin_bluetree_dialog_5</text>
+				<give_info>shubin_bluetree_dialog_start</give_info>
+				<give_info>shubin_bluetree_dialog_otkaz</give_info>
+                <action>dialogs.break_dialog</action>				
+				</phrase>				
+        </phrase_list>
+      </dialog>
+	
+	 
+	  
+</game_dialogs>

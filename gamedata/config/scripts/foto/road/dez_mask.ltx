@@ -1,0 +1,73 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-dezertir_plan_dialog_start} walker@1, {+dezertir_plan_dialog_start -dezertir_plan_dialog_done} walker@2, {+dezertir_plan_dialog_done -dezertir_plan_dialog_finish} walker@3, {+dezertir_plan_dialog_finish} walker@4 
+combat_ignore = combat_ignore
+danger = danger_condition
+
+[walker@1]
+path_walk = dez_mask_walk
+path_look = dez_mask_look
+meet = no_meet
+danger = danger_condition
+on_actor_dist_le = 4 | {-dezertir_plan_dialog_start} remark@1  
+
+[remark@1]
+anim = assault
+target = actor
+snd = dezertir
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | remark@2
+
+[remark@2]
+target = actor
+meet = meet
+danger = danger_condition
+on_info = {+dezertir_plan_dialog_start} walker@2
+
+[walker@2]
+path_walk = dez_mask_walk
+path_look = dez_mask_look
+meet = meet
+danger = danger_condition
+on_actor_dist_le = 4 | {+dezertir_plan_dialog_have} remark@3
+
+[remark@3]
+target = actor
+meet = meet
+danger = danger_condition
+on_info = {+dezertir_plan_dialog_done} walker@3
+
+[walker@3]
+path_walk = dez_mask1_walk
+path_look = dez_mask1_look
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+on_signal = dezdig | remark@4 %+dezertir_plan_mesto%
+
+[remark@4]
+target = actor
+meet = meet
+danger = danger_condition
+on_info = {+dezertir_plan_dialog_finish} walker@4
+
+[walker@4]
+path_walk = dez_mask1_walk
+path_look = dez_mask1_look
+meet = no_meet
+def_state_standing = sit
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

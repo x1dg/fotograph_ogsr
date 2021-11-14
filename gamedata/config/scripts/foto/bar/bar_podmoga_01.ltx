@@ -1,0 +1,34 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker
+combat_ignore = combat_ignore
+danger = danger_condition
+
+[walker]
+path_walk = bar_podmoga_01_walk
+path_look = bar_podmoga_01_look
+meet = no_meet
+danger = danger_condition
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+on_info = {+levsha_start_dialog_have} walker@1
+
+[walker@1]
+path_walk = bar_podmoga_01_walk
+path_look = bar_podmoga_01_look
+def_state_standing = sit_ass
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+

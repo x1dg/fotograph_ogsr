@@ -1,0 +1,51 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-broun_five_run} walker@1, {+broun_five_run -brown_five_mesto} walker@2, {+brown_five_mesto} walker@3  
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy =kill%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+on_info2 = %+brown_five_dead%
+
+[walker@1]
+path_walk = brown5_walk
+path_look = brown5_look
+meet = no_meet
+danger = danger_condition
+on_actor_dist_le_nvis = 5 | walker@2 %+broun_five_run%
+
+[walker@2]
+path_walk = brown55_walk
+path_look = brown55_look
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+on_signal = brown5mesto | walker@3 %+brown_five_mesto%
+
+[walker@3]
+path_walk = brown55_walk
+path_look = brown55_look
+meet = meet
+def_state_standing = ward
+danger = danger_condition 
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+

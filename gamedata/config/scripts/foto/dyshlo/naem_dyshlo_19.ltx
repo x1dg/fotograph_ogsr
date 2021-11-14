@@ -1,0 +1,26 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = kamp@dyshlo_naem4
+danger = danger_condition
+;combat_ignore = combat_ignore
+on_death = death
+
+[death]
+on_info = %+naem_dyshlo_19_dead%
+
+[kamp@dyshlo_naem4]
+center_point = kamp_dyshlo_naem4_center
+radius = 2.5
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 30
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

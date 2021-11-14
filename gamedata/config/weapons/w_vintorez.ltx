@@ -1,0 +1,199 @@
+; Винтовка снайперская специальная ВСС "Винторез" (6П29)
+;-(правлено SR)-------------------------------------
+; калибр 				9x39 мм
+; длина ствола 				200 мм
+; магазин				20
+; вес без магазина			3.16
+; эффективная дальность стрельбы	250 м 
+; прицельная дальность			400 м
+; дульная скорость пули			290 м/с
+; темп стрельбы				700 в/с
+;---------------------------------------------------
+[wpn_vintorez]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency 		= 
+$spawn 				= "weapons\vintorez"	; option for Level Editor
+$npc 				= off
+$prefetch 			= 8
+scheduled 			= off 		; option for ALife Simulator
+cform 				= skeleton
+class 				= WP_VINT
+min_radius 			= 5
+max_radius 			= 150
+description			= enc_weapons1_wpn-vintorez
+
+ef_main_weapon_type		= 3
+ef_weapon_type			= 8
+
+;--- scope weapons -----------------------------------------------------------------
+holder_range_modifier		= 2.5 		; во сколько раз увеличивается eye_range 
+holder_fov_modifier		= 0.3 		; во сколько раз увеличивается eye_fov
+;-----------------------------------------------------------------------------------
+
+cost				= 13800
+weapon_class			= sniper_rifle
+
+ammo_limit			= 60
+ammo_current			= 60
+ammo_elapsed			= 10
+ammo_mag_size			= 10
+
+ammo_class			= ammo_9x39_sp5, ammo_9x39_ap, ammo_9x39_pab9
+tracers				= off
+
+fire_modes			= -1, 1
+
+hand_dependence			= 1
+single_handed			= 0
+
+slot 				= 2		; secondary
+animation_slot			= 2		; type of the animation that will be used
+
+inv_name			= wpn-vintorez
+inv_name_short			= wpn-vintorez
+inv_weight			= 3.16
+
+inv_grid_width			= 5
+inv_grid_height			= 2
+inv_grid_x			= 0
+inv_grid_y			= 4
+
+;спавнить автоматически боеприпасы при подъеме оружия
+auto_spawn_ammo			= false
+
+;-----------------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base		= 0.018
+control_inertion_factor		= 1.44f
+disp_rate = 1.8
+
+;отдача
+cam_relax_speed         	= 6.75	;скорость возврата в исходное положение
+cam_dispersion          	= 0.21	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 0.15	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispertion_frac		= 0.9	;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle			= 7.0	;максимальный угол отдачи
+cam_max_angle_horz		= 10.0	;(degree) maximum shot horizontal degree 
+cam_step_angle_horz		= 1.4	;(degree) size of step camera moved in horizontal position while shooting
+
+fire_dispersion_condition_factor = 3	;увеличение дисперсии в процентах при максимальном износе 
+misfire_probability 	         = 0.001
+misfire_condition_k		 = 0.05
+condition_shot_dec 		 = 0.0002
+;-----------------------------------------------------------------------------------
+
+direction 			= 0, 0, 1
+fire_point 			= 0.0, 0.127, 0.559
+smoke_particles			= weapons\generic_shoot_00
+
+shell_point			= 0.0, 0.127, 0.10
+shell_dir			= 0.0, 1.0, 0.0
+shell_particles	 			= weapons\arsenal_shells1
+
+PDM_disp_base 			= 1.0
+PDM_disp_vel_factor 		= 1.4
+PDM_disp_accel_factor 		= 1.6
+PDM_crouch	 		= 0.8
+PDM_crouch_no_acc 		= 0.6
+
+hit_power                       = 0.43
+hit_impulse		        = 20
+hit_type 			= fire_wound
+hit_rate	                = 1.95
+
+fire_distance                   = 210
+bullet_speed			= 290
+rpm                             = 750
+
+
+rpm_empty_click 	 	= 400
+
+use_aim_bullet			= true			;Поддерживается ли первая супер пуля
+time_to_aim			= 1.0	
+
+hud 				= wpn_vintorez_hud
+normal 				= 0, 1, 0
+position 			= -0.026, -0.084, 0.0
+orientation 			= 0, 0, 0
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;на плечо
+strap_position 			= -0.26,-0.11,0.20	; position (offset) and orientation of the weapon when it is strapped
+strap_orientation 		= -15,-9,110		; (3rd person view in degrees)
+strap_bone0			= bip01_spine2
+strap_bone1			= bip01_spine1
+
+visual 				= weapons\vintorez\wpn_vintorez.ogf
+	
+light_disabled			= true
+
+ph_mass			 	= 3
+
+scope_status			= 1
+silencer_status			= 1
+grenade_launcher_status		= 0
+
+zoom_enabled			= true
+scope_zoom_factor	 	= 15
+scope_texture			= wpn\PSO1M2-01
+
+snd_draw					= weapons\vintorez\vintorez_draw
+snd_holster					= weapons\rifle_holster
+snd_shoot					= weapons\vintorez\vintorez_shot 
+snd_shoot1			        = weapons\vintorez\vintorez_shot
+snd_shoot2			        = weapons\vintorez\vintorez_shot
+snd_shoot3			        = weapons\vintorez\vintorez_shot 
+snd_empty					= weapons\vintorez\vintorez_empty, 0.8
+snd_reload					= new_weapons\vintorez\vintorez_reload
+
+silencer_smoke_particles 	= weapons\generic_shoot_00
+
+silencer_hit_power 		= 1.800, 1.800, 1.800, 1.800
+silencer_hit_impulse	 	= 64
+silencer_fire_distance 		= 400
+silencer_bullet_speed	 	= 290
+
+silencer_light_color		= 0.6, 0.5, 0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+hit_probability_gd_novice	= 0.80				; точность стрельбы,      
+hit_probability_gd_stalker	= 0.85				; когда оружие в руках НПС
+hit_probability_gd_veteran	= 0.90				; в зависимости от уровня 
+hit_probability_gd_master	= 0.95				; сложности игры          
+
+;-----------------------------------------------------------------------------
+;-- HUD DESCRIPTION
+;-----------------------------------------------------------------------------
+[wpn_vintorez_hud]
+allow_inertion			= true
+
+shell_point          		= 0,0,-0.6
+shell_dir			 		= 0.0, 1.0, 0.0
+
+fire_point               	= 0,0,-0.5
+fire_bone                	= muzzle
+orientation              	= 0, 0, 0
+position                	= 0.13,-0.09,-0.05
+
+visual                   	= weapons\vintorez\wpn_vintorez_hud.ogf
+
+anim_idle					= idle
+anim_idle_aim				= idle_aim
+anim_reload					= reload
+anim_draw					= draw
+anim_holster				= holster
+anim_shoot					= shoot
+anim_idle_sprint			= idle_sprint
+
+zoom_hide_crosshair			= true
+
+zoom_offset					= -0.13,0.09,-0.05
+zoom_rotate_x				= 0.0
+zoom_rotate_y				= 0.0
+
+;время поворота HUD (сек)
+zoom_rotate_time		= 0.3
+rotate_time			= 0.3

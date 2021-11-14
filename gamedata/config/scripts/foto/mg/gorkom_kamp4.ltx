@@ -1,0 +1,60 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-mg_vyhod_start} kamp@gorkom_kamp, {+mg_vyhod_start} walker@vyhod
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+on_info2 = {-mg_vyhod_start} %+gorkom_kamp_zaschita%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+
+[kamp@gorkom_kamp]
+center_point = gorkom_kamp_center
+radius = 2.1
+meet = meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+usa_enemy} kamp@gorkom_kamp1
+on_info2 = {+mg_vyhod_start} walker@vyhod
+on_info3 = {+gorkom_kamp_zaschita} kamp@zaschita
+on_info4 = {+gorkom_ohran_zaschita} kamp@zaschita
+
+[kamp@zaschita]
+center_point = gorkom_kamp_center
+radius = 2.1
+meet = no_meet
+danger = danger_condition
+on_info = {+usa_enemy} kamp@gorkom_kamp1
+on_timer = 30000 | kamp@gorkom_kamp %-gorkom_kamp_zaschita%
+
+[walker@vyhod] 
+path_walk = gorkom_kamp4_vyhod_walk
+path_look = gorkom_kamp4_vyhod_look
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+on_signal = gkamp4end | %=fotograf.del_gorkom_kamp4%
+
+[kamp@gorkom_kamp1]
+center_point = gorkom_kamp_center
+radius = 2.1
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

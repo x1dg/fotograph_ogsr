@@ -1,0 +1,89 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = camper@shpak
+danger = danger_condition@shpak
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[camper@shpak]
+path_walk = shpak_walk
+path_look = shpak_look
+meet = no_meet
+def_state_standing = eat_vodka
+danger = danger_condition@shpak
+on_info = {+soldaty_enemy} camper@shpak1 
+on_info2 = {+uchen_enemy} camper@shpak1 %+soldaty_enemy%
+on_actor_dist_le = 3 | {-shpak_one_dialog_start} remark@1, {+shpak_one_dialog_start -shpak_one_dialog_have} remark@2, {+shpak_one_dialog_have -shpak_one_dialog_done} remark@3, {+shpak_one_dialog_done} remark@4
+
+[remark@1]
+anim = ward
+target = actor
+snd = shpak1
+meet = no_meet
+danger = danger_condition@shpak
+on_info = {+soldaty_enemy} camper@shpak1 
+on_info2 = {+uchen_enemy} camper@shpak1 %+soldaty_enemy%
+on_signal = sound_end | remark@meet
+
+[remark@2]
+anim = ward
+target = actor
+snd = shpak2
+meet = no_meet
+danger = danger_condition@shpak
+on_info = {+soldaty_enemy} camper@shpak1 
+on_info2 = {+uchen_enemy} camper@shpak1 %+soldaty_enemy%
+on_signal = sound_end | remark@meet
+
+[remark@3]
+anim = ward
+target = actor
+snd = shpak2
+meet = no_meet
+danger = danger_condition@shpak
+on_info = {+soldaty_enemy} camper@shpak1 
+on_info2 = {+uchen_enemy} camper@shpak1 %+soldaty_enemy%
+on_signal = sound_end | remark@meet
+
+[remark@4]
+anim = ward
+target = actor
+snd = shpak3
+meet = no_meet
+danger = danger_condition@shpak
+on_info = {+soldaty_enemy} camper@shpak1 
+on_info2 = {+uchen_enemy} camper@shpak1 %+soldaty_enemy%
+on_signal = sound_end | remark@meet
+
+[remark@meet]
+anim = ward
+target = actor
+meet = meet@shpak
+danger = danger_condition@shpak
+on_info = {+soldaty_enemy} camper@shpak1 
+on_info2 = {+uchen_enemy} camper@shpak1 %+soldaty_enemy%
+
+[camper@shpak1]
+path_walk = shpak_walk
+path_look = shpak_look
+meet = no_meet
+danger = danger_condition@shpak
+
+[danger_condition@shpak]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@shpak]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+meet_state = ward
+
+[hit]
+on_info = {=hit_by_actor} %+soldaty_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+soldaty_enemy%

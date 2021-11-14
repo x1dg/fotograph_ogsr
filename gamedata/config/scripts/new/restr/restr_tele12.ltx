@@ -1,0 +1,9 @@
+[logic]
+active = sr_idle@one
+
+[sr_idle@one]
+on_actor_inside = {+excav} sr_idle@two %=foto2.restr_tp_dark1_spawn =foto2.dark_anom_spawn%
+
+[sr_idle@two]
+on_timer = 6000 | nil %=foto2.port_to_dark =foto2.tp12_del =val_test.del_restr%
+

@@ -1,0 +1,57 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@krysolov
+danger = danger_condition@krysolov
+combat_ignore = combat_ignore
+trade = misc\trade_graf.ltx
+on_hit = hit@krysolov
+on_death = death
+
+[walker@krysolov]
+path_walk = krysolov_walk
+path_look = krysolov_look
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@krysolov
+on_info = {+bratok_enemy} walker@krysolov1
+on_actor_dist_le_nvis = 4 | remark@1
+
+[remark@1]
+target = actor
+snd = krysolov
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@krysolov
+on_signal = sound_end | walker@krysolov11
+on_info = {+bratok_enemy} walker@krysolov1
+
+[walker@krysolov11]
+path_walk = krysolov_walk
+path_look = krysolov_look
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition@krysolov
+on_info = {+bratok_enemy} walker@krysolov1
+
+[walker@krysolov1]
+path_walk = krysolov_walk
+path_look = krysolov_look
+meet = no_meet
+danger = danger_condition@krysolov
+
+[danger_condition@krysolov]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit@krysolov]
+on_info = {=hit_by_actor} %+bratok_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+bratok_enemy%

@@ -1,0 +1,10 @@
+[logic]
+active = sr_idle@1
+
+[sr_idle@1]
+on_actor_inside = {+prokol_vhod -kont_enemy -kont_knife -kont_pahan} %=foto2.check_kont%
+on_info = {+kont_gun} sr_idle@2
+
+[sr_idle@2]
+on_timer = 2000 | nil %+kont_enemy =val_test.del_restr%
+

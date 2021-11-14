@@ -1,0 +1,207 @@
+[wpn_m4]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency 	= 
+$spawn                  = "weapons\wpn_m4"					; option for Level Editor
+$npc			 		= on				; option for Level Editor
+$prefetch 		 		= 8
+scheduled               = off              ; option for ALife Simulator
+cform                   = skeleton
+class                   = WP_VINT
+min_radius              = 0
+max_radius              = 50
+description		= "Боеприпасы:\n • 5,56x45 SS109 - основной\n • 5,56x45 АР - бронебойный\nАвтоматический карабин М4 отличается от винтовки М16А2 укороченным стволом с соответственно укороченным цевьём и телескопическим выдвижным прикладом, имеющим 4 фиксированных положения. Данная модель была переделана с использованием комплектующих фирмы SOPMOD, а также оснащена пулемётным магазином на 100 патронов."
+
+ef_main_weapon_type		= 2
+ef_weapon_type			= 6
+
+;-----------------------------------------------------------------------------------
+holder_range_modifier	= 1.0		       ; во сколько раз увеличивается eye_range 
+holder_fov_modifier		= 0.7              ; во сколько раз увеличивается eye_fov
+;-----------------------------------------------------------------------------------
+
+
+weapon_class			= assault_rifle
+
+cost				= 10980
+
+ammo_limit		 	= 210
+ammo_current			= 30
+ammo_elapsed		 	= 30
+
+ammo_mag_size		 	= 100
+ammo_class		 		= ammo_5.56x45_ss190, ammo_5.56x45_ap
+grenade_class			= ammo_m209
+fire_modes				= 1,  -1
+launch_speed = 0
+
+hand_dependence		 	= 1
+single_handed			= 0
+
+inv_name				= M4A1-SOPMOD  
+inv_name_short		= M4A1-SOPMOD
+inv_weight				= 4.2
+
+inv_grid_width     = 4
+inv_grid_height    = 2
+inv_grid_x         = 30
+inv_grid_y         = 8
+
+
+kill_msg_x			= 175
+kill_msg_y			= 175
+kill_msg_width		= 82
+kill_msg_height		= 28
+
+slot 					= 2		; // secondary
+animation_slot			= 8		; type of the animation that will be used
+
+;-----------------------------------------------------------------------------------
+;params of weapon recoil
+fire_dispersion_base			= 0.21		;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor			= 1.25f
+
+;отдача
+cam_relax_speed         		= 8		;скорость возврата в исходное положение
+cam_relax_speed_ai         		= 6
+cam_dispersion          		= 0.4		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.2		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispertion_frac			= 0.9		;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle				= 5.0	    	;максимальный угол отдачи
+cam_max_angle_horz			= 16.0		;(degree) maximum shot horizontal degree 
+cam_step_angle_horz			= 1.35	;0.18		;(degree) size of step camera moved in horizontal position while shooting
+
+fire_dispersion_condition_factor 	= 2	    	;увеличение дисперсии в процентах при максимальном износе 
+misfire_probability 		= 0.002	;вероятность осечки при максимальном износе 
+misfire_condition_k			= 0.05
+condition_shot_dec 			= 0.0002	;увеличение износа при каждом выстреле
+;--------------------------------------------------------------------------------
+
+direction               = 0, 0, 1
+
+fire_point             	=  0,0.231,0.41            ;---, вверх-вниз, вперед-назад
+smoke_particles				= weapons\generic_shoot_00
+shell_particles	 			= weapons\arsenal_shells1
+
+
+shell_point		 		= 0,0.235,0.089
+shell_dir		 		= 0.0, 1.0, 0.0
+
+rpm_empty_click 	 	= 200
+
+PDM_disp_base 			= 1.0
+PDM_disp_vel_factor 		= 0.8
+PDM_disp_accel_factor 		= 0.8
+PDM_crouch	 		= 1.0
+PDM_crouch_no_acc 		= 1.0
+
+; ttc
+hit_power        	= 0.55
+hit_impulse		 	= 10
+hit_type 			= fire_wound
+hit_rate	                = 1.88
+fire_distance          	= 150
+bullet_speed			= 425
+rpm                     = 700
+; end ttc
+
+use_aim_bullet				= true		;Поддерживается ли первая суппер пуля
+time_to_aim					= 1.0
+
+silencer_hit_power       	= 0.53
+silencer_hit_impulse	 	= 10
+silencer_fire_distance   	= 135
+silencer_bullet_speed	 	= 390
+
+hud                     = wpn_m4_hud
+normal                  = 0, 1, 0
+position         	    = -0.026,-0.172,0
+orientation             = 0, 0, 0
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+strap_position         		= -0.16,-0.36,0.15			; position (offset) and orientation of the weapon when it is strapped
+strap_orientation      		= -10,-5,10					; (3rd person view in degrees)
+strap_bone0					= bip01_spine2
+strap_bone1					= bip01_spine1
+
+startup_ammo            = 1000
+visual                  = Aaz\M4\wpn_m4.ogf
+
+light_color		 		= 0.6,0.5,0.3
+light_range		 		= 5
+light_var_color		 	= 0.05
+light_var_range		 	= 0.1
+light_time 		 		= 0.2
+
+ph_mass			 		= 5
+
+;addons
+scope_status			= 0
+silencer_status			= 0
+grenade_launcher_status	= 0
+
+
+scope_name 					= wpn_addon_scope
+scope_x 					= 86
+scope_y 					= -5
+
+silencer_name  				= wpn_addon_silencer
+silencer_x 					= 210
+silencer_y 					= 9
+
+grenade_launcher_name 		= wpn_addon_grenade_launcher_m203
+grenade_launcher_x 			= 128
+grenade_launcher_y 			= 28
+
+
+
+silencer_light_color		= 1.0, 0.1, 0.0
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+zoom_enabled			= true
+scope_zoom_factor	    = 50
+
+;звуки
+snd_draw			        = Aaz\M4\m14_draw, 0.5
+snd_holster			= Aaz\M4\m14_holster, 0.5
+snd_shoot			        = Aaz\M4\m14_silent, 0.5
+snd_shoot1			        = Aaz\M4\m14_silent, 0.5
+snd_shoot2			        = Aaz\M4\m14_silent, 0.5
+snd_shoot3			        = Aaz\M4\m14_silent, 0.5 
+snd_empty			        = Aaz\M4\m14_empty, 0.5
+snd_reload			        = Aaz\M4\m14_reload, 0.5
+
+
+;params when silencer is attached 
+;similar to corresponding params without prefix silencer_
+snd_silncer_shot			= weapons\ar15_silent, 0.5
+
+[wpn_m4_hud]
+shell_point          	= 0.00, 0.00, 0.00
+shell_dir		 = 0.0, 0.0, 0.0
+
+fire_bone               = wpn_body
+fire_point					= 0.267,0.0,-0.0
+orientation             = 0, 0, 0
+position                = 0, 0, 0
+visual                  = Aaz\M4\wpn_m4_hud.ogf
+
+anim_idle					= idle
+anim_idle_aim				= idle_aim
+anim_reload					= reload
+anim_draw					= draw
+anim_holster				= holster
+anim_shoot					= shoot
+anim_idle_sprint			= idle_sprint
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;HUD offset in zoom mode (to all)
+;(use CONSOLE: hud_adjust_mode 0,1,2, then keys WSADQE and P to show current value in console)
+
+zoom_offset			= -0.126951, 0.0118, -0.16                             ; право-лево, вверх-вниз, вперед-назад
+zoom_rotate_x		= 0.032                                                                        ;вверх-вниз
+zoom_rotate_y		= 0.0                                                                             ;право-лево
+
+
+zoom_hide_crosshair	= true						;to hide crosshair in zoom

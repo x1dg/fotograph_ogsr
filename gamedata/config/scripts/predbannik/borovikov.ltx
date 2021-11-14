@@ -1,0 +1,94 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@borovikov
+danger = danger_condition@borovikov
+combat_ignore = combat_ignore
+trade = misc\trade_pekar.ltx
+on_hit = hit@borovikov
+on_death = death
+
+[walker@borovikov]
+path_walk = borovikov_walk
+path_look = borovikov_look
+meet = no_meet
+def_state_standing = ward
+danger = danger_condition@borovikov
+combat_ignore_cond = always
+on_info = {+borovikov_enemy} walker@borovikov1
+on_info2 = {+info_target13} %+borovikov_enemy%
+on_actor_dist_le_nvis = 5 | {+start_syujet -ne_snimat} remark@1_1, {+ne_snimat -borya_start_dialog_have} walker@borovikov2, {+borya_start_dialog_have -gde_antirad} remark@1_2, {+gde_antirad -ne_snimat_2} remark@1_3, {+ne_snimat_2 -ne_snimat_1} remark@1_4, {+ne_snimat_1} walker@borovikov2
+
+[remark@1_1]
+anim = ward
+target = actor
+snd = ne_snimat
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = sound_end | walker@borovikov2 %+ne_snimat%
+on_info = {+info_target13} %+borovikov_enemy%
+
+[remark@1_2]
+anim = ward
+target = actor
+snd = antirad
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = sound_end | walker@borovikov2 %+gde_antirad%
+on_info = {+info_target13} %+borovikov_enemy%
+
+[remark@1_3]
+anim = ward
+target = actor
+snd = ne_snimat_2
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = sound_end | walker@borovikov2 %+ne_snimat_2%
+on_info = {+info_target13} %+borovikov_enemy%
+
+[remark@1_4]
+anim = ward
+target = actor
+snd = ne_snimat_1
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = sound_end | walker@borovikov2 %+ne_snimat_1%
+on_info = {+info_target13} %+borovikov_enemy%
+
+[walker@borovikov2]
+path_walk = borovikov_walk
+path_look = borovikov_look
+meet = meet
+def_state_standing = ward
+danger = danger_condition@borovikov
+combat_ignore_cond = always
+on_info = {+borovikov_enemy} walker@borovikov1
+on_info2 = {+info_target13} %+borovikov_enemy%
+
+[walker@borovikov1]
+path_walk = borovikov_walk
+path_look = borovikov_look
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@borovikov
+
+[danger_condition@borovikov]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+meet_state = ward
+
+[hit@borovikov]
+on_info = {=hit_by_actor} %+borovikov_enemy%
+
+[death]
+on_info = %+borovikov_dead +bratok_enemy%

@@ -1,0 +1,13 @@
+[logic]
+active = sr_idle@one
+
+[sr_idle@one]
+on_actor_inside = {+zub_popal} sr_idle@two %+zub_change =run_postprocess(agr_u_fade) =play_snd(ambient\rnd_outdoor\rnd_krik8)%
+on_info = {+mg_zasada_off} nil %=val_test.del_restr%
+
+[sr_idle@two]
+on_timer = 3000 | {+zub_change} %=foto2.mg_zasada_del%
+on_timer2 = 4000 | {+zub_change} sr_idle@four %=foto2.mg_zasada_change%
+
+[sr_idle@four]
+on_timer = 10000 | {+zub_change} nil %=foto2.explose_gg =val_test.del_restr%

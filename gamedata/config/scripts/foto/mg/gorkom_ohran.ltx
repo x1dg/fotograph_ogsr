@@ -1,0 +1,89 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-ohran_gorkom_skazal} walker@1, {+ohran_gorkom_skazal -mg_vyhod_start} walker@11, {+mg_vyhod_start} walker@vyhod 
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+on_info2 = {-mg_vyhod_start} %+gorkom_ohran_zaschita%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+
+[walker@1]
+path_walk = gorkom_ohran_walk
+path_look = gorkom_ohran_look
+danger = danger_condition
+meet = no_meet
+combat_ignore_cond = always
+on_actor_dist_le = 5.5 | remark@1
+on_info = {+usa_enemy} walker@111 
+on_info2 = {+gorkom_ohran_zaschita} walker@zaschita
+on_info3 = {+mg_vyhod_start} walker@vyhod
+
+[walker@zaschita]
+path_walk = gorkom_ohran_walk
+path_look = gorkom_ohran_look
+danger = danger_condition
+meet = no_meet
+on_info = {+usa_enemy} walker@111
+on_timer = 30000 | walker@1 %-gorkom_ohran_zaschita% 
+
+[remark@1]
+anim = assault
+target = actor
+snd = ohran_gorkom
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = sound_end | remark@vstrecha %=play_snd(ambient\new\actor_gorkom) +ohran_gorkom_skazal%
+on_info = {+usa_enemy} walker@111
+
+[remark@vstrecha]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 8000 | walker@11
+on_info = {+usa_enemy} walker@111
+
+[walker@11]
+path_walk = gorkom_ohran_walk
+path_look = gorkom_ohran_look
+meet = meet
+combat_ignore_cond = always
+def_state_standing = ward
+danger = danger_condition
+on_info = {+usa_enemy} walker@111
+on_info2 = {+mg_vyhod_start} walker@vyhod
+on_info3 = {+gorkom_ohran_zaschita} walker@zaschita
+
+[walker@vyhod] 
+path_walk = gorkom_ohran_vyhod_walk
+path_look = gorkom_ohran_vyhod_look
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+on_signal = gohranend | %=fotograf.del_gorkom_ohran%
+
+[walker@111]
+path_walk = gorkom_ohran_walk
+path_look = gorkom_ohran_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

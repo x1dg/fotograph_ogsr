@@ -1,0 +1,2148 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+	<!-- Диалог с Бритым о его друзьях -->
+	<dialog id="britiy_friend">
+		<has_info>info_target18</has_info>
+		<dont_has_info>britiy_dialog_foto_end</dont_has_info> 
+	    <phrase_list>
+			<phrase id="0">
+                <text>britiy_friend_0</text>	
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+                <text>britiy_friend_1</text>	
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+                <text>britiy_friend_2</text>	
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+                <text>britiy_friend_3</text>	
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>britiy_friend_4</text>	
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+                <text>britiy_friend_5</text>	
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+                <text>britiy_friend_6</text>	
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+                <text>britiy_friend_7</text>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+                <text>britiy_friend_8</text>	
+				<next>9</next>
+			</phrase>
+			<phrase id="9">
+                <text>britiy_friend_9</text>	
+				<next>10</next>
+			</phrase>
+			<phrase id="10">
+                <text>britiy_friend_10</text>	
+				<next>11</next>
+			</phrase>
+			<phrase id="11">
+                <text>britiy_friend_11</text>	
+				<next>12</next>
+				<next>13</next>
+			</phrase>
+			<phrase id="12">
+                <text>britiy_friend_12</text>
+				<give_info>britiy_foto_start</give_info>
+				<give_info>britiy_dialog_foto_end</give_info>
+			</phrase>
+			<phrase id="13">
+                <text>britiy_friend_13</text>
+				<give_info>britiy_dialog_foto_end</give_info>
+			</phrase>			
+        </phrase_list>		
+	</dialog>	
+	<!--Бритый смотрит фотки--------------------------------------------->  
+	<dialog id="britiy_foto">
+		<has_info>britiy_foto_start</has_info>
+		<precondition>boryan67.searh_friend</precondition>
+	    <phrase_list>
+			<phrase id="0">
+                <text>britiy_foto_0</text>	<!-- посмотри фотки-->
+				<next>1</next>
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+			</phrase>
+			
+			<phrase id="1">
+				<precondition>boryan67.have_1</precondition>
+                <text>britiy_foto_1</text>	<!-- есть 1-->
+				<next>5</next>
+			</phrase>
+			
+			<phrase id="2">
+				<precondition>boryan67.have_2</precondition>
+                <text>britiy_foto_2</text>	<!-- есть 2-->
+				<next>7</next>
+			</phrase>
+			
+			<phrase id="3">
+				<precondition>boryan67.have_3</precondition>
+                <text>britiy_foto_3</text>	<!-- есть 3-->
+				<next>9</next>
+			</phrase>
+			
+			<phrase id="4">
+				<precondition>boryan67.have_nothing</precondition>
+                <text>britiy_foto_nothing</text>	<!-- ничего нет-->
+			</phrase>
+			<!-- реакция на соответствующих перцев-->
+			<!-- 1 -->
+			<phrase id="5">
+                <text>britiy_foto_1_1</text>	<!-- это 1-->
+				<next>6</next>
+			</phrase>
+
+			<phrase id="6">
+                <text>britiy_foto_1_2</text>	<!-- благодарность 1-->
+				<action>boryan67.priz1</action>
+				<give_info>britiy_has_1</give_info>
+				<next>11</next>
+			</phrase>
+			<!-- 2 -->
+			<phrase id="7">
+                <text>britiy_foto_2_1</text>	<!-- это 2-->
+				<next>8</next>
+			</phrase>
+
+			<phrase id="8">
+                <text>britiy_foto_2_2</text>	<!-- благодарность 2-->
+				<action>boryan67.priz2</action>
+				<give_info>britiy_has_2</give_info>
+				<next>11</next>
+			</phrase>	
+
+			<!-- 3 -->
+			<phrase id="9">
+                <text>britiy_foto_3_1</text>	<!-- это 3-->
+				<next>10</next>
+			</phrase>
+
+			<phrase id="10">
+                <text>britiy_foto_3_2</text>	<!-- благодарность 3-->
+				<action>boryan67.priz3</action>
+				<give_info>britiy_has_3</give_info>
+				<next>11</next>
+			</phrase>
+			
+			<phrase id="11">
+                <text>britiy_foto_11</text>	<!-- еще раз посмотри фотки-->
+				<next>1</next>
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+			</phrase>
+        </phrase_list>
+	</dialog>	 
+	<!-- диалог с Дзяо о награде --------------------------------------------->  
+	<dialog id="pruha_priz_dialog">
+		<dont_has_info>dzyao_priz</dont_has_info> 
+		<precondition>boryan67.check_fotos</precondition>
+        <phrase_list>	
+			<phrase id="0">
+                <text>dzyao_priz_0</text>
+				<next>1</next>
+			</phrase>
+	
+			<phrase id="1">
+                <text>dzyao_priz_1</text>
+				<next>2</next>
+			</phrase>
+	
+			<phrase id="2">
+                <text>dzyao_priz_2</text>
+				<next>3</next>
+			</phrase>
+	
+			<phrase id="3">
+                <text>dzyao_priz_3</text>
+				<next>4</next>
+			</phrase>
+	
+			<phrase id="4">
+                <text>dzyao_priz_4</text>
+				<next>5</next>
+			</phrase>
+
+			<phrase id="5">
+                <text>dzyao_priz_5</text>
+				<next>6</next>
+				<next>7</next>
+			</phrase>
+
+			<phrase id="6">
+                <text>dzyao_priz_6</text>
+				<action>boryan67.get_priz</action>
+				<give_info>dzyao_priz</give_info>
+			</phrase>
+
+			<phrase id="7">
+                <text>dzyao_priz_7</text>
+				<give_info>dzyao_priz</give_info>
+			</phrase>			
+        </phrase_list>	
+	</dialog>
+	
+	<!--Диалог с Ворониным о немцах----------------------------------------------->  
+	<dialog id="voronin_gans_dialog">
+		<dont_has_info>voronin_gans</dont_has_info> 
+		<has_info>german_spasenie_gotovo</has_info>
+		<precondition>boryan67.has_fotik</precondition>
+        <phrase_list>
+			<phrase id="0">
+                <text>voronin_gans_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+                <text>voronin_gans_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+                <text>voronin_gans_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+                <text>voronin_gans_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>voronin_gans_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+                <text>voronin_gans_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+                <text>voronin_gans_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+                <text>voronin_gans_7</text>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+                <text>voronin_gans_8</text>
+				<next>9</next>
+			</phrase>	
+			<phrase id="9">
+                <text>voronin_gans_9</text>
+				<next>10</next>
+				<next>13</next>
+				<next>16</next>
+				<next>18</next>
+			</phrase>
+			
+			<phrase id="10">
+				<precondition>boryan67.gans_nothing</precondition>
+                <text>voronin_gans_10</text>
+				<next>11</next>
+			</phrase>
+			<phrase id="11">
+                <text>voronin_gans_11</text>
+				<next>12</next>
+			</phrase>	
+			<phrase id="12">
+                <text>voronin_gans_12</text>
+				<give_info>voronin_gans</give_info>
+			</phrase>
+
+			<phrase id="13">
+				<precondition>boryan67.gans_all</precondition>
+                <text>voronin_gans_13</text>
+				<next>14</next>
+			</phrase>
+			<phrase id="14">
+                <text>voronin_gans_14</text>
+				<next>15</next>
+			</phrase>
+			<phrase id="15">
+                <text>voronin_gans_15</text>
+				<action>boryan67.voronin_priz</action>
+				<give_info>voronin_gans</give_info>
+			</phrase>	
+
+			<phrase id="16">
+				<precondition>boryan67.gans_comand</precondition>
+                <text>voronin_gans_16</text>
+				<next>17</next>
+			</phrase>
+			<phrase id="17">
+                <text>voronin_gans_17</text>
+				<next>15</next>
+			</phrase>
+			
+			<phrase id="18">
+				<precondition>boryan67.gans_foto</precondition>
+                <text>voronin_gans_18</text>
+				<next>11</next>
+			</phrase>			
+        </phrase_list>		
+	</dialog>
+	<!--Диалог с Петрографом о Пердоните----------------------------------------------->
+<dialog id="petrograf_dialog_0">
+	<dont_has_info>petrograf_dialog_0_done</dont_has_info>
+    <phrase_list>
+        <phrase id="0">
+			<text>petrograf_0_0</text>
+			<next>1</next>
+        </phrase>
+        <phrase id="1">
+			<text>petrograf_0_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>petrograf_0_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>petrograf_0_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>petrograf_0_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>petrograf_0_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>petrograf_0_6</text>
+			<next>7</next>
+        </phrase>
+		<phrase id="7">
+			<text>petrograf_0_7</text>
+			<next>8</next>
+        </phrase>
+		<phrase id="8">
+			<text>petrograf_0_8</text>
+			<next>9</next>
+        </phrase>
+		<phrase id="9">
+			<text>petrograf_0_9</text>
+			<next>10</next>
+        </phrase>
+		<phrase id="10">
+			<text>petrograf_0_10</text>
+			<next>11</next>
+        </phrase>
+		<phrase id="11">
+			<text>petrograf_0_11</text>
+			<next>12</next>
+        </phrase>
+		<phrase id="12">
+			<text>petrograf_0_12</text>
+			<next>13</next>
+        </phrase>
+		<phrase id="13">
+			<text>petrograf_0_13</text>
+			<next>14</next>
+        </phrase>
+		<phrase id="14">
+			<text>petrograf_0_14</text>
+			<next>15</next>
+        </phrase>
+		<phrase id="15">
+			<text>petrograf_0_15</text>
+			<next>16</next>
+        </phrase>
+		<phrase id="16">
+			<text>petrograf_0_16</text>
+			<next>17</next>
+        </phrase>
+		<phrase id="17">
+			<text>petrograf_0_17</text>
+			<next>18</next>
+        </phrase>
+		<phrase id="18">
+			<text>petrograf_0_18</text>
+			<next>19</next>
+        </phrase>
+		<phrase id="19">
+			<text>petrograf_0_19</text>
+			<next>20</next>
+        </phrase>
+		<phrase id="20">
+			<text>petrograf_0_20</text>
+			<next>21</next>
+        </phrase>
+		<phrase id="21">
+			<text>petrograf_0_21</text>
+			<next>22</next>
+        </phrase>
+		<phrase id="22">
+			<text>petrograf_0_22</text>
+			<next>23</next>
+        </phrase>
+		<phrase id="23">
+			<text>petrograf_0_23</text>
+			<next>24</next>
+			<next>25</next>
+        </phrase>
+		<phrase id="24">
+			<text>petrograf_0_24</text>
+			<give_info>petrograf_dialog_0_done</give_info>
+        </phrase>
+		<phrase id="25">
+			<text>petrograf_0_25</text>
+			<next>26</next>
+        </phrase>
+		<phrase id="26">
+			<text>petrograf_0_26</text>
+			<next>27</next>
+        </phrase>
+		<phrase id="27">
+			<text>petrograf_0_27</text>
+			<give_info>petrograf_dialog_0_done</give_info>
+			<give_info>perdonit_enable</give_info>			
+        </phrase>
+		
+		
+    </phrase_list>	
+</dialog>
+	<!--Диалог с Петрографом о коллекции минералов----------------------------------------------->
+<dialog id="petrograf_dialog_1">
+	<dont_has_info>petrograf_dialog_1_done</dont_has_info>
+	<has_info>perdonit_enable</has_info>
+    <phrase_list>
+        <phrase id="0">
+			<text>petrograf_1_0</text>
+			<next>1</next>
+        </phrase>
+        <phrase id="1">
+			<text>petrograf_1_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>petrograf_1_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>petrograf_1_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>petrograf_1_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>petrograf_1_5</text>
+			<next>6</next>
+			<next>7</next>
+        </phrase>
+		<phrase id="6">
+			<text>petrograf_1_6</text>
+			<give_info>petrograf_dialog_1_done</give_info>
+			<give_info>petrograf_collect</give_info>
+			<action>petrograf.collect_priz</action>
+        </phrase>
+		<phrase id="7">
+			<text>petrograf_1_7</text>
+			<give_info>petrograf_dialog_1_done</give_info>
+        </phrase>		
+    </phrase_list>	
+</dialog>
+	<!--Диалог с Петрографом о сборе и передача коллекции минералов----------------------------------------------->	
+<dialog id="petrograf_dialog_2">
+	<dont_has_info>petrograf_dialog_2_done</dont_has_info>
+	<has_info>petrograf_collect</has_info>
+	<precondition>petrograf.collect_minerals</precondition>	
+    <phrase_list>
+        <phrase id="0">
+			<text>petrograf_2_0</text>
+			<next>1</next>
+        </phrase>
+        <phrase id="1">
+			<text>petrograf_2_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>petrograf_2_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>petrograf_2_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>petrograf_2_4</text>
+			<action>petrograf.transfer_minerals</action>
+			<give_info>petrograf_dialog_2_done</give_info>
+        </phrase>		
+    </phrase_list>	
+</dialog>
+	<!--Диалог с Петрографом о нахождении и передача Пердонита----------------------------------------------->
+<dialog id="petrograf_dialog_3">
+	<precondition>petrograf.has_perdonit</precondition>	
+    <phrase_list>
+        <phrase id="0">
+			<text>petrograf_3_0</text>
+			<next>1</next>
+        </phrase>
+        <phrase id="1">
+			<text>petrograf_3_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>petrograf_3_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>petrograf_3_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>petrograf_3_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>petrograf_3_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>petrograf_3_6</text>
+			<action>petrograf.transfer_perdonit</action>
+			<give_info>transfer_perdonit</give_info>
+        </phrase>		
+    </phrase_list>	
+</dialog>
+	<!--Первый диалог с дедом Западло----------------------------------------------->
+<dialog id="zapadlo_dialog_1">
+	<dont_has_info>zapadlo_dialog_1_done</dont_has_info>	
+    <phrase_list>
+        <phrase id="0">
+			<text>zapadlo_1_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>zapadlo_1_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>zapadlo_1_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>zapadlo_1_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>zapadlo_1_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>zapadlo_1_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>zapadlo_1_6</text>
+			<next>7</next>
+        </phrase>
+		<phrase id="7">
+			<text>zapadlo_1_7</text>
+			<next>8</next>
+        </phrase>
+		<phrase id="8">
+			<text>zapadlo_1_8</text>
+			<next>9</next>
+        </phrase>
+		<phrase id="9">
+			<text>zapadlo_1_9</text>
+			<next>10</next>
+        </phrase>
+		<phrase id="10">
+			<text>zapadlo_1_10</text>
+			<next>11</next>
+        </phrase>
+		<phrase id="11">
+			<text>zapadlo_1_11</text>
+			<next>12</next>
+        </phrase>
+		<phrase id="12">
+			<text>zapadlo_1_12</text>
+			<next>13</next>
+        </phrase>
+		<phrase id="13">
+			<text>zapadlo_1_13</text>
+			<next>14</next>
+        </phrase>
+		<phrase id="14">
+			<text>zapadlo_1_14</text>
+			<next>15</next>
+        </phrase>
+		<phrase id="15">
+			<text>zapadlo_1_15</text>
+			<next>16</next>
+        </phrase>
+		<phrase id="16">
+			<text>zapadlo_1_16</text>
+			<next>17</next>
+        </phrase>
+		<phrase id="17">
+			<text>zapadlo_1_17</text>
+			<next>18</next>
+        </phrase>
+		<phrase id="18">
+			<text>zapadlo_1_18</text>
+			<next>19</next>
+        </phrase>
+		<phrase id="19">
+			<text>zapadlo_1_19</text>
+			<next>20</next>
+        </phrase>
+		<phrase id="20">
+			<text>zapadlo_1_20</text>
+			<give_info>zapadlo_dialog_1_done</give_info>
+        </phrase>		
+    </phrase_list>	
+</dialog>	
+	<!--Второй диалог с дедом Западло----------------------------------------------->
+<dialog id="zapadlo_dialog_2">
+	<has_info>zapadlo_robbery_2</has_info>
+	<dont_has_info>zapadlo_dialog_2_done</dont_has_info>	
+    <phrase_list>
+        <phrase id="0">
+			<text>zapadlo_2_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>zapadlo_2_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>zapadlo_2_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>zapadlo_2_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>zapadlo_2_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>zapadlo_2_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>zapadlo_2_6</text>
+			<next>7</next>
+        </phrase>
+		<phrase id="7">
+			<text>zapadlo_2_7</text>
+			<next>8</next>
+        </phrase>
+		<phrase id="8">
+			<text>zapadlo_2_8</text>
+			<next>9</next>
+        </phrase>
+		<phrase id="9">
+			<text>zapadlo_2_9</text>
+			<next>10</next>
+        </phrase>
+		<phrase id="10">
+			<text>zapadlo_2_10</text>
+			<next>11</next>
+        </phrase>
+		<phrase id="11">
+			<text>zapadlo_2_11</text>
+			<next>12</next>
+        </phrase>
+		<phrase id="12">
+			<text>zapadlo_2_12</text>
+			<next>13</next>
+        </phrase>
+		<phrase id="13">
+			<text>zapadlo_2_13</text>
+			<next>14</next>
+			<next>15</next>
+        </phrase>
+		<phrase id="14">
+			<text>zapadlo_2_14</text>
+			<give_info>zapadlo_dialog_2_done</give_info>
+        </phrase>
+		<phrase id="15">
+			<text>zapadlo_2_15</text>
+			<give_info>zapadlo_dialog_2_done</give_info>
+			<action>boryan67.haron_spawn</action>
+        </phrase>		
+    </phrase_list>	
+</dialog>
+	<!--Первый диалог с Хароном в МГ----------------------------------------------->
+<dialog id="haron_dialog_1">
+	<has_info>zapadlo_dialog_2_done</has_info>
+	<dont_has_info>haron_dialog_1_done</dont_has_info>	
+    <phrase_list>
+        <phrase id="0">
+			<text>verka_2_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>verka_2_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>verka_2_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>verka_2_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>verka_2_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>verka_2_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>verka_2_6</text>
+			<give_info>haron_dialog_1_done</give_info>
+        </phrase>		
+    </phrase_list>	
+</dialog>	
+	<!--Второй диалог с Хароном в МГ----------------------------------------------->
+<dialog id="haron_dialog_2">
+	<has_info>haron_dialog_1_done</has_info>
+	<precondition>boryan67.has_repboxes</precondition>
+	<dont_has_info>haron_dialog_2_done</dont_has_info>	
+    <phrase_list>
+        <phrase id="0">
+			<text>verka_3_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>verka_3_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>verka_3_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>verka_3_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>verka_3_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>verka_3_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>verka_3_6</text>
+			<give_info>haron_dialog_2_done</give_info>
+			<action>boryan67.transfer_repboxes</action>
+        </phrase>		
+    </phrase_list>	
+</dialog>
+	<!--Третий диалог с дедом Западло----------------------------------------------->
+<dialog id="zapadlo_dialog_3">
+	<has_info>haron_dialog_2_done</has_info>
+	<dont_has_info>zapadlo_dialog_3_done</dont_has_info>	
+    <phrase_list>
+        <phrase id="0">
+			<text>zapadlo_3_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>zapadlo_3_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>zapadlo_3_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>zapadlo_3_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>zapadlo_3_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>zapadlo_3_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>zapadlo_3_6</text>
+			<give_info>zapadlo_dialog_3_done</give_info>
+			<action>boryan67.verka_spawn</action>
+        </phrase>
+    </phrase_list>	
+</dialog>
+	<!--Диалог с внучкой----------------------------------------------->
+<dialog id="verka_dialog_1">
+	<dont_has_info>verka_dialog_1_done</dont_has_info>	
+    <phrase_list>
+        <phrase id="0">
+			<text>verka_1_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>verka_1_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>verka_1_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>verka_1_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>verka_1_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>verka_1_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>verka_1_6</text>
+			<give_info>verka_dialog_1_done</give_info>	<!-- Признак для Верки к началу движения к Харону-->
+        </phrase>
+    </phrase_list>	
+</dialog>
+	<!--Третий диалог с Хароном в МГ----------------------------------------------->
+<dialog id="haron_dialog_3">
+	<has_info>verka_dialog_1_done</has_info>
+	<has_info>verka_na_meste</has_info>
+	<dont_has_info>haron_dialog_3_done</dont_has_info>	
+    <phrase_list>
+        <phrase id="0">
+			<text>verka_4_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>verka_4_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>verka_4_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>verka_4_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>verka_4_4</text>
+			<give_info>haron_dialog_3_done</give_info>	<!-- Признак для Верки и Харона для движения на выход-->		
+        </phrase>		
+    </phrase_list>	
+</dialog>
+	<!--Четвертый диалог с дедом Западло----------------------------------------------->
+<dialog id="zapadlo_dialog_4">
+	<has_info>verka_out</has_info>
+	<dont_has_info>zapadlo_dialog_4_done</dont_has_info>	
+    <phrase_list>
+        <phrase id="0">
+			<text>zapadlo_4_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>zapadlo_4_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>zapadlo_4_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>zapadlo_4_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>zapadlo_4_4</text>
+			<give_info>zapadlo_dialog_4_done</give_info>
+			<action>boryan67.zapadlo_habar</action>
+        </phrase>
+    </phrase_list>	
+</dialog>
+
+	<!--Диалог 1 с майором Шпак ----------------------------------------------->
+<dialog id="shpak_dialog_1">
+	<dont_has_info>shpak_dialog_1_done</dont_has_info>	
+    <phrase_list>
+        <phrase id="0">
+			<text>shpak_1_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>shpak_1_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>shpak_1_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>shpak_1_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>shpak_1_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>shpak_1_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>shpak_1_6</text>
+			<next>7</next>
+        </phrase>
+		<phrase id="7">
+			<text>shpak_1_7</text>
+			<next>8</next>
+			<next>9</next>
+        </phrase>
+		<phrase id="8">
+			<text>shpak_1_8</text>
+			<give_info>shpak_dialog_1_done</give_info>
+			<give_info>shpak_vodka</give_info>
+        </phrase>
+		<phrase id="9">
+			<text>shpak_1_9</text>
+			<give_info>shpak_dialog_1_done</give_info>
+        </phrase>		
+    </phrase_list>	
+</dialog>	
+	<!--Диалог 2 с майором Шпак ----------------------------------------------->
+<dialog id="shpak_dialog_2">
+	<dont_has_info>shpak_dialog_2_done</dont_has_info>
+	<has_info>shpak_vodka</has_info>
+	<precondition>boryan67.actor_vodka_have</precondition>	
+    <phrase_list>
+        <phrase id="0">
+			<text>shpak_2_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>shpak_2_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>shpak_2_2</text>
+			<give_info>shpak_dialog_2_done</give_info>
+			<action>boryan67.shpak_transfer_1</action>
+        </phrase>		
+    </phrase_list>	
+</dialog>	
+	<!--Диалог 3 с майором Шпак ----------------------------------------------->
+<dialog id="shpak_dialog_3">
+	<dont_has_info>shpak_dialog_3_done</dont_has_info>
+	<has_info>shpak_timer1</has_info>	
+    <phrase_list>
+        <phrase id="0">
+			<text>shpak_3_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>shpak_3_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>shpak_3_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>shpak_3_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>shpak_3_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>shpak_3_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>shpak_3_6</text>
+			<next>7</next>
+        </phrase>
+		<phrase id="7">
+			<text>shpak_3_7</text>
+			<next>8</next>
+			<next>9</next>
+        </phrase>
+		<phrase id="8">
+			<text>shpak_3_8</text>
+			<give_info>shpak_dialog_3_done</give_info>
+			<give_info>shpak_vintorez</give_info>
+        </phrase>
+		<phrase id="9">
+			<text>shpak_3_9</text>
+			<give_info>shpak_dialog_3_done</give_info>
+        </phrase>		
+    </phrase_list>	
+</dialog>
+	<!--Диалог 4 с майором Шпак ----------------------------------------------->
+<dialog id="shpak_dialog_4">
+	<dont_has_info>shpak_dialog_4_done</dont_has_info>
+	<has_info>shpak_vintorez</has_info>
+	<precondition>boryan67.actor_vss_have</precondition>	
+    <phrase_list>
+        <phrase id="0">
+			<text>shpak_4_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>shpak_4_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>shpak_4_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>shpak_4_3</text>
+			<give_info>shpak_dialog_4_done</give_info>
+			<action>boryan67.shpak_transfer_2</action>
+        </phrase>		
+    </phrase_list>	
+</dialog>
+	<!--Диалог 5 с майором Шпак про Дуню ----------------------------------------------->
+<dialog id="shpak_dialog_5">
+	<dont_has_info>shpak_dialog_5_done</dont_has_info>
+	<has_info>shpak_timer2</has_info>
+    <phrase_list>
+        <phrase id="0">
+			<text>shpak_5_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>shpak_5_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>shpak_5_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>shpak_5_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>shpak_5_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>shpak_5_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>shpak_5_6</text>
+			<next>7</next>
+        </phrase>
+		<phrase id="7">
+			<text>shpak_5_7</text>
+			<next>8</next>
+        </phrase>
+		<phrase id="8">
+			<text>shpak_5_8</text>
+			<next>9</next>
+        </phrase>
+		<phrase id="9">
+			<text>shpak_5_9</text>
+			<next>10</next>
+        </phrase>
+		<phrase id="10">
+			<text>shpak_5_10</text>
+			<next>11</next>
+        </phrase>
+		<phrase id="11">
+			<text>shpak_5_11</text>
+			<next>12</next>
+        </phrase>
+		<phrase id="12">
+			<text>shpak_5_12</text>
+			<next>13</next>
+        </phrase>
+		<phrase id="13">
+			<text>shpak_5_13</text>
+			<next>14</next>
+        </phrase>
+		<phrase id="14">
+			<text>shpak_5_14</text>
+			<give_info>shpak_dialog_5_done</give_info>
+			<action>boryan67.shpak_transfer_3</action>
+        </phrase>		
+    </phrase_list>	
+</dialog>
+	<!--Диалог 6 с майором Шпак, Дуня мертва ----------------------------------------------->
+<dialog id="shpak_dialog_6">
+	<dont_has_info>shpak_dialog_6_done</dont_has_info>
+	<has_info>dunya_dead</has_info>
+    <phrase_list>
+        <phrase id="0">
+			<text>shpak_6_00</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>shpak_6_01</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>shpak_6_02</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>shpak_6_1</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>shpak_6_2</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>shpak_6_3</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>shpak_6_4</text>
+			<next>7</next>
+        </phrase>
+		<phrase id="7">
+			<text>shpak_6_5</text>
+			<next>8</next>
+        </phrase>
+		<phrase id="8">
+			<text>shpak_6_6</text>
+			<give_info>shpak_dialog_6_done</give_info>
+			<action>boryan67.transfer_ration</action>	
+		</phrase>
+    </phrase_list>	
+</dialog>
+	<!--Диалог 7 с майором Шпак, Дуня жива ----------------------------------------------->
+<dialog id="shpak_dialog_7">
+	<dont_has_info>shpak_dialog_7_done</dont_has_info>
+	<dont_has_info>dunya_dead</dont_has_info>
+	<has_info>dunya_dialog_2_done</has_info>
+    <phrase_list>
+        <phrase id="0">
+			<text>shpak_6_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>shpak_6_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>shpak_6_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>shpak_6_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>shpak_6_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>shpak_6_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>shpak_6_6</text>
+			<give_info>shpak_dialog_7_done</give_info>
+			<action>boryan67.transfer_ration</action>
+        </phrase>
+    </phrase_list>	
+</dialog>
+	<!--Диалог 8 с майором Шпак, получение пайка ----------------------------------------------->
+<dialog id="shpak_dialog_8">
+	<has_info>shpak_timer3</has_info>
+	<precondition>boryan67.actor_litra_have</precondition>	
+    <phrase_list>
+        <phrase id="0">
+			<text>shpak_7_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>shpak_7_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>shpak_7_2</text>
+			<disable_info>shpak_timer3</disable_info>
+			<action>boryan67.transfer_ration</action>
+        </phrase>
+    </phrase_list>	
+</dialog>
+	<!--Диалог 1 с Дуней ----------------------------------------------->
+<dialog id="dunya_dialog_1">
+	<has_info>shpak_dialog_5_done</has_info>
+	<dont_has_info>dunya_dialog_1_done</dont_has_info>
+    <phrase_list>
+        <phrase id="0">
+			<text>dunya_1_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>dunya_1_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>dunya_1_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>dunya_1_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>dunya_1_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>dunya_1_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>dunya_1_6</text>
+			<next>7</next>
+        </phrase>
+		<phrase id="7">
+			<text>dunya_1_7</text>
+			<next>8</next>
+        </phrase>
+		<phrase id="8">
+			<text>dunya_1_8</text>
+			<next>9</next>
+        </phrase>
+		<phrase id="9">
+			<text>dunya_1_9</text>
+			<next>10</next>
+        </phrase>
+		<phrase id="10">
+			<text>dunya_1_10</text>
+			<next>11</next>
+        </phrase>
+		<phrase id="11">
+			<text>dunya_1_11</text>
+			<next>12</next>
+        </phrase>
+		<phrase id="12">
+			<text>dunya_1_12</text>
+			<next>13</next>
+        </phrase>
+		<phrase id="13">
+			<text>dunya_1_13</text>
+			<next>14</next>
+        </phrase>
+		<phrase id="14">
+			<text>dunya_1_14</text>
+			<next>15</next>
+        </phrase>
+		<phrase id="15">
+			<text>dunya_1_15</text>
+			<next>16</next>
+        </phrase>
+		<phrase id="16">
+			<text>dunya_1_16</text>
+			<give_info>dunya_dialog_1_done</give_info>
+			<action>mauvais.music_swamp04</action>
+        </phrase>
+    </phrase_list>	
+</dialog>
+	<!--Диалог 2 с Дуней ----------------------------------------------->
+<dialog id="dunya_dialog_2">
+	<has_info>dunya_doshla</has_info>
+	<dont_has_info>dunya_dialog_2_done</dont_has_info>
+    <phrase_list>
+        <phrase id="0">
+			<text>dunya_2_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>dunya_2_1</text>
+			<next>2</next>
+			<next>5</next>
+        </phrase>
+		
+		<phrase id="2">
+			<precondition>boryan67.actor_present_have</precondition>
+			<text>dunya_2_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>dunya_2_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>dunya_2_4</text>
+			<give_info>dunya_dialog_2_done</give_info>
+			<action>boryan67.transfer_present</action>
+        </phrase>
+		
+		<phrase id="5">
+			<text>dunya_2_2_1</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>dunya_2_3_1</text>
+			<next>7</next>
+        </phrase>
+		<phrase id="7">
+			<text>dunya_2_4_1</text>
+			<give_info>dunya_dialog_2_done</give_info>
+        </phrase>
+    </phrase_list>	
+</dialog>
+
+	<!--Диалог 1 с Крысоловом ----------------------------------------------->
+<dialog id="krisalov_dialog_1">
+	<dont_has_info>krisalov_dialog_1_done</dont_has_info>
+    <phrase_list>
+        <phrase id="0">
+			<text>krisalov_1_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>krisalov_1_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>krisalov_1_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>krisalov_1_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>krisalov_1_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>krisalov_1_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>krisalov_1_6</text>
+			<next>7</next>
+        </phrase>
+		<phrase id="7">
+			<text>krisalov_1_7</text>
+			<next>8</next>
+        </phrase>
+		<phrase id="8">
+			<text>krisalov_1_8</text>
+			<next>9</next>
+        </phrase>
+		<phrase id="9">
+			<text>krisalov_1_9</text>
+			<next>10</next>
+        </phrase>
+		<phrase id="10">
+			<text>krisalov_1_10</text>
+			<next>11</next>
+        </phrase>
+		<phrase id="11">
+			<text>krisalov_1_11</text>
+			<next>12</next>
+        </phrase>
+		<phrase id="12">
+			<text>krisalov_1_12</text>
+			<next>13</next>
+        </phrase>
+		<phrase id="13">
+			<text>krisalov_1_13</text>
+			<next>14</next>
+        </phrase>
+		<phrase id="14">
+			<text>krisalov_1_14</text>
+			<next>15</next>
+        </phrase>
+		<phrase id="15">
+			<text>krisalov_1_15</text>
+			<next>16</next>
+        </phrase>
+		<phrase id="16">
+			<text>krisalov_1_16</text>
+			<next>17</next>
+        </phrase>
+		<phrase id="17">
+			<text>krisalov_1_17</text>
+			<next>18</next>
+        </phrase>
+		<phrase id="18">
+			<text>krisalov_1_18</text>
+			<next>19</next>
+        </phrase>
+		<phrase id="19">
+			<text>krisalov_1_19</text>
+			<next>20</next>
+			<next>21</next>
+        </phrase>
+		<phrase id="20">
+			<text>krisalov_1_20</text>
+			<give_info>krisalov_dialog_1_done</give_info>
+			<give_info>story_21</give_info>
+			<give_info>krisalov_dudka</give_info>
+			<action>foto.krisalov_dudka</action> 
+        </phrase>
+		<phrase id="21">
+			<text>krisalov_1_21</text>
+			<give_info>krisalov_dialog_1_done</give_info>
+        </phrase>
+    </phrase_list>	
+</dialog>
+
+	<!--Диалог 2 с Крысоловом ----------------------------------------------->
+<dialog id="krisalov_dialog_2">
+	<dont_has_info>krisalov_dialog_2_done</dont_has_info>
+	<has_info>krisalov_dudka</has_info>
+	<precondition>foto.mouse_have</precondition>
+    <phrase_list>
+        <phrase id="0">
+			<text>krisalov_2_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>krisalov_2_1</text>
+			<next>2</next>
+			<next>5</next>
+        </phrase>
+		
+        <phrase id="2">
+			<precondition>foto.dudka_used</precondition>
+			<text>krisalov_2_2</text>
+			<next>3</next>
+        </phrase>
+        <phrase id="3">
+			<text>krisalov_2_3</text>
+			<next>4</next>
+        </phrase>
+        <phrase id="4">
+			<text>krisalov_2_4</text>
+			<next>8</next>
+        </phrase>
+		
+        <phrase id="5">
+			<precondition>foto.dudka_not_used</precondition>
+			<text>krisalov_2_5</text>
+			<next>6</next>
+        </phrase>
+        <phrase id="6">
+			<text>krisalov_2_6</text>
+			<next>7</next>
+        </phrase>
+        <phrase id="7">
+			<text>krisalov_2_7</text>
+			<next>8</next>
+        </phrase>	
+
+        <phrase id="8">
+			<text>krisalov_2_8</text>
+			<next>9</next>
+			<next>13</next>
+        </phrase>
+		
+        <phrase id="9">
+			<text>krisalov_2_9</text>
+			<next>10</next>
+        </phrase>
+		<phrase id="10">
+			<text>krisalov_2_10</text>
+			<next>11</next>
+        </phrase>	
+        <phrase id="11">
+			<text>krisalov_2_11</text>
+			<next>12</next>
+        </phrase>
+		<phrase id="12">
+			<text>krisalov_2_12</text>
+			<give_info>krisalov_dialog_2_done</give_info>
+			<give_info>krisalov_has_mouse</give_info>
+			<action>foto.krisalov_timer</action>
+			<action>foto.krisalov_mouse</action>
+			<action>foto.krisalov_cognac</action>
+        </phrase>
+
+        <phrase id="13">
+			<text>krisalov_2_13</text>
+			<next>14</next>
+        </phrase>
+		<phrase id="14">
+			<text>krisalov_2_14</text>
+			<next>15</next>
+        </phrase>	
+        <phrase id="15">
+			<text>krisalov_2_11</text>
+			<next>16</next>
+        </phrase>
+		<phrase id="16">
+			<text>krisalov_2_12</text>
+			<give_info>krisalov_dialog_2_done</give_info>
+			<action>foto.krisalov_timer</action>
+        </phrase>		
+    </phrase_list>	
+</dialog>
+
+	<!--Диалог 3 с Крысоловом ----------------------------------------------->
+<dialog id="krisalov_dialog_3">
+	<dont_has_info>krisalov_dialog_3_done</dont_has_info>
+	<has_info>krisalov_timer</has_info>
+    <phrase_list>
+        <phrase id="0">
+			<text>krisalov_3_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>krisalov_3_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>krisalov_3_2</text>
+			<next>3</next>
+			<next>10</next>
+        </phrase>
+		
+        <phrase id="3">
+			<precondition>foto.krisalov_has_mouse</precondition>
+			<text>krisalov_3_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>krisalov_3_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>krisalov_3_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>krisalov_3_6</text>
+			<give_info>krisalov_dialog_3_done</give_info>
+			<action>foto.drink_badyaga</action>			
+			<give_info>drink_badyaga</give_info>
+			<action>dialogs.break_dialog</action>
+        </phrase>
+		
+		<phrase id="10">
+			<precondition>foto.krisalov_dont_has_mouse</precondition>
+			<text>krisalov_3_10</text>
+			<next>11</next>
+        </phrase>
+		<phrase id="11">
+			<text>krisalov_3_11</text>
+			<next>12</next>
+        </phrase>
+		<phrase id="12">
+			<text>krisalov_3_12</text>
+			<give_info>krisalov_dialog_3_done</give_info>
+			<give_info>krisalov_has_mouse</give_info>
+			<action>foto.krisalov_timer1</action>
+			<action>foto.krisalov_mouse</action>	
+			<action>foto.krisalov_cognac</action>
+        </phrase>
+    </phrase_list>	
+</dialog>
+
+	<!--Диалог 4 с Крысоловом ----------------------------------------------->
+<dialog id="krisalov_dialog_4">
+	<dont_has_info>krisalov_dialog_4_done</dont_has_info>
+	<has_info>drink_badyaga</has_info>
+    <phrase_list>
+        <phrase id="0">
+			<text>krisalov_4_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>krisalov_4_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>krisalov_4_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>krisalov_4_3</text>
+			<give_info>krisalov_dialog_4_done</give_info>
+			<action>foto.krisalov_badyaga</action>
+			<give_info>actor_has_present</give_info>
+        </phrase>
+    </phrase_list>	
+</dialog>
+
+	<!--Диалог 5 с Крысоловом ----------------------------------------------->
+<dialog id="krisalov_dialog_5">
+	<dont_has_info>krisalov_dialog_5_done</dont_has_info>
+	<has_info>krisalov_timer1</has_info>
+    <phrase_list>
+        <phrase id="0">
+			<text>krisalov_3_6</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>krisalov_5_0</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>krisalov_5_1</text>
+			<give_info>krisalov_dialog_5_done</give_info>
+			<action>foto.drink_badyaga</action>
+			<give_info>drink_badyaga</give_info>
+			<action>dialogs.break_dialog</action>
+        </phrase>
+    </phrase_list>
+</dialog>
+
+	<!--Диалог 6 с Крысоловом ----------------------------------------------->
+<dialog id="krisalov_dialog_6">
+	<precondition>foto.mouse_have</precondition>
+	<has_info>krisalov_dialog_4_done</has_info>
+    <phrase_list>
+        <phrase id="0">
+			<text>krisalov_6_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>krisalov_6_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>krisalov_6_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>krisalov_6_3</text>
+			<action>foto.krisalov_badyaga</action>
+			<action>foto.krisalov_mouse</action>
+			<give_info>krisalov_has_mouse</give_info>
+			<give_info>actor_has_present</give_info>
+        </phrase>
+    </phrase_list>
+</dialog>
+
+	<!--Диалог 3 с Шубиным о крестах ----------------------------------------------->
+<dialog id="shubin_dialog_3">
+	<dont_has_info>shubin_dialog_3_done</dont_has_info>
+	<has_info>brown5_dialog_start</has_info>
+    <phrase_list>
+        <phrase id="0">
+			<text>shubin_3_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>shubin_3_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>shubin_3_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>shubin_3_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>shubin_3_4</text>
+			<next>5</next>
+        </phrase>
+		<phrase id="5">
+			<text>shubin_3_5</text>
+			<next>6</next>
+        </phrase>
+		<phrase id="6">
+			<text>shubin_3_6</text>
+			<next>7</next>
+        </phrase>
+		<phrase id="7">
+			<text>shubin_3_7</text>
+			<next>8</next>
+        </phrase>
+		<phrase id="8">
+			<text>shubin_3_8</text>
+			<next>9</next>
+			<next>12</next>
+        </phrase>
+		
+		<phrase id="9">
+			<has_info>krisalov_dudka_used</has_info>
+			<text>shubin_3_9</text>
+			<next>10</next>
+        </phrase>
+		<phrase id="10">
+			<text>shubin_3_10</text>
+			<next>11</next>
+        </phrase>
+		<phrase id="11">
+			<text>shubin_3_11</text>
+			<next>13</next>
+        </phrase>
+		
+		<phrase id="12">
+			<dont_has_info>krisalov_dudka_used</dont_has_info>
+			<text>shubin_3_12</text>
+			<next>13</next>
+        </phrase>
+		<phrase id="13">
+			<text>shubin_3_13</text>
+			<give_info>shubin_dialog_3_done</give_info>
+			<action>foto.dushelov_in</action>
+			<action>mauvais.music_aver07</action>
+        </phrase>
+    </phrase_list>
+</dialog>
+
+	<!--Диалог 4 с Шубиным сдача крестов ----------------------------------------------->
+<dialog id="shubin_dialog_4">
+	<dont_has_info>shubin_dialog_4_done</dont_has_info>
+    <has_info>krest_finish</has_info>
+	<phrase_list>
+        <phrase id="0">
+			<text>shubin_4_0</text>
+			<next>1</next>
+        </phrase>
+		<phrase id="1">
+			<text>shubin_4_1</text>
+			<next>2</next>
+        </phrase>
+		<phrase id="2">
+			<text>shubin_4_2</text>
+			<next>3</next>
+        </phrase>
+		<phrase id="3">
+			<text>shubin_4_3</text>
+			<next>4</next>
+        </phrase>
+		<phrase id="4">
+			<text>shubin_4_4</text>
+			<next>5</next>
+        </phrase>	
+		<phrase id="5">
+			<text>shubin_4_5</text>
+			<next>6</next>
+        </phrase>		
+		<phrase id="6">
+			<text>shubin_4_6</text>
+			<give_info>shubin_dialog_4_done</give_info>
+			<action>fotograf.check_prip_zadan</action>
+			<action>foto.dushelov_out</action>
+			<action>dialogs.break_dialog</action>
+        </phrase>	
+	</phrase_list>
+</dialog>
+
+    <!--Диалог 1 с Сергеем Андреевичем поиск источника энергии ----------------------------------------------->
+	<dialog id="petrovige_dialog_1"> 
+	<dont_has_info>petro_dialog_1_done</dont_has_info>
+	    <phrase_list>
+			<phrase id="0">
+                <text>petrovige_0_0</text>	
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+                <text>petrovige_0_1</text>	
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+                <text>petrovige_0_2</text>	
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+                <text>petrovige_0_3</text>	
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>petrovige_0_4</text>	
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+                <text>petrovige_0_5</text>	
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+                <text>petrovige_0_6</text>	
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+                <text>petrovige_0_7</text>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+                <text>petrovige_0_8</text>	
+				<next>9</next>
+			</phrase>
+			<phrase id="9">
+                <text>petrovige_0_9</text>	
+				<next>10</next>
+			</phrase>
+			<phrase id="10">
+                <text>petrovige_0_10</text>	
+				<next>11</next>
+			</phrase>
+			<phrase id="11">
+                <text>petrovige_0_11</text>	
+				<next>12</next>
+			</phrase>
+			<phrase id="12">
+                <text>petrovige_0_12</text>
+				<next>13</next>
+			</phrase>
+			<phrase id="13">
+                <text>petrovige_0_13</text>
+				<next>14</next>
+			</phrase>
+			<phrase id="14">
+                <text>petrovige_0_14</text>
+				<next>15</next>
+			</phrase>
+			<phrase id="15">
+                <text>petrovige_0_15</text>
+				<give_info>petro_dialog_1_done</give_info>
+				<action>foto.speech_after_1_dialog</action>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+        </phrase_list>		
+	</dialog>
+
+<!--Диалог 2 с Сергеем Андреевичем сдача квеста ----------------------------------------------->
+	<dialog id="petrovige_dialog_2">
+		<has_info>petro_dialog_1_done</has_info>
+		<dont_has_info>petro_dialog_2_done</dont_has_info> 
+	    <phrase_list>
+			<phrase id="0">
+                <text>petrovige_1_0</text>	
+				<next>1</next>
+				<next>4</next>
+			</phrase>
+			<phrase id="1">
+				<precondition>foto.check_art</precondition>
+                <text>petrovige_1_1</text>	
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+                <text>petrovige_1_2</text>	
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+                <text>petrovige_1_3</text>
+				<give_info>petro_dialog_2_done</give_info>
+				<action>foto.transfer_art</action>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="4">
+				<precondition>foto.no_check_art</precondition>
+                <text>petrovige_1_4</text>	
+			</phrase>
+        </phrase_list>		
+	</dialog>
+	
+<!--Диалог 2 с Варварой ----------------------------------------------->
+	<dialog id="varvara_dialog_1">
+		<dont_has_info>mg_unlock</dont_has_info> 
+	    <phrase_list>
+			<phrase id="0">
+                <text>varvara_0_0</text>	
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+                <text>varvara_0_1</text>	
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+                <text>varvara_0_2</text>	
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+                <text>varvara_0_3</text>	
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>varvara_0_4</text>	
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+                <text>varvara_0_5</text>	
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+                <text>varvara_0_6</text>	
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+                <text>varvara_0_7</text>
+				<give_info>mg_unlock</give_info>
+				<action>foto.transfer_pribor</action>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+        </phrase_list>		
+	</dialog>
+
+<!--Диалог 1 с Варварой ----------------------------------------------->
+	<dialog id="varvara_dialog_0">
+		<dont_has_info>varvara_dialog_1_done</dont_has_info> 
+	    <phrase_list>
+			<phrase id="0">
+                <text>varvara_1_0</text>	
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+                <text>varvara_1_1</text>	
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+                <text>varvara_1_2</text>	
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+                <text>varvara_1_3</text>	
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>varvara_1_4</text>	
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+                <text>varvara_1_5</text>	
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+                <text>varvara_1_6</text>	
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+                <text>varvara_1_7</text>
+				<give_info>varvara_dialog_1_done</give_info>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+        </phrase_list>		
+	</dialog>	
+	
+<!--Диалог 1 с Лесником ----------------------------------------------->
+	<dialog id="ded_dialog_1">
+		<dont_has_info>ded_dialog_1_done</dont_has_info> 
+		<has_info>ded_start_dialog_start</has_info>
+		<has_info>krisalov_dudka</has_info>
+	    <phrase_list>
+			<phrase id="0">
+                <text>ded_0_0</text>	
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+                <text>ded_0_1</text>	
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+                <text>ded_0_2</text>	
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+                <text>ded_0_3</text>	
+				<next>4</next>
+				<next>5</next>
+			</phrase>
+			<phrase id="4">
+                <text>ded_0_4</text>	
+				<give_info>ded_dialog_1_done</give_info>
+				<give_info>ded_nastoyka</give_info>
+			</phrase>
+			<phrase id="5">
+                <text>ded_0_5</text>	
+				<give_info>ded_dialog_1_done</give_info>
+			</phrase>
+        </phrase_list>		
+	</dialog>	
+
+<!--Диалог 2 с Лесником ----------------------------------------------->
+	<dialog id="ded_dialog_2">
+		<dont_has_info>ded_dialog_2_done</dont_has_info> 
+		<has_info>ded_nastoyka</has_info>
+		<precondition>foto.nastoyka_have</precondition>
+	    <phrase_list>
+			<phrase id="0">
+                <text>ded_1_0</text>	
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+                <text>ded_1_1</text>	
+				<give_info>ded_dialog_2_done</give_info>
+				<action>foto.ded_evro</action>
+			</phrase>
+        </phrase_list>		
+	</dialog>		
+
+
+<!--Диалог 1 с Максом ----------------------------------------------->
+	<dialog id="max_dialog_labirint1">
+		<dont_has_info>max_dialog_1_done</dont_has_info> 
+		<has_info>max_no_entrance</has_info>
+	    <phrase_list>
+			<phrase id="0">
+                <text>max_1_0</text>	
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+                <text>max_1_1</text>	
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+                <text>max_1_2</text>	
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+                <text>max_1_3</text>	
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>max_1_4</text>	
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+                <text>max_1_5</text>	
+				<next>6</next>
+				<next>7</next>
+			</phrase>
+			<phrase id="6">
+                <text>max_1_6</text>	
+				<give_info>max_dialog_1_done</give_info>
+				<give_info>max_ruk_start</give_info>
+				<action>foto.max_antirad</action>
+			</phrase>
+			<phrase id="7">
+                <text>max_1_7</text>	
+				<give_info>max_dialog_1_done</give_info>
+			</phrase>
+        </phrase_list>		
+	</dialog>		
+
+
+<!--Диалог 2 с Максом ----------------------------------------------->
+	<dialog id="max_dialog_labirint2">
+		<dont_has_info>max_ruk_otdal</dont_has_info> 
+		<has_info>max_block_end</has_info>
+		<precondition>foto.max_ruk_have</precondition>
+	    <phrase_list>
+			<phrase id="0">
+                <text>max_2_0</text>	
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+                <text>max_2_1</text>	
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+                <text>max_2_2</text>	
+				<give_info>max_ruk_otdal</give_info>
+				<action>foto.max_transfer</action>
+			</phrase>
+        </phrase_list>		
+	</dialog>	
+
+	<!--Диалог 3 с Дуней ----------------------------------------------->
+	<dialog id="dunya_dialog_3">
+		<dont_has_info>dunya_dialog_3_done</dont_has_info> 
+		<has_info>dunya_collect_enable</has_info>
+	    <phrase_list>
+			<phrase id="0">
+                <text>dunya_3_0</text>	
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+                <text>dunya_3_1</text>	
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+                <text>dunya_3_2</text>	
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+                <text>dunya_3_3</text>	
+				<next>4</next>
+				<next>5</next>
+			</phrase>
+			<phrase id="4">
+                <text>dunya_3_4</text>	
+				<give_info>dunya_dialog_3_done</give_info>
+				<give_info>dunya_collect</give_info>
+			</phrase>
+			<phrase id="5">
+                <text>dunya_3_5</text>	
+				<give_info>dunya_dialog_3_done</give_info>
+			</phrase>
+        </phrase_list>		
+	</dialog>
+	
+	<!--Диалог 4 с Дуней ----------------------------------------------->
+	<dialog id="dunya_dialog_4">
+		<dont_has_info>dunya_collect_otdal</dont_has_info> 
+		<has_info>dunya_collect_done</has_info>
+		<precondition>boryan67.check_mutant</precondition>
+	    <phrase_list>
+			<phrase id="0">
+                <text>dunya_4_0</text>	
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+                <text>dunya_4_1</text>	
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+                <text>dunya_4_2</text>	
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+                <text>dunya_4_3</text>	
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>dunya_4_4</text>	
+				<give_info>dunya_collect_otdal</give_info>
+				<give_info>dunya_monpansie</give_info>
+				<action>boryan67.dunya_transfer_1</action>
+			</phrase>
+        </phrase_list>		
+	</dialog>
+
+	<!--Диалог 5 с Дуней ----------------------------------------------->
+	<dialog id="dunya_dialog_5">
+		<dont_has_info>dunya_monpansie_otdal</dont_has_info> 
+		<has_info>dunya_monpansie_done</has_info>
+		<precondition>boryan67.check_monpansie</precondition>
+	    <phrase_list>
+			<phrase id="0">
+                <text>dunya_5_0</text>	
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+                <text>dunya_5_1</text>	
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+                <text>dunya_5_2</text>	
+				<give_info>dunya_monpansie_otdal</give_info>
+				<action>boryan67.dunya_transfer_2</action>
+			</phrase>
+        </phrase_list>		
+	</dialog>
+	
+</game_dialogs>

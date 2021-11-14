@@ -1,0 +1,26 @@
+[logic]
+active = {-car_key1_est} ph_car@1, {+car_key1_est} ph_car@3
+
+[ph_car@1]
+usable = {=actor_has_item(key_car1)}
+show_tips = true
+tip_use = tip_car_key_use
+tip_locked = tip_car_key_locked
+on_use = {=actor_has_item(key_car1)} ph_car@2 %=cars.key_car1_used +car_key1_est =fotograf.no_move =bind_stalker.hide_weapon%
+on_death_info = dead_car_key1
+
+[ph_car@2]
+usable = false
+show_tips = false
+tip_use = tip_car_key_use
+tip_locked = tip_car_key_wait
+on_timer = 3200 | ph_car@3 %=fotograf.restore_move =bind_stalker.restore_weapon%
+on_death_info = dead_car_key1
+
+[ph_car@3]
+usable = {+car_key1_est}
+show_tips = true
+tip_use = tip_car_use
+tip_locked = tip_car_locked
+on_death_info = dead_car_key1
+on_use = %=play_snd(new\car_door)%

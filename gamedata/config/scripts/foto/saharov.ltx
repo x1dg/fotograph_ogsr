@@ -1,0 +1,188 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-sahar_start_dialog_done} camper@saharov, {+sahar_start_dialog_done} camper@saharov4
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+trade = misc\new_trader\trade_ecolog_new.ltx
+
+[camper@saharov]
+path_walk = saharov_walk
+path_look = saharov_look
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@saharov
+;on_info = {+usa_enemy} camper@saharov1 %+uchen_enemy%
+on_actor_dist_le = 3 | {-saharov_speech1 -saharov_speech2} remark@saharov1, {+saharov_speech1 -saharov_speech2} remark@saharov2, {-saharov_speech1 +saharov_speech2} remark@saharov3  
+
+[remark@saharov1]
+anim = ward
+target = actor
+snd = saharov
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@saharov
+on_signal = sound_end | camper@saharov2 %+saharov_speech1%
+
+[remark@saharov2]
+anim = ward
+target = actor
+snd = saharov2
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@saharov
+on_signal = sound_end | camper@saharov2 %-saharov_speech1 +saharov_speech2%
+
+[remark@saharov3]
+anim = ward
+target = actor
+snd = saharov3
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@saharov
+on_signal = sound_end | camper@saharov2 %+saharov_speech1 -saharov_speech2%
+
+[camper@saharov2]
+path_walk = saharov_walk
+path_look = saharov_look
+meet = meet@saharov
+combat_ignore_cond = always
+danger = danger_condition@saharov
+;on_info2 = {+usa_enemy} camper@saharov1 %+uchen_enemy%
+on_info = {+sahar_start_dialog_start -sahar_start_dialog_done} walker@saharov1, {+sahar_crystalls_dialog_start -sahar_crystalls_final} remark@cryst
+
+[remark@cryst]
+anim = ward
+target = actor
+snd = saharov_cryst
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@saharov
+on_signal = sound_end | camper@saharov22 %+sahar_crystalls_final%
+
+[camper@saharov22]
+path_walk = saharov_walk
+path_look = saharov_look
+meet = meet@saharov
+combat_ignore_cond = always
+danger = danger_condition@saharov
+;on_info = {+usa_enemy} camper@saharov1 %+uchen_enemy%
+
+[walker@saharov1]
+path_walk = saharov1_walk
+path_look = saharov1_look
+meet = no_meet
+combat_ignore_cond = always
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition@saharov
+on_signal = sahar | remark@mesto1 %+sahar_na_meste%
+
+[remark@mesto1]
+anim = ward
+target = actor
+meet = meet@saharov1
+combat_ignore_cond = always
+danger = danger_condition@saharov
+on_info = {+sahar_start_dialog_mesto} remark@mesto2
+
+[remark@mesto2]
+anim = ward
+target = saharov1_look, 0
+snd = saharov4
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@saharov
+on_signal = sound_end | remark@mesto3
+
+[remark@mesto3]
+anim = dynamite
+target = saharov1_look, 0
+snd = saharov5
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@saharov
+on_signal = sound_end | remark@mesto33
+
+[remark@mesto33]
+anim = caution
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@saharov
+on_timer = 3000 | remark@mesto4 %+zone_test_active%
+
+[remark@mesto4]
+anim = caution
+snd = saharov6
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@saharov
+on_info = {+test_kat_est} remark@mesto5 %=play_snd(ambient\new\actor_31)% 
+
+[remark@mesto5]
+anim = ward
+target = actor
+meet = meet@saharov2
+combat_ignore_cond = always
+danger = danger_condition@saharov
+on_info = {+sahar_start_dialog_done} camper@saharov3 %-zone_test_active%
+
+[camper@saharov3]
+path_walk = saharov2_walk
+path_look = saharov_look
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@saharov
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+;on_info = {+usa_enemy} camper@saharov1 %+uchen_enemy%
+on_signal = sahar2 | camper@saharov4
+
+[camper@saharov4]
+path_walk = saharov_walk
+path_look = saharov_look
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@saharov
+;on_info = {+usa_enemy} camper@saharov1 %+uchen_enemy%
+on_actor_dist_le = 3 | {-saharov_speech1 -saharov_speech2} remark@saharov1, {+saharov_speech1 -saharov_speech2} remark@saharov2, {-saharov_speech1 +saharov_speech2} remark@saharov3
+
+[camper@saharov1]
+path_walk = saharov_walk
+path_look = saharov_look
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@saharov
+
+[danger_condition@saharov]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@saharov]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[meet@saharov1]
+meet_dialog = sahar_one_dialog
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[meet@saharov2]
+meet_dialog = sahar_two_dialog
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+uchen_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+uchen_enemy%

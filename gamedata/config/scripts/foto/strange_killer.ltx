@@ -1,0 +1,53 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = camper@strange_killer
+combat_ignore = combat_ignore
+
+[camper@strange_killer]
+path_walk = strange_killer_walk
+path_look = strange_killer_look 
+combat_ignore_cond = {=check_fighting(30329)}
+danger = danger_ignore@strange_killer
+meet = no_meet
+show_spot = false
+on_timer = 1000 | remark@strange_killer
+
+[remark@strange_killer]
+anim = assault
+combat_ignore_cond = {=check_fighting(30329)}
+danger = danger_ignore@strange_killer
+meet = no_meet
+show_spot = false
+on_info = {+zub_speech_end} walker@strange_killer
+target = 30329
+
+[walker@strange_killer]
+path_walk = strange_killer_walk
+path_look = strange_killer_look 
+danger = danger_ignore@strange_killer
+meet = no_meet
+on_info = {+zub_dead} walker@strange_killer1
+
+[walker@strange_killer1]
+path_walk = strange_killer_walk1
+path_look = strange_killer_look1 
+danger = danger_ignore@strange_killer
+def_state_moving1 = sprint
+def_state_moving2 = sprint
+def_state_moving3 = sprint
+combat_ignore_cond = always
+meet = no_meet
+on_signal = killerdel | remark@del
+
+[remark@del]
+anim = sit
+on_timer = 3000| %+killer_deleted%
+danger = danger_ignore@strange_killer
+combat_ignore_cond = always
+meet = no_meet
+
+[danger_ignore@strange_killer]
+ignore_distance = 0
+ignore_distance_corpse = 0

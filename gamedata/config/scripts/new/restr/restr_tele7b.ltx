@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle@one
+
+[sr_idle@one]
+on_actor_inside = sr_idle@del 
+
+[sr_idle@del]
+on_timer = 9000 | nil %=foto2.tp7b_del =foto2.tp7_del =val_test.del_restr%

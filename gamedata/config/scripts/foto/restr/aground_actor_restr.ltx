@@ -1,0 +1,11 @@
+[logic]
+active = sr_idle@one
+
+[sr_idle@one]
+on_actor_inside = {-actor_otbrosilo -mihas_skazal} sr_idle@1, {+actor_otbrosilo} sr_idle@two
+
+[sr_idle@1]
+on_info = {+mihas_skazal} sr_idle@one 
+
+[sr_idle@two]
+on_timer = 3000 | {+actor_otbrosilo} nil %=tunnel.finish_restr%

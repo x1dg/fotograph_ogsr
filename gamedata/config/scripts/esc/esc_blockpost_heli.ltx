@@ -1,0 +1,36 @@
+[logic]
+active = heli_move@idle
+
+[heli_move@idle]
+path_move = heli_idle_move
+engine_sound = false
+combat_safe_altitude = -50
+on_info = {+esc_btr_killed -heli_uletaet} heli_move@fly, {+soldaty_enemy -heli_uletaet} heli_move@fly
+on_info2 = {+rus_btr_killed -heli_uletaet} heli_move@fly, {+usa_enemy -heli_uletaet} heli_move@fly 
+
+[heli_move@fly]
+path_move = heli_fly
+engine_sound = true
+combat_enemy = actor
+combat_use_rocket = true
+combat_use_mgun = true
+rocket_delay = 6000
+combat_safe_altitude = -50
+on_timer = 120000 | heli_move@retreat %+heli_uletaet%
+
+[heli_move@retreat]
+path_move = heli_idle_move
+engine_sound = true
+combat_enemy = nil
+combat_use_rocket = false
+combat_use_mgun = false
+mute = true
+combat_safe_altitude = -50
+on_timer = 120000 | heli_move@stop 
+
+[heli_move@stop]
+path_move = heli_idle_move
+engine_sound = false
+combat_safe_altitude = -50
+
+

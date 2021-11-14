@@ -1,0 +1,11 @@
+[logic]
+active = sr_idle@one
+
+[sr_idle@one]
+on_actor_inside = {+in_d_zone} sr_idle@2 %=play_snd(forest\new\vyhod1)% 
+
+[sr_idle@2]
+on_actor_outside = sr_idle@3 %=play_snd(forest\new\bloodsucker)%
+
+[sr_idle@3]
+on_timer = 2000 | nil %=foto2.kurs%

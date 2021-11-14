@@ -1,0 +1,63 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+combat_ignore = combat_ignore
+danger = danger_condition
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+soldaty_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+soldaty_enemy%
+
+[walker@1]
+path_walk = kladovschik_walk
+path_look = kladovschik_look
+meet = no_meet
+danger = danger_condition
+on_actor_dist_le = 5 | {-soldaty_enemy -kladovschik_start_dialog_start} remark@start, {-soldaty_enemy +kladovschik_start_dialog_start} remark@2 
+
+[remark@start]
+anim = ward
+target = actor
+snd = kladovschik
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | remark@1
+
+[remark@1]
+anim = ward
+target = actor
+meet = meet@1
+danger = danger_condition
+on_actor_dist_ge_nvis = 5 | {-soldaty_enemy} walker@1
+on_info = {+kladovschik_start_dialog_start} remark@2
+
+[remark@2]
+anim = ward
+target = actor
+meet = meet@2
+danger = danger_condition
+on_actor_dist_ge_nvis = 5 | {-soldaty_enemy} walker@1 
+
+[danger_condition]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet@1]
+meet_dialog = kladovschik_start_dialog
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[meet@2]
+meet_dialog = kladovschik_start_dialog_est
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+

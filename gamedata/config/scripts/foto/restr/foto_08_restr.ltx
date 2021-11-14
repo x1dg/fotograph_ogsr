@@ -1,0 +1,14 @@
+[logic]
+active = sr_idle@start
+
+[sr_idle@start]
+on_actor_inside = {=is_day} sr_idle@one %+sms_vzone%
+
+[sr_idle@one]
+on_actor_inside = {=actor_has_item(wpn_foto1) =camera_lock(target8)} sr_idle@two %+mozhno_delat_foto -sms_nelzya_foto -sms_nevzone%
+on_actor_outside = {=actor_has_item(wpn_foto1)} %-mozhno_delat_foto -sms_nelzya_foto +sms_nevzone -sms_vzone% sr_idle@start
+
+[sr_idle@two]
+on_actor_inside = {=actor_has_item(wpn_foto1) !camera_lock(target8)} %-mozhno_delat_foto +sms_nelzya_foto -sms_nevzone% sr_idle@one
+on_actor_outside = {=actor_has_item(wpn_foto1)} %-mozhno_delat_foto -sms_nelzya_foto +sms_nevzone -sms_vzone% sr_idle@start
+on_info = {+foto_sdelal} nil %=fotograf.spawn_foto_08 =fotograf.sms_sdelal_foto -foto_sdelal -mozhno_delat_foto -sms_vzone%

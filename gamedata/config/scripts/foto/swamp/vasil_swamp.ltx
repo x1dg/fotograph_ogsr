@@ -1,0 +1,77 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = camper@vasil_swamp
+danger = danger_condition@vasil_swamp
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[camper@vasil_swamp]
+path_walk = vasil_swamp_walk
+path_look = vasil_swamp_look
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@vasil_swamp
+;on_info = {+soldaty_enemy} camper@vasil_swamp1 %+uchen_enemy%
+on_actor_dist_le_nvis = 2.5 | {-vasil_vstretilis} remark@1, {+vasil_vstretilis} remark@2
+
+[remark@1]
+anim = ward
+target = actor
+snd = vasil1
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@vasil_swamp
+;on_info = {+soldaty_enemy} camper@vasil_swamp1 %+uchen_enemy%
+on_signal = sound_end | camper@vasil_swamp2 %+vasil_vstretilis%
+
+[remark@2]
+anim = ward
+target = actor
+snd = vasil2
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@vasil_swamp
+;on_info = {+soldaty_enemy} camper@vasil_swamp1 %+uchen_enemy%
+on_signal = sound_end | camper@vasil_swamp2
+
+[camper@vasil_swamp2]
+path_walk = vasil_swamp_walk
+path_look = vasil_swamp_look
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition@vasil_swamp
+;on_info = {+soldaty_enemy} camper@vasil_swamp1 %+uchen_enemy%
+on_actor_dist_ge_nvis = 150 | {-music_swamp01} camper@vasil_swamp3 %=mauvais.music_swamp01 +music_swamp01%
+
+[camper@vasil_swamp3]
+path_walk = vasil_swamp_walk
+path_look = vasil_swamp_look
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition@vasil_swamp
+;on_info = {+soldaty_enemy} camper@vasil_swamp1 %+uchen_enemy%
+
+[camper@vasil_swamp1]
+path_walk = vasil_swamp_walk
+path_look = vasil_swamp_look
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@vasil_swamp
+
+[danger_condition@vasil_swamp]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+uchen_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+uchen_enemy%

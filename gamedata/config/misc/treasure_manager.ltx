@@ -1,0 +1,795 @@
+ [list]
+road_secret_001
+road_secret_002
+road_secret_003
+road_secret_004
+road_secret_005
+road_secret_006
+road_secret_007
+road_secret_008
+
+mir_secret_001
+mir_secret_002
+mir_secret_003
+mir_secret_004
+mir_secret_005
+mir_secret_006
+mir_secret_007
+mir_secret_008
+mir_secret_009
+
+prom_secret_001
+prom_secret_002
+prom_secret_003
+prom_secret_004
+prom_secret_005
+prom_secret_006
+prom_secret_007
+prom_secret_008
+prom_secret_009
+prom_secret_010
+prom_secret_011
+
+dysh_secret_001
+dysh_secret_002
+dysh_secret_003
+dysh_secret_004
+dysh_secret_005
+dysh_secret_006
+
+les_secret_001
+les_secret_002
+les_secret_003
+les_secret_004
+les_secret_005
+
+mg_secret_001
+mg_secret_002
+mg_secret_003
+mg_secret_004
+mg_secret_005
+mg_secret_006
+
+bol_secret_001
+bol_secret_002
+bol_secret_003
+bol_secret_004
+bol_secret_005
+
+agru_secret_bandit_obschak
+agru_secret_rucksack_corner
+agru_secret_box_bloodsucker
+agru_secret_box_habar
+agru_secret_mole_cave
+  
+x16_secret_0000
+x16_secret_0001
+ 
+pri_secret_0000
+pri_secret_0001
+pri_secret_0002
+pri_secret_0003
+pri_secret_0004
+
+x18_secret_0000
+x18_secret_0001
+
+bar_secret_0000
+bar_secret_0001
+bar_secret_0002
+bar_secret_0003
+bar_secret_0004
+bar_secret_0005
+bar_secret_0006
+bar_secret_0007
+bar_secret_0008
+bar_secret_0009
+bar_secret_0010
+bar_secret_0011
+bar_secret_0012
+bar_secret_0013
+bar_secret_0014
+bar_secret_0015
+bar_secret_0016
+bar_secret_0017
+bar_secret_0018
+bar_secret_0019
+
+;----------------- Road -----------------
+
+[road_secret_001]
+target = 5000
+name = road_secret_001_name
+description = road_secret_001_descr
+items = ammo_5.45x39_ap, 30,ammo_7.62x39_ap, 2,medkit_army, paek1 
+condlist = {=actor_on_level(hiding_road)} 4, {=actor_on_level(swamp)} 3
+community = military, ecolog, bratok, newstalk
+
+[road_secret_002]
+target = 5001
+name = road_secret_002_name
+description = road_secret_002_descr
+items = ammo_4.6x30, bandage, 2,conserva, 3,ammo_9x18_pmm, 40, wpn_pb, ogirki 
+condlist = {=actor_on_level(hiding_road)} 3
+community = stalker, newstalk, bratok, maroder, zombied
+
+[road_secret_003]
+target = 5002
+name = road_secret_003_name
+description = road_secret_003_descr
+items = bandit_outfit, ammo_4.6x30, 2,medkit,ammo_7.62x39_fmj, 2, sguschenka 
+condlist = 2
+community = stalker, newstalk, maroder, military
+
+[road_secret_004]
+target = 5003
+name = road_secret_004_name
+description = road_secret_004_descr
+items = ammo_5.45x39_ap, 30, medkit_army, 2, specops_outfit, ammo_7.62x25_p, 3, oreh 
+condlist = {=actor_on_level(hiding_road)} 3,{=actor_on_level(swamp)} 5
+community = military, ecolog
+
+[road_secret_005]
+target = 5004
+name = road_secret_005_name
+description = road_secret_005_descr
+items = bandage, 5, ammo_9x19_pbp, 80, ammo_7.62x25_p, 3, ammo_7.62x51_fmj, 2, zel_goroshek 
+condlist = 3 
+community = stalker, newstalk, maroder, freedom, killer
+
+[road_secret_006]
+target = 5005
+name = road_secret_006_name
+description = road_secret_006_descr
+items = bandage, 5, ammo_9x19_pbp, 40, ammo_7.62x51_fmj, 2, medkit, 2, shprots 
+condlist = 3
+community = stalker, newstalk, military, bandit, killer
+
+[road_secret_007]
+target = 5041
+name = road_secret_007_name
+description = road_secret_007_descr
+items = ammo_4.6x30, 2, energy_drink, 3, wpn_addon_grenade_launcher, ammo_vog-25, 2, medkit_army 
+condlist = {=npc_rank(veteran)} 3, {=npc_rank(master)} 2
+community = military, newstalk, maroder, stalker, freedom
+
+[road_secret_008]
+target = 5042
+name = road_secret_008_name
+description = road_secret_008_descr
+items = ammo_11.43x23_fmj, 60, vodka, 2, wpn_addon_grenade_launcher_m203, ammo_m209, 2, medkit_army, 2, pashtet 
+condlist = {=npc_rank(veteran)} 2, {=npc_rank(master)} 1
+community = bandit, maroder, stalker, newstalk, freedom
+
+;----------------- Mir -----------------
+
+[mir_secret_001]
+target = 5006
+name = mir_secret_001_name
+description = mir_secret_001_descr
+items = bandage, 2, ammo_7.62x39_fmj, 2, ammo_9x19_pbp, 80, medkit, 2, ogirki  
+condlist = 3
+community = stalker, newstalk, usa, killer 
+
+[mir_secret_002]
+target = 5007
+name = mir_secret_002_name
+description = mir_secret_002_descr
+items = bandage, 3, bandit_outfit, wpn_mp5, ammo_4.6x30, 2, gribki
+condlist = {=npc_rank(novice) =npc_rank(experienced)} 3
+community = bandit, bratok, maroder, stalker, zombied
+
+[mir_secret_003]
+target = 5008
+name = mir_secret_003_name
+description = mir_secret_003_descr
+items = novice_outfit, wpn_walther, ammo_9x19_pbp, 40, ammo_12.7x54, 2, sguschenka 
+condlist = 3
+community = stalker, newstalk, usa, bratok, maroder
+
+[mir_secret_004]
+target = 5009
+name = mir_secret_004_name
+description = mir_secret_004_descr
+items = stalker_outfit, ammo_6x35, 2, medkit, paek1, kilka 
+condlist = {=npc_rank(experienced)} 3
+community = stalker, newstalk, zombied, freedom
+
+[mir_secret_005]
+target = 5010
+name = mir_secret_005_name
+description = mir_secret_005_descr
+items = medkit, 2, bandage, 2,antirad, ammo_7.62x25_p, 2, ammo_4.6x30, tush, shprots  
+condlist = {=actor_on_level(predbannik)} 4
+community = stalker, bratok, maroder, bandit
+
+[mir_secret_006]
+target = 5011
+name = mir_secret_006_name
+description = mir_secret_006_descr
+items = medkit, bandage, 2, antirad, 3, energy_drink, 2, ogirki 
+condlist = {=npc_rank(novice)} 5,{=npc_rank(experienced)} 4
+community = stalker, newstalk, military, zombied
+
+[mir_secret_007]
+target = 5012
+name = mir_secret_007_name
+description = mir_secret_007_descr
+items = antirad, 2, medkit, 2, ammo_12x76_zhekan, 15, wpn_fort, ammo_9x18_pmm, 30,ammo_4.6x30,2, oliv 
+condlist = {=actor_on_level(predbannik) =npc_rank(novice)} 4, {=actor_on_level(predbannik) =npc_rank(experienced)} 3, {=actor_on_level(promzone) =npc_rank(novice)} 4, {=actor_on_level(promzone) =npc_rank(experienced)} 3 
+community = stalker, ecolog, usa, newstalk, military
+
+[mir_secret_008]
+target = 5455
+name = mir_secret_008_name
+description = mir_secret_008_descr
+items = grenade_f1, novice_outfit, wpn_kolt, ammo_11.43x23_hydro, 80, wpn_binoc, wpn_knife, medkit
+condlist = {=actor_on_level(predbannik) +actor_habar} 1
+community = usa
+
+[mir_secret_009]
+target = 5456
+name = mir_secret_009_name
+description = mir_secret_009_descr
+items = wpn_foto, galet, wpn_addon_silencer, wpn_walther, ammo_9x19_fmj, 40, money2   
+condlist = {=actor_on_level(predbannik) +maloy_dead} 1
+community = usa
+
+;---------------------- prom -----------------------
+
+[prom_secret_001]
+target = 5013
+name = prom_secret_001_name
+description = prom_secret_001_descr
+items = wpn_ak74, ammo_5.45x39_ap, 100, grenade_rgd5, 2,ammo_7.62x39_fmj,2, ogirki 
+condlist = 2
+community = bandit, freedom, stalker, newstalk, zombied
+
+[prom_secret_002]
+target = 5014
+name = prom_secret_002_name
+description = prom_secret_002_descr
+items = bread, 3, bandage, 5, antirad, 2, vodka, 2, conserva, galet 
+condlist = {=npc_rank(novice)} 7, {=npc_rank(experienced)} 5, {=npc_rank(veteran)} 3
+community = stalker, newstalk, bandit, zombied
+
+[prom_secret_003]
+target = 5015
+name = prom_secret_003_name
+description = prom_secret_003_descr
+items = wpn_walther, ammo_9x19_pbp, 60,ammo_4.6x30, zel_goroshek, sard  
+condlist = {=actor_on_level(promzone) =npc_rank(experienced)} 4, {=actor_on_level(hiding_road) =npc_rank(novice)} 4, {=actor_on_level(hiding_road) =npc_rank(experienced)} 3 
+community = stalker, bandit, military, zombied
+
+[prom_secret_004]
+target = 5016
+name = prom_secret_004_name
+description = prom_secret_004_descr
+items = medkit, 2, ammo_5.45x39_ap, 60,ammo_7.62x51_ap, 2, wpn_ak74u, sguschenka
+condlist = 2
+community = stalker, bandit, newstalk, freedom
+
+[prom_secret_005]
+target = 5017
+name = prom_secret_005_name
+description = prom_secret_005_descr
+items = grenade_rgd5, 2, conserva, 3, bandage, 5, medkit_army, 2,ammo_oicw,2, shprots 
+condlist = 4
+community = zombied, stalker, newstalk, bandit, killer
+
+[prom_secret_006]
+target = 5018
+name = prom_secret_006_name
+description = prom_secret_006_descr
+items = antirad, 5, ammo_7.62x25_ps, 2, ammo_7.62x39_ap, 2, gribki
+condlist = {=npc_rank(novice)} 4, {=npc_rank(experienced)} 3
+community = stalker, newstalk, bandit
+
+[prom_secret_007]
+target = 5019
+name = prom_secret_007_name
+description = prom_secret_007_descr
+items = ammo_12x76_zhekan, 20, vodka, 2, conserva, 2, grenade_rgd5, pashtet   
+condlist = {=actor_on_level(promzone) =npc_rank(experienced)} 3, {=actor_on_level(promzone) =npc_rank(novice)} 3, {=actor_on_level(swamp) =npc_rank(novice)} 5 
+community = zombied, military, stalker, freedom, bandit 
+
+[prom_secret_008]
+target = 5043
+name = prom_secret_008_name
+description = prom_secret_008_descr
+items = ammo_11.43x23_fmj, 60, vodka, 2, ammo_7.62x25_ps, 2, grenade_rgd5, 3,ammo_oicw, 2, sard 
+condlist = {=actor_on_level(promzone) =npc_rank(novice)} 4, {=actor_on_level(promzone) =npc_rank(experienced)} 3 
+community = bandit, newstalk, maroder, stalker, freedom
+
+[prom_secret_009]
+target = 5044
+name = prom_secret_009_name
+description = prom_secret_009_descr
+items = killer_outfit, ammo_12.7x99_bmg, 2,ammo_oicw, 2, ammo_12.7x54, 2, meat 
+condlist = {=npc_rank(novice)} 4, {=npc_rank(experienced)} 3, {=npc_rank(veteran)} 2 
+community = killer, zombied, newstalk
+
+[prom_secret_010]
+target = 5045
+name = prom_secret_010_name
+description = prom_secret_010_descr
+items = ammo_11.43x23_fmj, 60, wpn_colt1911, ammo_7.62x51_ap, 2, ammo_12.7x54, 2, paek2
+condlist = {=actor_on_level(promzone) =npc_rank(novice)} 3,
+{=actor_on_level(promzone) =npc_rank(experienced)} 2, {=actor_on_level(dyshlo) =npc_rank(novice)} 4, {=actor_on_level(dyshlo) =npc_rank(experienced)} 3
+community = newstalk, killer, hunter, maroder, stalker, bandit
+
+[prom_secret_011]
+target = 5046
+name = prom_secret_011_name
+description = prom_secret_011_descr
+items = grenade_rgd5, 5, ammo_oicw, 3, antirad, 3, medkit_scientic, 2, sguschenka
+condlist = {=npc_rank(experienced)} 3, {=npc_rank(veteran)} 2, {=npc_rank(master)} 1 
+community = bandit, newstalk, maroder, stalker
+
+;-----------------------dyshlo---------------------
+
+[dysh_secret_001]
+target = 5030
+name = dysh_secret_001_name
+description = dysh_secret_001_descr
+items = ammo_5.45x39_ap, 60, ammo_9x19_pbp, 40, sguschenka
+condlist = {=actor_on_level(dyshlo) =npc_rank(experienced)} 4, {=actor_on_level(dyshlo) =npc_rank(veteran)} 3
+community = stalker, killer, newstalk, bandit 
+
+[dysh_secret_002]
+target = 5031
+name = dysh_secret_002_name
+description = dysh_secret_002_descr
+items = ammo_9x19_pbp, 80, medkit, 3, ammo_12.7x99_bmg, 2, zel_goroshek
+condlist = 3
+community = stalker, newstalk, zombied
+
+[dysh_secret_003]
+target = 5032
+name = dysh_secret_003_name
+description = dysh_secret_003_descr
+items = ammo_7.62x25_p, 2, ammo_4.6x30, antirad, 2, vodka, 2, paek2
+condlist = 3
+community = zombied, bandit, killer
+
+[dysh_secret_004]
+target = 5033
+name = dysh_secret_004_name
+description = dysh_secret_004_descr
+items = wpn_ak74u, ammo_5.45x39_ap, 60, ammo_7.62x39_fmj, 2, paek1
+condlist = 2
+community = stalker, newstalk, bratok, military, freedom
+
+[dysh_secret_005]
+target = 5034
+name = dysh_secret_005_name
+description = dysh_secret_005_descr
+items = ammo_7.62x51_fmj, 2, ammo_12.7x54, 2, antirad, 3, medkit, 2, meat 
+condlist = 3
+community = stalker, newstalk, bandit, killer, zombied 
+
+[dysh_secret_006]
+target = 5035
+name = dysh_secret_006_name
+description = dysh_secret_006_descr
+items = conserva, 2, ammo_9x19_pbp, 40, energy_drink, 2, vodka, galet_s
+condlist = {=actor_on_level(promzone) =npc_rank(experienced)} 3, {=actor_on_level(dyshlo) =npc_rank(novice)} 5, {=actor_on_level(predbannik) =npc_rank(novice)} 5 
+community = stalker, bandit, newstalk, killer, bratok
+
+;------------------------ les -------------------
+
+[les_secret_001]
+target = 5036
+name = les_secret_001_name
+description = les_secret_001_descr
+items = ammo_7.62x51_fmj, 2,ammo_12.7x54, 2, medkit, bread, 2, kolbasa, galet, sard  
+condlist = {=npc_rank(novice)} 4, {=npc_rank(experienced)} 3, {=npc_rank(veteran)} 2, {=npc_rank(master)} 1 
+community = stalker, bandit, newstalk, hunter, bratok, maroder
+
+[les_secret_002]
+target = 5037
+name = les_secret_002_name
+description = les_secret_002_descr
+items = medkit, bandage, 2, conserva, 2, bread, vodka, 2, gribki 
+condlist = {=npc_rank(novice)} 4, {=npc_rank(experienced)} 3, {=npc_rank(veteran)} 2, {=npc_rank(master)} 1
+community = stalker, bandit, newstalk, hunter, freedom, maroder
+
+[les_secret_003]
+target = 5038
+name = les_secret_003_name
+description = les_secret_003_descr
+items = ammo_5.45x39_ap, 45, wpn_addon_silencer, ammo_7.62x39_fmj, 2, oreh
+condlist = {=actor_on_level(aver) =npc_rank(experienced)} 4, {=actor_on_level(aver) =npc_rank(veteran)} 3, {=actor_on_level(aver) =npc_rank(master)} 2
+community = stalker, newstalk, hunter, maroder 
+
+[les_secret_004]
+target = 5039
+name = les_secret_004_name
+description = les_secret_004_descr
+items = vodka, bread, ammo_7.62x39_fmj, 2, ammo_6x35, 2, medkit, pringles 
+condlist = {=npc_rank(experienced)} 5, {=npc_rank(veteran)} 4, {=npc_rank(master)} 2
+community = stalker, newstalk, hunter
+
+[les_secret_005]
+target = 5040
+name = les_secret_005_name
+description = les_secret_005_descr
+items = medkit, 2, ammo_9x19_pbp, 40, wpn_walther, antirad, 2, wpn_addon_sil_556_ar, ogirki 
+condlist = {=actor_on_level(aver) =npc_rank(experienced)} 4, {=actor_on_level(aver) =npc_rank(novice)} 5, {=actor_on_level(aver) =npc_rank(veteran)} 3, {=actor_on_level(aver) =npc_rank(master)} 2 
+community = hunter, bandit, newstalk, military
+
+;------------------------mg-----------------------
+
+[mg_secret_001]
+target = 5052
+name = mg_secret_001_name
+description = mg_secret_001_descr
+items = ammo_4.6x30, 2, energy_drink, 2, wpn_addon_grenade_launcher, ammo_vog-25, 2, paek2  
+condlist = {=npc_rank(experienced)} 3, {=npc_rank(veteran)} 2
+community = hunter, bandit, newstalk, maroder, stalker, zombied
+
+[mg_secret_002]
+target = 5053
+name = mg_secret_002_name
+description = mg_secret_002_descr
+items = ammo_11.43x23_fmj, 60, vodka, wpn_addon_grenade_launcher_m203, ammo_m209, 2, paek1 
+condlist = {=npc_rank(experienced)} 3, {=npc_rank(veteran)} 2
+community = bandit, newstalk, maroder, stalker, freedom, zombied
+
+[mg_secret_003]
+target = 5054
+name = mg_secret_003_name
+description = mg_secret_003_descr
+items = ammo_5.45x39_fmj, 60, vodka, ammo_7.62x25_ps, 2, grenade_rgd5, 3, ammo_oicw, 2, galet_s
+condlist = {=actor_on_level(deadcity) =npc_rank(novice)} 5, {=actor_on_level(deadcity) =npc_rank(experienced)} 4, {=actor_on_level(deadcity) =npc_rank(veteran)} 3 
+community = bandit, newstalk, maroder, stalker, hunter, 
+
+[mg_secret_004]
+target = 5055
+name = mg_secret_004_name
+description = mg_secret_004_descr
+items = killer_outfit, ammo_5.45x39_fmj, 90, medkit, 2, ammo_12.7x54, 2, pringles, sard  
+condlist = {=npc_rank(novice)} 4, {=npc_rank(experienced)} 3, {=npc_rank(veteran)} 2 
+community = killer, zombied
+
+[mg_secret_005]
+target = 5056
+name = mg_secret_005_name
+description = mg_secret_005_descr
+items = ammo_11.43x23_fmj, 60, wpn_colt1911, ammo_7.62x51_ap, 2, ammo_12.7x54, 2, oliv 
+condlist = {=actor_on_level(deadcity) =npc_rank(novice)} 4,
+{=actor_on_level(deadcity) =npc_rank(experienced)} 3, {=actor_on_level(dyshlo) =npc_rank(novice)} 5, {=actor_on_level(promzone) =npc_rank(experienced)} 3
+community = newstalk, killer, hunter, maroder, stalker, bandit
+
+[mg_secret_006]
+target = 5057
+name = mg_secret_006_name
+description = mg_secret_006_descr
+items = grenade_rgd5, 5, ammo_oicw, 3, antirad, 3, medkit_scientic, ammo_5.45x39_fmj, 60, meat 
+condlist = {=npc_rank(experienced)} 3, {=npc_rank(veteran)} 2, {=npc_rank(master)} 1 
+community = bandit, newstalk, maroder, killer
+
+;----------------------- bol ---------------------
+
+[bol_secret_001]
+target = 5047
+name = bol_secret_001_name
+description = bol_secret_001_descr
+items = ammo_7.62x54_ap, 60, bandage, 3, medkit, ammo_7.62x39_ap, 2, paek1 
+condlist = {=actor_on_level(swamp) =npc_rank(novice)} 5, {=actor_on_level(swamp) =npc_rank(experienced)} 4, {=actor_on_level(swamp) =npc_rank(veteran)} 3
+community = newstalk, stalker, military, ecolog
+
+[bol_secret_002]
+target = 5048
+name = bol_secret_002_name
+description = bol_secret_002_descr
+items = kolbasa, 2, bread, 3, bandage, 5, antirad, 2, medkit_scientic, ogirki 
+condlist = 4
+community = newstalk, stalker, military, maroder, bandit
+
+[bol_secret_003]
+target = 5049
+name = bol_secret_003_name
+description = bol_secret_003_descr
+items = grenade_rgd5, 2, antirad, 2, medkit_army, ammo_7.62x39_fmj, 2,ammo_7.62x25_p, 2, kilka, pashtet 
+condlist = {=npc_rank(experienced)} 4, {=npc_rank(veteran)} 3, {=npc_rank(master)} 2 
+community = bandit, newstalk, maroder, military, stalker
+
+[bol_secret_004]
+target = 5050
+name = bol_secret_004_name
+description = bol_secret_004_descr
+items = wpn_addon_silencer, ammo_9x19_pbp, 60, ammo_5.45x39_fmj, 2, wpn_ak74u, galet, zel_goroshek  
+condlist = {=npc_rank(experienced)} 4, {=npc_rank(veteran)} 3, {=npc_rank(master)} 2 
+community = newstalk, maroder, military, stalker
+
+[bol_secret_005]
+target = 5051
+name = bol_secret_005_name
+description = bol_secret_005_descr
+items = medkit_army, ammo_7.62x39_fmj, 2, ammo_7.62x51_fmj, 2, shprots, tush  
+condlist = {=npc_rank(novice)} 5, {=npc_rank(experienced)} 4, {=npc_rank(veteran)} 3, {=npc_rank(master)} 2 
+community = newstalk, maroder, stalker
+
+;----------------- Agr_underground -----------------
+
+[agru_secret_bandit_obschak]
+target = 5100
+name = agr_u_secret_0000_name
+description = agr_u_secret_0000_descr
+items = wpn_ak74u, ammo_5.45x39_ap, 60, bandage, 2, ammo_7.62x39_fmj, 2, sguschenka 
+condlist = {=npc_rank(novice)} 4, {=npc_rank(experienced)} 3, {=npc_rank(master)} 2
+community = stalker, maroder, newstalk
+
+[agru_secret_rucksack_corner]
+target = 5101
+name = agr_u_secret_0001_name
+description = agr_u_secret_0001_descr
+items = conserva, 3, vodka, 2, energy_drink, 2, bread, kolbasa, 2, oreh 
+condlist = 3
+community = bandit, maroder, stalker, newstalk
+
+[agru_secret_box_bloodsucker]
+target = 5102
+name = agr_u_secret_0002_name
+description = agr_u_secret_0002_descr
+items = ammo_7.62x39_fmj, 2, medkit, kolbasa, 2, meat 
+condlist = {=npc_rank(novice)} 4, {=npc_rank(experienced)} 3
+community = stalker, newstalk, hunter
+
+[agru_secret_box_habar]
+target = 5103
+name = agr_u_secret_0003_name
+description = agr_u_secret_0003_descr
+items = ammo_5.45x39_ap, 60, wpn_ak74, medkit, pashtet, galet_s  
+condlist = {=npc_rank(experienced)} 4, {=npc_rank(veteran)} 3
+community = bandit, maroder
+
+[agru_secret_mole_cave]
+target = 5104
+name = agr_u_secret_0004_name
+description = agr_u_secret_0004_descr
+items = wpn_ak47, ammo_7.62x39_ap, 2, galet, gribki, sard   
+condlist = {=npc_rank(experienced)} 4, {=npc_rank(veteran)} 3
+community = stalker, newstalk, hunter
+
+;-----------------------X-18---------------------
+
+[x18_secret_0000]
+target = 5433
+name = x18_secret_0000_name
+description = x18_secret_0000_description
+items = vodka, 2, protection_outfit, ammo_5.45x39_ap, 2, ammo_oicw, 2, galet_s, oliv  
+condlist = 2
+community = newstalk, hunter, ecolog
+
+[x18_secret_0001]
+target = 5434
+name = x18_secret_0001_name
+description = x18_secret_0001_description
+items = bandage, 5, medkit_army, 2, wpn_walther, ammo_9x19_pbp, 40, paek2, gribki  
+condlist = 3
+community = newstalk, bandit, stalker, maroder
+
+;------------------------bar-----------------------
+
+[bar_secret_0000]
+target = 5435
+name = bar_secret_0000_name
+description = bar_secret_0000_description
+items = conserva, 2, bandage, 3, medkit, 2, ammo_oicw, 2, paek1 
+condlist = {=npc_rank(novice)} 5, {=npc_rank(experienced)} 4, {=npc_rank(veteran)} 3
+community = stalker, newstalk
+
+[bar_secret_0001]
+target = 5436
+name = bar_secret_0001_name
+description = bar_secret_0001_description
+items = kolbasa, 2, vodka, 2, bandage, 3, bread, 3, medkit, oreh 
+condlist = {=npc_rank(novice)} 5, {=npc_rank(experienced)} 4, {=npc_rank(veteran)} 3
+community = stalker, newstalk
+
+[bar_secret_0002]
+target = 5437
+name = bar_secret_0002_name
+description = bar_secret_0002_description
+items = conserva, 3, vodka, 2, ammo_7.62x39_ap, 2, shprots 
+condlist = {=npc_rank(novice)} 5, {=npc_rank(experienced)} 4, {=npc_rank(veteran)} 3
+community = stalker, newstalk
+
+[bar_secret_0003]
+target = 5438
+name = bar_secret_0003_name
+description = bar_secret_0003_description
+items = kolbasa, vodka, bread, 3, bandage, 5, antirad, 2, ammo_7.62x51_ap, 2, zel_goroshek 
+condlist = {=npc_rank(experienced)} 4
+community = stalker, newstalk
+
+[bar_secret_0004]
+target = 5439
+name = bar_secret_0004_name
+description = bar_secret_0004_description
+items = medkit_army, bandage, 4, grenade_rgd5, 3, ammo_5.45x39_ap, 90, ammo_5.45x39_fmj, 60, paek1 
+condlist = {=npc_rank(novice)} 5, {=npc_rank(experienced)} 4, {=npc_rank(veteran)} 3
+community = stalker, newstalk
+
+[bar_secret_0005]
+target = 5440
+name = bar_secret_0005_name
+description = bar_secret_0005_description
+items = vodka, ammo_7.62x39_fmj, 2, ammo_6x35, 2, kilka, 2, sard  
+condlist = {=npc_rank(novice)} 5, {=npc_rank(experienced)} 4, {=npc_rank(veteran)} 3
+community = stalker, newstalk
+
+[bar_secret_0006]
+target = 5441
+name = bar_secret_0006_name
+description = bar_secret_0006_description
+items = wpn_bm16, ammo_12x76_zhekan, 18, vodka, 2, medkit, galet, oliv  
+condlist = {=npc_rank(novice)} 4, {=npc_rank(experienced)} 3, {=npc_rank(veteran)} 2
+community = stalker, newstalk
+
+[bar_secret_0007]
+target = 5442
+name = bar_secret_0007_name
+description = bar_secret_0007_description
+items = kolbasa, 2, bread, 3, bandage, 5, antirad, 2, ammo_12.7x99_bmg, 2, ammo_12.7x54, shprots 
+condlist = {=npc_rank(novice)} 5, {=npc_rank(experienced)} 4, {=npc_rank(veteran)} 3
+community = stalker, newstalk
+
+[bar_secret_0008]
+target = 5443
+name = bar_secret_0008_name
+description = bar_secret_0008_description
+items = ammo_12x76_zhekan, 20, ammo_12.7x54, 2, ogirki, tush  
+condlist = {=npc_rank(novice)} 5, {=npc_rank(experienced)} 4, {=npc_rank(veteran)} 3
+community = stalker, newstalk
+
+[bar_secret_0009]
+target = 5444
+name = bar_secret_0009_name
+description = bar_secret_0009_description
+items = wpn_addon_scope, ammo_7.62x54_7h14, 5, sguschenka 
+condlist = {=npc_rank(veteran)} 5
+community = stalker, newstalk
+
+[bar_secret_0010]
+target = 5445
+name = bar_secret_0010_name
+description = bar_secret_0010_description
+items = vodka, 2, ammo_7.62x51_ap, 2, ammo_7.62x39_fmj, 2, gribki 
+condlist = {=npc_rank(novice)} 5, {=npc_rank(experienced)} 4, {=npc_rank(veteran)} 3
+community = stalker, newstalk
+
+[bar_secret_0011]
+target = 5446
+name = bar_secret_0011_name
+description = bar_secret_0011_description
+items = wpn_sig550, ammo_5.56x45_ap, 90, ammo_5.56x45_ss190, 60, ammo_m209, 3, pashtet 
+condlist = {=npc_rank(master)} 2
+community = stalker, newstalk
+
+[bar_secret_0012]
+target = 5447
+name = bar_secret_0012_name
+description = bar_secret_0012_description
+items = ammo_oicw, 3, ammo_7.62x39_fmj, 3, paek1, sard  
+condlist = {=npc_rank(veteran)} 3
+community = stalker, newstalk
+
+[bar_secret_0013]
+target = 5448
+name = bar_secret_0013_name
+description = bar_secret_0013_description
+items = ammo_5.45x39_fmj, 60, ammo_9x39_pab9, 60, ammo_vog-25p, 3,ammo_4.6x30, 2, oreh  
+condlist = {=npc_rank(veteran)} 4
+community = newstalk
+
+[bar_secret_0014]
+target = 5449
+name = bar_secret_0014_name
+description = bar_secret_0014_description
+items = ammo_11.43x23_hydro, 20, ammo_7.62x51_fmj, 2, galet_s
+condlist = {=npc_rank(novice)} 5, {=npc_rank(experienced)} 4, {=npc_rank(veteran)} 3 
+community = stalker, newstalk
+
+[bar_secret_0015]
+target = 5450
+name = bar_secret_0015_name
+description = bar_secret_0015_description
+items = grenade_f1, 3, ammo_12.7x54, 2, ammo_7.62x39_ap, 2, zel_goroshek
+condlist = {=npc_rank(experienced)} 5, {=npc_rank(veteran)} 3
+community = stalker, bandit, killer, newstalk
+
+[bar_secret_0016]
+target = 5451
+name = bar_secret_0016_name
+description = bar_secret_0016_description
+items = ecolog_outfit, ammo_12.7x54, 2, ammo_7.62x39_fmj, 2, meat 
+condlist = {=npc_rank(veteran)} 5
+community = stalker, ecolog, newstalk, maroder
+
+[bar_secret_0017]
+target = 5452
+name = bar_secret_0017_name
+description = bar_secret_0017_description
+items = antirad, 3, ammo_6x35, 2, ammo_7.62x25_p, 3, ogirki 
+condlist = {=npc_rank(novice)} 5, {=npc_rank(experienced)} 3, {=npc_rank(veteran)} 2
+community = stalker, newstalk
+
+[bar_secret_0018]
+target = 5453
+name = bar_secret_0018_name
+description = bar_secret_0018_description
+items = novice_outfit, bandage, 2, ammo_7.62x25_p, 2, sard, shprots 
+condlist = {=npc_rank(novice)} 4, {=npc_rank(experienced)} 3
+community = stalker, newstalk
+
+[bar_secret_0019]
+target = 5454
+name = bar_secret_0019_name
+description = bar_secret_0019_description
+items = svoboda_light_outfit, ammo_7.62x39_fmj, 2, gribki
+condlist = {=npc_rank(veteran)} 3
+community = stalker, freedom, newstalk
+
+;-------------------------X-16---------------------------
+
+[x16_secret_0000]
+target = 5243
+name = x16_secret_0000_name
+description = x16_secret_0000_description
+items = wpn_val, ammo_9x39_pab9, 60, antirad, 5,ammo_12.7x54, 2, paek2 
+condlist = {=npc_rank(veteran)} 4, {=npc_rank(master)} 3
+community = stalker, newstalk, bandit, freedom, zombied
+
+[x16_secret_0001]
+target = 5244
+name = x16_secret_0001_name
+description = x16_secret_0001_description
+items = ammo_7.62x39_fmj, 2, ammo_7.62x51_fmj, 2, wpn_vintorez, ammo_9x39_pab9, 60, paek1
+condlist = {=npc_rank(veteran)} 3, {=npc_rank(master)} 2
+community = newstalk, zombied
+
+;--------------------------prip--------------------------
+
+[pri_secret_0000]
+target = 5251
+name = pri_secret_0000_name
+description = pri_secret_0000_description
+items = ammo_5.56x45_ap, 120, ammo_9x39_sp5, 100, ammo_7.62x39_fmj, 3, antirad, 2, oreh 
+condlist = {=npc_rank(veteran)} 3, {=npc_rank(master)} 2
+community = stalker, bandit, newstalk, killer
+
+[pri_secret_0001]
+target = 5252
+name = pri_secret_0001_name
+description = pri_secret_0001_description
+items = bandit_master_outfit, ammo_12.7x54, 3, medkit_scientic, antirad, 2, meat, galet 
+condlist = {=npc_rank(veteran)} 4, {=npc_rank(master)} 3
+community = stalker, newstalk, bandit, zombied
+
+[pri_secret_0002]
+target = 5253
+name = pri_secret_0002_name
+description = pri_secret_0002_description
+items = wpn_marshall_12, ammo_12x76_zhekan, 20, medkit_army, 2, pashtet, ogirki  
+condlist = {=npc_rank(veteran)} 3, {=npc_rank(master)} 2
+community = newstalk, bandit, hunter, killer
+
+[pri_secret_0003]
+target = 5254
+name = pri_secret_0003_name
+description = pri_secret_0003_description
+items = ecolog_outfit, ammo_7.62x39_fmj, 4, medkit_scientic, sguschenka, oreh 
+condlist = {=npc_rank(veteran)} 3, {=npc_rank(master)} 2
+community = stalker, newstalk, maroder, killer 
+
+[pri_secret_0004]
+target = 5255
+name = pri_secret_0004_name
+description = pri_secret_0004_description
+items = wpn_g36, ammo_5.56x45_ap, 90, ammo_m209, 4, medkit_scientic, 2, pringles, galet_s  
+condlist = {=npc_rank(veteran)} 4, {=npc_rank(master)} 3
+community = stalker, newstalk, hunter, killer
+

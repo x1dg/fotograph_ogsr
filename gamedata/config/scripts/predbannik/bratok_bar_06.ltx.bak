@@ -1,0 +1,60 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@bratok_bar_06
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@bratok_bar_06]
+path_walk = bratok_bar_06_walk
+path_look = bratok_bar_06_look
+meet = no_meet
+danger = danger_condition
+on_info = {+bratok_enemy} walker@bratok_bar_066
+on_actor_dist_le_nvis = 18 | {+ohrana_otoshel -gulyaka_est -shluha_est -parikmaher_est} remark@1, {+gulyaka_est -shluha_est -parikmaher_est} remark@2, {-gulyaka_est +shluha_est -parikmaher_est} remark@3, {-gulyaka_est -shluha_est +parikmaher_est} remark@1  
+
+[remark@1]
+target = 30340
+snd = gulyaka
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | remark@2 %+gulyaka_est -parikmaher_est%
+on_actor_dist_ge_nvis = 150 | walker@bratok_bar_06 %+gulyaka_est -parikmaher_est%
+on_info = {+bratok_enemy} walker@bratok_bar_066
+
+[remark@2]
+target = 30340
+meet = no_meet
+snd = shluha
+danger = danger_condition
+on_signal = sound_end | remark@3 %+shluha_est -gulyaka_est%
+on_actor_dist_ge_nvis = 150 | walker@bratok_bar_06 %+shluha_est -gulyaka_est%
+on_info = {+bratok_enemy} walker@bratok_bar_066
+
+[remark@3]
+target = 30340
+meet = no_meet
+snd = parikmaher
+danger = danger_condition
+on_signal = sound_end | walker@bratok_bar_06 %+parikmaher_est -shluha_est%
+on_actor_dist_ge_nvis = 150 | walker@bratok_bar_06 %+parikmaher_est -shluha_est% 
+on_info = {+bratok_enemy} walker@bratok_bar_066
+
+[walker@bratok_bar_066]
+path_walk = bratok_bar_06_walk
+path_look = bratok_bar_06_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[hit]
+on_info = {=hit_by_actor} %+bratok_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+bratok_enemy%

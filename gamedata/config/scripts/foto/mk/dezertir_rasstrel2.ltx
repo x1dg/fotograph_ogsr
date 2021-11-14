@@ -1,0 +1,54 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+combat_ignore = combat_ignore
+danger = danger_condition
+on_death = death
+
+[death]
+on_info = %+dezertir_rasstrel2_dead%
+
+[walker@1]
+path_walk = dezertir_rasstrel2_walk
+path_look = dezertir_rasstrel2_look
+meet = no_meet
+def_state_standing = prisoner
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+rasstrel_mesto -rasstrel_hands_up} remark@1
+
+[remark@1]
+anim = prisoner
+target = dezertir_rasstrel2_look, 0
+meet = no_meet
+anim_reset = false
+no_move = true
+danger = danger_condition
+combat_ignore_cond = always
+on_timer = 8500 | remark@2 %+rasstrel_hands_up%
+
+[remark@2]
+anim = hands_up
+target = dezertir_rasstrel2_look, 0
+meet = no_meet
+anim_reset = false
+no_move = true
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+rasstrel_nachalo} remark@3
+
+[remark@3]
+anim = hands_up
+snd = dez_02
+target = dezertir_rasstrel2_look, 0
+meet = no_meet
+anim_reset = false
+no_move = true
+danger = danger_condition
+combat_ignore_cond = always
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0

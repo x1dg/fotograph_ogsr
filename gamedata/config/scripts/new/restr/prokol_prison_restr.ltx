@@ -1,0 +1,6 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = {!outfit_active(kont_skin) -kont_enemy -kont_knife -kont_pahan} nil %+kont_enemy%
+on_info = {+kont_enemy} nil %=val_test.del_restr%

@@ -1,0 +1,14 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = {+flesh_in} sr_idle@1
+
+[sr_idle@1]
+on_timer = 4000 | {=actor_alive} sr_idle@2 %=play_snd(ambient\new\actor_about_killer)%
+
+[sr_idle@2]
+on_timer = 5000 | {=actor_alive} sr_idle@3 %=foto2.sms_sah_flesh%
+
+[sr_idle@3]
+on_timer = 35000 | {=actor_alive} nil %=foto2.sms_flesh_back +flesh_in1%

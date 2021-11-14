@@ -1,0 +1,23 @@
+[logic]
+active = remark@1
+combat_ignore = combat_ignore
+danger = danger_condition
+on_death = death
+
+[remark@1]
+anim = assault
+target = actor
+meet = no_meet 
+danger = danger_condition
+ 
+[danger_condition]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[death]
+on_info = {=killed_by_actor} %+maroder_prom_02_dead%

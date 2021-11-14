@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding="windows-1251" ?>
+
+<game_information_portions>
+
+<info_portion id="lch_aver_bar_test"></info_portion>
+<info_portion id="test_restr_foto"></info_portion>
+<info_portion id="test_kristalls_levsha"></info_portion>
+<info_portion id="test_kat_est"></info_portion>
+
+---------------------group_01---------------------
+
+<info_portion id="ex_transform_rec_ks_absolut_12">
+<article>absolut_01</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_absolut_08">
+<article>absolut_02</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_absolut_04">
+<article>absolut_03</article>
+</info_portion>
+
+---------------------group_02---------------------
+
+<info_portion id="ex_transform_rec_ks_absolut_07">
+<article>absolut_04</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_absolut_10">
+<article>absolut_05</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_absolut_09">
+<article>absolut_06</article>
+</info_portion>
+
+---------------------group_03---------------------
+
+<info_portion id="ex_transform_rec_ks_absolut_05">
+<article>absolut_07</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_absolut_11">
+<article>absolut_08</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_absolut_06">
+<article>absolut_09</article>
+</info_portion>
+
+---------------------group_04---------------------
+
+<info_portion id="ex_transform_rec_ks_absolut_03">
+<article>absolut_10</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_absolut_01">
+<article>absolut_11</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_absolut_02">
+<article>absolut_12</article>
+</info_portion>
+
+---------------------group_05---------------------
+
+<info_portion id="ex_transform_rec_ks_talisman_01">
+<article>talisman_01</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_talisman_02">
+<article>talisman_02</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_talisman_03">
+<article>talisman_03</article>
+</info_portion>
+
+---------------------group_06---------------------
+
+<info_portion id="ex_transform_rec_ks_talisman_04">
+<article>talisman_04</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_talisman_05">
+<article>talisman_05</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_talisman_06">
+<article>talisman_06</article>
+</info_portion>
+
+---------------------group_07---------------------
+
+<info_portion id="ex_transform_rec_ks_obereg_01">
+<article>obereg_01</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_obereg_02">
+<article>obereg_02</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_obereg_03">
+<article>obereg_03</article>
+</info_portion>
+
+---------------------group_08---------------------
+
+<info_portion id="ex_transform_rec_ks_obereg_04">
+<article>obereg_04</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_obereg_05">
+<article>obereg_05</article>
+</info_portion>
+<info_portion id="ex_transform_rec_ks_obereg_06">
+<article>obereg_06</article>
+</info_portion>
+
+------------------------end-----------------------
+
+</game_information_portions>

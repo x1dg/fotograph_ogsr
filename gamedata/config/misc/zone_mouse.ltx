@@ -1,0 +1,110 @@
+[zone_mouse]
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\mouse_ghost"
+$prefetch 		= 16
+class			= Z_MBALD
+
+ef_anomaly_type			= 1
+ef_weapon_type			= 13
+
+sound			= anomaly\mouse_ghost
+postprocess		= mosquito_bald
+
+artefacts			=
+BirthProbability	= 0.0
+
+;----------- Anomaly settings -----------------------
+min_start_power		= 0.90
+max_start_power		= 1.00
+attenuation			= 1
+period				= 1
+min_artefact_count	= 0
+max_artefact_count	= 0
+
+
+idle_particles		= mauvais\mouses
+blowout_particles	=  mauvais\mouses_bolt;реакци€ на болт
+tearing_particles	= 
+torn_particles      = 
+
+hit_small_particles			= 
+hit_big_particles			= mauvais\mouses_hit;получение хита
+idle_small_particles		=
+idle_big_particles			= 
+entrance_small_particles	= 
+entrance_big_particles		= 
+
+tele_particles_small		= 
+tele_particles_big			= 	
+
+
+idle_sound			= anomaly\mouse_ghost;  							;посто€нный звук
+blowout_sound		= anomaly\mouse_bolt;во врем€ выброса(удара) в центре аномалии	
+hit_sound			= anomaly\no_sound		;на персонаже, когда тот получает хит
+body_tearing_sound	= anomaly\no_sound;			;звук разрывани€ трупа
+entrance_sound		= anomaly\no_sound;						;при попадании объекта в аномалию
+
+hit_type		    = strike
+hit_impulse_scale	= 0.0;0.5;0.1			;соотношение физического импульса и силы хита
+effective_radius	= 1 ;размер радиуса в процентах от оригинального, где действует зона
+
+disable_time		= 5000	;врем€ игнорировани€ неживого объекта в зоне (-1 если не нужно)
+disable_time_small	= 500		;врем€ игнорировани€ маленького неживого объекта в зоне (-1 если не нужно)
+disable_idle_time	= 100;-1	;врем€ отключени€ idle партиклов
+
+ignore_nonalive		= false
+ignore_small		= false
+ignore_artefacts	= true
+
+blowout_light		= off
+light_color		    = 0,0,0
+light_range		    = 0.0
+light_time 		    = 0.8;0.35
+light_height		= -5			;подъем источника света на высоту
+
+idle_light			= off
+idle_light_range			= 0.0
+idle_light_range_delta 		= 0.0
+idle_light_anim				= 
+idle_light_height			= -5			;подъем источника света на высоту
+
+awaking_time		= 0;1000
+blowout_time		= 1000	
+accamulate_time		= 500
+
+
+blowout_light_time		= 800
+blowout_explosion_time	= 800
+
+;параметры телекинеза дл€ зоны
+throw_in_impulse			= 4000	;сила вт€гивани€ дл€ единичной массы на рассто€нии один метр
+throw_out_impulse				= 1500			;сила выбрасывани€ взрывом
+throw_in_impulse_alive			= 600	;сила импульса вт€гивани€ дл€ живых
+throw_in_atten					= 2.2	;3;коэфф. зат€гивани€ (чем меньше, тем плавнее зат€гивает)
+throw_in_atten				= 		8;8			;коэфф. зат€гивани€ (чем меньше, тем плавнее зат€гивает)
+blowout_radius_percent		= 		0.8		;радиус (в процентах от всего радиуса) непосредственно выброса
+actor_blowout_radius_percent=		0.5
+
+tele_height				= 0.05;	3.5	;высота подъема телекинеза 
+time_to_tele			= 5000		;врем€ деражани€ объекта в воздухе
+tele_pause				= 5000		;пауза перед тем как снова подн€ть упавший объект	
+
+ignore_light		= true
+
+visible_by_detector = off
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ветер
+blowout_wind		= on
+
+blowout_wind_time_start     = 0
+blowout_wind_time_peak      = 800
+blowout_wind_time_end		= 1001; 2499
+blowout_wind_power			= 0.5			;сила поднимаего ветра (от 0 до 1), в момент blowout_wind_time_peak 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;рождение артефактов во врем€ срабатывани€
+spawn_blowout_artefacts = off   ;on

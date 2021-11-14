@@ -1,0 +1,102 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@polischuk
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@polischuk]
+path_walk = statsenko_walk
+path_look = statsenko_look
+meet = no_meet
+def_state_standing = ward
+danger = danger_condition@polischuk
+on_info = {+soldaty_enemy} walker@polischuk1
+on_info2 = {+uber_ataka_start -uber_ataka_have} walker@ataka 
+on_actor_dist_le = 3 | remark@1
+
+[remark@1]
+anim = ward
+target = actor
+snd = sledopyt
+meet = no_meet
+danger = danger_condition@polischuk
+on_info = {+soldaty_enemy} walker@polischuk1 
+on_signal = sound_end | remark@2
+
+[remark@2]
+anim = ward
+target = actor
+meet = meet
+danger = danger_condition@polischuk
+on_info = {+soldaty_enemy} walker@polischuk1
+on_info2 = {+uber_ataka_start -uber_ataka_have} walker@ataka 
+on_info3 = {+uber_ataka_done} remark@killer %=fotograf.kill_baza_nps =fotograf.no_move =bind_stalker.hide_weapon%
+
+[remark@killer]
+anim = assault
+snd = polischuk_ugroza
+target = actor
+meet = no_meet
+danger = danger_condition@polischuk
+combat_ignore_cond = always
+on_signal = sound_end | remark@streliay %=play_snd(ambient\new\actor_about_polisch)%
+
+[remark@streliay]
+anim = assault
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 2800 | remark@kill %=fotograf.spawn_brown_dva =fotograf.restore_move =bind_stalker.restore_weapon%
+
+[remark@kill]
+anim = assault
+target = actor
+meet = no_meet
+danger = danger_condition@polischuk
+combat_ignore_cond = always
+on_timer = 300 | remark@ubit %=fotograf.brown_shoot% 
+
+[remark@ubit]
+anim = assault
+target = actor
+meet = no_meet
+danger = danger_condition@polischuk
+combat_ignore_cond = always
+on_timer = 350 | %=kill%
+
+[walker@polischuk1]
+path_walk = statsenko_walk
+path_look = statsenko_look
+meet = no_meet
+danger = danger_condition@polischuk
+
+[walker@ataka]
+path_walk = statsenko_walk
+path_look = statsenko_look
+meet = no_meet
+def_state_standing = ward
+combat_ignore_cond = always
+danger = danger_condition@polischuk
+on_info = {+soldaty_enemy} walker@polischuk1
+on_info2 = {+uber_ataka_have} walker@polischuk
+
+[danger_condition@polischuk]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+soldaty_enemy%
+on_info2 = {+uber_ataka_done} %=kill%
+
+[death]
+on_info = {=killed_by_actor} %+soldaty_enemy%
+on_info2 = %+polischuk_dead%

@@ -1,0 +1,145 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@shepel_snd
+combat_ignore = combat_ignore
+
+[walker@shepel_snd]
+path_walk = shepel_walk
+path_look = shepel_look
+meet = no_meet
+def_state_standing = ward
+danger = danger_condition@shepel
+on_actor_dist_le_nvis = 3 | remark@snd
+
+[remark@snd]
+anim = ward
+target = actor
+snd = shep_hello
+meet =  no_meet
+combat_ignore_cond = always
+danger = danger_condition@shepel
+on_signal = sound_end |  walker@shepel 
+
+[walker@shepel]
+path_walk = shepel_walk
+path_look = shepel_look
+meet = meet@shepel
+def_state_standing = ward
+danger = danger_condition@shepel
+on_info = {+korona_dropped} walker@1
+
+[walker@1]
+path_walk = shepel_walk
+path_look = shepel_look1
+meet = no_meet
+def_state_standing = ward
+danger = danger_condition@shepel
+on_timer = 1300 | walker@2
+
+[walker@2]
+path_walk = shepel_walk
+path_look = shepel_look2
+meet = no_meet
+def_state_standing = ward
+danger = danger_condition@shepel
+on_timer = 1500 | walker@3
+
+[walker@3]
+path_walk = shepel_walk
+path_look = shepel_look3
+meet = no_meet
+def_state_standing = ward
+danger = danger_condition@shepel
+on_timer = 1200 | walker@4
+
+[walker@4]
+path_walk = shepel_walk
+path_look = shepel_look1
+meet = no_meet
+def_state_standing = ward
+danger = danger_condition@shepel
+on_timer = 3000 | remark@1
+
+[remark@1]
+target = shepel_look1, 0
+snd = shep1
+meet = no_meet
+danger = danger_condition@shepel
+on_signal = sound_end | walker@shep1 %+fraza_start%
+
+[walker@shep1]
+path_walk = shepel_walk
+path_look = shepel_look1
+meet = no_meet
+def_state_standing = ward
+danger = danger_condition@shepel
+on_info = {+fraza1} walker@shep2
+
+[walker@shep2]
+path_walk = shepel_walk
+path_look = shepel_look2
+meet = no_meet
+danger = danger_condition@shepel
+on_info = {+fraza2} walker@shep3
+
+[walker@shep3]
+path_walk = shepel_walk
+path_look = shepel_look3
+meet = no_meet
+danger = danger_condition@shepel
+on_info = {+fraza3} walker@shepel1
+
+[walker@shepel1]
+path_walk = shepel_walk
+path_look = shepel_look
+meet = no_meet
+danger = danger_condition@shepel
+on_timer = 1500 | remark@2 
+
+[remark@2]
+target = shepel_look, 0
+snd = shep
+meet = no_meet
+danger = danger_condition@shepel
+on_signal = sound_end | remark@3                  
+
+[remark@3]
+anim = suicide
+target = actor
+snd = shep2
+meet = no_meet
+danger = danger_condition@shepel
+on_signal = sound_end | remark@4_1 %=play_snd(ambient\new\actor_prapor)%
+
+[remark@4_1]
+anim = suicide
+target = actor
+meet = no_meet
+danger = danger_condition@shepel
+on_timer = 1200 | remark@4 %+suic%
+
+[remark@4]
+anim = suicide
+target = actor
+snd = shep3
+meet = no_meet
+danger = danger_condition@shepel
+on_signal = sound_end | remark@5 %=foto2.valter_shot% 
+
+[remark@5]
+anim = suicide
+target = actor
+meet = no_meet
+danger = danger_condition@shepel
+on_timer =350 | %=kill +shep_dead%
+
+[danger_condition@shepel]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@shepel]
+use = true
+use_wpn = false
+meet_talk_enabled = true

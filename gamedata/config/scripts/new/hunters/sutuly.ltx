@@ -1,0 +1,84 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = camper@sutuly
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+enemy_hunter%
+
+[death]
+on_info = {=killed_by_actor} %+enemy_hunter%
+
+[camper@sutuly]
+path_walk = sutuly_walk
+path_look = sutuly_look
+meet = no_meet
+def_state_standing = ward
+danger = danger_condition@sutuly
+;combat_ignore_cond = always
+combat_ignore_cond = {=check_fighting(30218)}
+on_actor_dist_le = 5 | remark@sutuly
+
+[remark@sutuly]
+target = actor
+snd = sutuly
+meet = no_meet
+danger = danger_condition@sutuly
+;combat_ignore_cond = always
+combat_ignore_cond = {=check_fighting(30218)}
+on_signal = sound_end | {-sutuly_povodyr_dialog_start} camper@sutuly1, {+sutuly_povodyr_dialog_start -povodyr_aver_go} camper@sutuly2, {+povodyr_aver_go} camper@sutuly3
+
+[camper@sutuly1]
+path_walk = sutuly_walk
+path_look = sutuly_look
+meet = meet@sutuly
+def_state_standing = ward
+;combat_ignore_cond = always
+combat_ignore_cond = {=check_fighting(30218)}
+danger = danger_condition@sutuly
+on_info = {+sutuly_povodyr_dialog_start} remark@1
+
+[remark@1]
+target = actor
+snd = povodyr_start
+meet = no_meet
+danger = danger_condition@sutuly
+;combat_ignore_cond = always
+combat_ignore_cond = {=check_fighting(30218)}
+on_signal = sound_end | camper@sutuly2 %+povodyr_mazay%
+
+[camper@sutuly2]
+path_walk = sutuly_walk
+path_look = sutuly_look
+meet = meet@sutuly
+def_state_standing = ward
+;combat_ignore_cond = always
+combat_ignore_cond = {=check_fighting(30218)}
+danger = danger_condition
+on_info = {+povodyr_aver_go} camper@sutuly3
+
+[camper@sutuly3]
+path_walk = sutuly_walk
+path_look = sutuly_look
+meet = meet@sutuly
+def_state_standing = ward
+;combat_ignore_cond = always
+combat_ignore_cond = {=check_fighting(30218)}
+danger = danger_condition@sutuly
+
+[danger_condition@sutuly]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@sutuly]
+use = true
+use_wpn = false
+meet_talk_enabled = true

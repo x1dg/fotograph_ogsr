@@ -1,0 +1,57 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %=killactor%
+
+[death]
+on_info = {=killed_by_actor} %=killactor%
+
+[walker@1]
+path_walk = shubin_bunker_walk
+path_look = brown_bunker_walk
+meet = no_meet
+def_state_standing = caution
+danger = danger_condition
+combat_ignore_cond = always
+on_actor_dist_le_nvis = 8 | remark@1
+
+[remark@1]
+anim = hello
+target = actor
+snd = shubin2_hello
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = sound_end | walker@2
+
+[walker@2]
+path_walk = shubin_bunker_walk
+path_look = brown_bunker_look
+meet = meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+shubin_pentagramm_dialog_done} remark@2
+
+[remark@2]
+anim = hello
+target = actor
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_timer = 5000 | remark@3 %+brown_zdorov =fotograf.del_shubin2_effect =fotograf.del_shubin2%
+
+[remark@3]
+target = actor
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+
+

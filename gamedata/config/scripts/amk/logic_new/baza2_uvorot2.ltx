@@ -1,0 +1,44 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-propusk_baza2} walker@1, {+propusk_baza2} walker@2 
+combat_ignore = combat_ignore
+danger = danger_condition
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+soldaty_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+soldaty_enemy%
+
+[walker@1]
+path_walk = baza2_uvorot2_walk
+path_look = baza2_uvorot2_look
+meet = no_meet
+danger = danger_condition
+on_actor_dist_le_nvis = 12 | {-propusk_est} remark@1
+
+[remark@1]
+anim = assault
+target = actor
+meet = no_meet
+danger = danger_condition
+on_info = {+propusk_baza2} walker@2  
+
+[walker@2]
+path_walk = baza2_uvorot2_walk
+path_look = baza2_uvorot2_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

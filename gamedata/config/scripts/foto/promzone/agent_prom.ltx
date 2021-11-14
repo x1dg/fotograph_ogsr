@@ -1,0 +1,80 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-agent_prom_poshli} kamp@agent_prom_kamp, 
+{+agent_prom_poshli -agent_prom_mesto} walker@1,{+agent_prom_mesto -agent_prom_uhodit} remark@2, {+agent_prom_uhodit} walker@2
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[kamp@agent_prom_kamp]
+center_point = agent_prom_center1
+radius = 2.5
+meet = no_meet
+danger = danger_condition
+on_info = {-agent_prom_poshli} remark@1, 
+{+agent_prom_poshli -agent_prom_mesto} walker@1,{+agent_prom_mesto -agent_prom_uhodit} remark@2, {+agent_prom_uhodit} walker@2 
+
+[remark@1]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 1000 | walker@1 %+agent_prom_poshli%
+
+[walker@1]
+path_walk = agent_prom_walk
+path_look = agent_prom_look
+meet = no_meet
+danger = danger_condition
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+on_signal = agprom | remark@2 %+agent_prom_mesto%
+
+[remark@2]
+anim = probe
+target = agent_prom_look, 0
+snd = gruppa_1
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | remark@3 %+agent_prom_uhodit =y_level.lch_prom_aver%
+
+[remark@3]
+target = agent_prom_look, 0
+meet = no_meet
+danger = danger_condition@1
+on_timer = 5000 | walker@2 
+on_info = {+agent_prom_killactor} %=killactor%
+
+[walker@2]
+path_walk = agent_prom_walk1
+path_look = agent_prom_look1
+meet = no_meet
+danger = danger_condition@1
+def_state_moving1 = walk
+def_state_moving2 = walk
+def_state_moving3 = walk
+on_signal = agpromdel | %=fotograf.del_agent_prom +mousetrap_proval =play_snd(ambient\new\actor_42)%
+on_info = {+agent_prom_killactor} %=killactor%
+
+[danger_condition]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[danger_condition@1]
+ignore_distance = 50
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+agent_prom_hit +agent_prom_killactor%
+
+[death]
+on_info = %+agent_prom_dead +agent_prom_killactor%

@@ -1,0 +1,20 @@
+[logic]
+active = {-info_valprom_19 -info_valprom_20} sr_idle@one, {+info_valprom_19 -info_valprom_20} sr_idle@tri, {+info_valprom_19 +info_valprom_20} sr_idle@five
+
+[sr_idle@one]
+on_actor_inside = {+amb_prom} sr_idle@two %=play_snd(ambient\new\str_squeak_6) +info_valprom_19%
+
+[sr_idle@two]
+on_timer = 60000 | sr_idle@tri
+
+[sr_idle@tri]
+on_actor_inside = {+info_valprom_19} sr_idle@four %=play_snd(ambient\new\metal2) +info_valprom_20%
+
+[sr_idle@four]
+on_timer = 90000 | sr_idle@five
+
+[sr_idle@five]
+on_actor_inside = {+info_valprom_20} sr_idle@six %=play_snd(ambient\new\air_1) -info_valprom_19 -info_valprom_20%
+
+[sr_idle@six]
+on_timer = 120000 | sr_idle@one

@@ -1,0 +1,124 @@
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_1" name="Капитан Красавский">
+<texture x="1500" y="0" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Командир военной базы Вооруженных Сил Украины на территории Миротворческого корпуса. Печально прославился рейдами в Зону для поимки и последующего расстрела дезертировавших солдат.</text>
+ </article>
+ 
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_2" name="Генерал Смит">
+<texture x="1000" y="0" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Командир военной базы миротворцев.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_3" name="Полковник Браун">
+<texture x="750" y="0" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Заместитель генерала Смита. Занимается боевой подготовкой личного состава. Осуществляет разведывательные и контрразведывательные мероприятия на территории Зоны.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_4" name="Техник Марио">
+<texture x="1250" y="0" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Миротворец. Занимается техническим обеспечением и ремонтом оборудования и оружия. </text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_5" name="Бригадир">
+<texture x="500" y="0" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Неофициальный лидер сталкеров одиночек на территории Миротворческого корпуса. Ненавидит мародёров и гопников. Благодаря ему новички преобретают необходимый опыт для выживания в Зоне.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_6" name="Левша">
+<texture x="250" y="0" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Опытный диггер. Мастер на все руки, почему и получил такое прозвище. Но кроме этого толковый командир, способный организовать и повести за собой внешне неорганизованных одиночек. Жаль, что такое дарование скорее всего сгинет на просторах Зоны...</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_7" name="Лукаш">
+<texture x="500" y="500" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Бывший офицер ВС Украины. Обладая отличными организаторскими способностями, сколотил из дезертиров вполне боеспособную группу сталкеров.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_8" name="Шершень">
+<texture x="0" y="250" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Старший группы диггеров в Промзоне. Погиб в результате конфликта с дезертирами, вызванного нечистоплотным поведением в Зоне...</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_9" name="Эдик">
+<texture x="500" y="250" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Опытный диггер. Руководит подготовкой новичков в деревне диггеров на Испытательном полигоне. Слухи о его неоправданной жестокости скорее всего преувеличены.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_10" name="Капитан Полищук">
+<texture x="750" y="250" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Командир военной базы ВС Украины на Испытательном полигоне. Практически постоянно пьян, но караульная служба в гарнизоне поставлена неплохо, за исключением некоторых нюансов.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_11" name="Генерал Воронин">
+<texture x="750" y="500" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Командир российской военной базы на Испытательном полигоне. Опытный военный, прошедший несколько горячих точек. Умело руководит личным составом, пользуется авторитетом среди солдат и офицеров.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_12" name="Полковник Петренко">
+<texture x="1000" y="500" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Заместитель Воронина по боевой подготовке.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_13" name="Харон">
+<texture x="250" y="250" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Опытный диггер. Неоднозначная, но явно харизматичная личность.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_14" name="Михась-стихоплёт">
+<texture x="1500" y="250" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Сталкер-одиночка. Очень хорошо знает Зону, владеет секретами телепортации. Имеет явные психические отклонения, вызванные непростыми отношениями с женским полом. Несмотря на это очень опытен и может быть опасным противником.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_15" name="Профессор Сахаров">
+<texture x="1000" y="250" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Авторитетный ученый. Занимался исследованиями паранормальных явлений еще до возникновения Зоны.Постоянно находится на грани великих открытий.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_16" name="Сидорович">
+<texture x="0" y="0" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Торговец. Скупает найденный сталкерами хабар. Приторговывает оружием и снаряжением, занимается мелким ремонтом. Судя по всему является осведомителем как минимум двух спецслужб...</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_17" name="Болотный Доктор">
+<texture x="1750" y="250" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Бывший сталкер, получивший от Зоны "подарок" в виде хорошо развитых паранормальных способностей. Обладая хорошими познаниями в области медицины, занимается не только лечением попавших к нему раненых и пострадавших сталкеров, но даже оказывает помощь мутантам.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_18" name="Жила">
+<texture x="250" y="500" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Обыкновенный гопник. Пьяница и матерщинник. За бутылку водки мать родную продаст...</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_19" name="Доцент Васильев">
+<texture x="0" y="500" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Помощник Сахарова, талантливый ученый-исследователь.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_20" name="Фельдшер">
+<texture x="1250" y="500" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Помощник и последователь Болотного Доктора. По совместительству охранник и мальчик на посылках.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_21" name="Скряга">
+<texture x="1750" y="0" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Торговец и механик группировки дезертиров.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_22" name="Профессор Кайманов">
+<texture x="1250" y="250" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Ученый.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_23" name="Бритый">
+<texture x="1500" y="500" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Молодой, но достаточно опытный сталкер. Сотрудничает с руководством Миротворческого корпуса.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_24" name="Бром">
+<texture x="1750" y="500" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Опытный диггер. Во время захвата территории бара мутантами проявил силу воли и мужество, несвойственное сталкерам-одиночкам. Чуть не погиб, прикрывая отход основной группы диггеров, чем спас немало жизней.</text>
+</article>
+
+<article article_type="encyclopedia" group="Лица Зоны" id="persona_25" name="Грета">
+<texture x="0" y="750" width="250" height="250">ui\ui_npc_foto</texture>
+<text>Неизвестно, как эта девушка попала в Зону и очутилась в Баре у дяди Миши. Однако она успела стать причиной множества конфликтов между сталкерами. Несмотря на это является достаточно опытным сталкером, чтобы преодолеть в одиночку путь из Бара в заброшенный Лес и обратно...</text>
+</article>

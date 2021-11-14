@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding="windows-1251" ?>
+
+<game_information_portions>
+
+<info_portion id="mk_rupor_off"></info_portion>
+<info_portion id="tarakan"></info_portion>
+<info_portion id="tarakan_otdal"></info_portion>
+<info_portion id="noise_on">
+<action>foto2.noise_message</action>
+</info_portion>
+<info_portion id="radio_start">
+<task>radio</task>		
+</info_portion>
+<info_portion id="radio_end"></info_portion>
+<info_portion id="kayman_radio">
+<task>kaymanovu_doki</task>		
+</info_portion>
+<info_portion id="kayman_docs_est"></info_portion>
+<info_portion id="archiv_start">
+<task>archiv_pismo</task>		
+</info_portion>
+<info_portion id="archiv_proval"></info_portion>
+<info_portion id="zub_start"></info_portion>
+<info_portion id="zub_vstrecha">
+<action>foto2.strange_spawn</action>
+</info_portion>
+<info_portion id="zub_speech_end"></info_portion>
+<info_portion id="zub_dead"></info_portion>
+<info_portion id="killer_deleted">
+<action>foto2.kill_del</action>
+<action>foto2.gg_zub</action>
+</info_portion>
+<info_portion id="radio_oblom"></info_portion>
+<info_portion id="weap_on"></info_portion>
+<info_portion id="weap1"></info_portion>
+<info_portion id="weap2"></info_portion>
+<info_portion id="check_weap"></info_portion>
+<info_portion id="poet_enemy">
+<action>foto2.enemy_poet</action>
+</info_portion>
+<info_portion id="explose">
+<action>foto2.explose_gg</action>
+</info_portion>
+<info_portion id="poet_dialog">
+<task>teleport_start</task>
+<action>foto2.restr_tp1_spawn</action>
+</info_portion>
+<info_portion id="poet_docs"></info_portion>
+<info_portion id="c1_est">
+<action>foto2.restr_tp2_spawn</action>
+<action>foto2.gigant_e_spawn</action>
+</info_portion>
+<info_portion id="c2_est">
+<action>foto2.restr_tp3_spawn</action>
+</info_portion>
+<info_portion id="c3_est">
+<action>foto2.restr_tp4_spawn</action>
+</info_portion>
+<info_portion id="c4_est">
+<action>foto2.restr_tp5_spawn</action>
+<action>foto2.irokez_spawn</action>
+</info_portion>
+<info_portion id="c5_est">
+<action>foto2.restr_tp6_spawn</action>
+</info_portion>
+<info_portion id="c6_est">
+<action>foto2.restr_tp7_spawn</action>
+</info_portion>
+<info_portion id="c7_est">
+<action>foto2.restr_tp8_spawn</action>
+</info_portion>
+<info_portion id="c8_est">
+<action>foto2.restr_tp9_spawn</action>
+</info_portion>
+<info_portion id="c9_est">
+<action>foto2.restr_tp10_spawn</action>
+</info_portion>
+<info_portion id="c10_est">
+<action>foto2.restr_tp11_spawn</action>
+</info_portion>
+<info_portion id="c11_est">
+<action>foto2.restr_tp12_spawn</action>
+</info_portion>
+<info_portion id="excav"></info_portion>
+<info_portion id="obmen"></info_portion>
+<info_portion id="in_d_zone">
+<action>foto2.greta_inv_spawn</action>
+</info_portion>
+
+<info_portion id="korona_est">
+<action>foto2.trans_greta</action>
+</info_portion>
+
+<info_portion id="gretainv_del_info">
+<action>foto2.gretainv_del</action>
+</info_portion>
+
+<info_portion id="greta_vis_spawn_info">
+<action>foto2.greta_vis_spawn</action>
+</info_portion>
+
+<info_portion id="greta_dark"></info_portion>
+<info_portion id="archiv_second"></info_portion>
+<info_portion id="archiv_pismo"></info_portion>
+<info_portion id="archiv_shema">
+<action>foto2.shepel_spawn</action>		
+</info_portion>
+<info_portion id="read_pismo"></info_portion>
+<info_portion id="korona_shep">
+<action>foto2.restr_korona_spawn</action>		
+</info_portion>
+<info_portion id="korona_dropped">
+<action>foto2.sheps_spawn</action>
+<action>foto2.del_korona</action>
+</info_portion>
+<info_portion id="fraza_start"></info_portion>
+<info_portion id="fraza1"></info_portion>
+<info_portion id="fraza2"></info_portion>
+<info_portion id="fraza3"></info_portion>
+<info_portion id="shep_dead"></info_portion>
+<info_portion id="shep_del">
+<action>foto2.shep_del</action>		
+<action>foto2.shep1_del</action>
+<action>foto2.shep2_del</action>
+<action>foto2.shep3_del</action>
+</info_portion>
+<info_portion id="suic"></info_portion>
+<info_portion id="greta_inv_enemy"></info_portion>
+<info_portion id="archiv_enemy"></info_portion>
+<info_portion id="gretavis_enemy"></info_portion>
+<info_portion id="archiv_oblom"></info_portion>
+<info_portion id="kayman_oblom"></info_portion>
+<info_portion id="radio_cheat"></info_portion>
+<info_portion id="remont_oblom"></info_portion>
+<info_portion id="pnv_out">
+<action>foto2.pnv_no</action>		
+</info_portion>
+<info_portion id="pnv_in">
+<action>foto2.pnv_yes</action>		
+</info_portion>
+
+<info_portion id="brityi_skazal_1"></info_portion>
+<info_portion id="semyon_otvetil"></info_portion>
+
+<info_portion id="code_up"></info_portion>
+<info_portion id="code_used"></info_portion>
+
+<info_portion id="irokez_poehal"></info_portion>
+<info_portion id="predlozhil"></info_portion>
+<info_portion id="komb_dialog"></info_portion>
+<info_portion id="ne_poveril"></info_portion>
+<info_portion id="poveril"></info_portion>
+<info_portion id="sms_dist">
+<action>foto2.sms_spawn</action>
+</info_portion>
+<info_portion id="nashol_40"></info_portion>
+
+<info_portion id="about_fort"></info_portion>
+<info_portion id="mg_zasada_inside"></info_portion>
+<info_portion id="mg_zasada_off">
+<action>foto2.mg_zasada_del</action>
+</info_portion>
+<info_portion id="mk_zasada">
+<action>foto2.set_mk_zasada</action>
+</info_portion>
+<info_portion id="mk_zasada_inside"></info_portion>
+<info_portion id="mk_zasada_off">
+<action>foto2.mk_zasada_del</action>
+</info_portion>
+<info_portion id="zasada_close"></info_portion>
+<info_portion id="zasada_change"></info_portion>
+<info_portion id="prom_zasada">
+<action>foto2.set_prom_zasada</action>
+</info_portion>
+<info_portion id="prom_popal"></info_portion>
+<info_portion id="mg_zasada">
+<action>foto2.set_mg_zasada</action>
+</info_portion>
+<info_portion id="zub_popal"></info_portion>
+<info_portion id="zub_change"></info_portion>
+<info_portion id="start_island"></info_portion>
+<info_portion id="start_f_island">
+<action>foto2.dysh_sms</action>
+</info_portion>
+<info_portion id="task_island">
+<task>flight_island</task>
+<action>foto2.spawn_restrov</action>
+</info_portion>
+<info_portion id="d_zasad1"></info_portion>
+<info_portion id="d_zasad2"></info_portion>
+<info_portion id="d_zasad3"></info_portion>
+<info_portion id="d_zasad4"></info_portion>
+<info_portion id="d_zasad5"></info_portion>
+<info_portion id="island_collega"></info_portion>
+<info_portion id="island_fin"></info_portion>
+<info_portion id="island_oblom"></info_portion>
+<info_portion id="heli_botan">
+<action>foto2.orm_spawn</action>
+</info_portion>
+<info_portion id="enable_voice"></info_portion>
+<info_portion id="orm_healed"></info_portion>
+<info_portion id="orm_start">
+<action>mauvais.music_dyshlo04</action>
+</info_portion>
+<info_portion id="orm_mesto"></info_portion>
+<info_portion id="orm_pristupaet"></info_portion>
+<info_portion id="ormont_del">
+<action>foto2.orm_for_del</action>
+</info_portion>
+<info_portion id="island_off"></info_portion>
+<info_portion id="uhod"></info_portion>
+<info_portion id="uhod1"></info_portion>
+<info_portion id="ispug"></info_portion>
+<info_portion id="ispug1"></info_portion>
+<info_portion id="mark_shot"></info_portion>
+<info_portion id="mark_popal"></info_portion>
+<info_portion id="mark_dead"></info_portion>
+<info_portion id="mdead"></info_portion>
+<info_portion id="post_off">
+<action>foto2.island_skala</action>
+<action>foto2.check_time_ostrov</action>
+</info_portion>
+<info_portion id="saharov_island_done"></info_portion>
+<info_portion id="flesh_in"></info_portion>
+<info_portion id="flesh_in1"></info_portion>
+<info_portion id="ne_polez"></info_portion>
+<info_portion id="flesh_vzyal"></info_portion>
+<info_portion id="blastt"></info_portion>
+<info_portion id="nikogo_net"></info_portion>
+<info_portion id="shkur1"></info_portion>
+<info_portion id="shkur2"></info_portion>
+<info_portion id="shkur3"></info_portion>
+<info_portion id="shkur4">
+<action>foto2.irok_skin_spawn</action>
+</info_portion>
+<info_portion id="spalilsa"></info_portion>
+<info_portion id="shkura_start"></info_portion>
+<info_portion id="mercd1_dead"></info_portion>
+<info_portion id="mercd2_dead"></info_portion>
+<info_portion id="mercd3_dead"></info_portion>
+<info_portion id="mercd4_dead"></info_portion>
+<info_portion id="skin_irokez"></info_portion>
+<info_portion id="skin_irokez_20"></info_portion>
+<info_portion id="skin_irokez_30"></info_portion>
+<info_portion id="skin_irokez_done"></info_portion>
+<info_portion id="prokol_vhod"></info_portion>
+<info_portion id="kont_enemy">
+<action>foto2.kontry_enemy</action>
+</info_portion>
+<info_portion id="kont_enemy_less">
+<action>foto2.kontry_enemy_less</action>
+</info_portion>
+<info_portion id="skin_ended"></info_portion>
+<info_portion id="kont_gun"></info_portion>
+<info_portion id="kont_knife"></info_portion>
+<info_portion id="kont_pahan"></info_portion>
+<info_portion id="utug_sdal"></info_portion>
+<info_portion id="skin_lock"></info_portion>
+<info_portion id="utug_pomer"></info_portion>
+<info_portion id="utug_ubili"></info_portion>
+<info_portion id="skin_perehod"></info_portion>
+
+<info_portion id="block_grenade"></info_portion>
+
+<info_portion id="observer_enemy"></info_portion>
+<info_portion id="tunnel_open"></info_portion>
+<info_portion id="tunnel_transfer"></info_portion>
+
+<info_portion id="petrenko_start_dialog_start">
+<task>petrenko_poisk</task>
+</info_portion>
+<info_portion id="petrenko_start_dialog_have"></info_portion>
+<info_portion id="petrenko_start_dialog_done"></info_portion>
+<info_portion id="petrenko_dead"></info_portion>
+<info_portion id="heli_start"></info_portion>
+<info_portion id="heli_reader"></info_portion>
+<info_portion id="heli_all"></info_portion>
+
+
+</game_information_portions>
+
+
+
+
+
+
+
+

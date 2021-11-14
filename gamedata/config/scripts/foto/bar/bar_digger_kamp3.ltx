@@ -1,0 +1,57 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-levsha_start_dialog_done} kamp@bar_digger_kamp3, {+levsha_start_dialog_done} walker@2
+danger = danger_condition
+combat_ignore = combat_ignore
+
+[kamp@bar_digger_kamp3]
+center_point = kamp_bar_digger_center
+radius = 3
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+levsha_start_dialog_dig -dig_idut} remark@1
+on_info2 = {+levsha_start_dialog_dig +dig_idut -levsha_start_dialog_done} walker@1
+on_info3 = {+levsha_start_dialog_done} walker@2 
+
+[remark@1]
+target = actor
+meet = meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+dig_idut} remark@2 
+
+[remark@2]
+danger = danger_condition
+combat_ignore_cond = always
+on_timer = 18000 | walker@1
+
+[walker@1]
+path_walk = digger_03_walk
+path_look = digger_03_look
+meet = no_meet
+danger = danger_condition
+def_state_moving1 = walk
+def_state_moving2 = walk
+def_state_moving3 = walk
+on_info = {+levsha_start_dialog_done} walker@2
+
+[walker@2]
+path_walk = digger_03_walk
+path_look = digger_03_look
+meet = meet
+def_state_moving1 = walk
+def_state_moving2 = walk
+def_state_moving3 = walk
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

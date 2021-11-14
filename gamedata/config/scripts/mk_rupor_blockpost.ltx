@@ -1,0 +1,26 @@
+[logic]
+active = ph_sound@idle
+on_hit = hit
+ 
+[ph_sound@idle]
+snd = zvuka_net
+on_actor_dist_le_nvis = 70 | {-usa_enemy} ph_sound@idle1, {+usa_enemy} ph_sound@idle3
+
+[ph_sound@idle1]
+snd = mk_speech1
+on_info = {+mk_rupor_off} nil
+on_signal = sound_end | ph_sound@idle2
+on_info2 = {+usa_enemy} ph_sound@idle3
+
+[ph_sound@idle2]
+snd = mk_speech2
+on_info = {+mk_rupor_off} nil
+on_signal = sound_end | ph_sound@idle1
+on_info2 = {+usa_enemy} ph_sound@idle3
+
+[ph_sound@idle3]
+snd = alarm1
+on_info = {+mk_rupor_off} nil
+
+[hit]
+on_info = %+mk_rupor_off%

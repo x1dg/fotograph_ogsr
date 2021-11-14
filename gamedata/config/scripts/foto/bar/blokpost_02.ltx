@@ -1,0 +1,21 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+combat_ignore = combat_ignore
+danger = danger_condition
+on_death = death
+
+[walker@1]
+path_walk = blokpost_02_walk
+path_look = blokpost_02_look
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[death]
+on_info = %+blokpost_02_dead%

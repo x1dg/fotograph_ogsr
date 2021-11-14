@@ -1,0 +1,28 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@road_soldat
+on_hit = hit
+on_death = death
+
+[walker@road_soldat]
+path_walk = road_soldat_walk
+path_look = road_soldat_look
+meet = meet@road_soldat
+danger = danger_condition@road_soldat
+
+[danger_condition@road_soldat]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet@road_soldat]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%

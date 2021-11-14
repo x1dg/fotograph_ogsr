@@ -1,0 +1,62 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@road_vnutri7
+on_hit = hit
+on_death = death
+
+[walker@road_vnutri7]
+path_walk = road_vnutri7_walk
+path_look = road_vnutri7_look
+meet = no_meet
+danger = danger_condition@road_vnutri7
+on_info = {+kayman_radio -tarakan} walker@road_vnutri7_1, {+tarakan -tarakan_otdal} walker@road_vnutri7_2, {+tarakan_otdal} walker@road_vnutri7_3 
+
+[walker@road_vnutri7_1]
+path_walk = road_vnutri7_walk
+path_look = road_vnutri7_look
+meet = meet@road_vnutri7_1
+danger = danger_condition@road_vnutri7
+on_info = {+tarakan} walker@road_vnutri7_2 
+
+[walker@road_vnutri7_2]
+path_walk = road_vnutri7_walk
+path_look = road_vnutri7_look
+meet = meet@road_vnutri7_2
+danger = danger_condition@road_vnutri7
+on_info = {+tarakan_otdal} walker@road_vnutri7_3 
+
+[walker@road_vnutri7_3]
+path_walk = road_vnutri7_walk1
+path_look = road_vnutri7_look
+meet = meet@road_vnutri7
+danger = danger_condition@road_vnutri7
+
+[danger_condition@road_vnutri7]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@road_vnutri7_1]
+meet_dialog = propusti_dialog
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[meet@road_vnutri7_2]
+meet_dialog = prohodi_dialog
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[meet@road_vnutri7]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+soldaty_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+soldaty_enemy%
+

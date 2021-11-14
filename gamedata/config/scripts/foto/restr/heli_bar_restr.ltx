@@ -1,0 +1,10 @@
+[logic]
+active = sr_idle@1
+
+[sr_idle@1]
+on_actor_inside = {+heli_start =item_active(load_detector)} sr_idle@2 %=foto.read_sound% 
+
+[sr_idle@2]
+on_timer = 5000 | nil %=foto.count =foto.barzasada_spawn =val_test.del_restr%
+on_info = {!item_active(load_detector)} sr_idle@1
+on_actor_outside = sr_idle@1

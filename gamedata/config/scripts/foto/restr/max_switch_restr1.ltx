@@ -1,0 +1,6 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = {+max_no_entrance} nil %=foto.max_switch(1) -max_no_entrance +max_no_exit =val_test.del_restr%
+on_info = {+max_no_exit} nil %=val_test.del_restr%

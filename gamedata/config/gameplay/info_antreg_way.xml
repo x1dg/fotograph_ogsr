@@ -1,0 +1,3049 @@
+<?xml version='1.0' encoding="windows-1251" ?>
+
+<game_information_portions>
+
+<info_portion id="start_manuscript">
+<action>fotograf.foto_start_manuscript</action>
+</info_portion>
+
+<info_portion id="blowout_end"></info_portion>
+
+<info_portion id="bar_ataka_vrag"></info_portion>
+<info_portion id="bar_vrag"></info_portion>
+<info_portion id="svyaznoy_vrag"></info_portion>
+
+<info_portion id="music_swamp01"></info_portion>
+<info_portion id="music_swamp02"></info_portion>
+<info_portion id="music_mk04">
+<action>mauvais.music_mk04</action>
+<action>fotograf.check_foto_smith</action>
+</info_portion>
+
+--------------------------cars-----------------------
+
+<info_portion id="car_benzin_est"></info_portion>
+<info_portion id="car_benzin1_est"></info_portion>
+<info_portion id="car_benzin2_est"></info_portion>
+<info_portion id="car_benzin3_est"></info_portion>
+<info_portion id="car_benzin4_est"></info_portion>
+<info_portion id="car_benzin5_est"></info_portion>
+<info_portion id="car_benzin6_est"></info_portion>
+<info_portion id="car_benzin7_est"></info_portion>
+<info_portion id="dead_car_benzin"></info_portion>
+<info_portion id="dead_car_benzin1"></info_portion>
+<info_portion id="dead_car_benzin2"></info_portion>
+<info_portion id="dead_car_benzin3"></info_portion>
+<info_portion id="dead_car_benzin4"></info_portion>
+<info_portion id="dead_car_benzin5"></info_portion>
+<info_portion id="dead_car_benzin6"></info_portion>
+<info_portion id="dead_car_benzin7"></info_portion>
+<info_portion id="car_dizel_est"></info_portion>
+<info_portion id="car_dizel1_est"></info_portion>
+<info_portion id="car_dizel2_est"></info_portion>
+<info_portion id="car_dizel3_est"></info_portion>
+<info_portion id="car_dizel4_est"></info_portion>
+<info_portion id="car_dizel5_est"></info_portion>
+<info_portion id="car_dizel6_est"></info_portion>
+<info_portion id="dead_car_dizel"></info_portion>
+<info_portion id="dead_car_dizel1"></info_portion>
+<info_portion id="dead_car_dizel2"></info_portion>
+<info_portion id="dead_car_dizel3"></info_portion>
+<info_portion id="dead_car_dizel4"></info_portion>
+<info_portion id="dead_car_dizel5"></info_portion>
+<info_portion id="dead_car_dizel6"></info_portion>
+<info_portion id="car_key1_est"></info_portion>
+<info_portion id="dead_car_key1"></info_portion>
+<info_portion id="car_key2_est"></info_portion>
+<info_portion id="dead_car_key2"></info_portion>
+<info_portion id="car_key3_est"></info_portion>
+<info_portion id="dead_car_key3"></info_portion>
+
+<info_portion id="dezertir_car_est"></info_portion>
+<info_portion id="dead_dezertir_car"></info_portion>
+<info_portion id="del_dezertir_car">
+<action>cars.del_dezertir_car</action>
+</info_portion>
+
+<info_portion id="mario_key_dialog_start">
+<task>mario_case</task>
+</info_portion>
+<info_portion id="mario_key_dialog_have"></info_portion>
+<info_portion id="mario_key_dialog_done"></info_portion>
+
+<info_portion id="voronin_key_dialog_start">
+<task>voronin_key</task>
+</info_portion>
+<info_portion id="voronin_key_dialog_have"></info_portion>
+<info_portion id="voronin_key_dialog_done"></info_portion>
+
+<info_portion id="polischuk_key_dialog_start">
+<task>polischuk_key</task>
+</info_portion>
+<info_portion id="polischuk_key_dialog_have"></info_portion>
+<info_portion id="polischuk_key_dialog_done"></info_portion>
+
+<info_portion id="dezertir_car_dialog_start">
+<task>dezertir_car</task>
+</info_portion>
+<info_portion id="dezertir_car_mesto"></info_portion>
+<info_portion id="dezertir_car_not_place"></info_portion>
+<info_portion id="dezertir_car_dialog_done"></info_portion>
+
+<info_portion id="dezertir_flesh_dialog_start">
+<task>flesh_winch</task>
+</info_portion>
+<info_portion id="dezertir_flesh_dialog_have"></info_portion>
+<info_portion id="dezertir_flesh_dialog_done"></info_portion>
+
+----------------------------------------------------
+
+<info_portion id="main_task_info">
+<task>main_task</task>
+</info_portion>
+<info_portion id="main_task_have"></info_portion>
+<info_portion id="main_task_finish"></info_portion>
+<info_portion id="main_task_fail"></info_portion>
+
+<info_portion id="main_foto_info">
+<task>main_foto</task>
+</info_portion>
+<info_portion id="main_foto_finish"></info_portion>
+
+<info_portion id="about_vintorez">
+<action>fotograf.about_vintorez</action>
+</info_portion>
+
+
+-------------------------povodyr----------------------------
+
+<info_portion id="povodyr_mazay"></info_portion>
+<info_portion id="povodyr_aver_start">
+<action>val_test.povodyractor</action>
+</info_portion>
+<info_portion id="povodyr_aver_nachalo"></info_portion>
+<info_portion id="povodyr_aver_go"></info_portion>
+<info_portion id="povodyr_aver_mesto"></info_portion>
+<info_portion id="enemy_hunter">
+<action>fotograf.enemy_hunter</action>
+</info_portion>
+<info_portion id="pmc_killers_spawn"></info_portion>
+<info_portion id="pda_pmc_aver_est">
+<action>y_level.lch_aver_dyshlo</action>
+</info_portion>
+
+-----------------------start_syujet-------------------------
+
+<info_portion id="start_syujet">
+<action>fotograf.start_syujet</action>
+</info_portion>
+
+<info_portion id="start_intro">
+<action>fotograf.foto_start_video</action>
+</info_portion>
+
+<info_portion id="zapadlo_spawn">
+<action>fotograf.pashalky_spawn</action>
+</info_portion>
+
+<info_portion id="fotik_take_first"></info_portion>
+<info_portion id="fotik1_take_first"></info_portion>
+
+<info_portion id="x18_uber_spawn">
+<action>fotograf.x18_uber_spawn</action>
+</info_portion>
+
+<info_portion id="x16_respawn_start"></info_portion>
+<info_portion id="x10_respawn_start"></info_portion>
+<info_portion id="prip_podzemka_zasada"></info_portion>
+<info_portion id="aver_peschera_spawn"></info_portion>
+
+<info_portion id="tonnel_kontra_dead"></info_portion>
+
+<info_portion id="prom_secon_enter">
+<action>mauvais.timer_music_prom03</action>
+</info_portion>
+
+<info_portion id="swamp_second_enter">
+<action>mauvais.music_swamp03</action>
+</info_portion>
+
+<info_portion id="aver_second_enter">
+<action>mauvais.music_aver02</action>
+</info_portion>
+
+<info_portion id="dyshlo_second_enter">
+<action>mauvais.music_dyshlo02</action>
+</info_portion>
+
+----------------------------doors---------------------------
+
+<info_portion id="x18_codelock1_unlock"></info_portion>
+<info_portion id="x18_codelock2_unlock"></info_portion>
+
+<info_portion id="x10_codelock1_unlock"></info_portion>
+<info_portion id="x10_codelock11_unlock"></info_portion>
+<info_portion id="x10_codelock2_unlock"></info_portion>
+<info_portion id="x10_codelock3_unlock"></info_portion>
+
+-------------------------anom_zond--------------------------
+
+<info_portion id="kruglov_anoms_dialog_start">
+<task>anom_research</task>
+</info_portion>
+<info_portion id="kruglov_anoms_dialog_done"></info_portion>
+<info_portion id="check_timer_kruglov">
+<action>fotograf.check_time_kruglov</action>
+</info_portion>
+
+<info_portion id="kruglov_detector_dialog_start"></info_portion>
+
+<info_portion id="all_anom_research"></info_portion>
+<info_portion id="zharka_first_research">
+<article>anom_zharka</article>
+</info_portion>
+<info_portion id="galant_first_research">
+<article>anom_electra</article>
+</info_portion>
+<info_portion id="buzz_first_research">
+<article>anom_buzz</article>
+</info_portion>
+<info_portion id="mincer_first_research">
+<article>anom_mincer</article>
+</info_portion>
+<info_portion id="mosquit_first_research">
+<article>anom_mosquit</article>
+</info_portion>
+<info_portion id="ice_first_research">
+<article>anom_ice</article>
+</info_portion>
+<info_portion id="gravi_first_research">
+<article>anom_gravi</article>
+</info_portion>
+
+--------------------------mutantes--------------------------
+
+<info_portion id="flesh_story">
+<article>flesh_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_flesh</action>
+</info_portion>
+
+<info_portion id="boar_story">
+<article>boar_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_boar</action>
+</info_portion>
+
+<info_portion id="dog_story">
+<article>dog_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_dog</action>
+</info_portion>
+
+<info_portion id="psevdodog_story">
+<article>psevdodog_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_pseudodog</action>
+</info_portion>
+
+<info_portion id="krovosos_story">
+<article>krovosos_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_bloodsucker</action>
+</info_portion>
+
+<info_portion id="burer_story">
+<article>burer_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_burer</action>
+</info_portion>
+
+<info_portion id="zombie_story">
+<article>zombie_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_zombie</action>
+</info_portion>
+
+<info_portion id="snork_story">
+<article>snork_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_snork</action>
+</info_portion>
+
+<info_portion id="vypolzen_story">
+<article>vypolzen_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_vypolzen</action>
+</info_portion>
+
+<info_portion id="vypolzin_story">
+<article>vypolzin_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_vypolzen_red</action>
+</info_portion>
+
+<info_portion id="izlom_story">
+<article>izlom_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_izlom</action>
+</info_portion>
+
+<info_portion id="spider_story">
+<article>spider_story</article>
+<action>fotograf.sms_new_mutant</action>
+</info_portion>
+
+<info_portion id="kostolom_story">
+<article>kostolom_story</article>
+<action>fotograf.sms_new_mutant</action>
+</info_portion>
+
+<info_portion id="tarakan1_story">
+<article>tarakan1_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_tarakan1</action>
+</info_portion>
+
+<info_portion id="tarakan2_story">
+<article>tarakan2_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_tarakan2</action>
+</info_portion>
+
+<info_portion id="deathclaw_story">
+<article>deathclaw_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_deathclaw</action>
+</info_portion>
+
+<info_portion id="tushkano_story">
+<article>tushkano_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_tushkano</action>
+</info_portion>
+
+<info_portion id="kontroler_story">
+<article>kontroler_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_controler</action>
+</info_portion>
+
+<info_portion id="poltergeist_story">
+<article>poltergeist_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_polter</action>
+</info_portion>
+
+<info_portion id="psevdogigant_story">
+<article>psevdogigant_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_gigant</action>
+</info_portion>
+
+<info_portion id="cat_story">
+<article>cat_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_cat</action>
+</info_portion>
+
+<info_portion id="chimera_story">
+<article>chimera_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_chimera</action>
+</info_portion>
+
+<info_portion id="el_chimera_story">
+<article>el_chimera_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_electrochimera</action>
+</info_portion>
+
+<info_portion id="fire_chimera_story">
+<article>fire_chimera_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_ognivo</action>
+</info_portion>
+
+<info_portion id="crow_story">
+<article>crow_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_crow</action>
+</info_portion>
+
+<info_portion id="mouse_story">
+<article>mouse_story</article>
+<action>fotograf.sms_new_mutant</action>
+<action>fotograf.about_mouse</action>
+</info_portion>
+
+----------------------info_random_zadan---------------------
+
+<info_portion id="fake_info_random"></info_portion>
+
+<info_portion id="items_random_spawn">
+<action>fotograf.nebo_walther_m1_spawn</action>
+<action>fotograf.barman_outfit_spawn</action>
+<action>fotograf.barman_eagle_spawn</action>
+<action>fotograf.barman_avtomat_spawn</action>
+<action>fotograf.sahar_outfit_spawn</action>
+<action>fotograf.dolg_stvol1_spawn</action>
+<action>fotograf.dolg_stvol2_spawn</action>
+<action>fotograf.freedom_stvol1_spawn</action>
+<action>fotograf.freedom_stvol2_spawn</action>
+<action>fotograf.freedom_stvol3_spawn</action>
+</info_portion>
+
+<info_portion id="nebo_find_artefact_1_info">
+<action>fotograf.nebo_microscope_spawn</action>
+</info_portion>
+
+<info_portion id="nebo_find_artefact_2_info">
+<action>fotograf.nebo_raciya_new_spawn</action>
+</info_portion>
+
+<info_portion id="nebo_find_artefact_3_info">
+<action>fotograf.nebo_tiski_spawn</action>
+</info_portion>
+
+<info_portion id="nebo_find_artefact_4_info">
+<action>fotograf.nebo_plata_spawn</action>
+</info_portion>
+
+<info_portion id="nebo_find_item_1_info"></info_portion>
+
+<info_portion id="tm_find_artefact_1_info">
+<action>fotograf.tm_planshetka_spawn</action>
+</info_portion>
+
+<info_portion id="tm_find_artefact_2_info">
+<action>fotograf.tm_vidik_spawn</action>
+</info_portion>
+
+<info_portion id="tm_find_artefact_3_info">
+<action>fotograf.tm_lampa_spawn</action>
+</info_portion>
+
+<info_portion id="tm_find_artefact_4_info">
+<action>fotograf.tm_icona_spawn</action>
+</info_portion>
+
+<info_portion id="tm_find_item_1_info"></info_portion>
+<info_portion id="mk_dezertir_fort_enemy"></info_portion>
+
+<info_portion id="barmen_find_artefact_2_info">
+<action>fotograf.barman_pechat_spawn</action>
+</info_portion>
+
+<info_portion id="barmen_find_artefact_4_info">
+<action>fotograf.barman_chess_spawn</action>
+</info_portion>
+
+<info_portion id="barmen_find_item_1_info"></info_portion>
+
+<info_portion id="barmen_find_item_2_info"></info_portion>
+
+<info_portion id="barmen_find_item_3_info"></info_portion>
+
+<info_portion id="ecolog_find_item_1_info"></info_portion>
+
+<info_portion id="tm_kill_stalker_1_info"></info_portion>
+<info_portion id="tm_kill_stalker_2_info"></info_portion>
+<info_portion id="tm_kill_stalker_3_info"></info_portion>
+
+<info_portion id="tm_kill_01_enemy"></info_portion>
+<info_portion id="tm_kill_02_enemy"></info_portion>
+<info_portion id="tm_kill_03_enemy"></info_portion>
+
+<info_portion id="barmen_kill_stalker_1_info"></info_portion>
+<info_portion id="barmen_kill_stalker_2_info"></info_portion>
+<info_portion id="barmen_kill_stalker_3_info"></info_portion>
+
+<info_portion id="barman_kill_01_enemy"></info_portion>
+<info_portion id="barman_kill_01_dead">
+<action>fotograf.set_polischuk_friend</action>
+</info_portion>
+<info_portion id="barman_kill_02_enemy"></info_portion>
+<info_portion id="barman_kill_03_enemy"></info_portion>
+
+<info_portion id="dolg_kill_stalker_1_info"></info_portion>
+<info_portion id="dolg_kill_01_enemy"></info_portion>
+
+<info_portion id="dolg_find_item_1_info"></info_portion>
+
+<info_portion id="dolg_find_item_2_info"></info_portion>
+
+<info_portion id="freedom_kill_stalker_1_info"></info_portion>
+<info_portion id="freedom_kill_stalker_2_info"></info_portion>
+<info_portion id="freedom_kill_stalker_3_info"></info_portion>
+
+<info_portion id="freedom_kill_01_enemy"></info_portion>
+<info_portion id="freedom_kill_02_enemy"></info_portion>
+<info_portion id="freedom_kill_03_enemy"></info_portion>
+
+<info_portion id="freedom_find_item_1_info"></info_portion>
+
+<info_portion id="freedom_find_item_2_info"></info_portion>
+
+<info_portion id="freedom_find_item_3_info"></info_portion>
+
+<info_portion id="dolg_find_artefact_1_info">
+<action>fotograf.dolg_modul_spawn</action>
+</info_portion>
+
+<info_portion id="dolg_find_artefact_2_info">
+<action>fotograf.dolg_kolba_spawn</action>
+</info_portion>
+
+<info_portion id="dolg_find_artefact_3_info">
+<action>fotograf.dolg_samopisec_spawn</action>
+</info_portion>
+
+<info_portion id="freedom_find_artefact_1_info">
+<action>fotograf.free_koloda_spawn</action>
+</info_portion>
+
+<info_portion id="freedom_find_artefact_2_info">
+<action>fotograf.free_fonarik_spawn</action>
+</info_portion>
+
+<info_portion id="freedom_find_artefact_3_info">
+<action>fotograf.free_dinamit_spawn</action>
+</info_portion>
+
+----------------------level_changers------------------------
+
+<info_portion id="lch_mk_road"></info_portion>
+<info_portion id="lch_road_mk"></info_portion>
+<info_portion id="lch_mk_prom"></info_portion>
+<info_portion id="lch_aver_road"></info_portion>
+<info_portion id="lch_road_aver"></info_portion>
+<info_portion id="lch_prom_aver"></info_portion>
+<info_portion id="lch_bar_swamp"></info_portion>
+<info_portion id="lch_swamp_bar"></info_portion>
+<info_portion id="lch_bar_mg"></info_portion>
+<info_portion id="lch_mg_bar"></info_portion>
+<info_portion id="lch_bar_aver"></info_portion>
+<info_portion id="lch_aver_bar"></info_portion>
+<info_portion id="lch_mg_aver"></info_portion>
+<info_portion id="lch_aver_mg"></info_portion>
+<info_portion id="lch_swamp_aground"></info_portion>
+<info_portion id="lch_aground_swamp"></info_portion>
+<info_portion id="lch_prom_aground"></info_portion>
+<info_portion id="lch_aground_prom"></info_portion>
+<info_portion id="lch_aground_x16"></info_portion>
+<info_portion id="lch_x16_aground"></info_portion>
+<info_portion id="lch_x16_dyshlo"></info_portion>
+<info_portion id="lch_dyshlo_x16"></info_portion>
+<info_portion id="lch_x10_x16"></info_portion>
+<info_portion id="lch_x16_x10"></info_portion>
+<info_portion id="lch_x10_x18"></info_portion>
+<info_portion id="lch_x18_x10"></info_portion>
+<info_portion id="lch_x18_aver"></info_portion>
+<info_portion id="lch_aver_x18"></info_portion>
+<info_portion id="lch_aver_dyshlo"></info_portion>
+<info_portion id="lch_dyshlo_aver"></info_portion>
+<info_portion id="lch_dyshlo_prip"></info_portion>
+<info_portion id="lch_prip_dyshlo"></info_portion>
+<info_portion id="lch_prip_peschera"></info_portion>
+<info_portion id="lch_peschera_prip"></info_portion>
+<info_portion id="lch_peschera_sar"></info_portion>
+<info_portion id="lch_sar_peschera"></info_portion>
+
+---------------------спавн кристаллов-----------------------
+
+<info_portion id="crystall_pred_spawn">
+<action>crystall_spawn.crystall_mk</action>
+</info_portion>
+
+<info_portion id="crystall_road_spawn">
+<action>crystall_spawn.crystall_road</action>
+</info_portion>
+
+<info_portion id="crystall_swamp_spawn">
+<action>crystall_spawn.crystall_swamp</action>
+</info_portion>
+
+<info_portion id="crystall_prom_spawn">
+<action>crystall_spawn.crystall_prom</action>
+</info_portion>
+
+<info_portion id="crystall_aver_spawn">
+<action>crystall_spawn.crystall_aver</action>
+</info_portion>
+
+<info_portion id="crystall_bar_spawn">
+<action>crystall_spawn.crystall_bar</action>
+</info_portion>
+
+<info_portion id="crystall_dyshlo_spawn">
+<action>crystall_spawn.crystall_dyshlo</action>
+</info_portion>
+
+<info_portion id="crystall_mg_spawn">
+<action>crystall_spawn.crystall_mg</action>
+</info_portion>
+
+<info_portion id="crystall_prip_spawn">
+<action>crystall_spawn.crystall_prip</action>
+</info_portion>
+
+<info_portion id="crystall_aground_spawn">
+<action>crystall_spawn.crystall_aground</action>
+</info_portion>
+
+<info_portion id="crystall_x10_spawn">
+<action>crystall_spawn.crystall_x10</action>
+</info_portion>
+
+<info_portion id="crystall_x18_spawn">
+<action>crystall_spawn.crystall_x18</action>
+</info_portion>
+
+<info_portion id="crystall_x16_spawn">
+<action>crystall_spawn.crystall_x16</action>
+</info_portion>
+
+<info_portion id="crystall_peschera_spawn">
+<action>crystall_spawn.crystall_peschera</action>
+<action>fotograf.spawn_peschera_tayniki</action>
+</info_portion>
+
+-----------------saharov_crystall_test-----------
+
+<info_portion id="sahar_start_dialog_start"></info_portion>
+<info_portion id="sahar_start_dialog_mesto"></info_portion>
+<info_portion id="sahar_na_meste"></info_portion>
+
+<info_portion id="zone_test_active"></info_portion>
+
+------------------------end----------------------
+
+<info_portion id="smith_nachalo_start">
+<task>smith_start</task>
+</info_portion>
+
+<info_portion id="actor_habar">
+<action>fotograf.add_actor_habar</action>
+</info_portion>
+
+<info_portion id="dron_start_dialog_start">
+<task>dron_plasch</task>
+</info_portion>
+<info_portion id="dron_start_dialog_have"></info_portion>
+<info_portion id="dron_start_dialog_done"></info_portion>
+<info_portion id="dron_dead"></info_portion>
+
+<info_portion id="flyer_dialog_start"></info_portion>
+<info_portion id="zhila_start_dialog_start"></info_portion>
+
+<info_portion id="mamasha_spawn">
+<action>fotograf.mamasha_spawn</action>
+</info_portion>
+<info_portion id="mama_skazala"></info_portion>
+<info_portion id="mamasha_uhodit"></info_portion>
+
+<info_portion id="flyer_est"></info_portion>
+<info_portion id="barohr_spokoyno"></info_portion>
+<info_portion id="barohr_zlitsya"></info_portion>
+<info_portion id="mozhno_kbore"></info_portion>
+<info_portion id="mozhno_kbore2"></info_portion>
+<info_portion id="kbore_skazal"></info_portion>
+<info_portion id="vhod_borov"></info_portion>
+<info_portion id="povtor_zahod"></info_portion>
+<info_portion id="prohod_otkryt"></info_portion>
+<info_portion id="ohrana_otoshel"></info_portion>
+<info_portion id="zhila_vstrecha"></info_portion>
+<info_portion id="gulyaka_est"></info_portion>
+<info_portion id="shluha_est"></info_portion>
+<info_portion id="parikmaher_est"></info_portion>
+
+<info_portion id="mk_maroder_spawn"></info_portion>
+
+<info_portion id="smith_razgovor_start"></info_portion>
+
+<info_portion id="brown_start_dialog_start">
+<task>agent_mk</task>
+</info_portion>
+<info_portion id="brown_start_dialog_have"></info_portion>
+<info_portion id="brown_start_dialog_mesto"></info_portion>
+<info_portion id="pda_agent_mk_have">
+<action>mauvais.music_mk03</action>
+</info_portion>
+<info_portion id="brown_start_dialog_done"></info_portion>
+
+<info_portion id="brown_two_dialog_start">
+<task>foto_poligon</task>
+</info_portion>
+
+<info_portion id="brown_two_dialog_have"></info_portion>
+<info_portion id="brown_two_dialog_vhod"></info_portion>
+<info_portion id="brown_two_dialog_done"></info_portion>
+
+<info_portion id="brown_foto_proval">
+<action>fotograf.sms_brown_proval</action>
+</info_portion>
+
+<info_portion id="brown_total_proval"></info_portion>
+
+<info_portion id="smith_two_dialog_start">
+<task>drozdov_vstrecha</task>
+</info_portion>
+<info_portion id="drozdov_start_dialog_start"></info_portion>
+<info_portion id="fotokamera_upgrade"></info_portion>
+<info_portion id="smith_two_dialog_have"></info_portion>
+<info_portion id="smith_two_dialog_done"></info_portion>
+<info_portion id="smith_two_dialog_foto"></info_portion>
+
+<info_portion id="brown_tri_dialog_start">
+<task>voronin_aver</task>
+</info_portion>
+<info_portion id="brown_tri_dialog_done">
+<task>mousetrap_task</task>
+</info_portion>
+<info_portion id="brown_tri_dialog_net">
+<task>mousetrap_task</task>
+</info_portion>
+<info_portion id="brown_tri_dialog_gotovo">
+<action>fotograf.del_haron_new</action>
+</info_portion>
+
+<info_portion id="prom_tochka_vstrechi"></info_portion>
+<info_portion id="agent_prom_poshli"></info_portion>
+<info_portion id="agent_prom_mesto"></info_portion>
+<info_portion id="agent_prom_uhodit"></info_portion>
+<info_portion id="aver_tochka_vstrechi"></info_portion>
+<info_portion id="agent_aver_poshli"></info_portion>
+<info_portion id="agent_aver_mesto"></info_portion>
+<info_portion id="agent_aver_uhodit"></info_portion>
+
+<info_portion id="agent_prom_see"></info_portion>
+<info_portion id="agent_aver_see"></info_portion>
+
+<info_portion id="pda_agent_prom_have">
+<action>fotograf.spawn_metka_strelka_aver</action>
+<action>fotograf.metka_strelka_aver</action>
+<action>foto.max_spawn</action>
+</info_portion>
+<info_portion id="pda_agent_aver_have">
+<action>mauvais.music_aver01</action>
+</info_portion>
+
+<info_portion id="del_agents_prom">
+<action>fotograf.del_agents_prom</action>
+</info_portion>
+
+<info_portion id="mousetrap_proval"></info_portion>
+<info_portion id="mousetrap_finish">
+<action>fotograf.del_brown</action>
+</info_portion>
+
+<info_portion id="agent_prom_dead"></info_portion>
+<info_portion id="agent_prom_hit"></info_portion>
+<info_portion id="agent_prom_ohr1_hit"></info_portion>
+<info_portion id="agent_prom_ohr2_hit"></info_portion>
+<info_portion id="agent_prom_ohr3_hit"></info_portion>
+<info_portion id="agent_aver_dead"></info_portion>
+<info_portion id="agent_aver_hit"></info_portion>
+<info_portion id="agent_aver_ohr1_hit"></info_portion>
+<info_portion id="agent_aver_ohr2_hit"></info_portion>
+<info_portion id="agent_aver_ohr3_hit"></info_portion>
+
+<info_portion id="agent_prom_killactor"></info_portion>
+<info_portion id="agent_aver_killactor"></info_portion>
+
+<info_portion id="voronin_one_dialog_start"></info_portion>
+<info_portion id="perehod_aver_road_aver"></info_portion>
+<info_portion id="voronin_perehod_talk">
+<task>voronin_perehod</task>
+</info_portion>
+<info_portion id="voronin_one_dialog_est"></info_portion>
+
+<info_portion id="haron_start_dialog_start">
+<task>haron_case</task>
+</info_portion>
+<info_portion id="haron_case_otdal"></info_portion>
+
+<info_portion id="baza_ukr_ohr_dialog_start"></info_portion>
+<info_portion id="baza_ukr_ohr_speech"></info_portion>
+<info_portion id="baza_ukr_ohr_skazal"></info_portion>
+<info_portion id="baza_ukr_ohr_horosho"></info_portion>
+<info_portion id="baza_ukr_ohr_est"></info_portion>
+
+<info_portion id="mozhno_x18"></info_portion>
+
+<info_portion id="voronin_vstrecha_start">
+<task>voronin_poligon</task>
+</info_portion>
+
+<info_portion id="povar_spawn"></info_portion>
+
+<info_portion id="voronin_start_dialog_start"></info_portion>
+<info_portion id="bratan_poisk_dialog_done">
+<task>povar_havchik</task>
+</info_portion>
+
+<info_portion id="timer_road_start">
+<action>fotograf.check_time_road</action>
+</info_portion>
+
+<info_portion id="edik_need_help">
+<task>road_ataka</task>
+<action>fotograf.spawn_road_ataka</action>
+</info_portion>
+
+<info_portion id="edik_need_have"></info_portion>
+<info_portion id="edik_need_done"></info_portion>
+
+<info_portion id="edik_dead"></info_portion>
+
+<info_portion id="road_ataka01_dead"></info_portion>
+<info_portion id="road_ataka02_dead"></info_portion>
+<info_portion id="road_ataka03_dead"></info_portion>
+<info_portion id="road_ataka04_dead"></info_portion>
+<info_portion id="road_ataka05_dead"></info_portion>
+<info_portion id="road_ataka06_dead"></info_portion>
+<info_portion id="road_ataka07_dead"></info_portion>
+<info_portion id="road_ataka08_dead"></info_portion>
+<info_portion id="road_ataka09_dead"></info_portion>
+<info_portion id="road_ataka10_dead"></info_portion>
+<info_portion id="road_ataka11_dead"></info_portion>
+<info_portion id="road_ataka12_dead"></info_portion>
+
+<info_portion id="polischuk_start_dialog_start"></info_portion>
+
+<info_portion id="dezertir_plan_dialog_start"></info_portion>
+<info_portion id="edik_aptechki_have"></info_portion>
+<info_portion id="dezertir_plan_dialog_nachalo">
+<task>edik_aptechki</task>
+</info_portion>
+<info_portion id="dezertir_plan_dialog_have"></info_portion>
+<info_portion id="dezertir_plan_dialog_done"></info_portion>
+<info_portion id="dezertir_plan_mesto"></info_portion>
+<info_portion id="dezertir_plan_dialog_finish"></info_portion>
+
+<info_portion id="agent_mk_proval"></info_portion>
+<info_portion id="agent_govorit"></info_portion>
+<info_portion id="agent_skazal"></info_portion>
+
+<info_portion id="zhorik_start_dialog_start"></info_portion>
+<info_portion id="zhorik_dead"></info_portion>
+<info_portion id="zhorik_start"></info_portion>
+<info_portion id="zhorik_mesto"></info_portion>
+<info_portion id="zhorik_zaschita"></info_portion>
+<info_portion id="agent_mk_mesto"></info_portion>
+<info_portion id="agent_mk_vrag"></info_portion>
+<info_portion id="agent_mk_dead"></info_portion>
+<info_portion id="ostalnye_poshli"></info_portion>
+
+<info_portion id="agent_mk_see"></info_portion>
+<info_portion id="agent_mk_ohr1_see"></info_portion>
+<info_portion id="agent_mk_ohr2_see"></info_portion>
+
+<info_portion id="del_agent_mk">
+<action>fotograf.del_agent_mk</action>
+</info_portion>
+<info_portion id="del_agent_mk_ohr1">
+<action>fotograf.del_agent_mk_ohr1</action>
+</info_portion>
+<info_portion id="del_agent_mk_ohr2">
+<action>fotograf.del_agent_mk_ohr2</action>
+</info_portion>
+
+<info_portion id="mario_start_dialog_start"></info_portion>
+<info_portion id="mario_one_dialog_start"></info_portion>
+
+<info_portion id="sidorovich_one_dialog_start"></info_portion>
+
+<info_portion id="brigadir_spawn"></info_portion>
+<info_portion id="kamp_ataka_nachalo">
+<action>fotograf.ataka_nachalo</action>
+</info_portion>
+<info_portion id="brityi_dead"></info_portion>
+<info_portion id="maloy_dead"></info_portion>
+
+<info_portion id="maroder_kamp1_spawn">
+<action>fotograf.spawn_maroder_kamp1</action>
+</info_portion>
+
+<info_portion id="brigadir_dead"></info_portion>
+<info_portion id="maloy_pda_est">
+<action>fotograf.add_maloy_habar</action>
+</info_portion>
+
+<info_portion id="borya_start_dialog_start">
+<task>borya_antirad</task>
+</info_portion>
+
+<info_portion id="borya_start_dialog_have"></info_portion>
+<info_portion id="borya_start_dialog_done"></info_portion>
+
+<info_portion id="brown_one_dialog_start"></info_portion>
+
+<info_portion id="krasa_start_dialog_start"></info_portion>
+<info_portion id="krasa_one_dialog_start"></info_portion>
+<info_portion id="krasa_two_dialog_start"></info_portion>
+
+<info_portion id="kladovschik_start_dialog_start">
+<task>havchik_klad</task>
+</info_portion>
+<info_portion id="havchik_have"></info_portion>
+<info_portion id="kladovschik_start_dialog_done"></info_portion>
+
+<info_portion id="dusha_start"></info_portion>
+<info_portion id="dusha_dialog_start">
+<task>glushak_nayti</task>
+</info_portion>
+<info_portion id="dusha_dialog_nachalo"></info_portion>
+<info_portion id="dusha_dialog_have"></info_portion>
+<info_portion id="dusha_dialog_done"></info_portion>
+
+<info_portion id="fotki_devok_dialog_start"></info_portion>
+<info_portion id="fotki_zastavka_dialog_start"></info_portion>
+
+<info_portion id="agent_mk_spawn"></info_portion>
+
+-------------------peschera_doors_monstry------------------
+
+<info_portion id="peschera_door_unlock"></info_portion>
+<info_portion id="start_peschera_monstry"></info_portion>
+
+-----------------------monolit_brat------------------------
+
+<info_portion id="monolit_brat_spawn">
+<action>garry_object.spawn_brat_monolit</action>
+<action>anomalia_spawn.spawn_monolit_zone</action>
+<action>braad_test.create_kristall_restr</action>
+<action>anomalia_spawn.spawn_zharka1</action>
+<action>anomalia_spawn.spawn_zharka2</action>
+<action>anomalia_spawn.spawn_zharka3</action>
+<action>anomalia_spawn.spawn_zharka4</action>
+<action>anomalia_spawn.spawn_zharka5</action>
+<action>anomalia_spawn.spawn_zharka6</action>
+<action>anomalia_spawn.spawn_zharka7</action>
+<action>anomalia_spawn.spawn_zharts</action>
+<action>braad_test.create_monolit_restr</action>
+</info_portion>
+
+<info_portion id="zharka_start">
+<action>antreg_object.spawn_zarskelet</action>
+</info_portion>
+
+<info_portion id="monolit_govorit">
+<task>monolit_pogovority</task>
+</info_portion>
+<info_portion id="monolit_pogovoril"></info_portion>
+
+
+--------------------traders_vstrecha---------------------
+
+<info_portion id="voronin_zapiska_dialog_start">
+<task>zapiska_voronin</task>
+</info_portion>
+<info_portion id="voronin_zapiska_dialog_done"></info_portion>
+
+<info_portion id="barman_start_delete">
+<action>antreg.del_barman_start</action>
+</info_portion>
+
+<info_portion id="barman_strelka_pogovority">
+<task>barman_strelka</task>
+</info_portion>
+<info_portion id="barman_strelka_pogovoril">
+<action>antreg.del_sidor_mir</action>
+</info_portion>
+
+<info_portion id="barman_strelka_dialog_start"></info_portion>
+<info_portion id="barman_sidor_pogovorili">
+<task>barman_govorit</task>
+</info_portion>
+
+<info_portion id="barman_sidor_delete">
+<action>antreg.del_barman_stalker</action>
+<action>antreg.del_sidor_stalker</action>
+</info_portion>
+
+<info_portion id="barman_posle_dialog_start">
+<task>zapiska_voronin2</task>
+</info_portion>
+<info_portion id="voronin_zapiska2_dialog_done"></info_portion>
+
+<info_portion id="voronin_zapiska3_dialog_start">
+<task>zapiska_voronin3</task>
+</info_portion>
+<info_portion id="voronin_zapiska3_dialog_done"></info_portion>
+
+<info_portion id="sidor_poslanie_dialog_start">
+<task>karta_bar</task>
+</info_portion>
+<info_portion id="karta_bar_have"></info_portion>
+<info_portion id="karta_bar_otdal"></info_portion>
+
+<info_portion id="bar_help2_start"></info_portion>
+
+<info_portion id="barman_new_dialog_start"></info_portion>
+
+------------------------magomet-----------------------
+
+<info_portion id="magomet_start_dialog_start">
+<task>semeckiy_poisk</task>
+</info_portion>
+<info_portion id="magomet_start_dialog_done"></info_portion>
+
+------------------------------------------------------
+
+<info_portion id="td_mir"></info_portion>
+<info_portion id="mir_td"></info_portion>
+
+<info_portion id="barman_stalker_spawn"></info_portion>
+<info_portion id="sidor_stalker_spawn">
+<action>antreg.spawn_sidor_ohr</action>
+</info_portion>
+<info_portion id="barman_strelka_prishel"></info_portion>
+<info_portion id="vstrecha_traders_start"></info_portion>
+
+<info_portion id="sidor_na_mesto"></info_portion>
+<info_portion id="barman_na_mesto"></info_portion>
+
+-------------------------------------------------------
+
+<info_portion id="totaliz"></info_portion>
+
+<info_portion id="totaliz_mos">
+<action>antreg_object.spawn_totaliz_mos</action>
+</info_portion>
+
+<info_portion id="dogs_ch2_spawn">
+<action>antreg.spawn_dogs_chaes2</action>
+</info_portion>
+
+<info_portion id="vertel_spawn">
+<action>antreg_object.spawn_vertel_lektor</action>
+</info_portion>
+
+-------------------------------------------------------
+
+<info_portion id="usa_spawn">
+<action>fotograf.spawn_usa_baza</action>
+<action>fotograf.spawn_usa_blokpost</action>
+<action>fotograf.spawn_stalkers_pred1</action>
+<action>fotograf.spawn_stalkers_pred2</action>
+<action>fotograf.spawn_mk_bratki</action>
+</info_portion>
+
+<info_portion id="parol_est"></info_portion>
+<info_portion id="propusk_est"></info_portion>
+<info_portion id="propusk_baza2"></info_portion>
+
+<info_portion id="karina_spawn">
+<action>antreg.babki_spawn</action>
+</info_portion>
+<info_portion id="karina_help_start"></info_portion>
+<info_portion id="karina_help_have"></info_portion>
+<info_portion id="karina_help_begin"></info_portion>
+
+<info_portion id="yan_rostok_perehody"></info_portion>
+<info_portion id="monstry_peschera_start"></info_portion>
+<info_portion id="controler_spawn"></info_portion>
+<info_portion id="polter2_spawn"></info_portion>
+<info_portion id="predbannik_monsters_spawn"></info_portion>
+<info_portion id="tankist_start">
+<action>antreg.spawn_tankist_ohr</action>
+<action>antreg.spawn_podmoga</action>
+<action>antreg.spawn_podmoga1</action>
+</info_portion>
+
+<info_portion id="f_spawn"></info_portion>
+<info_portion id="lesnik_spawn">
+<action>antreg.spawn_lesnik</action>
+<action>antreg.del_gluk</action>
+<action>antreg_object.spawn_lyuk_mg</action>
+</info_portion>
+<info_portion id="f_dialog_have"></info_portion>
+
+<info_portion id="lesnichok_mafon">
+<action>antreg.spawn_lesnik_mafon</action>
+</info_portion>
+
+
+<info_portion id="lesnik_start">
+<task>les_dobratsya</task>
+</info_portion>
+<info_portion id="lesnik_perehod"></info_portion>
+<info_portion id="lesnik_mesto"></info_portion>
+
+<info_portion id="les_dobralis"></info_portion>
+<info_portion id="lesnik_del">
+<action>antreg.del_lesnik</action>
+</info_portion>
+<info_portion id="mg_aver"></info_portion>
+
+<info_portion id="lesnik2_spawn">
+<action>braad_test.create_lesnik2_restr</action>
+</info_portion>
+
+<info_portion id="lesnik2_mesto"></info_portion>
+
+<info_portion id="delete_mg_aver">
+<action>y_level.delete_mg_aver</action>
+</info_portion>
+
+<info_portion id="izba_dialog_start">
+<task>brat_nayti</task>
+</info_portion>
+<info_portion id="brat_nayden"></info_portion>
+
+<info_portion id="skit_spawn">
+<action>antreg.spawn_skit</action>
+</info_portion>
+
+---------------------------------------------------
+
+<info_portion id="vasiliev_dialog_start">
+<task>vas1_dialog</task>
+</info_portion>
+
+<info_portion id="vasil2_spawn"></info_portion>
+<info_portion id="zombi_zadan">
+<task>vas_zombi</task>
+</info_portion>
+<info_portion id="vasil2_yantar"></info_portion>
+<info_portion id="pomog_zombi"></info_portion>
+
+
+<info_portion id="vasil2_restrict_spawn">
+<action>braad_test.create_vasil2_restr</action>
+<action>braad_test.create_zombi_restr</action>
+</info_portion>
+<info_portion id="yantar_dialog_start"></info_portion>
+
+<info_portion id="vasil2_hit"></info_portion>
+
+<info_portion id="vasil_dovel"></info_portion>
+
+<info_portion id="yantar_aver"></info_portion>
+
+<info_portion id="dan_dialog_start"></info_portion>
+<info_portion id="sahar_dialog_start"></info_portion>
+<info_portion id="sahar_dialog_nachalo">
+<task>lekarstvo_lesniku</task>
+</info_portion>
+
+<info_portion id="lekarstvo_est"></info_portion>
+
+<info_portion id="eda_dialog_start">
+<task>eda_dialog</task>
+</info_portion>
+<info_portion id="eda_dialog_have"></info_portion>
+<info_portion id="eda_dialog_done"></info_portion>
+
+<info_portion id="aver_mg"></info_portion>
+<info_portion id="mg_aver1"></info_portion>
+<info_portion id="mg_aver2"></info_portion>
+
+<info_portion id="skit_start_dialog_done">
+<task>leila_vstrecha</task>
+</info_portion>
+<info_portion id="leila_pogovoril">
+<action>braad_test.create_skit_trader_restr</action>
+</info_portion>
+
+<info_portion id="enemy_skit">
+<action>antreg.enemy_skit</action>
+</info_portion>
+
+<info_portion id="skit_prishli">
+<action>antreg.sms_skit</action>
+</info_portion>
+<info_portion id="postovoy_talk"></info_portion>
+<info_portion id="leila_start_dialog_done"></info_portion>
+<info_portion id="leila_first_dialog_done">
+<task>demon_vstrecha</task>
+</info_portion>
+<info_portion id="demon_pogovoril"></info_portion>
+<info_portion id="eda_yaschik_done"></info_portion>
+
+<info_portion id="postovoy_first_dialog_done"></info_portion>
+<info_portion id="postovoy_mesto"></info_portion>
+
+<info_portion id="mg_aver1_spawn">
+<action>y_level.create_mg_aver1</action>
+</info_portion>
+
+
+<info_portion id="demon_start_dialog_start">
+<task>demon_dialog</task>
+</info_portion>
+<info_portion id="demon_start_dialog_have"></info_portion>
+<info_portion id="demon_start_dialog_done"></info_portion>
+
+<info_portion id="dom_zombi1_dead"></info_portion>
+<info_portion id="dom_zombi2_dead"></info_portion>
+<info_portion id="dom_zombi3_dead"></info_portion>
+<info_portion id="dom_zombi4_dead"></info_portion>
+<info_portion id="dom_zombi5_dead"></info_portion>
+<info_portion id="dom_zombi6_dead"></info_portion>
+<info_portion id="dom_zombi7_dead"></info_portion>
+<info_portion id="dom_zombi8_dead"></info_portion>
+<info_portion id="dom_zombi9_dead"></info_portion>
+<info_portion id="dom_zombi10_dead"></info_portion>
+
+--------------------------mandra2--------------------------
+
+<info_portion id="lesnik_poisk_dialog_start">
+<task>mandra2_dialog</task>
+</info_portion>
+<info_portion id="lesnik_poisk_dialog_have">
+<action>antreg.spawn_kontrik</action>
+<action>dimos.krik_mandra</action>
+</info_portion>
+<info_portion id="lesnik_poisk_dialog_done"></info_portion>
+
+---------------------------grig-----------------------------
+
+<info_portion id="lesnik_grig_dialog_done"></info_portion>
+<info_portion id="postovoy_fraza_done"></info_portion>
+<info_portion id="leila_grig_dialog_done">
+<task>grig_vstrecha</task>
+</info_portion>
+
+<info_portion id="grig_pogovoril"></info_portion>
+
+<info_portion id="grig_start_dialog_start">
+<task>hvosty_dialog</task>
+</info_portion>
+<info_portion id="grig_start_dialog_have"></info_portion>
+<info_portion id="grig_start_dialog_done">
+<action>antreg_object.spawn_skelet1_mg</action>
+</info_portion>
+
+<info_portion id="mg_pripyat"></info_portion>
+
+<info_portion id="nychka_man_delete">
+<action>antreg.del_nychka_man</action>
+<action>xyz_teleportation.del_mg_pripyat_new</action>
+</info_portion>
+
+<info_portion id="grig_delete">
+<action>antreg.del_grig</action>
+</info_portion>
+
+--------------------------swamp----------------------------
+
+<info_portion id="boloto_start">
+<action>antreg.spawn_doctor_mutantes</action>
+</info_portion>
+
+<info_portion id="doctor_enemy"></info_portion>
+
+<info_portion id="feldsher_dead"></info_portion>
+<info_portion id="feldsher_mesto"></info_portion>
+
+<info_portion id="enemy_doctor">
+<action>antreg.enemy_doc</action>
+</info_portion>
+
+------------------------pripyat---------------------------
+
+<info_portion id="mervin_anim">
+<action>antreg.spawn_pripyat</action>
+</info_portion>
+
+---------------------attak_bar_dolg-----------------------
+
+<info_portion id="dolg_attak_start">
+<action>antreg.spawn_dolg_attak</action>
+<action>braad_test.bar_attak_restr</action>
+</info_portion>
+
+<info_portion id="plichko_hit"></info_portion>
+<info_portion id="voronin_hit"></info_portion>
+<info_portion id="barman_dolg_hit"></info_portion>
+<info_portion id="dolg_attak1_hit"></info_portion>
+<info_portion id="dolg_attak2_hit"></info_portion>
+<info_portion id="dolg_attak3_hit"></info_portion>
+<info_portion id="dolg_attak4_hit"></info_portion>
+<info_portion id="dolg_attak5_hit"></info_portion>
+<info_portion id="dolg_attak6_hit"></info_portion>
+<info_portion id="dolg_attak7_hit"></info_portion>
+<info_portion id="dolg_attak8_hit"></info_portion>
+<info_portion id="dolg_attak9_hit"></info_portion>
+<info_portion id="dolg_attak10_hit"></info_portion>
+<info_portion id="voronin_ohr1_hit"></info_portion>
+<info_portion id="voronin_ohr2_hit"></info_portion>
+<info_portion id="voronin_ohr3_hit"></info_portion>
+
+<info_portion id="dolg_attak_dialog_start">
+<task>dolg_attak</task>
+</info_portion>
+<info_portion id="dolg_attak_dialog_have"></info_portion>
+<info_portion id="dolg_attak_dialog_done"></info_portion>
+
+<info_portion id="voronin_bar_dialog_start">
+<task>voronin_bar_dialog</task>
+</info_portion>
+<info_portion id="voronin_bar_dialog_have"></info_portion>
+<info_portion id="voronin_bar_dialog_done">
+<task>barman_new</task>
+</info_portion>
+<info_portion id="barman_new_talk"></info_portion>
+
+<info_portion id="plichko_vpered"></info_portion>
+<info_portion id="voronin_mesto"></info_portion>
+<info_portion id="dolg_attak7_mesto"></info_portion>
+<info_portion id="dolg_attak8_mesto"></info_portion>
+
+<info_portion id="about_voronin_dialog_start">
+<task>voronin_vstrecha</task>
+</info_portion>
+<info_portion id="voronin_pogovoril"></info_portion>
+
+<info_portion id="voronin_dead"></info_portion>
+<info_portion id="bratok_attak1_dead"></info_portion>
+<info_portion id="bratok_attak2_dead"></info_portion>
+<info_portion id="bratok_attak3_dead"></info_portion>
+
+<info_portion id="pribor_haron_have"></info_portion>
+<info_portion id="solomon_medik_have">
+<action>antreg.spawn_chaes_medik</action>
+</info_portion>
+
+<info_portion id="dyak_second_start"></info_portion>
+
+------------------------swamp_first---------------------
+
+<info_portion id="boloto_zadan">
+<task>doctor_vstrecha</task>
+</info_portion>
+<info_portion id="doctor_vstrecha_start"></info_portion>
+
+<info_portion id="doctor_one_start"></info_portion>
+<info_portion id="doctor_kostolom_start">
+<task>doctor_kostolom</task>
+</info_portion>
+<info_portion id="doctor_kostolom_have">
+<action>antreg.remove_metka_kostolom</action>
+</info_portion>
+<info_portion id="doctor_kostolom_done"></info_portion>
+<info_portion id="doctor_kostolom_dead"></info_portion>
+
+<info_portion id="doctor_skit_dialog_start">
+<task>swamp_grig</task>
+</info_portion>
+
+<info_portion id="grig_swamp_dialog_start">
+<task>grig_zamery</task>
+</info_portion>
+
+<info_portion id="zamery_dialog_start"></info_portion>
+<info_portion id="zamery_dialog_mesto"></info_portion>
+<info_portion id="zamery_dialog_done"></info_portion>
+
+<info_portion id="babki_dead"></info_portion>
+<info_portion id="babka_01_dead"></info_portion>
+<info_portion id="babka_02_dead"></info_portion>
+<info_portion id="babka_03_dead"></info_portion>
+<info_portion id="babka_04_dead"></info_portion>
+<info_portion id="babka_05_dead"></info_portion>
+<info_portion id="babka_06_dead"></info_portion>
+
+<info_portion id="kent_hit"></info_portion>
+<info_portion id="kent_dead"></info_portion>
+
+<info_portion id="grig_swamp_dialog_done"></info_portion>
+<info_portion id="swamp_les"></info_portion>
+
+<info_portion id="les_ac"></info_portion>
+<info_portion id="ac_bar"></info_portion>
+<info_portion id="ac_radar"></info_portion>
+
+<info_portion id="lesnik3_dead"></info_portion>
+<info_portion id="lesnik4_dead"></info_portion>
+<info_portion id="lesnik_cat1_dead"></info_portion>
+<info_portion id="lesnik_cat2_dead"></info_portion>
+<info_portion id="lesnik_cat3_dead"></info_portion>
+<info_portion id="lesnik_cat4_dead"></info_portion>
+<info_portion id="lesnik_cat5_dead"></info_portion>
+<info_portion id="lesnik_cat6_dead"></info_portion>
+
+<info_portion id="lesnik_cats_start">
+<task>lesnik_cats</task>
+</info_portion>
+<info_portion id="lesnik_cats_have"></info_portion>
+<info_portion id="lesnik_cats_done"></info_portion>
+
+<info_portion id="lesnik_hunters_done">
+<task>lesnik_hunters</task>
+</info_portion>
+
+<info_portion id="sutuly_nashel"></info_portion>
+<info_portion id="sutuly_start_dialog_done">
+<task>sutuly_grek</task>
+</info_portion>
+<info_portion id="grek_nashel"></info_portion>
+<info_portion id="grek_start_dialog_done"></info_portion>
+
+<info_portion id="grek_poshli">
+<task>grek_ohota</task>
+</info_portion>
+
+<info_portion id="grek_dead"></info_portion>
+<info_portion id="grek_hit"></info_portion>
+<info_portion id="grek2_dead"></info_portion>
+<info_portion id="grek2_hit"></info_portion>
+<info_portion id="zahar_dead"></info_portion>
+<info_portion id="zahar2_dead"></info_portion>
+<info_portion id="zahar_hit"></info_portion>
+
+<info_portion id="ohota_boar1_dead"></info_portion>
+<info_portion id="ohota_boar2_dead"></info_portion>
+<info_portion id="ohota_boar3_dead"></info_portion>
+<info_portion id="ohota_boar4_dead"></info_portion>
+<info_portion id="ohota_boar5_dead"></info_portion>
+<info_portion id="ohota_boar6_dead"></info_portion>
+
+<info_portion id="grek_ohota_dialog_done"></info_portion>
+<info_portion id="ohota_boars_have"></info_portion>
+<info_portion id="zahar_mesto"></info_portion>
+<info_portion id="grek_mesto"></info_portion>
+<info_portion id="sms_zahar">
+<action>antreg.sms_zahar</action>
+</info_portion>
+<info_portion id="zahar_talk"></info_portion>
+<info_portion id="zahar_perehod_dialog_done"></info_portion>
+
+-------------------------sobolev-------------------------
+
+<info_portion id="dolg_leader_help_est"></info_portion>
+<info_portion id="dolg_leader_help_done">
+<task>kapitan_vstrecha</task>
+</info_portion>
+<info_portion id="kapitan_nashel"></info_portion>
+<info_portion id="sobolev_done">
+<task>voronin_talk</task>
+</info_portion>
+
+<info_portion id="td_kordon"></info_portion>
+<info_portion id="kordon_td"></info_portion>
+<info_portion id="voronin_vstrecha"></info_portion>
+
+-----------------------tankist_stvol------------------------
+
+<info_portion id="tankist_start_dialog_start">
+<task>tankist_stvol</task>
+</info_portion>
+<info_portion id="tankist_start_dialog_have"></info_portion>
+<info_portion id="tankist_start_dialog_done"></info_portion>
+
+<info_portion id="zombak_spawn">
+<action>antreg.spawn_uchen_zombak</action>
+</info_portion>
+
+---------------------barman_pismo_sidor-------------------
+
+<info_portion id="barman_pismo_start">
+<task>barman_pismo</task>
+</info_portion>
+<info_portion id="barman_pismo_done"></info_portion>
+
+<info_portion id="kordon_mir"></info_portion>
+<info_portion id="mir_kordon"></info_portion>
+
+-----------------------------usa--------------------------
+
+<info_portion id="sidor_one_dialog_start">
+<task>sidor_cognak</task>
+</info_portion>
+<info_portion id="smith_start_dialog_start"></info_portion>
+
+<info_portion id="smith_nachalo_dialog_start">
+<task>smith_brityi</task>
+<action>fotograf.manuscript_spawn</action>
+</info_portion>
+
+<info_portion id="mario_nachalo"></info_portion>
+
+<info_portion id="brityi_pogovoril"></info_portion>
+<info_portion id="brityi_dogovoril"></info_portion>
+
+<info_portion id="brityi_start_dialog_start">
+<task>vertushka_mesto</task>
+<action>mauvais.timer_music_mk01</action>
+</info_portion>
+
+<info_portion id="brityi_start_dialog_done">
+<task>brityi_sidor</task>
+</info_portion>
+
+<info_portion id="mesto_dobralsya"></info_portion>
+<info_portion id="mesto_obsledoval"></info_portion>
+<info_portion id="brityi_mesto"></info_portion>
+
+
+<info_portion id="brityi_na_meste"></info_portion>
+<info_portion id="brityi_dobezhal"></info_portion>
+<info_portion id="brityi_bunker"></info_portion>
+<info_portion id="sidor_vstretilsya"></info_portion>
+
+<info_portion id="sidor_start_dialog_start">
+<task>sidor_brigadir</task>
+</info_portion>
+
+<info_portion id="brigadir_vstretilsya"></info_portion>
+
+<info_portion id="brigadir_start_dialog_start">
+<task>maroder_oblava</task>
+</info_portion>
+
+<info_portion id="brigadir_start_dialog_est"></info_portion>
+
+<info_portion id="fotik_nashel">
+<task>fotik_est</task>
+<action>val_test.create_valspeech1</action>
+<action>mauvais.music_mk02</action>
+</info_portion>
+
+<info_portion id="smith_fotik_start"></info_portion>
+
+<info_portion id="smith_one_dialog_start">
+<task>smith_brown</task>
+</info_portion>
+<info_portion id="brown_razgovor"></info_portion>
+<info_portion id="brown_pogovoril"></info_portion>
+
+<info_portion id="foster_spawn">
+<task>foster_poisk</task>
+<action>braad_test.foster_zvuk_restr</action>
+</info_portion>
+<info_portion id="foster_vstal"></info_portion>
+<info_portion id="foster_restrictor"></info_portion>
+<info_portion id="foster_wounded"></info_portion>
+<info_portion id="foster_plen_dialog_done"></info_portion>
+<info_portion id="kapral_mesto"></info_portion>
+<info_portion id="kapral_poisk_dialog_done"></info_portion>
+<info_portion id="foster_dead"></info_portion>
+
+<info_portion id="brown_baza_dialog_start">
+<task>baza_mir</task>
+</info_portion>
+<info_portion id="brown_gotov_idti"></info_portion>
+<info_portion id="start_monstry_mir"></info_portion>
+<info_portion id="brown_baza_dialog_have"></info_portion>
+<info_portion id="brown_mesto1"></info_portion>
+<info_portion id="brown_mesto2"></info_portion>
+<info_portion id="brown_baza_dialog_done"></info_portion>
+
+<info_portion id="brown_fabrika_dialog_start">
+<task>fabrika_mir</task>
+</info_portion>
+<info_portion id="brown_fabrika_dialog_have">
+<action>antreg.remove_metka_fab</action>
+<action>music_antreg.pda_fab</action>
+</info_portion>
+<info_portion id="brown_fabrika_dialog_done">
+<task>sidor_vernutsya</task>
+</info_portion>
+
+<info_portion id="sidor_vernulsya"></info_portion>
+<info_portion id="sidor_two_dialog_start">
+<task>sidor_pismo</task>
+</info_portion>
+<info_portion id="sidor_two_dialog_done">
+<action>antreg.sidor_pismo_done</action>
+</info_portion>
+
+<info_portion id="about_magomet_dialog_start">
+<task>magomet_nayti</task>
+</info_portion>
+<info_portion id="about_magomet_dialog_done"></info_portion>
+
+<info_portion id="drug_magomet_dialog_start">
+<action>antreg.spawn_maroderka_zasada</action>
+</info_portion>
+
+<info_portion id="sidor_magomet_dialog_start"></info_portion>
+<info_portion id="sidor_nomagomet_dialog_start"></info_portion>
+
+<info_portion id="spawn_drug">
+<action>antreg.drug_spawn</action>
+</info_portion>
+
+-------------------------------------------------
+
+<info_portion id="bar_rostok"></info_portion>
+<info_portion id="rostok_bar"></info_portion>
+<info_portion id="rostok_yantar"></info_portion>
+<info_portion id="yantar_rostok"></info_portion>
+<info_portion id="radar_mg"></info_portion>
+
+---------------------karina----------------------
+
+<info_portion id="graf_poisk_dialog_start">
+<task>graf_poisk</task>
+</info_portion>
+<info_portion id="graf_poisk_dialog_done"></info_portion>
+
+<info_portion id="karina_poisk_dialog_start">
+<task>karina_poisk</task>
+</info_portion>
+<info_portion id="karina_poisk_dialog_done"></info_portion>
+
+<info_portion id="dogs_perehod">
+<action>antreg.spawn_dogs_perehod</action>
+</info_portion>
+
+<info_portion id="leila_karina_dialog_start">
+<task>karina_nayti</task>
+</info_portion>
+<info_portion id="leila_karina_dialog_done"></info_portion>
+
+<info_portion id="lesnik_karina_dialog_start">
+<task>ohotniki_karina</task>
+</info_portion>
+<info_portion id="lesnik_karina_dialog_done"></info_portion>
+
+<info_portion id="pomosch_karina_dialog_start">
+<task>karina_pomosch</task>
+</info_portion>
+<info_portion id="pomosch_karina_dialog_done"></info_portion>
+
+<info_portion id="karina_dead"></info_portion>
+
+<info_portion id="babka_dialog_starts">
+<action>esc_graf.sound_babka</action>
+</info_portion>
+
+<info_portion id="babka_dialog_start"></info_portion>
+
+<info_portion id="babka_del">
+<action>braad_test.mervin_vyrubaet</action>
+<action>z_teleport.teleport_babki</action>
+<action>antreg.delete_babka_brown</action>
+<action>antreg.delete_babka_blue</action>
+<action>antreg.babka_kontra_spawn</action>
+</info_portion>
+
+<info_portion id="karina_help_dialog_start">
+<task>karina_poshli</task>
+</info_portion>
+<info_portion id="karina_help_dialog_done"></info_portion>
+<info_portion id="karina_mesto"></info_portion>
+<info_portion id="karina_pda_dialog_start"></info_portion>
+<info_portion id="pda_nebo_have"></info_portion>
+
+<info_portion id="karina_pda_est_start">
+<task>karina_perehod</task>
+</info_portion>
+
+<info_portion id="karina_perehod_dialog_start"></info_portion>
+
+<info_portion id="karina_prishli">
+<action>antreg.spawn_kontra_les</action>
+</info_portion>
+
+<info_portion id="aver_bolota"></info_portion>
+
+<info_portion id="kontra_les_dead"></info_portion>
+
+<info_portion id="karina_razgovor">
+<task>karina_doc</task>
+</info_portion>
+
+<info_portion id="karina_bolota_dialog_start">
+<task>doc_karina</task>
+</info_portion>
+
+<info_portion id="doctor_karina_dialog_start">
+<task>doc_vodyanoy</task>
+</info_portion>
+<info_portion id="doctor_karina_dialog_have">
+<action>antreg.remove_metka_reciver</action>
+<action>antreg.spawn_swamp_green</action>
+</info_portion>
+<info_portion id="doctor_karina_dialog_done"></info_portion>
+
+<info_portion id="doctor_povodyr_dialog_start"></info_portion>
+
+<info_portion id="povodyr_start"></info_portion>
+<info_portion id="povodyr_mesto">
+<action>y_level.create_swamp_mg_ac</action>
+</info_portion>
+
+<info_portion id="swamp_les2"></info_portion>
+<info_portion id="les_ac2"></info_portion>
+
+<info_portion id="swamps_mg"></info_portion>
+<info_portion id="mg_ac"></info_portion>
+<info_portion id="ac_mg"></info_portion>
+<info_portion id="mg_swamps"></info_portion>
+
+<info_portion id="mg_nechto">
+<action>antreg.spawn_mg_nechto</action>
+<action>antreg.del_povodyr</action>
+<action>antreg.remove_metka_povodyr</action>
+</info_portion>
+
+<info_portion id="ac_nechto">
+<action>antreg.spawn_ac_nechto</action>
+</info_portion>
+
+<info_portion id="swamp_nechto">
+<action>antreg.spawn_swamp_nechto</action>
+</info_portion>
+
+<info_portion id="sverhprovodnik_dialog_start">
+<task>sverhprovodnik</task>
+</info_portion>
+<info_portion id="sverhprovodnik_dialog_have"></info_portion>
+<info_portion id="sverhprovodnik_dialog_done"></info_portion>
+
+<info_portion id="mg_nechto_start">
+<task>mg_voyna</task>
+<action>antreg.spawn_zomba_nechto</action>
+<action>esc_graf.sound_mg</action>
+</info_portion>
+<info_portion id="mg_nechto_have"></info_portion>
+<info_portion id="mg_nechto_done"></info_portion>
+
+<info_portion id="zomba1_dead"></info_portion>
+<info_portion id="zomba2_dead"></info_portion>
+<info_portion id="zomba3_dead"></info_portion>
+<info_portion id="zomba4_dead"></info_portion>
+<info_portion id="zomba5_dead"></info_portion>
+<info_portion id="zomba6_dead"></info_portion>
+<info_portion id="zomba7_dead"></info_portion>
+<info_portion id="zomba8_dead"></info_portion>
+<info_portion id="zomba9_dead"></info_portion>
+<info_portion id="zomba10_dead"></info_portion>
+<info_portion id="zomba11_dead"></info_portion>
+<info_portion id="zomba12_dead"></info_portion>
+<info_portion id="zomba13_dead"></info_portion>
+<info_portion id="zomba14_dead"></info_portion>
+<info_portion id="zomba15_dead"></info_portion>
+<info_portion id="zomba16_dead"></info_portion>
+<info_portion id="zomba17_dead"></info_portion>
+<info_portion id="zomba18_dead"></info_portion>
+<info_portion id="zomba19_dead"></info_portion>
+<info_portion id="zomba20_dead"></info_portion>
+<info_portion id="zomba21_dead"></info_portion>
+<info_portion id="zomba22_dead"></info_portion>
+<info_portion id="zomba23_dead"></info_portion>
+<info_portion id="zomba24_dead"></info_portion>
+<info_portion id="zomba25_dead"></info_portion>
+<info_portion id="zomba26_dead"></info_portion>
+<info_portion id="zomba27_dead"></info_portion>
+<info_portion id="zomba28_dead"></info_portion>
+<info_portion id="zomba29_dead"></info_portion>
+<info_portion id="zomba30_dead"></info_portion>
+<info_portion id="zomba31_dead"></info_portion>
+<info_portion id="zomba32_dead"></info_portion>
+<info_portion id="zomba33_dead"></info_portion>
+<info_portion id="zomba34_dead"></info_portion>
+<info_portion id="zomba35_dead"></info_portion>
+<info_portion id="zomba36_dead"></info_portion>
+<info_portion id="zomba37_dead"></info_portion>
+<info_portion id="zomba38_dead"></info_portion>
+<info_portion id="zomba39_dead"></info_portion>
+<info_portion id="zomba40_dead"></info_portion>
+
+<info_portion id="mir_bar"></info_portion>
+<info_portion id="bar_mir"></info_portion>
+
+<info_portion id="psy_mir_spawn">
+<action>antreg.spawn_psy_mir</action>
+</info_portion>
+
+<info_portion id="monolit_pogovorils"></info_portion>
+
+<info_portion id="monolit_final">
+<action>antreg.roza_action</action>
+<action>antreg.del_brat_monolit</action>
+<action>antreg.del_nevidimka</action>
+<action>antreg_object.spawn_zarkost</action>
+<action>antreg.spawn_kapitan</action>
+</info_portion>
+
+<info_portion id="brat_govorit">
+<action>esc_graf.sound_brat</action>
+</info_portion>
+
+<info_portion id="brat_dialog_start"></info_portion>
+
+<info_portion id="brat_tele">
+<action>antreg.del_kapitan</action>
+<action>teleport.spawn_teleport8</action>
+<action>braad_test.create_chaes2_restr</action>
+<action>esc_graf.sound_brat2</action>
+</info_portion>
+
+<info_portion id="sled2_zovet">
+<task>sled2_pomosch</task>
+<action>antreg.spawn_sled2_killers</action>
+<action>braad_test.create_sled2_restr</action>
+</info_portion>
+
+<info_portion id="sled2_help"></info_portion>
+
+<info_portion id="sled2_dead"></info_portion>
+
+<info_portion id="pobeg_start">
+<task>actor_pobeg</task>
+<action>time_back.StartBackTimer</action>
+</info_portion>
+<info_portion id="pobeg_mesto">
+</info_portion>
+
+<info_portion id="pobeg_finish"></info_portion>
+
+<info_portion id="pobeg_nachalo">
+<action>braad_test.create_strelok_restr</action>
+<action>braad_test.create_ugroza_restr</action>
+<action>esc_graf.sound_elisa</action>
+</info_portion>
+
+<info_portion id="pobeg_spawn">
+<action>antreg.spawn_mono_final</action>
+</info_portion>
+
+<info_portion id="pobeg_netuda">
+<action>xyz_teleportation.bunker_end</action>
+</info_portion>
+
+<info_portion id="pobeg_net">
+<action>antreg.kill_strelok</action>
+</info_portion>
+
+<info_portion id="coda_final">
+<action>esc_graf.sound_coda</action>
+</info_portion>
+
+<info_portion id="end_dialog_start"></info_portion>
+
+---------------------------rule_end----------------------------
+
+<info_portion id="rule_konec"></info_portion>
+
+<info_portion id="rule_end">
+<action>teleport.spawn_teleport10</action>
+<action>braad_test.create_rule_restr</action>
+<action>braad_test.create_sarfinal_restr</action>
+<action>braad_test.create_superfinal_restr</action>
+<action>antreg.spawn_kontr_final1</action>
+</info_portion>
+
+---------------------------klyk_new----------------------------
+
+<info_portion id="klyk_delete">
+<action>antreg.del_klyk</action>
+</info_portion>
+
+<info_portion id="klychara_spawn">
+<action>antreg.spawn_klyk</action>
+</info_portion>
+
+<info_portion id="klychara_delete">
+<action>antreg.del_klychara</action>
+</info_portion>
+
+<info_portion id="tushkanchiki_new">
+<action>antreg.spawn_tushkanchiki</action>
+</info_portion>
+
+<info_portion id="tushkanchiki_midle">
+<action>antreg.spawn_tushkanchiki</action>
+</info_portion>
+
+<info_portion id="tushkanchiki_last">
+<action>antreg.spawn_tushkanchiki</action>
+</info_portion>
+
+---------------------------tt2_patch_01----------------------------
+
+<info_portion id="vano_hit"></info_portion>
+<info_portion id="vano_dead"></info_portion>
+
+<info_portion id="gigant_x18_delete">
+<action>antreg.del_gigant_x18</action>
+</info_portion>
+
+<info_portion id="koldun_spawn">
+<action>antreg.spawn_koldun</action>
+<action>teleport.spawn_teleport11</action>
+</info_portion>
+<info_portion id="koldun_hit"></info_portion>
+
+<info_portion id="mil_trader_dead"></info_portion>
+<info_portion id="sviblov_dead"></info_portion>
+
+<info_portion id="lapsha_ubit"></info_portion>
+<info_portion id="skryaga_ubit"></info_portion>
+<info_portion id="shurup_ubit"></info_portion>
+<info_portion id="lukash_ubit"></info_portion>
+<info_portion id="dan_ubit"></info_portion>
+<info_portion id="levsha_ubit"></info_portion>
+<info_portion id="sviblov_ubit"></info_portion>
+<info_portion id="osvedom_ubit"></info_portion>
+
+<info_portion id="koldun_start_dialog_start"></info_portion>
+<info_portion id="koldun_lapsha_dialog_start"></info_portion>
+<info_portion id="koldun_skryaga_dialog_start"></info_portion>
+<info_portion id="koldun_shurup_dialog_start"></info_portion>
+<info_portion id="koldun_lukash_dialog_start"></info_portion>
+<info_portion id="koldun_dan_dialog_start"></info_portion>
+<info_portion id="koldun_levsha_dialog_start"></info_portion>
+<info_portion id="koldun_sviblov_dialog_start"></info_portion>
+<info_portion id="koldun_osvedom_dialog_start"></info_portion>
+
+<info_portion id="zahar_vodyanoy_start">
+<task>zahar_voda</task>
+</info_portion>
+<info_portion id="zahar_vodyanoy_have">
+<action>antreg.del_metka_zahar</action>
+<action>antreg.spawn_les_wolk</action>
+</info_portion>
+<info_portion id="zahar_vodyanoy_done"></info_portion>
+
+<info_portion id="zapravka_flame_dialog_start"></info_portion>
+<info_portion id="zapravka_flame_dialog_done"></info_portion>
+
+<info_portion id="vano_start_dialog_start">
+<task>vano_dialog</task>
+</info_portion>
+<info_portion id="vano_start_dialog_have">
+<action>antreg.del_metka_vano</action>
+<action>antreg.spawn_mir_green</action>
+<action>braad_test.create_vhod_restr</action>
+<action>braad_test.create_maroder_restr</action>
+</info_portion>
+<info_portion id="vano_start_dialog_done"></info_portion>
+<info_portion id="vano_finish"></info_portion>
+
+<info_portion id="wolki_mk_spawn">
+<action>antreg.spawn_wolki_mk</action>
+</info_portion>
+
+<info_portion id="dolg_mafon_spawn">
+<action>antreg.spawn_dolg_mafon</action>
+</info_portion>
+
+<info_portion id="osvedom_mafon_spawn">
+<action>antreg.spawn_osvedom_mafon</action>
+</info_portion>
+
+---------------------------money----------------------------
+
+<info_portion id="delete_ggm">
+<action>braad_test.money_gg</action>
+</info_portion>
+
+<info_portion id="delete_gggm">
+<action>braad_test.money_gg</action>
+</info_portion>
+
+<info_portion id="delete_ggggm">
+<action>braad_test.money_gg</action>
+</info_portion>
+
+<info_portion id="delete_gggggm">
+<action>braad_test.money_gg</action>
+</info_portion>
+
+<info_portion id="delete_2">
+<action>fotograf.money_2</action>
+</info_portion>
+
+<info_portion id="delete_5">
+<action>braad_test.money_5</action>
+</info_portion>
+
+<info_portion id="delete_10">
+<action>braad_test.money_10</action>
+</info_portion>
+
+<info_portion id="delete_15">
+<action>braad_test.money_15</action>
+</info_portion>
+
+<info_portion id="delete_20">
+<action>braad_test.money_20</action>
+</info_portion>
+
+<info_portion id="delete_25">
+<action>braad_test.money_25</action>
+</info_portion>
+
+<info_portion id="delete_30">
+<action>braad_test.money_30</action>
+</info_portion>
+
+<info_portion id="delete_50">
+<action>braad_test.money_50</action>
+</info_portion>
+
+--------------------------maroder---------------------------
+
+<info_portion id="maroder_enemy">
+<action>antreg.enemy_maroder</action>
+</info_portion>
+
+<info_portion id="gena_spawn"></info_portion>
+
+<info_portion id="maroder_meet_dialog_start"></info_portion>
+
+<info_portion id="maroder_start_dialog_start">
+<task>maroder_dialog</task>
+</info_portion>
+<info_portion id="maroder_start_dialog_have">
+<action>antreg.del_metka_nato</action>
+</info_portion>
+<info_portion id="maroder_start_dialog_done"></info_portion>
+
+<info_portion id="smith_maroder_dialog_start"></info_portion>
+
+<info_portion id="chek_mesto"></info_portion>
+<info_portion id="chek_mesto2"></info_portion>
+
+<info_portion id="nato_enemy">
+<action>esc_graf.sound_mir_alarm</action>
+</info_portion>
+
+<info_portion id="monolitt_enemy">
+<action>antreg.enemy_monolith</action>
+</info_portion>
+
+<info_portion id="nato_zasada">
+<action>antreg.spawn_nato_zasada</action>
+</info_portion>
+
+<info_portion id="antirestr_spawn">
+<action>braad_test.create_antirostok_restr</action>
+</info_portion>
+
+<info_portion id="david_spawn">
+<action>antreg.spawn_david</action>
+</info_portion>
+
+<info_portion id="iuda_delete">
+<action>antreg.del_david</action>
+</info_portion>
+
+<info_portion id="iuda_spawn">
+<action>braad_test.create_iuda_restr</action>
+</info_portion>
+
+<info_portion id="maloy_speak">
+<action>esc_graf.sound_maloy</action>
+<action>antreg.spawn_maloy_mafon</action>
+</info_portion>
+
+<info_portion id="maloy_talk">
+<action>esc_graf.sound_maloy_talk</action>
+</info_portion>
+
+<info_portion id="maroder_vrag"></info_portion>
+<info_portion id="maroder_otboy"></info_portion>
+<info_portion id="maloy_razobralsya"></info_portion>
+
+<info_portion id="leila_maroder_dialog_start">
+<task>maloy_dialog</task>
+</info_portion>
+<info_portion id="maloy_dialog_start"></info_portion>
+<info_portion id="maloy_dialog_have"></info_portion>
+<info_portion id="maloy_dialog_done"></info_portion>
+
+<info_portion id="maloy_ushli">
+<action>antreg.del_maloy</action>
+<action>antreg.del_maroder_mg1</action>
+<action>antreg.del_maroder_mg2</action>
+<action>antreg.del_maroder_mg3</action>
+<action>antreg.del_maroder_mg4</action>
+</info_portion>
+
+<info_portion id="solomonchik_spawn">
+<action>braad_test.create_mon5_restr</action>
+<action>braad_test.create_solomonchik_restr</action>
+</info_portion>
+
+<info_portion id="elchimera_start">
+<action>antreg.elchimera_spawn</action>
+</info_portion>
+
+<info_portion id="del_yaschik">
+<action>antreg.del_yaschichek1</action>
+<action>antreg.del_yaschichek2</action>
+</info_portion>
+
+-------------------------fotograf---------------------------
+
+<info_portion id="yan_labx16_switcher_primary_new"></info_portion>
+<info_portion id="x16_claw_dead"></info_portion>
+
+<info_portion id="haron_spawn"></info_portion>
+
+<info_portion id="peschera_contra_spawn">
+<action>teleport.spawn_teleport12</action>
+<action>mauvais.music_peschera_enter</action>
+<action>fotograf.actor_in_hell</action>
+</info_portion>
+
+<info_portion id="peschera_contra_dead">
+<action>mauvais.music_peschera_contra</action>
+</info_portion>
+
+<info_portion id="peshera_code_door_unlocked"></info_portion>
+<info_portion id="peshera_code_door_unlocked2"></info_portion>
+<info_portion id="peshera_code_door_unlocked3"></info_portion>
+<info_portion id="peshera_code_door_unlocked4"></info_portion>
+
+<info_portion id="saharov_speech1"></info_portion>
+<info_portion id="saharov_speech2"></info_portion>
+
+<info_portion id="swamp_road"></info_portion>
+<info_portion id="road_swamp"></info_portion>
+<info_portion id="vasil_nayden"></info_portion>
+<info_portion id="doctor_nayden"></info_portion>
+
+<info_portion id="sahar_start_dialog_done">
+<task>vasil_govorit</task>
+</info_portion>
+
+<info_portion id="vasil_vstretilis"></info_portion>
+
+<info_portion id="vasil_nach_dialog_start">
+<task>doctor_govorit</task>
+</info_portion>
+
+<info_portion id="feldsher_start_dialog_start"></info_portion>
+
+<info_portion id="doctor_nach_dialog_start">
+<task>lavrov_iskat</task>
+</info_portion>
+
+<info_portion id="lavrov_pda_have">
+<action>fotograf.lavrov_pda</action>
+</info_portion>
+
+<info_portion id="doctor_tri_dialog_start">
+<task>doctor_zapiska</task>
+</info_portion>
+
+<info_portion id="sahar_tri_dialog_start"></info_portion>
+
+<info_portion id="sahar_four_dialog_start"></info_portion>
+
+<info_portion id="sahar_crystalls_dialog_start">
+<action>ex_transform.sms_saharov1</action>
+<article>start_crystally</article>
+<article>start_mineraly</article>
+</info_portion>
+
+<info_portion id="sahar_crystalls_final"></info_portion>
+
+<info_portion id="start_crystalls"></info_portion>
+
+<info_portion id="sbor_recepts_ks_start">
+<task>recepts_01</task>
+</info_portion>
+
+<info_portion id="sbor_recepts_tn_start">
+<task>recepts_02</task>
+</info_portion>
+
+<info_portion id="sbor_recepts_og_start">
+<task>recepts_03</task>
+<action>ex_transform.sms_saharov2</action>
+<article>start_talismany</article>
+</info_portion>
+
+<info_portion id="recept_one_est"></info_portion>
+<info_portion id="recept_two_est"></info_portion>
+<info_portion id="recept_tri_est"></info_portion>
+
+<info_portion id="sbor_recepts_ks_done"></info_portion>
+<info_portion id="sbor_recepts_tn_done"></info_portion>
+<info_portion id="sbor_recepts_og_done"></info_portion>
+
+<info_portion id="karta_peschery">
+<task>vybratsya_izpeschery</task>
+<action>y_level.lch_peschera_sar_peschera</action>
+<action>fotograf.haron_peschera_spawn</action>
+</info_portion>
+
+<info_portion id="vybralsya_izpeschery"></info_portion>
+
+<info_portion id="peschera_monsters_spawn">
+<action>fotograf.spawn_peschera_monstry</action>
+</info_portion>
+
+<info_portion id="road_baza_spawn">
+<action>fotograf.road_baza_spawn</action>
+</info_portion>
+
+<info_portion id="edik_mafon_spawn">
+<action>fotograf.spawn_edik_mafon</action>
+</info_portion>
+
+<info_portion id="soldaty_enemy">
+<action>fotograf.enemy_soldaty</action>
+<action>amk_mod.spawn_vertushka</action>
+</info_portion>
+
+<info_portion id="uchen_enemy">
+<action>fotograf.enemy_ecology</action>
+</info_portion>
+
+<info_portion id="tank_enemy"></info_portion>
+
+<info_portion id="usa_enemy">
+<action>fotograf.enemy_usa</action>
+<action>amk_mod.spawn_vertushka</action>
+</info_portion>
+
+<info_portion id="bratok_enemy">
+<action>fotograf.enemy_bratok</action>
+</info_portion>
+
+<info_portion id="dezertiry_enemy">
+<action>fotograf.enemy_dezertiry</action>
+</info_portion>
+
+<info_portion id="road_baza_alarm"></info_portion>
+<info_portion id="rus_baza_alarm"></info_portion>
+<info_portion id="heli_uletaet"></info_portion>
+
+--------------fotografirovanie----------------
+
+<info_portion id="sms_vzone">
+<action>fotograf.sms_vzone</action>
+</info_portion>
+<info_portion id="mozhno_delat_foto">
+<action>fotograf.sms_mozhno_foto</action>
+</info_portion>
+<info_portion id="foto_sdelal"></info_portion>
+<info_portion id="foto1_sdelal">
+<article>foto_01</article>
+</info_portion>
+<info_portion id="foto2_sdelal">
+<article>foto_02</article>
+</info_portion>
+<info_portion id="foto3_sdelal">
+<article>foto_03</article>
+</info_portion>
+<info_portion id="foto4_sdelal">
+<article>foto_04</article>
+</info_portion>
+<info_portion id="foto5_sdelal">
+<article>foto_05</article>
+</info_portion>
+<info_portion id="foto6_sdelal">
+<article>foto_06</article>
+</info_portion>
+<info_portion id="foto7_sdelal">
+<article>foto_07</article>
+</info_portion>
+<info_portion id="foto8_sdelal">
+<article>foto_08</article>
+</info_portion>
+<info_portion id="foto9_sdelal">
+<article>foto_09</article>
+</info_portion>
+<info_portion id="foto10_sdelal">
+<article>foto_10</article>
+</info_portion>
+<info_portion id="sms_nelzya_foto">
+<action>fotograf.sms_nelzya_foto</action>
+</info_portion>
+<info_portion id="sms_nevzone">
+<action>fotograf.sms_nevzone</action>
+</info_portion>
+<info_portion id="vse_foto_sdelal"></info_portion>
+
+------------end_fotografirovanie--------------
+
+<info_portion id="lager_uchen_spawn">
+<action>fotograf.spawn_lager_uchen</action>
+<action>fotograf.spawn_cat_trup1</action>
+<action>fotograf.spawn_cat_trup2</action>
+<action>fotograf.spawn_cat_trup3</action>
+<action>fotograf.spawn_doktor_monstry</action>
+</info_portion>
+
+<info_portion id="actor_restr_01"></info_portion>
+<info_portion id="actor_restr_02"></info_portion>
+
+<info_portion id="borovikov_dead"></info_portion>
+<info_portion id="borovikov_enemy">
+<action>fotograf.enemy_borovikov</action>
+</info_portion>
+
+<info_portion id="bar_ataka_kamp_spawn">
+<task>levsha_vstrecha</task>
+<action>fotograf.spawn_bar_ataka</action>
+</info_portion>
+
+<info_portion id="levsha_vstrecha"></info_portion>
+
+<info_portion id="bar_monstry_spawn">
+<action>fotograf.spawn_bar_ataka2</action>
+</info_portion>
+
+<info_portion id="bar_monstry_spawn2">
+<action>fotograf.spawn_bar_ataka3</action>
+</info_portion>
+
+<info_portion id="bar_ataka_01_dead"></info_portion>
+<info_portion id="bar_ataka_02_dead"></info_portion>
+<info_portion id="bar_ataka_03_dead"></info_portion>
+<info_portion id="bar_ataka_04_dead"></info_portion>
+<info_portion id="bar_ataka_05_dead"></info_portion>
+
+<info_portion id="bar_pseudodog_00_dead"></info_portion>
+<info_portion id="bar_pseudodog_01_dead"></info_portion>
+<info_portion id="bar_pseudodog_02_dead"></info_portion>
+<info_portion id="bar_pseudodog_03_dead"></info_portion>
+<info_portion id="bar_pseudodog_04_dead"></info_portion>
+
+<info_portion id="bar_boar_00_dead"></info_portion>
+<info_portion id="bar_boar_01_dead"></info_portion>
+<info_portion id="bar_boar_02_dead"></info_portion>
+<info_portion id="bar_boar_03_dead"></info_portion>
+
+<info_portion id="bar_flesh_00_dead"></info_portion>
+<info_portion id="bar_flesh_01_dead"></info_portion>
+<info_portion id="bar_flesh_02_dead"></info_portion>
+<info_portion id="bar_flesh_03_dead"></info_portion>
+<info_portion id="bar_chimera_01_dead"></info_portion>
+
+<info_portion id="bar_snork_00_dead"></info_portion>
+<info_portion id="bar_snork_01_dead"></info_portion>
+<info_portion id="bar_snork_02_dead"></info_portion>
+<info_portion id="bar_snork_03_dead"></info_portion>
+<info_portion id="bar_snork_04_dead"></info_portion>
+<info_portion id="bar_snork_05_dead"></info_portion>
+
+<info_portion id="bar_izlom_00_dead"></info_portion>
+<info_portion id="bar_izlom_01_dead"></info_portion>
+<info_portion id="bar_krovosos_01_dead"></info_portion>
+
+<info_portion id="bar_burer_00_dead"></info_portion>
+<info_portion id="bar_burer_01_dead"></info_portion>
+
+<info_portion id="bar_dog_00_dead"></info_portion>
+<info_portion id="bar_dog_01_dead"></info_portion>
+<info_portion id="bar_dog_02_dead"></info_portion>
+<info_portion id="bar_dog_03_dead"></info_portion>
+<info_portion id="bar_dog_04_dead"></info_portion>
+<info_portion id="bar_dog_05_dead"></info_portion>
+<info_portion id="bar_dog_06_dead"></info_portion>
+<info_portion id="bar_dog_07_dead"></info_portion>
+
+<info_portion id="bar_kontra_01_dead"></info_portion>
+
+<info_portion id="bar_narod_spawn"></info_portion>
+<info_portion id="radio_music_start"></info_portion>
+
+<info_portion id="levsha_start_dialog_start">
+<task>levsha_zahvat_bar</task>
+</info_portion>
+
+<info_portion id="vse_poehali"></info_portion>
+<info_portion id="levsha_bar_proval"></info_portion>
+
+<info_portion id="bar_ataka_01_mesto"></info_portion>
+<info_portion id="bar_ataka_02_mesto"></info_portion>
+<info_portion id="bar_ataka_03_mesto"></info_portion>
+<info_portion id="bar_ataka_04_mesto"></info_portion>
+<info_portion id="bar_ataka_05_mesto"></info_portion>
+
+<info_portion id="levsha_start_dialog_have"></info_portion>
+<info_portion id="levsha_monstriki"></info_portion>
+<info_portion id="levsha_start_dialog_est"></info_portion>
+<info_portion id="levsha_start_dialog_dig"></info_portion>
+<info_portion id="levsha_start_dialog_done">
+<action>fotograf.spawn_bar_leha</action>
+</info_portion>
+
+<info_portion id="levsha_one_dialog_start">
+<task>levsha_crystalls</task>
+</info_portion>
+<info_portion id="levsha_one_dialog_have"></info_portion>
+<info_portion id="levsha_one_dialog_est"></info_portion>
+<info_portion id="levsha_one_dialog_done"></info_portion>
+
+<info_portion id="leha_skazal"></info_portion>
+<info_portion id="leha_dead"></info_portion>
+
+<info_portion id="dig_idut"></info_portion>
+
+<info_portion id="blokpost_01_dead"></info_portion>
+<info_portion id="blokpost_02_dead"></info_portion>
+<info_portion id="blokpost_03_dead"></info_portion>
+<info_portion id="bar_podmoga_04_dead"></info_portion>
+<info_portion id="bar_podmoga_05_dead"></info_portion>
+
+<info_portion id="greta_01_talk"></info_portion>
+<info_portion id="greta_02_talk"></info_portion>
+<info_portion id="greta_03_talk"></info_portion>
+
+<info_portion id="lukash_vstrecha_start">
+<task>lukash_vstrecha</task>
+<action>fotograf.spawn_prom_bandity</action>
+</info_portion>
+<info_portion id="lukash_vstrecha_done"></info_portion>
+
+<info_portion id="lukash_start_dialog_start">
+<task>lukash_bomba</task>
+</info_portion>
+<info_portion id="lukash_start_dialog_done"></info_portion>
+
+<info_portion id="shershen_start_dialog_start"></info_portion>
+<info_portion id="bomba_boom"></info_portion>
+
+<info_portion id="lukash_ubitt"></info_portion>
+<info_portion id="max_ubitt"></info_portion>
+<info_portion id="kep_ubitt"></info_portion>
+<info_portion id="kock_ubitt"></info_portion>
+<info_portion id="skryaga_ubitt"></info_portion>
+<info_portion id="shurup_ubitt"></info_portion>
+
+<info_portion id="lukash_mesto"></info_portion>
+<info_portion id="max_mesto"></info_portion>
+<info_portion id="skryaga_mesto"></info_portion>
+<info_portion id="shurup_mesto">
+<action>fotograf.spawn_shurup_boyci2</action>
+</info_portion>
+
+<info_portion id="lukash_first_dialog_start">
+<task>lukash_angar</task>
+</info_portion>
+<info_portion id="lukash_first_dialog_have"></info_portion>
+<info_portion id="lukash_first_dialog_done">
+<action>amk_mod.spawn_heli_prom</action>
+</info_portion>
+
+<info_portion id="prom_desant_start">
+<task>prom_desant</task>
+</info_portion>
+<info_portion id="prom_desant_have"></info_portion>
+<info_portion id="prom_desant_done"></info_portion>
+<info_portion id="prom_desant_ubil"></info_portion>
+<info_portion id="prom_desant_proval"></info_portion>
+
+<info_portion id="prom_desant1_dead"></info_portion>
+<info_portion id="prom_desant2_dead"></info_portion>
+<info_portion id="prom_desant3_dead"></info_portion>
+<info_portion id="prom_desant4_dead"></info_portion>
+<info_portion id="prom_desant5_dead"></info_portion>
+<info_portion id="prom_desant6_dead"></info_portion>
+<info_portion id="prom_desant7_dead"></info_portion>
+<info_portion id="prom_desant8_dead"></info_portion>
+<info_portion id="prom_desant9_dead"></info_portion>
+<info_portion id="prom_desant10_dead"></info_portion>
+<info_portion id="prom_desant11_dead"></info_portion>
+<info_portion id="prom_desant12_dead"></info_portion>
+
+<info_portion id="prom_heli_letit"></info_portion>
+<info_portion id="prom_heli_uletel"></info_portion>
+
+<info_portion id="dezertir_ataka01_dead"></info_portion>
+<info_portion id="dezertir_ataka02_dead"></info_portion>
+<info_portion id="dezertir_ataka05_dead"></info_portion>
+<info_portion id="dezertir_ataka07_dead"></info_portion>
+<info_portion id="dezertir_ataka08_dead"></info_portion>
+
+----------------------Расстрел---------------------
+
+<info_portion id="start_rasstrel"></info_portion>
+<info_portion id="rasstrel_mesto"></info_portion>
+<info_portion id="rasstrel_poshli"></info_portion>
+<info_portion id="rasstrel_hands_up"></info_portion>
+<info_portion id="rasstrel_nachalo"></info_portion>
+<info_portion id="rasstrel_finish"></info_portion>
+<info_portion id="get_dezertiry">
+<action>fotograf.set_rasstrel1</action>
+<action>fotograf.set_rasstrel2</action>
+</info_portion>
+<info_portion id="dezertir_rasstrel1_dead"></info_portion>
+<info_portion id="dezertir_rasstrel2_dead"></info_portion>
+<info_portion id="krasa_mesto2"></info_portion>
+
+----------------------------------------------------
+-----------------boryan67--drink--------------------
+<info_portion id="boryan_drink_1"></info_portion>
+<info_portion id="boryan_drink_2"></info_portion>
+<info_portion id="boryan_drink_3"></info_portion>
+<info_portion id="boryan_drink_4"></info_portion>
+<info_portion id="boryan_drink_5"></info_portion>
+<info_portion id="boryan_drink_6"></info_portion>
+<info_portion id="boryan_drink_7"></info_portion>
+<info_portion id="boryan_drink_8"></info_portion>
+<info_portion id="boryan_drink_9"></info_portion>
+<info_portion id="boryan_gluki_1"></info_portion>
+----------------------------------------------------
+-----------------boryan67--infect--------------------
+<info_portion id="boryan_infect_0"></info_portion>
+<info_portion id="boryan_infect_1"></info_portion>
+<info_portion id="boryan_infect_2"></info_portion>
+<info_portion id="boryan_infect_3"></info_portion>
+<info_portion id="boryan_infect_4"></info_portion>
+----------------------------------------------------
+
+<info_portion id="del_osvedom">
+<action>fotograf.del_osvedom</action>
+</info_portion>
+
+<info_portion id="osvedom_check_time">
+<action>fotograf.check_time_osvedom</action>
+</info_portion>
+
+<info_portion id="osvedom_vyzov1">
+<task>osvedom_vyzov_01</task>
+<action>fotograf.spawn_lesnik_mafon</action>
+</info_portion>
+
+<info_portion id="ded_start_dialog_start"></info_portion>
+
+<info_portion id="osvedom_vstrecha1"></info_portion>
+<info_portion id="osvedom_one_dialog_start">
+<task>german_spasenie</task>
+</info_portion>
+<info_portion id="filin_vstrecha"></info_portion>
+<info_portion id="genrih_vstrecha"></info_portion>
+<info_portion id="german_spasenie_gotovo">
+	<action>foto.mg_start_spawn</action>
+</info_portion>
+<info_portion id="german_spasenie_finish"></info_portion>
+
+
+<info_portion id="hunters_spawn">
+<action>fotograf.spawn_les_hunters</action>
+</info_portion>
+
+<info_portion id="sut_vstrecha"></info_portion>
+
+<info_portion id="sut_start_dialog_start">
+<task>hunter_case</task>
+</info_portion>
+<info_portion id="sut_start_dialog_have"></info_portion>
+<info_portion id="sut_start_dialog_done"></info_portion>
+
+<info_portion id="filin_poisk_dialog_done"></info_portion>
+<info_portion id="filin_skazal"></info_portion>
+<info_portion id="filin_start_dialog_start">
+<task>filin_vino</task>
+</info_portion>
+<info_portion id="lazarev_vino_dialog_start"></info_portion>
+<info_portion id="filin_vino_have"></info_portion>
+<info_portion id="filin_vino_dialog_done">
+<task>filin_helper</task>
+</info_portion>
+<info_portion id="filin_pribor_est"></info_portion>
+<info_portion id="filin_pribor_have"></info_portion>
+<info_portion id="filin_priemnik_have">
+<action>mauvais.music_aver03</action>
+</info_portion>
+<info_portion id="filin_pribory_done"></info_portion>
+
+<info_portion id="brom_mg_dialog_start">
+<task>brom_likvidator</task>
+</info_portion>
+<info_portion id="brom_mg_dialog_have">
+<action>mauvais.music_deadcity04</action>
+</info_portion>
+<info_portion id="brom_mg_dialog_done"></info_portion>
+
+<info_portion id="brom_art_dialog_start"></info_portion>
+
+<info_portion id="german_mg_spawn">
+<action>fotograf.create_filin_restr</action>
+<action>fotograf.german_mafon_spawn</action>
+</info_portion>
+
+<info_portion id="red_palatka_spawn">
+<action>garry_object.palatka_spawn</action>
+<action>garry_object.palatka_trup_spawn</action>
+<action>anomalia_spawn.spawn_palatka_anom</action>
+</info_portion>
+
+<info_portion id="genrih_dead"></info_portion>
+<info_portion id="yurgen_dead"></info_portion>
+<info_portion id="jagger_dead"></info_portion>
+<info_portion id="mamasha_dead"></info_portion>
+<info_portion id="uchen_mg1_dead"></info_portion>
+<info_portion id="uchen_mg2_dead"></info_portion>
+<info_portion id="uchen_mg3_dead"></info_portion>
+
+<info_portion id="jagger_zaschita"></info_portion>
+<info_portion id="gorkom_ohran_zaschita"></info_portion>
+<info_portion id="gorkom_kamp_zaschita"></info_portion>
+
+<info_portion id="genrih_del"></info_portion>
+<info_portion id="yurgen_del"></info_portion>
+<info_portion id="jagger_del"></info_portion>
+<info_portion id="mamasha_del"></info_portion>
+<info_portion id="uchen_mg1_del"></info_portion>
+<info_portion id="uchen_mg2_del"></info_portion>
+<info_portion id="uchen_mg3_del"></info_portion>
+
+<info_portion id="genrih_mesto"></info_portion>
+
+<info_portion id="genrih_start_dialog_start">
+<task>jagger_vstrecha</task>
+</info_portion>
+<info_portion id="jagger_vstretil"></info_portion>
+<info_portion id="jagger_start_dialog_start"></info_portion>
+<info_portion id="madam_start_dialog_start"></info_portion>
+<info_portion id="genrih_one_dialog_start">
+<task>wulf_poisk</task>
+</info_portion>
+<info_portion id="wulf_case_have"></info_portion>
+<info_portion id="madam_one_dialog_start">
+<task>mg_vyhod</task>
+</info_portion>
+<info_portion id="vyhod_mg_est"></info_portion>
+<info_portion id="genrih_perehod_dialog_start">
+<action>fotograf.del_osvedom_new</action>
+</info_portion>
+<info_portion id="mg_vyhod_start">
+<action>fotograf.german_zasada_spawn</action>
+<action>fotograf.del_mg_barokamera00</action>
+<action>fotograf.del_mg_barokamera03</action>
+<action>fotograf.del_mg_barokamera04</action>
+<action>fotograf.mg_vzryv1</action>
+<action>fotograf.mg_vzryv2</action>
+<action>fotograf.mg_vzryv3</action>
+<action>mauvais.music_deadcity03</action>
+</info_portion>
+<info_portion id="mg_vyhod_proval"></info_portion>
+
+<info_portion id="genrih_skazal"></info_portion>
+<info_portion id="mamasha_skazala"></info_portion>
+<info_portion id="ohran_gorkom_skazal"></info_portion>
+<info_portion id="jagger_skazal"></info_portion>
+<info_portion id="yurgen_skazal"></info_portion>
+<info_portion id="yurgen_mesto"></info_portion>
+<info_portion id="genrih_wait"></info_portion>
+<info_portion id="koop_patrul_wait"></info_portion>
+
+<info_portion id="osvedom_tri_dialog_start">
+<task>shema_perehodov</task>
+</info_portion>
+<info_portion id="x-18_pronik"></info_portion>
+<info_portion id="osvedom_tri_dialog_have">
+<action>fotograf.spawn_genetik_und</action>
+</info_portion>
+<info_portion id="osvedom_tri_dialog_done"></info_portion>
+<info_portion id="osvedom_tri_dialog_net"></info_portion>
+
+<info_portion id="shema_proval"></info_portion>
+
+<info_portion id="del_c_lcs">
+<action>foto2.del_c_lcs</action>
+</info_portion>
+
+<info_portion id="uber_ataka_start">
+<action>fotograf.tank_ataka_spawn</action>
+</info_portion>
+<info_portion id="uber_ataka_nachalo">
+<task>uber_ataka</task>
+</info_portion>
+<info_portion id="uber_ataka_have"></info_portion>
+<info_portion id="uber_ataka_done"></info_portion>
+<info_portion id="uber_proval"></info_portion>
+<info_portion id="polischuk_dead"></info_portion>
+
+<info_portion id="tank_ataka1_dead"></info_portion>
+<info_portion id="tank_ataka2_dead"></info_portion>
+<info_portion id="tank_ataka3_dead"></info_portion>
+<info_portion id="tank_ataka4_dead"></info_portion>
+<info_portion id="tank_ataka5_dead"></info_portion>
+<info_portion id="tank_ataka6_dead"></info_portion>
+
+<info_portion id="brown_dva_mesto"></info_portion>
+<info_portion id="brown_four_dialog_start">
+<task>ploymar_zadan</task>
+</info_portion>
+
+<info_portion id="ploymar_start_dialog_start"></info_portion>
+<info_portion id="ploymar_start_dialog_done"></info_portion>
+<info_portion id="ploymar_dva_spawn">
+<action>fotograf.ploymar_dva_spawn</action>
+</info_portion>
+<info_portion id="ploymar_poshel">
+<action>mauvais.music_poligon05</action>
+</info_portion>
+<info_portion id="ploymar_mesto"></info_portion>
+<info_portion id="x18_vernulsya"></info_portion>
+<info_portion id="ploymar_razgovor"></info_portion>
+<info_portion id="ploymar_finish"></info_portion>
+<info_portion id="ploymar_enemy"></info_portion>
+<info_portion id="ploymar_del"></info_portion>
+
+<info_portion id="brown_five_dialog_start"></info_portion>
+
+<info_portion id="ploymar_two_dialog_start">
+<task>agro_und_zadan</task>
+</info_portion>
+
+<info_portion id="shpak_spawn">
+<action>fotograf.spawn_shpak</action>
+</info_portion>
+
+<info_portion id="shpak_one_dialog_start">
+<task>shpak_vodka</task>
+</info_portion>
+<info_portion id="shpak_one_dialog_have"></info_portion>
+<info_portion id="shpak_one_dialog_done"></info_portion>
+
+<info_portion id="agro_und_pronik">
+<action>y_level.lch_prom_aground_prom</action>
+<action>fotograf.create_ograb_restr</action>
+</info_portion>
+<info_portion id="actor_v_taynike">
+<action>transfer.transfer</action>
+</info_portion>
+<info_portion id="actor_otbrosilo"></info_portion>
+<info_portion id="antitaynik_restr_del">
+<action>fotograf.spawn_shmel_und</action>
+</info_portion>
+
+<info_portion id="aground_marodery_spawn"></info_portion>
+
+<info_portion id="zadan_aground_have"></info_portion>
+<info_portion id="vacsina_have"></info_portion>
+<info_portion id="agro_und_vernulsya"></info_portion>
+<info_portion id="aground_proval"></info_portion>
+
+<info_portion id="gps_block"></info_portion>
+<info_portion id="GG_recover_1"></info_portion>
+<info_portion id="GG_recover_2"></info_portion>
+<info_portion id="GG_vacsina"></info_portion>
+
+<info_portion id="mihas_skazal"></info_portion>
+
+<info_portion id="brown_six_dialog_start">
+<task>check_podzemka</task>
+</info_portion>
+<info_portion id="brown_six_dialog_have"></info_portion>
+<info_portion id="laba_x16_have">
+<action>fotograf.create_x16_fire_restr</action>
+</info_portion>
+<info_portion id="laba_dyshlo_have">
+<action>fotograf.spawn_dyshlo_zasada</action>
+</info_portion>
+<info_portion id="laba_x10_have">
+<action>fotograf.x10_elektro_spawn</action>
+</info_portion>
+<info_portion id="laba_x18_have">
+<action>fotograf.del_uchen_x18_01</action>
+<action>fotograf.del_uchen_x18_02</action>
+<action>fotograf.del_uchen_x18_03</action>
+<action>fotograf.del_uchen_x18_04</action>
+</info_portion>
+<info_portion id="trup_x18_have">
+<action>fotograf.sms_codedoor_x18</action>
+<action>fotograf.x18_claw_spawn</action>
+</info_portion>
+<info_portion id="codedoor_x18_have"></info_portion>
+<info_portion id="brown_six_dialog_done"></info_portion>
+<info_portion id="brown_six_dialog_proval"></info_portion>
+
+<info_portion id="aground_kvest">
+<action>fotograf.create_aground_kontra_restr</action>
+</info_portion>
+
+<info_portion id="dyshlo_mozhno"></info_portion>
+
+<info_portion id="ploymar_vacsina_dialog_start">
+<task>glaza_ploti</task>
+</info_portion>
+<info_portion id="ploymar_vacsina_dialog_have"></info_portion>
+<info_portion id="ploymar_vacsina_dialog_done"></info_portion>
+
+<info_portion id="brown_seven_dialog_start">
+<task>perehod_dyshlo</task>
+</info_portion>
+<info_portion id="brown_seven_dialog_done"></info_portion>
+
+<info_portion id="brown_dyshlo_timer">
+<action>fotograf.brown_dyshlo_wait</action>
+</info_portion>
+
+<info_portion id="voronin_dyshlo_dialog_start">
+<task>voronin_car</task>
+</info_portion>
+<info_portion id="voronin_car_mesto"></info_portion>
+<info_portion id="voronin_car_not_place"></info_portion>
+<info_portion id="voronin_dyshlo_dialog_done"></info_portion>
+<info_portion id="dead_voronin_car"></info_portion>
+<info_portion id="del_voronin_car">
+<action>cars.del_voronin_car</action>
+</info_portion>
+
+<info_portion id="voronin_car_music">
+<action>mauvais.music_aver04</action>
+</info_portion>
+
+<info_portion id="saharov_dyshlo_dialog_start"></info_portion>
+<info_portion id="sutuly_povodyr_dialog_start"></info_portion>
+
+<info_portion id="brown_timer_dyshlo_over"></info_portion>
+<info_portion id="brown_eight_dialog_start"></info_portion>
+
+---------------------------dolg-----------------------------
+
+<info_portion id="voronin_dyshlo_attak_dialog_start">
+<task>dyshlo_attak</task>
+</info_portion>
+
+<info_portion id="dolg_dyshlo_spawn"></info_portion>
+<info_portion id="voronin_dyshlo_spawn"></info_portion>
+
+<info_portion id="enemy_dolg">
+<action>fotograf.enemy_dolg</action>
+</info_portion>
+
+<info_portion id="dolg_ataka_start">
+<action>fotograf.kill_dyshlo_killers</action>
+</info_portion>
+<info_portion id="dolg_ataka_have"></info_portion>
+<info_portion id="dolg_ataka_finish">
+<action>fotograf.del_petrenko</action>
+<action>fotograf.del_voronin</action>
+</info_portion>
+<info_portion id="del_brown_dva">
+<action>fotograf.del_brown_dva</action>
+</info_portion>
+<info_portion id="dolg_ataka_proval"></info_portion>
+<info_portion id="plichko_dead"></info_portion>
+<info_portion id="drozdov_dead"></info_portion>
+<info_portion id="dolg_mask6_dead"></info_portion>
+<info_portion id="voronin_dyshlo_dead"></info_portion>
+<info_portion id="petrenko_dyshlo_dead"></info_portion>
+<info_portion id="remontnik_dyshlo_dead"></info_portion>
+
+<info_portion id="dolg_mask6_mesto"></info_portion>
+<info_portion id="drozdov_mesto"></info_portion>
+<info_portion id="plichko_mesto"></info_portion>
+<info_portion id="dolg_shturm"></info_portion>
+<info_portion id="dolg_shturm1"></info_portion>
+<info_portion id="dolg_shturm2"></info_portion>
+<info_portion id="dolg_shturm3"></info_portion>
+<info_portion id="dolg_shturm4"></info_portion>
+
+<info_portion id="naem_dyshlo_01_dead"></info_portion>
+<info_portion id="naem_dyshlo_02_dead"></info_portion>
+<info_portion id="naem_dyshlo_03_dead"></info_portion>
+<info_portion id="naem_dyshlo_04_dead"></info_portion>
+<info_portion id="naem_dyshlo_05_dead"></info_portion>
+<info_portion id="naem_dyshlo_06_dead"></info_portion>
+<info_portion id="naem_dyshlo_07_dead"></info_portion>
+<info_portion id="naem_dyshlo_08_dead"></info_portion>
+<info_portion id="naem_dyshlo_09_dead"></info_portion>
+<info_portion id="naem_dyshlo_10_dead"></info_portion>
+<info_portion id="naem_dyshlo_11_dead"></info_portion>
+<info_portion id="naem_dyshlo_12_dead"></info_portion>
+<info_portion id="naem_dyshlo_13_dead"></info_portion>
+<info_portion id="naem_dyshlo_14_dead"></info_portion>
+<info_portion id="naem_dyshlo_15_dead"></info_portion>
+<info_portion id="naem_dyshlo_16_dead"></info_portion>
+<info_portion id="naem_dyshlo_17_dead"></info_portion>
+<info_portion id="naem_dyshlo_18_dead"></info_portion>
+<info_portion id="naem_dyshlo_19_dead"></info_portion>
+<info_portion id="naem_dyshlo_20_dead"></info_portion>
+<info_portion id="naem_dyshlo_21_dead"></info_portion>
+<info_portion id="naem_dyshlo_22_dead"></info_portion>
+<info_portion id="naem_dyshlo_23_dead"></info_portion>
+
+<info_portion id="blowout_end_dyshlo">
+<action>fotograf.sms_plichko_dyshlo</action>
+</info_portion>
+
+<info_portion id="plichko_tri_dialog_start">
+<task>dyshlo_glavar</task>
+</info_portion>
+<info_portion id="plichko_tri_dialog_have"></info_portion>
+<info_portion id="plichko_tri_dialog_done"></info_portion>
+
+<info_portion id="voronin_dolg_dialog_one_start"></info_portion>
+
+<info_portion id="brown_x10_start">
+<task>brown_x10</task>
+</info_portion>
+
+<info_portion id="brown_x10_spawn">
+<action>fotograf.brown_x10_spawn</action>
+<action>fotograf.trup1_x10_spawn</action>
+<action>fotograf.trup2_x10_spawn</action>
+<action>fotograf.trup3_x10_spawn</action>
+<action>fotograf.trup_blood1_x10_spawn</action>
+<action>fotograf.trup_blood2_x10_spawn</action>
+<action>fotograf.trup_blood3_x10_spawn</action>
+</info_portion>
+
+<info_portion id="zapadlo_enemy"></info_portion>
+<info_portion id="shubin_x10_spawn">
+<action>fotograf.shubin_x10_spawn</action>
+</info_portion>
+<info_portion id="brown3_skazal"></info_portion>
+<info_portion id="brown_tri_dead"></info_portion>
+<info_portion id="brown_bunker_dead"></info_portion>
+<info_portion id="brown_four_dead"></info_portion>
+<info_portion id="brown_five_dead"></info_portion>
+
+<info_portion id="shubin_pentagramm_dialog_start">
+<task>pentagramm</task>
+</info_portion>
+<info_portion id="shubin_pentagramm_dialog_have">
+<action>fotograf.del_brown_x10</action>
+<action>fotograf.brown_bunker_spawn</action>
+</info_portion>
+<info_portion id="shubin_pentagramm_dialog_done"></info_portion>
+
+<info_portion id="shubin_in_brown"></info_portion>
+<info_portion id="brown_zdorov"></info_portion>
+<info_portion id="brown_x10_dialog_start">
+<task>brown_accompaniment</task>
+</info_portion>
+
+<info_portion id="del_brown_x10">
+<action>fotograf.del_brown_bunker</action>
+</info_portion>
+<info_portion id="del_brown_x18">
+<action>fotograf.del_brown_x18</action>
+</info_portion>
+<info_portion id="broun_four_run"></info_portion>
+<info_portion id="broun_five_run"></info_portion>
+<info_portion id="brown_five_mesto"></info_portion>
+
+<info_portion id="brown_accompaniment_proval"></info_portion>
+
+<info_portion id="brown_x18_spawn">
+<action>fotograf.brown_x18_spawn</action>
+<action>fotograf.spawn_x18_monstry_01</action>
+<action>fotograf.del_ubers_x18</action>
+</info_portion>
+
+<info_portion id="brown_five_spawn">
+<action>fotograf.brown_five_spawn</action>
+</info_portion>
+
+<info_portion id="pentagramm_01">
+<article>pentagramm_01</article>
+<action>pentagramm.sms_pentagramm</action>
+</info_portion>
+
+<info_portion id="pentagramm_02">
+<article>pentagramm_02</article>
+<action>pentagramm.sms_pentagramm</action>
+</info_portion>
+
+<info_portion id="pentagramm_03">
+<article>pentagramm_03</article>
+<action>pentagramm.sms_pentagramm</action>
+</info_portion>
+
+<info_portion id="pentagramm_04">
+<article>pentagramm_04</article>
+<action>pentagramm.sms_pentagramm</action>
+</info_portion>
+
+<info_portion id="escape_restr_spawn">
+<action>fotograf.create_escape_restr</action>
+</info_portion>
+<info_portion id="brown5_dialog_start"></info_portion>
+
+<info_portion id="shubin3_spawn">
+<action>fotograf.shubin3_spawn</action>
+</info_portion>
+
+<info_portion id="del_shubin3">
+<action>fotograf.del_shubin3</action>
+</info_portion>
+
+<info_portion id="smith_marodery_dialog_start"></info_portion>
+
+<info_portion id="razuvaev_pda_est">
+<action>y_level.lch_dyshlo_prip_dyshlo</action>
+<action>fotograf.del_smith</action>
+<action>fotograf.del_brown_five</action>
+</info_portion>
+
+<info_portion id="codes_pda_est"></info_portion>
+
+<info_portion id="pashka_spawn">
+<action>fotograf.pashka_spawn</action>
+<action>fotograf.taynik_shubin_spawn</action>
+<action>mauvais.timer_music_prip02</action>
+<action>amk_mod.start_blow_timer</action>
+</info_portion>
+
+<info_portion id="pashka_one_dialog_start">
+<task>pashka_sguschenka</task>
+</info_portion>
+<info_portion id="pashka_one_dialog_have"></info_portion>
+<info_portion id="pashka_one_dialog_done"></info_portion>
+<info_portion id="pashka_enemy"></info_portion>
+<info_portion id="idiot_pashka"></info_portion>
+
+<info_portion id="nablyudatel_spynet">
+<action>observer.sar_respawn</action>
+</info_portion>
+
+<info_portion id="nablyudatel_01_dead"></info_portion>
+<info_portion id="nablyudatel_02_dead"></info_portion>
+<info_portion id="nablyudatel_03_dead"></info_portion>
+<info_portion id="nablyudatel_04_dead"></info_portion>
+<info_portion id="nablyudatel_05_dead"></info_portion>
+
+<info_portion id="smith_enemy"></info_portion>
+<info_portion id="smith_dead"></info_portion>
+<info_portion id="smith_mozhet_govorit"></info_portion>
+<info_portion id="smith_repliku_skazal">
+<action>transfer.sarcofag_clear</action>
+</info_portion>
+<info_portion id="smith_sar_dialog_start"></info_portion>
+<info_portion id="shubin_sar_dialog_start"></info_portion>
+<info_portion id="shubin_shoot"></info_portion>
+<info_portion id="kill_smith"></info_portion>
+
+<info_portion id="shubin_sar_enemy"></info_portion>
+
+<info_portion id="midnight_timer_start">
+<action>transfer.SetSpeedTime</action>
+</info_portion>
+<info_portion id="midnight_timer_finish"></info_portion>
+
+<info_portion id="bluetree_spawn">
+<action>fotograf.create_bluetree_restr</action>
+<action>fotograf.create_bluetree1_restr</action>
+<action>garry_object.spawn_bluetree</action>
+<action>anomalia_spawn.spawn_zarskelet</action>
+<action>foto.spawn_zharks</action>
+<action>fotograf.spawn_inv_bluetree</action>
+<action>fotograf.del_lch_bluetree</action>
+<action>fotograf.del_shubin_sar</action>
+</info_portion>
+
+<info_portion id="shubin_bluetree_dialog_start"></info_portion>
+<info_portion id="shubin_bluetree_dialog_soglasie"></info_portion>
+<info_portion id="shubin_bluetree_dialog_otkaz"></info_portion>
+<info_portion id="actor_molodets"></info_portion>
+
+<info_portion id="shubin_bluetree_dialog_done">
+<action>fotograf.sound_del_bluetree</action>
+<action>fotograf.del_bluetree</action>
+<action>fotograf.del_blue_tree</action>
+<action>fotograf.del_inv_bluetree</action>
+<action>fotograf.set_enemyzation</action>
+</info_portion>
+
+
+</game_information_portions>
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+[smart_terrains]
+none = true
+ 
+[logic]
+active = {-povodyr_aver_start} mob_camp@1, {+povodyr_aver_start -povodyr_aver_nachalo} mob_camp@2, {+povodyr_aver_nachalo -povodyr_aver_go} mob_walker@1, {+povodyr_aver_go -povodyr_aver_mesto} mob_walker@2, {+povodyr_aver_mesto -pmc_killers_spawn} mob_camp@3, {+pmc_killers_spawn} mob_camp@4 
+on_hit = mob_hit
+on_death = mob_death
+
+[mob_camp@1]
+path_home = povodyr_walk
+path_look = povodyr_look
+home_min_radius = 0
+home_max_radius = 0
+braindead = true
+on_info = {+povodyr_aver_start} mob_camp@2 %=mauvais.timer_music_aver06% 
+
+[mob_camp@2]
+path_home = povodyr_walk
+path_look = povodyr_look
+home_min_radius = 0
+home_max_radius = 0
+braindead = true
+on_timer = 3000 | mob_walker@1 %=fotograf.set_metka_povodyr +povodyr_aver_nachalo%
+
+[mob_walker@1]
+path_walk = povodyr1_walk
+path_look = povodyr1_look
+braindead = true
+on_timer = 12000 | mob_walker@2 %+povodyr_aver_go%
+
+[mob_walker@2]
+path_walk = povodyr1_walk
+path_look = povodyr1_look
+actor_friendly = true
+on_signal = mestod | mob_camp@3 %+povodyr_aver_mesto =play_snd(monsters\pseudodog\pdog_aggression_1)%
+
+[mob_camp@3]
+path_home = povodyr2_walk
+path_look = povodyr2_look
+home_min_radius = 0
+home_max_radius = 0
+actor_friendly = true
+on_timer = 3000 | mob_camp@4 %+pmc_killers_spawn%
+
+[mob_camp@4]
+path_home = povodyr2_walk
+path_look = povodyr2_look
+home_min_radius = 0
+home_max_radius = 0
+actor_friendly = true 
+on_timer = 500 | mob_camp@5 %=play_snd(weapons\ak74\ak74_shoot1) =play_snd(ambient\new\actor_kinolog_3)%
+
+[mob_camp@5]
+path_home = povodyr2_walk
+path_look = povodyr2_look
+home_min_radius = 0
+home_max_radius = 0
+actor_friendly = true 
+on_timer = 500 | %=kill =fotograf.del_metka_povodyr%
+
+[mob_death]
+on_info = {=killed_by_actor} %+enemy_hunter +actor_suicid%
+on_info2 = {-pmc_killers_spawn -actor_suicid} %+ubilisuky%
+
+[mob_hit]
+on_info = {=hit_by_actor} %+enemy_hunter%

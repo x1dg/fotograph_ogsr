@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+
+<dialog id="radio_start">
+	           <dont_has_info>radio_start</dont_has_info>
+			   <has_info>noise_on</has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>radio_start_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>radio_start_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>radio_start_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>radio_start_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>radio_start_4</text>
+		        <give_info>radio_start</give_info>
+				<action>foto2.archiv_spawn</action>
+				<give_info>story_1</give_info>
+                <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+<dialog id="radio_end">
+		       <precondition>foto2.radio_have</precondition>
+	           <dont_has_info>radio_end</dont_has_info>
+			   <dont_has_info>remont_oblom</dont_has_info>
+			   <has_info>kayman_docs_est</has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>radio_end_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>radio_end_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>radio_end_2</text>
+				<action>foto2.radio_otdal</action>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>radio_end_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>radio_end_4</text>
+		        <give_info>radio_end</give_info>
+				<action>foto2.radio_nagrada</action>
+				<action>foto2.del_noise</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+	  
+<dialog id="kayman_radio">
+	           <dont_has_info>kayman_radio</dont_has_info>
+			   <has_info>radio_start</has_info>
+	    <phrase_list>
+			<phrase id="0">
+                <text>kayman_radio_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>kayman_radio_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>kayman_radio_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>kayman_radio_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>kayman_radio_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>kayman_radio_5</text>
+				<next>6</next>
+				</phrase>		
+        <phrase id="6">
+                <text>kayman_radio_6</text>
+		        <give_info>kayman_radio</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+<dialog id="kayman_docs_dialog">
+		       <precondition>foto2.shema_have</precondition>
+			   <precondition>foto2.zhurnal_have</precondition>
+	           <dont_has_info>kayman_docs_est</dont_has_info>
+			   <dont_has_info>kayman_oblom</dont_has_info>
+			   <has_info>archiv_shema</has_info>
+	    <phrase_list>
+			<phrase id="0">
+                <text>kayman_docs_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>kayman_docs_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>kayman_docs_dialog_2</text>
+				<action>foto2.docs_otdal</action>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>kayman_docs_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>kayman_docs_dialog_4</text>
+		        <give_info>kayman_docs_est</give_info>
+				<give_info>persona_22</give_info>
+				<action>foto2.usilok_poluchil</action>
+				<action>dialogs.break_dialog</action>
+                <action>val_test.kayman_usilok</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+<dialog id="archiv_start_dialog">
+	           <dont_has_info>archiv_start</dont_has_info>
+			   <has_info>kayman_radio</has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>archiv_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>archiv_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>archiv_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>archiv_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>archiv_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>archiv_start_dialog_5</text>
+				<next>6</next>
+				</phrase>		
+        <phrase id="6">
+                <text>archiv_start_dialog_6</text>
+		        <give_info>archiv_start</give_info>
+				<action>foto2.zub_spawn</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+<dialog id="archiv_second_dialog">
+	           <dont_has_info>archiv_second</dont_has_info>
+			   <has_info>zub_start</has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>archiv_second_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>archiv_second_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>archiv_second_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>archiv_second_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>archiv_second_dialog_4</text>
+				<give_info>archiv_second</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+<dialog id="archiv_pismo_dialog">
+		       <precondition>foto2.letter_have</precondition>
+			   <has_info>greta_dark</has_info>
+	           <dont_has_info>archiv_pismo</dont_has_info>
+			   <dont_has_info>archiv_oblom</dont_has_info>
+			   <phrase_list>
+	    <phrase id="0">
+                <text>archiv_pismo_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>archiv_pismo_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>archiv_pismo_dialog_2</text>
+				<give_info>archiv_pismo</give_info>
+				<action>foto2.letter_otdal</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+<dialog id="archiv_shema_dialog">
+		       <dont_has_info>archiv_shema</dont_has_info>
+			   <dont_has_info>archiv_oblom</dont_has_info>
+			   <has_info>archiv_pismo</has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>archiv_shema_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>archiv_shema_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>archiv_shema_dialog_2</text>
+				<give_info>archiv_shema</give_info>
+				<action>fotograf.create_uber_restr</action>
+				<action>foto2.zhurnal_shema</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+</dialog>
+
+<dialog id="korona_shep_dialog">
+		       <precondition>foto2.korona_have</precondition>
+	           <dont_has_info>korona_shep</dont_has_info>
+			   <has_info>archiv_shema</has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>korona_shep_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>korona_shep_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>korona_shep_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>korona_shep_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>korona_shep_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>korona_shep_dialog_5</text>
+				<next>6</next>
+				</phrase>		
+        <phrase id="6">
+                <text>korona_shep_dialog_6</text>
+		        <give_info>korona_shep</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+<dialog id="zub_start_dialog">
+	           <dont_has_info>zub_start</dont_has_info>
+			   <has_info>archiv_start</has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>zub_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>zub_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>zub_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>zub_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>zub_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>zub_start_dialog_5</text>
+				<next>6</next>
+				</phrase>		
+        <phrase id="6">
+                <text>zub_start_dialog_6</text>
+		        <give_info>zub_start</give_info>
+				<give_info>story_3</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+	  
+<dialog id="radio_oblom">
+	           <dont_has_info>radio_oblom</dont_has_info>
+			   <has_info>archiv_second</has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>radio_oblom_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>radio_oblom_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>radio_oblom_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>radio_oblom_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>radio_oblom_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>radio_oblom_5</text>
+				<next>6</next>
+				</phrase>		
+        <phrase id="6">
+                <text>radio_oblom_6</text>
+		        <next>7</next>
+				</phrase>
+		<phrase id="7">
+                <text>radio_oblom_7</text>
+				<next>8</next>
+				</phrase>
+		<phrase id="8">
+                <text>radio_oblom_8</text>
+		        <give_info>radio_oblom</give_info>
+				<action>foto2.create_zov1_restr</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>		
+        </phrase_list>
+      </dialog>	  
+
+<dialog id="poet_start_dialog">
+	           <dont_has_info>poet_dialog</dont_has_info>
+			   <has_info>radio_oblom</has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>poet_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>poet_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>poet_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>poet_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>poet_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>poet_start_dialog_5</text>
+				<next>6</next>
+				</phrase>		
+        <phrase id="6">
+                <text>poet_start_dialog_6</text>
+		        <give_info>poet_dialog</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+<dialog id="poet_docs_dialog">
+	           <dont_has_info>poet_docs</dont_has_info>
+			   <has_info>greta_dark</has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>poet_docs_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>poet_docs_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>poet_docs_dialog_2</text>
+				<give_info>poet_docs</give_info>
+				<give_info>persona_14</give_info>
+                <give_info>persona_25</give_info>
+				<action>foto2.poet_docs_otdal</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+<dialog id="greta_dark_dialog">
+	           <dont_has_info>greta_dark</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>greta_dark_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>greta_dark_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>greta_dark_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>greta_dark_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>greta_dark_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>greta_dark_dialog_5</text>
+				<next>6</next>
+				</phrase>		
+        <phrase id="6">
+                <text>greta_dark_dialog_6</text>
+		        <give_info>greta_dark</give_info>
+				<action>dialogs.break_dialog</action>
+				<action>foto2.letter_est</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+	  
+<dialog id="propusti_dialog">
+        <dont_has_info>tarakan</dont_has_info>
+		<phrase_list>
+	    <phrase id="0">
+                <text>propusti_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>propusti_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>propusti_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>propusti_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>propusti_dialog_4</text>
+				<next>5</next>
+				</phrase>				
+        <phrase id="5">
+                <text>propusti_dialog_5</text>
+		        <give_info>tarakan</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+<dialog id="prohodi_dialog">
+        <precondition>foto2.tarakan_est</precondition>
+		<dont_has_info>tarakan_otdal</dont_has_info>
+		<phrase_list>
+	    <phrase id="0">
+                <text>prohodi_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>prohodi_dialog_1</text>
+				<next>2</next>
+				</phrase>
+	    <phrase id="2">
+                <text>prohodi_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>prohodi_dialog_3</text>
+		        <give_info>tarakan_otdal</give_info>
+				<action>foto2.otdal_tarakanov</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+<dialog id="about_fort_dialog">
+        	<dont_has_info>about_fort</dont_has_info>
+	<phrase_list>
+	    <phrase id="0">
+                <text>about_fort_dialog_0</text>
+	          <next>1</next>
+             </phrase>
+            <phrase id="1">
+                <text>about_fort_dialog_1</text>
+		  <next>2</next>
+	     </phrase>
+	    <phrase id="2">
+                <text>about_fort_dialog_2</text>
+		  <next>3</next>
+	     </phrase>
+            <phrase id="3">
+                <text>about_fort_dialog_3</text>
+                  <next>4</next>
+	     </phrase>
+            <phrase id="4">
+                <text>about_fort_dialog_4</text>
+	          <next>5</next>
+             </phrase>
+            <phrase id="5">
+                <text>about_fort_dialog_5</text>
+		  <next>6</next>
+	     </phrase>
+	    <phrase id="6">
+                <text>about_fort_dialog_6</text>
+		  <next>7</next>
+	     </phrase>
+            <phrase id="7">
+                <text>about_fort_dialog_7</text>
+                  <next>8</next>
+	     </phrase>
+            <phrase id="8">
+                <text>about_fort_dialog_8</text>
+	          <next>9</next>
+             </phrase>
+            <phrase id="9">
+                <text>about_fort_dialog_9</text>
+		  <next>10</next>
+	     </phrase>
+	    <phrase id="10">
+                <text>about_fort_dialog_10</text>
+		  <next>11</next>
+	     </phrase>
+            <phrase id="11">
+                <text>about_fort_dialog_11</text>
+                  <next>12</next>
+	     </phrase>
+            <phrase id="12">
+                <text>about_fort_dialog_12</text>
+	          <next>13</next>
+             </phrase>
+            <phrase id="13">
+                <text>about_fort_dialog_13</text>
+		  <next>14</next>
+	     </phrase>
+	    <phrase id="14">
+                <text>about_fort_dialog_14</text>
+		  <next>15</next>
+	     </phrase>
+            <phrase id="15">
+                <text>about_fort_dialog_15</text>
+                  <next>16</next>
+	     </phrase>
+            <phrase id="16">
+                <text>about_fort_dialog_16</text>
+                     <give_info>about_fort</give_info>
+                    <action>fotograf.seaman_ruk_spawn</action>
+                    <action>dialogs.break_dialog</action> 
+             </phrase>
+      </phrase_list>
+ </dialog>	  
+	  
+<dialog id="irokez_start_dialog">
+	           <dont_has_info>komb_dialog</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>irokez_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>irokez_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>irokez_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>irokez_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>irokez_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>irokez_start_dialog_5</text>
+				<next>6</next>
+				<next>7</next>
+				</phrase>		
+        <phrase id="6">
+                <text>irokez_start_dialog_6</text>
+		        <next>8</next>
+				</phrase>
+		<phrase id="7">
+                <text>irokez_start_dialog_7</text>
+				<give_info>ne_poveril</give_info>
+				<give_info>komb_dialog</give_info>
+                 <action>val_test.komb_no</action>
+				</phrase>
+		<phrase id="8">
+                <text>irokez_start_dialog_8</text>
+				<next>9</next>
+				<next>10</next>
+		        </phrase>
+		<phrase id="9">
+		    <precondition>foto2.net_40</precondition>
+                <text>irokez_start_dialog_9</text>
+				<give_info>predlozhil</give_info>
+				<give_info>komb_dialog</give_info>
+				</phrase>
+		<phrase id="10">
+		    <precondition>foto2.da_40</precondition>
+                <text>irokez_start_dialog_10</text>
+				<action>foto2.otdal_40</action>
+				<next>11</next>
+				</phrase>
+        <phrase id="11">
+                <text>irokez_start_dialog_11</text>
+		        <next>12</next>
+				</phrase>
+        <phrase id="12">
+                <text>irokez_start_dialog_12</text>
+				<give_info>poveril</give_info>
+                <give_info>story_19</give_info>
+		        <give_info>komb_dialog</give_info>
+				</phrase>				
+        </phrase_list>
+      </dialog>
+
+<dialog id="irok">
+        <precondition>foto2.da_40</precondition>
+        <dont_has_info>nashol_40</dont_has_info>
+		<has_info>predlozhil</has_info>
+		<phrase_list>
+	    <phrase id="0">
+                <text>irok_0</text>
+				<next>1</next>
+				<action>foto2.otdal_40</action>
+                </phrase>
+        <phrase id="1">
+                <text>irok_1</text>
+				<next>2</next>
+				</phrase>
+	    <phrase id="2">
+                <text>irok_2</text>
+				<give_info>nashol_40</give_info>
+                <give_info>story_19</give_info>
+				<give_info>poveril</give_info>
+				</phrase>
+        </phrase_list>
+    </dialog>
+
+	      <dialog id="petrenko_start_dialog">
+		       <has_info>voronin_one_dialog_est</has_info>
+	           <dont_has_info>petrenko_start_dialog_start</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>petrenko_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>petrenko_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>petrenko_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>petrenko_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>petrenko_start_dialog_4</text>
+				<next>5</next>
+				</phrase>	
+        <phrase id="5">
+                <text>petrenko_start_dialog_5</text>
+				<next>6</next>
+				</phrase>				
+        <phrase id="6">
+                <text>petrenko_start_dialog_6</text>
+		        <give_info>petrenko_start_dialog_start</give_info>
+                <give_info>heli_start</give_info>
+                <action>foto.priborchik_poluchil</action>
+	            <action>foto.set_heli_restr</action>
+				<action>foto.vertoblom_spawn</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+	        <dialog id="petrenko_start_dialog_est">
+			   <precondition>foto.priborchik_have</precondition>
+	           <has_info>heli_all</has_info>
+               <has_info>petrenko_start_dialog_start</has_info>			   
+	           <dont_has_info>petrenko_start_dialog_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>petrenko_start_dialog_est_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>petrenko_start_dialog_est_1</text>
+				<next>2</next>
+				</phrase>				
+        <phrase id="2">
+                <text>petrenko_start_dialog_est_2</text>
+		        <give_info>petrenko_start_dialog_done</give_info>
+				<action>foto.priborchik_otdal</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+	  
+<dialog id="heal_ormont">
+            <dont_has_info>orm_healed</dont_has_info>
+		<phrase_list>
+	         <phrase id="0">
+                <text>heal_ormont_0</text>
+				<next>1</next>
+             </phrase>
+			 <phrase id="1">
+                <text>heal_ormont_1</text>
+				<next>2</next>
+				<next>3</next>
+             </phrase>
+            <phrase id="2">
+			<precondition>dialogs.actor_have_medkit</precondition>
+                <text>heal_ormont_2</text>
+				<action>dialogs.transfer_medkit</action>
+				<give_info>orm_healed</give_info>
+				<give_info>island_collega</give_info>
+  			    <action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="3">
+                <text>heal_ormont_3</text>
+  			    <action>dialogs.break_dialog</action>
+			</phrase>
+        </phrase_list>
+ </dialog>
+
+<dialog id="orm_start_dialog">
+	           <dont_has_info>orm_start</dont_has_info>
+			   <has_info>orm_healed</has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>orm_start_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>orm_start_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>orm_start_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>orm_start_dialog_3</text>
+				<next>4</next>
+				</phrase>
+		<phrase id="4">
+                <text>orm_start_dialog_4</text>
+				<next>5</next>
+				</phrase>
+		<phrase id="5">
+                <text>orm_start_dialog_5</text>
+				<next>6</next>
+				</phrase>
+		<phrase id="6">
+                <text>orm_start_dialog_6</text>
+				<next>7</next>
+				</phrase>
+		<phrase id="7">
+                <text>orm_start_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>orm_start_dialog_8</text>
+		        <give_info>orm_start</give_info>
+			    <give_info>ormant_krut</give_info>	
+				<action>fotograf.pda_pmc_aver_otdal</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+<dialog id="orm_pribyl_dialog">
+        	<dont_has_info>orm_pristupaet</dont_has_info>
+			<has_info>orm_mesto</has_info>
+	<phrase_list>
+	    <phrase id="0">
+                <text>orm_pribyl_dialog_0</text>
+	          <next>1</next>
+             </phrase>
+        <phrase id="1">
+                <text>orm_pribyl_dialog_1</text>
+		      <next>2</next>
+	         </phrase>
+	    <phrase id="2">
+                <text>orm_pribyl_dialog_2</text>
+		      <next>3</next>
+	         </phrase>
+        <phrase id="3">
+                <text>orm_pribyl_dialog_3</text>
+              <next>4</next>
+	         </phrase>
+        <phrase id="4">
+                <text>orm_pribyl_dialog_4</text>
+	          <next>5</next>
+             </phrase>
+        <phrase id="5">
+                <text>orm_pribyl_dialog_5</text>
+		      <next>6</next>
+	         </phrase>
+	    <phrase id="6">
+                <text>orm_pribyl_dialog_6</text>
+		      <next>7</next>
+	         </phrase>
+        <phrase id="7">
+                <text>orm_pribyl_dialog_7</text>
+              <next>8</next>
+	         </phrase>
+        <phrase id="8">
+                <text>orm_pribyl_dialog_8</text>
+	          <next>9</next>
+             </phrase>
+        <phrase id="9">
+                <text>orm_pribyl_dialog_9</text>
+		      <next>10</next>
+	         </phrase>
+	    <phrase id="10">
+                <text>orm_pribyl_dialog_10</text>
+		      <next>11</next>
+	         </phrase>
+        <phrase id="11">
+                <text>orm_pribyl_dialog_11</text>
+              <next>12</next>
+	         </phrase>
+        <phrase id="12">
+                <text>orm_pribyl_dialog_12</text>
+	          <next>13</next>
+             </phrase>
+        <phrase id="13">
+                <text>orm_pribyl_dialog_13</text>
+		  <next>14</next>
+	     </phrase>
+	    <phrase id="14">
+                <text>orm_pribyl_dialog_14</text>
+                <give_info>orm_pristupaet</give_info>
+                <action>dialogs.break_dialog</action> 
+          </phrase>
+      </phrase_list>
+ </dialog>
+
+<dialog id="post_otklyuchil_dialog">
+        <dont_has_info>post_off</dont_has_info>
+		<dont_has_info>ne_polez</dont_has_info>
+		<has_info>orm_pristupaet</has_info>
+		<phrase_list>
+	    <phrase id="0">
+                <text>post_otklyuchil_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>post_otklyuchil_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>post_otklyuchil_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>post_otklyuchil_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>post_otklyuchil_dialog_4</text>
+				<next>5</next>
+				</phrase>				
+        <phrase id="5">
+                <text>post_otklyuchil_dialog_5</text>
+				<next>6</next>
+				<next>7</next>
+				</phrase>
+		<phrase id="6">
+                <text>post_otklyuchil_dialog_6</text>		
+		        <give_info>post_off</give_info>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+		<phrase id="7">
+                <text>post_otklyuchil_dialog_7</text>
+				<give_info>ne_polez</give_info>
+				<give_info>island_oblom</give_info>
+		        <action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+<dialog id="post_flesh_dialog">
+               <precondition>foto2.flesh_academ_have</precondition>
+			   <dont_has_info>flesh_vzyal</dont_has_info>
+			   <has_info>flesh_in1</has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>post_flesh_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>post_flesh_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>post_flesh_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>post_flesh_dialog_3</text>
+				<next>4</next>
+				</phrase>				
+        <phrase id="4">
+                <text>post_flesh_dialog_4</text>
+				<give_info>flesh_vzyal</give_info>
+				<action>foto2.flesh_peredal</action>
+				<action>foto2.check_time_ormont</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>	
+
+<dialog id="saharov_island_dialog">
+               <has_info>island_fin</has_info>
+			   <dont_has_info>saharov_island_done</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>saharov_island_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>saharov_island_dialog_1</text>
+				<next>2</next>
+				</phrase>			
+        <phrase id="2">
+                <text>saharov_island_dialog_2</text>
+				<give_info>saharov_island_done</give_info>
+				<action>foto2.saharov_island_nagrada</action>
+				<action>dialogs.break_dialog</action>
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+ <dialog id="plichko_two_dialog">
+               <precondition>fotograf.dolg_ataka_have</precondition>
+			   <has_info>dolg_ataka_have</has_info>
+			   <has_info>actor_terminator</has_info>
+	           <dont_has_info>dolg_ataka_start</dont_has_info>
+			   <dont_has_info>dolg_ataka_finish</dont_has_info>
+	    <phrase_list>
+	    <phrase id="0">
+                <text>plichko_two_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>plichko_two_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>plichko_two_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>plichko_two_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>plichko_two_dialog_4</text>
+				<next>5</next>
+				</phrase>
+        <phrase id="5">
+                <text>plichko_two_dialog_5</text>
+				<next>6</next>
+				</phrase>
+        <phrase id="6">
+                <text>plichko_two_dialog_6</text>
+				<next>7</next>
+				</phrase>
+        <phrase id="7">
+                <text>plichko_two_dialog_7</text>
+				<next>8</next>
+				</phrase>				
+        <phrase id="8">
+                <text>plichko_two_dialog_8</text>
+				<give_info>dolg_ataka_finish</give_info>	
+                <action>amk_mod.start_blow_timer</action>			
+                <action>dialogs.break_dialog</action>				
+				</phrase>
+        </phrase_list>
+      </dialog>
+
+<dialog id="irok_skin_dialog">
+			   <has_info>shkur4</has_info>
+	           <dont_has_info>skin_irokez</dont_has_info>
+		<phrase_list>
+	    <phrase id="0">
+                <text>irok_skin_dialog_0</text>
+				<next>1</next>
+                </phrase>
+        <phrase id="1">
+                <text>irok_skin_dialog_1</text>
+				<next>2</next>
+				</phrase>
+        <phrase id="2">
+                <text>irok_skin_dialog_2</text>
+				<next>3</next>
+				</phrase>
+        <phrase id="3">
+                <text>irok_skin_dialog_3</text>
+				<next>4</next>
+				</phrase>
+        <phrase id="4">
+                <text>irok_skin_dialog_4</text>
+				<next>5</next>
+				<next>51</next>
+				</phrase>
+        <phrase id="5">
+		        <has_info>poveril</has_info>
+                <text>irok_skin_dialog_5</text>
+				<next>6</next>
+				<next>61</next>
+				</phrase>
+        <phrase id="51">
+		        <dont_has_info>poveril</dont_has_info>
+                <text>irok_skin_dialog_51</text>
+				<next>63</next>
+				<next>64</next>
+				</phrase>				
+        <phrase id="6">
+		     <precondition>foto2.vkarmane_20</precondition>
+                <text>irok_skin_dialog_6</text>
+				<action>foto2.skin_obmen_20</action>
+				<action>dialogs.break_dialog</action>
+				<give_info>skin_irokez</give_info>
+				</phrase>
+        <phrase id="61">
+		     <precondition>foto2.ne_vkarmane_20</precondition>
+                <text>irok_skin_dialog_61</text>
+				<action>dialogs.break_dialog</action>
+				<give_info>skin_irokez</give_info>
+				<give_info>skin_irokez_20</give_info>
+				</phrase>				
+        <phrase id="63">
+		     <precondition>foto2.vkarmane_30</precondition>
+                <text>irok_skin_dialog_63</text>
+				<action>foto2.skin_obmen_30</action>
+				<action>dialogs.break_dialog</action>
+				<give_info>skin_irokez</give_info>
+ 				</phrase>
+	    <phrase id="64">
+		     <precondition>foto2.ne_vkarmane_30</precondition>
+                <text>irok_skin_dialog_64</text>
+				<action>dialogs.break_dialog</action>
+				<give_info>skin_irokez</give_info>
+                <give_info>skin_irokez_30</give_info>				
+				</phrase>
+        </phrase_list>
+      </dialog>	  
+
+<dialog id="complete_skin_dialog">
+        <precondition>foto2.vkarmane_20</precondition>
+        <dont_has_info>skin_irokez_done</dont_has_info>
+		<has_info>skin_irokez_20</has_info>
+		<phrase_list>
+	    <phrase id="0">
+                <text>complete_skin_dialog_0</text>
+				<next>1</next>
+				</phrase>
+        <phrase id="1">
+                <text>complete_skin_dialog_1</text>
+				<next>2</next>
+				</phrase>
+	    <phrase id="2">
+                <text>complete_skin_dialog_2</text>
+				<give_info>skin_irokez_done</give_info>
+				<action>foto2.skin_obmen_20</action>
+				</phrase>
+        </phrase_list>
+    </dialog>
+
+	<dialog id="compl_skin_dialog">
+        <precondition>foto2.vkarmane_30</precondition>
+        <dont_has_info>skin_irokez_done</dont_has_info>
+		<has_info>skin_irokez_30</has_info>
+		<phrase_list>
+	    <phrase id="0">
+                <text>compl_skin_dialog_0</text>
+				<next>1</next>
+				</phrase>
+        <phrase id="1">
+                <text>compl_skin_dialog_1</text>
+				<next>2</next>
+				</phrase>
+	    <phrase id="2">
+                <text>compl_skin_dialog_2</text>
+				<give_info>skin_irokez_done</give_info>
+				<action>foto2.skin_obmen_30</action>
+				</phrase>
+        </phrase_list>
+    </dialog>
+
+
+
+
+
+
+
+
+
+
+
+  	  
+	  
+</game_dialogs>

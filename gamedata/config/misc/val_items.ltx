@@ -1,0 +1,153 @@
+[val_sound_object]:identity_immunities 
+ cform = skeleton 
+ GroupControlSection = spawn_group 
+ $spawn = "physics\object" 
+ $prefetch = 8 
+ class = O_PHYS_S 
+ visual = physics\equipment_cache\equipment_rucksack_01_case 
+ description = "Громкоговоритель" 
+ inv_name = Матюгальник 
+ inv_name_short = Матюгальник 
+ inv_weight = 10 
+ inv_grid_width = 0 
+ inv_grid_height = 0 
+ inv_grid_x = 0 
+ inv_grid_y = 0 
+ remove_time = 9998 
+ script_binding = bind_physic_object.init 
+ 
+[sound_object_fan1]:val_sound_object 
+ custom_data = scripts\zvuk\sound_object_fan1.ltx
+
+[sound_object_fan2]:val_sound_object 
+ custom_data = scripts\zvuk\sound_object_fan2.ltx
+
+[sound_object_fan3]:val_sound_object 
+ custom_data = scripts\zvuk\sound_object_fan3.ltx
+
+[sound_object_fan4]:val_sound_object 
+ custom_data = scripts\zvuk\sound_object_fan4.ltx
+
+[sound_object_fan5]:val_sound_object 
+ custom_data = scripts\zvuk\sound_object_fan5.ltx
+
+[sound_object_fan6]:val_sound_object 
+ custom_data = scripts\zvuk\sound_object_fan6.ltx
+
+[sound_object_energ]:val_sound_object 
+ custom_data = scripts\zvuk\sound_object_energ.ltx
+
+[sound_object_energ1]:val_sound_object 
+ custom_data = scripts\zvuk\sound_object_energ1.ltx
+
+[sound_object_energ2]:val_sound_object 
+ custom_data = scripts\zvuk\sound_object_energ2.ltx
+
+[sound_object_energ3]:val_sound_object 
+ custom_data = scripts\zvuk\sound_object_energ3.ltx
+
+[sound_object_energ4]:val_sound_object 
+ custom_data = scripts\zvuk\sound_object_energ4.ltx
+
+[sound_object_energ5]:val_sound_object 
+ custom_data = scripts\zvuk\sound_object_energ5.ltx
+
+[sound_object_energ6]:val_sound_object
+ custom_data = scripts\zvuk\sound_object_energ6.ltx
+
+[sound_object_energ7]:val_sound_object 
+ custom_data = scripts\zvuk\sound_object_energ7.ltx
+
+[sound_object_energ8]:val_sound_object 
+ custom_data = scripts\zvuk\sound_object_energ8.ltx
+
+[sound_object_energ9]:val_sound_object
+ custom_data = scripts\zvuk\sound_object_energ9.ltx
+
+[sound_object_frog]:val_sound_object
+ custom_data = scripts\zvuk\sound_object_frog.ltx
+
+[sound_object_frog1]:val_sound_object
+ custom_data = scripts\zvuk\sound_object_frog1.ltx
+
+[sound_object_frog2]:val_sound_object
+ custom_data = scripts\zvuk\sound_object_frog2.ltx
+
+[sound_object_frog3]:val_sound_object
+ custom_data = scripts\zvuk\sound_object_frog3.ltx
+
+[sound_object_frog4]:val_sound_object
+ custom_data = scripts\zvuk\sound_object_frog4.ltx
+
+[sound_object_frog5]:val_sound_object
+ custom_data = scripts\zvuk\sound_object_frog5.ltx
+
+[sound_object_frog6]:val_sound_object
+ custom_data = scripts\zvuk\sound_object_frog6.ltx
+
+[sound_object_frog7]:val_sound_object
+ custom_data = scripts\zvuk\sound_object_frog7.ltx
+
+[sound_object_frog8]:val_sound_object
+ custom_data = scripts\zvuk\sound_object_frog8.ltx
+
+[sound_object_frog9]:val_sound_object
+ custom_data = scripts\zvuk\sound_object_frog9.ltx
+
+;----------------------------Tayniki----------------------------
+
+[v_box]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\inventory box"
+class				= O_INVBOX
+cform				= skeleton
+visual				= equipments\item_rukzag.ogf
+script_binding      = bind_physic_object.init
+
+[hlam_ruk]:v_box
+radius = 1
+custom_data = scripts\hlam_ruk.ltx
+
+[zombie_ruk]:v_box
+radius = 1
+custom_data = scripts\zombie_ruk.ltx
+
+[novis_ruk]:v_box
+radius = 1
+custom_data = scripts\novis_ruk.ltx
+
+[prom_ruk]:v_box
+radius = 1
+custom_data = scripts\prom_ruk.ltx
+
+[bar_ruk]:v_box
+radius = 1
+custom_data = scripts\bar_ruk.ltx
+
+
+;---------------------------vertushki---------------------------------
+
+[vertolet_bar1]:identity_immunities 
+$spawn = "dynamic_objects\vertolet"
+visual = new_models\mi24_fire.ogf
+cform  = skeleton 
+class  = P_SKELET
+remove_time = 9998
+
+[vertolet_bar2]:identity_immunities 
+$spawn = "dynamic_objects\vertolet"
+visual = new_models\mi24_rja1.ogf
+cform  = skeleton 
+class  = P_SKELET
+remove_time = 9998
+
+[vertolet_aver]:identity_immunities 
+$spawn = "dynamic_objects\vertolet"
+visual = new_models\mi24_dark.ogf
+cform  = skeleton 
+class  = P_SKELET
+remove_time = 9998
+
+
+

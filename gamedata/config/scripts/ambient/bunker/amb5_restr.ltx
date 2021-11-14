@@ -1,0 +1,20 @@
+[logic]
+active = {-info_valbunk_03 -info_valbunk_04} sr_idle@one, {+info_valbunk_03 -info_valbunk_04} sr_idle@tri, {+info_valbunk_03 +info_valbunk_04} sr_idle@five
+
+[sr_idle@one]
+on_actor_inside = {+amb_bunk} sr_idle@two %=play_snd(ambient\new\energy1) +info_valbunk_03%
+
+[sr_idle@two]
+on_timer = 90000 | sr_idle@tri
+
+[sr_idle@tri]
+on_actor_inside = {+info_valbunk_03} sr_idle@four %=play_snd(ambient\new\energy2) +info_valbunk_04%
+
+[sr_idle@four]
+on_timer = 90000 | sr_idle@five
+
+[sr_idle@five]
+on_actor_inside = {+info_valbunk_04} sr_idle@six %=play_snd(ambient\new\energy3) -info_valbunk_03 -info_valbunk_04%
+
+[sr_idle@six]
+on_timer = 120000 | sr_idle@one 

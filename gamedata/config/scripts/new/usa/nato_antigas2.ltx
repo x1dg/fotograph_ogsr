@@ -1,0 +1,28 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = camper@antigas2
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+
+[camper@antigas2]
+path_walk = antigas2_walk
+path_look = antigas2_look
+meet = meet@antigas2
+danger = danger_condition@antigas2
+
+[danger_condition@antigas2]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[meet@antigas2]
+use = true
+use_wpn = false
+meet_talk_enabled = true

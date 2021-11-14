@@ -1,0 +1,54 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@shep1
+combat_ignore = combat_ignore 
+
+[walker@shep1]
+path_walk = shep1_walk
+path_look = shep1_look
+meet = no_meet
+show_spot = false
+combat_ignore_cond = always
+danger = danger_condition@shep1
+on_info = {+fraza_start} remark@1 
+
+[remark@1]
+target = shep1_look, 0
+snd = fraza1
+meet = no_meet
+show_spot = false
+combat_ignore_cond = always
+danger = danger_condition@shep1
+on_signal = sound_end |  walker@wait %+fraza1%
+
+[walker@wait]
+path_walk = shep1_walk
+path_look = shep1_look
+meet = no_meet
+show_spot = false
+combat_ignore_cond = always
+danger = danger_condition@shep1
+on_info = {+suic} walker@1delay
+
+[walker@1delay]
+path_walk = shep1_walk
+path_look = shep1_look
+meet = no_meet
+show_spot = false
+combat_ignore_cond = always
+danger = danger_condition@shep1
+on_timer = 700 | walker@shep1_1
+
+[walker@shep1_1]
+path_walk = shep1_walk1
+path_look = shep1_look
+meet = no_meet
+show_spot = false
+combat_ignore_cond = always
+danger = danger_condition@shep1
+ 
+[danger_condition@shep1]
+ignore_distance = 0
+ignore_distance_corpse = 0

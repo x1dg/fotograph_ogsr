@@ -1,0 +1,36 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = kamp@bandit_01
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[kamp@bandit_01]
+center_point = kamp_kosterok_center
+meet = meet
+danger = danger_condition
+combat_ignore_cond = {=fighting_actor}
+on_info = {+bandity_enemy} kamp@bandit_011
+
+[kamp@bandit_011]
+center_point = kamp_kosterok_center
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+bandity_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+bandity_enemy%

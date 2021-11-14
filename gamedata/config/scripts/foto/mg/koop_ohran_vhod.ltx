@@ -1,0 +1,48 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-mg_vyhod_start} walker@1, {+mg_vyhod_start} walker@vyhod
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+
+[walker@1]
+path_walk = koop_ohran_vhod_walk
+path_look = koop_ohran_vhod_look
+danger = danger_condition
+meet = meet
+on_info = {+usa_enemy} walker@11
+on_info2 = {+mg_vyhod_start} walker@vyhod
+
+[walker@vyhod] 
+path_walk = koop_ohranv_vyhod_walk
+path_look = koop_ohranv_vyhod_look
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+on_signal = kohranvend | %=fotograf.del_koop_ohran_vhod%
+
+[walker@11]
+path_walk = koop_ohran_vhod_walk
+path_look = koop_ohran_vhod_look
+danger = danger_condition
+meet = no_meet
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

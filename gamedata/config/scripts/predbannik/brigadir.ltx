@@ -1,0 +1,40 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-brigadir_start_dialog_start} walker@brigadir, {+brigadir_start_dialog_start} walker@brigadir1 
+combat_ignore = combat_ignore
+on_death = death
+
+[death]
+on_info = %+brigadir_dead%
+
+[walker@brigadir]
+path_walk = brigadir_walk
+path_look = brigadir_look
+meet = meet
+danger = danger_condition
+on_info = {+brigadir_start_dialog_start} remark@1
+
+[remark@1]
+anim = guard_rac
+target = actor
+snd = brigadir_racia
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | walker@brigadir1
+
+[walker@brigadir1]
+path_walk = brigadir_walk
+path_look = brigadir_look
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

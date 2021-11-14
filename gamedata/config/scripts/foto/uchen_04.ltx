@@ -1,0 +1,93 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@uchen_04
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@uchen_04]
+path_walk = uchen_04_walk
+path_look = uchen_04_look
+meet = meet@uchen_04
+def_state_standing = ward
+danger = danger_condition@uchen_04
+on_timer = 10000 | walker@uchen_044
+;on_info = {+usa_enemy} %+uchen_enemy%
+
+[walker@uchen_044]
+path_walk = uchen_04_walk
+path_look = uchen_04_look
+meet = no_meet
+def_state_standing = refuse
+danger = danger_condition@uchen_04
+on_timer = 2500 | walker@uchen_0444
+;on_info = {+usa_enemy} %+uchen_enemy%
+
+[walker@uchen_0444]
+path_walk = uchen_04_walk1
+path_look = uchen_04_look1
+meet = no_meet
+danger = danger_condition@uchen_04
+on_timer = 18000 | walker@uchen_04444
+;on_info = {+usa_enemy} %+uchen_enemy%
+
+[walker@uchen_04444]
+path_walk = uchen_04_walk1
+path_look = uchen_04_look1
+meet = no_meet
+def_state_standing = press
+danger = danger_condition@uchen_04
+on_timer = 3000 | walker@uchen_044444
+;on_info = {+usa_enemy} %+uchen_enemy%
+
+[walker@uchen_044444]
+path_walk = uchen_04_walk1
+path_look = uchen_04_look1
+meet = no_meet
+def_state_standing = punch
+danger = danger_condition@uchen_04
+on_timer = 3000 | walker@uchen_0444444
+;on_info = {+usa_enemy} %+uchen_enemy%
+
+[walker@uchen_0444444]
+path_walk = uchen_04_walk1
+path_look = uchen_04_look1
+meet = no_meet
+def_state_standing = caution
+danger = danger_condition@uchen_04
+on_timer = 5000 | walker@uchen_04444444
+;on_info = {+usa_enemy} %+uchen_enemy%
+
+[walker@uchen_04444444]
+path_walk = uchen_04_walk1
+path_look = uchen_04_look1
+meet = no_meet
+def_state_standing = refuse
+danger = danger_condition@uchen_04
+on_timer = 2500 | walker@uchen_044444444
+;on_info = {+usa_enemy} %+uchen_enemy%
+
+[walker@uchen_044444444]
+path_walk = uchen_04_walk
+path_look = uchen_04_look
+meet = no_meet
+danger = danger_condition@uchen_04
+on_timer = 18000 | walker@uchen_04
+;on_info = {+usa_enemy} %+uchen_enemy%
+
+[danger_condition@uchen_04]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@uchen_04]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+uchen_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+uchen_enemy%

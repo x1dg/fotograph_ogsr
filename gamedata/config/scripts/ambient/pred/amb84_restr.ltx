@@ -1,0 +1,6 @@
+[logic]
+active = sr_idle@one
+
+[sr_idle@one]
+on_actor_inside = {+amb_pred +zhorik_dead} nil %=play_snd(ambient\new\actor_27)% 
+on_timer = 3600000 | nil

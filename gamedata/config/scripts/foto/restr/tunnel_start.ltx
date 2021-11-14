@@ -1,0 +1,20 @@
+[logic]
+active = sr_idle@1
+
+[sr_idle@1]
+on_actor_inside = sr_idle@2 %=tunnel.start_tele =run_postprocess(blink) =bind_stalker.hide_weapon =play_snd(anomaly\teleport_work_2)%
+
+[sr_idle@2]
+on_timer = 1000 | sr_idle@3 %=tunnel.start_stranger%
+
+[sr_idle@3]
+on_info = {+tunnel_open} sr_idle@4
+
+[sr_idle@4]
+on_info = {-tunnel_open} sr_idle@5
+
+[sr_idle@5]
+on_timer = 1000 | sr_idle@6 %=tunnel.dell_stranger%
+
+[sr_idle@6]
+on_timer = 1000 | nil %=tunnel.dell_tele =bind_stalker.restore_weapon%

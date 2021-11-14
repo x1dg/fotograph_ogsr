@@ -1,0 +1,36 @@
+<ui_texture>
+    <file_name>ui\ui_npc_foto1</file_name>
+
+    <texture id="ui_npc_katya" x="0" y="0" width="165" height="108" />
+    <texture id="ui_npc_zombik3" x="165" y="0" width="165" height="108" />
+    <texture id="ui_npc_zombik4" x="330" y="0" width="165" height="108" />
+    <texture id="ui_npc_zombik5" x="495" y="0" width="165" height="108" />
+    <texture id="ui_npc_zombik6" x="660" y="0" width="165" height="108" />
+    <texture id="ui_npc_zombik7" x="825" y="0" width="165" height="108" />
+    <texture id="ui_npc_zombik8" x="0" y="108" width="165" height="108" />
+    <texture id="ui_npc_zombik9" x="165" y="108" width="165" height="108" />
+    <texture id="ui_npc_zombik10" x="330" y="108" width="165" height="108" />
+    <texture id="ui_npc_zombik11" x="495" y="108" width="165" height="108" />
+    <texture id="ui_npc_zombik12" x="660" y="108" width="165" height="108" />
+    <texture id="ui_npc_zombik13" x="825" y="108" width="165" height="108" />
+    <texture id="ui_npc_borodach" x="0" y="216" width="165" height="108" />
+    <texture id="ui_npc_baron" x="165" y="216" width="165" height="108" />
+    <texture id="ui_npc_shmel" x="330" y="216" width="165" height="108" />
+    <texture id="ui_npc_sedoy" x="495" y="216" width="165" height="108" />
+    <texture id="ui_npc_uchen_10" x="660" y="216" width="165" height="108" />
+	<texture id="ui_npc_uchen_11" x="1" y="430" width="165" height="108" />
+	<texture id="ui_npc_uchen_12" x="164" y="432" width="165" height="108" />
+    <texture id="ui_npc_bomzh" x="825" y="216" width="165" height="108" />
+    <texture id="ui_npc_medik" x="0" y="324" width="165" height="108" />
+    <texture id="ui_npc_starik" x="165" y="324" width="165" height="108" />
+    <texture id="ui_npc_mechanik" x="330" y="324" width="165" height="108" />
+	<texture id="ui_npc_mechanik_0" x="330" y="432" width="165" height="108" />
+	<texture id="ui_npc_kruglov" x="495" y="324" width="165" height="108" />
+	<texture id="ui_npc_verka" x="660" y="324" width="165" height="108" />
+	<texture id="ui_npc_pmc_leader2" x="825" y="324" width="165" height="108" />
+	<texture id="ui_npc_inv" x="0" y="540" width="165" height="108" />
+	
+</ui_texture>
+
+
+

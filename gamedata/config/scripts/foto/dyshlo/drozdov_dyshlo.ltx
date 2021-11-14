@@ -1,0 +1,75 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-dolg_ataka_start} walker@1, {+dolg_ataka_start -drozdov_mesto} walker@3, {+drozdov_mesto} walker@4
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+enemy_dolg +uchen_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+enemy_dolg +uchen_enemy%
+on_info2 = %+drozdov_dead%
+
+[walker@1]
+path_walk = drozdov_dyshlo_walk
+path_look = drozdov_dyshlo_look
+meet = no_meet
+def_state_standing = ward
+danger = danger_condition
+on_info = {+dolg_ataka_start} walker@2
+on_info2 = {+actor_terminator} walker@2
+
+[walker@2]
+path_walk = drozdov_dyshlo_walk
+path_look = drozdov_dyshlo_look
+meet = no_meet
+def_state_standing = ward
+danger = danger_condition
+on_timer = 12000 | {-dolg_shturm4} walker@3 %=fotograf.killers3_dyshlo_spawn +dolg_shturm4%
+on_info = {+dolg_shturm4} walker@3
+
+[walker@3]
+path_walk = drozdov_dyshlo1_walk
+path_look = drozdov_dyshlo1_look
+meet = no_meet
+danger = danger_condition
+on_signal = drozddysh | walker@4 %+drozdov_mesto%
+on_actor_dist_ge_nvis = 120 | %+dolg_ataka_proval%
+
+[walker@4]
+path_walk = drozdov_dyshlo1_walk
+path_look = drozdov_dyshlo1_look
+meet = no_meet
+def_state_standing = ward
+danger = danger_condition
+on_actor_dist_le = 3 | remark@1
+
+[remark@1]
+anim = ward
+target = actor
+snd = drozdov
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | walker@5
+
+[walker@5]
+path_walk = drozdov_dyshlo1_walk
+path_look = drozdov_dyshlo1_look
+meet = meet
+def_state_standing = ward
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_state = ward

@@ -1,0 +1,173 @@
+;;;;;;;;;;;;;;проверка север-юг;;;;;;;;;;;;;;
+[zone_check_1]:trap_04
+$spawn 			= "zones\zone_check_1"
+sound			= anomaly\no_sound
+;----------- Anomaly settings -----------------------
+idle_particles		= mauvais\anomaly\max_check_w;anomaly2\_mauv_bluetree_02
+idle_sound			= anomaly\zone_check_idle;  	;постоянный звук
+
+;;;;;;;;;;;;;;проверка восток-запад;;;;;;;;;;;;;;
+[zone_check_2]:trap_04
+$spawn 			= "zones\zone_check_2"
+sound			= anomaly\no_sound
+;----------- Anomaly settings -----------------------
+idle_particles		= mauvais\anomaly\max_check_n
+idle_sound			= anomaly\zone_check_idle;  	;постоянный звук
+
+;;;;;;;;;;;;;;пещерка шкурки;;;;;;;;;;;;;;
+[zone_shkura]
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\zone_shkura"
+$prefetch 		= 16
+class			= Z_MBALD
+
+ef_anomaly_type			= 1
+ef_weapon_type			= 13
+
+sound			= anomaly\no_sound
+;postprocess		= mauv_01
+
+artefacts			= 
+BirthProbability	= ;0.9
+
+;----------- Anomaly settings -----------------------
+min_start_power		= 0.90
+max_start_power		= 1.00
+attenuation			= 0
+period				= 0
+min_artefact_count	= 0
+max_artefact_count	= 0
+
+idle_particles		= ;mauvais\anomaly\utug;mauvais\anomaly\cave_plenka_water; 
+blowout_particles	= ;реакция на болт - эффект аномалии при выбросе энергии ( если вы в нее зайдете
+tearing_particles	= 
+torn_particles      = 
+
+hit_small_particles			=   ;эффект малого удара аномалии
+hit_big_particles			= ;получение хита - эффект полного удара аномалии
+idle_small_particles		=
+idle_big_particles			= 
+entrance_small_particles	= 
+entrance_big_particles		= 
+
+idle_sound			= anomaly\no_sound;  							;постоянный звук
+blowout_sound		= anomaly\no_sound;во время выброса(удара) в центре аномалии	
+hit_sound			= anomaly\no_sound		;на персонаже, когда тот получает хит
+body_tearing_sound	= anomaly\no_sound;			;звук разрывания трупа
+entrance_sound		= anomaly\no_sound;						;при попадании объекта в аномалию
+
+hit_type		    = strike
+hit_impulse_scale	= 0.0;0.1;0.1			;соотношение физического импульса и силы хита
+effective_radius	= 0 ;размер радиуса в процентах от оригинального, где действует зона
+
+disable_time		= 5000	;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time_small	= 5000		;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
+disable_idle_time	= 1000	;время отключения idle партиклов
+
+ignore_nonalive		= true
+ignore_small		= true
+ignore_artefacts	= true
+
+blowout_light		= off
+light_color		    = 0.0,1.0,0.0
+light_range		    = 0.0
+light_time 		    = 0.8;0.35
+light_height		= -5			;подъем источника света на высоту
+
+idle_light = on
+idle_light_range = 30.0
+idle_light_range_delta = 0.2
+idle_light_anim = kontra_cave
+idle_light_height = 0.5			;подъем источника света на высоту
+
+awaking_time		= 800;1000
+blowout_time		= 1000	; время выброса энергии аномалии
+accamulate_time		= 500
+
+blowout_light_time		= 800 ; свет при выбросе энергии аномалии
+blowout_explosion_time	= 800 ; время взрыва энергии аномалии
+actor_blowout_radius_percent=		0.05
+
+ignore_light		= false
+visible_by_detector = off
+blowout_wind		= off
+spawn_blowout_artefacts = off   ;off
+
+;;;;;;;;;;;;;;пещерка утюга;;;;;;;;;;;;;;
+[zone_shkura_1]
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\zone_shkura_1"
+$prefetch 		= 16
+class			= Z_MBALD
+
+ef_anomaly_type			= 1
+ef_weapon_type			= 13
+
+sound			= anomaly\no_sound
+postprocess		= mauv_08
+
+artefacts			= 
+BirthProbability	= ;0.9
+;----------- Anomaly settings -----------------------
+min_start_power		= 0.90
+max_start_power		= 1.00
+attenuation			= 0
+period				= 0
+min_artefact_count	= 0
+max_artefact_count	= 0
+
+idle_particles		= mauvais\anomaly\utug; 
+blowout_particles	= ;реакция на болт - эффект аномалии при выбросе энергии ( если вы в нее зайдете
+tearing_particles	= 
+torn_particles      = 
+
+hit_small_particles			=   ;эффект малого удара аномалии
+hit_big_particles			= ;получение хита - эффект полного удара аномалии
+idle_small_particles		=
+idle_big_particles			= 
+entrance_small_particles	= 
+entrance_big_particles		= 
+
+idle_sound			= anomaly\no_sound;  							;постоянный звук
+blowout_sound		= anomaly\no_sound;во время выброса(удара) в центре аномалии	
+hit_sound			= anomaly\no_sound		;на персонаже, когда тот получает хит
+body_tearing_sound	= anomaly\no_sound;			;звук разрывания трупа
+entrance_sound		= anomaly\no_sound;						;при попадании объекта в аномалию
+
+hit_type		    = strike
+hit_impulse_scale	= 0.0;0.1;0.1			;соотношение физического импульса и силы хита
+effective_radius	= 0 ;размер радиуса в процентах от оригинального, где действует зона
+
+disable_time		= 5000	;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time_small	= 5000		;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
+disable_idle_time	= 1000	;время отключения idle партиклов
+
+ignore_nonalive		= true
+ignore_small		= true
+ignore_artefacts	= true
+
+blowout_light		= off
+light_color		    = 0.0,1.0,0.0
+light_range		    = 0.0
+light_time 		    = 0.8;0.35
+light_height		= -5			;подъем источника света на высоту
+
+idle_light = on
+idle_light_range = 30.0
+idle_light_range_delta = 0.2
+idle_light_anim = kontra_cave
+idle_light_height = 0.1			;подъем источника света на высоту
+
+awaking_time		= 800;1000
+blowout_time		= 1000	; время выброса энергии аномалии
+accamulate_time		= 500
+
+blowout_light_time		= 800 ; свет при выбросе энергии аномалии
+blowout_explosion_time	= 800 ; время взрыва энергии аномалии
+actor_blowout_radius_percent=		0.05
+
+ignore_light		= false
+visible_by_detector = off
+blowout_wind		= off
+spawn_blowout_artefacts = off   ;off
+

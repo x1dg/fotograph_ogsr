@@ -1,0 +1,54 @@
+[logic]
+active = camper@swamp_skit4
+danger = danger_condition
+trade = misc\trade_muzykant.ltx
+on_hit = hit
+on_death = death
+
+[camper@swamp_skit4]
+path_walk = swamp_skit4_walk
+path_look = swamp_skit4_look
+meet = no_meet
+danger = danger_condition
+;on_info = {+soldaty_enemy} %+uchen_enemy%
+on_actor_dist_le_nvis = 15 | remark@start
+
+[remark@start]
+anim = ward
+target = actor
+meet = no_meet
+danger = danger_condition
+on_actor_dist_le = 3 | remark@1
+
+[remark@1]
+anim = ward
+target = actor
+snd = pekar
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | remark@2
+
+[remark@2]
+anim = ward
+target = actor
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+uchen_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+uchen_enemy%
+
+
+
+

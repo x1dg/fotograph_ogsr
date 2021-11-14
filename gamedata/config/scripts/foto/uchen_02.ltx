@@ -1,0 +1,50 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@uchen_02
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@uchen_02]
+path_walk = uchen_02_walk
+path_look = uchen_02_look
+meet = meet@uchen_02
+def_state_standing = ward
+danger = danger_condition@uchen_02
+on_timer = 10000 | walker@uchen_022
+;on_info = {+usa_enemy} %+uchen_enemy%
+
+[walker@uchen_022]
+path_walk = uchen_02_walk
+path_look = uchen_02_look
+meet = no_meet
+def_state_standing = caution
+danger = danger_condition@uchen_02
+on_timer = 10000 | walker@uchen_0222
+;on_info = {+usa_enemy} %+uchen_enemy%
+
+[walker@uchen_0222]
+path_walk = uchen_02_walk
+path_look = uchen_02_look
+meet = no_meet
+def_state_standing = press
+danger = danger_condition@uchen_02
+on_timer = 2500 | walker@uchen_02
+;on_info = {+usa_enemy} %+uchen_enemy%
+
+[danger_condition@uchen_02]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@uchen_02]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+uchen_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+uchen_enemy%

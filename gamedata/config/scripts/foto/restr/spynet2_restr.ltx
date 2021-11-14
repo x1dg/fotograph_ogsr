@@ -1,0 +1,35 @@
+[logic]
+active = sr_idle@1
+
+[sr_idle@1]
+on_actor_inside = {+amb_sarc} sr_idle@2 %=fotograf.set_usa_enemy =play_snd(ambient\new\actor_about_spynet)%
+
+[sr_idle@2]
+on_timer = 8000 | sr_idle@3 %=fotograf.trans_actor_sar =transfer.final_transfer =fotograf.spawn_usa_sar%
+
+[sr_idle@3]
+on_timer = 7000 | sr_idle@4 %=fotograf.wake_up_actor_sar%
+
+[sr_idle@4]
+on_timer = 5000 | sr_idle@5 %+smith_mozhet_govorit%
+
+[sr_idle@5]
+on_info = {+smith_repliku_skazal} nil %=fotograf.restore_move =val_test.del_restr%  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

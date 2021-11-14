@@ -1,0 +1,749 @@
+
+	<intro_logo>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		<play_each_item>1</play_each_item>
+
+		<item type="video">
+			<sound>characters_voice\scenario\video\intro_gsc</sound>
+			<delay>1</delay>
+			<pause_state>on</pause_state>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="1" width="800" height="358">intro\intro_gsc</texture>
+			</video_wnd>
+		</item>
+
+		<item type="image">
+			<length_sec>6</length_sec>
+			<pause_state>on</pause_state>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="5"  x="0" y="0" width="1024" height="768" stretch="1">
+					<window_name>back</window_name>
+					<texture>ui\ui_fotograf_intro1</texture>
+				</auto_static>
+			</main_wnd>
+		</item>		
+		
+		<item type="image">
+			<length_sec>6</length_sec>
+			<pause_state>on</pause_state>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="5"  x="0" y="0" width="1024" height="768" stretch="1">
+					<window_name>back</window_name>
+					<texture>ui\ui_fotograf_intro2</texture>
+				</auto_static>
+			</main_wnd>
+		</item>		
+	</intro_logo>	
+
+	<intro_game>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+
+		<item type="video">
+			<sound>characters_voice\scenario\video\intro_my</sound>
+			<pause_state>on</pause_state>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="1" width="1024" height="768">intro\intro_stalker</texture>
+			</video_wnd>
+		</item>
+	</intro_game>
+
+
+	<x18_dream>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_rats</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>xr_effects.end_x18_dream</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="1" width="512" height="286">intro\dream_rats</texture>
+			</video_wnd>
+		</item>
+	</x18_dream>
+
+	<radar_dream>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_sarcofag</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>xr_effects.end_radar_dream</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="1" width="512" height="286">intro\dream_sarcofag</texture>
+			</video_wnd>
+		</item>
+	</radar_dream>
+
+	<yantar_dream>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_doctor</sound>
+			<pause_state>on</pause_state>
+			<can_be_stopped>off</can_be_stopped>
+			<function_on_stop>xr_effects.end_yantar_dream</function_on_stop>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="1" width="512" height="286">intro\dream_doctor</texture>
+			</video_wnd>
+		</item>
+	</yantar_dream>
+
+	<mov_desire_1>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+
+		<item type="video">
+			<sound>characters_voice\scenario\video\final_blind</sound>
+			<pause_state>on</pause_state>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="1" width="512" height="286">intro\final_blind</texture>
+			</video_wnd>
+		</item>
+	</mov_desire_1>
+
+	<mov_desire_2>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+
+		<item type="video">
+			<sound>characters_voice\scenario\video\final_gold</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>xr_effects.game_credits</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="1" width="512" height="286">intro\final_gold</texture>
+			</video_wnd>
+		</item>
+	</mov_desire_2>
+
+	<mov_desire_3>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+
+		<item type="video">
+			<sound>characters_voice\scenario\video\final_to_monolith</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>xr_effects.game_credits</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="1" width="512" height="286">intro\final_to_monolith</texture>
+			</video_wnd>
+		</item>
+	</mov_desire_3>
+
+	<mov_desire_4>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+
+		<item type="video">
+			<sound>characters_voice\scenario\video\final_apocal</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>xr_effects.game_credits</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="1" width="512" height="286">intro\final_apocal</texture>
+			</video_wnd>
+		</item>
+	</mov_desire_4>
+
+	<mov_desire_5>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+
+		<item type="video">
+			<sound>characters_voice\scenario\video\final_foto</sound>
+			<pause_state>on</pause_state>
+			<can_be_stopped>off</can_be_stopped>
+			<function_on_stop>fotograf.foto_credits</function_on_stop>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="1280" height="720">intro\final_1280_720</texture>
+			</video_wnd>
+		</item>
+	</mov_desire_5>
+
+	<mov_join_osoznanie>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_doctor_2</sound>
+			<pause_state>on</pause_state>
+			<can_be_stopped>off</can_be_stopped>
+			<function_on_stop>xr_effects.game_credits</function_on_stop>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="1" width="512" height="286">intro\dream_doctor_2</texture>
+			</video_wnd>
+		</item>
+	</mov_join_osoznanie>
+
+	<mov_refuse_osoznanie>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+
+		<item type="video">
+			<sound>characters_voice\scenario\video\final_peace</sound>
+			<pause_state>on</pause_state>
+			<can_be_stopped>on</can_be_stopped>
+			<function_on_stop>amk_mod.freeplay</function_on_stop>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="1" width="512" height="286">intro\final_peace</texture>
+			</video_wnd>
+		</item>
+	</mov_refuse_osoznanie>
+
+	<Movie-003_Rats_OutPut-010>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_01</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="848" height="480">sleep\dream_01</texture>
+			</video_wnd>
+		</item>
+	</Movie-003_Rats_OutPut-010>
+
+	<esc_sky_01>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_02</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper3</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="576" height="320">sleep\dream_02</texture>
+			</video_wnd>
+		</item>
+	</esc_sky_01>
+
+	<aes_sky_red>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_03</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="848" height="480">sleep\dream_03</texture>
+			</video_wnd>
+		</item>
+	</aes_sky_red>
+
+	<dream_04>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_04</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="704" height="396">sleep\dream_04</texture>
+			</video_wnd>
+		</item>
+	</dream_04>
+
+	<dream_05>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_05</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="704" height="396">sleep\dream_05</texture>
+			</video_wnd>
+		</item>
+	</dream_05>	
+
+	<dream_06>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_06</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="704" height="396">sleep\dream_06</texture>
+			</video_wnd>
+		</item>
+	</dream_06>	
+
+	<dream_07>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_07</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="848" height="480">sleep\dream_07</texture>
+			</video_wnd>
+		</item>
+	</dream_07>	
+
+	<dream_08>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_08</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper3</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="704" height="396">sleep\dream_08</texture>
+			</video_wnd>
+		</item>
+	</dream_08>
+
+	<dream_09>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_09</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper2</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="1024" height="576">sleep\dream_09</texture>
+			</video_wnd>
+		</item>
+	</dream_09>
+
+	<dream_10>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_10</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="848" height="480">sleep\dream_10</texture>
+			</video_wnd>
+		</item>
+	</dream_10>	
+
+	<dream_11>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_11</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper2</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="1024" height="576">sleep\dream_11</texture>
+			</video_wnd>
+		</item>
+	</dream_11>	
+
+	<dream_12>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_12</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper2</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="1024" height="576">sleep\dream_12</texture>
+			</video_wnd>
+		</item>
+	</dream_12>
+
+	<dream_13>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_13</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="848" height="480">sleep\dream_13</texture>
+			</video_wnd>
+		</item>
+	</dream_13>	
+
+	<dream_14>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_14</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="848" height="480">sleep\dream_14</texture>
+			</video_wnd>
+		</item>
+	</dream_14>
+
+	<dream_15>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\dream_15</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="848" height="480">sleep\dream_15</texture>
+			</video_wnd>
+		</item>
+	</dream_15>	
+
+	<gluk_01>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\scenario\video\gluk_01</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>foto.stopper</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="848" height="480">sleep\gluk_01</texture>
+			</video_wnd>
+		</item>
+	</gluk_01>	
+	
+	<without_dream>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>heart\4.ogg</sound>
+			<pause_state>on</pause_state>
+			<function_on_stop>sleep_manager.stopper</function_on_stop>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="1" width="1024" height="768">intro\intro_back</texture>
+			</video_wnd>
+		</item>
+	</without_dream>
+
+	<time_scaling>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		
+		<item type="video">
+			<sound>characters_voice\human_01\monolith\states\sleep\sleep_6.ogg</sound>
+			<pause_state>off</pause_state>
+			<can_be_stopped>off</can_be_stopped>
+			<function_on_stop>sleep_manager.dreamer</function_on_stop>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="1" width="1024" height="768">intro\intro_back</texture>
+			</video_wnd>
+		</item>
+	</time_scaling>
+    
+	<restore_sun>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+        		
+		<item type="video">
+			<length_sec>1</length_sec>
+			<pause_state>on</pause_state>
+			<function_on_stop>amk_mod.restore_sun</function_on_stop>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="1024" height="768">intro\intro_back</texture>
+			</video_wnd>
+		</item>
+	</restore_sun>
+
+	<mov_intro_foto>
+		<play_each_item>1</play_each_item>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<window_name>back</window_name>
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+
+		<item type="video">
+			<sound>characters_voice\scenario\video\intro_foto</sound>
+			<pause_state>on</pause_state>
+            <function_on_stop>fotograf.end_foto_video</function_on_stop>
+			<can_be_stopped>off</can_be_stopped>
+			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+	<texture x="0" y="0" width="1024" height="768">intro\intro_foto</texture>
+			</video_wnd>
+		</item>
+	</mov_intro_foto>
+
+	<manuscript>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		<play_each_item>1</play_each_item>		
+		
+		<item type="image">
+			<length_sec>35</length_sec>
+			<function_on_stop>fotograf.check_time_manuscript</function_on_stop>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="34"  x="0" y="0" width="1024" height="768" stretch="1">
+					<window_name>back</window_name>
+					<texture>ui\ui_manuscript</texture>
+			</auto_static>
+			</main_wnd>
+		</item>
+	</manuscript>
+	
+	<statya>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		<play_each_item>1</play_each_item>		
+		
+		<item type="image">
+			<length_sec>50</length_sec>
+			<function_on_stop>foto.speech_statya</function_on_stop>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="49"  x="0" y="0" width="1024" height="768" stretch="1">
+					<window_name>back</window_name>
+					<texture>ui\ui_statya</texture>
+			</auto_static>
+			</main_wnd>
+		</item>
+	</statya>
+
+	<evergy2_true>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		<play_each_item>1</play_each_item>		
+		
+		<item type="image">
+			<length_sec>15</length_sec>
+			<function_on_stop>foto.speech_evergy2_true</function_on_stop>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="14"  x="0" y="0" width="1024" height="768" stretch="1">
+					<window_name>back</window_name>
+					<texture>ui\ui_book_00</texture>
+			</auto_static>
+			</main_wnd>
+		</item>
+	</evergy2_true>
+
+	<foto_credits>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<texture>intro\intro_back</texture>
+			</auto_static>
+		</global_wnd>
+		<play_each_item>1</play_each_item>		
+		
+		<item type="image">
+			<length_sec>60</length_sec>
+			<pause_state>on</pause_state>
+			<function_on_stop>fotograf.after_credits</function_on_stop>
+			<pause_sound>on</pause_sound>
+			<sound>Music\credits</sound>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="89"  x="0" y="0" width="1024" height="768" stretch="1">
+					<window_name>back</window_name>
+					<texture>ui\foto_credits</texture>
+			</auto_static>
+			</main_wnd>
+		</item>
+	</foto_credits>	
+
+
+
+
+
+
+
+
+
+		

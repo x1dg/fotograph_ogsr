@@ -1,0 +1,71 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-mamasha_skazala} walker@1, {+mamasha_skazala -mg_vyhod_start} walker@11, {+mg_vyhod_start} walker@vyhod 
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+on_info2 = %+mamasha_dead%
+
+[walker@1]
+path_walk = missis_uchen_walk
+path_look = missis_uchen_look
+danger = danger_condition
+combat_ignore_cond = always
+meet = no_meet
+def_state_standing = sit
+on_actor_dist_le = 2.5 | remark@1
+on_info = {+usa_enemy} walker@111
+
+[remark@1]
+target = actor
+snd = mamasha
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@11 %+mamasha_skazala%
+on_info = {+usa_enemy} walker@111
+
+[walker@11]
+path_walk = missis_uchen_walk
+path_look = missis_uchen_look
+meet = meet
+combat_ignore_cond = always
+def_state_standing = ward
+danger = danger_condition
+on_info = {+usa_enemy} walker@111
+on_info2 = {+mg_vyhod_start} walker@vyhod
+
+[walker@vyhod] 
+path_walk = mamasha_vyhod_walk
+path_look = mamasha_vyhod_look
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+on_signal = mamashaend | %=fotograf.del_mamasha +mamasha_del%
+
+[walker@111]
+path_walk = missis_uchen_walk
+path_look = missis_uchen_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+meet_state = ward

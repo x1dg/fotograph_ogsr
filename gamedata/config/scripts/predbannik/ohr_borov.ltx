@@ -1,0 +1,53 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-mozhno_kbore} walker@ohr_borov, {+mozhno_kbore} walker@ohr_borov11, {+mozhno_kbore2} walker@ohr_borov111 
+danger = danger_condition@ohr_borov
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@ohr_borov]
+path_walk = ohr_borov_walk
+path_look = ohr_borov_look
+meet = no_meet
+danger = danger_condition@ohr_borov
+on_info = {+bratok_enemy} walker@ohr_borov1
+on_actor_dist_le_nvis = 5 | {+mozhno_kbore} walker@ohr_borov11
+
+[walker@ohr_borov11]
+path_walk = ohr_borov1_walk
+path_look = ohr_borov_look
+meet = no_meet
+danger = danger_condition@ohr_borov
+on_info = {+bratok_enemy} walker@ohr_borov1
+on_timer = 15000 | walker@ohr_borov111 %+mozhno_kbore2%
+
+[walker@ohr_borov111]
+path_walk = ohr_borov1_walk
+path_look = ohr_borov_look
+meet = meet
+danger = danger_condition@ohr_borov
+on_info = {+bratok_enemy} walker@ohr_borov1
+
+[walker@ohr_borov1]
+path_walk = ohr_borov_walk
+path_look = ohr_borov_look
+meet = no_meet
+danger = danger_condition@ohr_borov
+
+[danger_condition@ohr_borov]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+bratok_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+bratok_enemy%

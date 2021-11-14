@@ -1,0 +1,113 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+combat_ignore = combat_ignore
+danger = danger_condition
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+soldaty_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+soldaty_enemy%
+
+[walker@1]
+path_walk = krasavskiy_walk
+path_look = krasavskiy_look
+meet = no_meet
+danger = danger_condition
+on_actor_dist_le_nvis = 3 | {-soldaty_enemy -rasstrel_finish} remark@hello, {-soldaty_enemy +rasstrel_finish +krasa_mesto2} remark@2 
+
+[remark@hello]
+anim = ward
+target = actor
+snd = krasa_hello
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | {-soldaty_enemy -start_rasstrel} remark@1
+
+[remark@1]
+anim = ward
+target = actor
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition
+on_actor_dist_ge_nvis = 5 | {-soldaty_enemy -start_rasstrel} walker@1 
+on_info = {+krasa_start_dialog_start -start_rasstrel} remark@start
+on_info2 = {+start_rasstrel -rasstrel_finish} walker@2
+
+[remark@start]
+anim = ward
+snd = krasa_sound1
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@2 %+start_rasstrel%
+
+[walker@2]
+path_walk = krasavskiy2_walk
+path_look = krasavskiy2_look
+meet = no_meet
+danger = danger_condition
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+on_info = {+rasstrel_mesto} remark@rasstrel_1
+
+[remark@rasstrel_1]
+anim = ward
+target = krasavskiy2_look, 0
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_timer = 4000 | %+rasstrel_poshli% remark@rasstrel_2
+
+[remark@rasstrel_2]
+anim = ward
+snd = krasa_sound2
+target = krasavskiy2_look, 0
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = sound_end | remark@rasstrel_3
+on_timer = 11000 | %+rasstrel_nachalo%
+
+[remark@rasstrel_3]
+anim = ward
+target = krasavskiy2_look, 0
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_timer = 500 | %+get_dezertiry%
+on_info = {+rasstrel_finish} remark@finish
+
+[remark@finish]
+anim = ward
+snd = krasa_finish
+target = krasavskiy2_look, 0
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = sound_end | {-krasa_mesto2} walker@1 %=val_test.krasav%
+
+[remark@2]
+anim = ward
+target = actor
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition
+on_actor_dist_ge_nvis = 5 | {-soldaty_enemy} walker@1 
+
+[danger_condition]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

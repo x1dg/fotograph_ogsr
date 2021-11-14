@@ -1,0 +1,56 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@greta_vis1
+combat_ignore = combat_ignore
+danger = danger_condition@greta_vis
+on_hit = hit
+on_death = death
+
+[walker@greta_vis1]
+path_walk = greta_vis_walk
+path_look = greta_vis_look
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@greta_vis
+on_timer = 100 | remark@greta_vis
+
+[remark@greta_vis]
+anim = trans_0
+target = greta_vis_look, 0
+snd = greta_vis
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@greta_vis
+on_signal = sound_end | remark@vstrecha %=play_snd(ambient\new\actor_greta)%
+
+[remark@vstrecha]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 3000 | walker@greta_vis 
+
+[walker@greta_vis]
+path_walk = greta_vis_walk
+path_look = greta_vis_look
+meet = meet@vis
+combat_ignore_cond = always
+danger = danger_condition@greta_vis
+on_actor_dist_ge_nvis = 50 | %=foto2.gretavis_del%
+
+[danger_condition@greta_vis]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@vis]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+gretavis_enemy%
+
+[death]
+on_info = %+gretavis_enemy%

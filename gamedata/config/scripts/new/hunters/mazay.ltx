@@ -1,0 +1,62 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = camper@mazay
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+enemy_hunter%
+
+[death]
+on_info = {=killed_by_actor} %+enemy_hunter%
+
+[camper@mazay]
+path_walk = mazay_walk
+path_look = mazay_look
+meet = meet@mazay
+danger = danger_condition@mazay
+;combat_ignore_cond = always
+combat_ignore_cond = {=check_fighting(30218)}
+on_info = {+povodyr_mazay -povodyr_aver_start} remark@1
+
+[remark@1]
+anim = sit
+target = 30218
+snd = povodyr_gotov
+meet = no_meet
+danger = danger_condition@mazay
+combat_ignore_cond = {=check_fighting(30218)}
+on_signal = sound_end | %+povodyr_aver_start% camper@mazay1
+
+[camper@mazay1]
+path_walk = mazay_walk
+path_look = mazay_look
+meet = meet@mazay
+danger = danger_condition
+;combat_ignore_cond = always
+combat_ignore_cond = {=check_fighting(30218)}
+on_info = {+povodyr_aver_go} camper@mazay2
+
+[camper@mazay2]
+path_walk = mazay_walk
+path_look = mazay_look
+meet = meet@mazay
+danger = danger_condition@mazay
+;combat_ignore_cond = always
+combat_ignore_cond = {=check_fighting(30218)}
+
+[danger_condition@mazay]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@mazay]
+use = true
+use_wpn = false
+meet_talk_enabled = true

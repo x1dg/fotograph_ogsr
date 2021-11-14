@@ -1,0 +1,35 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@baza_ohranauchen2
+on_hit = hit
+on_death = death
+
+[walker@baza_ohranauchen2]
+path_walk = baza_ohranauchen2_walk
+path_look = baza_ohranauchen2_look
+meet = meet
+danger = danger_condition@baza_ohranauchen2
+on_info = {+uchen_enemy} walker@baza_ohranauchen22 %+usa_enemy%
+
+[walker@baza_ohranauchen22]
+path_walk = baza_ohranauchen2_walk
+path_look = baza_ohranauchen2_look
+meet = no_meet
+danger = danger_condition@baza_ohranauchen2
+
+[danger_condition@baza_ohranauchen2]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%

@@ -1,0 +1,11 @@
+[logic]
+active = sr_idle@1
+
+[sr_idle@1]
+on_actor_inside = {+shubin_bluetree_dialog_soglasie} sr_idle@2 %=fotograf.run_vibros +actor_molodets%
+
+[sr_idle@2]
+on_timer = 30000 | sr_idle@3 %+shubin_bluetree_dialog_done%
+
+[sr_idle@3]
+on_timer = 2000 | nil %=fotograf.final_video%

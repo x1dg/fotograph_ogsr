@@ -1,0 +1,20 @@
+[logic]
+active = {-info_valprip_27 -info_valprip_28} sr_idle@one, {+info_valprip_27 -info_valprip_28} sr_idle@tri, {+info_valprip_27 +info_valprip_28} sr_idle@five
+
+[sr_idle@one]
+on_actor_inside = {+amb_prip} sr_idle@two %=play_snd(ambient\new\door_near) +info_valprip_27%
+
+[sr_idle@two]
+on_timer = 60000 | sr_idle@tri
+
+[sr_idle@tri]
+on_actor_inside = {+info_valprip_27} sr_idle@four %=play_snd(ambient\new\topot) +info_valprip_28%
+
+[sr_idle@four]
+on_timer = 120000 | sr_idle@five
+
+[sr_idle@five]
+on_actor_inside = {+info_valprip_28} sr_idle@six %=play_snd(ambient\new\topot_1) -info_valprip_27 -info_valprip_28%
+
+[sr_idle@six]
+on_timer = 360000 | sr_idle@one 

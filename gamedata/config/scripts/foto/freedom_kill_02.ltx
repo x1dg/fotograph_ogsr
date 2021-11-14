@@ -1,0 +1,50 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+
+[walker@1]
+path_walk = freedom_kill_02_walk
+path_look = freedom_kill_02_look
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition
+on_actor_dist_le = 7 | remark@1
+on_info = {+freedom_kill_02_enemy} walker@3 %=killactor%
+
+[remark@1]
+anim = assault
+target = actor
+snd = enemy_attak_4
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@2 %=killactor%
+
+[walker@2]
+path_walk = freedom_kill_02_walk
+path_look = freedom_kill_02_look
+meet = meet
+danger = danger_condition
+
+[walker@3]
+path_walk = freedom_kill_02_walk
+path_look = freedom_kill_02_look
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+freedom_kill_02_enemy%

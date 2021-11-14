@@ -1,0 +1,66 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@voronin
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@voronin]
+path_walk = voronin_walk
+path_look = voronin_look
+meet = meet@voronin
+def_state_standing = ward
+danger = danger_condition@voronin
+on_info = {+usa_enemy} walker@voronin1 
+on_info2 = {+uchen_enemy} walker@voronin1 %+usa_enemy% 
+on_actor_dist_le = 3 | remark@voronin
+
+[remark@voronin]
+anim = ward
+target = actor
+snd = voronin_bar_hello
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@voronin
+on_signal = sound_end | remark@voronin1
+
+[remark@voronin1]
+anim = ward
+target = actor
+meet = meet@voronin
+combat_ignore_cond = always
+danger = danger_condition@voronin
+on_actor_dist_ge_nvis = 8 | walker@voronin2
+
+[walker@voronin2]
+path_walk = voronin_walk
+path_look = voronin_look
+meet = no_meet
+def_state_standing = ward
+danger = danger_condition@voronin
+on_info = {+usa_enemy} walker@voronin1 
+on_info2 = {+uchen_enemy} walker@voronin1 %+usa_enemy% 
+on_actor_dist_le = 3 | remark@voronin1
+
+[walker@voronin1]
+path_walk = voronin_walk
+path_look = voronin_look
+meet = no_meet
+danger = danger_condition@voronin
+
+[danger_condition@voronin]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet@voronin]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%

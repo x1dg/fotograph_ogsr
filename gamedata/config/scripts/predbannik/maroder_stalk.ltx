@@ -1,0 +1,33 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@maroder_exo
+danger = danger_condition@maroder_exo
+combat_ignore = combat_ignore
+on_hit = hit@maroder_exo
+on_death = death
+  
+[walker@maroder_exo]
+path_walk = maroder_exo_walk
+path_look = maroder_exo_look
+meet = no_meet
+danger = danger_condition@maroder_exo
+combat_ignore_cond = {=fighting_actor}
+on_info = {+maroder_enemy} walker@maroder_exo1
+
+[walker@maroder_exo1]
+path_walk = maroder_exo_walk
+path_look = maroder_exo_look
+meet = no_meet
+danger = danger_condition@maroder_exo
+
+[danger_condition@maroder_exo]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[hit@maroder_exo]
+on_info = {=hit_by_actor} %+maroder_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+maroder_enemy%

@@ -1,0 +1,167 @@
+; Пистолет системы Макарова ПМ 
+;----- правлено N6260 -----------------------------
+; калибр, мм                          9x18
+; длина ствола, мм                    93.5
+; магазин, шт                         8
+; вес без магазина, кг                0.73
+; эффективная дальность стрельбы, м   25
+; прицельная дальность, м             ---
+; дульная скорость пули, м\с          315
+; темп стрельбы, выстр\мин            30
+;---------------------------------------------------
+; анимации: King Friday, сборка: Real Wolf, модели: Арсенал-мод
+[wpn_pm]:identity_immunities
+GroupControlSection		    = spawn_group
+discovery_dependency 		= 
+$spawn 				        = "weapons\pm"
+$npc				        = on
+$prefetch 			        = 8
+scheduled 			        = off
+cform 				        = skeleton      
+class 				        = WP_PM
+min_radius 			        = 1
+max_radius 			        = 10
+description			        = enc_weapons1_wpn-pm
+ef_main_weapon_type		    = 0
+ef_weapon_type			    = 5
+;--------------------------------------------------
+holder_range_modifier		= 1.0
+holder_fov_modifier		    = 1.5
+;--------------------------------------------------
+cost				        = 480
+ammo_limit			        = 120
+ammo_current			    = 120
+ammo_elapsed			    = 8
+ammo_mag_size			    = 8
+fire_modes				    = 1
+ammo_class			        = ammo_9x18_pmm, ammo_9x18_fmj
+hand_dependence			    = 1
+single_handed			    = 1
+slot 				        = 1
+animation_slot			    = 1
+inv_name			        = wpn-pm
+inv_name_short			    = wpn-pm
+inv_weight			        = 0.73
+
+inv_grid_width			    = 1
+inv_grid_height			    = 1
+inv_grid_x			        = 18
+inv_grid_y			        = 6
+
+kill_msg_x			= 227
+kill_msg_y			= 82
+kill_msg_width		= 27
+kill_msg_height		= 23
+
+;------------------------------------------------
+dispersion_start		    = 0
+fire_dispersion_base		= 0.4
+control_inertion_factor		= 1.19f
+disp_rate                   = 1.85
+cam_relax_speed 		    = 10.0
+cam_dispersion 			    = 0.4
+cam_dispersion_inc		    = 0.0
+cam_dispertion_frac		    = 1.0
+cam_max_angle			    = 20.0
+cam_max_angle_horz		    = 5.0
+cam_step_angle_horz		    = 1.0
+fire_dispersion_condition_factor= 5
+misfire_probability 		= 0.003
+misfire_condition_k		    = 0.05
+condition_shot_dec 		    = 0.0005
+;-----------------------------------------------
+direction           	    = 0, 0, 1
+fire_point               	= 0.0, 0.208, 0.108
+flame_particles			    = weapons\generic_weapon03
+smoke_particles			    = weapons\generic_shoot_00
+shell_point		 	        = 0.0, 0.214, 0.039
+shell_dir		 	        = 0.0, 0.0, 0.4
+shell_particles	 		    = weapons\arsenal_shells1
+PDM_disp_base 			    = 1.0
+PDM_disp_vel_factor 		= 1.4
+PDM_disp_accel_factor 		= 1.6
+PDM_crouch	 		        = 0.8
+PDM_crouch_no_acc 		    = 0.6
+
+hit_power                   = 0.37, 0.39, 0.41, 0.43
+hit_impulse	                = 10
+hit_type 	                = fire_wound
+hit_rate	                = 1.83
+fire_distance               = 50
+bullet_speed		        = 310
+rpm                         = 250
+
+use_aim_bullet			    = true
+time_to_aim			        = 1.0	
+hud 				        = wpn_pm_hud
+normal 				        = 0, 1, 0
+position                 	= -0.026,-0.172,0.0
+orientation 			    = 0, 0, 1
+;--STRAP PARAMETERS----------------------------------
+visual 				        = weapons\pm\wpn_pm.ogf
+light_color		 	        = 0.6, 0.5, 0.3
+light_range		 	        = 3.0
+light_var_color		 	    = 0.05
+light_var_range		 	    = 0.5
+light_time 		 	        = 0.2
+ph_mass			 	        = 1
+scope_status			    = 0
+silencer_status			    = 2
+grenade_launcher_status		= 0
+zoom_enabled			    = true
+scope_zoom_factor	 	    = 85
+silencer_name 			    = wpn_addon_silencer
+silencer_x 			        = 37
+silencer_y 			        = -15					
+;------------------- S.T.A.L.K.E.R`s sound remake -----------------
+snd_draw					= weapons\pm\pm_draw
+snd_holster					= weapons\pistol_holster
+snd_shoot					= weapons\pm\pm_shoot
+snd_shoot1					= weapons\pm\pm_shoot1
+snd_shoot2					= weapons\pm\pm_shoot2
+snd_shoot3					= weapons\pm\pm_shoot3
+snd_empty					= weapons\pm\pm_empty
+snd_reload					= weapons\pm\pm_reload, 0.8
+snd_close					= weapons\pm\pm_close
+snd_silncer_shot			= weapons\pm\pm_shot_sil
+;-------------------------------------------------------------------
+silencer_smoke_particles 	= weapons\generic_shoot_00
+silencer_hit_power       	= 0.35
+silencer_hit_impulse	 	= 10
+silencer_fire_distance   	= 100
+silencer_bullet_speed	 	= 220
+silencer_light_color		= 0.6, 0.5, 0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+;--------------------------------------------------------------------
+;-- HUD DESCRIPTION
+;--------------------------------------------------------------------
+[wpn_pm_hud]
+allow_inertion			    = true
+shell_point				    = 0,0,-0.5
+shell_dir		 		    = 0.0, 1.0, 0.0
+fire_point				    = 0.000000,0.000000,-0.500000
+fire_bone                	= muzzle
+orientation              	= 0,0,0
+position                 	= 0.10,-0.05,0.1
+visual                   	= weapons\pm\wpn_pm_hud.ogf
+anim_holster			    = holster
+anim_idle				    = idle
+anim_empty				    = empty
+anim_reload				    = reload_full
+anim_reload_empty			= reload
+anim_draw				    = draw
+anim_draw_empty			    = draw_empty
+anim_shoot				    = shoot
+anim_shot_last			    = shoot_last
+anim_close				    = holster
+anim_idle_aim			    = idle_aim
+anim_idle_sprint			= idle_sprint
+zoom_offset				= -0.097,0.0485,-0.03
+zoom_rotate_x			= -0.005
+zoom_rotate_y			= -0.005
+zoom_hide_crosshair		    = true
+zoom_rotate_time		    = 0.1
+rotate_time			        = 0.1

@@ -1,0 +1,36 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@merc4
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@merc4]
+path_walk = mercd4_walk
+path_look = mercd4_look
+meet = no_meet
+danger = danger_condition@mercd4
+combat_ignore_cond = always
+on_info = {+spalilsa} walker@enemy %=killactor%
+
+[walker@enemy]
+path_walk = mercd4_walk
+path_look = mercd4_look
+meet = no_meet
+
+[danger_condition@mercd4]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = %+spalilsa%
+
+[death]
+on_info = %+spalilsa +mercd4_dead%

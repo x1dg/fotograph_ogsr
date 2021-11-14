@@ -1,0 +1,21 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+danger = danger_condition
+
+[walker@1]
+path_walk = maroder3_und_walk
+path_look = maroder3_und_look
+danger = danger_condition
+meet = no_meet
+
+[danger_condition]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = true
+meet_talk_enabled = true

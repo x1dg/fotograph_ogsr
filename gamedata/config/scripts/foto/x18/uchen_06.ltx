@@ -1,0 +1,96 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-ploymar_start_dialog_start} walker@1, {+ploymar_start_dialog_start -ploymar_start_dialog_done} walker@3, {+ploymar_start_dialog_done} walker@4
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@1]
+path_walk = uchen_06_walk
+path_look = uchen_06_look
+meet = no_meet
+combat_ignore_cond = always
+def_state_standing = ward
+danger = danger_condition
+on_actor_dist_le = 3 | remark@1
+on_info = {+uchen_enemy} walker@enemy
+
+[remark@1]
+anim = ward
+target = actor
+snd = ploymar1
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@2
+on_info = {+uchen_enemy} walker@enemy
+
+[walker@2]
+path_walk = uchen_06_walk
+path_look = uchen_06_look
+meet = meet
+combat_ignore_cond = always
+def_state_standing = ward
+danger = danger_condition
+on_info = {+uchen_enemy} walker@enemy
+on_info2 = {+ploymar_start_dialog_start} walker@3
+
+[walker@3]
+path_walk = uchen_06_walk1
+path_look = uchen_06_look1
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+uchen_enemy} walker@enemy
+on_signal = ploymar1 | remark@2
+
+[remark@2]
+anim = press
+target = uchen_06_look1, 0
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 7000 | remark@3
+on_info = {+uchen_enemy} walker@enemy
+
+[remark@3]
+target = actor
+snd = ploymar2
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@4 %+ploymar_start_dialog_done +mozhno_x18%
+on_info = {+uchen_enemy} walker@enemy
+
+[walker@4]
+path_walk = uchen_06_walk2
+path_look = uchen_06_look2
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+uchen_enemy} walker@enemy
+on_signal = ploymar2 | %=fotograf.del_ploymar%
+
+[walker@enemy]
+path_walk = uchen_06_walk
+path_look = uchen_06_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_state = ward
+
+[hit]
+on_info = {=hit_by_actor} %+uchen_enemy +ploymar_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+uchen_enemy +ploymar_enemy%

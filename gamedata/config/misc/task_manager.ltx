@@ -1,0 +1,1285 @@
+[list]
+;----------Trader---------------
+tm_eliminate_camp_4
+tm_kill_stalker_1
+tm_kill_stalker_2
+tm_kill_stalker_3
+
+;-----------Artefact------------
+tm_find_artefact_1
+tm_find_artefact_2
+tm_find_artefact_3
+tm_find_artefact_4
+
+;----------Find Item------------
+tm_find_item_1
+
+;---------Monster Part----------
+tm_monster_part_1
+tm_monster_part_2
+
+;-------------Barmen------------
+barmen_defend_camp_1
+barmen_kill_stalker_1
+barmen_kill_stalker_2
+barmen_kill_stalker_3
+
+;-----------Artefact------------
+barmen_find_artefact_1
+barmen_find_artefact_2
+barmen_find_artefact_3
+barmen_find_artefact_4
+barmen_find_artefact_5
+
+;----------Find Item-----------
+barmen_find_item_1
+barmen_find_item_2
+barmen_find_item_3
+
+;---------Monster Part-----------
+barmen_monster_part_1
+barmen_monster_part_2
+
+;-----------Ecolog--------------
+;---------Find Item-----------
+ecolog_find_item_1
+
+;---------Monster Part-----------
+ecolog_monster_part_1
+ecolog_monster_part_2
+ecolog_monster_part_3
+ecolog_monster_part_4
+ecolog_monster_part_5
+
+;--------Artefact---------------
+ecolog_find_artefact_1
+ecolog_find_artefact_2
+ecolog_find_artefact_3
+ecolog_find_artefact_4
+ecolog_find_artefact_5
+ecolog_find_artefact_6
+
+;--------nebo-------------------
+;--------Artefact---------------
+nebo_find_artefact_1
+nebo_find_artefact_2
+nebo_find_artefact_3
+nebo_find_artefact_4
+
+;--------Find Item------------
+nebo_find_item_1
+
+;---------Monster Part-----------
+nebo_monster_part_1
+nebo_monster_part_2
+nebo_monster_part_3
+nebo_monster_part_4
+nebo_monster_part_5
+nebo_monster_part_6
+
+;------------Voronin------------
+;--------Artefact---------------
+dolg_find_artefact_1
+dolg_find_artefact_2
+dolg_find_artefact_3
+
+;--------Find Item------------
+dolg_find_item_1
+dolg_find_item_2
+
+;--------Kill Stalker---------
+dolg_kill_stalker_1
+
+;------------Freedom------------
+;--------Artefact---------------
+freedom_find_artefact_1
+freedom_find_artefact_2
+freedom_find_artefact_3
+
+;---------Monster Part-----------
+freedom_monster_part_1
+
+;--------Find Item------------
+freedom_find_item_1
+freedom_find_item_2
+freedom_find_item_3
+
+;--------Kill Stalker---------
+freedom_kill_stalker_1
+freedom_kill_stalker_2
+freedom_kill_stalker_3
+
+;tasks for Mercenary
+mercenary_kill_stalker
+
+;-------STORYLINE TASKS-------
+
+[tm_eliminate_camp_4]
+type = eliminate_lager
+community = actor
+condlist = {+fake_info_random}
+text = tm_eliminate_camp_4_text
+description = tm_eliminate_camp_4_descr
+parent = trader
+target = esc2_dogs_lair
+reward_money = 1500
+reward_reputation = +7
+reward_relation = stalker, 5
+reward_rank = 1
+reward_item = ammo_12x70_buck
+time = 604800
+
+[barmen_defend_camp_1]
+type = defend_lager
+community = actor
+condlist = {+fake_info_random}
+text = barmen_defend_camp_1_text
+description = barmen_defend_camp_1_descr
+parent = barman
+target = gar_smart_garage
+reward_reputation = +15
+reward_relation = stalker, 20
+reward_rank = 10
+reward_item = ammo_12x70_buck
+time = 604800
+
+[tm_find_artefact_1]
+type = artefact
+community = actor
+condlist = {-tm_find_artefact_1_info}
+text = tm_find_artefact_1_text
+description = tm_find_artefact_1_descr
+parent = trader
+target = planshetka
+reward_money = 1500
+reward_reputation = +5
+reward_relation = stalker, +50
+reward_rank = 1
+reward_item = vodka, medkit
+time = 604800
+prior = 1
+start_info = sid_find_artefact_1
+
+[tm_find_artefact_2]
+type = artefact
+community = actor
+condlist = {-tm_find_artefact_2_info}
+text = tm_find_artefact_2_text
+description = tm_find_artefact_2_descr
+parent = trader
+target = vidik
+reward_money = 4000
+reward_reputation = +20
+reward_relation = stalker, +50
+reward_rank = 3
+reward_item = vodka, medkit, bandage
+time = 604800
+prior = 2
+start_info = sid_find_artefact_2
+
+[tm_find_artefact_3]
+type = artefact
+community = actor
+condlist = {-tm_find_artefact_3_info}
+text = tm_find_artefact_3_text
+description = tm_find_artefact_3_descr
+parent = trader
+target = table_lampa
+reward_money = 3000
+reward_reputation = +40
+reward_relation = stalker, +50
+reward_rank = 7
+reward_item = neytral_gaz_outfit_v3
+time = 604800
+prior = 3
+start_info = sid_find_artefact_3
+
+
+[tm_find_artefact_4]
+type = artefact
+community = actor
+condlist = {-tm_find_artefact_4_info}
+text = tm_find_artefact_4_text
+description = tm_find_artefact_4_descr
+parent = trader
+target = icona
+reward_money = 5000
+reward_reputation = +20
+reward_relation = newstalk, +50
+reward_rank = 3
+reward_item = medkit, medkit
+time = 604800
+prior = 4
+start_info = sid_find_artefact_4
+
+[tm_find_item_1]
+type = find_item
+community = actor
+condlist = {-tm_find_item_1_info}
+text = tm_find_item_1_text
+description = tm_find_item_1_descr
+parent = trader
+target = wpn_fort_m1
+reward_money = 1500
+reward_reputation = +15
+reward_relation = stalker, +30
+reward_rank = 3
+time = 604800
+start_info = sid_find_item_1
+
+[tm_monster_part_1]
+type = monster_part
+community = actor
+text = tm_monster_part_1_text
+description = tm_monster_part_1_descr
+parent = trader
+target = mutant_krovosos_jaw
+reward_money = 1200
+reward_reputation = +20
+reward_relation = stalker, +30
+reward_rank = 5
+time = 604800
+reward_item = ammo_12x70_buck, ammo_12x70_buck
+prior = 2
+
+[tm_monster_part_2]
+type = monster_part
+community = actor
+text = tm_monster_part_2_text
+description = tm_monster_part_2_descr
+parent = trader
+target = mutant_psevdodog_tail
+reward_money = 800
+reward_reputation = +10
+reward_relation = stalker, +40
+reward_rank = 5
+time = 604800
+reward_item = ammo_12x70_buck, energy_drink
+prior = 1
+
+;-----------------Kill Stalker-------------------
+
+[tm_kill_stalker_1]
+type = kill_stalker
+community = actor
+condlist = {-tm_kill_stalker_1_info}
+text = tm_kill_stalker_1_text
+description = tm_kill_stalker_1_descr
+parent = trader
+target = tm_kill_01
+reward_money = 4500
+reward_reputation = +5
+reward_rank = 7
+reward_item = medkit, medkit
+time = 604800
+start_info = sid_kill_stalker_1
+prior = 2
+
+[tm_kill_stalker_2]
+type = kill_stalker
+community = actor
+condlist = {-tm_kill_stalker_2_info}
+text = tm_kill_stalker_2_text
+description = tm_kill_stalker_2_descr
+parent = trader
+target = tm_kill_02
+reward_money = 3000
+reward_reputation = +3
+reward_rank = 5
+reward_item = medkit, energy_drink
+time = 604800
+start_info = sid_kill_stalker_2
+prior = 1
+
+[tm_kill_stalker_3]
+type = kill_stalker
+community = actor
+condlist = {-tm_kill_stalker_3_info}
+text = tm_kill_stalker_3_text
+description = tm_kill_stalker_3_descr
+parent = trader
+target = tm_kill_03
+reward_money = 5000
+reward_reputation = +7
+reward_rank = 8
+reward_item = medkit, medkit, medkit
+time = 604800
+start_info = sid_kill_stalker_3
+prior = 3
+
+;---------------------Barman---------------------------
+
+[barmen_find_artefact_1]
+type = artefact
+community = actor
+text = barmen_find_artefact_1_text
+description = barmen_find_artefact_1_descr
+parent = barman
+target = ks_absolut_01
+reward_money = 3500
+reward_reputation = +25
+reward_relation = newstalk, +30
+reward_rank = 5
+reward_item = medkit_scientic, medkit_scientic
+time = 604800
+prior = 1
+
+[barmen_find_artefact_2]
+type = artefact
+community = actor
+condlist = {-barmen_find_artefact_2_info}
+text = barmen_find_artefact_2_text
+description = barmen_find_artefact_2_descr
+parent = barman
+target = pechat_mashinka
+reward_money = 5000
+reward_reputation = +25
+reward_relation = stalker, +30
+reward_rank = 6
+reward_item = medkit_scientic, antirad
+time = 604800
+prior = 2
+start_info = bar_find_artefact_2
+
+[barmen_find_artefact_3]
+type = artefact
+community = actor
+text = barmen_find_artefact_3_text
+description = barmen_find_artefact_3_descr
+parent = barman
+target = ks_absolut_03
+reward_reputation = +30
+reward_relation = stalker, +50
+reward_rank = 7
+reward_item = specops_outfit, grenade_f1, grenade_f1
+time = 604800
+prior = 3
+
+[barmen_find_artefact_4]
+type = artefact
+community = actor
+condlist = {-barmen_find_artefact_4_info}
+text = barmen_find_artefact_4_text
+description = barmen_find_artefact_4_descr
+parent = barman
+target = chess
+reward_money = 3000
+reward_reputation = +20
+reward_relation = newstalk, +50
+reward_rank = 5
+time = 604800
+prior = 4
+start_info = bar_find_artefact_4
+
+[barmen_find_artefact_5]
+type = artefact
+community = actor
+;condlist = {+yan_kill_brain_done}
+text = barmen_find_artefact_5_text
+description = barmen_find_artefact_5_descr
+parent = barman
+target = ks_absolut_05
+reward_reputation = +40
+reward_relation = newstalk, +60
+reward_rank = 7
+time = 604800
+reward_item = wpn_addon_grenade_launcher_m203, wpn_addon_scope_susat, wpn_addon_silencer
+prior = 5
+
+[barmen_find_item_1]
+type = find_item
+community = actor
+condlist = {-barmen_find_item_1_info}
+text = barmen_find_item_1_text
+description = barmen_find_item_1_descr
+parent = barman
+target = outfit_stalker_m1
+reward_money = 8500
+reward_reputation = +30
+reward_rank = 5
+time = 604800
+prior = 2
+start_info = bar_find_item_1
+
+[barmen_find_item_2]
+type = find_item
+community = actor
+condlist = {-barmen_find_item_2_info}
+text = barmen_find_item_2_text
+description = barmen_find_item_2_descr
+parent = barman
+target = wpn_eagle_m1
+reward_money = 8000
+reward_reputation = +35
+reward_rank = 6
+time = 604800
+prior = 1
+start_info = bar_find_item_2
+
+[barmen_find_item_3]
+type = find_item
+community = actor
+condlist = {-barmen_find_item_3_info}
+text = barmen_find_item_3_text
+description = barmen_find_item_3_descr
+parent = barman
+target = wpn_sig_m2
+reward_money = 9700
+reward_reputation = +40
+reward_rank = 8
+time = 604800
+prior = 3
+start_info = bar_find_item_3
+
+[barmen_monster_part_1]
+type = monster_part
+community = actor
+text = barmen_monster_part_1_text
+description = barmen_monster_part_1_descr
+parent = barman
+target = mutant_flesh_eye
+reward_money = 500
+reward_reputation = +20
+reward_relation = newstalk, +80
+reward_rank = 5
+reward_item = conserva, conserva
+time = 604800
+prior = 1
+
+[barmen_monster_part_2]
+type = monster_part
+community = actor
+text = barmen_monster_part_2_text
+description = barmen_monster_part_2_descr
+parent = barman
+target = mutant_boar_leg
+reward_money = 700
+reward_reputation = +20
+reward_relation = stalker, +80
+reward_rank = 5
+time = 604800
+prior = 2
+
+;-----------------Kill Stalker-------------------
+
+[barmen_kill_stalker_1]
+type = kill_stalker
+community = actor
+condlist = {-barmen_kill_stalker_1_info}
+text = barmen_kill_stalker_1_text
+description = barmen_kill_stalker_1_descr
+parent = barman
+target = barman_kill_01
+reward_money = 8000
+reward_reputation = +3
+reward_rank = 5
+reward_item = medkit
+time = 604800
+start_info = bar_kill_stalker_1
+prior = 1
+
+[barmen_kill_stalker_2]
+type = kill_stalker
+community = actor
+condlist = {-barmen_kill_stalker_2_info}
+text = barmen_kill_stalker_2_text
+description = barmen_kill_stalker_2_descr
+parent = barman
+target = barman_kill_02
+reward_money = 10000
+reward_reputation = +5
+reward_rank = 7
+reward_item = medkit, medkit
+time = 604800
+start_info = bar_kill_stalker_2
+prior = 2
+
+[barmen_kill_stalker_3]
+type = kill_stalker
+community = actor
+condlist = {-barmen_kill_stalker_3_info}
+text = barmen_kill_stalker_3_text
+description = barmen_kill_stalker_3_descr
+parent = barman
+target = barman_kill_03
+reward_money = 12000
+reward_reputation = +8
+reward_rank = 8
+reward_item = medkit, medkit, medkit
+time = 604800
+start_info = bar_kill_stalker_3
+prior = 3
+
+;--------------------Saharov---------------------
+
+[ecolog_find_item_1]
+type = find_item
+community = actor
+condlist = {-ecolog_find_item_1_info}
+text = ecolog_find_item_1_text
+description = ecolog_find_item_1_descr
+parent = ecolog
+target = outfit_stalker_m2
+reward_reputation = +30
+reward_relation = ecolog, +30
+reward_rank = 8
+reward_item = medkit_scientic
+time = 604800
+prior = 1
+start_info = eco_find_item_1
+
+[ecolog_monster_part_1]
+type = monster_part
+community = actor
+text = ecolog_monster_part_1_text
+description = ecolog_monster_part_1_descr
+parent = ecolog
+target = mutant_snork_leg
+reward_money = 650
+reward_reputation = +20
+reward_relation = ecolog, +15
+reward_rank = 2
+reward_item = medkit_scientic
+time = 604800
+prior = 1
+
+[ecolog_monster_part_2]
+type = monster_part
+community = actor
+text = ecolog_monster_part_2_text
+description = ecolog_monster_part_2_descr
+parent = ecolog
+target = mutant_flesh_eye
+reward_money = 550
+reward_reputation = +10
+reward_relation = ecolog, +15
+reward_rank = 2
+reward_item = medkit_scientic
+time = 604800
+prior = 2
+
+[ecolog_monster_part_3]
+type = monster_part
+community = actor
+text = ecolog_monster_part_3_text
+description = ecolog_monster_part_3_descr
+parent = ecolog
+target = mutant_boar_leg
+reward_money = 650
+reward_reputation = +10
+reward_relation = ecolog, +20
+reward_rank = 4
+reward_item = medkit_scientic, medkit_scientic
+time = 604800
+prior = 3
+
+[ecolog_monster_part_4]
+type = monster_part
+community = actor
+text = ecolog_monster_part_4_text
+description = ecolog_monster_part_4_descr
+parent = ecolog
+target = mutant_psevdodog_tail
+reward_money = 700
+reward_reputation = +10
+reward_relation = ecolog, +15
+reward_rank = 2
+reward_item = medkit_scientic
+time = 604800
+prior = 4
+
+[ecolog_monster_part_5]
+type = monster_part
+community = actor
+text = ecolog_monster_part_5_text
+description = ecolog_monster_part_5_descr
+parent = ecolog
+target = mutant_krovosos_jaw
+reward_money = 1500
+reward_reputation = +25
+reward_relation = ecolog, +15
+reward_rank = 8
+reward_item = medkit_scientic
+time = 604800
+prior = 5
+
+;------Artefact---------------
+[ecolog_find_artefact_1]
+type = artefact
+community = actor
+text = ecolog_find_artefact_1_text
+description = ecolog_find_artefact_1_descr
+parent = ecolog
+target = ks_absolut_06
+reward_money = 3500
+reward_reputation = +10
+reward_rank = 5
+reward_relation = ecolog, +25
+reward_item = medkit_scientic
+time = 604800
+prior = 1
+
+[ecolog_find_artefact_2]
+type = artefact
+community = actor
+text = ecolog_find_artefact_2_text
+description = ecolog_find_artefact_2_descr
+parent = ecolog
+target = ks_absolut_07
+reward_money = 4200
+reward_reputation = +15
+reward_relation = ecolog, +30
+reward_rank = 5
+reward_item = medkit_scientic
+time = 604800
+prior = 2
+
+[ecolog_find_artefact_3]
+type = artefact
+community = actor
+text = ecolog_find_artefact_3_text
+description = ecolog_find_artefact_3_descr
+parent = ecolog
+target = ks_absolut_08
+reward_money = 5000
+reward_reputation = +20
+reward_relation = ecolog, +30
+reward_rank = 5
+reward_item = medkit_scientic, medkit_scientic
+time = 604800
+prior = 3
+
+[ecolog_find_artefact_4]
+type = artefact
+community = actor
+text = ecolog_find_artefact_4_text
+description = ecolog_find_artefact_4_descr
+parent = ecolog
+target = ks_talisman_01
+reward_money = 7500
+reward_reputation = +25
+reward_relation = ecolog, +40
+reward_rank = 10
+reward_item = medkit_scientic, medkit_scientic, medkit_scientic
+time = 604800
+prior = 4
+
+[ecolog_find_artefact_5]
+type = artefact
+community = actor
+text = ecolog_find_artefact_5_text
+description = ecolog_find_artefact_5_descr
+parent = ecolog
+target = ks_talisman_02
+reward_money = 8500
+reward_reputation = +30
+reward_relation = ecolog, +45
+reward_rank = 10
+reward_item = scientific_outfit
+time = 604800
+prior = 5
+
+[ecolog_find_artefact_6]
+type = artefact
+community = actor
+text = ecolog_find_artefact_6_text
+description = ecolog_find_artefact_6_descr
+parent = ecolog
+target = ks_obereg_03
+reward_money = 20000
+reward_reputation = +35
+reward_relation = ecolog, +50
+reward_rank = 10
+reward_item = scientific_outfit, medkit_scientic
+time = 604800
+prior = 6
+
+;--------------------Levsha------------------
+
+;---------Find Thing----------
+
+[nebo_find_artefact_1]
+type = artefact
+community = actor
+condlist = {-nebo_find_artefact_1_info}
+text = nebo_find_artefact_1_text
+description = nebo_find_artefact_1_descr
+parent = nebo
+target = microscope
+reward_money = 3500
+reward_reputation = +5
+reward_rank = 2
+reward_relation = newstalk, +10
+reward_item = grenade_f1, medkit_scientic, medkit_scientic
+time = 604800
+prior = 2
+start_info = levsha_find_artefact_1
+
+[nebo_find_artefact_2]
+type = artefact
+community = actor
+condlist = {-nebo_find_artefact_2_info}
+text = nebo_find_artefact_2_text
+description = nebo_find_artefact_2_descr
+parent = nebo
+target = raciya_new
+reward_money = 2000
+reward_reputation = +10
+reward_rank = 2
+reward_relation = nebo, +15
+reward_item = grenade_f1, medkit_scientic 
+time = 604800
+prior = 1
+start_info = levsha_find_artefact_2
+
+[nebo_find_artefact_3]
+type = artefact
+community = actor
+condlist = {-nebo_find_artefact_3_info}
+text = nebo_find_artefact_3_text
+description = nebo_find_artefact_3_descr
+parent = nebo
+target = tiski
+reward_money = 1500
+reward_reputation = +15
+reward_rank = 5
+reward_relation = nebo, +45
+reward_item = medkit_scientic, medkit_scientic
+time = 604800
+prior = 3
+start_info = levsha_find_artefact_3
+
+[nebo_find_artefact_4]
+type = artefact
+community = actor
+condlist = {-nebo_find_artefact_4_info}
+text = nebo_find_artefact_4_text
+description = nebo_find_artefact_4_descr
+parent = nebo
+target = plata
+reward_money = 1500
+reward_reputation = +15
+reward_rank = 5
+reward_relation = nebo, +50
+reward_item = medkit_scientic
+time = 604800
+prior = 4
+start_info = levsha_find_artefact_4
+
+;------Monster Part---------------
+
+[nebo_monster_part_1]
+type = monster_part
+community = actor
+text = nebo_monster_part_1_text
+description = nebo_monster_part_1_descr
+parent = nebo
+target = mutant_face_tushkano
+reward_money = 800
+reward_reputation = +5
+reward_relation = nebo, +15
+reward_rank = 2
+reward_item = ammo_7.62x51_ap
+time = 604800
+prior = 1
+
+[nebo_monster_part_2]
+type = monster_part
+community = actor
+text = nebo_monster_part_2_text
+description = nebo_monster_part_2_descr
+parent = nebo
+target = mutant_tail_cat
+reward_money = 850
+reward_reputation = +5
+reward_relation = nebo, +15
+reward_rank = 2
+reward_item = ammo_7.62x51_ap
+time = 604800
+prior = 2
+
+[nebo_monster_part_3]
+type = monster_part
+community = actor
+text = nebo_monster_part_3_text
+description = nebo_monster_part_3_descr
+parent = nebo
+target = mutant_poltergeist_glas
+reward_money = 1000
+reward_reputation = +5
+reward_relation = nebo, +15
+reward_rank = 2
+reward_item = ammo_7.62x51_fmj
+time = 604800
+prior = 3
+
+[nebo_monster_part_4]
+type = monster_part
+community = actor
+text = nebo_monster_part_4_text
+description = nebo_monster_part_4_descr
+parent = nebo
+target = mutant_chimera_kogot
+reward_money = 1500
+reward_reputation = +5
+reward_relation = nebo, +15
+reward_rank = 2
+reward_item = ammo_7.62x51_fmj
+time = 604800
+prior = 4
+
+[nebo_monster_part_5]
+type = monster_part
+community = actor
+text = nebo_monster_part_5_text
+description = nebo_monster_part_5_descr
+parent = nebo
+target = mutant_hand_kontroler
+reward_money = 2000
+reward_reputation = +5
+reward_relation = nebo, +35
+reward_rank = 2
+reward_item = ammo_7.62x51_ap
+time = 604800
+prior = 5
+
+[nebo_monster_part_6]
+type = monster_part
+community = actor
+text = nebo_monster_part_6_text
+description = nebo_monster_part_6_descr
+parent = nebo
+target = mutant_psevdogigant_hand
+reward_money = 2300
+reward_reputation = +5
+reward_relation = nebo, +35
+reward_rank = 2
+reward_item = ammo_7.62x51_ap, ammo_7.62x51_ap
+time = 604800
+prior = 6
+
+------------------Find Item------------------
+
+[nebo_find_item_1]
+type = find_item
+community = actor
+condlist = {-nebo_find_item_1_info}
+text = nebo_find_item_1_text
+description = nebo_find_item_1_descr
+parent = nebo
+target = wpn_walther_m1
+reward_money = 1800
+reward_reputation = +5
+reward_relation = newstalk, +15
+reward_rank = 2
+reward_item = grenade_f1, grenade_f1 
+time = 604800
+prior = 1
+start_info = levsha_find_item_1
+
+[levsha_find_artefact_1]
+info_portion = nebo_find_artefact_1_info
+
+[levsha_find_artefact_2]
+info_portion = nebo_find_artefact_2_info
+
+[levsha_find_artefact_3]
+info_portion = nebo_find_artefact_3_info
+
+[levsha_find_artefact_4]
+info_portion = nebo_find_artefact_4_info
+
+[levsha_find_item_1]
+info_portion = nebo_find_item_1_info
+
+[sid_find_artefact_1]
+info_portion = tm_find_artefact_1_info
+
+[sid_find_artefact_2]
+info_portion = tm_find_artefact_2_info
+
+[sid_find_artefact_3]
+info_portion = tm_find_artefact_3_info
+
+[sid_find_artefact_4]
+info_portion = tm_find_artefact_4_info
+
+[sid_find_item_1]
+info_portion = tm_find_item_1_info
+
+[bar_find_artefact_2]
+info_portion = barmen_find_artefact_2_info
+
+[bar_find_artefact_4]
+info_portion = barmen_find_artefact_4_info
+
+[bar_find_item_1]
+info_portion = barmen_find_item_1_info
+
+[bar_find_item_2]
+info_portion = barmen_find_item_2_info
+
+[bar_find_item_3]
+info_portion = barmen_find_item_3_info
+
+[eco_find_item_1]
+info_portion = ecolog_find_item_1_info
+
+[sid_kill_stalker_1]
+info_portion = tm_kill_stalker_1_info
+
+[sid_kill_stalker_2]
+info_portion = tm_kill_stalker_2_info
+
+[sid_kill_stalker_3]
+info_portion = tm_kill_stalker_3_info
+
+[bar_kill_stalker_1]
+info_portion = barmen_kill_stalker_1_info
+
+[bar_kill_stalker_2]
+info_portion = barmen_kill_stalker_2_info
+
+[bar_kill_stalker_3]
+info_portion = barmen_kill_stalker_3_info
+
+[do_kill_stalker_1]
+info_portion = dolg_kill_stalker_1_info
+
+[do_find_item_1]
+info_portion = dolg_find_item_1_info
+
+[do_find_item_2]
+info_portion = dolg_find_item_2_info
+
+[free_kill_stalker_1]
+info_portion = freedom_kill_stalker_1_info
+
+[free_kill_stalker_2]
+info_portion = freedom_kill_stalker_2_info
+
+[free_kill_stalker_3]
+info_portion = freedom_kill_stalker_3_info
+
+[free_find_item_1]
+info_portion = freedom_find_item_1_info
+
+[free_find_item_2]
+info_portion = freedom_find_item_2_info
+
+[free_find_item_3]
+info_portion = freedom_find_item_3_info
+
+[do_find_artefact_1]
+info_portion = dolg_find_artefact_1_info
+
+[do_find_artefact_2]
+info_portion = dolg_find_artefact_2_info
+
+[do_find_artefact_3]
+info_portion = dolg_find_artefact_3_info
+
+[free_find_artefact_1]
+info_portion = freedom_find_artefact_1_info
+
+[free_find_artefact_2]
+info_portion = freedom_find_artefact_2_info
+
+[free_find_artefact_3]
+info_portion = freedom_find_artefact_3_info
+
+;tasks for Mercenary
+
+[mercenary_kill_stalker]
+type = kill_stalker
+community = actor
+condlist = {+net_zadan_one}
+text = mercenary_kill_stalker_text
+description = mercenary_kill_stalker_descr
+parent = mercenary
+target = sim_stalker_master_master
+;reward_money = 1000
+reward_reputation = +3
+reward_rank = 9
+reward_item = grenade_f1
+time = 604800
+
+
+[dolg_find_item_1]
+type = find_item
+community = actor
+condlist = {-dolg_find_item_1_info}
+text = dolg_find_item_1_text
+description = dolg_find_item_1_descr
+parent = dolg
+target = wpn_l85_m1
+reward_money = 3500
+reward_reputation = +5
+reward_relation = military, +20
+reward_rank = 3
+reward_item = grenade_f1, grenade_f1 
+time = 604800
+prior = 1
+start_info = do_find_item_1
+
+
+[dolg_find_item_2]
+type = find_item
+community = actor
+condlist = {-dolg_find_item_2_info}
+text = dolg_find_item_2_text
+description = dolg_find_item_2_descr
+parent = dolg
+target = wpn_winchester_m1
+reward_money = 3500
+reward_reputation = +10
+reward_relation = military, +35
+reward_rank = 5
+reward_item = medkit_army, grenade_f1, grenade_f1 
+time = 604800
+prior = 2
+start_info = do_find_item_2
+
+
+[dolg_kill_stalker_1]
+type = kill_stalker
+community = actor
+condlist = {-dolg_kill_stalker_1_info}
+text = dolg_kill_stalker_1_text
+description = dolg_kill_stalker_1_descr
+parent = dolg
+target = dolg_kill_01
+reward_money = 5000
+reward_reputation = +15
+reward_relation = military, +35
+reward_rank = 8
+reward_item = medkit_army
+time = 604800
+start_info = do_kill_stalker_1
+prior = 1
+
+[freedom_monster_part_1]
+type = monster_part
+community = actor
+text = freedom_monster_part_1_text
+description = freedom_monster_part_1_descr
+parent = freedom
+target = mutant_boar_leg
+reward_money = 500
+reward_reputation = +10
+reward_relation = freedom, +15
+reward_rank = 2
+time = 604800
+reward_item = ammo_12x70_buck
+prior = 1
+
+[freedom_kill_stalker_1]
+type = kill_stalker
+community = actor
+condlist = {-freedom_kill_stalker_1_info}
+text = freedom_kill_stalker_1_text
+description = freedom_kill_stalker_1_descr
+parent = freedom
+target = freedom_kill_01
+reward_money = 3000
+reward_reputation = +10
+reward_relation = freedom, +25
+reward_rank = 5
+reward_item = medkit_army
+time = 604800
+start_info = free_kill_stalker_1
+prior = 1
+
+[freedom_kill_stalker_2]
+type = kill_stalker
+community = actor
+condlist = {-freedom_kill_stalker_2_info}
+text = freedom_kill_stalker_2_text
+description = freedom_kill_stalker_2_descr
+parent = freedom
+target = freedom_kill_02
+reward_money = 7000
+reward_reputation = +15
+reward_relation = freedom, +30
+reward_rank = 6
+reward_item = medkit_army, medkit_army
+time = 604800
+start_info = free_kill_stalker_2
+prior = 2
+
+[freedom_kill_stalker_3]
+type = kill_stalker
+community = actor
+condlist = {-freedom_kill_stalker_3_info}
+text = freedom_kill_stalker_3_text
+description = freedom_kill_stalker_3_descr
+parent = freedom
+target = freedom_kill_03
+reward_money = 12000
+reward_reputation = +25
+reward_relation = freedom, +50
+reward_rank = 6
+reward_item = medkit_army, medkit_army, medkit_army
+time = 604800
+start_info = free_kill_stalker_3
+prior = 3
+
+[freedom_find_item_1]
+type = find_item
+community = actor
+condlist = {-freedom_find_item_1_info}
+text = freedom_find_item_1_text
+description = freedom_find_item_1_descr
+parent = freedom
+target = wpn_svd_c
+reward_money = 5500
+reward_reputation = +5
+reward_relation = freedom, +20
+reward_rank = 2
+reward_item = grenade_f1, grenade_f1  
+time = 604800
+prior = 1
+start_info = free_find_item_1
+
+[freedom_find_item_2]
+type = find_item
+community = actor
+condlist = {-freedom_find_item_2_info}
+text = freedom_find_item_2_text
+description = freedom_find_item_2_descr
+parent = freedom
+target = wpn_spas12_m1
+reward_money = 3500
+reward_reputation = +8
+reward_relation = freedom, +25
+reward_rank = 3
+reward_item = grenade_f1, medkit_army 
+time = 604800
+prior = 3
+start_info = free_find_item_2
+
+[freedom_find_item_3]
+type = find_item
+community = actor
+condlist = {-freedom_find_item_3_info}
+text = freedom_find_item_3_text
+description = freedom_find_item_3_descr
+parent = freedom
+target = outfit_specnaz_m1
+reward_money = 7500
+reward_reputation = +10
+reward_relation = freedom, +35
+reward_rank = 5
+reward_item = medkit_army, conserva, conserva 
+time = 604800
+prior = 2
+start_info = free_find_item_3
+
+
+[dolg_find_artefact_1]
+type = artefact
+community = actor
+condlist = {-dolg_find_artefact_1_info}
+text = dolg_find_artefact_1_text
+description = dolg_find_artefact_1_descr
+parent = dolg
+target = memory_module
+reward_money = 1500
+reward_reputation = +5
+reward_relation = military, +20
+reward_rank = 2
+reward_item = medkit_army
+;time = 604800
+prior = 1
+start_info = do_find_artefact_1
+
+
+[dolg_find_artefact_2]
+type = artefact
+community = actor
+condlist = {-dolg_find_artefact_2_info}
+text = dolg_find_artefact_2_text
+description = dolg_find_artefact_2_descr
+parent = dolg
+target = kolba
+reward_money = 2500
+reward_reputation = +10
+reward_relation = ecolog, +30
+reward_rank = 3
+reward_item = medkit_army, medkit_army
+;time = 604800
+prior = 2
+start_info = do_find_artefact_2
+
+
+[dolg_find_artefact_3]
+type = artefact
+community = actor
+condlist = {-dolg_find_artefact_3_info}
+text = dolg_find_artefact_3_text
+description = dolg_find_artefact_3_descr
+parent = dolg
+target = samopisec
+reward_money = 5000
+reward_reputation = +15
+reward_relation = ecolog, +50
+reward_rank = 5
+reward_item = medkit_army, grenade_f1
+;time = 604800
+prior = 3
+start_info = do_find_artefact_3
+
+
+[freedom_find_artefact_1]
+type = artefact
+community = actor
+condlist = {-freedom_find_artefact_1_info}
+text = freedom_find_artefact_1_text
+description = freedom_find_artefact_1_descr
+parent = freedom
+target = koloda
+reward_money = 500
+reward_reputation = +5
+reward_relation = freedom, +20
+reward_rank = 2
+reward_item = ammo_12x70_buck, ammo_12x70_buck
+time = 604800
+prior = 2
+start_info = free_find_artefact_1
+
+
+[freedom_find_artefact_2]
+type = artefact
+community = actor
+condlist = {-freedom_find_artefact_2_info}
+text = freedom_find_artefact_2_text
+description = freedom_find_artefact_2_descr
+parent = freedom
+target = fonarik
+reward_money = 800
+reward_reputation = +10
+reward_relation = freedom, +25
+reward_rank = 2
+reward_item = ammo_12x70_buck, medkit
+time = 604800
+prior = 1
+start_info = free_find_artefact_2
+
+
+[freedom_find_artefact_3]
+type = artefact
+community = actor
+condlist = {-freedom_find_artefact_3_info}
+text = freedom_find_artefact_3_text
+description = freedom_find_artefact_3_descr
+parent = freedom
+target = yaschik_freedom
+reward_money = 1500
+reward_reputation = +15
+reward_relation = freedom, +35
+reward_rank = 3
+reward_item = grenade_f1, medkit
+time = 604800
+prior = 3
+start_info = free_find_artefact_3
+

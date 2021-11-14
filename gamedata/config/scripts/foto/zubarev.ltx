@@ -1,0 +1,76 @@
+[smart_terrains]
+none = true
+
+[dont_spawn_loot]
+
+[logic]
+active = walker@zubarev
+combat_ignore = combat_ignore
+on_death = death
+on_hit = hit
+
+[walker@zubarev]
+path_walk = zubarev_walk
+path_look = zubarev_look
+meet = no_meet
+danger = danger_condition@zubarev
+combat_ignore_cond = always
+on_actor_dist_le_nvis = 3 | walker@zubarev1
+
+[walker@zubarev1]
+path_walk = zubarev_walk
+path_look = zubarev_look
+meet = meet@zubarev
+danger = danger_condition@zubarev
+combat_ignore_cond = always
+on_info = {+zub_start} remark@zub
+
+[remark@zub]
+anim = guard
+target = actor
+snd = zub_speech
+meet = no_meet
+danger = danger_condition@zubarev
+combat_ignore_cond = always
+on_signal = sound_end | %+zub_vstrecha% remark@zub1
+
+[remark@zub1]
+target = zubarev_look1, 0
+meet = no_meet
+danger = danger_condition@zubarev
+combat_ignore_cond = always
+on_timer = 1000 | remark@zub2
+
+[remark@zub2]
+target = zubarev_look1, 0
+snd = zub_speech_1
+meet = no_meet
+danger = danger_condition@zubarev
+combat_ignore_cond = always
+on_signal = sound_end | %+zub_speech_end% remark@zub3
+
+[remark@zub3]
+target = zubarev_look1, 0
+meet = no_meet
+danger = danger_condition@zubarev
+combat_ignore_cond = always
+
+[danger_condition@zubarev]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[hit]
+on_info = {=hit_by_actor} %+archiv_proval%
+on_info2 = %=kill%
+
+[death]
+on_info = {=killed_by_actor} %+archiv_proval%
+on_info2 = %+zub_dead%
+
+[meet@zubarev]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+
+

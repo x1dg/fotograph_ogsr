@@ -1,0 +1,18 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@maroder_boss
+combat_ignore = combat_ignore
+
+[walker@maroder_boss]
+path_walk = maroder_boss_walk
+path_look = maroder_boss_look
+meet = no_meet
+def_state_standing = ward
+danger = danger_condition@maroder_boss
+
+[danger_condition@maroder_boss]
+ignore_distance = 0
+ignore_distance_corpse = 0
+

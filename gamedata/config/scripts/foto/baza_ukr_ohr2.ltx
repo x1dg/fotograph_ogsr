@@ -1,0 +1,74 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-uber_ataka_start} walker@1, {+uber_ataka_start} walker@3
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@1]
+path_walk = baza_ukr_ohr2_walk
+path_look = baza_ukr_ohr2_look
+meet = no_meet
+danger = danger_condition
+on_info = {+soldaty_enemy} remark@3
+on_info2 = {+uber_ataka_start} walker@3
+on_actor_dist_le_nvis = 8 | {-uber_ataka_start} remark@1
+
+[remark@1]
+anim = assault
+target = actor
+snd = baza_ukr_stop
+meet = no_meet
+danger = danger_condition
+on_info = {+soldaty_enemy} remark@3
+on_info2 = {+uber_ataka_start} walker@3
+on_signal = sound_end | remark@2 %=play_snd(ambient\new\actor_35)%
+
+[remark@2]
+anim = assault
+target = actor
+meet = no_meet
+danger = danger_condition
+on_info = {+soldaty_enemy} remark@3
+on_info2 = {+uber_ataka_start} walker@3 
+on_timer = 6500 | {=dist_to_actor_le(10)} remark@3 %+soldaty_enemy%, {=dist_to_actor_ge(10)} walker@2 
+
+[remark@3]
+anim = assault
+target = actor
+meet = no_meet
+danger = danger_condition
+on_info = {+uber_ataka_start} walker@3  
+
+[walker@2]
+path_walk = baza_ukr_ohr2_walk
+path_look = baza_ukr_ohr2_look
+meet = no_meet
+danger = danger_condition
+on_info = {+soldaty_enemy} remark@3
+on_info2 = {+uber_ataka_start} walker@3  
+on_actor_dist_le_nvis = 8 | {-uber_ataka_start} %+soldaty_enemy%
+
+[walker@3]
+path_walk = baza_ukr_ohr2_walk
+path_look = baza_ukr_ohr2_look
+meet = no_meet
+danger = danger_condition
+on_info = {+soldaty_enemy} remark@3
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+soldaty_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+soldaty_enemy%

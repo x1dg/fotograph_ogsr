@@ -1,0 +1,30 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@baza_uvhoda1
+on_hit = hit
+on_death = death
+
+[walker@baza_uvhoda1]
+path_walk = baza_uvhoda_walk1
+path_look = baza_uvhoda_look1
+meet = no_meet
+danger = danger_condition@baza_uvhoda
+on_actor_dist_le = 10 | walker@baza_uvhoda2
+
+[walker@baza_uvhoda2]
+path_walk = baza_uvhoda_walk2
+path_look = baza_uvhoda_look2
+meet = no_meet
+danger = danger_condition@baza_uvhoda
+
+[danger_condition@baza_uvhoda]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%

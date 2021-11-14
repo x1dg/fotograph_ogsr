@@ -1,0 +1,136 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@poet
+combat_ignore = combat_ignore 
+
+[walker@poet]
+path_walk = poet_walk
+path_look = poet_look
+meet = no_meet
+danger = danger_condition@poet
+on_info = {+poet_dialog} walker@wait
+on_info2 = {-poet_dialog} walker@poet1
+
+[walker@poet1]
+path_walk = poet_walk
+path_look = poet_look
+meet = no_meet
+danger = danger_condition@poet
+on_info = {+poet_dialog} walker@wait
+on_timer = 1500 | remark@poet
+
+[remark@poet]
+target = actor
+anim = punch
+show_spot = false
+meet = no_meet
+danger = danger_condition@poet
+on_timer = 1000 | remark@poet1 %=foto2.hit_poet +check_weap%
+
+[remark@poet1]
+target = actor
+anim = assault
+snd = poet1
+show_spot = false
+meet = no_meet
+danger = danger_condition@poet
+on_signal = sound_end | remark@vstrecha %=foto2.en_mov =play_snd(ambient\new\actor_50)%
+
+[remark@vstrecha]
+target = actor
+anim = assault
+show_spot = false
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 6000 | remark@base_meet 
+
+[remark@base_meet]
+target = actor
+anim = assault
+show_spot = false
+meet = meet@poet
+danger = danger_condition@poet
+on_info = {+weap_on -weap1 -weap2 -poet_dialog} remark@weap1 %=foto2.hide_w +weap1%, {+weap_on +weap1 -weap2 -poet_dialog} remark@weap2 %=foto2.hide_w +weap2%, {+weap_on +weap1 +weap2 -poet_dialog} walker@c4, {+poet_dialog} remark@wait,  
+on_actor_dist_ge_nvis = 2.3 | {-poet_dialog} walker@c4
+
+[remark@weap1]
+target = actor
+anim = punch
+show_spot = false
+meet = no_meet
+danger = danger_condition@poet
+on_timer = 900 | remark@weap1_1 %=foto2.hit_poet =foto2.del_info_weap%
+
+[remark@weap1_1]
+target = actor
+anim = assault
+snd = poet2
+show_spot = false
+meet = no_meet
+danger = danger_condition@poet
+on_signal = sound_end | remark@base_meet %=foto2.en_mov%
+
+[remark@weap2]
+target = actor
+anim = punch
+show_spot = false
+meet = no_meet
+danger = danger_condition@poet
+on_timer = 900 | remark@weap2_1 %=foto2.hit_sound =run_postprocess(deadcity_wake:1777:false) =foto2.del_info_weap%
+
+[remark@weap2_1]
+target = actor
+anim = assault
+snd = poet3
+show_spot = false
+meet = no_meet
+danger = danger_condition@poet
+on_signal = sound_end | remark@base_meet %=foto2.en_mov%
+
+[walker@c4]
+path_walk = poet_walk
+path_look = poet_look
+danger = danger_condition@poet
+on_timer = 900 | walker@c4_next %=foto2.poet_c4%
+
+[walker@c4_next]
+path_walk = poet_walk
+path_look = poet_look
+danger = danger_condition@poet
+on_timer = 1500 | walker@wait %+explose%
+
+[remark@wait]
+target = actor
+snd = poet4
+show_spot = false
+meet = no_meet
+danger = danger_condition@poet
+on_signal = sound_end | remark@vstrecha1 %=play_snd(ambient\new\actor_51)%
+
+[remark@vstrecha1]
+target = actor
+meet = no_meet
+show_spot = false
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 6000 | walker@wait 
+
+[walker@wait]
+path_walk = poet_wait_walk
+path_look = poet_wait_look
+def_state_standing = ward
+show_spot = false
+meet = meet_poet
+danger = danger_condition@poet
+
+[danger_condition@poet]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@poet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

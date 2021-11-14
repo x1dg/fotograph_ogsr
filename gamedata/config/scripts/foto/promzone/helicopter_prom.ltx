@@ -1,0 +1,88 @@
+[logic]
+active = heli_move@idle
+
+[heli_move@idle]
+path_move = prom_heli_idle_move1
+engine_sound = false
+combat_ignore = true
+on_info = {+lukash_first_dialog_done} heli_move@fly
+combat_safe_altitude = 0
+
+[heli_move@fly]
+path_move = prom_heli_fly
+engine_sound = false
+;combat_enemy = 30311
+combat_enemy = nil
+combat_ignore = true
+combat_use_rocket = false
+combat_use_mgun = false
+rocket_delay = 6000
+combat_safe_altitude = 0
+on_timer = 8000 | %=fotograf.sound_heli_prom +prom_heli_letit% heli_move@fly1 
+
+[heli_move@fly1]
+path_move = prom_heli_fly1
+engine_sound = true
+;combat_enemy = 30311
+combat_enemy = nil
+combat_ignore = true
+combat_use_rocket = false
+combat_use_mgun = false
+rocket_delay = 6000
+combat_safe_altitude = 0
+on_timer = 12000 | %=fotograf.spawn_prom_desant1 +prom_desant_start% heli_move@fly2 
+
+[heli_move@fly2]
+path_move = prom_heli_fly2
+engine_sound = true
+;combat_enemy = 30311
+combat_enemy = nil
+combat_ignore = true
+combat_use_rocket = false
+combat_use_mgun = false
+rocket_delay = 6000
+combat_safe_altitude = 0
+on_timer =10000 | %=fotograf.spawn_prom_desant2% heli_move@fly3
+
+[heli_move@fly3]
+path_move = prom_heli_fly2
+engine_sound = true
+;combat_enemy = 30311
+combat_enemy = nil
+combat_ignore = true
+combat_use_rocket = false
+combat_use_mgun = false
+rocket_delay = 6000
+combat_safe_altitude = 0
+on_timer = 10000 | heli_move@fly4   
+
+[heli_move@fly4]
+path_move = prom_heli_fly
+engine_sound = true
+;combat_enemy = 30311
+combat_enemy = nil
+combat_ignore = true
+combat_use_rocket = false
+combat_use_mgun = false
+rocket_delay = 6000
+combat_safe_altitude = 0
+on_timer = 10000 | heli_move@retreat %+prom_heli_uletel%
+
+[heli_move@retreat]
+path_move = prom_heli_idle_move2
+engine_sound = true
+combat_enemy = nil
+combat_ignore = true
+combat_use_rocket = false
+combat_use_mgun = false
+mute = true
+combat_safe_altitude = 0
+on_timer = 30000 | heli_move@stop  
+
+[heli_move@stop]
+path_move = prom_heli_idle_move2
+engine_sound = false
+combat_ignore = true
+combat_safe_altitude = 0
+
+

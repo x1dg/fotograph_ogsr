@@ -1,0 +1,25 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+combat_ignore = combat_ignore
+danger = danger_condition
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+soldaty_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+soldaty_enemy%
+
+[walker@1]
+path_walk = baza2_patrul1_walk
+path_look = baza2_patrul1_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 20
+ignore_distance_corpse = 0

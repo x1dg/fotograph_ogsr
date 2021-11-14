@@ -1,0 +1,39 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = {=check_belt(dushelov) -krest_find_disable} sr_idle@1 %=foto.spawn_find_zone(1) +krest_find_disable% 
+
+[sr_idle@1]
+on_timer = 12000 | sr_idle@2 %=foto.del_zone -krest_dudka_used%
+
+[sr_idle@2]
+on_actor_inside = {+krest_dudka_used} sr_idle@3 
+on_actor_outside = {+krest_dudka_used} sr_idle@21
+
+[sr_idle@21]
+on_timer = 500 | sr_idle@2 %-krest_dudka_used%
+
+[sr_idle@3]
+on_timer = 3000 | sr_idle@4 %=foto.spawn_soul_zone(1) -krest_dudka_used%
+on_actor_outside = nil %=foto.kill_actor%
+
+[sr_idle@4]
+on_timer = 11500 | sr_idle@5 %=foto.spawn_art(1)%
+on_actor_outside = nil %=foto.kill_actor%
+
+[sr_idle@5]
+on_timer = 3500 | sr_idle@6 %=foto.del_zone%
+on_actor_outside = nil %=foto.kill_actor%
+
+[sr_idle@6]
+on_actor_inside = {=actor_has_item(af_shubin_artgood)} sr_idle@7 
+on_actor_outside = nil %=foto.kill_actor%
+
+[sr_idle@7]
+on_actor_inside = {!actor_has_item(af_shubin_artgood)} sr_idle@8 
+on_actor_outside = nil %=foto.kill_actor%
+
+[sr_idle@8]
+on_timer = 50000 | nil %=play_snd(new\soul_end) =foto.del_krest_zone =foto.spawn_krest_zone -krest_find_disable =val_test.del_restr%
+

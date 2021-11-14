@@ -1,0 +1,40 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+danger = danger_condition
+combat_ignore = combat_ignore
+
+[walker@1]
+path_walk = shmel_und_walk
+path_look = shmel_und_look
+danger = danger_condition
+combat_ignore_cond = {=fighting_actor}
+meet = no_meet
+on_timer = 500 | remark@1 %=bind_stalker.hide_weapon%
+
+[remark@1]
+target = actor
+meet = no_meet
+snd = shmel
+danger = danger_condition
+combat_ignore_cond = {=fighting_actor}
+on_signal = sound_end | camper@2 %=bind_stalker.restore_weapon%
+
+[camper@2]
+path_walk = shmel_und_walk
+path_look = shmel_und_look
+danger = danger_condition
+meet = no_meet
+radius = 0
+shoot = always
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = true
+meet_talk_enabled = true

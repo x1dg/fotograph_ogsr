@@ -1,0 +1,56 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = camper@zahar
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+enemy_hunter%
+
+[death]
+on_info = {=killed_by_actor} %+enemy_hunter%
+
+[camper@zahar]
+path_walk = zahar_walk
+path_look = zahar_look
+meet = meet@zahar
+def_state_standing = sit
+danger = danger_condition@zahar
+;combat_ignore_cond = always
+combat_ignore_cond = {=check_fighting(30218)}
+on_info = {+povodyr_aver_start -povodyr_aver_go} camper@zahar1
+
+[camper@zahar1]
+path_walk = zahar_walk
+path_look = zahar_look
+meet = meet@zahar
+def_state_standing = sit
+danger = danger_condition
+;combat_ignore_cond = always
+combat_ignore_cond = {=check_fighting(30218)}
+on_info = {+povodyr_aver_go} camper@zahar2
+
+[camper@zahar2]
+path_walk = zahar_walk
+path_look = zahar_look
+meet = meet@zahar
+def_state_standing = sit
+danger = danger_condition@zahar
+;combat_ignore_cond = always
+combat_ignore_cond = {=check_fighting(30218)}
+
+[danger_condition@zahar]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@zahar]
+use = true
+use_wpn = false
+meet_talk_enabled = true

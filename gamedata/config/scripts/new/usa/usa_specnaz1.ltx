@@ -1,0 +1,42 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-parol_est} camper@usa_specnaz1, {+parol_est} camper@usa_specnaz11 
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+
+[camper@usa_specnaz1]
+path_walk = usa_specnaz1_walk
+path_look = usa_specnaz1_look
+meet = meet@usa_specnaz1
+danger = danger_condition@usa_specnaz1
+on_actor_dist_le_nvis = 10 | {-parol_est} remark@1
+
+[remark@1]
+anim = assault
+target = actor
+meet = meet@usa_specnaz1
+danger = danger_condition@usa_specnaz1
+on_info = {+parol_est} camper@usa_specnaz11
+
+[camper@usa_specnaz11]
+path_walk = usa_specnaz1_walk
+path_look = usa_specnaz1_look
+meet = meet@usa_specnaz1
+danger = danger_condition@usa_specnaz1
+
+[danger_condition@usa_specnaz1]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[meet@usa_specnaz1]
+use = true
+use_wpn = false
+meet_talk_enabled = true

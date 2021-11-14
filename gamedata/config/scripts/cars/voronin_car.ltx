@@ -1,0 +1,10 @@
+[logic]
+active = ph_car@start
+
+[ph_car@start]
+usable = {+voronin_dyshlo_dialog_start}
+show_tips = true
+tip_use = tip_car_use
+tip_locked = tip_car_locked
+on_death_info = dead_voronin_car
+on_use = %=play_snd(new\car_door) +voronin_car_music%

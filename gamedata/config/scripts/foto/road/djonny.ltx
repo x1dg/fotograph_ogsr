@@ -1,0 +1,40 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+combat_ignore = combat_ignore
+danger = danger_condition
+on_death = death
+
+[death]
+on_info = %+edik_dead%
+
+[walker@1]
+path_walk = djonny_walk
+path_look = djonny_look
+meet = meet
+danger = danger_condition
+on_actor_dist_le = 5 | {+edik_need_have -edik_need_done} remark@1
+
+[remark@1]
+target = actor
+snd = esc_fox_thanks
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | walker@2
+
+[walker@2]
+path_walk = djonny_walk
+path_look = djonny_look
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 30
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

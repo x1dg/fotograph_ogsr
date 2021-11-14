@@ -1,0 +1,64 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@1]
+path_walk = pashka_walk
+path_look = pashka_look
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+pashka_enemy} walker@2 %=killactor%
+on_actor_dist_le_nvis = 12 | remark@1
+
+[remark@1]
+anim = guard_rac
+target = actor
+snd = pashka
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+pashka_enemy} walker@2 %=killactor%
+on_signal = sound_end | remark@2
+
+[remark@2]
+target = actor
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+pashka_enemy} walker@2 %=killactor%
+on_actor_dist_ge_nvis = 8 | {+pashka_one_dialog_start -idiot_pashka} remark@3 %+idiot_pashka =play_snd(ambient\new\pashka_idiot)%
+
+[remark@3]
+target = actor
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+pashka_enemy} walker@2 %=killactor%
+
+[walker@2]
+path_walk = pashka_walk
+path_look = pashka_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+pashka_enemy%
+
+[death]
+on_info = %+pashka_enemy%

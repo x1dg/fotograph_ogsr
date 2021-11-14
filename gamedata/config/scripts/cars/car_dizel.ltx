@@ -1,0 +1,34 @@
+[logic]
+active = {-car_dizel_est} ph_car@start, {+car_dizel_est} ph_car@3
+
+[ph_car@start]
+usable = false
+show_tips = true
+tip_use = tip_car_use
+tip_locked = tip_car_dizel_locked
+on_use = ph_car@1
+on_death_info = dead_car_dizel
+
+[ph_car@1]
+usable = {=actor_has_item(amk_kanistro)}
+show_tips = true
+tip_use = tip_car_dizel_use
+tip_locked = tip_car_dizel_locked
+on_use = {=actor_has_item(amk_kanistro)} ph_car@2 %=cars.kanistro_used +car_dizel_est =fotograf.no_move =bind_stalker.hide_weapon%
+on_death_info = dead_car_dizel
+
+[ph_car@2]
+usable = false
+show_tips = true
+tip_use = tip_car_dizel_use
+tip_locked = tip_car_dizel_wait
+on_timer = 7000 | ph_car@3 %=fotograf.restore_move =bind_stalker.restore_weapon%
+on_death_info = dead_car_dizel
+
+[ph_car@3]
+usable = {+car_dizel_est}
+show_tips = true
+tip_use = tip_car_use
+tip_locked = tip_car_locked
+on_death_info = dead_car_dizel
+on_use = %=play_snd(new\car_door)%

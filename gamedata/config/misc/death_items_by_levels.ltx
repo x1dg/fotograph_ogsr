@@ -1,0 +1,371 @@
+[default]
+;Артефакты
+af_medusa		        = 0
+af_cristall_flower		= 0
+af_night_star			= 0
+af_vyvert		        = 0
+af_gravi		        = 0
+af_gold_fish			= 0
+af_blood	                = 0
+af_mincer_meat			= 0
+af_soul			        = 0
+af_electra_sparkler		= 0
+af_electra_flash		= 0
+af_electra_moonlight	        = 0
+af_rusty_thorn			= 0
+af_rusty_kristall		= 0
+af_rusty_sea-urchin		= 0
+af_ameba_slime			= 0
+af_ameba_slug			= 0
+af_ameba_mica			= 0
+af_drops			= 0
+af_fireball			= 0
+af_cristall			= 0
+af_dummy_glassbeads		= 0
+af_dummy_pellicle		= 0
+af_dummy_battery		= 0
+af_dummy_dummy			= 0
+af_dummy_spring			= 0
+af_fuzz_kolobok			= 0
+
+;Патроны
+ammo_9x18_fmj			= 1
+ammo_9x18_pmm			= 0
+ammo_9x19_pbp			= 0
+ammo_9x19_fmj			= 1
+ammo_11.43x23_hydro		= 0
+ammo_11.43x23_fmj		= 1
+ammo_12x70_buck			= 1
+ammo_12x76_dart			= 0
+ammo_12x76_zhekan		= 0
+ammo_5.45x39_ap			= 0
+ammo_5.45x39_fmj		= 1
+ammo_9x39_sp5			= 0
+ammo_9x39_ap			= 1
+ammo_9x39_pab9			= 1
+ammo_5.56x45_ss190		= 1
+ammo_5.56x45_ap			= 0
+ammo_7.62x54_7h14		= 0
+ammo_7.62x54_7h1		= 1
+ammo_7.62x54_ap			= 0
+ammo_og-7b			= 0
+ammo_vog-25p			= 0
+ammo_vog-25			= 1
+grenade_f1			= 1
+grenade_rgd5			= 1
+ammo_m209			= 0
+ammo_gauss			= 0
+ammo_357sw_jhp			= 1
+ammo_357sw_jfp			= 0
+ammo_12.7x99_bmg		= 0
+ammo_12.7x54			= 0
+ammo_7.62x51_fmj		= 1
+ammo_7.62x51_ap			= 0
+ammo_7.62x25_p			= 1
+ammo_7.62x25_ps			= 0
+ammo_7.62x54_ucen		= 0
+ammo_new			= 0
+ammo_7.62x39_fmj		= 1
+ammo_7.62x39_ap			= 0
+ammo_7.62x54r			= 0
+ammo_minigun			= 0
+ammo_balon_rg10			= 0
+ammo_4.6x30			= 0
+ammo_oicw                       = 0
+ammo_6x35                       = 0                     
+
+;Медикаменты
+bandage				= 1
+medkit				= 1
+medkit_scientic			= 0
+medkit_army			= 0
+antirad				= 1
+
+;Еда
+bread				= 1
+kolbasa				= 1
+conserva			= 1
+vodka				= 1
+energy_drink			= 1
+sweets                          = 1
+
+;Новая еда
+sard            = 1
+tush            = 1
+galet           = 1
+galet_s         = 1
+ogirki          = 1
+pashtet         = 1
+kilka           = 1
+shprots         = 1
+pringles        = 1
+meat            = 1
+mineral         = 1
+oreh            = 1
+oliv            = 1
+paek1           = 1
+paek2           = 0
+zel_goroshek    = 1
+gribki          = 1
+sguschenka      = 1
+chernigov       = 1
+old_melnik      = 1
+konfeta         = 1
+
+;ПДА
+device_pda_npc	= 1
+
+
+[l01_escape]:default
+
+[l02_garbage]:default
+
+[l03_agroprom]:default
+
+[l04_darkvalley]:default
+
+[l06_Rostok]:default
+
+[l07_military]:default
+
+[l08_yantar]:default
+
+[l10_radar]:default
+
+[l12_stancia]:default
+
+[atp_for_test22]:default
+
+[l12u_control_monolith]:default
+
+[l12_stancia_2]:default
+
+[stohe_selo]:default
+
+[l06_rostok_demo]:l06_Rostok
+
+
+[predbannik]:default
+;Патроны
+ammo_9x39_ap			= 0
+ammo_9x39_pab9			= 0
+ammo_vog-25			= 0
+ammo_357sw_jhp			= 0
+ammo_12.7x54			= 0
+ammo_7.62x51_fmj		= 0
+ammo_7.62x25_p			= 0
+ammo_7.62x39_fmj		= 0
+ammo_7.62x54_7h1		= 0
+ammo_balon_rg10			= 1
+
+;Медикаменты
+antirad				= 0
+
+[hiding_road]:predbannik
+;Патроны
+ammo_9x39_pab9			= 1
+ammo_vog-25			= 1
+ammo_7.62x25_p			= 1
+ammo_7.62x39_fmj		= 1
+ammo_7.62x54_7h14		= 1
+ammo_balon_rg10			= 0
+
+;Медикаменты
+medkit_army			= 1
+
+[swamp]:hiding_road
+;Медикаменты
+
+[promzone]:swamp
+;Патроны
+ammo_7.62x51_fmj		= 1
+ammo_m209			= 1
+ammo_balon_rg10			= 1
+
+[aver]:promzone
+;Патроны
+ammo_7.62x54_7h14		= 1
+ammo_7.62x54_7h1		= 1
+ammo_7.62x54_ap			= 1
+ammo_balon_rg10			= 0
+
+[l05_bar]:aver
+;Патроны
+ammo_7.62x54_ap			= 0
+ammo_357sw_jfp			= 1
+
+;Новая еда
+paek2                           = 1
+
+[deadcity]:default
+;Патроны
+ammo_9x18_pmm			= 1
+ammo_9x19_pbp			= 1
+ammo_11.43x23_hydro		= 1
+ammo_12x76_dart			= 1
+ammo_12x76_zhekan		= 1
+ammo_5.45x39_ap			= 1
+ammo_9x39_sp5			= 1
+ammo_5.56x45_ap			= 1
+ammo_7.62x54_7h14		= 1
+ammo_7.62x51_ap			= 1
+ammo_7.62x25_ps			= 1
+ammo_7.62x39_ap			= 1
+ammo_4.6x30			= 1
+ammo_og-7b			= 1
+ammo_vog-25p			= 1
+ammo_m209			= 1
+ammo_357sw_jfp			= 1
+ammo_12.7x99_bmg		= 1
+ammo_12.7x54			= 1
+ammo_7.62x54r			= 1
+ammo_oicw                       = 1
+ammo_balon_rg10			= 1
+
+;Медикаменты
+medkit_army			= 1
+
+;Еда
+kolbasa				= 0
+vodka				= 0
+energy_drink			= 0
+sweets                          = 0
+
+;Новая еда
+galet_s         = 0
+ogirki          = 0
+pashtet         = 0
+shprots         = 0
+pringles        = 0
+meat            = 0
+oreh            = 0
+oliv            = 0
+sguschenka      = 0
+chernigov       = 0
+old_melnik      = 0
+
+[l03u_agr_underground]:default
+;Патроны
+ammo_9x18_pmm			= 1
+ammo_9x19_pbp			= 1
+ammo_11.43x23_hydro		= 1
+ammo_12x76_zhekan		= 1
+ammo_5.45x39_ap			= 1
+ammo_357sw_jfp			= 1
+ammo_9x39_sp5			= 1
+ammo_5.56x45_ap			= 1
+ammo_7.62x54_7h14		= 1
+ammo_7.62x51_ap			= 1
+ammo_7.62x25_ps			= 1
+ammo_7.62x39_ap			= 1
+ammo_4.6x30			= 1
+ammo_6x35                       = 1
+
+;Еда
+kolbasa				= 0
+energy_drink			= 0
+sweets                          = 0
+
+;Новая еда
+galet_s         = 0
+ogirki          = 0
+pashtet         = 0
+shprots         = 0
+pringles        = 0
+meat            = 0
+oreh            = 0
+oliv            = 0
+paek2           = 0
+sguschenka      = 0
+chernigov       = 0
+old_melnik      = 0
+
+[l04u_labx18]:l03u_agr_underground
+
+[l08u_brainlab]:l04u_labx18
+;Патроны
+ammo_og-7b			= 1
+ammo_vog-25p			= 1
+ammo_m209			= 1
+ammo_12x76_dart			= 1
+ammo_12.7x99_bmg		= 1
+ammo_12.7x54			= 1
+ammo_7.62x54r			= 1
+ammo_balon_rg10			= 1
+ammo_oicw                       = 1
+
+[l10u_bunker]:l08u_brainlab
+
+[dyshlo]:l10u_bunker
+;Патроны
+ammo_7.62x54_ap			= 1
+
+;Еда
+bread				= 1
+kolbasa				= 1
+conserva			= 1
+vodka				= 1
+energy_drink			= 1
+sweets                          = 1
+
+;Новая еда
+galet_s         = 1
+ogirki          = 1
+pashtet         = 1
+shprots         = 1
+pringles        = 1
+meat            = 1
+oreh            = 1
+oliv            = 1
+paek2           = 1
+sguschenka      = 1
+chernigov       = 1
+old_melnik      = 1
+
+[l11_Pripyat]:dyshlo
+
+[av_peshera]:l11_Pripyat
+;Еда
+kolbasa				= 0
+energy_drink			= 0
+sweets                          = 0
+
+;Новая еда
+galet_s         = 0
+ogirki          = 0
+pashtet         = 0
+shprots         = 0
+pringles        = 0
+meat            = 0
+oreh            = 0
+oliv            = 0
+sguschenka      = 0
+chernigov       = 0
+old_melnik      = 0
+
+[l12u_sarcofag]:av_peshera
+;Еда
+bread				= 1
+kolbasa				= 1
+conserva			= 1
+vodka				= 1
+energy_drink			= 1
+sweets                          = 1
+
+;Новая еда
+galet_s         = 1
+ogirki          = 1
+pashtet         = 1
+shprots         = 1
+pringles        = 1
+meat            = 1
+oreh            = 1
+oliv            = 1
+paek2           = 1
+sguschenka      = 1
+chernigov       = 1
+old_melnik      = 1
+
+
+
+

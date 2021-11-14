@@ -1,0 +1,31 @@
+[logic]
+active = sr_idle@off
+
+;зона выключена
+[sr_idle@off]
+on_actor_inside = {=ex_trans_zone_not_off +zone_test_active} sr_psy_antenna@start
+
+[sr_psy_antenna@start]
+eff_intensity = 10
+hit_intensity = 0
+on_timer = 100 | sr_psy_antenna@wel
+
+;при вхождении в зону приветствуем определённым звуком и\или партиклем при наличии активатора
+[sr_psy_antenna@wel]
+eff_intensity = 10
+hit_intensity = 0
+on_actor_inside = {!ex_trans_zone_not_act} sr_psy_antenna@trans, {=ex_trans_zone_not_act} sr_psy_antenna@act %=ex_transform.zone_wel(0)%
+
+;выбор\сохранение нужных компонентов
+[sr_psy_antenna@act]
+eff_intensity = 10
+hit_intensity = 0
+on_actor_inside = {!ex_trans_zone_not_act} sr_psy_antenna@trans, {=ex_trans_zone_not_act} %=ex_transform.zone_act(0)%
+on_actor_outside = sr_idle@off %=stop_postprocess(1973)%
+
+;сообственно каталицация с выдачей необходимых инфопоршней
+[sr_psy_antenna@trans]
+eff_intensity = 10
+hit_intensity = 0
+on_actor_inside = {!ex_trans_zone_not_off} sr_idle@off, {=ex_trans_zone_not_act} sr_psy_antenna@act, {!ex_trans_zone_not_act} %=ex_transform.zone_trans(0) =stop_postprocess(1973) -zone_test_active%
+on_actor_outside = sr_idle@off

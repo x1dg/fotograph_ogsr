@@ -1,0 +1,30 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = kamp@mk_baza2_01
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+soldaty_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+soldaty_enemy%
+
+[kamp@mk_baza2_01]
+center_point = mk_baza2_01_center
+radius = 2.5
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

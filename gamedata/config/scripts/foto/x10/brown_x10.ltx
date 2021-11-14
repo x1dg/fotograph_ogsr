@@ -1,0 +1,66 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-brown_zdorov} walker@1, {+brown_zdorov -brown_x10_dialog_start} walker@2, {+brown_x10_dialog_start} walker@3  
+danger = danger_condition
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy =kill%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+on_info2 = %+brown_bunker_dead%
+
+[walker@1]
+path_walk = brown_bunker_walk
+path_look = brown_bunker_look
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+def_state_standing = wounded
+on_info = {+brown_zdorov} remark@vstaet
+
+[remark@vstaet]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 5000 | remark@zdorov
+
+[remark@zdorov]
+target = actor
+snd = brown
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@2
+
+[walker@2]
+path_walk = brown_bunker_walk
+path_look = brown_bunker_look
+meet = meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+brown_x10_dialog_start} walker@3 %=fotograf.spawn_x10_monstry_01%
+
+[walker@3]
+path_walk = brown_run_walk
+path_look = brown_run_look
+meet = no_meet
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+danger = danger_condition
+on_signal = browndel | %=fotograf.del_brown_bunker% 
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

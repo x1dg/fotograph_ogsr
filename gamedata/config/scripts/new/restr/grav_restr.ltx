@@ -1,0 +1,13 @@
+[logic]
+active = sr_idle@one
+
+[sr_idle@one]
+on_actor_inside = sr_idle@two %=foto2.gra_spawn%
+
+[sr_idle@two]
+on_timer = 3000 | sr_idle@del %=foto2.bloo6_spawn%
+
+[sr_idle@del]
+on_timer = 20000 | nil %=foto2.c_lc_4 =foto2.restr_tele4b_spawn =foto2.ruk4_spawn%
+
+

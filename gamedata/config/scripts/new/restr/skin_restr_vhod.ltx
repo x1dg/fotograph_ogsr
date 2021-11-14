@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = sr_idle@1 %=play_snd(ambient\new\way_to_contras) =foto2.prokol_restr_spawn +block_grenade%
+
+[sr_idle@1]
+on_actor_inside = {+utug_sdal} nil %-block_grenade =val_test.del_restr%

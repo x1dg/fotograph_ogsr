@@ -1,0 +1,145 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-petro_dialog_1_done -vzyal_zadanie} remark@1, {+petro_dialog_1_done -vzyal_zadanie} remark@22, {+vzyal_zadanie -vernulsya} remark@3, {+vernulsya -petro_dialog_2_done} remark@43, {+petro_dialog_2_done} remark@5
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[remark@1]
+anim = sit
+target = actor
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_actor_dist_le_nvis = 6 | remark@vstrecha %=play_snd(ambient\new\actor_68)%
+on_info = {+petro_enemy} remark@enemy %=killactor%
+
+[remark@vstrecha]
+anim = sit
+target = actor
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} remark@enemy %=killactor%
+on_timer = 6200 | remark@2
+
+[remark@2]
+anim = hello
+target = actor
+meet = no_meet
+snd = pertovige2
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} remark@enemy %=killactor%
+on_signal = sound_end | remark@21
+
+[remark@21]
+anim = ward
+target = actor
+meet = meet@zadanie            
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} remark@enemy %=killactor%
+on_info2 = {+petro_dialog_1_done} remark@22
+
+[remark@22]
+anim = dynamite
+target = petrovige_look, 0 
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} remark@enemy %=killactor%
+on_timer = 4000 | remark@23 %=foto.pribor_active%
+
+[remark@23]
+anim = dynamite
+target = petrovige_look, 0 
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} remark@enemy %=killactor%
+on_timer = 6000 | remark@3 %=foto.parallel_spawn +vzyal_zadanie%
+
+[remark@3]
+anim = ward
+target = actor
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_actor_dist_ge_nvis = 50 | remark@4
+
+[remark@4]
+anim = ward
+target = actor
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} remark@enemy %=killactor%
+on_actor_dist_le_nvis = 6 | remark@42
+
+[remark@42]
+target = actor
+meet = no_meet
+snd = pertovige3
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} remark@enemy %=killactor%
+on_signal = sound_end | remark@43 %+vernulsya%
+
+[remark@43]
+anim = ward
+target = actor
+meet = meet@1
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} remark@enemy %=killactor%
+on_info2 = {+petro_dialog_2_done} remark@5
+
+[remark@5]
+anim = dynamite
+target = petrovige_look, 0 
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} remark@enemy %=killactor%
+on_timer = 4000 | {-petro_end} remark@6 %=foto.pribor_active%
+
+[remark@6]
+anim = dynamite
+target = petrovige_look, 0 
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} remark@enemy %=killactor%
+on_timer = 6000 | {-petro_end} %=foto.parallel_release +petro_end%
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@zadanie]
+meet_dialog = petrovige_dialog_1
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[meet@1]
+meet_dialog = petrovige_dialog_2
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+petro_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+petro_enemy%
+
+[remark@enemy]
+anim = assault
+target = actor
+meet = no_meet
+danger = danger_condition

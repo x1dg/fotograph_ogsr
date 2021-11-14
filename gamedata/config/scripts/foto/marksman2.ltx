@@ -1,0 +1,64 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = camper@mark1
+combat_ignore = combat_ignore
+on_death = death 
+
+[camper@mark1]
+path_walk = mark2_walk
+path_look = mark2_look
+meet = no_meet
+danger = danger_condition@mark1
+combat_ignore_cond = always
+show_spot = false
+on_signal = marksman2 | remark@mark1_1
+
+[remark@mark1_1]
+anim = assault
+meet = no_meet
+danger = danger_condition@mark1
+combat_ignore_cond = always
+show_spot = false
+target = orm_walk_1,6
+on_timer = 5000 | remark@mark2 %=play_snd(weapons\whine02) +mark_shot%
+
+[remark@mark2]
+anim = assault
+meet = no_meet
+danger = danger_condition@mark1
+combat_ignore_cond = always
+show_spot = false
+target = orm_walk_1,6
+on_timer = 5000 | {~25} remark@mark3 %=play_snd(weapons\whine02)%, walker@mark4 %=play_snd(ambient\new\bullet_shlep) +mark_popal%
+
+[remark@mark3]
+anim = assault
+meet = no_meet
+danger = danger_condition@mark1
+combat_ignore_cond = always
+show_spot = false
+target = orm_walk_1,6
+on_timer = 7000 | walker@mark4 %=play_snd(ambient\new\bullet_shlep) +mark_popal%
+
+[walker@mark4]
+path_walk = mark2_walk2
+path_look = mark2_look2
+meet = no_meet
+show_spot = false
+danger = danger_condition@mark1
+combat_ignore_cond = always
+on_signal = m_del2 | %=foto2.marksman_del%
+
+[danger_condition@mark1]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[death]
+on_info = %+mark_dead%

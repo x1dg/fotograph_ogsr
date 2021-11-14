@@ -1,0 +1,11 @@
+[logic]
+active = sr_idle@one
+
+[sr_idle@one]
+on_actor_inside = {+amb_aver} sr_idle@two %=play_snd(ambient\new\t_zvon)%
+
+[sr_idle@two]
+on_timer = 900000 | sr_idle@tri
+
+[sr_idle@tri]
+on_actor_outside = sr_idle@one

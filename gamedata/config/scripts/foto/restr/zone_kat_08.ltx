@@ -1,0 +1,47 @@
+[logic]
+active = sr_idle@off
+
+;зона выключена
+[sr_idle@off]
+on_actor_inside = {=ex_trans_zone_not_off} sr_idle@check
+
+;проверка на детектор
+[sr_idle@check]
+on_actor_inside = {=check_psy_detector} sr_psy_antenna@start, sr_psy_antenna@time
+
+[sr_psy_antenna@time]
+eff_intensity = 10
+hit_intensity = 10
+on_actor_inside = {=check_psy_detector} sr_psy_antenna@start 
+on_actor_outside = sr_idle@off
+on_timer = 10000 | sr_idle@done %=ex_transform.sound_oblom%
+
+[sr_idle@done]
+on_actor_outside = sr_idle@off
+
+[sr_psy_antenna@start]
+eff_intensity = 20
+hit_intensity = 10
+on_actor_inside = {+sbor_recepts_og_start} sr_psy_antenna@wel
+
+;при вхождении в зону приветствуем определённым звуком и\или партиклем при наличии активатора
+[sr_psy_antenna@wel]
+eff_intensity = 20
+hit_intensity = 15
+phantom_prob = 80
+on_actor_inside = {!ex_trans_zone_not_act} sr_psy_antenna@trans, {=ex_trans_zone_not_act} sr_psy_antenna@act %=ex_transform.zone_wel(8)%
+
+;выбор\сохранение нужных компонентов
+[sr_psy_antenna@act]
+eff_intensity = 20
+hit_intensity = 30
+phantom_prob = 80
+on_actor_inside = {!ex_trans_zone_not_act} sr_psy_antenna@trans, {=ex_trans_zone_not_act} %=ex_transform.zone_act(8)%
+on_actor_outside = sr_idle@off %=stop_cam_effector(1974) =stop_postprocess(1973)%
+
+;сообственно каталицация с выдачей необходимых инфопоршней
+[sr_psy_antenna@trans]
+eff_intensity = 10
+hit_intensity = 5
+on_actor_inside = {!ex_trans_zone_not_off} sr_idle@off, {=ex_trans_zone_not_act} sr_psy_antenna@act, {!ex_trans_zone_not_act} %=ex_transform.zone_trans(8) =stop_cam_effector(1974) =stop_postprocess(1973)%
+on_actor_outside = sr_idle@off

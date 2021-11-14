@@ -1,0 +1,53 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-haron_skazal} camper@haron1, {+haron_skazal} camper@haron2
+combat_ignore = combat_ignore
+on_death = death
+
+[camper@haron1]
+path_walk = haron_walk
+path_look = haron_look
+meet = no_meet
+danger = danger_condition@haron
+on_actor_dist_le = 4 | remark@vstrecha %=play_snd(ambient\new\actor_37)%
+on_info = {+info_target12} %=killactor%  
+
+[remark@vstrecha]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 3000 | remark@haron 
+on_info = {+info_target12} %=killactor%
+
+[remark@haron]
+anim = ward
+target = actor
+snd = demon
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition@haron
+on_signal = sound_end | camper@haron2 %+haron_skazal%
+on_info = {+info_target12} %=killactor%
+
+[camper@haron2]
+path_walk = haron_walk
+path_look = haron_look
+meet = meet@haron
+danger = danger_condition@haron
+on_info = {+info_target12} %=killactor%
+
+[danger_condition@haron]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@haron]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+meet_state = ward
+
+[death]
+on_info = %+kill_haron%

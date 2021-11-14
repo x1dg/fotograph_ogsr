@@ -1,0 +1,990 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+
+<!---------------------------archivarius_zombi---------------------->
+
+  <specific_character id="archivarius_zombi" team_default = "1">
+    <name>Лейтенант Минчуков</name>
+    <icon>ui_npc_smith</icon>
+    <map_icon x="2" y="0"></map_icon>
+    <bio>sim_soldier_commander_bio</bio>
+
+    <class>cit_doctor</class>
+    <community>zombied</community> <panic_threshold>0.0</panic_threshold> 
+	<terrain_sect>stalker_military_terrain</terrain_sect>
+    <money min="2000" max="5000" infinitive="0"></money>
+    
+    <rank>574</rank>
+    <reputation>-20</reputation>
+
+    <visual>actors\soldier_archiv</visual>   
+    <snd_config>characters_voice\human_01\military\</snd_config>
+    <crouch_type>0</crouch_type>
+
+    <supplies>
+      [spawn] \n
+	  kruglov_flash \n
+	  wpn_beretta \n
+	  ammo_9x19_pbp = 3 \n
+	  medkit_army = 1 \n
+      device_torch \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"
+    </supplies> 
+
+<actor_dialog>archiv_start_dialog</actor_dialog>
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>	
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"   
+    
+  </specific_character>	
+  
+ <!---------------------------zubarev_zombi---------------------->
+
+  <specific_character id="zubarev_zombi" team_default = "1">
+    <name>Сержант Зубарев</name>
+    <icon>ui_npc_spets</icon>
+    <map_icon x="2" y="2"></map_icon>
+    <bio>sim_soldier_specnaz_bio</bio>
+
+    <class>cit_doctor</class>
+    <community>zombied</community> <panic_threshold>0.0</panic_threshold>
+	<terrain_sect>stalker_military_terrain</terrain_sect>
+    <money min="800" max="1200" infinitive="0"></money>
+    
+    <rank>350</rank>
+    <reputation>-30</reputation>
+
+    <visual>actors\soldier\soldat_spets</visual>    
+    <snd_config>characters_voice\human_03\military\</snd_config>
+    <crouch_type>0</crouch_type>
+
+    <supplies>
+      [spawn] \n
+		device_torch \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"
+    </supplies>   
+	
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+    
+  </specific_character>
+  
+  
+<!----------------------------strange_killer_zombi----------------------->  
+	<specific_character id="strange_killer_zombi" team_default = "1">
+		    <name>Незнакомец</name>
+		<icon>ui_npc_koldun</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>gar_stalker_regular_bio</bio>
+
+       <class>cit_doctor</class>
+      <community>zombied</community> <panic_threshold>0.0</panic_threshold>
+	  <money min="1000" max="2000" infinitive="0"></money>
+		
+    <rank>685</rank>
+    <reputation>10</reputation>
+
+    <visual>actors\koldun</visual>
+    <snd_config>characters_voice\human_03\freedom\</snd_config>
+    <crouch_type>-1</crouch_type>
+
+    <supplies>
+    [spawn] \n
+    wpn_vintorez \n
+	ammo_9x39_ap = 2 \n
+	medkit = 1 \n
+	device_torch \n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+    </supplies>
+	
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>	
+#include "gameplay\character_dialogs.xml"    
+</specific_character>
+
+<!----------------------------poet_zombi----------------------->  
+	<specific_character id="poet_zombi" team_default = "1">
+		    <name>Михась Стихоплёт</name>
+		<icon>ui_npc_koldun</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>gar_stalker_regular_bio</bio>
+
+       <class>cit_doctor</class>
+      <community>zombied</community> <panic_threshold>0.0</panic_threshold>
+	  <money min="1000" max="2000" infinitive="0"></money>
+		
+    <rank>255</rank>
+    <reputation>10</reputation>
+
+    <visual>actors\koldun</visual>
+    <snd_config>characters_voice\human_03\freedom\</snd_config>
+    <crouch_type>-1</crouch_type>
+
+    <supplies>
+    [spawn] \n
+    wpn_vintorez \n
+	ammo_9x39_ap = 2 \n
+	medkit = 1 \n
+	device_torch \n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+    </supplies>
+	
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>	
+#include "gameplay\character_dialogs.xml"    
+</specific_character>  
+
+<!----------------------greta-------------------->
+    <specific_character id="greta_invis_zombi" team_default = "1">
+        <name>Грета</name>
+        <icon>ui_npc_greta</icon>
+        <map_icon x="3" y="2"></map_icon>
+        <bio>sim_stalker_general_bio</bio>
+
+        <class>cit_doctor</class>
+        <community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+        <rank>150</rank>
+        <reputation>50</reputation>
+		<money min="300" max="500" infinitive="0"/>		
+
+        <visual>inv\greta_inv</visual>
+        <snd_config>\characters_voice\human_01\woman\</snd_config>
+  		<crouch_type>1</crouch_type>
+        <supplies>
+			[spawn] \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+        </supplies>
+		
+<start_dialog>hello_dialog</start_dialog>
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>					
+#include "gameplay\character_dialogs.xml"
+    </specific_character>
+	
+<!----------------------greta_vis-------------------->
+    <specific_character id="greta_vis_zombi" team_default = "1">
+        <name>Грета</name>
+        <icon>ui_npc_greta</icon>
+        <map_icon x="3" y="2"></map_icon>
+        <bio>sim_stalker_general_bio</bio>
+
+        <class>sit_doctor</class>
+        <community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+        <rank>150</rank>
+        <reputation>50</reputation>
+		<money min="1000" max="1300" infinitive="0"/>		
+
+        <visual>actors\greta</visual>
+        <snd_config>\characters_voice\human_01\woman\</snd_config>
+  		<crouch_type>1</crouch_type>
+        <supplies>
+			[spawn] \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+        </supplies>
+		
+<start_dialog>hello_dialog</start_dialog>
+<actor_dialog>greta_vis_dialog</actor_dialog>
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>					
+#include "gameplay\character_dialogs.xml"
+    </specific_character>
+	
+		<!--------------------------shep1_zombi--------------------------->	
+
+	<specific_character id="shep1_zombi" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_2</icon>
+		<bio>sim_stalker_general_bio</bio>
+
+		<class>sit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+		<rank>320</rank>
+        <reputation>110</reputation>
+		<money min="1200" max="1300" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<visual>inv\inv_stalk</visual>		
+		<supplies>
+			[spawn] \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_food.xml"
+		</supplies>	
+
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>		
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+	
+	
+	<!--------------------------shep2_zombi--------------------------->	
+
+	<specific_character id="shep2_zombi" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_2</icon>
+		<bio>sim_stalker_general_bio</bio>
+
+		<class>cit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+		<rank>320</rank>
+        <reputation>110</reputation>
+		<money min="1200" max="1300" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<visual>inv\inv_stalk</visual>		
+		<supplies>
+			[spawn] \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_food.xml"
+		</supplies>	
+
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>		
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+	
+	
+	<!--------------------------shep3_zombi--------------------------->	
+
+	<specific_character id="shep3_zombi" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_2</icon>
+		<bio>sim_stalker_general_bio</bio>
+
+		<class>cit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+		<rank>320</rank>
+        <reputation>110</reputation>
+		<money min="1200" max="1300" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<visual>inv\inv_stalk</visual>		
+		<supplies>
+			[spawn] \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_food.xml"
+		</supplies>	
+
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>		
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+	
+	<!--------------------------shepel_zombi--------------------------->	
+
+	<specific_character id="shepel_zombi" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_shep</icon>
+		<bio>esc_soldier_regular_bio</bio>
+
+		<class>sit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+		<money min="600" max="1000" infinitive="0"></money>
+		
+		<rank>205</rank>
+		<reputation>0</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\prapor</visual>		
+		<supplies>
+			[spawn] \n
+		    wpn_walther \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"
+		</supplies>	
+		
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
+<actor_dialog>korona_shep_dialog</actor_dialog>
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+
+<!--------------------------mk_zasada_zombi--------------------------->	
+
+	<specific_character id="mk_zasada_zombi" team_default = "1">
+		<name>Неизвестный сталкер</name>
+		<icon>ui_npc_u_stalker_2_rozh1</icon>
+		<bio>sim_stalker_general_bio</bio>
+		<class>sit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold> 
+		
+		<rank>320</rank>
+        <reputation>110</reputation>
+		<money min="1200" max="1300" infinitive="0"/>		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		<visual>actors\neytral\stalker_2_rozh1</visual>		
+		<supplies>
+			[spawn] \n
+		</supplies>	
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+
+<!---------------------------mg_zasada_zombi---------------------->
+
+  <specific_character id="mg_zasada_zombi" team_default = "1">
+    <name>Сержант Зубарев</name>
+    <icon>ui_npc_spets</icon>
+    <map_icon x="2" y="2"></map_icon>
+    <bio>sim_soldier_specnaz_bio</bio>
+
+    <class>cit_doctor</class>
+    <community>zombied</community> <panic_threshold>0.0</panic_threshold>
+    <money min="800" max="1200" infinitive="0"></money>
+    
+    <rank>350</rank>
+    <reputation>-30</reputation>
+
+    <visual>actors\soldier\soldat_spets</visual>    
+    <snd_config>characters_voice\human_03\military\</snd_config>
+    <crouch_type>0</crouch_type>
+
+    <supplies>
+      [spawn] \n
+		device_torch \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"
+    </supplies>   
+	
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+    
+  </specific_character>
+  
+<!---------------------------irokez_kombez_zombi---------------------->
+
+  <specific_character id="irokez_kombez_zombi" team_default = "1">
+    <name>Ирокез</name>
+    <icon>ui_npc_u_irokez</icon>
+    <map_icon x="2" y="2"></map_icon>
+    <bio>sim_stalker_general_bio</bio>
+
+    <class>sit_doctor</class>
+    <community>zombied</community> <panic_threshold>0.0</panic_threshold>
+    <money min="800" max="1200" infinitive="0"></money>
+    
+    <rank>350</rank>
+    <reputation>-30</reputation>
+
+    <visual>actors\irokez</visual>    
+    <snd_config>characters_voice\human_03\military\</snd_config>
+    <crouch_type>0</crouch_type>
+
+    <supplies>
+      [spawn] \n
+	    wpn_pm \n
+        ammo_9x18_fmj \n
+	    wpn_type97 \n
+		ammo_6x35 \n
+		device_torch \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"
+    </supplies>   
+	
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
+<actor_dialog>irokez_start_dialog</actor_dialog>
+#include "gameplay\character_criticals_1.xml"
+    
+  </specific_character> 
+
+
+<!---------------------------irokez_skin_zombi---------------------->
+
+  <specific_character id="irokez_skin_zombi" team_default = "1">
+    <name>Ирокез</name>
+    <icon>ui_npc_u_irokez</icon>
+    <map_icon x="2" y="2"></map_icon>
+    <bio>sim_stalker_general_bio</bio>
+
+    <class>sit_doctor</class>
+    <community>zombied</community> <panic_threshold>0.0</panic_threshold>
+    <money min="800" max="1200" infinitive="0"></money>
+    
+    <rank>350</rank>
+    <reputation>-30</reputation>
+
+    <visual>actors\irokez</visual>    
+    <snd_config>characters_voice\human_03\military\</snd_config>
+    <crouch_type>0</crouch_type>
+
+    <supplies>
+      [spawn] \n
+	    wpn_pm \n
+        ammo_9x18_fmj \n
+	    wpn_type97 \n
+		ammo_6x35 \n
+		device_torch \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"
+    </supplies>   
+	
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
+<actor_dialog>irokez_start_dialog</actor_dialog>
+#include "gameplay\character_criticals_1.xml"
+    
+  </specific_character> 
+
+  <specific_character id="utyug_zombi" team_default = "1">
+    <name>Генка Утюг</name>
+		<icon>ui_npc_u_stalker_ki_head_1</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>cit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>actors\killer\stalker_ki_head_1</visual>
+        <snd_config>characters_voice\human_03\killer\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"			
+		</supplies>
+<start_dialog>hello_dialog</start_dialog>		
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
+    
+  </specific_character>
+
+<specific_character id="catcher_vhod1_zombi" team_default = "1">
+    <name>Контра</name>
+		<icon>ui_npc_monster_kontroler_4</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>cit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>new\contruch</visual>
+        <snd_config>monsters\controller\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			mutant_hand_kontroler			
+		</supplies>
+<start_dialog>hello_dialog</start_dialog>		
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
+    
+  </specific_character>
+
+<specific_character id="catcher_vhod2_zombi" team_default = "1">
+    <name>Контра</name>
+		<icon>ui_npc_monster_kontroler_4</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>sit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>new\contruch</visual>
+        <snd_config>monsters\controller\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			mutant_hand_kontroler			
+		</supplies>
+<start_dialog>hello_dialog</start_dialog>		
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
+    
+  </specific_character> 
+
+<specific_character id="catcher_vhod3_zombi" team_default = "1">
+    <name>Контра</name>
+		<icon>ui_npc_monster_kontroler_4</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>sit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>new\contruch</visual>
+        <snd_config>monsters\controller\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			mutant_hand_kontroler			
+		</supplies>
+<start_dialog>hello_dialog</start_dialog>		
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
+    
+  </specific_character>
+
+<specific_character id="catcher_prison1_zombi" team_default = "1">
+    <name>Контра</name>
+		<icon>ui_npc_monster_kontroler_4</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>sit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>new\contruch</visual>
+        <snd_config>monsters\controller\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			mutant_hand_kontroler			
+		</supplies>
+<start_dialog>hello_dialog</start_dialog>		
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
+    
+  </specific_character>
+
+<specific_character id="catcher_prison2_zombi" team_default = "1">
+    <name>Контра</name>
+		<icon>ui_npc_monster_kontroler_4</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>sit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>new\contruch</visual>
+        <snd_config>monsters\controller\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			mutant_hand_kontroler			
+		</supplies>
+<start_dialog>hello_dialog</start_dialog>		
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
+    
+  </specific_character>
+
+<specific_character id="catcher_main_zombi" team_default = "1">
+    <name>Контра</name>
+		<icon>ui_npc_monster_kontroler_4</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>sit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>new\contruch</visual>
+        <snd_config>monsters\controller\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			mutant_hand_kontroler_m			
+		</supplies>
+<start_dialog>hello_dialog</start_dialog>		
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
+    
+  </specific_character>  
+  
+<!----------------------observer_set_zombi-------------------->
+    <specific_character id="observer_set_zombi" team_default = "1">
+        <name>Наблюдатель</name>
+        <icon>ui_npc_u_stalker_mo_mask</icon>
+        <map_icon x="3" y="2"></map_icon>
+        <bio>sim_stalker_general_bio</bio>
+
+    <class>cit_doctor</class>
+    <community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+        <rank>150</rank>
+        <reputation>-25</reputation>
+		<money min="100" max="200" infinitive="0"/>		
+
+        <visual>actors\monolit\stalker_mo_mask</visual>
+        <snd_config>\characters_voice\human_01\monolith\</snd_config>
+		<panic_threshold>0.0</panic_threshold>
+  		<crouch_type>1</crouch_type>
+        <supplies>
+			[spawn] \n
+			wpn_binoc \n
+			hand_radio \n
+			wpn_beretta \n
+			ammo_9x19_pbp = 3 \n
+        </supplies>
+		
+<start_dialog>hello_dialog</start_dialog>
+    </specific_character>  
+
+		<!--------------------------Ormont_zombi--------------------------->
+
+<specific_character id="ormont_zombi" team_default = "1">
+    <name>Профессор Ормонт</name>
+    <icon>ui_npc_uchen_yellow</icon>
+    <map_icon x="3" y="2"></map_icon>
+    <bio>yan_Ecolog</bio>
+
+    <class>cit_doctor</class>  
+    <community>zombied</community> <panic_threshold>0.0</panic_threshold>
+    <money min="500" max="800" infinitive="0"></money>
+    
+    <rank>150</rank>
+    <reputation>35</reputation>
+ 
+    <visual>actors\ecolog_yellow</visual>
+    <snd_config>characters_voice\human_01\ecolog\</snd_config>
+    <crouch_type>1</crouch_type>
+
+    <supplies>
+      [spawn] \n
+	  device_meter \n
+	  wpn_walther \n
+	  ammo_9x19_fmj \n
+      device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"	  
+    </supplies>
+	
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>	
+#include "gameplay\character_criticals_6.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+<!--------------------------Dyshlo_mercs-------------------------->
+
+	<specific_character id="marksman1_zombi" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_head_1</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>cit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>actors\killer\stalker_ki_head_1</visual>
+        <snd_config>characters_voice\human_03\killer\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			zheton = 1 \n
+			wpn_mp5_m2 \n
+			ammo_9x19_fmj \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"			
+		</supplies>
+	</specific_character>		
+		
+	<specific_character id="marksman2_zombi" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_head_1</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>cit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>actors\killer\stalker_ki_head_1</visual>
+        <snd_config>characters_voice\human_03\killer\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			zheton = 1 \n
+			wpn_type97 \n
+			ammo_6x35 = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"			
+		</supplies>
+			</specific_character>
+
+	<specific_character id="marksman3_zombi" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_head_1</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>cit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>actors\killer\stalker_ki_head_1</visual>
+        <snd_config>characters_voice\human_03\killer\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			zheton = 1 \n
+			wpn_mp5_m2 \n
+			ammo_9x19_fmj \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"			
+		</supplies>
+	</specific_character>		
+
+	<specific_character id="marksman4_zombi" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_head_1</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>cit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>actors\killer\stalker_ki_head_1</visual>
+        <snd_config>characters_voice\human_03\killer\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			zheton = 1 \n
+			wpn_type97 \n
+			ammo_6x35 = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"			
+		</supplies>
+	</specific_character>
+	
+		<specific_character id="merc_d1_zombi" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_head_1</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>cit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>actors\killer\stalker_ki_head_1</visual>
+        <snd_config>characters_voice\human_03\killer\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			zheton = 1 \n
+			wpn_type97 \n
+			ammo_6x35 = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"			
+		</supplies>		
+		
+	</specific_character>
+	
+		<specific_character id="merc_d2_zombi" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_nauchniy</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>cit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>actors\killer\stalker_ki_nauchniy</visual>
+        <snd_config>characters_voice\human_03\killer\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			zheton = 1 \n
+			wpn_mp5_m2 \n
+			ammo_9x19_fmj \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"			
+		</supplies>		
+		
+	</specific_character>
+	
+		<specific_character id="merc_d3_zombi" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_antigas</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>cit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>actors\killer\stalker_ki_antigas</visual>
+        <snd_config>characters_voice\human_03\killer\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			zheton = 1 \n
+			wpn_type97 \n
+			ammo_6x35 = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"			
+		</supplies>		
+		
+	</specific_character>
+	
+		<specific_character id="merc_d4_zombi" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_mask</icon>
+		<map_icon x="5" y="0"></map_icon>
+		<bio>mil_killer_specnaz_bio</bio>
+
+		<class>cit_doctor</class>
+		<community>zombied</community> <panic_threshold>0.0</panic_threshold>
+
+		<rank>258</rank>
+		<reputation>-40</reputation>
+		<money min="300" max="500" infinitive="0"/>
+		
+		<visual>actors\killer\stalker_ki_mask</visual>
+        <snd_config>characters_voice\human_03\killer\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			zheton = 1 \n
+			wpn_mp5_m2 \n
+			ammo_9x19_fmj \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"			
+		</supplies>		
+		
+	</specific_character>
+	
+		<!---------------------------dead city family zombi---------------------->
+
+<specific_character id="petrovige_zombi"team_default = "1">
+    <name>Сергей Андреевич</name>
+    <icon>ui_npc_uchen_11</icon>
+    <bio>sim_stalker_general_bio</bio>
+
+    <class>cit_doctor</class>
+    <community>zombied</community> <panic_threshold>0.0</panic_threshold> 
+    <money min="10500" max="12800" infinitive="0"></money>
+    
+    <rank>380</rank>
+    <reputation>35</reputation>
+ 
+    <visual>actor\zombi_stalker_mg</visual>
+    <snd_config>characters_voice\human_01\ecolog\</snd_config>
+    <crouch_type>1</crouch_type>
+
+    <supplies>
+      [spawn] \n
+      medkit_scientic = 1 \n
+      #include "gameplay\character_items.xml"	  
+    </supplies>
+
+    <actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>		
+
+</specific_character>
+
+<specific_character id="varvara_zombi"team_default = "1">
+    <name>Лидочка</name>
+    <icon>ui_npc_uchen_12</icon>
+    <bio>sim_stalker_general_bio</bio>
+
+    <class>cit_doctor</class>
+    <community>zombied</community> <panic_threshold>0.0</panic_threshold> 
+    <money min="10500" max="12800" infinitive="0"></money>
+    
+    <rank>380</rank>
+    <reputation>35</reputation>
+ 
+    <visual>actor\babka_3</visual>
+    <snd_config>characters_voice\human_01\woman\</snd_config>
+    <crouch_type>1</crouch_type>
+
+    <supplies>
+      [spawn] \n
+      medkit_scientic = 1 \n
+      #include "gameplay\character_items.xml"	  
+	</supplies>
+    <actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>		
+
+</specific_character>
+	
+</xml>

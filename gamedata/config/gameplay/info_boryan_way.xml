@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding="windows-1251" ?>
+
+<game_information_portions>
+
+<!-- поршни Бритый -->
+<info_portion id="britiy_dialog_foto_end"></info_portion>
+<info_portion id="britiy_foto_start"></info_portion>
+<info_portion id="britiy_has_1"></info_portion>
+<info_portion id="britiy_has_2"></info_portion>
+<info_portion id="britiy_has_3"></info_portion>
+
+<info_portion id="brityi_foto"></info_portion>
+
+<!-- поршни Дзяо -->
+<info_portion id="dzyao_priz"></info_portion>
+<!-- поршни Воронин -->
+<info_portion id="voronin_gans"></info_portion>
+
+<!-- поршни Петрограф -->
+<info_portion id="petrograf_start">	
+	<action>petrograf.create_petrograf</action> 
+</info_portion>
+<info_portion id="petrograf_dialog_0_done"></info_portion>
+<info_portion id="perdonit_enable">	
+	<action>petrograf.create_perdonit</action> 
+</info_portion>
+<info_portion id="petrograf_dialog_1_done"></info_portion>
+<info_portion id="petrograf_collect"></info_portion>
+<info_portion id="petrograf_dialog_2_done"></info_portion>
+<info_portion id="transfer_perdonit"></info_portion>
+
+<!-- поршни Западло -->
+<info_portion id="kill_zapadlo">	
+	<action>boryan67.zapadlo_clear</action> 
+</info_portion>
+<info_portion id="wound_verka">	
+	<action>boryan67.verka_wound</action> 
+</info_portion>
+<info_portion id="kill_verka">	
+	<action>boryan67.verka_dead</action> 
+</info_portion>
+<info_portion id="kill_haron"></info_portion>
+<info_portion id="zapadlo_robbery_2"></info_portion>
+<info_portion id="zapadlo_dialog_1_done"></info_portion>
+<info_portion id="zapadlo_dialog_2_done"></info_portion>
+<info_portion id="zapadlo_dialog_3_done"></info_portion>
+<info_portion id="zapadlo_dialog_4_done"></info_portion>
+<info_portion id="verka_dialog_1_done"></info_portion>
+<info_portion id="verka_na_meste"></info_portion>
+<info_portion id="verka_out"></info_portion>
+<info_portion id="haron_dialog_1_done"></info_portion>
+<info_portion id="haron_dialog_2_done"></info_portion>
+<info_portion id="haron_dialog_3_done"></info_portion>
+
+<!-- поршни Шубин -->
+<info_portion id="shubin_start"></info_portion>
+<info_portion id="shubin_enemy">	
+	<action>boryan67.remove_shubin</action> 
+	<action>fotograf.actor_kill_shubin</action>
+</info_portion>
+<info_portion id="shubin_enemy2">
+	<action>fotograf.del_shubin_x10</action>
+	<action>fotograf.actor_kill_shubin2</action>
+</info_portion>
+<info_portion id="shubin_enemy3"></info_portion>
+<info_portion id="shubin_need_help"></info_portion>
+<info_portion id="shubin_first_help"></info_portion>
+<info_portion id="shubin_dialog_3_done">
+	<task>shubin_soul</task>
+</info_portion>
+<info_portion id="shubin_dialog_4_done"></info_portion>
+
+<info_portion id="info_prip_zadan">
+<task>codes_taynik</task>
+</info_portion>
+
+<!-- поршни Шпак -->
+<info_portion id="shpak_dialog_1_done"></info_portion>
+<info_portion id="shpak_dialog_2_done"></info_portion>
+<info_portion id="shpak_dialog_3_done"></info_portion>
+<info_portion id="shpak_dialog_4_done"></info_portion>
+<info_portion id="shpak_dialog_5_done"></info_portion>
+<info_portion id="shpak_dialog_6_done"></info_portion>
+<info_portion id="shpak_dialog_7_done">
+	<action>boryan67.relocate_dunya</action> 
+</info_portion>
+<info_portion id="shpak_vodka">
+	<task>shpak_vodka20</task>
+</info_portion>
+<info_portion id="shpak_timer1"></info_portion>
+<info_portion id="shpak_timer2"></info_portion>
+<info_portion id="shpak_timer3"></info_portion>
+<info_portion id="shpak_vintorez">
+	<task>shpak_vss</task>
+</info_portion>
+<!-- поршни Дуня -->
+<info_portion id="dunya_dialog_1_done"></info_portion>
+<info_portion id="dunya_dialog_2_done"></info_portion>
+<info_portion id="dunya_dialog_3_done"></info_portion>
+<info_portion id="dunya_collect_enable"></info_portion>
+<info_portion id="dunya_collect">
+	<task>dunya_mutant</task>
+</info_portion>
+<info_portion id="dunya_collect_done"></info_portion>
+<info_portion id="dunya_collect_otdal"></info_portion>
+<info_portion id="dunya_monpansie_done"></info_portion>
+<info_portion id="dunya_monpansie_otdal"></info_portion>
+<info_portion id="dunya_monpansie">
+	<task>dunya_sweets</task>
+</info_portion>
+<info_portion id="dunya_doshla"></info_portion>
+<info_portion id="dunya_dead">
+	<action>boryan67.clear_dunya</action>
+</info_portion>
+<info_portion id="dunya_enemy"></info_portion>
+<!-- поршни Крысолов -->
+<info_portion id="krisalov_dialog_1_done"></info_portion>
+<info_portion id="krisalov_dudka">
+	<task>nastoyka</task>
+</info_portion>
+<info_portion id="krisalov_dudka_used"></info_portion>
+<info_portion id="krisalov_dudka_wrong"></info_portion>
+<info_portion id="krisalov_has_mouse"></info_portion>
+<info_portion id="actor_has_mouse"></info_portion>
+<info_portion id="actor_has_present"></info_portion>
+<info_portion id="krisalov_timer"></info_portion>
+<info_portion id="krisalov_timer1"></info_portion>
+<info_portion id="drink_badyaga"></info_portion>
+<info_portion id="krisalov_dialog_2_done"></info_portion>
+<info_portion id="krisalov_dialog_3_done"></info_portion>
+<info_portion id="krisalov_dialog_4_done"></info_portion>
+<info_portion id="krisalov_dialog_5_done"></info_portion>
+<info_portion id="zone_mouse_release">
+	<action>foto.mouse_release</action>
+</info_portion>
+<!-- поршни кресты Шубина -->
+<info_portion id="krest_find_disable"></info_portion>
+<info_portion id="krest_dudka_used"></info_portion>
+<info_portion id="krest_finish"></info_portion>
+<!-- поршни МГ параллельный мир -->
+<info_portion id="parallel_mg"></info_portion>
+<info_portion id="mg_1_jump"></info_portion>
+<info_portion id="mg_2_jump"></info_portion>
+<info_portion id="mg_3_jump"></info_portion>
+<info_portion id="mg_statya"></info_portion>
+<info_portion id="evergy2_true"></info_portion>
+<info_portion id="mg_unlock"></info_portion>
+<info_portion id="vzyal_zadanie"></info_portion>
+<info_portion id="vernulsya"></info_portion>
+<info_portion id="petro_end"></info_portion>
+<info_portion id="petro_dialog_1_done"></info_portion>
+<info_portion id="petro_dialog_2_done"></info_portion>
+<info_portion id="varvara_dialog_1_done"></info_portion>
+<info_portion id="petro_enemy"></info_portion>
+<!-- поршни Лесник -->
+<info_portion id="ded_dialog_1_done"></info_portion>
+<info_portion id="ded_dialog_2_done"></info_portion>
+<info_portion id="ded_nastoyka">
+	<task>nastoyka_les</task>
+</info_portion>
+<!-- Лабиринт Макса -->
+<info_portion id="max_no_entrance"></info_portion>
+<info_portion id="max_no_exit"></info_portion>
+<info_portion id="max_block_end"></info_portion>
+<info_portion id="max_ruk_otdal"></info_portion>
+<info_portion id="max_ruk_have"></info_portion>
+<info_portion id="max_ruk_start">
+	<task>max_labirint</task>
+</info_portion>
+<info_portion id="max_dialog_1_done"></info_portion>
+</game_information_portions>
+
+
+
+
+
+
+
+

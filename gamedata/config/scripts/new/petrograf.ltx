@@ -1,0 +1,69 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+combat_ignore = combat_ignore
+
+; ждем передачи Пердонита
+[walker@1]
+path_walk = petrograf_walk
+path_look = petrograf_look
+meet = meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+transfer_perdonit} remark@1
+
+; Пердонит получили, подождем пока ГГ не отойдет чуток
+[remark@1]
+target = actor
+combat_ignore_cond = always
+meet = no_meet
+danger = danger_condition
+on_actor_dist_ge_nvis = 3 | remark@2 %=petrograf.activate_0%
+
+; начинаем активацию - стадия 0 - берем в руки и читаем читки заклинаний
+[remark@2]
+target = actor
+combat_ignore_cond = always
+anim = probe_0
+meet = no_meet
+danger = danger_condition
+on_timer = 19000 | remark@3	%=petrograf.activate_1%
+
+; стадия 1 - Пердонит начинает активироваться
+[remark@3]
+target = actor
+combat_ignore_cond = always
+anim = probe_0
+meet = no_meet
+danger = danger_condition
+on_timer = 3000 | remark@4 %=petrograf.activate_2%
+
+; стадия 2 -
+[remark@4]
+target = actor
+combat_ignore_cond = always
+anim = probe_0
+meet = no_meet
+danger = danger_condition
+on_timer = 4000 | remark@5 %=petrograf.activate_3%
+
+; стадия 3 - 
+[remark@5]
+target = actor
+combat_ignore_cond = always
+anim = probe_0
+meet = no_meet
+danger = danger_condition
+on_timer = 300 | nil %=petrograf.remove_petrograf% ;все, Петрографа удаляем
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_state = ward

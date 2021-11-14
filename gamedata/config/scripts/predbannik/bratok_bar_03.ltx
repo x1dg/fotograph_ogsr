@@ -1,0 +1,83 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@bratok_bar_03
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@bratok_bar_03]
+path_walk = bratok_bar_03_walk
+path_look = bratok_bar_03_look
+meet = no_meet
+def_state_standing = bar_left
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+bratok_enemy} walker@bratok_bar_033
+on_actor_dist_le_nvis = 2.3 | {+zhila_vstrecha -fotki_devok_dialog_start} remark@1, {+zhila_vstrecha +fotki_devok_dialog_start -fotki_zastavka_dialog_start} remark@2 
+
+[remark@1]
+target = actor
+snd = fotki_devochek1
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+bratok_enemy} walker@bratok_bar_033
+on_signal = sound_end | walker@bratok_bar_031
+
+[remark@2]
+target = actor
+snd = fotki_devochek2
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+bratok_enemy} walker@bratok_bar_033
+on_signal = sound_end | walker@bratok_bar_032
+
+[walker@bratok_bar_031]
+path_walk = bratok_bar_03_walk
+path_look = bratok_bar_03_look
+meet = meet@1
+def_state_standing = bar_left
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+bratok_enemy} walker@bratok_bar_033
+
+[walker@bratok_bar_032]
+path_walk = bratok_bar_03_walk
+path_look = bratok_bar_03_look
+meet = meet@2
+def_state_standing = bar_left
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+bratok_enemy} walker@bratok_bar_033
+
+[walker@bratok_bar_033]
+path_walk = bratok_bar_03_walk
+path_look = bratok_bar_03_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet@1]
+meet_dialog = fotki_devok_dialog
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[meet@2]
+meet_dialog = fotki_zastavka_dialog
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+bratok_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+bratok_enemy%

@@ -1,0 +1,96 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-dunya_dialog_1_done} walker@1, {+dunya_dialog_1_done -dunya_doshla} walker@2, {+dunya_doshla -shpak_dialog_7_done} walker@3, {+shpak_dialog_7_done} walker@4
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+dunya_enemy%
+
+[death]
+on_info = %+dunya_dead%
+
+[walker@1]
+path_walk = dunya_walk
+path_look = dunya_look
+danger = danger_condition
+meet = no_meet
+on_actor_dist_le_nvis = 3 | remark@1
+on_info = {+dunya_enemy} remark@enemy %=killactor%
+
+[remark@1]
+target = actor
+snd = dunya_hello
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | remark@meet
+on_info = {+dunya_enemy} remark@enemy %=killactor%
+
+[remark@meet]
+target = actor
+meet = meet
+danger = danger_condition
+on_info = {+dunya_dialog_1_done} walker@2
+on_info2 = {+dunya_enemy} remark@enemy %=killactor%
+
+[walker@2]
+path_walk = dunya_from_swamp_way
+path_look = dunya_from_swamp_look
+danger = danger_condition
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+on_signal = dunya_mesto | walker@3 %+dunya_doshla%
+on_info = {+dunya_enemy} remark@enemy %=killactor%
+
+[walker@3]
+path_walk = dunya_from_swamp_way
+path_look = dunya_from_swamp_look
+danger = danger_condition
+meet = no_meet
+on_actor_dist_le_nvis = 3 | remark@2
+on_info = {+dunya_enemy} remark@enemy %=killactor%
+
+[remark@2]
+danger = danger_condition
+meet = meet
+target = actor
+on_actor_dist_ge_nvis = 3 | walker@3
+on_info = {+dunya_enemy} remark@enemy %=killactor%
+
+[walker@4]
+path_walk = dunya_walk_1
+path_look = dunya_look_1
+def_state_standing = choose
+danger = danger_condition
+meet = no_meet
+on_actor_dist_le_nvis = 3 | remark@3
+on_info = {+dunya_enemy} remark@enemy %=killactor%
+
+[remark@3]
+danger = danger_condition
+meet = meet
+target = actor
+on_actor_dist_ge_nvis = 3 | walker@4
+on_info = {+dunya_enemy} remark@enemy %=killactor%
+
+[remark@enemy]
+anim = assault
+target = actor
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 5
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+

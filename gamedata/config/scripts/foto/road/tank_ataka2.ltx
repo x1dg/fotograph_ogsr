@@ -1,0 +1,52 @@
+[smart_terrains]
+none = true
+
+[dont_spawn_loot]
+
+[logic]
+active = camper@1
+combat_ignore = combat_ignore
+danger = danger_condition
+on_death = death
+threshold = threshold
+
+[threshold]
+max_ignore_distance = 0
+
+[death]
+on_info = %+tank_ataka2_dead%
+
+[camper@1]
+path_walk = tank_ataka2_walk
+path_look = tank_ataka2_look
+meet = no_meet
+radius = 0
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+def_state_campering = raid
+def_state_moving_fire = raid_fire
+def_state_campering_fire = raid_fire
+danger = danger_condition
+no_retreat = true
+shoot = always
+on_signal = tank2 | camper@2
+
+[camper@2]
+path_walk = tank_ataka2_walk
+path_look = tank_ataka2_look
+meet = no_meet
+radius = 0
+danger = danger_condition
+no_retreat = true
+def_state_campering = raid
+def_state_campering_fire = raid_fire
+danger = danger_condition
+no_retreat = true
+shoot = always
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+

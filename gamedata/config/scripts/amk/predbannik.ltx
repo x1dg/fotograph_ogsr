@@ -1,0 +1,425 @@
+[mk_bolotofabrika]
+xyzlg = 98.691,-22.197,-276.408,1098151,758
+respawn_section = flesh_normal
+max_count = 5
+min_spawn = 4
+max_spawn = 5
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_bolotofabrika
+
+[mk_nabugre]
+xyzlg = 58.981,19.006,-169.324,1035368,752
+respawn_section = doberman,33,dog_strong,33,dog_weak,33
+max_count = 6
+min_spawn = 5
+max_spawn = 6
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_nabugre
+
+[mk_ubolota]
+xyzlg = -196.788,2.217,113.358,636455,697
+respawn_section = boar_normal
+max_count = 3
+min_spawn = 3
+max_spawn = 3
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_ubolota
+
+[mk_boloto]
+xyzlg = -274.156,-1.085,116.411,516799,683
+respawn_section = vodyanoy4
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 172800
+creature_binded_logic = logic_new\mk_boloto
+
+[mk_lesudorogi]
+xyzlg = -470.341,15.322,73.633,223747,637
+respawn_section = cat_black,33,cat_blood,33,cat_normal,33
+max_count = 6
+min_spawn = 5
+max_spawn = 6
+idle_spawn = 43200
+creature_binded_logic = logic_new\mk_lesudorogi
+
+[mk_semetery]
+xyzlg = -57.878,14.016,142.620,852920,724
+respawn_section = dog_black,33,dog_strong,33,dog_weak,33
+max_count = 6
+min_spawn = 5
+max_spawn = 6
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_semetery
+conditions = {+pda_agent_mk_have} 100, 0
+
+[mk_upalatki]
+xyzlg = -191.303,24.977,312.493,645330,699
+respawn_section = doberman
+max_count = 3
+min_spawn = 3
+max_spawn = 3
+idle_spawn = 43200
+creature_binded_logic = logic_new\mk_upalatki
+conditions = {+maloy_pda_est} 100, 0
+
+[mk_peschera1]
+xyzlg = -233.394,16.934,239.157,581817,688
+respawn_section = bloodsucker_normal,33,psy_dog,33,pseudodog_normal,33
+max_count = 3
+min_spawn = 3
+max_spawn = 3
+idle_spawn = 172800
+creature_binded_logic = logic_new\mk_peschera1
+conditions = {+peschera_monsters_spawn} 100, 0
+
+[mk_peschera2]
+xyzlg = -268.193,10.185,239.227,526701,672
+respawn_section = zombik_stalk1,14,zombik_stalk2,14,zombik_stalk3,14,zombik_stalk4,14,zombik_stalk5,14,zombik_stalk6,14,zombik_stalk7,14
+max_count = 10
+min_spawn = 9
+max_spawn = 10
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_peschera2
+conditions = {+peschera_monsters_spawn} 100, 0
+
+[mk_kontra]
+xyzlg = -254.114,19.975,259.491,548775,680
+respawn_section = m_controller_old_fat
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_kontra
+conditions = {+peschera_monsters_spawn} 100, 0
+
+[mk_lesseverovostok1]
+xyzlg = 118.853,-8.440,398.787,1131329,754
+respawn_section = boar_normal
+max_count = 4
+min_spawn = 3
+max_spawn = 4
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_lesseverovostok1
+
+[mk_lesseverovostok2]
+xyzlg = 151.291,-16.326,488.018,1181614,771
+respawn_section = flesh_strong
+max_count = 5
+min_spawn = 4
+max_spawn = 5
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_lesseverovostok2
+
+[mk_severbugor]
+xyzlg = -420.000,32.718,198.618,298725,654
+respawn_section = dog_black,33,dog_strong,33,dog_weak,33
+max_count = 6
+min_spawn = 6
+max_spawn = 6
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_severbugor
+
+[mk_severdoroga]
+xyzlg = -304.499,-2.805,316.411,472144,666
+respawn_section = boar_weak
+max_count = 3
+min_spawn = 3
+max_spawn = 3
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_severdoroga
+
+[mk_stalkers_01]
+xyzlg = -37.775,1.585,344.594,884155,727
+respawn_section = novichok_03,novichok_04,novichok_11,novichok_08
+max_count = 4
+min_spawn = 4
+max_spawn = 4
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_stalkers_01
+
+[mk_stalkers_02]
+xyzlg = -60.685,1.585,336.068,848984,718
+respawn_section = novichok_02,novichok_12,novichok_13
+max_count = 3
+min_spawn = 3
+max_spawn = 3
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_stalkers_02
+
+[mk_stalkers_03]
+xyzlg = -55.400,0.886,363.724,857411,727
+respawn_section = novichok_10,novichok_03,novichok_11,bar_neytral_18
+max_count = 4
+min_spawn = 4
+max_spawn = 4
+spawn_once = true
+creature_binded_logic = logic_new\mk_stalkers_03
+conditions = {-maloy_pda_est} 100, 0
+
+[mk_stalkers_04]
+xyzlg = -55.400,0.886,363.724,857411,727
+respawn_section = novichok_10,novichok_03,novichok_11,bar_neytral_18
+max_count = 4
+min_spawn = 4
+max_spawn = 4
+idle_spawn = 43200
+creature_binded_logic = logic_new\mk_stalkers_04
+conditions = {+maloy_pda_est} 100, 0
+
+[mk_bratva_01]
+xyzlg = 5.477,8.560,-46.680,951613,745
+respawn_section = bratok_resp01,bratok_resp03,bratok_resp04,bratok_resp05,bratok_respregular
+max_count = 5
+min_spawn = 5
+max_spawn = 5
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_bratva_01
+
+[mk_bratva_02]
+xyzlg = 60.483,2.478,13.423,1037687,748
+respawn_section = bratok_resp01,bratok_resp03,bratok_respregular,bratok_respveteran,bratok_respmaster
+max_count = 5
+min_spawn = 5
+max_spawn = 5
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_bratva_02
+
+[mk_bratva_03]
+xyzlg = -2.744,9.009,-61.386,938570,740
+respawn_section = bratok_respveteran,bratok_resp08,bratok_resp05,bratok_resp11
+max_count = 4
+min_spawn = 4
+max_spawn = 4
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_bratva_03
+
+[mk_baza2_01]
+xyzlg = -213.338,27.944,-175.520,610619,695
+respawn_section = soldat_resp01,33,soldat_resp02,33,soldat_resp04,33
+max_count = 5
+min_spawn = 4
+max_spawn = 5
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_baza2_01
+
+[mk_baza2_02]
+xyzlg = -203.378,28.498,-155.125,625138,698
+respawn_section = soldat_resp01,33,soldat_resp03,33,soldat_resp04,33
+max_count = 4
+min_spawn = 3
+max_spawn = 4
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_baza2_02
+
+[mk_baza2_03]
+xyzlg = -214.957,28.037,-141.986,608617,696
+respawn_section = soldat_resp02,33,soldat_resp03,33,soldat_resp04,33
+max_count = 5
+min_spawn = 4
+max_spawn = 5
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_baza2_03
+
+[mk_baza2_soldat1]
+xyzlg = -220.040,27.918,-174.742,601444,695
+respawn_section = baza2_soldat1
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\baza2_soldat1
+
+[mk_baza2_soldat2]
+xyzlg = -273.683,27.956,-162.192,517500,676
+respawn_section = baza2_soldat2
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\baza2_soldat2
+
+[mk_baza2_soldat3]
+xyzlg = -234.293,28.032,-149.340,579197,694
+respawn_section = baza2_soldat3
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\baza2_soldat3
+
+[mk_baza2_soldat4]
+xyzlg = -279.087,27.975,-149.238,509079,677
+respawn_section = baza2_soldat4
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\baza2_soldat4
+
+[mk_baza2_soldat5]
+xyzlg = -296.508,34.871,-133.630,482950,677
+respawn_section = baza2_soldat5
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\baza2_soldat5
+
+[mk_baza2_patrul1]
+xyzlg = -242.368,28.042,-125.480,567209,684
+respawn_section = baza2_patrul1
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\baza2_patrul1
+
+[mk_baza2_patrul2]
+xyzlg = -248.275,27.895,-167.898,557264,686
+respawn_section = baza2_patrul2
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\baza2_patrul2
+
+[mk_baza2_uvorot1]
+xyzlg = -244.728,25.247,-190.785,562676,687
+respawn_section = baza2_uvorot1
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\baza2_uvorot1
+
+[mk_baza2_uvorot2]
+xyzlg = -238.220,25.544,-189.695,573635,687
+respawn_section = baza2_uvorot2
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\baza2_uvorot2
+
+[mk_baza2_vyshka1]
+xyzlg = -300.792,38.099,-173.260,476743,667
+respawn_section = baza2_vyshka1
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\baza2_vyshka1
+
+[mk_baza2_vyshka2]
+xyzlg = -302.485,38.047,-63.554,474822,665
+respawn_section = baza2_vyshka2
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\baza2_vyshka2
+
+[mk_baza2_vyshka3]
+xyzlg = -188.658,45.834,-47.535,649163,700
+respawn_section = baza2_vyshka3
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\baza2_vyshka3
+
+[mk_baza2_vyshka4]
+xyzlg = -182.769,39.687,-180.412,657741,702
+respawn_section = baza2_vyshka4
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\baza2_vyshka4
+
+[mk_bar_soldat1]
+xyzlg = -224.489,28.037,-160.876,594275,694
+respawn_section = soldat_resp06,33,soldat_resp07,33,soldat_resp04,33
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_bar_soldat1
+
+[mk_bar_soldat2]
+xyzlg = -222.813,28.017,-160.802,597375,694
+respawn_section = soldat_resp02,33,soldat_resp07,33,soldat_resp01,33
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_bar_soldat2
+
+[mk_bar_soldat3]
+xyzlg = -216.564,28.041,-152.990,606568,694
+respawn_section = soldat_resp03,33,soldat_resp06,33,soldat_resp07,33
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_bar_soldat3
+
+[mk_bar_soldat4]
+xyzlg = -219.856,28.023,-153.040,601467,694
+respawn_section = soldat_resp01
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_bar_soldat4
+
+[mk_bar_soldat5]
+xyzlg = -221.538,28.010,-153.414,598387,694
+respawn_section = soldat_resp04
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_bar_soldat5
+
+[mk_bar_soldat6]
+xyzlg = -211.417,28.037,-152.818,613669,694
+respawn_section = soldat_resp06
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_bar_soldat6
+
+[mk_bar_soldat7]
+xyzlg = -212.839,28.020,-156.379,611653,694
+respawn_section = soldat_resp07
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_bar_soldat7
+
+[mk_bar_soldat8]
+xyzlg = -219.724,28.020,-160.284,601458,694
+respawn_section = soldat_resp04
+max_count = 1
+min_spawn = 1
+max_spawn = 1
+idle_spawn = 86400
+creature_binded_logic = logic_new\mk_bar_soldat8
+
+[mk_crows]
+xyzlg = -488.506,6.141,-142.127,195989,634
+respawn_section = m_crow
+max_count = 35
+min_spawn = 35
+max_spawn = 35
+idle_spawn = 21600
+creature_binded_logic = logic_new\crows
+
+
+
+
+

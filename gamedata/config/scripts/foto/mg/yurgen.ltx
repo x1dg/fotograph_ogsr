@@ -1,0 +1,96 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-yurgen_skazal} walker@1, {+yurgen_skazal -yurgen_mesto} walker@11, {+yurgen_mesto -mg_vyhod_start} walker@112, {+mg_vyhod_start} walker@vyhod2
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+on_info2 = %+yurgen_dead%
+
+[walker@1]
+path_walk = yurgen_walk
+path_look = yurgen_look
+danger = danger_condition
+meet = no_meet
+combat_ignore_cond = always
+on_actor_dist_le = 2.5 | remark@1
+on_info = {+usa_enemy} walker@1111
+
+[remark@1]
+anim = assault
+target = actor
+snd = yurgen
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@11 %+yurgen_skazal =play_snd(ambient\new\actor_yurgen)%
+on_info = {+usa_enemy} walker@1111
+
+[walker@11]
+path_walk = yurgen_walk
+path_look = yurgen_look
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_actor_dist_le = 2.5 | {+jagger_start_dialog_start} walker@111
+on_info = {+usa_enemy} walker@1111
+
+[walker@111]
+path_walk = yurgen1_walk
+path_look = yurgen1_look
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+usa_enemy} walker@1111
+on_timer = 8500 | walker@112 %+yurgen_mesto%
+
+[walker@112]
+path_walk = yurgen1_walk
+path_look = yurgen1_look
+meet = meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+usa_enemy} walker@1111
+on_info2 = {+mg_vyhod_start} walker@vyhod1
+
+[walker@vyhod1]
+path_walk = yurgen1_walk
+path_look = yurgen1_look
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+usa_enemy} walker@1111
+on_timer = 5000 | walker@vyhod2
+
+[walker@vyhod2] 
+path_walk = yurgen_vyhod_walk
+path_look = yurgen_vyhod_look
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+on_signal = yurgenend | %=fotograf.del_yurgen +yurgen_del%
+
+[walker@1111]
+path_walk = yurgen1_walk
+path_look = yurgen1_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

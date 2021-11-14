@@ -1,0 +1,59 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-filin_skazal} walker@1, {+filin_skazal} walker@11
+danger = danger_condition
+
+[walker@1]
+path_walk = filin_walk
+path_look = filin_look
+danger = danger_condition
+meet = no_meet
+on_actor_dist_le = 8 | remark@vstrecha %=play_snd(ambient\new\actor_about_filin)%  
+
+[remark@vstrecha]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 2500 | remark@1 
+
+[remark@1]
+target = actor
+snd = filin
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@11 %+filin_skazal%
+
+[walker@11]
+path_walk = filin_walk
+path_look = filin_look
+meet = meet
+danger = danger_condition
+on_actor_dist_le = 4 | {+filin_vino_have} remark@2
+
+[remark@2]
+target = actor
+snd = filin1
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@2
+
+[walker@2]
+path_walk = filin_walk
+path_look = filin_look
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 5
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+

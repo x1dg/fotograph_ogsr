@@ -1,0 +1,638 @@
+;;;;;;;;;;;;;;Душа сталкера;;;;;;;;;;;;;;
+[krest_good]
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\krest_good"
+$prefetch 		= 16
+class			= Z_MBALD
+
+ef_anomaly_type			= 1
+ef_weapon_type			= 13
+
+sound			= anomaly\no_sound
+;postprocess		= mosquito_bald
+
+artefacts			= ;af_shubin_artgood, 0.99
+BirthProbability	= ;0.9
+
+
+;----------- Anomaly settings -----------------------
+min_start_power		= 0.90
+max_start_power		= 1.00
+attenuation			= 1
+period				= 1
+min_artefact_count	= 4
+max_artefact_count	= 20
+artefact_spawn_idle	= 1  ;насколько часто спонить артефакты в офлайне, в часах
+artefact_spawn_rnd	= 100  ;вероятность заспавнить артефакт в процентах.
+
+idle_particles		= mauvais\krest_good
+blowout_particles	=  ;реакция на болт - эффект аномалии при выбросе энергии ( если вы в нее зайдете
+tearing_particles	= 
+torn_particles      = 
+
+hit_small_particles			=   ;эффект малого удара аномалии
+hit_big_particles			= ;получение хита - эффект полного удара аномалии
+idle_small_particles		=
+idle_big_particles			= 
+entrance_small_particles	= 
+entrance_big_particles		= 
+
+tele_particles_small		= 
+tele_particles_big			= 	
+
+
+idle_sound			= anomaly\no_sound;  							;постоянный звук
+blowout_sound		= anomaly\no_sound;во время выброса(удара) в центре аномалии	
+hit_sound			= anomaly\no_sound		;на персонаже, когда тот получает хит
+body_tearing_sound	= anomaly\no_sound;			;звук разрывания трупа
+entrance_sound		= anomaly\no_sound;						;при попадании объекта в аномалию
+
+hit_type		    = strike
+hit_impulse_scale	= 0.0;0.1;0.1			;соотношение физического импульса и силы хита
+effective_radius	= 0,05 ;размер радиуса в процентах от оригинального, где действует зона
+
+disable_time		= 5000	;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time_small	= 5000		;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
+disable_idle_time	= 3	;время отключения idle партиклов
+
+ignore_nonalive		= true
+ignore_small		= true
+ignore_artefacts	= true
+
+blowout_light		= off
+light_color		    = 0,0,0
+light_range		    = 0.0
+light_time 		    = 0.8;0.35
+light_height		= -5			;подъем источника света на высоту
+
+idle_light			= off
+idle_light_range			= 0.0
+idle_light_range_delta 		= 0.0
+idle_light_anim				= 
+idle_light_height			= -5			;подъем источника света на высоту
+
+awaking_time		= 800;1000
+blowout_time		= 1000	; время выброса энергии аномалии
+accamulate_time		= 500
+
+blowout_light_time		= 800 ; свет при выбросе энергии аномалии
+blowout_explosion_time	= 800 ; время взрыва энергии аномалии
+
+;параметры телекинеза для зоны
+throw_in_impulse			= 4000	;сила втягивания для единичной массы на расстоянии один метр
+throw_out_impulse				= 1500			;сила выбрасывания взрывом
+throw_in_impulse_alive			= 600	;сила импульса втягивания для живых
+throw_in_atten					= 2.2	;3;коэфф. затягивания (чем меньше, тем плавнее затягивает)
+throw_in_atten				= 		8;8			;коэфф. затягивания (чем меньше, тем плавнее затягивает)
+blowout_radius_percent		= 		0.8		;радиус (в процентах от всего радиуса) непосредственно выброса
+actor_blowout_radius_percent=		0.05
+
+tele_height				= 0.05;	3.5	;высота подъема телекинеза 
+time_to_tele			= 5000		;время деражания объекта в воздухе
+tele_pause				= 5000		;пауза перед тем как снова поднять упавший объект	
+
+ignore_light		= true
+
+visible_by_detector = off
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ветер
+blowout_wind		= on
+
+blowout_wind_time_start     = 0
+blowout_wind_time_peak      = 800
+blowout_wind_time_end		= 1001; 2499
+blowout_wind_power			= 0.5			;сила поднимаего ветра (от 0 до 1), в момент blowout_wind_time_peak 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;рождение артефактов во время срабатывания
+spawn_blowout_artefacts = off   ;off
+
+;artefact_spawn_probability = 1				;вероятность, что во время срабатывания аномалии будет рожден артефакт
+;artefact_spawn_particles = anomaly2\pux_blast	;партиклы, которые отыграются на месте рождения артефакта (опционально)
+;artefact_born_sound =  anomaly\pux_blast		;звук, который отыграются на месте рождения артефакта (опционально)
+
+throw_out_power = 50			;импульс с которым артефакт будет выброшен из зоны в произвольном направлении
+artefact_spawn_height = 3		;(м) высота на центром зоны где будет рожден артефакт
+
+;;;;;;;;;;;;;;Душа мародёра;;;;;;;;;;;;;;
+[krest_bad]
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\krest_bad"
+$prefetch 		= 16
+class			= ZS_MBALD
+
+ef_anomaly_type			= 1
+ef_weapon_type			= 13
+
+sound			= anomaly\no_sound
+;postprocess		= mosquito_bald
+
+artefacts			= ;af_shubin_artgood, 0.99
+BirthProbability	= ;0.9
+
+
+;----------- Anomaly settings -----------------------
+min_start_power		= 0.90
+max_start_power		= 1.00
+attenuation			= 1
+period				= 1
+min_artefact_count	= 4
+max_artefact_count	= 20
+artefact_spawn_idle	= 1  ;насколько часто спонить артефакты в офлайне, в часах
+artefact_spawn_rnd	= 100  ;вероятность заспавнить артефакт в процентах.
+
+idle_particles		= mauvais\krest_bad
+blowout_particles	=  ;реакция на болт - эффект аномалии при выбросе энергии ( если вы в нее зайдете
+tearing_particles	= 
+torn_particles      = 
+
+hit_small_particles			= damage_fx\_mauv_artbad_00  ;эффект малого удара аномалии
+hit_big_particles			= damage_fx\_mauv_artbad_00 ;получение хита - эффект полного удара аномалии
+idle_small_particles		=
+idle_big_particles			= 
+entrance_small_particles	= 
+entrance_big_particles		= 
+
+tele_particles_small		= 
+tele_particles_big			= 	
+
+
+idle_sound			= anomaly\no_sound;  							;постоянный звук
+blowout_sound		= anomaly\no_sound;во время выброса(удара) в центре аномалии	
+hit_sound			= anomaly\no_sound		;на персонаже, когда тот получает хит
+body_tearing_sound	= anomaly\no_sound;			;звук разрывания трупа
+entrance_sound		= anomaly\no_sound;						;при попадании объекта в аномалию
+
+hit_type		    = strike
+hit_impulse_scale	= 0.2;0.5;0.1			;соотношение физического импульса и силы хита
+effective_radius	= 0.95 ;размер радиуса в процентах от оригинального, где действует зона
+
+disable_time		= 5000	;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time_small	= 500		;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
+disable_idle_time	= 3	;время отключения idle партиклов
+
+ignore_nonalive		= true
+ignore_small		= true
+ignore_artefacts	= true
+
+blowout_light		= off
+light_color		    = 0,0,0
+light_range		    = 0.0
+light_time 		    = 0.8;0.35
+light_height		= -5			;подъем источника света на высоту
+
+idle_light			= off
+idle_light_range			= 0.0
+idle_light_range_delta 		= 0.0
+idle_light_anim				= 
+idle_light_height			= -5			;подъем источника света на высоту
+
+awaking_time		= 800;1000
+blowout_time		= 1000	; время выброса энергии аномалии
+accamulate_time		= 500
+
+blowout_light_time		= -1;800 ; свет при выбросе энергии аномалии
+blowout_explosion_time	= -1;800 ; время взрыва энергии аномалии
+
+;параметры телекинеза для зоны
+throw_in_impulse			= 4000	;сила втягивания для единичной массы на расстоянии один метр
+throw_out_impulse				= 1500			;сила выбрасывания взрывом
+throw_in_impulse_alive			= 600	;сила импульса втягивания для живых
+throw_in_atten					= 2.2	;3;коэфф. затягивания (чем меньше, тем плавнее затягивает)
+throw_in_atten				= 		8;8			;коэфф. затягивания (чем меньше, тем плавнее затягивает)
+blowout_radius_percent		= 		0.8		;радиус (в процентах от всего радиуса) непосредственно выброса
+actor_blowout_radius_percent=		0.5
+
+tele_height				= 0.05;	3.5	;высота подъема телекинеза 
+time_to_tele			= 5000		;время деражания объекта в воздухе
+tele_pause				= 5000		;пауза перед тем как снова поднять упавший объект	
+
+ignore_light		= true
+
+visible_by_detector = off
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ветер
+blowout_wind		= on
+
+blowout_wind_time_start     = 0
+blowout_wind_time_peak      = 800
+blowout_wind_time_end		= 1001; 2499
+blowout_wind_power			= 0.5			;сила поднимаего ветра (от 0 до 1), в момент blowout_wind_time_peak 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;рождение артефактов во время срабатывания
+spawn_blowout_artefacts = off   ;off
+
+;artefact_spawn_probability = 1				;вероятность, что во время срабатывания аномалии будет рожден артефакт
+;artefact_spawn_particles = anomaly2\pux_blast	;партиклы, которые отыграются на месте рождения артефакта (опционально)
+;artefact_born_sound =  anomaly\pux_blast		;звук, который отыграются на месте рождения артефакта (опционально)
+
+throw_out_power = 50			;импульс с которым артефакт будет выброшен из зоны в произвольном направлении
+artefact_spawn_height = 3		;(м) высота на центром зоны где будет рожден артефакт
+
+;;;;;;;;;;;;;;Зона "Души сталкера";;;;;;;;;;;;;;
+[soul_good]
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\soul_good"
+$prefetch 		= 16
+class			= Z_MBALD
+
+ef_anomaly_type			= 1
+ef_weapon_type			= 13
+
+sound			= anomaly\no_sound
+;postprocess		= enegry_false
+
+artefacts			= ;af_shubin_artgood, 0.99
+BirthProbability	= ;0.9
+
+
+;----------- Anomaly settings -----------------------
+min_start_power		= 0
+max_start_power		= 0
+attenuation			= 0
+period				= 0
+min_artefact_count	= 0
+max_artefact_count	= 0
+;artefact_spawn_idle	= 0  ;насколько часто спонить артефакты в офлайне, в часах
+;artefact_spawn_rnd	= 0  ;вероятность заспавнить артефакт в процентах.
+
+idle_particles		= mauvais\artgood_zone
+blowout_particles	=  ;реакция на болт - эффект аномалии при выбросе энергии ( если вы в нее зайдете
+tearing_particles	= 
+torn_particles      = 
+
+hit_small_particles			=   ;эффект малого удара аномалии
+hit_big_particles			= ;получение хита - эффект полного удара аномалии
+idle_small_particles		=
+idle_big_particles			= 
+entrance_small_particles	= 
+entrance_big_particles		= 
+
+tele_particles_small		= 
+tele_particles_big			= 	
+
+
+idle_sound			= anomaly\krest_moan_2a;  							;постоянный звук
+blowout_sound		= anomaly\no_sound;во время выброса(удара) в центре аномалии	
+hit_sound			= anomaly\no_sound		;на персонаже, когда тот получает хит
+body_tearing_sound	= anomaly\no_sound;			;звук разрывания трупа
+entrance_sound		= anomaly\no_sound;						;при попадании объекта в аномалию
+idle_sound_delay		= 0
+
+hit_type		    = telepatic
+hit_impulse_scale	= 0			;соотношение физического импульса и силы хита
+effective_radius	= 0 ;размер радиуса в процентах от оригинального, где действует зона
+actor_blowout_radius_percent	= 0
+
+disable_time		= -1	;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time_small	= -1		;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
+disable_idle_time	= -1;время отключения idle партиклов
+
+ignore_nonalive		= true
+ignore_small		= true
+ignore_artefacts	= true
+
+blowout_light		= off
+light_color		    = 0,0,0
+light_range		    = 0.0
+light_time 		    = 0.8;0.35
+light_height		= -5			;подъем источника света на высоту
+
+idle_light			= off
+idle_light_range			= 0.0
+idle_light_range_delta 		= 0.0
+idle_light_anim				= 
+idle_light_height			= -5			;подъем источника света на высоту
+
+awaking_time		= -1;800;1000
+blowout_time		= -1;1000	; время выброса энергии аномалии
+accamulate_time		= -1;500
+
+;blowout_light_time		= -1;800 ; свет при выбросе энергии аномалии
+;blowout_explosion_time	= -1;800 ; время взрыва энергии аномалии
+
+;параметры телекинеза для зоны
+;throw_in_impulse			= 4000	;сила втягивания для единичной массы на расстоянии один метр
+;throw_out_impulse				= 1500			;сила выбрасывания взрывом
+;throw_in_impulse_alive			= 600	;сила импульса втягивания для живых
+;throw_in_atten					= 2.2	;3;коэфф. затягивания (чем меньше, тем плавнее затягивает)
+;throw_in_atten				= 		8;8			;коэфф. затягивания (чем меньше, тем плавнее затягивает)
+;blowout_radius_percent		= 		0.8		;радиус (в процентах от всего радиуса) непосредственно выброса
+;actor_blowout_radius_percent=		0.05
+
+;tele_height				= 0.05;	3.5	;высота подъема телекинеза 
+;time_to_tele			= 5000		;время деражания объекта в воздухе
+;tele_pause				= 5000		;пауза перед тем как снова поднять упавший объект	
+
+ignore_light		= true
+
+visible_by_detector = off
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ветер
+blowout_wind		= off
+
+blowout_wind_time_start     = 0
+blowout_wind_time_peak      = 800
+blowout_wind_time_end		= 1001; 2499
+blowout_wind_power			= 0.5			;сила поднимаего ветра (от 0 до 1), в момент blowout_wind_time_peak 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;рождение артефактов во время срабатывания
+spawn_blowout_artefacts = off   ;off
+
+;artefact_spawn_probability = 1				;вероятность, что во время срабатывания аномалии будет рожден артефакт
+;artefact_spawn_particles = anomaly2\pux_blast	;партиклы, которые отыграются на месте рождения артефакта (опционально)
+;artefact_born_sound =  anomaly\pux_blast		;звук, который отыграются на месте рождения артефакта (опционально)
+
+;throw_out_power = 0		;импульс с которым артефакт будет выброшен из зоны в произвольном направлении
+;artefact_spawn_height = 0		;(м) высота на центром зоны где будет рожден артефакт
+
+;;;;;;;;;;;;;;Зона "Души мародёра";;;;;;;;;;;;;;
+[soul_bad]
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\soul_bad"
+$prefetch 		= 16
+class			= Z_MBALD
+
+ef_anomaly_type			= 1
+ef_weapon_type			= 13
+
+sound			= anomaly\no_sound
+;postprocess		= mosquito_bald
+
+artefacts			= ;af_shubin_artgood, 0.99
+BirthProbability	= ;0.9
+
+
+;----------- Anomaly settings -----------------------
+min_start_power		= 0
+max_start_power		= 0
+attenuation			= 0
+period				= 0
+min_artefact_count	= 0
+max_artefact_count	= 0
+;artefact_spawn_idle	= 0  ;насколько часто спонить артефакты в офлайне, в часах
+;artefact_spawn_rnd	= 0  ;вероятность заспавнить артефакт в процентах.
+
+idle_particles		= mauvais\artbad_zone
+blowout_particles	=  ;реакция на болт - эффект аномалии при выбросе энергии ( если вы в нее зайдете
+tearing_particles	= 
+torn_particles      = 
+
+hit_small_particles			=   ;эффект малого удара аномалии
+hit_big_particles			= ;получение хита - эффект полного удара аномалии
+idle_small_particles		=
+idle_big_particles			= 
+entrance_small_particles	= 
+entrance_big_particles		= 
+
+tele_particles_small		= 
+tele_particles_big			= 	
+
+
+idle_sound			= anomaly\krest_moan_2b;  							;постоянный звук
+blowout_sound		= anomaly\no_sound;во время выброса(удара) в центре аномалии	
+hit_sound			= anomaly\no_sound		;на персонаже, когда тот получает хит
+body_tearing_sound	= anomaly\no_sound;			;звук разрывания трупа
+entrance_sound		= anomaly\no_sound;						;при попадании объекта в аномалию
+
+hit_type		    = telepatic
+hit_impulse_scale	= 0			;соотношение физического импульса и силы хита
+effective_radius	= 0 ;размер радиуса в процентах от оригинального, где действует зона
+actor_blowout_radius_percent	= 0
+
+disable_time		= 0	;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time_small	= 0		;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
+disable_idle_time	= 0;время отключения idle партиклов
+
+ignore_nonalive		= true
+ignore_small		= true
+ignore_artefacts	= true
+
+blowout_light		= off
+light_color		    = 0,0,0
+light_range		    = 0.0
+light_time 		    = 0.8;0.35
+light_height		= -5			;подъем источника света на высоту
+
+idle_light			= off
+idle_light_range			= 0.0
+idle_light_range_delta 		= 0.0
+idle_light_anim				= 
+idle_light_height			= -5			;подъем источника света на высоту
+
+awaking_time		= -1;800;1000
+blowout_time		= -1;1000	; время выброса энергии аномалии
+accamulate_time		= -1;500
+
+;blowout_light_time		= -1;800 ; свет при выбросе энергии аномалии
+;blowout_explosion_time	= -1;800 ; время взрыва энергии аномалии
+
+;параметры телекинеза для зоны
+;throw_in_impulse			= 4000	;сила втягивания для единичной массы на расстоянии один метр
+;throw_out_impulse				= 1500			;сила выбрасывания взрывом
+;throw_in_impulse_alive			= 600	;сила импульса втягивания для живых
+;throw_in_atten					= 2.2	;3;коэфф. затягивания (чем меньше, тем плавнее затягивает)
+;throw_in_atten				= 		8;8			;коэфф. затягивания (чем меньше, тем плавнее затягивает)
+;blowout_radius_percent		= 		0.8		;радиус (в процентах от всего радиуса) непосредственно выброса
+;actor_blowout_radius_percent=		0.05
+
+;tele_height				= 0.05;	3.5	;высота подъема телекинеза 
+;time_to_tele			= 5000		;время деражания объекта в воздухе
+;tele_pause				= 5000		;пауза перед тем как снова поднять упавший объект	
+
+ignore_light		= true
+
+visible_by_detector = off
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ветер
+blowout_wind		= off
+
+blowout_wind_time_start     = 0
+blowout_wind_time_peak      = 800
+blowout_wind_time_end		= 1001; 2499
+blowout_wind_power			= 0.5			;сила поднимаего ветра (от 0 до 1), в момент blowout_wind_time_peak 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;рождение артефактов во время срабатывания
+spawn_blowout_artefacts = off   ;off
+
+;artefact_spawn_probability = 1				;вероятность, что во время срабатывания аномалии будет рожден артефакт
+;artefact_spawn_particles = anomaly2\pux_blast	;партиклы, которые отыграются на месте рождения артефакта (опционально)
+;artefact_born_sound =  anomaly\pux_blast		;звук, который отыграются на месте рождения артефакта (опционально)
+
+;throw_out_power = 0		;импульс с которым артефакт будет выброшен из зоны в произвольном направлении
+;artefact_spawn_height = 0		;(м) высота на центром зоны где будет рожден артефакт
+
+;;;;;;;;;;;;;;Зона нахождения души сталкера;;;;;;;;;;;;;;
+[find_good]
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\find_good"
+$prefetch 		= 16
+class			= Z_MBALD
+
+ef_anomaly_type			= 1
+ef_weapon_type			= 13
+
+sound			= anomaly\no_sound
+;postprocess		= mosquito_bald
+
+artefacts			= 
+BirthProbability	= ;0.9
+
+
+;----------- Anomaly settings -----------------------
+min_start_power		= 0
+max_start_power		= 0
+attenuation			= 0
+period				= 0
+min_artefact_count	= 0
+max_artefact_count	= 0
+
+idle_particles		= mauvais\krest_elm_good
+hit_small_particles			=   ;эффект малого удара аномалии
+hit_big_particles			= ;получение хита - эффект полного удара аномалии
+idle_small_particles		=
+idle_big_particles			= 
+
+idle_sound			= anomaly\krest_moan_1a;  							;постоянный звук
+hit_sound			= anomaly\no_sound		;на персонаже, когда тот получает хит
+
+hit_type		    = telepatic
+hit_impulse_scale	= 0			;соотношение физического импульса и силы хита
+effective_radius	= 0 ;размер радиуса в процентах от оригинального, где действует зона
+actor_blowout_radius_percent	= 0
+
+disable_time		= 0	;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time_small	= 0		;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
+disable_idle_time	= 0;время отключения idle партиклов
+
+ignore_nonalive		= true
+ignore_small		= true
+ignore_artefacts	= true
+
+blowout_light		= off
+light_color		    = 0,0,0
+light_range		    = 0.0
+light_time 		    = 0.8;0.35
+light_height		= -5			;подъем источника света на высоту
+
+idle_light			= off
+idle_light_range			= 0.0
+idle_light_range_delta 		= 0.0
+idle_light_anim				= 
+idle_light_height			= -5			;подъем источника света на высоту
+
+awaking_time		= -1;800;1000
+blowout_time		= -1;1000	; время выброса энергии аномалии
+accamulate_time		= -1;500
+
+ignore_light		= true
+
+visible_by_detector = off
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ветер
+blowout_wind		= off
+blowout_wind_time_start     = 0
+blowout_wind_time_peak      = 800
+blowout_wind_time_end		= 1001; 2499
+blowout_wind_power			= 0.5			;сила поднимаего ветра (от 0 до 1), в момент blowout_wind_time_peak 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;рождение артефактов во время срабатывания
+spawn_blowout_artefacts = off   ;off
+
+;;;;;;;;;;;;;;Зона нахождения души мародёра;;;;;;;;;;;;;;
+[find_bad]
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\find_bad"
+$prefetch 		= 16
+class			= Z_MBALD
+
+ef_anomaly_type			= 1
+ef_weapon_type			= 13
+
+sound			= anomaly\no_sound
+;postprocess		= mosquito_bald
+
+artefacts			= 
+BirthProbability	= ;0.9
+
+
+;----------- Anomaly settings -----------------------
+min_start_power		= 0
+max_start_power		= 0
+attenuation			= 0
+period				= 0
+min_artefact_count	= 0
+max_artefact_count	= 0
+
+idle_particles		= mauvais\krest_elm_bad
+hit_small_particles			=   ;эффект малого удара аномалии
+hit_big_particles			= ;получение хита - эффект полного удара аномалии
+idle_small_particles		=
+idle_big_particles			= 
+
+idle_sound			= anomaly\krest_moan_1b;  							;постоянный звук
+hit_sound			= anomaly\no_sound		;на персонаже, когда тот получает хит
+
+hit_type		    = telepatic
+hit_impulse_scale	= 0			;соотношение физического импульса и силы хита
+effective_radius	= 0 ;размер радиуса в процентах от оригинального, где действует зона
+actor_blowout_radius_percent	= 0
+
+disable_time		= 0	;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time_small	= 0		;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
+disable_idle_time	= 0;время отключения idle партиклов
+
+ignore_nonalive		= true
+ignore_small		= true
+ignore_artefacts	= true
+
+blowout_light		= off
+light_color		    = 0,0,0
+light_range		    = 0.0
+light_time 		    = 0.8;0.35
+light_height		= -5			;подъем источника света на высоту
+
+idle_light			= off
+idle_light_range			= 0.0
+idle_light_range_delta 		= 0.0
+idle_light_anim				= 
+idle_light_height			= -5			;подъем источника света на высоту
+
+awaking_time		= -1;800;1000
+blowout_time		= -1;1000	; время выброса энергии аномалии
+accamulate_time		= -1;500
+
+ignore_light		= true
+
+visible_by_detector = off
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ветер
+blowout_wind		= off
+blowout_wind_time_start     = 0
+blowout_wind_time_peak      = 800
+blowout_wind_time_end		= 1001; 2499
+blowout_wind_power			= 0.5			;сила поднимаего ветра (от 0 до 1), в момент blowout_wind_time_peak 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;рождение артефактов во время срабатывания
+spawn_blowout_artefacts = off   ;off

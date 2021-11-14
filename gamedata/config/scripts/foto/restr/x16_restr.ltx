@@ -1,0 +1,10 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = {-lch_x16_dyshlo} sr_idle@1 %=boryan67.x16_teleport%
+on_info = {+lch_x16_dyshlo} nil %=val_test.del_restr%
+
+[sr_idle@1]
+on_actor_outside = {-lch_x16_dyshlo} sr_idle
+

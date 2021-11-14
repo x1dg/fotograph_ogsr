@@ -1,0 +1,744 @@
+<?xml version='1.0' encoding="windows-1251" ?>
+
+<game_information_portions>
+
+--------------------ambient---------------
+<info_portion id="amb_road">
+<action>val_test.create_ambroad_restr</action>
+<action>val_test.create_reproad_spawn</action>
+<action>mauvais.timer_music_poligon01</action>
+</info_portion>
+
+<info_portion id="skazal_prapor">
+<action>val_test.prapor_dead</action>
+</info_portion>
+
+<info_portion id="skazal_prizrak">
+<action>val_test.prizrak_wot</action>
+</info_portion>
+
+<info_portion id="amb_prip">
+<action>val_test.create_ambprip_restr</action>
+<action>mauvais.timer_music_prip01</action>
+</info_portion>
+
+<info_portion id="amb_pesh">
+<action>val_test.create_ambpesh_restr</action>
+<action>foto.spawn_peschera</action>
+</info_portion>
+
+<info_portion id="amb_swamp">
+<action>val_test.create_ambswamp_restr</action>
+<action>val_test.create_repswamp_spawn</action>
+</info_portion>
+
+<info_portion id="amb_prom">
+<action>val_test.create_ambprom_restr</action>
+<action>val_test.create_repprom_spawn</action>
+<action>mauvais.timer_music_prom01</action>
+</info_portion>
+
+<info_portion id="amb_agro">
+<action>val_test.create_ambagro_restr</action>
+</info_portion>
+
+<info_portion id="amb_bar">
+<action>val_test.create_ambbar_restr</action>
+</info_portion>
+
+<info_portion id="amb_pred">
+<action>val_test.create_ambpred_restr</action>
+<action>val_test.create_reppred_spawn</action>
+</info_portion>
+
+<info_portion id="amb_aver">
+<action>val_test.create_ambaver_restr</action>
+</info_portion>
+
+<info_portion id="intro_aver">
+<action>val_test.create_introaver</action>
+</info_portion>
+
+<info_portion id="amb_brain">
+<action>val_test.create_ambbrain_restr</action>
+<action>fotograf.wpn_trup_x16_spawn</action>
+</info_portion>
+
+<info_portion id="amb_bunk">
+<action>val_test.create_ambbunk_restr</action>
+<action>fotograf.wpn_trup_x10_spawn</action>
+</info_portion>
+
+<info_portion id="amb_labx">
+<action>val_test.create_amblabx_restr</action>
+<action>val_test.create_replabx_spawn</action>
+<action>foto2.irokez_del</action>
+</info_portion>
+
+<info_portion id="amb_dysh">
+<action>val_test.create_ambdysh_restr</action>
+<action>mauvais.timer_music_dyshlo01</action>
+</info_portion>
+
+<info_portion id="amb_dead">
+<action>val_test.create_ambdead_restr</action>
+<action>mauvais.music_deadcity01</action>
+</info_portion>
+
+<info_portion id="amb_sarc">
+<action>val_test.create_ambsarc_restr</action>
+<action>mauvais.music_sar_enter</action>
+<action>fotograf.create_spynet_restr</action>
+<action>fotograf.create_spynet2_restr</action>
+</info_portion>
+
+<info_portion id="actor_maroderubit">
+<action>val_test.actor_killmaroder</action>
+</info_portion>
+
+<info_portion id="actor_naemubit">
+<action>val_test.actor_killnaem</action>
+</info_portion>
+
+<info_portion id="actor_namubit">
+<action>val_test.actor_killnam</action>
+</info_portion>
+
+<info_portion id="actor_naemdead">
+<action>val_test.killpovodyrdead</action>
+</info_portion>
+
+<info_portion id="shpak_buharik">
+<action>val_test.create_bucharik_restr</action>
+</info_portion>
+
+<info_portion id="stihoplet_dead">
+<action>val_test.actor_killpoet</action>
+</info_portion>
+
+<info_portion id="actor_suicid">
+<action>val_test.povodyrdeadactor</action>
+</info_portion>
+
+<info_portion id="ubilisuky">
+<action>val_test.povodyrdeadhimera</action>
+</info_portion>
+
+<info_portion id="ormant_krut">
+<action>val_test.create_actorormant_restr</action>
+</info_portion>
+
+<info_portion id="actor_markubit">
+<action>val_test.actor_killmark</action>
+</info_portion>
+
+<info_portion id="madam_actor">
+<action>val_test.actor_madam</action>
+</info_portion>
+
+<info_portion id="actor_atak">
+<action>val_test.create_actordyshl_restr</action>
+<action>val_test.create_actordysh_restr</action>
+<action>val_test.create_actorprom_restr</action>
+</info_portion>
+----------------------predbannik-----------
+
+<info_portion id="actor_40"></info_portion>
+<info_portion id="ne_snimat"></info_portion>
+<info_portion id="gde_antirad"></info_portion>
+<info_portion id="ne_snimat_1"></info_portion>
+<info_portion id="ne_snimat_2"></info_portion>
+<info_portion id="info_valpred_01"></info_portion>
+<info_portion id="info_valpred_02"></info_portion>
+<info_portion id="info_valpred_03"></info_portion>
+<info_portion id="info_valpred_04"></info_portion>
+<info_portion id="info_valpred_05"></info_portion>
+<info_portion id="info_valpred_06"></info_portion>
+<info_portion id="info_valpred_07"></info_portion>
+<info_portion id="info_valpred_08"></info_portion>
+<info_portion id="info_valpred_09"></info_portion>
+<info_portion id="info_valpred_10"></info_portion>
+<info_portion id="info_valpred_11"></info_portion>
+<info_portion id="info_valpred_12"></info_portion>
+<info_portion id="info_valpred_13"></info_portion>
+<info_portion id="info_valpred_14"></info_portion>
+<info_portion id="info_valpred_15"></info_portion>
+<info_portion id="info_valpred_16"></info_portion>
+<info_portion id="info_valpred_17"></info_portion>
+<info_portion id="info_valpred_18"></info_portion>
+<info_portion id="info_valpred_19"></info_portion>
+<info_portion id="info_valpred_20"></info_portion>
+<info_portion id="info_valpred_21"></info_portion>
+<info_portion id="info_valpred_22"></info_portion>
+<info_portion id="info_valpred_25"></info_portion>
+<info_portion id="info_valpred_26"></info_portion>
+<info_portion id="info_valpred_27"></info_portion>
+<info_portion id="info_valpred_28"></info_portion>
+<info_portion id="info_valpred_29"></info_portion>
+<info_portion id="info_valpred_30"></info_portion>
+<info_portion id="info_valpred_31"></info_portion>
+<info_portion id="info_valpred_32"></info_portion>
+<info_portion id="info_valpred_33"></info_portion>
+<info_portion id="info_valpred_34"></info_portion>
+<info_portion id="info_valpred_35"></info_portion>
+<info_portion id="info_valpred_36"></info_portion>
+<info_portion id="info_valpred_37"></info_portion>
+<info_portion id="info_valpred_38"></info_portion>
+<info_portion id="info_valpred_39"></info_portion>
+<info_portion id="info_valpred_40"></info_portion>
+
+
+----------------------hiding_road-----------------
+
+<info_portion id="osved_skazal"></info_portion>
+<info_portion id="haron_skazal"></info_portion>
+<info_portion id="broun_piluli"></info_portion>
+<info_portion id="dezertir_oblom"></info_portion>
+<info_portion id="edik_oblom"></info_portion>
+<info_portion id="edik_proval"></info_portion>
+<info_portion id="info_valroad_01"></info_portion>
+<info_portion id="info_valroad_02"></info_portion>
+<info_portion id="info_valroad_03"></info_portion>
+<info_portion id="info_valroad_04"></info_portion>
+<info_portion id="info_valroad_05"></info_portion>
+<info_portion id="info_valroad_06"></info_portion>
+<info_portion id="info_valroad_07"></info_portion>
+<info_portion id="info_valroad_08"></info_portion>
+<info_portion id="info_valroad_09"></info_portion>
+<info_portion id="info_valroad_10"></info_portion>
+<info_portion id="info_valroad_11"></info_portion>
+<info_portion id="info_valroad_12"></info_portion>
+<info_portion id="info_valroad_13"></info_portion>
+<info_portion id="info_valroad_14"></info_portion>
+<info_portion id="info_valroad_15"></info_portion>
+<info_portion id="info_valroad_16"></info_portion>
+<info_portion id="info_valroad_17"></info_portion>
+<info_portion id="info_valroad_18"></info_portion>
+<info_portion id="info_valroad_19"></info_portion>
+<info_portion id="info_valroad_20"></info_portion>
+<info_portion id="info_valroad_21"></info_portion>
+<info_portion id="info_valroad_22"></info_portion>
+<info_portion id="info_valroad_23"></info_portion>
+<info_portion id="info_valroad_24"></info_portion>
+<info_portion id="info_valroad_25"></info_portion>
+<info_portion id="info_valroad_26"></info_portion>
+<info_portion id="info_valroad_27"></info_portion>
+<info_portion id="info_valroad_28"></info_portion>
+<info_portion id="info_valroad_29"></info_portion>
+<info_portion id="info_valroad_30"></info_portion>
+<info_portion id="info_valroad_31"></info_portion>
+<info_portion id="info_valroad_32"></info_portion>
+<info_portion id="info_valroad_33"></info_portion>
+<info_portion id="info_valroad_34"></info_portion>
+<info_portion id="info_valroad_35"></info_portion>
+<info_portion id="info_valroad_36"></info_portion>
+<info_portion id="info_valroad_37"></info_portion>
+<info_portion id="info_valroad_38"></info_portion>
+<info_portion id="info_valroad_39"></info_portion>
+<info_portion id="info_valroad_40"></info_portion>
+<info_portion id="info_valroad_41"></info_portion>
+<info_portion id="info_valroad_42"></info_portion>
+<info_portion id="info_valroad_43"></info_portion>
+<info_portion id="info_valroad_44"></info_portion>
+<info_portion id="info_valroad_45"></info_portion>
+<info_portion id="info_valroad_46"></info_portion>
+
+----------------------swamp-----------------------
+
+<info_portion id="info_valswamp_01"></info_portion>
+<info_portion id="info_valswamp_02"></info_portion>
+<info_portion id="info_valswamp_03"></info_portion>
+<info_portion id="info_valswamp_04"></info_portion>
+<info_portion id="info_valswamp_05"></info_portion>
+<info_portion id="info_valswamp_06"></info_portion>
+<info_portion id="info_valswamp_07"></info_portion>
+<info_portion id="info_valswamp_08"></info_portion>
+<info_portion id="info_valswamp_09"></info_portion>
+<info_portion id="info_valswamp_10"></info_portion>
+<info_portion id="info_valswamp_11"></info_portion>
+<info_portion id="info_valswamp_12"></info_portion>
+<info_portion id="info_valswamp_13"></info_portion>
+<info_portion id="info_valswamp_14"></info_portion>
+<info_portion id="info_valswamp_15"></info_portion>
+<info_portion id="info_valswamp_16"></info_portion>
+<info_portion id="info_valswamp_17"></info_portion>
+<info_portion id="info_valswamp_18"></info_portion>
+<info_portion id="info_valswamp_19"></info_portion>
+<info_portion id="info_valswamp_20"></info_portion>
+<info_portion id="info_valswamp_21"></info_portion>
+<info_portion id="info_valswamp_22"></info_portion>
+<info_portion id="info_valswamp_23"></info_portion>
+<info_portion id="info_valswamp_24"></info_portion>
+
+----------------------aver------------------------
+
+<info_portion id="skazal_opoet"></info_portion>
+<info_portion id="naem_les_01_dead"></info_portion>
+<info_portion id="naem_les_02_dead"></info_portion>
+<info_portion id="naem_les_03_dead"></info_portion>
+<info_portion id="naem_les_04_dead"></info_portion>
+<info_portion id="info_valaver_01"></info_portion>
+<info_portion id="info_valaver_02"></info_portion>
+<info_portion id="info_valaver_03"></info_portion>
+<info_portion id="info_valaver_04"></info_portion>
+<info_portion id="info_valaver_05"></info_portion>
+<info_portion id="info_valaver_06"></info_portion>
+<info_portion id="info_valaver_07"></info_portion>
+<info_portion id="info_valaver_08"></info_portion>
+<info_portion id="info_valaver_09"></info_portion>
+<info_portion id="info_valaver_10"></info_portion>
+<info_portion id="info_valaver_11"></info_portion>
+<info_portion id="info_valaver_12"></info_portion>
+<info_portion id="info_valaver_13"></info_portion>
+<info_portion id="info_valaver_14"></info_portion>
+<info_portion id="info_valaver_15"></info_portion>
+<info_portion id="info_valaver_16"></info_portion>
+<info_portion id="info_valaver_17"></info_portion>
+<info_portion id="info_valaver_18"></info_portion>
+<info_portion id="info_valaver_19"></info_portion>
+<info_portion id="info_valaver_20"></info_portion>
+<info_portion id="info_valaver_21"></info_portion>
+<info_portion id="info_valaver_22"></info_portion>
+<info_portion id="info_valaver_23"></info_portion>
+<info_portion id="info_valaver_24"></info_portion>
+<info_portion id="info_valaver_25"></info_portion>
+<info_portion id="info_valaver_26"></info_portion>
+<info_portion id="info_valaver_27"></info_portion>
+<info_portion id="info_valaver_28"></info_portion>
+<info_portion id="info_valaver_29"></info_portion>
+<info_portion id="info_valaver_30"></info_portion>
+
+----------------------promzone--------------------
+
+<info_portion id="maroder_prom_01_dead"></info_portion>
+<info_portion id="maroder_prom_02_dead"></info_portion>
+<info_portion id="maroder_prom_03_dead"></info_portion>
+<info_portion id="actor_luk"></info_portion>
+<info_portion id="shershen_skazal"></info_portion>
+<info_portion id="info_valprom_01"></info_portion>
+<info_portion id="info_valprom_02"></info_portion>
+<info_portion id="info_valprom_03"></info_portion>
+<info_portion id="info_valprom_04"></info_portion>
+<info_portion id="info_valprom_05"></info_portion>
+<info_portion id="info_valprom_06"></info_portion>
+<info_portion id="info_valprom_07"></info_portion>
+<info_portion id="info_valprom_08"></info_portion>
+<info_portion id="info_valprom_09"></info_portion>
+<info_portion id="info_valprom_10"></info_portion>
+<info_portion id="info_valprom_11"></info_portion>
+<info_portion id="info_valprom_12"></info_portion>
+<info_portion id="info_valprom_13"></info_portion>
+<info_portion id="info_valprom_14"></info_portion>
+<info_portion id="info_valprom_15"></info_portion>
+<info_portion id="info_valprom_16"></info_portion>
+<info_portion id="info_valprom_17"></info_portion>
+<info_portion id="info_valprom_18"></info_portion>
+<info_portion id="info_valprom_19"></info_portion>
+<info_portion id="info_valprom_20"></info_portion>
+<info_portion id="info_valprom_21"></info_portion>
+<info_portion id="info_valprom_22"></info_portion>
+<info_portion id="info_valprom_23"></info_portion>
+<info_portion id="info_valprom_24"></info_portion>
+<info_portion id="info_valprom_25"></info_portion>
+<info_portion id="info_valprom_26"></info_portion>
+<info_portion id="info_valprom_27"></info_portion>
+<info_portion id="info_valprom_28"></info_portion>
+<info_portion id="info_valprom_29"></info_portion>
+<info_portion id="info_valprom_30"></info_portion>
+<info_portion id="info_valprom_31"></info_portion>
+<info_portion id="info_valprom_32"></info_portion>
+<info_portion id="info_valprom_33"></info_portion>
+<info_portion id="info_valprom_34"></info_portion>
+<info_portion id="info_valprom_35"></info_portion>
+<info_portion id="info_valprom_36"></info_portion>
+<info_portion id="info_valprom_37"></info_portion>
+<info_portion id="info_valprom_38"></info_portion>
+<info_portion id="info_valprom_39"></info_portion>
+<info_portion id="info_valprom_40"></info_portion>
+<info_portion id="info_valprom_41"></info_portion>
+<info_portion id="info_valprom_42"></info_portion>
+<info_portion id="info_valprom_43"></info_portion>
+<info_portion id="info_valprom_44"></info_portion>
+
+----------------------pripyat---------------------
+
+<info_portion id="info_valprip_01"></info_portion>
+<info_portion id="info_valprip_02"></info_portion>
+<info_portion id="info_valprip_03"></info_portion>
+<info_portion id="info_valprip_04"></info_portion>
+<info_portion id="info_valprip_05"></info_portion>
+<info_portion id="info_valprip_06"></info_portion>
+<info_portion id="info_valprip_07"></info_portion>
+<info_portion id="info_valprip_08"></info_portion>
+<info_portion id="info_valprip_09"></info_portion>
+<info_portion id="info_valprip_10"></info_portion>
+<info_portion id="info_valprip_11"></info_portion>
+<info_portion id="info_valprip_12"></info_portion>
+<info_portion id="info_valprip_13"></info_portion>
+<info_portion id="info_valprip_14"></info_portion>
+<info_portion id="info_valprip_15"></info_portion>
+<info_portion id="info_valprip_16"></info_portion>
+<info_portion id="info_valprip_17"></info_portion>
+<info_portion id="info_valprip_18"></info_portion>
+<info_portion id="info_valprip_19"></info_portion>
+<info_portion id="info_valprip_20"></info_portion>
+<info_portion id="info_valprip_21"></info_portion>
+<info_portion id="info_valprip_22"></info_portion>
+<info_portion id="info_valprip_23"></info_portion>
+<info_portion id="info_valprip_24"></info_portion>
+<info_portion id="info_valprip_25"></info_portion>
+<info_portion id="info_valprip_26"></info_portion>
+<info_portion id="info_valprip_27"></info_portion>
+<info_portion id="info_valprip_28"></info_portion>
+<info_portion id="info_valprip_29"></info_portion>
+<info_portion id="info_valprip_30"></info_portion>
+<info_portion id="info_valprip_31"></info_portion>
+<info_portion id="info_valprip_32"></info_portion>
+
+----------------------brainlab--------------------
+
+<info_portion id="info_valbrain_01"></info_portion>
+<info_portion id="info_valbrain_02"></info_portion>
+<info_portion id="info_valbrain_03"></info_portion>
+<info_portion id="info_valbrain_04"></info_portion>
+<info_portion id="info_valbrain_05"></info_portion>
+<info_portion id="info_valbrain_06"></info_portion>
+<info_portion id="info_valbrain_07"></info_portion>
+<info_portion id="info_valbrain_08"></info_portion>
+<info_portion id="info_valbrain_09"></info_portion>
+<info_portion id="info_valbrain_10"></info_portion>
+<info_portion id="info_valbrain_11"></info_portion>
+<info_portion id="info_valbrain_12"></info_portion>
+<info_portion id="info_valbrain_13"></info_portion>
+<info_portion id="info_valbrain_14"></info_portion>
+<info_portion id="info_valbrain_15"></info_portion>
+<info_portion id="info_valbrain_16"></info_portion>
+
+----------------------bunker----------------------
+
+<info_portion id="info_valbunk_01"></info_portion>
+<info_portion id="info_valbunk_02"></info_portion>
+<info_portion id="info_valbunk_03"></info_portion>
+<info_portion id="info_valbunk_04"></info_portion>
+<info_portion id="info_valbunk_05"></info_portion>
+<info_portion id="info_valbunk_06"></info_portion>
+<info_portion id="info_valbunk_07"></info_portion>
+<info_portion id="info_valbunk_08"></info_portion>
+<info_portion id="info_valbunk_09"></info_portion>
+<info_portion id="info_valbunk_10"></info_portion>
+
+----------------------labx18----------------------
+
+<info_portion id="prof_skazal"></info_portion>
+<info_portion id="info_vallabx_01"></info_portion>
+<info_portion id="info_vallabx_02"></info_portion>
+<info_portion id="info_vallabx_03"></info_portion>
+<info_portion id="info_vallabx_04"></info_portion>
+<info_portion id="info_vallabx_05"></info_portion>
+<info_portion id="info_vallabx_06"></info_portion>
+<info_portion id="info_vallabx_07"></info_portion>
+<info_portion id="info_vallabx_08"></info_portion>
+<info_portion id="info_vallabx_09"></info_portion>
+<info_portion id="info_vallabx_10"></info_portion>
+<info_portion id="info_vallabx_11"></info_portion>
+<info_portion id="info_vallabx_12"></info_portion>
+
+----------------------dyshlo----------------------
+
+<info_portion id="actor_terminator"></info_portion>
+<info_portion id="info_valdysh_01"></info_portion>
+<info_portion id="info_valdysh_02"></info_portion>
+<info_portion id="info_valdysh_03"></info_portion>
+<info_portion id="info_valdysh_04"></info_portion>
+<info_portion id="info_valdysh_05"></info_portion>
+<info_portion id="info_valdysh_06"></info_portion>
+<info_portion id="info_valdysh_07"></info_portion>
+<info_portion id="info_valdysh_08"></info_portion>
+<info_portion id="info_valdysh_09"></info_portion>
+<info_portion id="info_valdysh_10"></info_portion>
+<info_portion id="info_valdysh_11"></info_portion>
+<info_portion id="info_valdysh_12"></info_portion>
+<info_portion id="info_valdysh_13"></info_portion>
+<info_portion id="info_valdysh_14"></info_portion>
+<info_portion id="info_valdysh_15"></info_portion>
+<info_portion id="info_valdysh_16"></info_portion>
+<info_portion id="info_valdysh_17"></info_portion>
+<info_portion id="info_valdysh_18"></info_portion>
+<info_portion id="info_valdysh_19"></info_portion>
+<info_portion id="info_valdysh_20"></info_portion>
+<info_portion id="info_valdysh_21"></info_portion>
+<info_portion id="info_valdysh_22"></info_portion>
+<info_portion id="info_valdysh_23"></info_portion>
+<info_portion id="info_valdysh_24"></info_portion>
+
+----------------------peshera---------------------
+
+<info_portion id="info_valpesh_01"></info_portion>
+<info_portion id="info_valpesh_02"></info_portion>
+<info_portion id="info_valpesh_03"></info_portion>
+<info_portion id="info_valpesh_04"></info_portion>
+<info_portion id="info_valpesh_05"></info_portion>
+<info_portion id="info_valpesh_06"></info_portion>
+
+----------------------deadcity--------------------
+
+<info_portion id="naem_mg_01_dead"></info_portion>
+<info_portion id="naem_mg_02_dead"></info_portion>
+<info_portion id="naem_mg_03_dead"></info_portion>
+<info_portion id="info_valdead_01"></info_portion>
+<info_portion id="info_valdead_02"></info_portion>
+<info_portion id="info_valdead_03"></info_portion>
+<info_portion id="info_valdead_04"></info_portion>
+<info_portion id="info_valdead_05"></info_portion>
+<info_portion id="info_valdead_06"></info_portion>
+<info_portion id="info_valdead_07"></info_portion>
+<info_portion id="info_valdead_08"></info_portion>
+<info_portion id="info_valdead_09"></info_portion>
+<info_portion id="info_valdead_10"></info_portion>
+<info_portion id="info_valdead_11"></info_portion>
+<info_portion id="info_valdead_12"></info_portion>
+<info_portion id="info_valdead_13"></info_portion>
+<info_portion id="info_valdead_14"></info_portion>
+<info_portion id="info_valdead_15"></info_portion>
+<info_portion id="info_valdead_16"></info_portion>
+<info_portion id="info_valdead_17"></info_portion>
+<info_portion id="info_valdead_18"></info_portion>
+<info_portion id="info_valdead_19"></info_portion>
+<info_portion id="info_valdead_20"></info_portion>
+<info_portion id="info_valdead_21"></info_portion>
+<info_portion id="info_valdead_22"></info_portion>
+
+----------------------agro------------------------
+
+<info_portion id="info_valagro_01"></info_portion>
+<info_portion id="info_valagro_02"></info_portion>
+<info_portion id="info_valagro_03"></info_portion>
+<info_portion id="info_valagro_04"></info_portion>
+<info_portion id="info_valagro_05"></info_portion>
+<info_portion id="info_valagro_06"></info_portion>
+<info_portion id="info_valagro_07"></info_portion>
+<info_portion id="info_valagro_08"></info_portion>
+<info_portion id="info_valagro_09"></info_portion>
+<info_portion id="info_valagro_10"></info_portion>
+
+----------------------bar-------------------------
+
+<info_portion id="naem_bar_01_dead"></info_portion>
+<info_portion id="naem_bar_02_dead"></info_portion>
+<info_portion id="naem_bar_03_dead"></info_portion>
+<info_portion id="levsha_skazal"></info_portion>
+<info_portion id="levsha_tronulsa">
+<action>mauvais.music_bar01</action>
+</info_portion>
+<info_portion id="levsha_zahvat"></info_portion>
+<info_portion id="actor_udral"></info_portion>
+<info_portion id="t_port"></info_portion>
+<info_portion id="info_valbar_01"></info_portion>
+<info_portion id="info_valbar_02"></info_portion>
+<info_portion id="info_valbar_03"></info_portion>
+<info_portion id="info_valbar_04"></info_portion>
+<info_portion id="info_valbar_05"></info_portion>
+<info_portion id="info_valbar_06"></info_portion>
+
+---------------------stories---------------------
+
+<info_portion id="story_1">
+	<article>story_1</article>
+</info_portion>
+
+<info_portion id="story_2">
+	<article>story_2</article>
+</info_portion>
+
+<info_portion id="story_3">
+	<article>story_3</article>
+</info_portion>
+
+<info_portion id="story_4">
+	<article>story_4</article>
+</info_portion>
+
+<info_portion id="story_5">
+	<article>story_5</article>
+</info_portion>
+
+<info_portion id="story_6">
+	<article>story_6</article>
+</info_portion>
+
+<info_portion id="story_7">
+	<article>story_7</article>
+</info_portion>
+
+<info_portion id="story_8">
+	<article>story_8</article>
+</info_portion>
+
+<info_portion id="story_9">
+	<article>story_9</article>
+</info_portion>
+
+<info_portion id="story_10">
+	<article>story_10</article>
+</info_portion>
+
+<info_portion id="story_11">
+	<article>story_11</article>
+</info_portion>
+
+<info_portion id="story_12">
+	<article>story_12</article>
+</info_portion>
+	
+<info_portion id="story_13">
+	<article>story_13</article>
+</info_portion>
+
+<info_portion id="story_14">
+	<article>story_14</article>
+</info_portion>
+
+<info_portion id="story_15">
+	<article>story_15</article>
+</info_portion>
+
+<info_portion id="story_16">
+	<article>story_16</article>
+</info_portion>
+
+<info_portion id="story_17">
+	<article>story_17</article>
+</info_portion>
+
+<info_portion id="story_18">
+	<article>story_18</article>
+</info_portion>
+
+<info_portion id="story_19">
+	<article>story_19</article>
+</info_portion>
+
+<info_portion id="story_20">
+	<article>story_20</article>
+</info_portion>
+
+<info_portion id="story_21">
+	<article>story_21</article>
+</info_portion>
+
+<info_portion id="story_22">
+	<article>story_22</article>
+</info_portion>
+
+----------------------npc---------------
+
+<info_portion id="persona_1">
+	<article>persona_1</article>
+</info_portion>
+
+<info_portion id="persona_2">
+	<article>persona_2</article>
+</info_portion>
+
+<info_portion id="persona_3">
+	<article>persona_3</article>
+</info_portion>
+
+<info_portion id="persona_4">
+	<article>persona_4</article>
+</info_portion>
+
+<info_portion id="persona_5">
+	<article>persona_5</article>
+</info_portion>
+
+<info_portion id="persona_6">
+	<article>persona_6</article>
+</info_portion>
+
+<info_portion id="persona_7">
+	<article>persona_7</article>
+</info_portion>
+
+<info_portion id="persona_8">
+	<article>persona_8</article>
+</info_portion>
+
+<info_portion id="persona_9">
+	<article>persona_9</article>
+</info_portion>
+
+<info_portion id="persona_10">
+	<article>persona_10</article>
+</info_portion>
+
+<info_portion id="persona_11">
+	<article>persona_11</article>
+</info_portion>
+
+<info_portion id="persona_12">
+	<article>persona_12</article>
+</info_portion>
+	
+<info_portion id="persona_13">
+	<article>persona_13</article>
+</info_portion>
+
+<info_portion id="persona_14">
+	<article>persona_14</article>
+</info_portion>
+
+<info_portion id="persona_15">
+	<article>persona_15</article>
+</info_portion>
+
+<info_portion id="persona_16">
+	<article>persona_16</article>
+</info_portion>
+
+<info_portion id="persona_17">
+	<article>persona_17</article>
+</info_portion>
+
+<info_portion id="persona_18">
+	<article>persona_18</article>
+</info_portion>
+
+<info_portion id="persona_19">
+	<article>persona_19</article>
+</info_portion>
+
+<info_portion id="persona_20">
+	<article>persona_20</article>
+</info_portion>
+
+<info_portion id="persona_21">
+	<article>persona_21</article>
+</info_portion>
+
+<info_portion id="persona_22">
+	<article>persona_22</article>
+</info_portion>
+
+<info_portion id="persona_23">
+	<article>persona_23</article>
+</info_portion>
+
+<info_portion id="persona_24">
+	<article>persona_24</article>
+</info_portion>
+
+<info_portion id="persona_25">
+	<article>persona_25</article>
+</info_portion>
+
+
+</game_information_portions>
+
+
+
+
+
+
+
+

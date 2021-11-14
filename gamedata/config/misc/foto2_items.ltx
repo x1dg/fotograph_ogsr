@@ -1,0 +1,1512 @@
+[sound_object01]:identity_immunities 
+ cform = skeleton 
+ GroupControlSection = spawn_group 
+ $spawn = "physics\object" 
+ $prefetch = 8 
+ class = O_PHYS_S 
+ visual = physics\equipment_cache\equipment_rucksack_01_case 
+ description = "Громкоговоритель" 
+ inv_name = Матюгальник 
+ inv_name_short = Матюгальник 
+ inv_weight = 10 
+ inv_grid_width = 0 
+ inv_grid_height = 0 
+ inv_grid_x = 0 
+ inv_grid_y = 0 
+ remove_time = 9998 
+ script_binding = bind_physic_object.init 
+ custom_data = scripts\new_sound01.ltx
+
+[sound_object_zov1]:sound_object01
+ custom_data = scripts\sound_object_zov1.ltx
+
+[sound_object_zov2]:sound_object01 
+ custom_data = scripts\sound_object_zov2.ltx
+
+[academ_flash]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\dar_pass_flash"
+;$prefetch 			= 32
+class				= II_ATTCH
+cform				= skeleton
+visual				= equipments\item_flash_2.ogf
+radius				= 1
+quest_item			= true
+
+inv_name			= "Флешка академика"
+inv_name_short		= 
+inv_weight			= 0
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 3
+inv_grid_y			= 19
+cost				= 10000
+;------------------------------------------------Teleports---------------------- 
+
+[c_tp1]:zone_teleport
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= 408.085
+poz_y				= 13.240
+poz_z				= -452.417
+rotate = 3.8
+
+[c_tp1b]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= -104.210
+poz_y				= 1.051
+poz_z				= 508.20
+rotate = 3.8
+
+[c_tp2]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= 0.299
+poz_y				= 16.058
+poz_z				= -414.684
+rotate = 3.8      
+
+[c_tp2b]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= 276.793
+poz_y				= 3.611
+poz_z				= 287.174
+rotate = 3.8
+
+[c_tp3]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= 198.753
+poz_y				= 4.032
+poz_z				= -295.714
+rotate = 3.8      
+
+[c_tp3b]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= -624.608
+poz_y				= 14.287
+poz_z				= -177.809
+rotate = 3.8 
+
+[c_tp4]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= -257.545
+poz_y				= 19.886
+poz_z				= 263.024
+rotate = 3.8
+
+[c_tp4b]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= -303.241
+poz_y				= 0.109
+poz_z				= -366.774
+rotate = 3.8
+
+[c_tp5]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= 91.019
+poz_y				= 0.208
+poz_z				= -62.616
+rotate = 3.8     
+
+[c_tp5b]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= 114.979
+poz_y				= 24.538
+poz_z				= -19.755 
+rotate = 3.8
+
+[c_tp6]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= -41.637
+poz_y				= 19.183
+poz_z				= 9.410
+rotate = 3.8     
+
+[c_tp6b]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= -333.241
+poz_y				= -0.247
+poz_z				= -168.744
+rotate = 3.8
+
+[c_tp7]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= 14.851
+poz_y				= -9.853
+poz_z				= 233.936
+rotate = 3.8     
+
+[c_tp7b]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= -244.599
+poz_y				= 13.413
+poz_z				= -266.352
+rotate = 3.8
+
+[c_tp8]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= 216.262
+poz_y				= 22.459
+poz_z				= 259.658
+rotate = 3.8     
+
+[c_tp8b]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= -160.858
+poz_y				= -2.397
+poz_z				= 33.403
+rotate = 3.8
+
+[c_tp9]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= 154.305
+poz_y				= -2.275
+poz_z				= -57.626
+rotate = 3.8     
+
+[c_tp9b]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= -22.330
+poz_y				= -8.989
+poz_z				= 15.783 
+rotate = 3.8
+
+[c_tp10]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= -37.773
+poz_y				= -23.520
+poz_z				= 1.403
+rotate = 3.8     
+
+[c_tp10b]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= -2.765
+poz_y				= 16.685
+poz_z				= -0.116 
+rotate = 3.8
+
+[c_tp11]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= 16.261
+poz_y				= -12.430
+poz_z				= 18.663
+rotate = 3.8     
+
+[c_tp11b]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= -57.349
+poz_y				= 30.951
+poz_z				= 408.980 
+rotate = 3.8 
+
+[c_tp12]:zone_teleport 
+teleport			= standart
+script_binding          	= bind_mteleport.bind
+radius				= 1
+z_radius			= 1
+poz_x				= -375.731
+poz_y				= 2.247
+poz_z				= 67.153
+rotate = 3.8
+;-----------------------------Tayniki----------------------------
+
+[c_box]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\inventory box"
+class				= O_INVBOX
+cform				= skeleton
+visual				= equipments\item_rukzag.ogf
+script_binding      = bind_physic_object.init
+
+[ruk1]:c_box
+radius = 1
+custom_data = scripts\c_box1.ltx
+
+[ruk2]:c_box
+radius = 1
+custom_data = scripts\c_box2.ltx
+
+[ruk3]:c_box
+radius = 1
+custom_data = scripts\c_box3.ltx
+
+[ruk4]:c_box
+radius = 1
+custom_data = scripts\c_box4.ltx
+
+[ruk5]:c_box
+radius = 1
+custom_data = scripts\c_box5.ltx
+
+[ruk6]:c_box
+radius = 1
+custom_data = scripts\c_box6.ltx
+
+[ruk7]:c_box
+radius = 1
+custom_data = scripts\c_box7.ltx
+
+[ruk8]:c_box
+radius = 1
+custom_data = scripts\c_box8.ltx
+
+[ruk9]:c_box
+radius = 1
+custom_data = scripts\c_box9.ltx
+
+[ruk10]:c_box
+radius = 1
+custom_data = scripts\c_box10.ltx
+
+[ruk11]:c_box
+radius = 1
+custom_data = scripts\c_box11.ltx
+
+[seaman_ruk]:c_box
+radius = 1
+custom_data = scripts\seaman_ruk.ltx
+
+[prom_zasada]:c_box
+visual = equipments\exoskelet_ne_skunk	
+radius = 1
+
+;--------------------------------------------------------------Docs------------------
+
+[letter_greta]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\kruglov_flash"
+$prefetch 			= 32
+class				= D_SIMDET
+cform				= skeleton
+visual				= amk\item_zapiska.ogf
+radius				= 10	;15
+buzzer_radius		= 1.5
+noise				= zone_mosquito_bald       ;detectors\geiger_noise_loop 
+buzzer				= zone_mosquito_bald       ;detectors\DA-2_alarm_loop
+quest_item			= true
+
+ef_detector_type	= 1
+
+;описание распознаваемых детектором зон
+zone_class_1		= zone_mosquito_bald
+zone_sound_1_		= detectors\DA-2_beep1
+zone_min_freq_1		= 0.1	;0.5
+zone_max_freq_1		= 40
+	
+zone_class_2		= zone_mincer
+zone_sound_2_		= detectors\DA-2_beep1 
+zone_min_freq_2		= 0.1
+zone_max_freq_2		= 20
+
+zone_class_3		= zone_radioactive
+zone_sound_3_		= detectors\geiger_click3 
+zone_min_freq_3		= 1
+zone_max_freq_3		= 20
+
+zone_class_4		= zone_gravi_zone
+zone_sound_4_		= detectors\DA-2_beep1
+zone_min_freq_4		= 0.5
+zone_max_freq_4		= 30
+
+description			= Письмо
+
+inv_name			= Письмо
+inv_name_short		= 
+inv_weight			= 0
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 12
+inv_grid_y			= 19
+cost				= 100
+;belt				= true;
+default_to_ruck		= false
+
+attach_angle_offset		= -0.160570,-1.425061,-0.361283
+attach_position_offset	= 0.160570,-0.060214,0.020071
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[device_meter]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\device_meter"
+$prefetch 			= 32
+class				= D_SIMDET
+cform				= skeleton
+visual				= equipments\item_decoder.ogf
+radius				= 10	;15
+buzzer_radius		= 1.5
+noise				= zone_mosquito_bald       ;detectors\geiger_noise_loop 
+buzzer				= zone_mosquito_bald       ;detectors\DA-2_alarm_loop
+quest_item			= true
+
+ef_detector_type	= 1
+
+;описание распознаваемых детектором зон
+zone_class_1		= zone_mosquito_bald
+zone_sound_1_		= detectors\DA-2_beep1
+zone_min_freq_1		= 0.1	;0.5
+zone_max_freq_1		= 40
+	
+zone_class_2		= zone_mincer
+zone_sound_2_		= detectors\DA-2_beep1 
+zone_min_freq_2		= 0.1
+zone_max_freq_2		= 20
+
+zone_class_3		= zone_radioactive
+zone_sound_3_		= detectors\geiger_click3 
+zone_min_freq_3		= 1
+zone_max_freq_3		= 20
+
+zone_class_4		= zone_gravi_zone
+zone_sound_4_		= detectors\DA-2_beep1
+zone_min_freq_4		= 0.5
+zone_max_freq_4		= 30
+
+description			= 
+
+inv_name			= "Волновой детектор"
+inv_name_short		= "Волновой детектор"
+inv_weight			= 0
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 4
+inv_grid_y			= 35
+cost				= 1500	;30
+;belt				= true;
+default_to_ruck		= false
+
+attach_angle_offset		= -0.160570,-1.425061,-0.361283
+attach_position_offset	= 0.160570,-0.060214,0.020071
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[zhurnal]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn    = "devices\quest_items\book_zombi"
+$prefetch   = 32
+class   = II_ATTCH
+cform				= skeleton
+visual				= equipments\item_book_01.ogf
+radius				= 1
+;script_binding		= stalker.object_init
+quest_item			= true
+
+description         = "Журнал наблюдений за изменениями погоды после выбросов"
+
+inv_name			= Журнал
+inv_name_short		= 
+inv_weight			= 0
+inv_grid_width      = 2
+inv_grid_height     = 1
+inv_grid_x          = 13
+inv_grid_y          = 23
+cost    = 100
+
+[shema_radio]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\part1"
+;$prefetch 			= 32
+class				= II_ATTCH
+cform				= skeleton
+visual				= equipments\item_document_2.ogf
+radius				= 1
+;script_binding		= stalker.object_init
+quest_item			= false
+
+description			= "Схема радиоусилителя электрическая принципиальная"
+
+inv_name			= Схема
+inv_name_short		= 
+inv_weight			= 0.5
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 6
+inv_grid_y			= 18
+cost				= 0
+
+[usilok]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\resiver"
+;$prefetch 			= 32
+class				= II_ATTCH
+cform				= skeleton
+visual				= equipments\item_transiver
+radius				= 1
+;script_binding		= stalker.object_init
+quest_item			= true
+
+description			= usilradio_desc
+
+inv_name			= usilradio_name
+inv_name_short		= 
+inv_weight			= 6
+
+inv_grid_width		= 2
+inv_grid_height		= 2
+inv_grid_x			= 16
+inv_grid_y			= 33
+cost				= 5000
+
+[c_doc]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\doc2"
+;$prefetch 			= 32
+class				= II_ATTCH
+cform				= skeleton
+visual				= amk\item_zapiska.ogf
+radius				= 1
+;script_binding		= stalker.object_init
+quest_item			= true
+description			= doc2_desc
+inv_name			= doc2_name
+inv_name_short		= doc2_name
+inv_weight			= 0
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 11
+inv_grid_y			= 40
+cost				= 1000
+
+[c_doc1]:c_doc
+description			= c_doc1_desc
+inv_name		= Памятка №1
+inv_name_short		= Памятка №1
+
+[c_doc2]:c_doc
+description			= c_doc2_desc
+inv_name		= Памятка №2
+inv_name_short		= Памятка №2
+
+[c_doc3]:c_doc
+description			= c_doc3_desc
+inv_name		= Памятка №3
+inv_name_short		= Памятка №3
+
+[c_doc4]:c_doc
+description			= c_doc4_desc
+inv_name		= Памятка №4
+inv_name_short		= Памятка №4
+
+[c_doc5]:c_doc
+description			= c_doc5_desc
+inv_name		= Памятка №5
+inv_name_short		= Памятка №5
+
+[c_doc6]:c_doc
+description			= c_doc6_desc
+inv_name		= Памятка №6
+inv_name_short		= Памятка №6
+
+[c_doc7]:c_doc
+description			= c_doc7_desc
+inv_name		= Памятка №7
+inv_name_short		= Памятка №7
+
+[c_doc8]:c_doc
+description			= c_doc8_desc
+inv_name		= Памятка №8
+inv_name_short		= Памятка №8
+
+[c_doc9]:c_doc
+description			= c_doc9_desc
+inv_name		= Памятка №9
+inv_name_short		= Памятка №9
+
+[c_doc10]:c_doc
+description			= c_doc10_desc
+inv_name		= Памятка №10
+inv_name_short		= Памятка №10
+
+[c_doc11]:c_doc
+description			= c_doc11_desc
+inv_name		= Памятка №11
+inv_name_short		= Памятка №11
+
+;-----------------------------------------------------------------------------------------
+
+[detector_advances_relief]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "devices\detector_advanced"
+$prefetch 			= 32
+class				= D_SIMDET
+cform				= skeleton
+visual				= equipments\item_datchik2.ogf
+description			= enc_equipment_devic_detect2
+radius				= 15	;15
+buzzer_radius		= 1.5
+;noise				= zone_mosquito_bald       ;detectors\geiger_noise_loop
+buzzer				= zone_mosquito_bald       ;detectors\DA-2_alarm_loop
+slot				= 9
+ef_detector_type	= 1
+
+inv_name			= st_detector2
+inv_name_short		= st_detector2
+inv_weight			= 0.3
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 15
+inv_grid_y			= 7
+cost				= 10000
+belt				= true;
+default_to_ruck		= false
+;описание распознаваемых детектором зон
+zone_class_1		= zone_mosquito_bald
+zone_sound_1_		= $no_sound
+zone_min_freq_1		= 0.1	;0.5
+zone_max_freq_1		= 40
+
+zone_class_2		= zone_mincer
+zone_sound_2_		= $no_sound
+zone_min_freq_2		= 0.1
+zone_max_freq_2		= 20
+
+zone_class_3		= zone_radioactive
+zone_sound_3_		= detectors\geiger_1
+zone_sound_3_1		= detectors\geiger_2
+zone_sound_3_2		= detectors\geiger_3
+zone_sound_3_3		= detectors\geiger_4
+zone_sound_3_4		= detectors\geiger_5
+zone_sound_3_5		= detectors\geiger_6
+zone_sound_3_6		= detectors\geiger_1
+zone_sound_3_7		= detectors\geiger_1
+zone_sound_3_8		= detectors\geiger_1
+zone_min_freq_3		= 1
+zone_max_freq_3		= 20
+
+zone_class_4		= zone_gravi_zone
+zone_sound_4_		= $no_sound
+zone_min_freq_4		= 0.5
+zone_max_freq_4		= 30
+;Электра
+zone_class_5        = zone_witches_galantine
+zone_sound_5_        = $no_sound
+zone_min_freq_5        = 0.1
+zone_max_freq_5        = 30
+zone_map_location_5     = anomaly_elec_location
+
+[detector_elite_relief]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "devices\detector_elite"
+$prefetch 			= 32
+class				= D_SIMDET
+cform				= skeleton
+visual				= equipments\item_datchik3.ogf
+description			= enc_equipment_devic_detect3
+radius				= 15	;15
+buzzer_radius		= 1.5
+;noise				= zone_mosquito_bald       ;detectors\geiger_noise_loop
+buzzer				= zone_mosquito_bald       ;detectors\DA-2_alarm_loop
+slot				= 9
+ef_detector_type	= 1
+
+inv_name			= st_detector3
+inv_name_short		= st_detector3
+description			= st_detector_descr3
+inv_weight			= 0.5
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 5
+inv_grid_y			= 14
+cost				= 50000
+belt				= true;
+default_to_ruck		= false
+;описание распознаваемых детектором зон
+zone_class_1		= zone_mosquito_bald
+zone_sound_1_		= $no_sound
+zone_min_freq_1		= 0.1	;0.5
+zone_max_freq_1		= 40
+;zone_map_location_1 = anomaly_zone_location
+
+zone_class_2		= zone_mincer
+zone_sound_2_		= $no_sound
+zone_min_freq_2		= 0.1
+zone_max_freq_2		= 20
+;zone_map_location_2 = anomaly_zone_location
+
+zone_class_3		= zone_radioactive
+zone_sound_3_		= detectors\geiger_1
+zone_sound_3_1		= detectors\geiger_2
+zone_sound_3_2		= detectors\geiger_3
+zone_sound_3_3		= detectors\geiger_4
+zone_sound_3_4		= detectors\geiger_5
+zone_sound_3_5		= detectors\geiger_6
+zone_sound_3_6		= detectors\geiger_1
+zone_sound_3_7		= detectors\geiger_1
+zone_sound_3_8		= detectors\geiger_1
+zone_min_freq_3		= 1
+zone_max_freq_3		= 20
+;zone_map_location_3 = anomaly_zone_location
+
+zone_class_4		= zone_gravi_zone
+zone_sound_4_		= $no_sound
+zone_min_freq_4		= 0.5
+zone_max_freq_4		= 30
+;zone_map_location_4 = anomaly_zone_location
+;Электра
+zone_class_5        = zone_witches_galantine
+zone_sound_5_        = $no_sound
+zone_min_freq_5        = 0.1
+zone_max_freq_5        = 30
+zone_map_location_5     = anomaly_elec_location
+
+attach_angle_offset		= -0.160570,-1.425061,-0.361283
+attach_position_offset	= 0.160570,-0.060214,0.020071
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[detector_elite_sak_relief]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "devices\detector_elite_sak"
+$prefetch 			= 32
+class				= D_SIMDET
+cform				= skeleton
+visual				= equipments\item_datchik3.ogf
+description			= enc_equipment_devic_detect_sak
+radius				= 15	;15
+buzzer_radius		= 1.5
+;noise				= zone_mosquito_bald       ;detectors\geiger_noise_loop
+buzzer				= zone_mosquito_bald       ;detectors\DA-2_alarm_loop
+slot				= 9
+ef_detector_type	= 1
+inv_name			= st_detector_sak
+inv_name_short		= st_detector_sak
+description		= st_detector_descr3
+inv_weight			= 0.5
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 28
+inv_grid_y			= 13
+cost				= 100000
+belt				= true;
+default_to_ruck		= false
+;описание распознаваемых детектором зон
+;Трамплин
+zone_class_1        = zone_mosquito_bald
+zone_sound_1_        = $no_sound
+zone_min_freq_1        = 0.1    ;0.5
+zone_max_freq_1        = 40
+;zone_map_location_1     = anomaly_bald_location
+;Карусель
+zone_class_2        = zone_mincer
+zone_sound_2_        = $no_sound
+zone_min_freq_2        = 0.1
+zone_max_freq_2        = 20
+;zone_map_location_2     = anomaly_minc_location
+;Очаг радиоактивности
+zone_class_3        = zone_radioactive
+zone_sound_3_        = detectors\geiger_1
+zone_sound_3_1        = detectors\geiger_2
+zone_sound_3_2        = detectors\geiger_3
+zone_sound_3_3        = detectors\geiger_4
+zone_sound_3_4        = detectors\geiger_5
+zone_sound_3_5        = detectors\geiger_6
+zone_sound_3_6        = detectors\geiger_1
+zone_sound_3_7        = detectors\geiger_1
+zone_sound_3_8        = detectors\geiger_1
+zone_min_freq_3        = 1
+zone_max_freq_3        = 20
+;zone_map_location_3     = anomaly_rad_location
+;Воронка
+zone_class_4        = zone_gravi_zone
+zone_sound_4_        = $no_sound
+zone_min_freq_4        = 0.5
+zone_max_freq_4        = 30
+;zone_map_location_4     = anomaly_grav_location
+;Электра
+zone_class_5        = zone_witches_galantine
+zone_sound_5_        = $no_sound
+zone_min_freq_5        = 0.1
+zone_max_freq_5        = 30
+zone_map_location_5     = anomaly_elec_location
+;Жарка
+zone_class_6        = zone_zharka_static
+zone_sound_6_        = $no_sound
+zone_min_freq_6        = 0.1
+zone_max_freq_6        = 30
+;zone_map_location_6     = anomaly_burn_location
+;ICE
+zone_class_7        = zone_ice
+zone_sound_7_        = $no_sound
+zone_min_freq_7        = 0.1
+zone_max_freq_7        = 30
+;zone_map_location_7     = anomaly_ice_location
+attach_angle_offset		= -0.160570,-1.425061,-0.361283
+attach_position_offset	= 0.160570,-0.060214,0.020071
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+;----------------
+
+[detector_advances_tobelt]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "devices\detector_advanced"
+$prefetch 			= 32
+class				= D_SIMDET
+cform				= skeleton
+visual				= equipments\item_datchik2.ogf
+description			= enc_equipment_devic_detect2
+radius				= 10	;15
+buzzer_radius		= 1.5
+noise				= zone_mosquito_bald       ;detectors\geiger_noise_loop
+buzzer				= zone_mosquito_bald       ;detectors\DA-2_alarm_loop
+slot				= 9
+ef_detector_type	= 1
+
+inv_name			= st_detector2
+inv_name_short		= st_detector2
+inv_weight			= 0.3
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 15
+inv_grid_y			= 7
+cost				= 10000
+belt				= true;
+default_to_ruck		= false
+
+;описание распознаваемых детектором зон
+zone_class_1		= zone_mosquito_bald
+zone_sound_1_		= detectors\DA-2_beep1
+zone_min_freq_1		= 0.1	;0.5
+zone_max_freq_1		= 40
+
+zone_class_2		= zone_mincer
+zone_sound_2_		= detectors\DA-2_beep1
+zone_min_freq_2		= 0.1
+zone_max_freq_2		= 20
+
+zone_class_3		= zone_radioactive
+zone_sound_3_		= detectors\geiger_1
+zone_sound_3_1		= detectors\geiger_2
+zone_sound_3_2		= detectors\geiger_3
+zone_sound_3_3		= detectors\geiger_4
+zone_sound_3_4		= detectors\geiger_5
+zone_sound_3_5		= detectors\geiger_6
+zone_sound_3_6		= detectors\geiger_1
+zone_sound_3_7		= detectors\geiger_1
+zone_sound_3_8		= detectors\geiger_1
+zone_min_freq_3		= 1
+zone_max_freq_3		= 20
+
+zone_class_4		= zone_gravi_zone
+zone_sound_4_		= detectors\DA-2_beep1
+zone_min_freq_4		= 0.5
+zone_max_freq_4		= 30
+
+
+
+
+
+[detector_elite_tobelt]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "devices\detector_elite"
+$prefetch 			= 32
+class				= D_SIMDET
+cform				= skeleton
+visual				= equipments\item_datchik3.ogf
+description			= enc_equipment_devic_detect3
+radius				= 10	;15
+buzzer_radius		= 1.5
+noise				= zone_mosquito_bald       ;detectors\geiger_noise_loop
+buzzer				= zone_mosquito_bald       ;detectors\DA-2_alarm_loop
+slot				= 9
+ef_detector_type	= 1
+
+inv_name			= st_detector3
+inv_name_short		= st_detector3
+;description			= st_detector_descr3
+inv_weight			= 0.5
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 5
+inv_grid_y			= 14
+cost				= 50000
+belt				= true;
+default_to_ruck		= false
+
+;описание распознаваемых детектором зон
+zone_class_1		= zone_mosquito_bald
+zone_sound_1_		= detectors\DA-2_beep1
+zone_min_freq_1		= 0.1	;0.5
+zone_max_freq_1		= 40
+zone_map_location_1 = anomaly_zone_location
+
+zone_class_2		= zone_mincer
+zone_sound_2_		= detectors\DA-2_beep1
+zone_min_freq_2		= 0.1
+zone_max_freq_2		= 20
+zone_map_location_2 = anomaly_zone_location
+
+zone_class_3		= zone_radioactive
+zone_sound_3_		= detectors\geiger_1
+zone_sound_3_1		= detectors\geiger_2
+zone_sound_3_2		= detectors\geiger_3
+zone_sound_3_3		= detectors\geiger_4
+zone_sound_3_4		= detectors\geiger_5
+zone_sound_3_5		= detectors\geiger_6
+zone_sound_3_6		= detectors\geiger_1
+zone_sound_3_7		= detectors\geiger_1
+zone_sound_3_8		= detectors\geiger_1
+zone_min_freq_3		= 1
+zone_max_freq_3		= 20
+zone_map_location_3 = anomaly_zone_location
+
+zone_class_4		= zone_gravi_zone
+zone_sound_4_		= detectors\DA-2_beep1
+zone_min_freq_4		= 0.5
+zone_max_freq_4		= 30
+zone_map_location_4 = anomaly_zone_location
+
+
+attach_angle_offset		= -0.160570,-1.425061,-0.361283
+attach_position_offset	= 0.160570,-0.060214,0.020071
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+
+[detector_elite_sak_tobelt]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "devices\detector_elite_sak"
+$prefetch 			= 32
+class				= D_SIMDET
+cform				= skeleton
+visual				= equipments\item_datchik3.ogf
+description			= enc_equipment_devic_detect_sak
+radius				= 10	;15
+buzzer_radius		= 1.5
+noise				= zone_mosquito_bald       ;detectors\geiger_noise_loop
+buzzer				= zone_mosquito_bald       ;detectors\DA-2_alarm_loop
+slot				= 9
+ef_detector_type	= 1
+inv_name			= st_detector_sak
+inv_name_short		= st_detector_sak
+;description		= st_detector_descr3
+inv_weight			= 0.5
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 28
+inv_grid_y			= 13
+cost				= 100000
+belt				= true;
+default_to_ruck		= false
+;описание распознаваемых детектором зон
+;Трамплин
+zone_class_1        = zone_mosquito_bald
+zone_sound_1_        = detectors\DA-2_beep1
+zone_min_freq_1        = 0.1    ;0.5
+zone_max_freq_1        = 40
+zone_map_location_1     = anomaly_bald_location
+;Карусель
+zone_class_2        = zone_mincer
+zone_sound_2_        = detectors\DA-2_beep1
+zone_min_freq_2        = 0.1
+zone_max_freq_2        = 20
+zone_map_location_2     = anomaly_minc_location
+;Очаг радиоактивности
+zone_class_3        = zone_radioactive
+zone_sound_3_        = detectors\geiger_1
+zone_sound_3_1        = detectors\geiger_2
+zone_sound_3_2        = detectors\geiger_3
+zone_sound_3_3        = detectors\geiger_4
+zone_sound_3_4        = detectors\geiger_5
+zone_sound_3_5        = detectors\geiger_6
+zone_sound_3_6        = detectors\geiger_1
+zone_sound_3_7        = detectors\geiger_1
+zone_sound_3_8        = detectors\geiger_1
+zone_min_freq_3        = 1
+zone_max_freq_3        = 20
+zone_map_location_3     = anomaly_rad_location
+;Воронка
+zone_class_4        = zone_gravi_zone
+zone_sound_4_        = detectors\DA-2_beep1
+zone_min_freq_4        = 0.5
+zone_max_freq_4        = 30
+zone_map_location_4     = anomaly_grav_location
+;Электра
+zone_class_5        = zone_witches_galantine
+zone_sound_5_        = detectors\DA-2_beep1
+zone_min_freq_5        = 0.1
+zone_max_freq_5        = 30
+zone_map_location_5     = anomaly_elec_location
+;Жарка
+zone_class_6        = zone_zharka_static
+zone_sound_6_        = detectors\DA-2_beep1
+zone_min_freq_6        = 0.1
+zone_max_freq_6        = 30
+zone_map_location_6     = anomaly_burn_location
+;ICE
+zone_class_7        = zone_ice
+zone_sound_7_        = detectors\DA-2_beep1
+zone_min_freq_7        = 0.1
+zone_max_freq_7        = 30
+zone_map_location_7     = anomaly_ice_location
+attach_angle_offset		= -0.160570,-1.425061,-0.361283
+attach_position_offset	= 0.160570,-0.060214,0.020071
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+;----------------------
+
+[detector_advances_rukzak]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "devices\detector_advanced"
+$prefetch 			= 32
+class				= D_SIMDET
+cform				= skeleton
+visual				= equipments\item_datchik2.ogf
+description			= enc_equipment_devic_detect2
+radius				= 15	;15
+buzzer_radius		= 1.5
+;noise				= zone_mosquito_bald       ;detectors\geiger_noise_loop
+buzzer				= zone_mosquito_bald       ;detectors\DA-2_alarm_loop
+slot				= 9
+ef_detector_type	= 1
+
+inv_name			= st_detector2_r
+inv_name_short		= st_detector2_r
+inv_weight			= 0.3
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 15
+inv_grid_y			= 7
+cost				= 10000
+belt				= true;
+default_to_ruck		= true
+;описание распознаваемых детектором зон
+zone_class_1		= zone_mosquito_bald
+zone_sound_1_		= $no_sound
+zone_min_freq_1		= 0.1	;0.5
+zone_max_freq_1		= 40
+
+zone_class_2		= zone_mincer
+zone_sound_2_		= $no_sound
+zone_min_freq_2		= 0.1
+zone_max_freq_2		= 20
+
+zone_class_3		= zone_radioactive
+zone_sound_3_		= detectors\geiger_1
+zone_sound_3_1		= detectors\geiger_2
+zone_sound_3_2		= detectors\geiger_3
+zone_sound_3_3		= detectors\geiger_4
+zone_sound_3_4		= detectors\geiger_5
+zone_sound_3_5		= detectors\geiger_6
+zone_sound_3_6		= detectors\geiger_1
+zone_sound_3_7		= detectors\geiger_1
+zone_sound_3_8		= detectors\geiger_1
+zone_min_freq_3		= 1
+zone_max_freq_3		= 20
+
+zone_class_4		= zone_gravi_zone
+zone_sound_4_		= $no_sound
+zone_min_freq_4		= 0.5
+zone_max_freq_4		= 30
+;Электра
+zone_class_5        = zone_witches_galantine
+zone_sound_5_        = $no_sound
+zone_min_freq_5        = 0.1
+zone_max_freq_5        = 30
+zone_map_location_5     = anomaly_elec_location
+
+[detector_elite_rukzak]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "devices\detector_elite"
+$prefetch 			= 32
+class				= D_SIMDET
+cform				= skeleton
+visual				= equipments\item_datchik3.ogf
+description			= enc_equipment_devic_detect3
+radius				= 15	;15
+buzzer_radius		= 1.5
+;noise				= zone_mosquito_bald       ;detectors\geiger_noise_loop
+buzzer				= zone_mosquito_bald       ;detectors\DA-2_alarm_loop
+slot				= 9
+ef_detector_type	= 1
+
+inv_name			= st_detector3_r
+inv_name_short		= st_detector3_r
+description			= st_detector_descr3
+inv_weight			= 0.5
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 5
+inv_grid_y			= 14
+cost				= 50000
+belt				= true;
+default_to_ruck		= true
+;описание распознаваемых детектором зон
+zone_class_1		= zone_mosquito_bald
+zone_sound_1_		= $no_sound
+zone_min_freq_1		= 0.1	;0.5
+zone_max_freq_1		= 40
+;zone_map_location_1 = anomaly_zone_location
+
+zone_class_2		= zone_mincer
+zone_sound_2_		= $no_sound
+zone_min_freq_2		= 0.1
+zone_max_freq_2		= 20
+;zone_map_location_2 = anomaly_zone_location
+
+zone_class_3		= zone_radioactive
+zone_sound_3_		= detectors\geiger_1
+zone_sound_3_1		= detectors\geiger_2
+zone_sound_3_2		= detectors\geiger_3
+zone_sound_3_3		= detectors\geiger_4
+zone_sound_3_4		= detectors\geiger_5
+zone_sound_3_5		= detectors\geiger_6
+zone_sound_3_6		= detectors\geiger_1
+zone_sound_3_7		= detectors\geiger_1
+zone_sound_3_8		= detectors\geiger_1
+zone_min_freq_3		= 1
+zone_max_freq_3		= 20
+;zone_map_location_3 = anomaly_zone_location
+
+zone_class_4		= zone_gravi_zone
+zone_sound_4_		= $no_sound
+zone_min_freq_4		= 0.5
+zone_max_freq_4		= 30
+;zone_map_location_4 = anomaly_zone_location
+;Электра
+zone_class_5        = zone_witches_galantine
+zone_sound_5_        = $no_sound
+zone_min_freq_5        = 0.1
+zone_max_freq_5        = 30
+zone_map_location_5     = anomaly_elec_location
+
+attach_angle_offset		= -0.160570,-1.425061,-0.361283
+attach_position_offset	= 0.160570,-0.060214,0.020071
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[detector_elite_sak_rukzak]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "devices\detector_elite_sak"
+$prefetch 			= 32
+class				= D_SIMDET
+cform				= skeleton
+visual				= equipments\item_datchik3.ogf
+description			= enc_equipment_devic_detect_sak
+radius				= 15	;15
+buzzer_radius		= 1.5
+;noise				= zone_mosquito_bald       ;detectors\geiger_noise_loop
+buzzer				= zone_mosquito_bald       ;detectors\DA-2_alarm_loop
+slot				= 9
+ef_detector_type	= 1
+inv_name			= st_detector_sak_r
+inv_name_short		= st_detector_sak_r
+description		= st_detector_descr3
+inv_weight			= 0.5
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 28
+inv_grid_y			= 13
+cost				= 100000
+belt				= true;
+default_to_ruck		= true
+;описание распознаваемых детектором зон
+;Трамплин
+zone_class_1        = zone_mosquito_bald
+zone_sound_1_        = $no_sound
+zone_min_freq_1        = 0.1    ;0.5
+zone_max_freq_1        = 40
+;zone_map_location_1     = anomaly_bald_location
+;Карусель
+zone_class_2        = zone_mincer
+zone_sound_2_        = $no_sound
+zone_min_freq_2        = 0.1
+zone_max_freq_2        = 20
+;zone_map_location_2     = anomaly_minc_location
+;Очаг радиоактивности
+zone_class_3        = zone_radioactive
+zone_sound_3_        = detectors\geiger_1
+zone_sound_3_1        = detectors\geiger_2
+zone_sound_3_2        = detectors\geiger_3
+zone_sound_3_3        = detectors\geiger_4
+zone_sound_3_4        = detectors\geiger_5
+zone_sound_3_5        = detectors\geiger_6
+zone_sound_3_6        = detectors\geiger_1
+zone_sound_3_7        = detectors\geiger_1
+zone_sound_3_8        = detectors\geiger_1
+zone_min_freq_3        = 1
+zone_max_freq_3        = 20
+;zone_map_location_3     = anomaly_rad_location
+;Воронка
+zone_class_4        = zone_gravi_zone
+zone_sound_4_        = $no_sound
+zone_min_freq_4        = 0.5
+zone_max_freq_4        = 30
+;zone_map_location_4     = anomaly_grav_location
+;Электра
+zone_class_5        = zone_witches_galantine
+zone_sound_5_        = $no_sound
+zone_min_freq_5        = 0.1
+zone_max_freq_5        = 30
+zone_map_location_5     = anomaly_elec_location
+;Жарка
+zone_class_6        = zone_zharka_static
+zone_sound_6_        = $no_sound
+zone_min_freq_6        = 0.1
+zone_max_freq_6        = 30
+;zone_map_location_6     = anomaly_burn_location
+;ICE
+zone_class_7        = zone_ice
+zone_sound_7_        = $no_sound
+zone_min_freq_7        = 0.1
+zone_max_freq_7        = 30
+;zone_map_location_7     = anomaly_ice_location
+attach_angle_offset		= -0.160570,-1.425061,-0.361283
+attach_position_offset	= 0.160570,-0.060214,0.020071
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+;----------------------------------------------------------------
+
+[korona]:af_base
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\korona"
+
+$prefetch 			= 64
+cform				= skeleton
+class				= ARTEFACT
+
+visual				= inv\korona.ogf 
+description			= "Странное образование непонятного происхождения"
+inv_name			= Корона
+inv_name_short		        = Корона
+inv_weight 			= 0.2
+
+inv_grid_width      = 1
+inv_grid_height     = 1
+inv_grid_x			= 7
+inv_grid_y			= 14
+
+cost 				= 5000
+jump_height			= 0.55
+
+belt			        = false
+
+;particles			= anomaly2\artefact\artefact_zharka
+;particles			= anomaly2\artefact\artefact_mincer
+;particles			= anomaly2\artefact\artefact_electra
+;particles			= anomaly2\artefact\artefact_ameba
+;particles			= anomaly2\artefact\artefact_gravi
+particles			= anomaly2\burer_attack_prepare
+;particles			= anomaly2\artefact\artefact_puxx
+
+;подсветка арта
+lights_enabled = true	
+trail_light_color = 2.5, 2.4, 0
+trail_light_range = 0.5
+health_restore_speed = 0.0			
+radiation_restore_speed = 0.0
+satiety_restore_speed = 0.0
+power_restore_speed = 0.0
+bleeding_restore_speed = 0.0
+hit_absorbation_sect = korona_absorb
+artefact_activation_seq	= af_activation_bold
+
+;коэффициенты иммунитета 
+[korona_absorb]
+burn_immunity = 1.0				
+strike_immunity = 1.0
+shock_immunity = 1.0
+wound_immunity = 1.0		
+radiation_immunity = 1.0
+telepatic_immunity = 1.0
+chemical_burn_immunity = 1.0
+explosion_immunity = 1.0
+fire_wound_immunity  = 1.0
+
+
+[load_detector]:identity_immunities
+GroupControlSection			= spawn_group
+discovery_dependency 		= 
+$spawn              		= "weapons\knife"
+$npc                		= off
+$prefetch 		    	= 8
+scheduled           		= off
+cform				= skeleton
+description			= "Прибор, который дистанционно активирует научную аппаратуру на вертолете и автоматически записывает имеющиеся там данные на встроенную флэш-карту."
+
+ef_weapon_type			= 1
+
+class				= WP_KNIFE
+
+visual				= equipments\detector_arts_1.ogf
+inv_name			= Автозагрузчик
+inv_name_short		        = Автозагрузчик
+inv_weight				= 0.35
+inv_grid_width				= 1
+inv_grid_height				= 1
+inv_grid_x				= 37
+inv_grid_y				= 33
+
+kill_msg_x				= 197
+kill_msg_y				= 177
+kill_msg_width				= 53
+kill_msg_height				= 16
+
+show_ammo				= false
+
+slot				= 1
+animation_slot	                = 1
+single_handed		        = 1
+
+hud				= helimeter_hud
+
+cost				= 8500
+
+hand_dependence		     	= 1
+belt				= false
+cam_relax_speed          	= 5.0
+cam_dispersion           	= 0.9
+cam_max_angle		     	= 7
+cam_max_angle_horz		= 5.0
+cam_step_angle_horz		= 0.5
+
+fire_dispersion          	= 0.5
+fire_dispersion_add      	= 5.3
+fire_dispersion_relax    	= 0.6
+fire_dispersion_base	 	= 0.5
+disp_vel_factor		     	= 0.9
+disp_crouch_factor	     	= 0.75
+disp_jump_factor	     	= 7
+fire_dispersion_condition_factor = 0.0
+misfire_probability 		= 0.0
+condition_shot_dec 		= 0.0
+
+direction                	= 0, 0, 1
+shell_point		         	= 0.0, 0.0, 0.0
+fire_point               	= 0.0, 0.1, 0.4
+
+flame_particles			= 
+
+rpm_empty_click 	     	= 200
+
+; ttc	
+hit_power                	= 1.80, 2.00, 2.20, 2.40
+hit_impulse		         	= 120
+hit_type			= wound
+
+hit_power_2                	= 1.80, 2.00, 2.20, 2.40
+hit_impulse_2	         	= 120
+hit_type_2			= wound_2
+
+fire_distance            	= 1.4;1.8
+bullet_speed			 	= 1000;500			;начальная скорость пули
+rpm                      	= 1000;600
+; end ttc
+
+normal                   	= 0, 1, 0
+position                 	= -0.021, -0.078, 0.0
+orientation              	= 0,90,0
+startup_ammo             	= 1000
+wm_size                  	= 0.10
+
+light_disabled			= true
+
+ph_mass			        = 4
+
+ammo_limit		        = 180
+ammo_current		     	= 90
+ammo_elapsed		     	= 0
+	
+ammo_mag_size		     	= 0
+ammo_class			= ammo_9x39_pab9
+	
+min_radius               	= 50
+max_radius               	= 50
+
+scope_status			= 0
+silencer_status			= 0
+grenade_launcher_status		= 0
+zoom_enabled			= false
+
+snd_shoot			= weapons\knife_1
+
+weapon_remove_time			= 5000	;время уничтожения оружия (с учетом TimeFactor) для мультиплеера
+
+[helimeter_hud]
+shell_point					= 0.0, 0.0, 0.0
+fire_point          		= 0.05, 0.0, 0.1
+fire_bone           		= bip01_neck
+
+orientation         		= 0,0,0
+position            		= 0,0,0
+visual              		= helimeter.ogf
+
+anim_idle					= idle
+anim_draw					= draw
+anim_hide					= holster
+anim_shoot1_start			= idle
+anim_shoot2_start			= idle
+anim_shoot1_end				= idle
+anim_shoot2_end				= idle
+anim_idle_sprint			= idle
+
+[mutant_hand_kontroler_m]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\monster_items\hand_kontroler"
+;$prefetch 			= 32
+class				= II_ATTCH
+cform				= skeleton
+visual				= monster_items\hand_kontroler.ogf
+radius				= 1
+
+inv_name			= mutant_hand_kontroler
+inv_name_short		= mutant_hand_kontroler
+description			= mutant_hand_kontroler_description
+
+inv_weight			= 0.2
+can_trade			= on
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 21
+inv_grid_y			= 6
+belt				= true
+cost				= 1000
+
+[kont_skin]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 			= "outfit\kont_skin_outfit"
+;$prefetch 		= 32
+class			= E_STLK
+cform           = skeleton
+visual          = new\contruch_gg
+actor_visual	= new\contruch.ogf
+
+additional_inventory_weight	= 0
+additional_inventory_weight2	= 0
+
+ef_equipment_type	= 3
+
+inv_name			= "Шкура контролёра"
+inv_name_short		= "Шкура контролёра"
+description			= "Шкура контролёра, снятая с его трупа."
+inv_weight			= 3.5
+inv_grid_width		= 2
+inv_grid_height		= 2
+inv_grid_x			= 39
+inv_grid_y			= 8
+full_icon_name		= npc_icon_kont_skin_outfit
+
+cost				= 35 000
+slot				= 6
+full_scale_icon		= 0,6
+quest_item			= false
+
+; NO RESISTANCE
+burn_protection 				= 0.1
+strike_protection 				= 0.1
+shock_protection 				= 0.1
+wound_protection				= 0.2
+radiation_protection 			= 0.0
+telepatic_protection 			= 1.0
+chemical_burn_protection 		= 0.05
+explosion_protection 			= 0.1
+fire_wound_protection  			= 0.2
+
+immunities_sect			= sect_bandit_veteran_outfit_immunities1
+
+[sect_bandit_veteran_outfit_immunities1]
+burn_immunity				= 0.04
+strike_immunity				= 0.01
+shock_immunity				= 0.04
+wound_immunity				= 0.02
+radiation_immunity          = 0.00
+telepatic_immunity			= 1.00
+chemical_burn_immunity		= 0.04
+explosion_immunity			= 0.03
+fire_wound_immunity			= 0.01

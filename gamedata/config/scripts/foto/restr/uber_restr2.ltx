@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle@one
+
+[sr_idle@one]
+on_actor_inside = {+archiv_shema -uber_ataka_start} sr_idle@two %+uber_ataka_start =fotograf.uber_trevoga%
+
+[sr_idle@two]
+on_timer = 5000 | nil %+uber_ataka_nachalo%

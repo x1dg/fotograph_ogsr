@@ -1,0 +1,88 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-dolg_ataka_start} walker@1, {+dolg_ataka_start -plichko_mesto} walker@3, {+plichko_mesto -dolg_ataka_finish} walker@4, {+dolg_ataka_finish} walker@5 
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+enemy_dolg%
+
+[death]
+on_info = {=killed_by_actor} %+enemy_dolg%
+on_info2 = %+plichko_dead%
+
+[walker@1]
+path_walk = plichko_dolg_walk
+path_look = plichko_dolg_look
+meet = no_meet
+danger = danger_condition
+on_actor_dist_le = 4 | {-dolg_ataka_start} remark@1
+on_info = {+actor_terminator} walker@2
+
+[remark@1]
+target = actor
+snd = plichko_1
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | remark@vstrecha %=play_snd(ambient\new\plichko)%
+
+[remark@vstrecha]
+target = actor
+meet = no_meet
+danger = danger_condition
+on_timer = 5000 | remark@2
+
+[remark@2]
+target = actor
+meet = meet
+danger = danger_condition
+on_info = {+dolg_ataka_start} walker@2
+on_info2 = {+actor_terminator} walker@2
+
+[walker@2]
+path_walk = plichko_dolg1_walk
+path_look = plichko_dolg1_look
+meet = no_meet
+danger = danger_condition
+on_timer = 7500 | {-dolg_shturm} walker@3 %=fotograf.killers4_dyshlo_spawn =mauvais.music_dyshlo03 +dolg_shturm%
+on_info = {+dolg_shturm} walker@3
+
+[walker@3]
+path_walk = plichko_dolg1_walk
+path_look = plichko_dolg1_look
+meet = no_meet
+danger = danger_condition
+on_signal = plichdysh | walker@4 %+plichko_mesto%
+
+[walker@4]
+path_walk = plichko_dolg1_walk
+path_look = plichko_dolg1_look
+meet = no_meet
+danger = danger_condition
+on_actor_dist_le = 3 | {-dolg_ataka_finish} remark@3
+
+[remark@3]
+target = actor
+snd = plichko_2
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | walker@5 
+
+[walker@5]
+path_walk = plichko_dolg1_walk
+path_look = plichko_dolg1_look
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

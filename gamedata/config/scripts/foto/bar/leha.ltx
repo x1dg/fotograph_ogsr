@@ -1,0 +1,47 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-leha_skazal} walker@1, {+leha_skazal} walker@2
+combat_ignore = combat_ignore
+danger = danger_condition
+on_death = death
+
+[death]
+on_info = %+leha_dead%
+
+[walker@1]
+path_walk = leha_walk
+path_look = leha_look
+meet = meet
+danger = danger_condition
+on_actor_dist_le_nvis = 18 | {-leha_skazal} remark@1, {+leha_skazal} walker@2 
+
+[remark@1]
+target = actor
+snd = zarabotok1
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | remark@lecha %=play_snd(ambient\new\actor_lecha) +leha_skazal%
+
+[remark@lecha]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 5000 | walker@2
+
+[walker@2]
+path_walk = leha_walk
+path_look = leha_look
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

@@ -1,0 +1,42 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@1]
+path_walk = catcher_vhod2_walk
+path_look = catcher_vhod2_look
+def_state_standing = ward
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_actor_dist_le_nvis = 4 | remark@1
+
+[remark@1]
+anim = ward
+target = actor
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_timer = 6000 | walker@2
+
+[walker@2]
+path_walk = catcher2_vhod2_walk
+path_look = catcher2_vhod2_look
+def_state_standing = ward
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

@@ -1,0 +1,74 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = remark@sit1
+danger = danger_condition 
+;on_hit = hit
+;on_death = death
+combat_ignore = combat_ignore
+
+[hit]
+on_info = %=tunnel.del_start%
+
+[death]
+on_info = %=tunnel.del_start%
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[remark@sit1]
+anim = sit	
+target = actor
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_timer = 1000 | remark@sit2 
+
+[remark@sit2]
+anim = sit	
+target = actor
+snd = tunnel1_1
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_signal = sound_end | remark@sit3 %=play_snd(ambient\new\tunnel1_2)%
+
+[remark@sit3]
+anim = sit	
+target = actor
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_timer = 1500 | remark@caution
+
+[remark@caution]
+anim = caution	
+target = actor
+snd = tunnel1_3 
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_signal = sound_end | remark@claim1 %=play_snd(ambient\new\tunnel1_4)%
+on_actor_dist_le_nvis = 2.5 | %=tunnel.tunnel_otbros%
+
+[remark@claim1]
+;anim = claim
+anim = help_me	
+target = actor
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_timer = 3000 | remark@claim2 %+tunnel_open%
+on_actor_dist_le_nvis = 2.5 | %=tunnel.tunnel_otbros%
+
+[remark@claim2]
+;anim = claim
+anim = help_me	
+target = actor
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_timer = 15000 | %-tunnel_open% 
+on_actor_dist_le_nvis = 2.5 | %=tunnel.tunnel_otbros%

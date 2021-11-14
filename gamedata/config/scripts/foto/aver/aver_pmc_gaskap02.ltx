@@ -1,0 +1,23 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = kamp@1
+danger = danger_condition
+on_death = death
+
+[kamp@1]
+center_point = aver_pmc_home
+radius = 2.1
+meet = no_meet
+danger = danger_condition
+def_state_moving = assault
+def_state_standing = assault
+
+
+[danger_condition]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[death]
+on_info = {=killed_by_actor} %+naem_les_02_dead%

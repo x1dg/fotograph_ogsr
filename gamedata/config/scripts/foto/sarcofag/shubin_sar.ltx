@@ -1,0 +1,119 @@
+[smart_terrains]
+none = true
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+shubin_sar_enemy% 
+
+[death]
+on_info = {=killed_by_actor} %+shubin_sar_enemy%
+
+[logic]
+active = walker@1
+danger = danger_condition
+combat_ignore = combat_ignore
+
+[walker@1]
+path_walk = shubin_sar_walk
+path_look = shubin_sar_look
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 3000 | remark@1 
+on_info = {+shubin_sar_enemy} %=fotograf.del_shubin_sar%
+
+[remark@1]
+target = actor
+meet = no_meet
+snd = shubin_sar_01
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | remark@2 
+on_info = {+shubin_sar_enemy} %=fotograf.del_shubin_sar% 
+
+[remark@2]
+target = actor
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+shubin_sar_dialog_start} remark@3 
+on_info2 = {+shubin_sar_enemy} %=fotograf.del_shubin_sar%
+
+[remark@3]
+target = actor
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 1000 | remark@4 %=fotograf.shubin_shoot%
+on_info = {+shubin_sar_enemy} %=fotograf.del_shubin_sar%
+
+[remark@4]
+anim = assault
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 300 | remark@5 %=fotograf.kill_actor_sar =play_snd(ambient\new\actor_dead)%
+on_info = {+shubin_sar_enemy} %=fotograf.del_shubin_sar%
+
+[remark@5]
+anim = assault
+target = smith_sar_walk, 0
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 2500 | remark@6 %=fotograf.shubin_shoot +kill_smith%
+on_info = {+shubin_sar_enemy} %=fotograf.del_shubin_sar%
+
+[remark@6]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 3000 | remark@7 %=fotograf.dark_start +midnight_timer_start%
+on_info = {+shubin_sar_enemy} %=fotograf.del_shubin_sar%
+
+[remark@7]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 4000 | remark@8
+on_info = {+shubin_sar_enemy} %=fotograf.del_shubin_sar%
+
+[remark@8]
+target = actor
+snd = shubin_sar_02
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | remark@9
+on_info = {+shubin_sar_enemy} %=fotograf.del_shubin_sar%
+
+[remark@9]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 3000 | {+midnight_timer_finish} remark@10 %=fotograf.dark_stop =fotograf.set_lch_bluetree%
+on_info = {+shubin_sar_enemy} %=fotograf.del_shubin_sar%
+
+[remark@10]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+shubin_sar_enemy} %=fotograf.del_shubin_sar%
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+
+

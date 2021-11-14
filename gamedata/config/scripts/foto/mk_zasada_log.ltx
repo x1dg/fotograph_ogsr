@@ -1,0 +1,34 @@
+[smart_terrains]
+none = true
+
+[dont_spawn_loot]
+
+[logic]
+active = walker@mk_zasada
+danger = danger_condition@mk_zasada
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@mk_zasada]
+path_walk = mk_zasada_walk
+path_look = mk_zasada_look
+def_state_standing = wounded_heavy
+danger = danger_condition@mk_zasada
+combat_ignore_cond = always
+meet = no_meet
+
+[danger_condition@mk_zasada]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = false
+use_wpn = true
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %=foto2.mk_essential +zasada_close%
+
+[death]
+on_info = {=killed_by_actor} %=foto2.mk_essential +zasada_close%

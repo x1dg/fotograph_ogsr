@@ -1,0 +1,10 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = {+max_no_entrance} sr_idle@1 %=foto.max_teleport(5)%, {+max_no_exit} sr_idle@1 %=foto.max_teleport(5)%
+on_info = {+max_block_end} nil %=val_test.del_restr%
+
+[sr_idle@1]
+on_actor_outside = {+max_no_entrance} sr_idle, {+max_no_exit} sr_idle, {+max_block_end} nil %=val_test.del_restr%
+

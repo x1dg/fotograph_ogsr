@@ -1,0 +1,27 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+danger = danger_condition
+;combat_ignore = combat_ignore
+on_death = death
+
+[death]
+on_info = %+naem_dyshlo_21_dead%
+
+[walker@1]
+path_walk = naem_dyshlo_21_walk
+path_look = naem_dyshlo_21_look
+meet = meet
+def_state_standing = assault
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

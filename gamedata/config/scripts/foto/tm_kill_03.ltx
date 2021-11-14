@@ -1,0 +1,51 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+
+[walker@1]
+path_walk = tm_kill_03_walk
+path_look = tm_kill_03_look
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition
+on_actor_dist_le = 8 | remark@1
+on_info = {+tm_kill_03_enemy} walker@3 %=killactor%
+
+[remark@1]
+anim = assault
+target = actor
+snd = kto_takoy_5
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@2
+
+[walker@2]
+path_walk = tm_kill_03_walk
+path_look = tm_kill_03_look
+meet = meet
+danger = danger_condition
+on_info = {+tm_kill_03_enemy} walker@3 %=killactor%
+
+[walker@3]
+path_walk = tm_kill_03_walk
+path_look = tm_kill_03_look
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+tm_kill_03_enemy%

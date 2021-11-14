@@ -1,0 +1,25 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+danger = danger_condition
+on_death = death
+
+[death]
+on_info = %=fotograf.del_mihas_zapiski%
+
+[walker@1]
+path_walk = mihas1_und_walk
+path_look = mihas1_und_look
+danger = danger_condition
+meet = no_meet
+
+[danger_condition]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = true
+meet_talk_enabled = true

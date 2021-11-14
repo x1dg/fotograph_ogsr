@@ -1,0 +1,109 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-ploymar_poshel} walker@1, {+ploymar_poshel -ploymar_mesto} walker@2, {+ploymar_mesto -x18_vernulsya} walker@3, {+x18_vernulsya -ploymar_razgovor} walker@4, {+ploymar_razgovor -ploymar_finish} walker@5, {+ploymar_finish} walker@6
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@1]
+path_walk = uchen_061_walk
+path_look = uchen_061_look
+meet = no_meet
+combat_ignore_cond = always
+def_state_standing = ward
+danger = danger_condition
+on_actor_dist_le_nvis = 10 | remark@1
+on_info = {+ploymar_enemy} walker@enemy
+
+[remark@1]
+anim = ward
+target = actor
+snd = ploymar3
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@2 %+ploymar_poshel%
+on_info = {+ploymar_enemy} walker@enemy
+
+[walker@2]
+path_walk = uchen_061_walk1
+path_look = uchen_061_look1
+meet = no_meet
+combat_ignore_cond = always
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+on_info = {+ploymar_enemy} walker@enemy
+on_signal = ploymar3 | walker@3 %+ploymar_mesto%
+
+[walker@3]
+path_walk = uchen_061_walk1
+path_look = uchen_061_look1
+meet = no_meet
+combat_ignore_cond = always
+def_state_standing = ward
+danger = danger_condition
+on_info = {+ploymar_enemy} walker@enemy
+on_info2 = {+x18_vernulsya} walker@4
+
+[walker@4]
+path_walk = uchen_061_walk1
+path_look = uchen_061_look1
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+ploymar_enemy} walker@enemy
+on_actor_dist_ge_nvis = 7 | walker@5 %=fotograf.check_time_ploymar +ploymar_razgovor%
+
+[walker@5]
+path_walk = uchen_061_walk2
+path_look = uchen_061_look2
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+ploymar_enemy} walker@enemy
+on_info2 = {+ploymar_finish} walker@6
+on_actor_dist_le_nvis = 6 | {-ploymar_finish} walker@enemy %=killactor +ploymar_enemy%
+
+[walker@6]
+path_walk = uchen_061_walk3
+path_look = uchen_061_look3
+meet = no_meet
+combat_ignore_cond = always
+def_state_standing = choose
+danger = danger_condition
+on_info = {+ploymar_enemy} walker@enemy
+on_actor_dist_le_nvis = 2.5 | remark@2
+
+[remark@2]
+anim = ward
+target = actor
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+ploymar_enemy} walker@enemy
+
+[walker@enemy]
+path_walk = uchen_061_walk1
+path_look = uchen_061_look1
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+meet_state = ward
+
+[hit]
+on_info = {=hit_by_actor} %+ploymar_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+ploymar_enemy%

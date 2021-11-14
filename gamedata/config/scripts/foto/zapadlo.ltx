@@ -1,0 +1,57 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = remark@1
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[remark@1]
+anim = sit
+target = actor
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_actor_dist_le_nvis = 5 | remark@2
+on_info = {+zapadlo_enemy} remark@enemy %=killactor%
+on_info2 = {+zapadlo_dialog_2_done} remark@3 
+
+[remark@2]
+target = actor
+snd = vano1
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = sound_end | remark@3
+on_info = {+zapadlo_enemy} remark@enemy %=killactor%
+
+[remark@3]
+target = actor
+meet = meet
+danger = danger_condition
+combat_ignore_cond = always
+on_actor_dist_ge_nvis = 5 | remark@1
+on_info = {+zapadlo_enemy} remark@enemy %=killactor%
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+zapadlo_enemy%
+
+[death]
+on_info = %+kill_zapadlo%
+
+[remark@enemy]
+anim = assault
+target = actor
+meet = no_meet
+danger = danger_condition

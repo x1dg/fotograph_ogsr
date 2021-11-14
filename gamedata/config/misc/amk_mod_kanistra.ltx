@@ -1,0 +1,116 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;	 ,,,,,      ,,,,,,,    ,,,,,,_  ,,,,,,,,  ,,,,,,   
+;       MMMMM1     M0MMMM&    MMMMM@'  MMMMMM0"  MMMM0!   
+;       4MMMM#      ^MMMMMr   MMMMMf    #MMMM&    B0'     
+;      &]MMMMMc      #MMMM# ] MMMMMf    #MMMM&   j#       
+;      M 0MMMM&       MMMMML# MMMMMf    #MMMM&  pM&       
+;     pY 4MMMMM     ] #MMMMM# MMMMMf    #MMMM& pMMMt      
+;     M   MMMMMc    ]& MMMMMf MMMMMf    #MMMM&]MMMM0      
+;    ]#   0MMMM&    ]M #MMMM  MMMMMf    #MMMM& MMMMM&     
+;    QfjMMMMMMMM    ]M  MMMf  MMMMMf    #MMMM& 4MMMMM     
+;   _M    "MMMMMf   ]M  BMM   MMMMMf    #MMMM&  MMMMM&    
+;  _Q#     MMMMM&   jMg  M8  _MMMMMf    BMMMM&  jMMMMM,   
+; 4MMMM   #MMMMMM# 0MMM& B  ]MMMMMMM&  0MMMMMM&]MMMMMMMt  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[amk_kanistra]:explosive_fuelcan
+visual                 = physics\balon\kanistra
+inv_name            = amk_kanistra_name
+inv_name_short        = amk_kanistra_name_short
+inv_weight            = 8
+description            = amk_kanistra_opisalovo
+inv_grid_width         = 2
+inv_grid_height        = 2
+inv_grid_x            = 8
+inv_grid_y            = 36
+can_take            = true
+cost                = 3000
+
+
+[amk_kanistro]:explosive_fuelcan
+visual                 = physics\balon\kanistro
+inv_name            = amk_kanistro_name
+inv_name_short        = amk_kanistro_name_short
+inv_weight            = 8
+description            = amk_kanistro_opisalovo
+inv_grid_width         = 2
+inv_grid_height        = 2
+inv_grid_x            = 20
+inv_grid_y            = 34
+can_take            = true
+cost                = 3500
+
+
+[key_car1]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\key_car1"
+;$prefetch 			= 32
+class				= II_ATTCH
+cform				= skeleton
+visual				= equipments\item_minipda.ogf
+radius				= 1
+;script_binding		        = stalker.object_init
+quest_item			= true
+
+description         = "Ключи от 'Лэнд Ровера'."
+
+inv_name		= "Ключи от машины"
+inv_name_short		= "Ключи от машины"
+inv_weight			= 0.1
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 13
+inv_grid_y			= 34
+cost				= 100
+
+
+[key_car2]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\key_car2"
+;$prefetch 			= 32
+class				= II_ATTCH
+cform				= skeleton
+visual				= equipments\item_minipda.ogf
+radius				= 1
+;script_binding		        = stalker.object_init
+quest_item			= true
+
+description         = "Ключи от 'Нивы' генерала Воронина."
+
+inv_name		= "Ключи от машины"
+inv_name_short		= "Ключи от машины"
+inv_weight			= 0.1
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 29
+inv_grid_y			= 27
+cost				= 120
+
+
+[key_car3]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 				= "devices\quest_items\key_car3"
+;$prefetch 			= 32
+class				= II_ATTCH
+cform				= skeleton
+visual				= equipments\item_minipda.ogf
+radius				= 1
+;script_binding		        = stalker.object_init
+quest_item			= true
+
+description         = "Ключи от 'Нивы' лейтенанта Полищука."
+
+inv_name		= "Ключи от машины"
+inv_name_short		= "Ключи от машины"
+inv_weight			= 0.1
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 29
+inv_grid_y			= 28
+cost				= 150

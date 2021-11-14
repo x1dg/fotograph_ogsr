@@ -1,0 +1,33 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = camper@1
+combat_ignore = combat_ignore
+danger = danger_condition
+on_hit = hit
+on_death = death
+
+[camper@1]
+sniper = true
+def_state_campering = threat_na
+radius = 100
+path_walk = baza2_vyshka4_walk
+path_look = baza2_vyshka4_look
+combat_ignore_cond = {=check_fighting(30342)}
+danger = danger_condition
+meet = no_meet
+no_move = true
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 20
+danger_expiration_time = 60000
+danger_inertion_time =  90000
+
+[hit]
+on_info = {=hit_by_actor} %+soldaty_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+soldaty_enemy%
+

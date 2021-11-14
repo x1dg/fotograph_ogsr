@@ -1,0 +1,44 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-brigadir_start_dialog_start} kamp@pred_stalkers_03, {+brigadir_start_dialog_start -maloy_dead} walker@pred_stalkers_03, {+maloy_dead} kamp@pred_stalkers_033
+danger = danger_condition
+combat_ignore = combat_ignore
+
+[kamp@pred_stalkers_03]
+center_point = pred_stalkers_03_center
+radius = 2.2
+meet = no_meet
+danger = danger_condition
+on_actor_dist_le_nvis = 10 | {+brigadir_start_dialog_start} remark@1
+
+[remark@1]
+target = actor
+danger = danger_condition
+meet = no_meet
+on_timer = 8500 | walker@pred_stalkers_03 %+kamp_ataka_nachalo%
+
+[walker@pred_stalkers_03]
+path_walk = maroder_kamp_01_center
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+meet = no_meet
+on_info = {+maloy_dead} kamp@pred_stalkers_033 
+
+[kamp@pred_stalkers_033]
+center_point = maroder_kamp_01_center
+def_state_moving = walk
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 5
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

@@ -1,0 +1,39 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@bratok_bar_04
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@bratok_bar_04]
+path_walk = bratok_bar_04_walk
+path_look = bratok_bar_04_look
+meet = meet
+def_state_standing = bar_fas
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+bratok_enemy} walker@bratok_bar_044
+
+[walker@bratok_bar_044]
+path_walk = bratok_bar_04_walk
+path_look = bratok_bar_04_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+bratok_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+bratok_enemy%

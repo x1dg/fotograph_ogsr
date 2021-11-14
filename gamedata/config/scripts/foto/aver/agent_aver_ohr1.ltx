@@ -1,0 +1,58 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-agent_aver_poshli} kamp@agent_aver_kamp, {+agent_aver_poshli} kamp@agent_aver_kamp1
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[kamp@agent_aver_kamp]
+center_point = agent_aver_center1
+radius = 2.5
+meet = no_meet
+danger = danger_condition
+on_info = {+agent_aver_poshli} remark@1 
+
+[remark@1]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 2000 | walker@1
+
+[walker@1]
+path_walk = agent_aver_center2
+danger = danger_condition
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+on_info = {+agent_aver_mesto} | kamp@agent_aver_kamp1
+
+[kamp@agent_aver_kamp1]
+center_point = agent_aver_center2
+radius = 2.5
+meet = no_meet
+danger = danger_condition@1
+on_info = {+agent_aver_killactor} %=killactor%
+
+[danger_condition]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[danger_condition@1]
+ignore_distance = 50
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+agent_aver_ohr1_hit +agent_aver_killactor%
+
+[death]
+on_info = {=killed_by_actor} %+agent_aver_killactor%

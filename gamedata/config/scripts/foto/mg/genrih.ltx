@@ -1,0 +1,122 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-genrih_skazal} walker@start, {+genrih_skazal -genrih_mesto} walker@1, {+genrih_mesto -mg_vyhod_start} walker@12, {+mg_vyhod_start -genrih_wait} walker@13, {+genrih_wait} walker@vyhod
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+on_info2 = %+genrih_dead%
+
+[walker@start]
+path_walk = genrih_walk
+path_look = genrih_look
+danger = danger_condition
+def_state_standing = binocular
+combat_ignore_cond = always
+meet = no_meet
+on_actor_dist_le_nvis = 35 | remark@start
+on_info = {+usa_enemy} walker@111
+
+[remark@start]
+anim = binocular
+target = genrih_look, 0
+snd = genrih_start
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@1 %+genrih_skazal%
+on_info = {+usa_enemy} walker@111
+
+[walker@1]
+path_walk = genrih_walk
+path_look = genrih_look
+danger = danger_condition
+def_state_standing = binocular
+combat_ignore_cond = always
+meet = no_meet
+on_actor_dist_le_nvis = 2.5 | remark@1
+on_info = {+usa_enemy} walker@111
+
+[remark@1]
+anim = binocular
+target = genrih_look, 0
+snd = genrih1
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | remark@11
+on_info = {+usa_enemy} walker@111
+
+[remark@11]
+anim = ward
+target = actor
+snd = genrih2
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@11 %=play_snd(ambient\new\actor_henrich)% 
+on_info = {+usa_enemy} walker@111
+
+[walker@11]
+path_walk = genrih1_walk
+path_look = genrih1_look
+meet = no_meet
+def_state_moving1 = walk
+def_state_moving2 = walk
+def_state_moving3 = walk
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+usa_enemy} walker@111
+on_signal = genrih | walker@12 %+genrih_mesto%
+
+[walker@12]
+path_walk = genrih1_walk
+path_look = genrih1_look
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+usa_enemy} walker@111
+on_info2 = {+mg_vyhod_start} walker@13
+
+[walker@13]
+path_walk = genrih1_walk
+path_look = genrih1_look
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition
+on_info = {+usa_enemy} walker@111
+on_timer = 25000 | walker@vyhod %+genrih_wait%
+
+[walker@vyhod] 
+path_walk = genrih_vyhod_walk
+path_look = genrih_vyhod_look
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+on_signal = genrihend | %=fotograf.del_genrih +genrih_del%
+
+[walker@111]
+path_walk = genrih_walk
+path_look = genrih_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+meet_state = ward

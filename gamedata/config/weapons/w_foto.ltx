@@ -1,0 +1,241 @@
+[wpn_foto]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn                  = "weapons\foto"		; option for Level Editor
+$npc			 = on				; option for Level Editor
+$prefetch 		 = 8
+scheduled               = off              	; option for ALife Simulator
+cform                   = skeleton
+class                   = WP_SVD
+min_radius              = 0
+max_radius              = 50
+description				= "Цифровая фотокамера со специальным объективом, оснащённым уникальными фильтрами, чтобы можно было избежать серьёзных искажений изображения, вызываемого аномальным воздействием Зоны. Но тем не менее, качество картинки далеко от идеала. Обычная цифровая и тем более плёночная камера вообще не в состоянии в пределах Зоны производить фотосъёмку - изображение оказывается полностью засвеченным."
+script_binding          = bind_photo.init
+
+ef_main_weapon_type		 = 3
+ef_weapon_type			 = 8
+
+;--- scope weapons -----------------------------------------------------------------
+holder_range_modifier	= 2.15               ; во сколько раз увеличивается eye_range 
+holder_fov_modifier		= 0.3              ; во сколько раз увеличивается eye_fov
+;-----------------------------------------------------------------------------------
+
+cost				= 25000
+weapon_class			= sniper_rifle
+
+ammo_limit			= 60
+ammo_current			= 10
+ammo_elapsed			= 0
+
+ammo_mag_size			= 40
+ammo_class			= ammo_sd
+
+sprint_allowed			= true
+;-----------------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base		= 0.01 ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor		= 1.4f
+
+;отдача
+cam_relax_speed         	= 3;0.05	;скорость возврата в исходное положение
+cam_dispersion          	= 0.005	;увеличения угла (в градусах) с каждым выстрелом
+cam_max_angle			= 1.0	;максимальный угол отдачи
+cam_max_angle_horz		= 1.0	;(degree) maximum shot horizontal degree 
+cam_step_angle_horz		= 0.05	;(degree) size of step camera moved in horizontal position while shooting
+
+fire_dispersion_condition_factor = 1	;увеличение дисперсии в процентах при максимальном износе 
+misfire_probability 		= 0.000000001 ;вероятность осечки при максимальном износе 
+misfire_condition_k			= 0.0005
+condition_shot_dec 			= 0.00000001 ;увеличение износа при каждом выстреле
+;-----------------------------------------------------------------------------------
+
+hand_dependence 		= 1
+single_handed			= 0
+
+slot 				= 2		; // secondary
+animation_slot			= 2		; type of the animation that will be used
+
+
+inv_name			= Фотокамера
+inv_name_short			= Фотокамера
+inv_weight			= 0.8
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x			= 20
+inv_grid_y			= 14
+
+kill_msg_x			= 166
+kill_msg_y			= 59
+kill_msg_width		= 82
+kill_msg_height		= 23
+
+direction               = 0, 0, 1
+
+fire_point              = 0.0, 0.0, 0.0
+
+flame_particles         = weapons\foto
+smoke_particles	 		= 
+rpm_empty_click 		= 120
+
+shell_point		 		= 0.0, 0.0, 0.0
+shell_dir		 		= 0.0, 0.0, 0.0
+;shell_particles	 		= weapons\generic_shells
+
+; ttc
+hit_power                       = 0.1
+hit_impulse		 	= 1
+hit_type 			= fire_wound
+
+fire_distance           	= 0
+bullet_speed		 	= 15000	;начальная скорость пули
+rpm                     	= 30
+; end ttc
+
+
+hud                     =  item_foto_hud
+normal                   	= 0, 1, 0
+position         	    	= -0.026,-0.172,0
+orientation              	= 0, 0, 0
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;под мишкой
+strap_position         		= -0.26,-0.11,0.15			; position (offset) and orientation of the weapon when it is strapped
+strap_orientation      		= -15,-9,110				; (3rd person view in degrees)
+;под мишкой
+;strap_position         		= -0.20,-0.13,0.25			; position (offset) and orientation of the weapon when it is strapped
+;strap_orientation      		= -50,-13,110				; (3rd person view in degrees)
+;на спине
+;strap_position         		= -0.16,-0.32,0.15			; position (offset) and orientation of the weapon when it is strapped
+;strap_orientation      		= -10,-7,10					; (3rd person view in degrees)
+
+strap_bone0					= bip01_spine2
+strap_bone1					= bip01_spine1
+
+startup_ammo            = 10
+visual                  = items\item_foto.ogf
+
+light_color		 		= 1.3,1.5,2
+light_range		 		= 4.0
+light_var_color		 	= 0.05
+light_var_range		 	= 0.5
+light_time 		 		= 0.5
+
+ph_mass			 		= 3
+;cost			 		= 900
+
+;addons
+scope_status				= 1
+silencer_status				= 0
+grenade_launcher_status		= 0
+zoom_enabled				= true
+
+zoom_enabled			= true
+scope_zoom_factor	    = 15		;ПСО-1 4X
+
+scope_texture			= item\foto\fot_cross.dds
+
+;звуки
+;звуки
+snd_draw				= starter\weapons\fot\fot_draw
+snd_holster				= weapons\generic_holster
+snd_shoot				= starter\weapons\fot\fot_kadr
+snd_empty				= starter\weapons\fot\fot_empty
+snd_reload				= starter\weapons\fot\fot_reload
+
+ 
+[item_foto_hud]
+
+shell_point			= 0.0000,0.000,0.000				; position (3rd person view) for shell to throw out
+fire_point			= 0.0000,0.000,0.000
+fire_bone               	= flash
+orientation             = 0, 0, 0
+position                = 0, 0, 0
+visual                  = items\item_foto_hud.ogf
+
+anim_idle					= idle
+anim_idle_aim				= idle_aim
+anim_reload					= reload
+anim_draw					= draw
+anim_holster				= holster
+anim_shoot					= shoot
+anim_idle_sprint			= idle_sprint
+
+zoom_hide_crosshair			= true
+zoom_rotate_time			= 0.25
+zoom_offset					= -0.10,0.06,0.0
+zoom_rotate_x				= 0.0
+zoom_rotate_y				= 0.0
+
+[wpn_foto1]:wpn_foto
+$spawn                  = "weapons\foto1"
+description            = "Цифровая фотокамера, оснащённая специальным уникальным объективом, который позволяет делать снимки в зоне повышенной аномальной и радиационной активности с минимальными искажениями."
+script_binding          = bind_photo.init
+inv_weight				= 1.3
+cost					= 35000
+
+inv_grid_width			= 3
+inv_grid_height			= 2
+inv_grid_x				= 32
+inv_grid_y				= 14
+
+visual                  = items\item_foto1.ogf
+hud                     = item_foto1_hud
+
+[item_foto1_hud]
+shell_point			= 0.0000,0.000,0.000				; position (3rd person view) for shell to throw out
+fire_point			= 0.0000,0.000,0.000
+fire_bone               	= flash
+orientation             = 0, 0, 0
+position                = 0, 0, 0
+visual                  = items\item_foto1_hud.ogf
+
+anim_idle					= idle
+anim_idle_aim				= idle_aim
+anim_reload					= reload
+anim_draw					= draw
+anim_holster				= holster
+anim_shoot					= shoot
+anim_idle_sprint			= idle_sprint
+
+zoom_hide_crosshair			= true
+zoom_rotate_time			= 0.25
+zoom_offset					= -0.10,0.06,0.0
+zoom_rotate_x				= 0.0
+zoom_rotate_y				= 0.0
+
+[ammo_sd]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn			= "weapons\ammo\ammo_sd" ; option for Level Editor
+class			= AMMO
+cform                   = skeleton
+visual                  = items\item_sd.ogf
+description		= "Небольшая, специально разработанная для непростых условий Зоны, флеш-карта для цифровой фотокамеры. На ней может поместиться 40 высококачественных фотоснимков максимального разрешения. Корпус флэш-карты сделан из свинцового сплава, что даёт некоторую защиту от губительного воздействия радиации и аномальной активности на сохранность цифровой информации, записанной на этом носителе."
+$prefetch 		= 64
+
+cost			= 5530
+
+box_size		= 40
+
+inv_name		= "Флеш-карта"
+inv_name_short	= "Флеш-карта"
+inv_weight		= .1
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 22
+inv_grid_y		= 14
+
+k_dist			= 0.1
+k_disp			= 1
+k_hit			= 0.1
+k_impulse		= 1
+k_pierce		= 0.1
+impair			= 2.5
+buck_shot		= 1
+tracer			= off
+wm_size                 = 0.05
+
+explosive		= on
+

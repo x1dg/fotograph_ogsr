@@ -1,0 +1,46 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = remark@choose 
+danger = danger_condition 
+on_death = death
+on_hit = hit
+combat_ignore = combat_ignore
+
+[death]
+on_info = %=observer.del_obj%
+
+[hit]
+on_info = %=observer.del_obj%
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[remark@choose]
+anim = binocular
+target = actor
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_actor_dist_le_nvis = 35 | remark@hide
+on_timer = 12000 | remark@guard_rac
+
+[remark@guard_rac]
+anim = guard_rac
+target = actor
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_actor_dist_le_nvis = 35 | remark@hide
+on_timer = 6000 | remark@choose
+
+[remark@hide]
+anim = hide
+target = actor
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_actor_dist_ge_nvis = 35 | remark@choose
+on_timer = 3500 | %=observer.del_obj%

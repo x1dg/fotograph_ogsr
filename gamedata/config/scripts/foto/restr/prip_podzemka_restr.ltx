@@ -1,0 +1,9 @@
+[logic]
+active = sr_idle@1
+
+[sr_idle@1]
+on_actor_inside = sr_idle@2 %=fotograf.prip_podzemka_spawn%
+
+[sr_idle@2]
+on_timer = 3000 | nil %+prip_podzemka_zasada%
+

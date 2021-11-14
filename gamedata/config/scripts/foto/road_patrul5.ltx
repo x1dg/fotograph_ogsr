@@ -1,0 +1,25 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@road_patrul5
+on_hit = hit
+on_death = death
+
+[walker@road_patrul5]
+path_walk = road_patrul5_walk
+path_look = road_patrul5_look
+meet = no_meet
+danger = danger_condition@road_patrul5
+on_info = {+soldaty_enemy} %=killactor%
+
+[danger_condition@road_patrul5]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[hit]
+on_info = {=hit_by_actor} %+soldaty_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+soldaty_enemy%
+

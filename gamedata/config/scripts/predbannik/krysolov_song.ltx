@@ -1,0 +1,59 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@1]
+path_walk = krysolov_song_walk
+path_look = krysolov_song_look
+meet = no_meet
+def_state_standing = sit
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+bratok_enemy} walker@2
+on_actor_dist_le_nvis = 5.3 | remark@1
+
+[remark@1]
+anim = sit
+target = krysolov_song_look, 0
+snd = krysolov_song
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = sound_end | walker@11
+on_info = {+bratok_enemy} walker@2
+
+[walker@11]
+path_walk = krysolov_song_walk
+path_look = krysolov_song_look
+meet = no_meet
+def_state_standing = sit
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+bratok_enemy} walker@2
+
+[walker@2]
+path_walk = krysolov_song_walk
+path_look = krysolov_song_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = true
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+bratok_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+bratok_enemy%

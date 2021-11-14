@@ -1,0 +1,44 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = remark@1
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %=fotograf.del_haron_peschera%
+
+[death]
+on_info = %=fotograf.del_haron_peschera%
+
+[remark@1]
+anim = press
+target = actor 
+danger = danger_condition
+meet = no_meet
+combat_ignore_cond = always
+on_actor_dist_le_nvis = 4.8 | remark@2 %=fotograf.no_move%
+
+[remark@2]
+anim = press
+target = actor
+snd = haron_peschera 
+danger = danger_condition
+meet = no_meet
+combat_ignore_cond = always
+on_signal = sound_end | remark@3 %=fotograf.del_haron_peschera =fotograf.restore_move =fotograf.actor_rasklad =mauvais.timer_music_peschera_contra2%
+
+[remark@3]
+target = actor
+danger = danger_condition
+meet = no_meet
+combat_ignore_cond = always
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+

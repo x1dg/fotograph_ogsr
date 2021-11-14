@@ -1,0 +1,34 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+
+[walker@1]
+path_walk = mk_dezertip_fort_walk
+path_look = mk_dezertip_fort_look
+meet = meet
+def_state_standing = sit
+danger = danger_condition
+on_info = {+mk_dezertir_fort_enemy} walker@2 %=killactor%
+
+[walker@2]
+path_walk = mk_dezertip_fort_walk
+path_look = mk_dezertip_fort_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 10
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+mk_dezertir_fort_enemy%

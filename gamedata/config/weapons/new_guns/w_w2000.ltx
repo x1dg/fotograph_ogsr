@@ -1,0 +1,198 @@
+[wpn_w2000]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency 	= 
+$spawn                  = "weapons\w_w2000"
+$npc			 		= on				
+$prefetch 		 		= 8
+scheduled               = off              ; option for ALife Simulator
+cform                   = skeleton
+class                   = WP_LR300
+min_radius              = 0
+max_radius              = 100
+
+description			= enc_weapon_wa2000
+
+ef_main_weapon_type		 = 3
+ef_weapon_type			 = 8
+;-----------------------------------------------------------------------------------
+holder_range_modifier	= 1.0		       ; во сколько раз увеличивается eye_range 
+holder_fov_modifier		= 0.7              ; во сколько раз увеличивается eye_fov
+;-----------------------------------------------------------------------------------
+
+
+weapon_class			= sniper_rifle
+
+cost				= 20000
+
+ammo_limit		 	= 210
+ammo_current			= 30
+ammo_elapsed		 	= 30
+
+ammo_mag_size		 	= 6
+ammo_class		 	= ammo_7.62x51_fmj, ammo_7.62x51_ap
+launch_speed			= 0
+fire_modes			= 1
+f_mode				= 2
+
+hand_dependence		 	= 1
+single_handed			= 0
+
+inv_name			= name_WA-2000
+inv_name_short		        = name_WA-2000
+
+inv_weight			= 4.3
+
+inv_grid_width			= 5
+inv_grid_height			= 2
+inv_grid_x			= 13
+inv_grid_y			= 38
+
+kill_msg_x			= 72
+kill_msg_y			= 82
+kill_msg_width		= 56
+kill_msg_height		= 23
+
+slot 				= 2		; // secondary
+animation_slot			= 2		; type of the animation that will be used
+
+;-----------------------------------------------------------------------------------
+;params of weapon recoil
+fire_dispersion_base			= 0.014
+control_inertion_factor			= 2.25f
+disp_rate = 1.82
+;отдача
+cam_relax_speed         		=3.5		;скорость возврата в исходное положение
+cam_dispersion          		= 0.3		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.15		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispertion_frac			= 0.6		;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle				= 17.0	    	;максимальный угол отдачи
+cam_max_angle_horz			= 20.0		;(degree) maximum shot horizontal degree 
+cam_step_angle_horz			= 1.6		;(degree) size of step camera moved in horizontal position while shooting
+
+fire_dispersion_condition_factor 	= 5	    	;увеличение дисперсии в процентах при максимальном износе 
+misfire_probability 		= 0.002	;вероятность осечки при максимальном износе 
+misfire_condition_k			= 0.05
+condition_shot_dec 			= 0.0003
+
+;-----------------------------------------------------------------------------------
+
+direction               = 0, 0, 1
+grenade_flame_particles		= weapons\generic_weapon01
+fire_point             	=  0.0, 0.20, 0.7
+flame_particles			= weapons\generic_weapon05
+smoke_particles         = weapons\generic_shoot_00
+shell_particles	 			= weapons\generic_shells
+
+shell_point		 		= 0.0,0.234,-0.2	
+shell_dir		 		= 0.0, 1.0, 0.0
+
+rpm_empty_click 	 	= 200
+
+PDM_disp_base 			= 5.5
+PDM_disp_vel_factor 		= 1.4
+PDM_disp_accel_factor 		= 1.3
+PDM_crouch	 				= 1.0
+PDM_crouch_no_acc 			= 1.0
+
+hit_power           = 1.58
+hit_impulse	        = 40
+hit_type 	        = fire_wound
+hit_rate	        = 1.95
+fire_distance       = 600
+bullet_speed		= 455
+rpm                 = 100
+
+
+use_aim_bullet				= true		;Поддерживается ли первая суппер пуля
+time_to_aim					= 1.0
+
+silencer_hit_power       	= 1.1
+silencer_hit_impulse	 	= 40
+silencer_fire_distance   	= 180
+silencer_bullet_speed	 	= 400
+
+hud                     = wpn_w2000_hud
+normal                  = 0, 1, 0
+position         	    = -0.026,-0.122,-0.022
+orientation             = 0, 0, 0
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+strap_position         		= -0.16,-0.36,0.15			; position (offset) and orientation of the weapon when it is strapped
+strap_orientation      		= -10,-5,10					; (3rd person view in degrees)
+strap_bone0					= bip01_spine2
+strap_bone1					= bip01_spine1
+
+startup_ammo            = 1000
+visual                   	= weapons\W2000\wpn_w2000.ogf
+
+light_color		 		= 0.6,0.5,0.3
+light_range		 		= 5
+light_var_color		 	= 0.05
+light_var_range		 	= 0.1
+light_time 		 		= 0.2
+
+ph_mass			 		= 6
+
+;addons
+scope_status			= 1
+silencer_status			= 0
+grenade_launcher_status	= 0
+
+scope_zoom_factor	    = 12		
+scope_texture				= wpn\wpn_crosshair_m82
+
+scope_name 					= wpn_addon_scope
+scope_x 					= 41
+scope_y 					= 2
+
+
+silencer_name  				= wpn_addon_silencer
+silencer_x 					= 217
+silencer_y 					= 12
+
+;silencer_flame_particles 	= weapons\generic_weapon01
+silencer_smoke_particles 	= weapons\generic_shoot_00
+
+silencer_light_color		= 1.0, 0.1, 0.0
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+zoom_enabled			= true
+
+
+;------------------------------ S.T.A.L.K.E.R`s sound remake ------------------------------
+snd_draw			= weapons\W2000\w2000_draw
+snd_holster		= weapons\W2000\w2000_holster
+snd_shoot			= weapons\W2000\w2000_shoot
+snd_empty			= weapons\W2000\w2000_empty, 0.7
+snd_reload			= weapons\W2000\w2000_reload, 0.5
+;------------------------------ S.T.A.L.K.E.R`s sound remake ------------------------------
+
+silencer_smoke_particles 	= weapons\generic_shoot_00
+
+
+
+[wpn_w2000_hud]
+shell_point          	= 0.00, 0.00, 0.00
+shell_dir		 = 0.0, 0.0, 0.0
+
+fire_point					= 0.207,0.03,-0.0245
+fire_bone               = wpn_body
+orientation             = 0, 0, 0
+position                = -0.035, -0.055, 0.01
+visual                  = weapons\W2000\wpn_w2000_hud.ogf
+
+anim_idle			= idle
+anim_idle_aim		= idle_aim
+anim_reload			= reload
+anim_draw			= draw
+anim_holster		= holster
+anim_shoot			= shoot
+anim_idle_sprint	= idle_sprint
+
+;смещения HUD для режима приближения
+zoom_offset			= -0.126501,0.024001,-0.130000
+zoom_rotate_x		= -0.000001
+zoom_rotate_y		= 0.000001

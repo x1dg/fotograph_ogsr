@@ -1,0 +1,113 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-brityi_start_dialog_start -brityi_start_dialog_done -brityi_na_meste} walker@brityi1, {+brityi_start_dialog_start -brityi_start_dialog_done -brityi_na_meste} walker@brityi2, {+brityi_start_dialog_done -brityi_na_meste} walker@brityi3, {+brityi_na_meste -brityi_bunker} walker@brityi4, {+brityi_bunker} walker@brityi5  
+combat_ignore = combat_ignore
+on_death = death
+
+[death]
+on_info = %+brityi_dead%
+
+[walker@brityi1]
+path_walk = brityi1_walk
+path_look = brityi1_look
+meet = no_meet
+danger = danger_condition
+on_info = {+mario_nachalo} remark@1
+
+[remark@1]
+target = 30336
+snd = brityi_story
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | remark@11 %+brityi_dogovoril%
+
+[remark@11]
+target = actor
+meet = meet
+danger = danger_condition
+on_info = {+brityi_start_dialog_start} walker@brityi2
+
+[walker@brityi2]
+path_walk = brityi2_walk
+path_look = brityi2_look
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+on_info = {+mesto_obsledoval} remark@2
+on_signal = dobezh | %+brityi_dobezhal%
+
+[remark@2]
+target = actor
+meet = meet
+danger = danger_condition
+on_info = {+brityi_start_dialog_done} walker@brityi3
+
+[walker@brityi3]
+path_walk = brityi3_walk
+path_look = brityi3_look
+meet = no_meet
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+danger = danger_condition
+on_signal = brityi | remark@3
+
+[remark@3]
+anim = hello
+target = 30339
+snd = brityi_semyon
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | remark@4 %+brityi_skazal_1%
+
+[remark@4]
+anim = salut_free
+target = 30339
+meet = no_meet
+danger = danger_condition
+on_info = {+semyon_otvetil} remark@5
+
+[remark@5]
+anim = chasovoy_1
+target = 30339
+snd = brityi
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | walker@brityi4 %+brityi_na_meste%
+
+[walker@brityi4]
+path_walk = brityi4_walk
+path_look = brityi4_look
+meet = no_meet
+def_state_moving1 = walk
+def_state_moving2 = walk
+def_state_moving3 = walk
+danger = danger_condition
+on_timer = 12000 | walker@brityi5 %+brityi_bunker%
+
+[walker@brityi5]
+path_walk = brityi4_walk
+path_look = brityi4_look
+meet = meet
+danger = danger_condition
+on_info = {+info_target18 -brityi_foto} remark@6
+
+[remark@6]
+target = actor
+snd = brityi_foto
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | walker@brityi5 %+brityi_foto%
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

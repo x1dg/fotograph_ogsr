@@ -1,0 +1,220 @@
+; јвтомат специальный ј— "¬ал" (6ѕ30)
+;--------------------------------------
+[wpn_val]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency 		= 
+$spawn                  	= "weapons\val"					; option for Level Editor
+$npc			 	= on				; option for Level Editor
+$prefetch 			= 8
+scheduled            		= off              ; option for ALife Simulator
+cform                		= skeleton
+class                		= WP_AK74
+min_radius		        = 0
+max_radius			= 150
+description			= enc_weapons1_wpn-val
+
+ef_main_weapon_type		= 2
+ef_weapon_type			= 6
+
+;-----------------------------------------------------------------------------------
+holder_range_modifier	        = 1.0
+holder_fov_modifier		= 1.0
+;-----------------------------------------------------------------------------------
+
+cost		 	 		= 9500
+weapon_class				= assault_rifle
+
+ammo_elapsed				= 20
+ammo_mag_size				= 20
+ammo_class		 		= ammo_9x39_sp5, ammo_9x39_ap, ammo_9x39_pab9  
+fire_modes				= 1, -1
+grenade_class			        = ammo_vog-25, ammo_vog-25p
+launch_speed			        = 0
+		
+hand_dependence		 		= 1
+single_handed				= 0
+	
+slot 				 	= 2		; // secondary
+animation_slot		 		= 2		; type of the animation that will be used
+
+inv_name	         		= wpn-val
+inv_name_short		 		= wpn-val
+inv_weight		 		= 2.66
+
+inv_grid_width				= 5
+inv_grid_height				= 2
+inv_grid_x				= 5
+inv_grid_y				= 29
+
+kill_msg_x			        = 0
+kill_msg_y			        = 154
+kill_msg_width		                = 78
+kill_msg_height		                = 21
+
+;-----------------------------------------------------------------------------------
+;базова€ дисперси€
+fire_dispersion_base		        = 0.12	;угол (в градусах) базовой дисперсии оружи€ (оружи€ зажатого в тисках)
+control_inertion_factor		        = 1.04f
+disp_rate = 1.75
+
+;отдача
+cam_relax_speed        		 	= 5	;скорость возврата в исходное положение
+cam_dispersion        		        = 0.28	;увеличени€ угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.11	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispertion_frac			= 0.9 ;1.0	;ствол будет подыматьс€ на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle			        = 8.0	;максимальный угол отдачи
+cam_max_angle_horz			= 10.0	;(degree) maximum shot horizontal degree 
+cam_step_angle_horz			= 2.1	;(degree) size of step camera moved in horizontal position while shooting
+
+fire_dispersion_condition_factor 	= 3     ;увеличение дисперсии в процентах при максимальном износе 
+misfire_probability 	                = 0.002
+misfire_condition_k 	                = 0.05
+condition_shot_dec 		        = 0.0003
+;-----------------------------------------------------------------------------------
+
+
+direction            	        = 0, 0, 1
+
+fire_point           	        = 0.0, 0.174, 0.562
+
+smoke_particles			= weapons\generic_shoot_00
+grenade_flame_particles		= weapons\generic_shoot_00
+
+shell_point		 	= 0.0, 0.174, 0.078
+shell_dir		 	= 0.0, 1.0, 0.0
+shell_particles	 		= weapons\arsenal_shells1
+
+PDM_disp_base 			= 1.2
+PDM_disp_vel_factor 		= 1.2
+PDM_disp_accel_factor 		= 1.2
+PDM_crouch	 		= 1.0
+PDM_crouch_no_acc 		= 1.0
+
+hit_power        	        = 0.42
+hit_impulse		 	= 20
+hit_type 			= fire_wound
+hit_rate	                = 1.95
+
+fire_distance   	        = 200
+bullet_speed			= 290
+rpm                             = 650
+rpm_empty_click 		= 400
+
+
+use_aim_bullet			= false			;ѕоддерживаетс€ ли перва€ суппер пул€
+time_to_aim			= 1.0	
+
+hud             	        = wpn_val_hud
+normal          	        = 0, 1, 0
+
+;----------------------------------------------------------
+position 			= -0.026,-0.172,0 
+orientation 			= 0, 0, 0
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;под мишкой
+strap_position         		= -0.26,-0.11,0.25   ; position (offset) and orientation of the weapon when it is strapped
+strap_orientation      		= -15,-9,110	     ; (3rd person view in degrees)
+strap_bone0			= bip01_spine2
+strap_bone1			= bip01_spine1
+
+visual          	        = weapons\val\wpn_val.ogf
+
+light_disabled			= true
+
+;addons
+scope_status			= 2
+silencer_status			= 0
+grenade_launcher_status	= 0
+
+scope_name 			= wpn_addon_scope
+grenade_launcher_name 		= wpn_addon_grenade_launcher
+grenade_launcher_x 		= 116
+grenade_launcher_y 		= 23
+
+zoom_enabled			= true
+scope_zoom_factor		= 75
+scope_x 			= 61   ; offset in inventory icon
+scope_y 			= 8
+;------------------------------  Sound of Duke -----------------------
+;звуки
+snd_draw				= new_weapons\val_12\vintorez_draw
+snd_holster				= new_weapons\ak10x_arma\holster, 0.5
+snd_shoot				= new_weapons\val_12\vintorez_shoot
+snd_shoot1				= new_weapons\val_12\vintorez_shoot1
+snd_shoot2				= new_weapons\val_12\vintorez_shoot2
+snd_shoot3				= new_weapons\val_12\vintorez_shoot3        
+snd_empty				= new_weapons\val_12\vintorez_empty, 0.8
+snd_reload				= new_weapons\val_12\val_reload
+snd_close				= weapons\generic_close
+snd_shoot_grenade			= weapons\gp30\gp30_grenshoot
+snd_reload_grenade			= weapons\gp30\gp30_grenload
+snd_switch				= weapons\gp30\gp30_switch
+;-----------------------------------------------------------------------------
+;-- HUD DESCRIPTION
+;-----------------------------------------------------------------------------
+[wpn_val_hud]
+
+allow_inertion			= true
+
+shell_point          		= 0,0,-0.9
+shell_dir			= 0.0, 1.0, 0.0
+
+fire_point               	= 0,0,-0.6
+fire_point2              	= 0.019,0.11,-0.43 ;  0.019,0.07,0.07
+fire_bone               	= wpn_body
+orientation              	= 1, 2, 0
+position                	= 0.09, -0.04, -0.01
+grenade_bone            	= wpn_grenade
+visual 	 			= weapons\val\wpn_val_hud.ogf
+
+
+anim_idle     = idle
+anim_idle_aim    = idle_aim
+anim_reload     = reload
+anim_draw     = draw
+anim_holster    = holster
+anim_shoot     = shoot
+
+; attached grenade launcher [NORMAL fire mode]
+anim_idle_gl    = idle_w_gl
+anim_idle_gl_aim   = idle_w_gl_aim
+anim_reload_gl    = reload_w_gl
+anim_draw_gl    = draw_w_gl
+anim_holster_gl    = holster_w_gl
+anim_shoot_gl    = shoot_w_gl
+anim_idle_sprint   = idle_sprint
+
+
+anim_idle_g     =  idle_w_gl
+anim_idle_g_aim    = idle_w_gl_aim
+anim_reload_g    = reload_grenade
+anim_shoot_g    = shoot_w_gl
+anim_switch_grenade_on  = grenade_on
+anim_switch_grenade_off  = grenade_off
+anim_draw_g     = draw_w_gl
+anim_holster_g    = holster_w_gl
+   
+
+
+;-----------------------------------------------------------------------------
+;смещени€ HUD дл€ режима приближени€
+zoom_offset			= -0.09,0.0372,-0.080700
+zoom_rotate_x		= 0.021
+zoom_rotate_y		= 0.017900
+
+grenade_normal_zoom_offset   = -0.090,0.0130,-0.115000
+grenade_normal_zoom_rotate_x  = 0.0206
+grenade_normal_zoom_rotate_y  = 0.0187
+;-----------------------------------------------------------------------------
+;пр€чем перекрестие прицела в зуме
+zoom_hide_crosshair		= true
+
+;врем€ поворота HUD (сек)
+zoom_rotate_time		= 0.3
+rotate_time			= 0.3
+
+[wpn_val_repair]
+tech_complication = 500
+repair_compatibility = val
+

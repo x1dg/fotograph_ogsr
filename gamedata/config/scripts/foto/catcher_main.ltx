@@ -1,0 +1,98 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@1]
+path_walk = catcher_main_walk
+path_look = catcher_main_look
+def_state_standing = ward
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+utug_sdal} walker@2
+
+[walker@2]
+path_walk = catcher_main_walk
+path_look = catcher_main_look
+def_state_standing = ward
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_actor_dist_le_nvis = 3 | remark@3 %+kont_knife =play_snd(characters_voice\scenario\backup\contra_01)%
+
+[remark@3]   
+anim = ward
+target = actor    
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_timer = 6000 | remark@4 %=play_snd(ambient\new\utug_undead)%
+on_actor_dist_ge_nvis = 3.5 | %-kont_knife%
+
+[remark@4]
+anim = ward
+target = actor    
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_actor_dist_ge_nvis = 3.5 | remark@5 %-kont_knife =play_snd(ambient\new\actor_72)%
+
+[remark@5]
+anim = ward
+target = actor    
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_timer = 9000 | remark@6 %=play_snd(characters_voice\scenario\backup\contra_02)%
+
+[remark@6]
+anim = ward
+target = actor    
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_timer = 8000 | remark@7 %=play_snd(ambient\new\actor_73)%
+
+[remark@7]
+anim = ward
+target = actor    
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_timer = 6000 | remark@8 %=play_snd(characters_voice\scenario\backup\contra_03)%
+
+[remark@8]
+anim = ward
+target = actor    
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_timer = 6000 | walker@3 %+kont_enemy%
+
+[walker@3]
+path_walk = catcher_main_walk
+path_look = catcher_main_look
+def_state_standing = ward
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+
+[death]
+on_info = {=killed_by_actor =item_active(wpn_knife)} %+kont_pahan%
+on_info2 = {=killed_by_actor !item_active(wpn_knife)} %+kont_enemy_less%

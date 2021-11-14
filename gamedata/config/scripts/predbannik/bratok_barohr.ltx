@@ -1,0 +1,85 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-ohrana_otoshel} walker@bandit_barohr1, {+ohrana_otoshel} walker@bandit_barohr2
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@bandit_barohr1]
+path_walk = bandit_barohr1_walk
+path_look = bandit_barohr_look
+meet = no_meet
+danger = danger_condition
+on_info = {+bratok_enemy} walker@bandit_barohr11
+on_actor_dist_le_nvis = 5 | {-sidorovich_one_dialog_start} remark@1, {+sidorovich_one_dialog_start} remark@1 %+mozhno_kbore% 
+;on_info2 = {+flyer_est} remark@2
+
+[remark@1]
+anim = assault
+target = actor
+snd = ohrbar_mk
+meet = no_meet
+danger = danger_condition
+on_signal = sound_end | {+flyer_est} remark@2, {-flyer_est} remark@3 %+barohr_zlitsya +vhod_borov% 
+on_info = {+bratok_enemy} walker@bandit_barohr11
+
+[remark@2]
+anim = assault
+target = actor
+meet = meet
+danger = danger_condition
+on_info = {+prohod_otkryt} walker@bandit_barohr2 %+ohrana_otoshel%
+on_info2 = {+bratok_enemy} walker@bandit_barohr11
+
+[remark@3]
+anim = assault
+target = actor
+meet = no_meet
+danger = danger_condition
+on_info = {+bratok_enemy} walker@bandit_barohr11
+on_info2 = {+barohr_spokoyno} remark@4 %-barohr_spokoyno +povtor_zahod%
+on_info3 = {+flyer_est} remark@2
+
+[remark@4]
+anim = assault
+target = actor
+meet = no_meet
+danger = danger_condition
+on_info = {+bratok_enemy} walker@bandit_barohr11
+on_actor_dist_ge_nvis = 150 | walker@bandit_barohr1 %-povtor_zahod%
+on_info2 = {+flyer_est} remark@2
+
+[walker@bandit_barohr2]
+path_walk = bandit_barohr2_walk
+path_look = bandit_barohr_look
+meet = no_meet
+danger = danger_condition
+def_state_moving1 = walk
+def_state_moving2 = walk
+def_state_moving3 = walk
+on_info = {+bratok_enemy} walker@bandit_barohr11
+
+[walker@bandit_barohr11]
+path_walk = bandit_barohr1_walk
+path_look = bandit_barohr_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+meet_dialog = flyer_dialog
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+bratok_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+bratok_enemy%

@@ -1,0 +1,56 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@bratok_bar_06
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@bratok_bar_06]
+path_walk = bratok_bar_06_walk
+path_look = bratok_bar_06_look
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+bratok_enemy} walker@bratok_bar_066
+on_actor_dist_le = 2.0 | remark@1
+
+[remark@1]
+target = actor
+snd = vali_nah
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = sound_end | walker@bratok_bar_061
+on_info = {+bratok_enemy} walker@bratok_bar_066
+
+[walker@bratok_bar_061]
+path_walk = bratok_bar_06_walk
+path_look = bratok_bar_06_look
+meet = meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+bratok_enemy} walker@bratok_bar_066
+
+[walker@bratok_bar_066]
+path_walk = bratok_bar_06_walk
+path_look = bratok_bar_06_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+bratok_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+bratok_enemy%

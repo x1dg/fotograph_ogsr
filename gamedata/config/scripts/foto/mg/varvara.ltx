@@ -1,0 +1,89 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-varvara_dialog_1_done} remark@01, {+varvara_dialog_1_done -petro_dialog_2_done} remark@3, {+petro_dialog_2_done -mg_unlock} remark@4, {+mg_unlock} remark@5
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[remark@01]
+target = actor
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} %=killactor%
+on_timer = 4000 | remark@02
+
+[remark@02]
+target = actor
+meet = no_meet
+snd = varvara1
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} %=killactor%
+on_signal = sound_end | remark@1
+
+[remark@1]
+target = actor
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} %=killactor%
+on_actor_dist_le_nvis = 4 | remark@2
+
+[remark@2]
+target = actor
+meet = meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} %=killactor%
+on_actor_dist_ge_nvis = 7 | remark@1
+on_info2 = {+varvara_dialog_1_done} remark@3 
+
+[remark@3]
+target = actor
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} %=killactor%
+on_info2 = {+petro_dialog_2_done} remark@4 
+
+[remark@4]
+target = actor
+meet = meet@1
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} %=killactor%
+on_info2 = {+mg_unlock} remark@5 %=play_snd(ambient\new\actor_69)%
+
+[remark@5]
+target = actor
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+petro_enemy} %=killactor%
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+meet_dialog = varvara_dialog_0
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[meet@1]
+meet_dialog = varvara_dialog_1
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+petro_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+petro_enemy%
+

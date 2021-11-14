@@ -1,0 +1,12 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = {+german_spasenie_gotovo} sr_idle@1 %=foto.break_mg_lc% 
+on_info = {+mg_unlock} sr_idle@2
+
+[sr_idle@1]
+on_actor_outside = {+german_spasenie_gotovo} sr_idle
+
+[sr_idle@2]
+on_actor_inside = {+mg_unlock} nil %=foto.varvara_release =val_test.del_restr% 

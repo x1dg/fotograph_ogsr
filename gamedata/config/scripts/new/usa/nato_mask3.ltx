@@ -1,0 +1,28 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@nato_mask3
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+
+[walker@nato_mask3]
+path_walk = nato_mask3_walk
+path_look = nato_mask3_look
+meet = meet@nato_mask3
+danger = danger_condition@nato_mask3
+
+[danger_condition@nato_mask3]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[meet@nato_mask3]
+use = true
+use_wpn = false
+meet_talk_enabled = true

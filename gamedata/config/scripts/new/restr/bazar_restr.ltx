@@ -1,0 +1,12 @@
+[logic]
+active = sr_idle@1
+
+[sr_idle@1]
+on_actor_inside = sr_idle@2 %=disable_ui +shkura_start%
+
+[sr_idle@2]
+on_timer = 12000 | sr_idle@3 %=enable_ui%
+
+[sr_idle@3]
+on_info = {+mercd1_dead +mercd2_dead +mercd3_dead +mercd4_dead +shkur4} nil %=play_snd(ambient\new\actor_70) =foto2.skin_restr_vhod_spawn =foto2.kont_vhod_spawn%
+

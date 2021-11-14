@@ -1,0 +1,32 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = kamp@mk_bratva_01
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+bratok_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+bratok_enemy%
+
+[kamp@mk_bratva_01]
+center_point = mk_bratva_01_center
+radius = 2.5
+meet = meet
+def_state_moving = walk
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+

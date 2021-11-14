@@ -1,0 +1,64 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@petrenko
+combat_ignore = combat_ignore
+trade = misc\new_trader\trade_dolg.ltx
+on_hit = hit
+on_death = death
+
+[walker@petrenko]
+path_walk = petrenko_walk
+path_look = petrenko_look
+meet = no_meet
+danger = danger_condition@petrenko
+on_info = {+usa_enemy} walker@petrenko1
+on_info2 = {+uchen_enemy} walker@petrenko1 %+usa_enemy%
+on_actor_dist_le_nvis = 5 | remark@1
+
+[remark@1]
+anim = ward
+target = actor
+snd = petrenko_hello
+meet = no_meet
+danger = danger_condition@petrenko
+on_signal = sound_end | remark@2
+
+[remark@2]
+anim = ward
+target = actor
+meet = meet@petrenko
+danger = danger_condition@petrenko
+on_actor_dist_ge_nvis = 8 | walker@petrenko2
+
+[walker@petrenko2]
+path_walk = petrenko_walk
+path_look = petrenko_look
+meet = no_meet
+danger = danger_condition@petrenko
+on_info = {+usa_enemy} walker@petrenko1
+on_info2 = {+uchen_enemy} walker@petrenko1 %+usa_enemy%
+on_actor_dist_le_nvis = 5 | remark@2
+
+[walker@petrenko1]
+path_walk = petrenko_walk
+path_look = petrenko_look
+meet = no_meet
+danger = danger_condition@petrenko
+
+[danger_condition@petrenko]
+ignore_distance = 5
+ignore_distance_corpse = 0
+
+[meet@petrenko]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+on_info2 = {=killed_by_actor} %+petrenko_dead%

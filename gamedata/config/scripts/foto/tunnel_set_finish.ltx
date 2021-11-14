@@ -1,0 +1,69 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = remark@1 
+danger = danger_condition 
+;on_hit = hit
+;on_death = death
+combat_ignore = combat_ignore
+
+[hit]
+on_info = | %=tunnel.del_start%
+
+[death]
+on_info = | %=tunnel.del_start%
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[remark@1]	
+target = actor
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_timer = 4000 | remark@2 %=play_snd(ambient\new\tunnel2_1)%
+
+[remark@2]	
+target = actor
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_timer = 3500 | remark@caution1
+
+[remark@caution1]
+anim = caution	
+target = actor
+snd = tunnel2_2
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_signal = sound_end | remark@caution2 %=play_snd(ambient\new\tunnel2_3)%
+
+[remark@caution2]
+anim = caution	
+no_move = true
+target = actor
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_timer = 13000 | remark@caution3
+
+[remark@caution3]
+anim = caution	
+target = actor
+snd = tunnel2_4
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_signal = sound_end | remark@wait
+
+[remark@wait]
+anim = hello	
+no_move = true
+target = actor
+combat_ignore_cond = always
+danger = danger_condition
+meet = no_meet
+on_timer = 3000 | %+tunnel_transfer%

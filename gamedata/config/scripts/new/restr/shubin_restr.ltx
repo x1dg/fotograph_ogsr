@@ -1,0 +1,9 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = {+dolg_ataka_finish} nil %=val_test.del_restr%, {-shubin_enemy -dolg_ataka_finish} sr_idle@1 %=boryan67.need_help%, {+shubin_enemy -dolg_ataka_finish} nil %=boryan67.GG_hit =val_test.del_restr%
+
+[sr_idle@1]
+on_actor_outside = {-shubin_enemy -shubin_need_help} sr_idle, {-shubin_enemy +shubin_need_help} nil %=boryan67.create_shubin =val_test.del_restr%
+

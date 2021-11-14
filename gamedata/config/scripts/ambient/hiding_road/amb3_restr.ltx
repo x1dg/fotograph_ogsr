@@ -1,0 +1,20 @@
+[logic]
+active = {-info_valroad_45 -info_valroad_46} sr_idle@one, {+info_valroad_45 -info_valroad_46} sr_idle@tri, {+info_valroad_45 +info_valroad_46} sr_idle@five
+
+[sr_idle@one]
+on_actor_inside = {+amb_road} sr_idle@two %=play_snd(ambient\new\amb_fax_1) +info_valroad_45%
+
+[sr_idle@two]
+on_game_timer = 60 | sr_idle@tri
+
+[sr_idle@tri]
+on_actor_inside = {+info_valroad_45} sr_idle@four %=play_snd(ambient\new\amb_fax) +info_valroad_46%
+
+[sr_idle@four]
+on_game_timer = 600 | sr_idle@five
+
+[sr_idle@five]
+on_actor_inside = {+info_valroad_46} sr_idle@six %=play_snd(ambient\new\amb_fax_2) -info_valroad_45 -info_valroad_46%
+
+[sr_idle@six]
+on_game_timer = 900 | sr_idle@one 

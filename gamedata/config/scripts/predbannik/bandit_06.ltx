@@ -1,0 +1,38 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@bandit_06
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@bandit_06]
+path_walk = bandit_06_walk
+path_look = bandit_06_look
+meet = meet
+danger = danger_condition
+combat_ignore_cond = {=fighting_actor}
+on_info = {+bandity_enemy} walker@bandit_066
+
+[walker@bandit_066]
+path_walk = bandit_06_walk
+path_look = bandit_06_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+bandity_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+bandity_enemy%

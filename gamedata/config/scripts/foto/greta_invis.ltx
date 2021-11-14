@@ -1,0 +1,28 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@greta_inv
+combat_ignore = combat_ignore
+danger = danger_condition@greta_inv
+on_hit = hit
+on_death = death
+
+[walker@greta_inv]
+path_walk = greta_inv_walk
+path_look = greta_inv_look
+meet = no_meet
+def_state_standing = press
+combat_ignore_cond = always
+danger = danger_condition@greta_inv
+
+[danger_condition@greta_inv]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[hit]
+on_info = {=hit_by_actor} %+greta_inv_enemy%
+
+[death]
+on_info = %+greta_inv_enemy%
+

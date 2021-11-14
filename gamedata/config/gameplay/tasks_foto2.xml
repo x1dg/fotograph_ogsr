@@ -1,0 +1,276 @@
+<game_task id="radio">
+<title>Помочь отремонтировать радиоузел в Баре.</title>
+<objective>
+<text>Помочь отремонтировать радиоузел в Баре.</text>
+<icon>ui_iconsTotal_radio_remont</icon>
+<infoportion_complete>radio_end</infoportion_complete>
+<infoportion_fail>remont_oblom</infoportion_fail>
+<article>radio</article>
+</objective>
+<objective>
+<text>Раздобыть у профессора Кайманова радиоусилитель.</text>
+<icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+<infoportion_complete>kayman_docs_est</infoportion_complete>
+<infoportion_fail>kayman_oblom</infoportion_fail>
+</objective>
+<objective>
+<text>Принести усилитель дяде Мише в Бар.</text>
+<infoportion_complete>radio_end</infoportion_complete>
+</objective>
+</game_task>
+
+<game_task id="kaymanovu_doki">
+<title>Добыть Кайманову необходимые документы.</title>
+<objective>
+     <text>Принести Кайманову документы из архива.</text>
+     <icon>ui_iconsTotal_archiv</icon>
+     <infoportion_complete>kayman_docs_est</infoportion_complete>
+     <infoportion_fail>kayman_oblom</infoportion_fail>
+     <article>kaymanovu_doki</article>
+     </objective>
+<objective>
+<text>Найти охранника архива и поговорить с ним.</text>
+<icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+<infoportion_complete>archiv_start</infoportion_complete>
+</objective>
+<objective>
+<text>Получить от охранника архива документы для Кайманова.</text>
+<icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+<infoportion_complete>archiv_shema</infoportion_complete>
+</objective>
+<objective>
+<text>Вернуться к Кайманову с документами.</text>
+<infoportion_complete>kayman_docs_est</infoportion_complete>
+<map_location_type hint="Кайманов">blue_location</map_location_type>
+<object_story_id>uchen_kaymanov</object_story_id>
+</objective>
+</game_task>
+
+<game_task id="archiv_pismo">
+<title>Найти пропавшие письма Минчукова.</title>
+<objective>
+     <text>Принести Минчукову его переписку с Гретой.</text>
+     <icon>ui_iconsTotal_archiv_pismo</icon>
+     <infoportion_complete>archiv_pismo</infoportion_complete>
+     <infoportion_fail>archiv_oblom</infoportion_fail>
+     <article>archiv_pismo</article>
+     </objective>
+<objective>
+<text>Найти человека, который последним видел письма.</text>
+<icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+<infoportion_complete>zub_start</infoportion_complete>
+</objective>
+<objective>
+<text>Разыскать потерявшиеся письма.</text>
+<icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+<infoportion_complete>greta_dark</infoportion_complete>
+</objective>
+<objective>
+<text>Вернуться в архив.</text>
+<infoportion_complete>archiv_pismo</infoportion_complete>
+<map_location_type hint="Лейтенант Минчуков">blue_location</map_location_type>
+<object_story_id>archivarius</object_story_id>
+</objective>
+</game_task>
+
+<game_task id="teleport_start">
+<title>Найти начало тайной тропинки.</title>
+<objective>
+     <text>Найти начало тайной тропинки.</text>
+     <icon>ui_iconsTotal_locations</icon>
+     <infoportion_complete>t_port</infoportion_complete>
+     <article>teleport_nachalo</article>
+     </objective>
+<objective>
+<text>Найти начало тайной тропинки за территорией Бара.</text>
+<icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+<infoportion_complete>t_port</infoportion_complete>
+</objective>
+</game_task>
+
+<game_task id="petrenko_poisk">
+<title>Снять данные с разбитых вертолетов.</title>
+<objective>
+<text>Снять данные с разбитых вертолетов.</text>
+<icon>ui_iconsTotal_vert_poisk</icon>
+<infoportion_complete>petrenko_start_dialog_done</infoportion_complete>
+<infoportion_fail>petrenko_dead</infoportion_fail>
+<article>petrenko_poisk</article>
+</objective>
+<objective>
+<text>Найти упавшие вертолеты и снять с аппаратуры данные.</text>
+<icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+<infoportion_complete>heli_all</infoportion_complete>
+</objective>
+<objective>
+<text>Принести данные полковнику Петренко.</text>
+<map_location_type hint="Полковник Петренко">blue_location</map_location_type>
+<object_story_id>komandir_petrenko</object_story_id>
+<infoportion_complete>petrenko_start_dialog_done</infoportion_complete>
+</objective>
+</game_task>
+
+<game_task id="flight_island">
+<title>Помочь Сахарову в изучении странной аномалии.</title>
+<objective>
+     <text>Помочь Сахарову в изучении странной аномалии.</text>
+     <icon>ui_iconsTotal_island</icon>
+     <infoportion_complete>saharov_island_done</infoportion_complete>
+	 <infoportion_fail>island_oblom</infoportion_fail>
+     <article>island_poisk</article>
+     </objective>
+<objective>
+     <text>Найти коллегу Сахарова.</text>
+     <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+     <infoportion_complete>island_collega</infoportion_complete>
+	 <infoportion_fail>island_oblom</infoportion_fail>
+     </objective>
+<objective>
+     <text>Помочь изучить аномалию.</text>
+     <infoportion_complete>island_fin</infoportion_complete>
+     </objective>
+<objective>
+     <text>Вернуться к Сахарову за наградой.</text>
+     <infoportion_complete>saharov_island_done</infoportion_complete>
+     </objective>	 
+</game_task>
+
+<game_task id="shubin_soul">
+<title>Искупление</title>
+<objective>
+     <text>Освободить души погибших сталкеров.</text>
+     <icon>ui_iconsTotal_krest</icon>
+     <infoportion_complete>shubin_dialog_4_done</infoportion_complete>
+     <article>soul_poisk</article>
+	 </objective>
+<objective>
+     <text>Освободить души погибших сталкеров.</text>
+	 <infoportion_complete>krest_finish</infoportion_complete>
+	 </objective>
+<objective>
+     <text>Вернуться к Шубину.</text>
+     <infoportion_complete>shubin_dialog_4_done</infoportion_complete>
+	 </objective>
+</game_task>
+
+<game_task id="nastoyka">
+<title>Мышиная охота</title>
+<objective>
+     <text>Добыть тринадцать летучих мышей.</text>
+     <icon>ui_iconsTotal_kris</icon>
+     <infoportion_complete>actor_has_present</infoportion_complete>
+     <article>bat_poisk</article>
+	 </objective>
+<objective>
+     <text>Добыть тринадцать летучих мышей.</text>
+	 <infoportion_complete>actor_has_mouse</infoportion_complete>
+	 </objective>
+<objective>
+     <text>Отдать мышей Крысолову.</text>
+     <infoportion_complete>krisalov_has_mouse</infoportion_complete>
+	 </objective>
+<objective>
+     <text>Получить награду.</text>
+     <infoportion_complete>actor_has_present</infoportion_complete>
+	 </objective>
+</game_task>
+
+<game_task id="nastoyka_les">
+<title>Настойка для Лесника</title>
+<objective>
+     <text>Достать настойку.</text>
+     <icon>ui_iconsTotal_lesn</icon>
+     <infoportion_complete>ded_dialog_2_done</infoportion_complete>
+     <article>nast_poisk</article>
+	 </objective>
+<objective>
+     <text>Достать и принести Леснику настойку.</text>
+	 <infoportion_complete>ded_dialog_2_done</infoportion_complete>
+	 </objective>
+</game_task>
+
+
+<game_task id="max_labirint">
+<title>Рюкзак Макса</title>
+<objective>
+     <text>Найти рюкзак Макса.</text>
+     <icon>ui_iconsTotal_max</icon>
+     <infoportion_complete>max_ruk_otdal</infoportion_complete>
+     <article>max_poisk</article>
+	 </objective>
+<objective>
+     <text>Найти рюкзак Макса.</text>
+	 <infoportion_complete>max_ruk_have</infoportion_complete>
+	 </objective>
+<objective>
+     <text>Отдать рюкзак Максу.</text>
+	 <infoportion_complete>max_ruk_otdal</infoportion_complete>
+	 </objective>
+</game_task>
+
+<game_task id="dunya_mutant">
+<title>Биологические образцы</title>
+<objective>
+     <text>Собрать части мутантов.</text>
+     <icon>ui_iconsTotal_dunya</icon>
+     <infoportion_complete>dunya_collect_otdal</infoportion_complete>
+     <article>dunya1_poisk</article>
+	 </objective>
+<objective>
+     <text>Собрать части мутантов.</text>
+	 <infoportion_complete>dunya_collect_done</infoportion_complete>
+	 </objective>
+<objective>
+     <text>Вернуться к Дульсинее.</text>
+	 <infoportion_complete>dunya_collect_otdal</infoportion_complete>
+	 </objective>
+</game_task>
+
+<game_task id="dunya_sweets">
+<title>Леденцы для дамы</title>
+<objective>
+     <text>Раздобыть монпансье.</text>
+     <icon>ui_iconsTotal_dunya</icon>
+     <infoportion_complete>dunya_monpansie_otdal</infoportion_complete>
+     <article>dunya2_poisk</article>
+	 </objective>
+<objective>
+     <text>Раздобыть монпансье.</text>
+	 <infoportion_complete>dunya_monpansie_done</infoportion_complete>
+	 </objective>
+<objective>
+     <text>Принести конфеты даме.</text>
+	 <infoportion_complete>dunya_monpansie_otdal</infoportion_complete>
+	 </objective>
+</game_task>
+
+<game_task id="shpak_vodka20">
+<title>Ящик водки для майора</title>
+<objective>
+     <text>Раздобыть и принести Шпаку ящик водки.</text>
+     <icon>ui_iconsTotal_shpak</icon>
+     <infoportion_complete>shpak_dialog_2_done</infoportion_complete>
+     <article>shpak_vodka20_poisk</article>
+	 </objective>
+<objective>
+     <text>Раздобыть и принести Шпаку ящик водки.</text>
+	 <infoportion_complete>shpak_dialog_2_done</infoportion_complete>
+	 </objective>
+</game_task>
+
+<game_task id="shpak_vss">
+<title>Винторез для охоты</title>
+<objective>
+     <text>Принести Шпаку Винторез для охоты на мутантов.</text>
+     <icon>ui_iconsTotal_shpak</icon>
+     <infoportion_complete>shpak_dialog_4_done</infoportion_complete>
+     <article>shpak_vss_poisk</article>
+	 </objective>
+<objective>
+     <text>Принести Шпаку Винторез для охоты на мутантов.</text>
+	 <infoportion_complete>shpak_dialog_4_done</infoportion_complete>
+	 </objective>
+</game_task>
+
+
+

@@ -1,0 +1,483 @@
+;;;;;;;;;;;;;;Плёнка_вода1;;;;;;;;;;;;;;
+[trap_01]
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_01"
+$prefetch 		= 16
+class			= Z_MBALD
+
+ef_anomaly_type			= 1
+ef_weapon_type			= 13
+
+sound			= anomaly\no_sound
+postprocess		= mauv_01
+
+artefacts			= 
+BirthProbability	= ;0.9
+
+;----------- Anomaly settings -----------------------
+min_start_power		= 0.90
+max_start_power		= 1.00
+attenuation			= 0
+period				= 0
+min_artefact_count	= 0
+max_artefact_count	= 0
+
+idle_particles		= mauvais\anomaly\cave_plenka_water; 
+blowout_particles	= ;реакция на болт - эффект аномалии при выбросе энергии ( если вы в нее зайдете
+tearing_particles	= 
+torn_particles      = 
+
+hit_small_particles			=   ;эффект малого удара аномалии
+hit_big_particles			= ;получение хита - эффект полного удара аномалии
+idle_small_particles		=
+idle_big_particles			= 
+entrance_small_particles	= 
+entrance_big_particles		= 
+
+idle_sound			= anomaly\no_sound;  							;постоянный звук
+blowout_sound		= anomaly\no_sound;во время выброса(удара) в центре аномалии	
+hit_sound			= anomaly\no_sound		;на персонаже, когда тот получает хит
+body_tearing_sound	= anomaly\no_sound;			;звук разрывания трупа
+entrance_sound		= anomaly\no_sound;						;при попадании объекта в аномалию
+
+hit_type		    = strike
+hit_impulse_scale	= 0.0;0.1;0.1			;соотношение физического импульса и силы хита
+effective_radius	= 0 ;размер радиуса в процентах от оригинального, где действует зона
+
+disable_time		= 5000	;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time_small	= 5000		;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
+disable_idle_time	= 1000	;время отключения idle партиклов
+
+ignore_nonalive		= true
+ignore_small		= true
+ignore_artefacts	= true
+
+blowout_light		= off
+light_color		    = 0.0,1.0,0.0
+light_range		    = 0.0
+light_time 		    = 0.8;0.35
+light_height		= -5			;подъем источника света на высоту
+
+idle_light = off
+idle_light_range = 10.0
+idle_light_range_delta = 0.2
+idle_light_anim = ui_main_msgs
+idle_light_height = 0.5			;подъем источника света на высоту
+
+awaking_time		= 800;1000
+blowout_time		= 1000	; время выброса энергии аномалии
+accamulate_time		= 500
+
+blowout_light_time		= 800 ; свет при выбросе энергии аномалии
+blowout_explosion_time	= 800 ; время взрыва энергии аномалии
+actor_blowout_radius_percent=		0.05
+
+ignore_light		= true
+visible_by_detector = off
+blowout_wind		= off
+spawn_blowout_artefacts = off   ;off
+
+;;;;;;;;;;;;;;Волосатый глаз;;;;;;;;;;;;;;
+[trap_02]
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_02"
+$prefetch 		= 16
+class			= Z_MBALD
+
+ef_anomaly_type			= 1
+ef_weapon_type			= 13
+
+sound			= anomaly\no_sound
+;postprocess		= mauv_02; ; 
+
+artefacts			= 
+BirthProbability	= ;0.9
+
+;----------- Anomaly settings -----------------------
+min_start_power		= 0.90
+max_start_power		= 1.00
+attenuation			= 0
+period				= 0
+min_artefact_count	= 0
+max_artefact_count	= 0
+
+
+;idle_particles		= 
+idle_particles		= mauvais\anomaly\flyano_02
+;blowout_particles	=  nature\group_items\mauv_fog_foggy_dust_03;реакция на болт - эффект аномалии при выбросе энергии ( если вы в нее зайдете
+tearing_particles	= 
+torn_particles      = 
+
+hit_small_particles			=   ;эффект малого удара аномалии
+hit_big_particles			= ;получение хита - эффект полного удара аномалии
+idle_small_particles		=
+idle_big_particles			= 
+entrance_small_particles	= 
+entrance_big_particles		= 
+
+idle_sound			= anomaly\haire_eye_idle;  							;постоянный звук
+blowout_sound		= anomaly\no_sound;во время выброса(удара) в центре аномалии	
+hit_sound			= anomaly\no_sound		;на персонаже, когда тот получает хит
+body_tearing_sound	= anomaly\no_sound;			;звук разрывания трупа
+entrance_sound		= anomaly\no_sound;						;при попадании объекта в аномалию
+
+hit_type		    = strike
+hit_impulse_scale	= 0.0;0.1;0.1			;соотношение физического импульса и силы хита
+effective_radius	= 0 ;размер радиуса в процентах от оригинального, где действует зона
+
+disable_time		= 5000	;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time_small	= 5000		;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
+disable_idle_time	= 1000	;время отключения idle партиклов
+
+ignore_nonalive		= false
+ignore_small		= false
+ignore_artefacts	= true
+
+blowout_light		= off
+light_color		    = 1.0,1.0,1.0
+light_range		    = 0.0
+light_time 		    = 0.8;0.35
+light_height		= -5			;подъем источника света на высоту
+
+idle_light			= off
+idle_light_range			= 0.0
+idle_light_range_delta 		= 0.0
+idle_light_anim				= 
+idle_light_height			= -5			;подъем источника света на высоту
+
+awaking_time		= 800;1000
+blowout_time		= 1000	; время выброса энергии аномалии
+accamulate_time		= 500
+
+blowout_light_time		= 800 ; свет при выбросе энергии аномалии
+blowout_explosion_time	= 800 ; время взрыва энергии аномалии
+actor_blowout_radius_percent=		0.05
+
+ignore_light		= true
+visible_by_detector = off
+blowout_wind		= off
+spawn_blowout_artefacts = off   ;off
+
+;;;;;;;;;;;;;;Волосатый глаз 1;;;;;;;;;;;;;;
+[trap_02a]:trap_02
+$spawn 			= "zones\trap_02a"
+sound			= anomaly\no_sound
+;----------- Anomaly settings -----------------------
+idle_particles		= mauvais\anomaly\flyano_01
+;idle_sound			= anomaly\no_sound;  ;постоянный звук
+
+;;;;;;;;;;;;;;Волосатый глаз 0;;;;;;;;;;;;;;
+[trap_02b]:trap_02
+$spawn 			= "zones\trap_02b"
+sound			= anomaly\no_sound
+;----------- Anomaly settings -----------------------
+idle_particles		= mauvais\anomaly\flyano_00
+;idle_sound			= anomaly\no_sound;  ;постоянный звук
+
+;;;;;;;;;;;;;;Волосатый глаз 3;;;;;;;;;;;;;;
+[trap_02c]:trap_02
+$spawn 			= "zones\trap_02b"
+sound			= anomaly\no_sound
+;----------- Anomaly settings -----------------------
+idle_particles		= mauvais\anomaly\flyano_03
+;idle_sound			= anomaly\no_sound;  ;постоянный звук
+
+;;;;;;;;;;;;;;Стены колонн низкие;;;;;;;;;;;;;;
+[trap_04]
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_04"
+$prefetch 		= 16
+class			= Z_MBALD
+
+ef_anomaly_type			= 1
+ef_weapon_type			= 13
+
+sound			= anomaly\no_sound
+;postprocess		= mauv_02; ; 
+
+artefacts			= 
+BirthProbability	= ;0.9
+
+;----------- Anomaly settings -----------------------
+min_start_power		= 0.90
+max_start_power		= 1.00
+attenuation			= 0
+period				= 0
+min_artefact_count	= 0
+max_artefact_count	= 0
+
+idle_particles		= mauvais\anomaly\group_items\cave_moln
+idle_sound			= anomaly\iskry_idle3;  							;постоянный звук
+hit_type		    = strike
+hit_impulse_scale	= 0.0;0.1;0.1			;соотношение физического импульса и силы хита
+effective_radius	= 0 ;размер радиуса в процентах от оригинального, где действует зона
+
+disable_time		= 5000	;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time_small	= 5000		;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
+disable_idle_time	= 1000	;время отключения idle партиклов
+ignore_nonalive		= true
+ignore_small		= true
+ignore_artefacts	= true
+
+blowout_light		= off
+idle_light			= off
+awaking_time		= 800;1000
+blowout_time		= 1000	; время выброса энергии аномалии
+accamulate_time		= 500
+actor_blowout_radius_percent=		0.05
+ignore_light		= true
+visible_by_detector = off
+blowout_wind		= off
+spawn_blowout_artefacts = off   ;off
+
+;;;;;;;;;;;;;;Стены колонн высокие;;;;;;;;;;;;;;
+[trap_05]:trap_04
+$spawn 			= "zones\trap_05"
+sound			= anomaly\no_sound
+;----------- Anomaly settings -----------------------
+idle_particles		= mauvais\anomaly\group_items\cave_moln_n
+idle_sound			= anomaly\iskry_idle2;  ;постоянный звук
+
+;;;;;;;;;;;;;;Стены колонн высокие боковые;;;;;;;;;;;;;;
+[trap_07]:trap_04
+$spawn 			= "zones\trap_07"
+sound			= anomaly\no_sound
+;----------- Anomaly settings -----------------------
+idle_particles		= mauvais\anomaly\group_items\cave_moln_n_bok
+idle_sound			= anomaly\no_sound;  ;постоянный звук
+
+;;;;;;;;;;;;;;Стены колонн низкие внутри;;;;;;;;;;;;;;
+[trap_08]:trap_04
+$spawn 			= "zones\trap_08"
+sound			= anomaly\no_sound
+;----------- Anomaly settings -----------------------
+idle_particles		= mauvais\anomaly\group_items\cave_moln_inside
+idle_sound			= anomaly\no_sound;  ;постоянный звук
+
+;;;;;;;;;;;;;;Мелкие звёздочки;;;;;;;;;;;;;;
+[trap_03]:trap_04
+$spawn 			= "zones\trap_03"
+sound			= anomaly\no_sound
+;----------- Anomaly settings -----------------------
+idle_particles		= mauvais\anomaly\cave_fly_stars
+idle_sound			= anomaly\no_sound;  	;постоянный звук
+
+;;;;;;;;;;;;;;Плёнка_стена север-юг;;;;;;;;;;;;;;
+[trap_06]:trap_01
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_06"
+sound			= anomaly\no_sound
+postprocess		= mauv_01
+
+idle_particles		= mauvais\anomaly\cave_plenka_ice_00
+idle_sound			= anomaly\no_sound;  							;постоянный звук
+
+;;;;;;;;;;;;;;Плёнка_стена север-юг big;;;;;;;;;;;;;;
+[trap_06b]:trap_01
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_06b"
+sound			= anomaly\no_sound
+postprocess		= mauv_01
+
+idle_particles		= mauvais\anomaly\cave_plenka_ice_02
+idle_sound			= anomaly\no_sound;  							;постоянный звук
+
+;;;;;;;;;;;;;;Плёнка_стена запад-восток;;;;;;;;;;;;;;
+[trap_06a]:trap_01
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_06a"
+sound			= anomaly\no_sound
+postprocess		= mauv_01
+
+idle_particles		= mauvais\anomaly\cave_plenka_ice_01
+idle_sound			= anomaly\no_sound;  							;постоянный звук
+
+;;;;;;;;;;;;;;Плёнка_стена teleport;;;;;;;;;;;;;;
+[trap_06c]:trap_01
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_06c"
+sound			= anomaly\no_sound
+postprocess		= mauv_02
+
+idle_particles		= mauvais\anomaly\cave_plenka_ice_03
+idle_sound			= anomaly\no_sound;  							;постоянный звук
+
+;;;;;;;;;;;;;;Плёнка_капли_тихая север-юг;;;;;;;;;;;;;;
+[trap_09]:trap_01
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_09"
+sound			= anomaly\no_sound
+postprocess		= mauv_02
+
+idle_particles		= mauvais\anomaly\cave_plenka_drop_n_00
+idle_sound			= anomaly\no_sound;  							;постоянный звук
+
+;;;;;;;;;;;;;;Плёнка_капли_тихая восток-запад;;;;;;;;;;;;;;
+[trap_09a]:trap_01
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_09"
+sound			= anomaly\no_sound
+postprocess		= mauv_01
+
+idle_particles		= mauvais\anomaly\cave_plenka_drop_w_00
+idle_sound			= anomaly\no_sound;  							;постоянный звук
+;;;;;;;;;;;;;;Плёнка_капли_громкая восток-запад;;;;;;;;;;;;;;
+[trap_09b]:trap_01
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_09"
+sound			= anomaly\no_sound
+postprocess		= mauv_01
+
+idle_particles		= mauvais\anomaly\cave_plenka_drop_w_00
+idle_sound			= anomaly\plenka_drop1;  							;постоянный звук
+
+[trap_09c]:trap_01
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_09"
+sound			= anomaly\no_sound
+postprocess		= mauv_01
+
+idle_particles		= mauvais\anomaly\cave_plenka_drop_w_00
+idle_sound			= anomaly\plenka_drop2;  							;постоянный звук
+
+;;;;;;;;;;;;;;Плёнка_лёд север юг;;;;;;;;;;;;;;
+[trap_11]:trap_01
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_11"
+sound			= anomaly\no_sound
+postprocess		= mauv_07
+
+idle_particles		= mauvais\anomaly\cave_plenka_ice
+idle_sound			= anomaly\plenka_ice_idle;  							;постоянный звук
+
+;;;;;;;;;;;;;;Плёнка_лёд запад восток;;;;;;;;;;;;;;
+[trap_11a]:trap_01
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_11a"
+sound			= anomaly\no_sound
+postprocess		= mauv_07
+
+idle_particles		= mauvais\anomaly\cave_plenka_ice_z
+idle_sound			= anomaly\plenka_ice_idle;  							;постоянный звук
+
+;;;;;;;;;;;;;;Плёнка_rotate_N-S;;;;;;;;;;;;;;
+[trap_01a]:trap_01
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_01a"
+sound			= anomaly\no_sound
+postprocess		= mauv_02
+
+idle_particles		= mauvais\anomaly\cave_trap01a
+idle_sound			= anomaly\rotate_idle;  							;постоянный звук
+
+;;;;;;;;;;;;;;Плёнка_rotate_E-W;;;;;;;;;;;;;;
+[trap_01b]:trap_01
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_01b"
+sound			= anomaly\no_sound
+postprocess		= mauv_02
+
+idle_particles		= mauvais\anomaly\cave_trap01b
+idle_sound			= anomaly\rotate_idle;  							;постоянный звук
+
+;;;;;;;;;;;;;;Gold_sphere;;;;;;;;;;;;;;
+[trap_10]
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\trap_10"
+$prefetch 		= 16
+class			= Z_MINCER;ZS_GALAN;ZS_ICE
+
+ef_anomaly_type			= 5
+ef_weapon_type			= 17
+
+sound			= anomaly\no_sound
+postprocess		= mauv_03
+
+artefacts			= 
+BirthProbability	= ;0.9
+
+;----------- Anomaly settings -----------------------
+min_start_power		= 0.90
+max_start_power		= 1.00
+attenuation			= 1
+period				= 1
+min_artefact_count	= 0
+max_artefact_count	= 0
+
+idle_particles		= mauvais\anomaly\cave_sphere_idle; anomaly2\generator\emiters\_mauv_cave_00; 
+blowout_particles	= anomaly2\artefact\cave_fog_03; anomaly2\generator\emiters\_mauv_cave_01;реакция на болт - эффект аномалии при выбросе энергии ( если вы в нее зайдете
+tearing_particles	= anomaly2\body_tear_00; разрыв, разрывающий
+torn_particles      = anomaly2\body_tear_01; разорванный
+awake_particles       = amik\anomaly\studen\cave_sphere_blow;mauvais\anomaly\cave_sphere_akk;  возрождение аномалии
+
+hit_small_particles			= amik\anomaly\studen\cave_sphere_hit_small;anomaly2\artefact\cave_fog_01  ;эффект малого удара аномалии
+hit_big_particles			= anomaly2\generator\emiters\_mauv_cave_idle_big_02; anomaly2\artefact\cave_fog_01; anomaly2\generator\emiters\_mauv_cave_idle_big_00;получение хита - эффект полного удара аномалии
+idle_small_particles		=
+idle_big_particles			= 
+entrance_small_particles	= ;anomaly2\artefact\cave_fog_00
+entrance_big_particles		= ;
+
+tele_particles_small		= anomaly2\artefact\_mauv_parall_07
+tele_particles_big			= anomaly2\generator\emiters\_mauv_cave_idle_small_00;anomaly2\generator\emiters\_mauv_cave_akk_big
+
+idle_sound			= anomaly\gold_sphere_idle;  							;постоянный звук
+blowout_sound		= anomaly\no_sound;во время выброса(удара) в центре аномалии	
+awake_sound		= anomaly\sphere_awake;во время выброса(удара) в центре аномалии	
+hit_sound			= anomaly\gold_sphere_blow;anomaly\no_sound		;на персонаже, когда тот получает хит
+body_tearing_sound	= anomaly\anomaly_body_tear_1;			;звук разрывания трупа
+entrance_sound		= anomaly\sphere_awake;anomaly\gold_sphere_blow;		;при попадании объекта в аномалию
+
+hit_type		    = strike
+hit_impulse_scale	= 0.2;0.1;0.1			;соотношение физического импульса и силы хита
+effective_radius	= 0.75 ;размер радиуса в процентах от оригинального, где действует зона
+
+disable_time		= 5000	;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time_small	= 5000		;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
+disable_idle_time	= 1000	;время отключения idle партиклов
+
+ignore_nonalive		= false
+ignore_small		= true
+ignore_artefacts	= false
+
+blowout_light		= off
+light_color		    = 0.0,1.0,0.0
+light_range		    = 0.0
+light_time 		    = 0.8;0.35
+light_height		= -5			;подъем источника света на высоту
+
+idle_light = off
+idle_light_range = 10.0
+idle_light_range_delta = 0.2
+idle_light_anim = ui_main_msgs
+idle_light_height = 0.5			;подъем источника света на высоту
+
+awaking_time		= 800;1000
+blowout_time		= 1000	; время выброса энергии аномалии
+accamulate_time		= 500
+
+blowout_light_time		= 800 ; свет при выбросе энергии аномалии
+blowout_explosion_time	= 800 ; время взрыва энергии аномалии
+actor_blowout_radius_percent =		0.8
+
+;параметры телекинеза для зоны
+throw_in_impulse        = 4000;4000           ;сила втягивания для единичной массы на расстоянии один метр
+throw_out_impulse       = 4000; 1000          ;сила выбрасывания взрывом
+throw_in_impulse_alive      = 800;100; 250;200 800     ;сила импульса втягивания для живых
+throw_in_atten          = 4; 1.2  ;3          ;коэфф. затягивания (чем меньше, тем плавнее затягивает)
+blowout_radius_percent      = 0.9;0             ;радиус (в процентах от всего радиуса) непосредственно выброса
+tele_height           = 10.1;1.5           ;высота подъема телекинеза 
+time_to_tele          = 8000              ;время деражания объекта в воздухе
+tele_pause            = 4000              ;пауза перед тем как снова поднять упавший объект
+actor_blowout_radius_percent  = 0.9;0.5
+
+ignore_light		= true
+visible_by_detector = off
+spawn_blowout_artefacts = off   ;off
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ветер
+blowout_wind		= on
+
+blowout_wind_time_start     = 0
+blowout_wind_time_peak      = 1500
+blowout_wind_time_end		= 2501; 2499
+blowout_wind_power			= 1.0			;сила поднимаего ветра (от 0 до 1), в момент blowout_wind_time_peak 

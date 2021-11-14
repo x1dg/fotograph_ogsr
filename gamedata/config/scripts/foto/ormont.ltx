@@ -1,0 +1,171 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-orm_start} walker@orm, {+orm_start -orm_pristupaet} walker@run, {+orm_pristupaet -flesh_vzyal} walker@meter, {+flesh_vzyal} walker@back
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death 
+
+[walker@orm]
+path_walk = orm_walk
+path_look = orm_look
+meet = meet
+danger = danger_condition@orm
+combat_ignore_cond = always
+on_info = {+orm_healed} walker@orm1
+
+[walker@orm1]
+path_walk = orm_walk
+path_look = orm_look
+def_state_standing = ward
+meet = meet
+danger = danger_condition@orm
+combat_ignore_cond = always
+on_info = {+orm_start} walker@run
+
+[walker@run]
+path_walk = orm_walk_1
+path_look = orm_look_1
+def_state_moving1 = run
+def_state_moving2 = run
+def_state_moving3 = run
+meet = no_meet
+danger = danger_condition@orm
+combat_ignore_cond = always
+on_signal = orm_place | walker@isl %+orm_mesto%
+
+[walker@isl]
+path_walk = orm_walk_1
+path_look = orm_look_1
+def_state_standing = wait
+meet = meet
+danger = danger_condition@orm
+combat_ignore_cond = always
+on_info = {+orm_pristupaet} walker@meter
+
+[walker@meter]
+path_walk = orm_walk_1
+path_look = orm_look_1
+meet = no_meet
+danger = danger_condition@orm
+combat_ignore_cond = always
+on_timer = 1500 | {-post_off} remark@meter %=foto2.marksman_rnd%
+on_info = {+island_off} walker@otkluchil
+on_info2 = {+post_off} remark@sitting
+
+[remark@ispug]
+anim = hide
+target = actor
+snd = sho_za
+meet = no_meet
+danger = danger_condition@orm
+combat_ignore_cond = always
+on_info = {+mark_popal} %=kill%
+on_info2 = {+mark_dead} remark@met
+
+[remark@met]
+anim = hide
+target = actor
+meet = no_meet
+danger = danger_condition@orm
+combat_ignore_cond = always
+on_timer = 5000 | remark@meter %-mark_dead%
+
+[remark@meter]
+anim = probe_pda
+target = orm_look_1,0
+danger = danger_condition@orm
+combat_ignore_cond = always
+meet = no_meet
+on_timer = 25000 | {-mdead} %=foto2.marksman_rnd +mdead%
+on_timer2 = 50000 | remark@izmeril1 %=foto2.marksman_clear%
+on_actor_dist_ge_nvis = 5 | {-uhod} remark@ne_uhodi %+uhod%, {+uhod -uhod1} remark@ne_uhodi_1 %+uhod1%
+on_info = {+mark_shot} remark@ispug %-mark_shot%
+
+[remark@ne_uhodi]
+anim = wait
+target = actor
+snd = ne_dvig
+meet = no_meet
+danger = danger_condition@orm
+combat_ignore_cond = always
+on_timer = 10000 | remark@meter
+on_info = {+mark_shot} remark@ispug %-mark_shot%
+
+[remark@ne_uhodi_1]
+anim = refuse
+target = actor
+snd = ne_dvig1
+meet = no_meet
+danger = danger_condition@orm
+combat_ignore_cond = always
+on_timer = 4000 | remark@meter
+on_info = {+mark_shot} remark@ispug %-mark_shot%
+
+[remark@izmeril1]
+anim = ward
+target = actor
+meet = no_meet
+danger = danger_condition@orm
+combat_ignore_cond = always
+on_actor_dist_le_nvis = 4 | remark@izmeril
+
+[remark@izmeril]
+snd_anim_synñ = true
+anim = salut_free
+target = actor
+snd = otkluchil
+meet = no_meet
+danger = danger_condition@orm
+combat_ignore_cond = always
+on_signal = action_end | walker@otkluchil %+island_off% 
+
+[walker@otkluchil]
+path_walk = orm_walk_1
+path_look = orm_look_1
+def_state_standing = ward
+meet = meet
+danger = danger_condition@orm
+combat_ignore_cond = always
+on_info = {+post_off} remark@sitting, {+ne_polez} walker@back %+island_oblom%
+
+[remark@sitting]
+anim = sit_ass
+target = orm_look_1,0
+meet = no_meet
+danger = danger_condition@orm
+combat_ignore_cond = always
+on_actor_dist_le_nvis = 4 | {+flesh_in1} walker@stand
+
+[walker@stand]
+path_walk = orm_walk_1
+path_look = orm_look_1
+def_state_standing = ward
+meet = meet
+danger = danger_condition@orm
+combat_ignore_cond = always
+on_info = {+flesh_vzyal} walker@back %+island_fin%
+
+[walker@back]
+path_walk = orm_walk_1
+path_look = orm_look_1
+meet = no_meet
+def_state_standing = probe_pda
+danger = danger_condition@orm
+combat_ignore_cond = always
+
+[danger_condition@orm]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+[hit]
+on_info = {=hit_by_actor} %+island_oblom%
+
+[death]
+on_info = %+island_oblom%

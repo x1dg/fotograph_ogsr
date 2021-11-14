@@ -1,0 +1,34 @@
+[logic]
+active = {-info_valroad_01 -info_valroad_02 -info_valroad_03 -info_valroad_04} sr_idle@one, {+info_valroad_01 -info_valroad_02 -info_valroad_03 -info_valroad_04} sr_idle@tri,
+{+info_valroad_01 +info_valroad_02 -info_valroad_03 -info_valroad_04} sr_idle@five, {+info_valroad_01 +info_valroad_02 +info_valroad_03 -info_valroad_04} sr_idle@seven,
+{+info_valroad_01 +info_valroad_02 +info_valroad_03 +info_valroad_04} sr_idle@nine
+
+[sr_idle@one]
+on_actor_inside = {+amb_road +baza_ukr_ohr_skazal -archiv_shema} sr_idle@two %=play_snd(script_replics\megafon\comandir\comandir_megafon_1) +info_valroad_01%
+
+[sr_idle@two]
+on_timer = 360000 | {-archiv_shema} sr_idle@tri, {+archiv_shema} nil
+
+[sr_idle@tri]
+on_actor_inside = {+info_valroad_01 -archiv_shema} sr_idle@four %=play_snd(script_replics\megafon\comandir\comandir_megafon_2) +info_valroad_02%
+
+[sr_idle@four]
+on_timer = 480000 | {-archiv_shema} sr_idle@five, {+archiv_shema} nil
+
+[sr_idle@five]
+on_actor_inside = {+info_valroad_02 -archiv_shema} sr_idle@six %=play_snd(script_replics\megafon\comandir\comandir_megafon_3) +info_valroad_03%
+
+[sr_idle@six]
+on_timer = 360000 | {-archiv_shema} sr_idle@seven, {+archiv_shema} nil
+
+[sr_idle@seven]
+on_actor_inside = {+info_valroad_03 -archiv_shema} sr_idle@eight %=play_snd(script_replics\megafon\comandir\comandir_megafon_4) +info_valroad_04%
+
+[sr_idle@eight]
+on_timer = 360000 | {-archiv_shema} sr_idle@nine, {+archiv_shema} nil
+
+[sr_idle@nine]
+on_actor_inside = {+info_valroad_04 -archiv_shema} sr_idle@ten %=play_snd(script_replics\megafon\comandir\comandir_megafon_5) -info_valroad_01 -info_valroad_02 -info_valroad_03 -info_valroad_04%
+
+[sr_idle@ten]
+on_timer = 480000 | {-archiv_shema} sr_idle@one, {+archiv_shema} nil 

@@ -1,0 +1,22 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = kamp@dyshlo_dolg_zastava
+danger = danger_condition
+;combat_ignore = combat_ignore
+
+[kamp@dyshlo_dolg_zastava]
+center_point = kamp_dyshlo_dolg_zastava
+radius = 3
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

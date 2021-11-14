@@ -1,0 +1,64 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@bratok_bar_song
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[walker@bratok_bar_song]
+path_walk = bratok_bar_song_walk
+path_look = bratok_bar_song_look
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_info = {+bratok_enemy} walker@bratok_bar_song1
+on_actor_dist_le_nvis = 25 | {+ohrana_otoshel -gulyaka_est -shluha_est -parikmaher_est} remark@1, {+gulyaka_est -shluha_est -parikmaher_est} remark@2, {-gulyaka_est +shluha_est -parikmaher_est} remark@3, {-gulyaka_est -shluha_est +parikmaher_est} remark@1  
+
+[remark@1]
+target = bratok_bar_song_look, 0
+snd = gulyaka
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = sound_end | remark@2 %+gulyaka_est -parikmaher_est%
+on_actor_dist_ge_nvis = 150 | walker@bratok_bar_song %+gulyaka_est -parikmaher_est%
+on_info = {+bratok_enemy} walker@bratok_bar_song1
+
+[remark@2]
+target = bratok_bar_song_look, 0
+meet = no_meet
+snd = shluha
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = sound_end | remark@3 %+shluha_est -gulyaka_est%
+on_actor_dist_ge_nvis = 150 | walker@bratok_bar_song %+shluha_est -gulyaka_est%
+on_info = {+bratok_enemy} walker@bratok_bar_song1
+
+[remark@3]
+target = bratok_bar_song_look, 0
+meet = no_meet
+snd = parikmaher
+danger = danger_condition
+combat_ignore_cond = always
+on_signal = sound_end | walker@bratok_bar_song %+parikmaher_est -shluha_est%
+on_actor_dist_ge_nvis = 150 | walker@bratok_bar_song %+parikmaher_est -shluha_est% 
+on_info = {+bratok_enemy} walker@bratok_bar_song1
+
+[walker@bratok_bar_song1]
+path_walk = bratok_bar_song_walk
+path_look = bratok_bar_song_look
+meet = no_meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[hit]
+on_info = {=hit_by_actor} %+bratok_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+bratok_enemy%

@@ -1,0 +1,12 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = {-island_off -nikogo_net} sr_idle@1 %+blastt =run_postprocess(duality_circle) =run_postprocess(fire_hit) =foto2.blast =play_snd(ambient\new\actor_devil)%, {+island_off} sr_idle@2
+
+[sr_idle@1]
+on_timer = 2500 | nil %=foto2.explose_gg%
+
+[sr_idle@2]
+on_actor_inside = %=foto2.lift%
+

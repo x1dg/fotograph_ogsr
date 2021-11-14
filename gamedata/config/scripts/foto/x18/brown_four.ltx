@@ -1,0 +1,44 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-broun_four_run} walker@1, {+broun_four_run} walker@2 
+danger = danger_condition
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+usa_enemy =kill%
+
+[death]
+on_info = {=killed_by_actor} %+usa_enemy%
+on_info2 = %+brown_four_dead%
+
+[walker@1]
+path_walk = brown4_walk
+path_look = brown4_look
+meet = no_meet
+danger = danger_condition
+on_actor_dist_le_nvis = 3 | walker@2 %+broun_four_run%
+
+[walker@2]
+path_walk = brown44_walk
+path_look = brown44_look
+meet = no_meet
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+danger = danger_condition
+on_signal = brown4del | %=fotograf.del_brown_x18% 
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+
+

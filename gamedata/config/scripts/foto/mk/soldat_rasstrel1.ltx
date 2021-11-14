@@ -1,0 +1,41 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+combat_ignore = combat_ignore
+danger = danger_condition
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+soldaty_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+soldaty_enemy%
+
+[walker@1]
+path_walk = soldat_rasstrel1_walk
+path_look = soldat_rasstrel1_look
+meet = no_meet
+danger = danger_condition
+on_info = {+rasstrel_poshli -rasstrel_nachalo} walker@2
+
+[walker@2]
+path_walk = soldat_rasstrel11_walk
+path_look = soldat_rasstrel11_look
+meet = no_meet
+danger = danger_condition
+on_info = {+rasstrel_nachalo} remark@1
+
+[remark@1]
+anim = assault
+target = 30327
+meet = no_meet
+danger = danger_condition
+on_info = {+dezertir_rasstrel1_dead +dezertir_rasstrel2_dead} walker@1 %+rasstrel_finish%  
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+

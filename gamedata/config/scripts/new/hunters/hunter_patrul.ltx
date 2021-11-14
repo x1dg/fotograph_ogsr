@@ -1,0 +1,50 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@1
+combat_ignore = combat_ignore
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+enemy_hunter%
+
+[death]
+on_info = {=killed_by_actor} %+enemy_hunter%
+
+[walker@1]
+path_walk = hunter_patrul_walk
+path_look = hunter_patrul_look
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = {=check_fighting(30218)}
+on_info = {+povodyr_aver_start -povodyr_aver_go} walker@2
+
+[walker@2]
+path_walk = hunter_patrul_walk
+path_look = hunter_patrul_look
+meet = no_meet
+danger = danger_condition@1
+combat_ignore_cond = {=check_fighting(30218)}
+on_info = {+povodyr_aver_go} walker@3
+
+[walker@3]
+path_walk = hunter_patrul_walk
+path_look = hunter_patrul_look
+meet = no_meet
+danger = danger_condition
+combat_ignore_cond = {=check_fighting(30218)}
+
+[danger_condition]
+ignore_distance = 20
+ignore_distance_corpse = 0
+
+[danger_condition@1]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

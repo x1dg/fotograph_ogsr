@@ -1,0 +1,24 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = camper@swamp_skit3
+danger = danger_condition@swamp_skit3
+on_hit = hit
+on_death = death
+
+[camper@swamp_skit3]
+path_walk = swamp_skit3_walk
+path_look = swamp_skit3_look
+danger = danger_condition@swamp_skit3
+on_info = {+uchen_enemy} %+soldaty_enemy%
+
+[danger_condition@swamp_skit3]
+ignore_distance = 30
+ignore_distance_corpse = 0
+
+[hit]
+on_info = {=hit_by_actor} %+soldaty_enemy%
+
+[death]
+on_info = {=killed_by_actor} %+soldaty_enemy%

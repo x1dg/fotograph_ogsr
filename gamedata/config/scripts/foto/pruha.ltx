@@ -1,0 +1,24 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = walker@pruha
+danger = danger_condition@pruha
+combat_ignore = combat_ignore
+
+[walker@pruha]
+path_walk = pruha_walk
+path_look = pruha_look
+meet = meet
+danger = danger_condition@pruha
+combat_ignore_cond = always
+
+[danger_condition@pruha]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
+

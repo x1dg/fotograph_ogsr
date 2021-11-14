@@ -1,0 +1,59 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-shershen_skazal} walker@1, {+shershen_skazal} walker@11
+combat_ignore = combat_ignore
+danger = danger_condition
+
+[walker@1]
+path_walk = shershen_walk
+path_look = shershen_look
+meet = no_meet
+danger = danger_condition
+on_info = {+lukash_start_dialog_start} remark@vstrecha
+
+[remark@vstrecha]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_actor_dist_le_nvis = 15 | remark@vstrecha1 %=play_snd(ambient\new\actor_13)%  
+
+[remark@vstrecha1]
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 3000 | remark@1
+
+[remark@1]
+anim = guard
+target = actor
+snd = shershen_hello
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | remark@2
+
+[remark@2]
+target = actor
+meet = meet
+combat_ignore_cond = always
+danger = danger_condition
+on_actor_dist_ge_nvis = 20 | walker@11 %+shershen_skazal%
+
+[walker@11]
+path_walk = shershen_walk
+path_look = shershen_look
+meet = meet
+danger = danger_condition
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true

@@ -1,0 +1,20 @@
+[logic]
+active = sr_idle@1
+
+[sr_idle@1]
+on_actor_inside = {+task_island -heli_botan -enable_voice} sr_idle@2 %=foto2.scan_monster%
+
+[sr_idle@2]
+on_timer = 4000 | sr_idle@3 
+
+[sr_idle@3]
+on_actor_inside = {-enable_voice} sr_idle@2 %=foto2.scan_monster%, {+enable_voice -blastt} sr_idle@4 %+nikogo_net =play_snd(ambient\new\actor_island)%
+
+[sr_idle@4]
+on_timer = 4000 | %-nikogo_net%
+on_timer2 = 10000 | {-blastt} sr_idle@5 %=foto2.message_to_sahar%
+
+[sr_idle@5]
+on_timer = 25000 | {-blastt} nil %+heli_botan =foto2.message_from_sahar_2%
+
+ 

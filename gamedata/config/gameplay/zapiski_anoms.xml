@@ -1,0 +1,34 @@
+<article article_type="encyclopedia" group="Аномалии" id="anom_zharka" name="Жарка">
+   <texture x="1050" y="450" width="200" height="150">ui\ui_icon_photo</texture>
+   <text>enc_zone_anomalies_zharka</text>
+</article>
+
+<article article_type="encyclopedia" group="Аномалии" id="anom_electra" name="Электра">
+   <texture x="0" y="700" width="200" height="150">ui\ui_icon_photo</texture>
+   <text>enc_zone_anomalies_electra</text>
+</article>
+
+<article article_type="encyclopedia" group="Аномалии" id="anom_buzz" name="Студень">
+        <texture x="400" y="400" width="200" height="200">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_ameba</text>
+</article>
+
+<article article_type="encyclopedia" group="Аномалии" id="anom_mosquit" name="Трамплин">
+        <texture x="0" y="400" width="200" height="150">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_bald</text>
+</article>
+
+<article article_type="encyclopedia" group="Аномалии" id="anom_mincer" name="Карусель">
+        <texture x="1020" y="300" width="200" height="150">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_meat</text>
+</article>
+
+<article article_type="encyclopedia" group="Аномалии" id="anom_gravi" name="Воронка">
+        <texture x="0" y="850" width="200" height="150">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_gravi</text>
+</article>
+
+<article article_type="encyclopedia" group="Аномалии" id="anom_ice" name="Снежка">
+        <texture x="1250" y="450" width="200" height="150">ui\ui_icon_photo</texture>
+        <text>enc_zone_anomalies_ice</text>
+</article>

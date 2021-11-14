@@ -1,0 +1,406 @@
+;----------af_shubin_artgood---------
+
+[af_shubin_artgood]:af_shu
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\shubin_artgood"
+
+$prefetch 			= 64
+cform				= skeleton
+class				= ARTEFACT
+
+visual				= physics\anomaly\artefact_electra9.ogf
+description			= "Аномальное образование, в котором заключена душа погибшего в Зоне сталкера."
+inv_name			= "Душа сталкера"
+inv_name_short	 	= "Душа сталкера"
+inv_weight			= 0.35
+
+inv_grid_width  = 1
+inv_grid_height  = 1
+inv_grid_x			= 33
+inv_grid_y			= 34
+
+cost				= 0
+jump_height			= 0.7
+particles			= anomaly2\artefact\_mauv_artgood_00
+quest_item          = true
+
+lights_enabled = true	;true			
+trail_light_color = 0.5,0.8,1.0
+trail_light_range = 0.50
+
+hud							= af_shubin_artgood_hud
+slot						= 1
+
+artefact_activation_seq		= af_activation_shubin_artgood
+ 
+health_restore_speed = 0.0			
+radiation_restore_speed = 0.0
+satiety_restore_speed = 0.0
+power_restore_speed = 0.002
+bleeding_restore_speed = 0.0
+hit_absorbation_sect = af_shubin_artgood_absorbation
+
+[af_shubin_artgood_absorbation]
+burn_immunity = 1.0				
+strike_immunity = 1.0
+shock_immunity = 1.0
+wound_immunity = 1.0		
+radiation_immunity = 1.0
+telepatic_immunity = 1.0
+chemical_burn_immunity = 1.0
+explosion_immunity = 1.0
+fire_wound_immunity = 1.0
+
+[af_shubin_artgood_hud]
+orientation             	= 0, 0, 0		
+position                	= 0, 0, 0
+visual                  	= weapons\artefact\wpn_artefact_shubin_artgood_hud.ogf
+anim_idle					= idle
+anim_idle_sprint			= idle_sprint
+anim_hide					= holster
+anim_show					= draw
+anim_activate				= activate
+
+;----af_shubin_artbad---------
+
+[af_shubin_artbad]:af_shu
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\shubin_artbad"
+
+$prefetch 			= 64
+cform				= skeleton
+class				= ARTEFACT
+
+visual				= physics\anomaly\artefact_electrab.ogf
+description			= "Аномальное образование, в котором заключена душа погибшего в Зоне мародёра."
+inv_name			= "Душа мародёра"
+inv_name_short	    = "Душа мародёра"
+inv_weight			= 0.35
+
+inv_grid_width  = 1
+inv_grid_height  = 1
+inv_grid_x			= 32
+inv_grid_y			= 34
+
+cost				= 0
+jump_height			= 0.7
+particles			= mauvais\artbad_ground
+quest_item          = true
+
+lights_enabled = true	;true			
+trail_light_color = 1.0,0.4,0.4
+trail_light_range = 0.50
+
+hud							= af_shubin_artbad_hud
+slot						= 1
+
+artefact_activation_seq		= af_activation_shubin_artbad
+ 
+health_restore_speed = 0.0			
+radiation_restore_speed = 0.0
+satiety_restore_speed = 0.0
+power_restore_speed = 0.002
+bleeding_restore_speed = 0.0
+hit_absorbation_sect = af_shubin_artbad_absorbation
+
+[af_shubin_artbad_absorbation]
+burn_immunity = 1.0				
+strike_immunity = 1.0
+shock_immunity = 1.0
+wound_immunity = 1.0		
+radiation_immunity = 1.0
+telepatic_immunity = 1.0
+chemical_burn_immunity = 1.0
+explosion_immunity = 1.0
+fire_wound_immunity = 1.0
+
+[af_shubin_artbad_hud]
+orientation             	= 0, 0, 0		
+position                	= 0, 0, 0
+visual                  	= weapons\artefact\wpn_artefact_shubin_artbad_hud.ogf
+anim_idle					= idle
+anim_idle_sprint			= idle_sprint
+anim_hide					= holster
+anim_show					= draw
+anim_activate				= activate
+
+;**********************************************
+;af_evergy1_false
+;**********************************************
+[af_evergy1_false]:af_base
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy1_false"
+
+$prefetch 			= 64
+cform				= skeleton
+class				= ARTEFACT
+
+visual				= physics\anomaly\artefact_false_01.ogf
+description			= "Аномальное образование."
+
+inv_name			= "Аномальное образование"
+inv_name_short		= "Аномальное образование"
+inv_weight			= 0.2
+
+inv_grid_x			= 33
+inv_grid_y			= 34
+
+cost				= 0
+jump_height			= 1.5
+particles			= mauvais\art_false_00
+
+lights_enabled = true	
+trail_light_color = 0,2.1,2.55
+trail_light_range = 5.0
+
+;скорости увеличения (уменьшения) 
+health_restore_speed = 0.0			
+radiation_restore_speed = 0.0
+satiety_restore_speed = -0.8
+power_restore_speed = -0.8
+bleeding_restore_speed = 0.0
+hit_absorbation_sect = af_evergy1_false_absorbation
+;artefact_activation_seq	= af_activation_electra
+
+;коэффициенты иммунитета 
+[af_evergy1_false_absorbation]
+burn_immunity = 0.0				
+strike_immunity = 0.0
+shock_immunity = 0.0
+wound_immunity = 0.0		
+radiation_immunity = 0.0
+telepatic_immunity = 0.0
+chemical_burn_immunity = 0.0
+explosion_immunity = 0.0
+fire_wound_immunity  = 0.0
+
+;**********************************************
+;af_evergy2_false зеленый
+;**********************************************
+[af_evergy2_false]:af_base
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy2_false"
+
+$prefetch 			= 64
+cform				= skeleton
+class				= ARTEFACT
+
+visual				= physics\anomaly\artefact_false_02.ogf
+description			= "Аномальное образование."
+
+inv_name			= "Аномальное образование" 
+inv_name_short		= "Аномальное образование"
+inv_weight			= 0.2
+
+inv_grid_width  = 1
+inv_grid_height  = 1
+inv_grid_x			= 5;32
+inv_grid_y			= 1;35
+
+cost				= 0
+jump_height			= 2.0
+;particles			= mauvais\art_false_00
+
+lights_enabled = true	
+trail_light_color = 0,0.68,0.05
+trail_light_range = 3.5
+
+;скорости увеличения (уменьшения) 
+health_restore_speed = 0.0			
+radiation_restore_speed = 0.0
+satiety_restore_speed = -0.8
+power_restore_speed = -0.8
+bleeding_restore_speed = 0.0
+hit_absorbation_sect = af_evergy1_false_absorbation
+;artefact_activation_seq	= af_activation_electra
+
+;**********************************************
+;af_evergy3_false орнанж
+;**********************************************
+[af_evergy3_false]:af_evergy2_false
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy3_false"
+visual				= physics\anomaly\artefact_false_03.ogf
+jump_height			= 1.5
+;particles			= mauvais\art_false_00
+lights_enabled = true	
+trail_light_color = 0.92,0.36,0.0
+trail_light_range = 3.5
+
+;**********************************************
+;af_evergy4_false  жёлтый глаз
+;**********************************************
+[af_evergy4_false]:af_evergy2_false
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy4_false"
+visual				= physics\anomaly\artefact_false_04.ogf
+jump_height			= 1.3
+;particles			= mauvais\art_false_00
+lights_enabled = true	
+trail_light_color = 0.67,0.58,0.14
+trail_light_range = 3.5
+
+;**********************************************
+;af_evergy5_false красный
+;**********************************************
+[af_evergy5_false]:af_evergy2_false
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy5_false"
+visual				= physics\anomaly\artefact_false_05.ogf
+jump_height			= 1.3
+;particles			= mauvais\art_false_00
+lights_enabled = true	
+trail_light_color = 0.98,0.18,0.0
+trail_light_range = 3.5
+
+;**********************************************
+;af_evergy6_false голубой
+;**********************************************
+[af_evergy6_false]:af_evergy2_false
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy6_false"
+visual				= physics\anomaly\artefact_false_06.ogf
+jump_height			= 1.9
+;particles			= mauvais\art_false_00
+lights_enabled = true	
+trail_light_color = 0.15,0.78,0.97
+trail_light_range = 3.5
+
+;**********************************************
+;af_evergy7_false синий
+;**********************************************
+[af_evergy7_false]:af_evergy2_false
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy7_false"
+visual				= physics\anomaly\artefact_false_07.ogf
+jump_height			= 1.6
+;particles			= mauvais\art_false_00
+lights_enabled = true	
+trail_light_color = 0.0,0.25,0.41
+trail_light_range = 3.5
+
+;**********************************************
+;af_evergy8_false фиолетовый
+;**********************************************
+[af_evergy8_false]:af_evergy2_false
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy8_false"
+visual				= physics\anomaly\artefact_false_08.ogf
+jump_height			= 1.6
+;particles			= mauvais\art_false_00
+lights_enabled = true	
+trail_light_color = 0.70,0.0,0.69
+trail_light_range = 3.5
+
+;**********************************************
+;af_evergy9_false
+;**********************************************
+[af_evergy9_false]:af_evergy2_false
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy9_false"
+visual				= physics\anomaly\artefact_false_09.ogf
+jump_height			= 0.9
+;particles			= mauvais\art_false_00
+lights_enabled = true	
+trail_light_color = 0.99,1.0,0.82
+trail_light_range = 3.5
+
+;**********************************************
+;af_evergy10_false белая луна
+;**********************************************
+[af_evergy10_false]:af_evergy2_false
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy10_false"
+visual				= physics\anomaly\artefact_false_10.ogf
+jump_height			= 1.2
+particles			= anomaly2\artefact\_mauv_false10
+lights_enabled = true	
+trail_light_color = 1.0,0.99,0.80
+trail_light_range = 3.5
+
+;**********************************************
+;af_evergy11_false violet
+;**********************************************
+[af_evergy11_false]:af_evergy2_false
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy11_false"
+visual				= physics\anomaly\artefact_false_11.ogf
+jump_height			= 1.2
+particles			= anomaly2\artefact\_mauv_art11_00
+lights_enabled = true	
+trail_light_color = 0.51,0.07,0.92
+trail_light_range = 4.5
+
+;**********************************************
+;af_evergy12_false малиновый
+;**********************************************
+[af_evergy12_false]:af_evergy2_false
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy11_false"
+visual				= physics\anomaly\artefact_false_12.ogf
+jump_height			= 1.2
+particles			= anomaly2\artefact\_mauv_art11_01
+lights_enabled = true	
+trail_light_color = 0.71,0.0,0.58
+trail_light_range = 4.5
+
+;**********************************************
+;af_evergy14_false фиолетовый
+;**********************************************
+[af_evergy14_false]:af_evergy2_false
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy14_false"
+visual				= physics\anomaly\artefact_false_14.ogf
+jump_height			= 1.6
+particles			= anomaly2\artefact\_mauv_false14
+lights_enabled = true	
+trail_light_color = 0.70,0.0,0.69
+trail_light_range = 3.5
+
+;**********************************************
+;af_evergy15_false малиновый
+;**********************************************
+[af_evergy15_false]:af_evergy2_false
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy15_false"
+visual				= physics\anomaly\artefact_false_15.ogf
+jump_height			= 1.3
+particles			= anomaly2\artefact\_mauv_false15
+lights_enabled = true	
+trail_light_color = 0.85,0.01,0.40
+trail_light_range = 3.5
+
+;**********************************************
+;af_evergy16_false красный
+;**********************************************
+[af_evergy16_false]:af_evergy2_false
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy16_false"
+visual				= physics\anomaly\artefact_false_16.ogf
+jump_height			= 1.3
+particles			= anomaly2\artefact\_mauv_false16
+lights_enabled = true	
+trail_light_color = 0.98,0.18,0.0
+trail_light_range = 3.5
+
+;**********************************************
+;af_evergy_true искомый
+;**********************************************
+[af_evergy_true]:af_evergy2_false
+GroupControlSection	= spawn_group
+$spawn				= "artifacts\evergy_true"
+visual				= physics\anomaly\sap\inferno.ogf
+description			= "Аномальное образование."
+
+inv_name			= "Аномальное образование"
+inv_name_short		= 
+inv_weight			= 0.3
+
+inv_grid_x			= 33
+inv_grid_y			= 36
+
+jump_height			= 1.6
+particles			= mauvais\anomaly\mg_art_true
+lights_enabled = true	
+trail_light_color = 0.65,0.0,0.50
+trail_light_range = 2.0

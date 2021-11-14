@@ -1,0 +1,12 @@
+[logic]
+active = {-prokol_vhod} sr_idle, {+prokol_vhod} sr_idle@3
+
+[sr_idle]
+on_actor_inside = sr_idle@2 %=play_snd(ambient\new\actor_71)%
+
+[sr_idle@2]
+on_timer = 4050 | sr_idle@3 %+prokol_vhod%
+
+[sr_idle@3]
+on_actor_inside = {!outfit_active(kont_skin) -kont_enemy -kont_knife -kont_pahan} nil %+kont_enemy%
+on_info = {+kont_enemy} nil %=val_test.del_restr%

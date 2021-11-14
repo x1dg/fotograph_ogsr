@@ -1,0 +1,85 @@
+[smart_terrains]
+none = true
+
+[logic]
+active = {-levsha_start_dialog_start} walker, {+levsha_start_dialog_start -levsha_start_dialog_have} walker@1, {+levsha_start_dialog_have -bar_narod_spawn} walker@2, {+bar_narod_spawn} walker@3
+combat_ignore = combat_ignore
+danger = danger_condition
+on_hit = hit
+on_death = death
+
+[hit]
+on_info = {=hit_by_actor} %+bar_ataka_vrag%
+on_info2 = {+bar_narod_spawn =hit_by_actor} %+bar_vrag%
+
+[death]
+on_info = %+bar_ataka_05_dead%
+on_info2 = {=killed_by_actor} %+bar_ataka_vrag%
+on_info3 = {+bar_narod_spawn =killed_by_actor} %+bar_vrag%
+
+[walker]
+path_walk = bar_ataka_05_walk
+path_look = bar_ataka_05_look
+meet = no_meet
+danger = danger_condition
+on_info = {+levsha_start_dialog_start -vse_poehali} remark@1, {+levsha_start_dialog_start -levsha_start_dialog_have} walker@1, {+levsha_start_dialog_have} walker@2
+on_info2 = {+bar_ataka_vrag} %=killactor%
+
+[remark@1]
+anim = gurd
+target = actor
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_timer = 8000 | walker@1
+
+[walker@1]
+path_walk = bar_ataka_055_walk
+path_look = bar_ataka_055_look
+meet = no_meet
+danger = danger_condition
+def_state_moving1 = assault
+def_state_moving2 = assault
+def_state_moving3 = assault
+on_info = {+levsha_start_dialog_have} walker@2
+on_info2 = {+bar_ataka_vrag} %=killactor%
+
+[walker@2]
+path_walk = bar_ataka_055_walk
+path_look = bar_ataka_055_look
+meet = no_meet
+danger = danger_condition
+on_info = {+bar_narod_spawn} walker@3
+on_info2 = {+bar_ataka_vrag} %=killactor%
+
+[walker@3]
+path_walk = bar_ataka_055_walk
+path_look = bar_ataka_055_look
+meet = no_meet
+danger = danger_condition
+on_actor_dist_le_nvis = 3.5 | remark@totalizator
+on_info = {+bar_vrag} %=killactor%
+
+[remark@totalizator]
+target = actor
+snd = david
+meet = no_meet
+combat_ignore_cond = always
+danger = danger_condition
+on_signal = sound_end | walker@totalizator
+
+[walker@totalizator]
+path_walk = bar_ataka_055_walk
+path_look = bar_ataka_055_look
+meet = meet
+danger = danger_condition
+on_info = {+bar_vrag} %=killactor%
+
+[danger_condition]
+ignore_distance = 0
+ignore_distance_corpse = 0
+
+[meet]
+use = true
+use_wpn = false
+meet_talk_enabled = true
