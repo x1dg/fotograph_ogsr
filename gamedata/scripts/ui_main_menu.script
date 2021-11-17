@@ -49,8 +49,6 @@ function main_menu:InitCallBacks()
 	self:AddCallback("btn_load", ui_events.BUTTON_CLICKED, self.OnButton_load_clicked, self)
 	-- save																												
 	self:AddCallback("btn_save", ui_events.BUTTON_CLICKED, self.OnButton_save_clicked, self)
-	-- spawns																										
-	self:AddCallback("btn_spawns", ui_events.BUTTON_CLICKED,				self.OnButton_spawns_clicked,	self)
 	-- quit																												
 	self:AddCallback("btn_quit", ui_events.BUTTON_CLICKED, self.OnButton_quit_clicked, self)
 	self:AddCallback("btn_quit_to_mm", ui_events.BUTTON_CLICKED, self.OnButton_disconnect_clicked, self)
@@ -127,15 +125,6 @@ function main_menu:StartGame( difficulty )
 	self:close_and_delete_menu()
 end
 
-function main_menu:OnButton_spawns_clicked()
-	if self.spawn_dlg == nil then
-		self.spawn_dlg = ui_si.spawn_item_dialog()
-		self.spawn_dlg.owner = self
-	end
-	self:GetHolder():start_stop_menu(self.spawn_dlg, true)
-	self:Show(false)
-end
-
 function main_menu:OnButton_save_clicked()
 	if not self.save_dlg then
 		self.save_dlg = ui_mm_save_load_dialog.save_load_dialog( true )
@@ -185,7 +174,7 @@ function main_menu:OnKeyboard(dik, keyboard_action)
 		end
 		
 		if dik == DIK_keys.DIK_F1 then
-			self:OnButton_spawns_clicked()
+			ui_cheat_menu.start_menu(self)	-- вот сам вызов
 		end
 	end
 
