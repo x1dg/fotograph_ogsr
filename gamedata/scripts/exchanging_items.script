@@ -11,17 +11,6 @@
 ------------------  Таблицы итемов  ------------------
 local all_items = 
 {
-	[2.6]  = "chernigov", 
-	[2.8]  = "old_melnik", 
-	[2.3]  = "mineral", 
-	[7.8]  = "vodka",  
-	[10.3] = "antirad", 
-	[9.7]  = "medkit", 
-	[13.3] = "medkit_army", 
-	[15.5] = "medkit_scientic", 
-	[2.7]  = "energy_drink", 
-	[2.5]  = "bandage",
-
 	[102.3]  = "wpn_pb",
 	[102.75] = "wpn_pm",
 	[103.23] = "wpn_fort",
@@ -121,24 +110,26 @@ local all_items =
 	[105.3] = "wpn_addon_grenade_launcher",
 	[105.8] = "wpn_addon_grenade_launcher_m203",
 	
+	[2.8]  = "old_melnik", 
+	[2.3]  = "mineral", 
+	[7.8]  = "vodka",  
+	[10.3] = "antirad", 
+	[9.7]  = "medkit", 
+	[13.3] = "medkit_army", 
+	[15.5] = "medkit_scientic", 
+	[2.7]  = "energy_drink", 
+	[2.5]  = "bandage",
+	
 	[201.5]  = "bread",	
 	[202.2]  = "conserva",
 	[202.7]  = "kolbasa",
-	[207.02] = "oreh",
-	[208.11] = "oliv",
-	[204.72] = "sard",
 	[209.99] = "tush",
-	[205.2]  = "galet",
-	[205.4]  = "galet_s",
 	[209.61] = "ogirki",
 	[211.7]  = "meat",
 	[205.8]  = "shprots",
 	[205.3]  = "pashtet",
-	[212.41] = "pringles",
-	[208.01] = "zel_goroshek",
 	[209.23] = "gribki",
 	[202.76] = "kilka",
-	[210.51] = "konfeta",
 	
 	[303.85] = "neytral_novice_outfit_m1",
 	[303.5]  = "neytral_novice_outfit_new",
@@ -212,7 +203,6 @@ local all_items =
 
 local items_table_novice = 
 {
-	[2.6] = "chernigov",  
 	[2.3] = "mineral",   
 	[10.3] = "antirad", 
 	[9.7] = "medkit",  
@@ -222,7 +212,6 @@ local items_table_novice =
 	
 local items_table_experienced = 
 {
-	[2.6] = "chernigov", 
 	[2.8] = "old_melnik", 
 	[2.3] = "mineral", 
 	[7.8] = "vodka",  
@@ -235,7 +224,6 @@ local items_table_experienced =
 
 local items_table_veteran = 
 {
-	[2.6] = "chernigov", 
 	[2.8] = "old_melnik", 
 	[2.3] = "mineral", 
 	[7.8] = "vodka",  
@@ -368,8 +356,6 @@ local arts_table_novice =
 	[201.5] = "bread",	
 	[202.2] = "conserva",
 	[202.7] = "kolbasa",
-	[204.72] = "sard",
-	[205.2] = "galet",
 	[209.61] = "ogirki",
 	[202.76] = "kilka"
 }  
@@ -379,11 +365,7 @@ local arts_table_experienced =
 	[201.5] = "bread",	
 	[202.2] = "conserva",
 	[202.7] = "kolbasa",
-	[207.02] = "oreh",
-	[208.11] = "oliv",
-	[204.72] = "sard",
 	[209.99] = "tush",
-	[205.2] = "galet",
 	[209.61] = "ogirki",
 	[209.23] = "gribki"
 }
@@ -393,18 +375,11 @@ local arts_table_veteran =
 	[201.5] = "bread",	
 	[202.2] = "conserva",
 	[202.7] = "kolbasa",
-	[207.02] = "oreh",
-	[208.11] = "oliv",
-	[204.72] = "sard",
 	[209.99] = "tush",
-	[205.2] = "galet",
-	[205.4] = "galet_s",
 	[209.61] = "ogirki",
 	[205.8] = "shprots",
 	[205.3] = "pashtet",
-	[208.01] = "zel_goroshek",
-	[209.23] = "gribki",
-	[210.51] = "konfeta"
+	[209.23] = "gribki"
 }
 
 local arts_table_master = 
@@ -412,21 +387,13 @@ local arts_table_master =
 	[201.5]  = "bread",	
 	[202.2]  = "conserva",
 	[202.7]  = "kolbasa",
-	[207.02] = "oreh",
-	[208.11] = "oliv",
-	[204.72] = "sard",
 	[209.99] = "tush",
-	[205.2]  = "galet",
-	[205.4]  = "galet_s",
 	[209.61] = "ogirki",
 	[211.7]  = "meat",
 	[205.8]  = "shprots",
 	[205.3]  = "pashtet",
-	[212.41] = "pringles",
-	[208.01] = "zel_goroshek",
 	[209.23] = "gribki",
 	[202.76] = "kilka",
-	[210.51] = "konfeta"
 }
 
 local outfits_table_novice = 

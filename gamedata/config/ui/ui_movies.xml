@@ -16,7 +16,7 @@
 			</video_wnd>
 		</item>
 
-		<item type="image">
+<!--		<item type="image">
 			<length_sec>6</length_sec>
 			<pause_state>on</pause_state>
 			<main_wnd>
@@ -36,7 +36,7 @@
 					<texture>ui\ui_fotograf_intro2</texture>
 				</auto_static>
 			</main_wnd>
-		</item>		
+		</item>	-->	
 	</intro_logo>	
 
 	<intro_game>

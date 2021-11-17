@@ -456,32 +456,17 @@ local tbl_food ={
 ["kolbasa"]="new\\inv_baton",
 ["kolbasa_a"]="new\\inv_baton",
 ["conserva"]="new\\inv_conserva",
-["oreh"]="new\\inv_baton",
-["oliv"]="new\\inv_conserva",
-["sard"]="new\\inv_conserva",
 ["tush"]="new\\inv_conserva",
-["paek1"]="new\\inv_baton",
-["paek11"]="new\\inv_baton",
-["paek2"]="new\\inv_baton",
-["paek21"]="new\\inv_baton",
-["paek22"]="new\\inv_baton",
-["paek23"]="new\\inv_baton",
-["galet"]="new\\inv_baton",
-["galet_s"]="new\\inv_baton",
 ["ogirki"]="new\\inv_conserva",
 ["meat"]="new\\inv_baton",
 ["shprots"]="new\\inv_conserva",
 ["pashtet"]="new\\inv_conserva",
-["pringles"]="new\\inv_conserva",
-["zel_goroshek"]="new\\inv_conserva",
 ["gribki"]="new\\inv_conserva",
 ["kilka"]="new\\inv_conserva",
 ["sguschenka"]="new\\inv_conserva",
-["konfeta"]="new\\inv_baton"
 }
 local tbl_drink ={
 ["mineral"]="new\\drink_voda",
-["chernigov"]="new\\drink_pivo",
 ["old_melnik"]="new\\drink_pivo",
 ["vodka_a"]="new\\drink_vodka",
 ["vodka"]="new\\drink_vodka",
@@ -506,12 +491,7 @@ local tbl_multiportions = {
 ["statya"]="statya",
 ["pribor_zh"]="pribor_zh",
 ["dudka"]="dudka",
-["dudka_shu"]="dudka_shu",
-["vodka"]="vodka1",
-["paek1"]="paek11",
-["paek2"]="paek21",
-["paek21"]="paek22",
-["paek22"]="paek23"
+["dudka_shu"]="dudka_shu"
 }
 --------------------------------------------------------------------
 -- Прекондишены по заражению
@@ -1659,7 +1639,7 @@ end
 
 -- таблица случайных подарков
 local tbl_priz = {
-"chernigov", "old_melnik", "vodka", "bread", "conserva", "kolbasa", "oreh", "oliv", "sard", "tush", "galet", "galet_s", "ogirki", "meat", "shprots", "pashtet", "pringles", "zel_goroshek", "gribki", "kilka", "konfeta"
+"old_melnik", "vodka", "bread", "conserva", "kolbasa", "tush", "ogirki", "meat", "shprots", "pashtet", "gribki", "kilka"
 }
 
 -- анализ нуждается ли ГГ в помощи
@@ -1819,21 +1799,21 @@ end
 
 -- получаем подарочки для Дуни
 function shpak_transfer_3(first_speaker, second_speaker)
-	dialogs.relocate_item_section(second_speaker,"beloe","in")
-	dialogs.relocate_item_section(second_speaker,"kagor","in")
-	dialogs.relocate_item_section(second_speaker,"konfeta","in")
+	dialogs.relocate_item_section(second_speaker,"ice_cubes","in")
+	dialogs.relocate_item_section(second_speaker,"vodka","in")
+	dialogs.relocate_item_section(second_speaker,"ogirki","in")
 end
 
 -- проверка наличия подарков для Дуни
 function actor_present_have(first_speaker, second_speaker)
-	return new_dialog.item_much("beloe",1) ~= false and new_dialog.item_much("kagor",1) ~= false and new_dialog.item_much("konfeta",1) ~= false
+	return new_dialog.item_much("beloe",1) ~= false and new_dialog.item_much("vodka_new",1) ~= false and new_dialog.item_much("ogirki",1) ~= false
 end
 
 -- передача подарков Дуне
 function transfer_present(first_speaker, second_speaker)
-	new_dialog.out_item_much("beloe",1)
-	new_dialog.out_item_much("kagor",1)
-	new_dialog.out_item_much("konfeta",1)
+	new_dialog.out_item_much("ice_cubes",1)
+	new_dialog.out_item_much("vodka",1)
+	new_dialog.out_item_much("ogirki",1)
 end
 
 -- проверка наличия литра водки
@@ -1845,7 +1825,7 @@ end
 function transfer_ration(first_speaker, second_speaker)
 	-- содержимое суточного пайка
 	local tbl_ration = {
-	"paek1", "mineral", "mineral", "medkit_army", "antirad", "bandage", "bandage", "ammo_5.45x39_fmj",
+	"meat", "mineral", "mineral", "medkit_army", "antirad", "bandage", "bandage", "ammo_5.45x39_fmj",
 	"ammo_5.45x39_fmj", "ammo_vog-25", "ammo_vog-25", "grenade_rgd5", "grenade_f1"
 	}
 	local sobj

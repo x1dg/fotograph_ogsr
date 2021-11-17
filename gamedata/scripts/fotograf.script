@@ -2321,7 +2321,7 @@ function mario_snaryaga_dal(first_speaker, second_speaker)
 	dialogs.relocate_item_section(second_speaker, "medkit_army", "in", 1)
 	flamethrower.relocate_n_items_section(second_speaker, "bandage", "in", 2)
 	dialogs.relocate_item_section(second_speaker, "energy_drink", "in", 1)
-	dialogs.relocate_item_section(second_speaker, "paek1", "in", 1)
+	dialogs.relocate_item_section(second_speaker, "gribki", "in", 1)
 	dialogs.relocate_item_section(second_speaker, "grenade_rgd5", "in", 1)
 	flamethrower.relocate_n_items_section(second_speaker, "ammo_11.43x23_fmj", "in", 3)
 end
@@ -2329,7 +2329,7 @@ end
 function mario_snaryaga2_dal(first_speaker, second_speaker)
 	dialogs.relocate_item_section(second_speaker, "medkit_army", "in", 1)
 	flamethrower.relocate_n_items_section(second_speaker, "bandage", "in", 2)
-	dialogs.relocate_item_section(second_speaker, "paek1", "in", 1)
+	dialogs.relocate_item_section(second_speaker, "ogirki", "in", 1)
 	dialogs.relocate_item_section(second_speaker, "wpn_wincheaster1300", "in", 1)
 	flamethrower.relocate_n_items_section(second_speaker, "ammo_12x76_zhekan", "in", 2)
 	flamethrower.relocate_n_items_section(second_speaker, "ammo_11.43x23_fmj", "in", 2)
@@ -2433,7 +2433,7 @@ end
 
 function lavrov_pda_otdal(first_speaker, second_speaker)
 	new_dialog.out_item_much("lavrov_pda",1)
-	dialogs.relocate_item_section(second_speaker, "sard", "in", 1)
+	dialogs.relocate_item_section(second_speaker, "gribki", "in", 1)
 	dialogs.relocate_item_section(second_speaker, "bread", "in", 1)
 	dialogs.relocate_item_section(second_speaker, "kolbasa", "in", 1)
 	dialogs.relocate_item_section(second_speaker, "pashtet", "in", 1)
@@ -2518,12 +2518,12 @@ end
 
 function pivo_zhorik_have(first_speaker, second_speaker)
 	local actor = db.actor
-	return actor and (actor:object("old_melnik") or actor:object("chernigov"))
+	return actor and (actor:object("old_melnik") or actor:object("ice_cubes"))
 end
 
 function pivo_zhorik_net(first_speaker, second_speaker)
 	local actor = db.actor
-	return actor and not actor:object("old_melnik") and not actor:object("chernigov")
+	return actor and not actor:object("old_melnik") and not actor:object("ice_cubes")
 end
 
 function drink_zhorik_pivo(first_speaker, second_speaker)
@@ -2531,15 +2531,15 @@ function drink_zhorik_pivo(first_speaker, second_speaker)
 	local buhnul = false
 	if actor then
 		--проверяем наличие пива у актёра
-		local has_melnik, has_chernigov = has_drink()
+		local has_melnik, has_ice_cubes = has_drink()
 		--old_melnik предпочтительней
 		if has_melnik then
 			actor:eat(actor:object("old_melnik"))
 			return true
 		end
-		--если old_melnik нет, то пьём chernigov
-		if has_chernigov then
-			actor:eat(actor:object("chernigov"))
+		--если old_melnik нет, то пьём ice_cubes
+		if has_ice_cubes then
+			actor:eat(actor:object("ice_cubes"))
 			buhnul = true
 		end
 	end
@@ -2548,7 +2548,7 @@ end
 
 function has_drink()
 	local actor = db.actor
-	local item,has_melnik,has_chernigov,sect
+	local item,has_melnik,has_ice_cubes,sect
 	local count = actor:object_count()
 	for i = 1, count do
 		item = actor:object(i)
@@ -2556,13 +2556,13 @@ function has_drink()
 		if sect then
 			if sect == "old_melnik" then
 				has_melnik = true
-				return has_melnik, has_chernigov
-			elseif sect == "chernigov" then
-				has_chernigov = true
+				return has_melnik, has_ice_cubes
+			elseif sect == "ice_cubes" then
+				has_ice_cubes = true
 			end
 		end
 	end
-	return has_melnik, has_chernigov
+	return has_melnik, has_ice_cubes
 end
 
 function havchik_have()
@@ -4256,7 +4256,7 @@ function sms_brown_dva()
 end
 
 function brown_six_dialog_dal(first_speaker, second_speaker)
-        dialogs.relocate_item_section(second_speaker, "paek2", "in", 1)
+        dialogs.relocate_item_section(second_speaker, "meat", "in", 3)
         flamethrower.relocate_n_items_section(second_speaker, "medkit_scientic", "in", 3)
 end
 

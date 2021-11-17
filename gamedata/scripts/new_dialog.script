@@ -2312,7 +2312,7 @@ end
 
 
 function sahar_tri_af_drops_have()
-     return new_dialog.item_much("paek1",1) ~= false 
+     return new_dialog.item_much("meat",1) ~= false 
 end
 
 function sahar_tri_af_drops_dal(first_speaker, second_speaker)
@@ -2326,7 +2326,7 @@ local item = ""
 		trader = first_speaker
 	end
 	flamethrower.relocate_n_items_section(actor, "ammo_7.62x51_fmj", "in", 2)
-	new_dialog.out_item_much("paek1",1)
+	new_dialog.out_item_much("meat",1)
 end
 
 function sahar_two_af_fireball_have()
@@ -2348,7 +2348,7 @@ local item = ""
 end
 
 function sahar_af_dummy_pellicle_have()
-     return new_dialog.item_much("paek2",1) ~= false 
+     return new_dialog.item_much("old_melnik",3) ~= false 
 end
 
 function sahar_af_dummy_pellicle_dal(first_speaker, second_speaker)
@@ -2362,7 +2362,7 @@ local item = ""
 		trader = first_speaker
 	end
 	flamethrower.relocate_n_items_section(actor, "ammo_7.62x54_ap", "in", 2)
-	new_dialog.out_item_much("paek2",1)
+	new_dialog.out_item_much("old_melnik",3)
 end
 
 function sahar_tri_af_soul_have()
@@ -2920,7 +2920,7 @@ local item = ""
 end
 
 function svoboda_gold_art_have()
-     return new_dialog.item_much("paek1",5) ~= false 
+     return new_dialog.item_much("meat",5) ~= false 
 end
 
 function svoboda_gold_art_dal(first_speaker, second_speaker)
@@ -2934,7 +2934,7 @@ local item = ""
 		trader = first_speaker
 	end
 	dialogs.relocate_item_section(actor, "wpn_m4a1_sk1", "in", 1)
-	new_dialog.out_item_much("paek1",5)
+	new_dialog.out_item_much("meat",5)
 end
 
 function svoboda_gold_art_famas_have()
@@ -2956,7 +2956,7 @@ local item = ""
 end
 
 function svoboda_af_spirit_1_have()
-     return new_dialog.item_much("paek2",3) ~= false 
+     return new_dialog.item_much("ice_cubes", 3) ~= false 
 end
 
 function svoboda_af_spirit_1_dal(first_speaker, second_speaker)
@@ -2970,11 +2970,11 @@ local item = ""
 		trader = first_speaker
 	end
 	dialogs.relocate_item_section(actor, "wpn_sig_m2", "in", 1)
-	new_dialog.out_item_much("paek2",3)
+	new_dialog.out_item_much("ice_cubes",3)
 end
 
 function svoboda_two_af_drops_have()
-     return new_dialog.item_much("oliv",2) ~= false 
+     return new_dialog.item_much("pashtet",2) ~= false 
 end
 
 function svoboda_two_af_drops_dal(first_speaker, second_speaker)
@@ -2988,11 +2988,11 @@ local item = ""
 		trader = first_speaker
 	end
 	flamethrower.relocate_n_items_section(actor, "ammo_5.56x45_ap", "in", 3)
-	new_dialog.out_item_much("oliv",2)
+	new_dialog.out_item_much("pashtet",2)
 end
 
 function svoboda_two_af_blood_have()
-     return new_dialog.item_much("oreh",2) ~= false 
+     return new_dialog.item_much("gribki",2) ~= false 
 end
 
 function svoboda_two_af_blood_dal(first_speaker, second_speaker)
@@ -3006,11 +3006,11 @@ local item = ""
 		trader = first_speaker
 	end
 	flamethrower.relocate_n_items_section(actor, "ammo_5.56x45_ss190", "in", 3)
-	new_dialog.out_item_much("oreh",2)
+	new_dialog.out_item_much("gribki",2)
 end
 
 function svoboda_two_af_electra_sparkler_have()
-     return new_dialog.item_much("galet_s",2) ~= false 
+     return new_dialog.item_much("ice_cubes",2) ~= false 
 end
 
 function svoboda_two_af_electra_sparkler_dal(first_speaker, second_speaker)
@@ -3024,7 +3024,7 @@ local item = ""
 		trader = first_speaker
 	end
 	flamethrower.relocate_n_items_section(actor, "grenade_f1", "in", 3)
-	new_dialog.out_item_much("galet_s",2)
+	new_dialog.out_item_much("ice_cubes",2)
 end
 
 function svoboda_tri_af_ameba_slime_have()

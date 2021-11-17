@@ -8,7 +8,6 @@ local item_table = {
 	"kolbasa",
 	"vodka",
 	"conserva",
-	"vodka1",
 	"antirad",
 	"medkit",
 	"medkit_army",
@@ -20,15 +19,34 @@ local item_table = {
 	"vacsina_aks",
 	"vodka_new",
 	"cognac",
-	"aes_case33",
-	"oreh",
-	"oliv",
-	"sard"
+	"aes_case33"
+}
+local food_table = {
+	"bread",
+	"kolbasa",
+	"conserva",
+	"vodka1",
+	"energy_drink",
+	"vodka_new",
+	"cognac",
+	"tush",
+	"zheton",
+	"mineral",
+	"ogirki",
+	"meat",
+	"kagor",
+	"beloe",
+	"shprots",
+	"pashtet",
+	"gribki",
+	"kilka",
+	"sguschenka"
 }
 local ammo_table = {
 	"ammo_gauss"
 }
 local wpn_table = {
+	"wpn_knife",
 	"wpn_addon_scope",
 	"wpn_addon_scope_susat",
 	"wpn_addon_silencer",
@@ -159,15 +177,12 @@ function spawn_item_dialog:InitControls()
 	self:Register(self.list, "list_window")
 	self:Register(xml:Init3tButton("btn_ammo", self),"btn_ammo")	-- верхние кнопки
 	self:Register(xml:Init3tButton("btn_wpn", self),"btn_wpn")
+	self:Register(xml:Init3tButton("btn_food", self),"btn_food")
 	self:Register(xml:Init3tButton("btn_art", self),"btn_art")
 	self:Register(xml:Init3tButton("btn_item", self),"btn_item")
 	self:Register(xml:Init3tButton("btn_outf", self),"btn_outf")
 	self:Register(xml:Init3tButton("btn_create", self),"btn_create")	-- нижние кнопки
 	self:Register(xml:Init3tButton("btn_close", self),"btn_close")
-
-      self:Register(xml:Init3tButton("btn_stalker", self),"btn_stalker")    -- новые кнопки 
-      self:Register(xml:Init3tButton("btn_anom", self),"btn_anom")     
-      self:Register(xml:Init3tButton("btn_mob", self),"btn_mob")     
 
 end
 
@@ -184,6 +199,7 @@ end
 function spawn_item_dialog:InitCallBacks()
 	self:AddCallback("btn_ammo",	ui_events.BUTTON_CLICKED,	self.FillList_ammo, self)
 	self:AddCallback("btn_wpn",		ui_events.BUTTON_CLICKED,	self.FillList_wpn, self)
+	self:AddCallback("btn_food",	ui_events.BUTTON_CLICKED,	self.FillList_food, self)
 	self:AddCallback("btn_art",		ui_events.BUTTON_CLICKED,	self.FillList_art, self)
 	self:AddCallback("btn_item",	ui_events.BUTTON_CLICKED,	self.FillList_item, self)
 	self:AddCallback("btn_outf",	ui_events.BUTTON_CLICKED,	self.FillList_outf, self)
@@ -267,19 +283,16 @@ function spawn_item_dialog:FillList_wpn()
 	for i = 1, #wpn_table do
 		self:AddItemToList(wpn_table[i])
 	end
-	
-	--local tbl
-	--local name
-	--tbl = wpn_table 
-	--for i, v in ipairs(tbl) do
-	--	name = game.translate_string(system_ini():r_string(v, "inv_name"))
-	--	
-	--	local a = string.format("%s     [%s]", name,v)
-	--	
-	--	self:AddItemToList(a)
-	--end
-	
-	
+end
+
+function spawn_item_dialog:FillList_food()
+	self.list:RemoveAll()
+        spawn_type="actor"
+	local tbl
+	tbl = food_table
+	for i, v in ipairs(tbl) do
+		self:AddItemToList(v)
+	end
 end
 
 function spawn_item_dialog:FillList_art()
@@ -293,8 +306,6 @@ function spawn_item_dialog:FillList_art()
 	tbl = art_table
 	
 	for i, v in ipairs(tbl) do
-
-	
 		self:AddItemToList(v)
 	end
 	
@@ -310,12 +321,10 @@ function spawn_item_dialog:FillList_item()
 	local tbl
 	tbl = item_table
 	for i, v in ipairs(tbl) do
-		
 		self:AddItemToList(v)
 	end
-	
-	
 end
+
 function spawn_item_dialog:FillList_outf()
 	self.list:RemoveAll()
         spawn_type="actor"

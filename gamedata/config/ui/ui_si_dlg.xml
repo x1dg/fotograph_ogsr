@@ -10,27 +10,12 @@
 		<font font="letterica16" r="216" g="186" b="140" />
 	</list>
 
-
-	<btn_mob x="970" y="32" width="50" height="29">
+	<btn_food x="870" y="32" width="50" height="29">
 		<texture_e>ui_button_ordinary_e</texture_e>
 		<texture_t>ui_button_ordinary_t</texture_t>
 		<texture_h>ui_button_ordinary_h</texture_h>
-		<text>монстр</text>
-	</btn_mob>
-
-	<btn_anom x="920" y="32" width="50" height="29">
-		<texture_e>ui_button_ordinary_e</texture_e>
-		<texture_t>ui_button_ordinary_t</texture_t>
-		<texture_h>ui_button_ordinary_h</texture_h>
-		<text>тачки</text>
-	</btn_anom>
-	
-	<btn_stalker x="870" y="32" width="50" height="29">
-		<texture_e>ui_button_ordinary_e</texture_e>
-		<texture_t>ui_button_ordinary_t</texture_t>
-		<texture_h>ui_button_ordinary_h</texture_h>
-		<text>люди</text>
-	</btn_stalker>
+		<text>еда</text>
+	</btn_food>
 
 	<btn_ammo x="620" y="32" width="50" height="29">
 		<texture_e>ui_button_ordinary_e</texture_e>

@@ -12,7 +12,7 @@ ef_weapon_type				= 1
 
 class						= WP_KNIFE
 
-visual						= weapons\knife\wpn_knife.ogf
+visual                  	= dynamics\weapons\wpn_knife_m\wpn_knife_g
 inv_name					= st_knife
 
 inv_name_short				= st_knife
@@ -35,7 +35,7 @@ single_handed				= 1
 
 hud							= wpn_knife_hud
 	
-cost						= 70
+cost						= 12000
 
 hand_dependence		     	= 1
 
@@ -104,27 +104,46 @@ scope_status				= 0
 silencer_status				= 0
 grenade_launcher_status		= 0
 zoom_enabled				= false
-;------------------------------ S.T.A.L.K.E.R`s sound remake ------------------------------
-snd_shoot					= weapons\knife_1
-snd_shoot1					= weapons\knife_2
-snd_shoot2					= weapons\knife_3
-;------------------------------------------------------------------------------------------
-weapon_remove_time			= 5000	;время уничтожения оружия (с учетом TimeFactor) для мультиплеера
+snd_draw				= weapons\walther_draw
+snd_holster				= weapons\generic_holster
+snd_shoot				= weapons\knife_1
+snd_shoot1				= weapons\knife_2
+snd_shoot2				= weapons\knife_3
+snd_empty				= weapons\pistol_empty
+snd_reload				= weapons\pm_reload, 0.8
 
 [wpn_knife_hud]
-shell_point					= 0.0, 0.0, 0.0
-fire_point          		= 0.05, 0.0, 0.1
-fire_bone           		= wpn_knife_0
+zoom_hide_crosshair			= true
 
-orientation         		= 0,0,0
-position            		= 0,0,0
-visual              		= weapons\knife\wpn_knife_hud.ogf
+hands_position				= 0.033,-0.155,0.1
+hands_orientation			= 0,0,0
+hands_position_16x9			= 0.033,-0.155,0.1
+hands_orientation_16x9		= 0,0,0
 
-anim_idle					= idle
-anim_draw					= draw
-anim_hide					= hide
-anim_shoot1_start			= shoot1_start
-anim_shoot2_start			= shoot2_start
-anim_shoot1_end				= shoot1_end
-anim_shoot2_end				= shoot2_end
-anim_idle_sprint			= idle_sprint
+fire_point					= 0.004500,0.062500,-0.178499
+fire_bone               	= knife
+
+item_position				= 0,0,0
+item_orientation			= 10,0,0
+item_visual             	= dynamics\weapons\wpn_knife_m\wpn_knife_g_hud
+
+anm_show				= knife_draw
+anm_show_empty				= knife_draw
+anm_hide				= knife_holster
+anm_idle				= knife_idle
+anm_idle_aim				= knife_idle
+anm_attack				= knife_kick
+anm_attack2				= knife_kick_2
+anm_idle_moving				= knife_idle_moving
+anm_idle_sprint				= knife_idle_sprint
+anm_bore				= knife_idle_bore
+
+aim_hud_offset_pos			= -0.077000,0.022000,0.000000
+aim_hud_offset_rot			= 0.000000,0.005000,-0.015000
+
+
+gl_hud_offset_pos			= 0,0,0
+gl_hud_offset_rot			= 0,0,0
+
+lean_hud_offset_pos			= 0,0,0
+lean_hud_offset_rot			= 0,0,0
