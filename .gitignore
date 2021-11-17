@@ -1,7 +1,7 @@
 *.db*
 */*.db*
 backup_gamedates/
-bin*/
+
 *.rar
 _appdata_/screenshots/steam_autocloud.vdf
 _appdata_/savedgames/steam_autocloud.vdf
