@@ -1,0 +1,16 @@
+<ui_texture>
+    <file_name>ui\ui_actor_menu</file_name>
+<texture id="ui_btn_gray_long_e" x="137" y="948" width="243" height="24" />
+<texture id="ui_btn_gray_long_d" x="137" y="948" width="243" height="24" />
+<texture id="ui_btn_gray_long_t" x="137" y="994" width="243" height="24" />
+<texture id="ui_btn_gray_long_h" x="137" y="972" width="243" height="24" />
+
+<texture id="ui_btn_gray_long_mini_e" x="0" y="948" width="137" height="24" />
+<texture id="ui_btn_gray_long_mini_d" x="0" y="948" width="137" height="24" />
+<texture id="ui_btn_gray_long_mini_t" x="0" y="994" width="137" height="24" />
+<texture id="ui_btn_gray_long_mini_h" x="0" y="972" width="137" height="24" />
+
+<texture id="ui_inventory_progress_bar" x="660" y="910" width="172" height="16" />
+<texture id="ui_inventory_progress_bar_16" x="660" y="910" width="122" height="16" />
+
+</ui_texture>

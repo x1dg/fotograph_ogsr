@@ -2,7 +2,7 @@
 
 <window>
     <background x="0" y="0" width="1024" height="768" stretch="1">
-        <texture x="0" y="0" width="1920" height="1080">ui\menu_video</texture>
+        <texture x="0" y="0" width="1920" height="1080">ui\video_mainmenu</texture>
 	</background>
 	
 	<main_dialog>
