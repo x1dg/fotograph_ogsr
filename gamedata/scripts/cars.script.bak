@@ -1,0 +1,172 @@
+function kanistra_used()
+   new_dialog.out_item_key("amk_kanistra",1)
+   local snd_obj = xr_sound.get_safe_sound_object([[new\kanistra]])
+   snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+end
+
+function kanistra_have()
+   return new_dialog.item_much("amk_kanistra",1) ~= false
+end
+
+function kanistra_otdal(first_speaker, second_speaker)
+	new_dialog.out_item_much("amk_kanistra",1)
+        dialogs.relocate_item_section(second_speaker, "key_car2", "in", 1)
+end
+
+function ballon_have()
+   return new_dialog.item_much("amk_ballon",1) ~= false
+end
+
+function ballon_otdal(first_speaker, second_speaker)
+	new_dialog.out_item_much("amk_ballon",1)
+        dialogs.relocate_item_section(second_speaker, "key_car3", "in", 1)
+end
+
+function kanistro_used()
+   new_dialog.out_item_key("amk_kanistro",1)
+   local snd_obj = xr_sound.get_safe_sound_object([[new\kanistra]])
+   snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+end
+
+function key_car1_used()
+   new_dialog.out_item_key("key_car1",1)
+   local snd_obj = xr_sound.get_safe_sound_object([[new\klyuch]])
+   snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+end
+
+function key_car2_used()
+   new_dialog.out_item_key("key_car2",1)
+   local snd_obj = xr_sound.get_safe_sound_object([[new\klyuch]])
+   snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+end
+
+function key_car3_used()
+   new_dialog.out_item_key("key_car3",1)
+   local snd_obj = xr_sound.get_safe_sound_object([[new\klyuch]])
+   snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+end
+
+function instrument_case_spawn()
+   alife():create("instrument_case",vector():set(-30.198,8.953,-233.035),899123,728)
+end
+
+function instrument_case_have()
+   return new_dialog.item_much("instrument_case",1) ~= false
+end
+
+function instrument_case_otdal(first_speaker, second_speaker)
+	new_dialog.out_item_much("instrument_case",1)
+        dialogs.relocate_item_section(second_speaker, "key_car1", "in", 1)
+end
+
+function dezertir_car_spawn(position, total)
+   alife():create("dezertir_car",vector():set(80.112,19.895,-277.834),355889,1049)
+end
+
+function check_dezertir_car()
+	local park_pos = vector():set(-8.666,2.983,258.498)
+	local sobj, sobj_pos
+	for a=1,65534,1 do 
+		sobj = alife():object(a)
+		if sobj then
+			if string.find(sobj:name(),"dezertir_car") then
+				sobj_pos = sobj.position
+				return sobj_pos and sobj_pos:distance_to(park_pos)<=18
+			end
+		end		
+	end
+	return false
+end
+
+function check_car_in_restr(a,b)
+	local park_pos = vector():set(-8.666,2.983,258.498)
+	local obj, obj_pos
+	news_manager.send_tip(db.actor, "start", nil, nil, 10000)
+	for a=1,65534,1 do 
+		obj = level.object_by_id(a)
+		if obj then
+			if obj:section() == "dezertir_car" then
+				obj_pos = obj:position()
+		news_manager.send_tip(db.actor,tostring(obj_pos:distance_to(park_pos)), nil, nil, 10000)-- выводим дистанцию 
+				if obj_pos~=nil and obj_pos:distance_to(park_pos)<=18 then					        db.actor:give_info_portion("dezertir_car_mesto")
+				news_manager.send_tip(db.actor, "Ok", nil, nil, 10000)
+				end
+			end
+		end  
+	end
+end
+
+function shurup_nagrada(first_speaker, second_speaker)
+   dialogs.relocate_item_section(second_speaker, "wpn_m4", "in", 1)
+   flamethrower.relocate_n_items_section(second_speaker, "ammo_5.56x45_ap", "in", 5)
+end
+
+function aver_crow_spawn()
+ local sim = alife()
+ for i = 1, 100 do
+  sim:create("m_crow", vector():set(-252.934,-3.910,-307.250),436625,780)
+ end
+end
+
+function mg_crow_spawn()
+ local sim = alife()
+ for i = 1, 75 do
+  sim:create("mouse", vector():set(-77.143,1.607,-4.553),232532,1268)
+ end
+end
+
+function dyshlo_crow_spawn()
+ local sim = alife()
+ for i = 1, 100 do
+  sim:create("m_crow", vector():set(77.907,29.767,-40.029),375534,0)
+ end
+end
+
+function road_crow_spawn()
+ local sim = alife()
+ for i = 1, 70 do
+  sim:create("m_crow", vector():set(-40.773,0.053,-252.768),397881,1573)
+ end
+end
+
+function bar_crow_spawn()
+ local sim = alife()
+ for i = 1, 50 do
+  sim:create("m_crow", vector():set(139.186,0.001,119.713),37609,214)
+ end
+end
+
+function mk_crow_spawn()
+ local sim = alife()
+ for i = 1, 70 do
+  sim:create("m_crow", vector():set(-488.506,6.141,-142.127),195989,634)
+ end
+end
+
+function prom_crow_spawn()
+ local sim = alife()
+ for i = 1, 100 do
+  sim:create("mouse", vector():set(31.565,17.241,-459.362),258132,981)
+ end
+end
+
+function swamp_crow_spawn()
+ local sim = alife()
+ for i = 1, 80 do
+  sim:create("m_crow", vector():set(-242.754,0.390,81.206),624684,797)
+ end
+end
+
+function prip_crow1_spawn()
+ local sim = alife()
+ for i = 1, 60 do
+  sim:create("mouse", vector():set(-51.067,-2.392,-64.568),48270,471)
+ end
+end
+
+function prip_crow2_spawn()
+ local sim = alife()
+ for i = 1, 70 do
+  sim:create("m_crow", vector():set(14.231,-2.221,19.185),118639,586)
+ end
+end
