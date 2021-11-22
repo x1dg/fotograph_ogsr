@@ -920,20 +920,20 @@ end
 
 --' Ñîçäàåòñÿ äèàëîã àêòåðà, â êîòîðîì áóäóò âûäàâàòüñÿ çàäàíèÿ.
 function CRandomTask:init_task_dialog(dlg, parent)
-  local phr = dlg:AddPhrase("tm_seek_new_job",0,-1,-10000)
+	local phr = dlg:AddPhrase("tm_seek_new_job","0","",-10000)
   local phrase_script = phr:GetPhraseScript()
 
-  phr = dlg:AddPhrase("tm_"..parent.."_list_job",1,0,-10000)
+	phr = dlg:AddPhrase("tm_"..parent.."_list_job","1","0",-10000)
   phrase_script = phr:GetPhraseScript()
   phrase_script:AddAction("task_manager.action_task_show")
   phrase_script:AddPrecondition("task_manager.precondition_vendor_can_task")
     
-  phr = dlg:AddPhrase("tm_"..parent.."_has_no_job",2,0,-10000)
+	phr = dlg:AddPhrase("tm_"..parent.."_has_no_job","2","0",-10000)
   phrase_script = phr:GetPhraseScript()
   phrase_script:AddPrecondition("task_manager.precondition_vendor_cannot_task")
   
   for k,v in pairs(self.task_id_by_parent[parent]) do
-		phr = dlg:AddPhrase(self.task_info[v].name, self.task_info[v].init_phrase_id, 1, -10000)    
+		phr = dlg:AddPhrase(self.task_info[v].name, self.task_info[v].init_phrase_id, "1", -10000)    
 		phrase_script = phr:GetPhraseScript()
 		phrase_script:AddPrecondition("task_manager.precondition_task_avail")
 
@@ -948,7 +948,7 @@ function CRandomTask:init_task_dialog(dlg, parent)
 		phr = dlg:AddPhrase("tm_seek_job_no", self.task_info[v].no_phrase_id, self.task_info[v].desc_phrase_id, -10000)
 	end
 
-  dlg:AddPhrase("tm_seek_job_abandon",3,1,-10000)
+  dlg:AddPhrase("tm_seek_job_abandon","3","1",-10000)
 end
 --' Ôóíêöèÿ, â êîòîðîé áóäåò âûäàâàòüñÿ âåùåâàÿ íàãðàäà çà âûïîëíåííûå êâåñòû
 function CRandomTask:task_reward(npc, actor, p1, p2)
@@ -1039,7 +1039,7 @@ function CRandomTask:task_reward_storyline(task)
 end
 --' Ñîçäàåòñÿ äèàëîã àêòåðà, â êîòîðîì áóäóò ïðèíèìàòüñÿ çàäàíèÿ
 function CRandomTask:init_reward_dialog(dlg, parent)
-  local phr = dlg:AddPhrase("tm_reward_job",0,-1,-10000)
+	local phr = dlg:AddPhrase("tm_reward_job","0","",-10000)
   local phrase_script = phr:GetPhraseScript()
 --  amk.mylog("Creating reward dialog")
 
@@ -1050,7 +1050,7 @@ function CRandomTask:init_reward_dialog(dlg, parent)
   phrase_script:AddPrecondition("task_manager.precondition_have_completed_job")
 ]]
       
-  phr = dlg:AddPhrase("tm_"..parent.."_job_ask", 2, 0, -10000)
+  phr = dlg:AddPhrase("tm_"..parent.."_job_ask", "2", "0", -10000)
   phrase_script = phr:GetPhraseScript()
 --  phrase_script:AddPrecondition("task_manager.precondition_dont_have_completed_job")
 

@@ -6,5 +6,7 @@ backup_gamedates/
 _appdata_/screenshots/steam_autocloud.vdf
 _appdata_/savedgames/steam_autocloud.vdf
 _appdata_/steam_autocloud.vdf
+userdata/screenshots/
+userdata/savedgames/
 *.log
 *.mdmp

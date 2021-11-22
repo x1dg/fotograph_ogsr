@@ -20,7 +20,6 @@ end
 
 function PdaWindow:__finalize() end
 function PdaWindow:InitControls()
-	log1("PDA WINDOW INIT")
     self.stat = CUIStatic()
     self.stat:Init(0,0,1024,768)
     self.owner:AttachChild(self.stat)
@@ -38,7 +37,6 @@ function PdaWindow:InitControls()
 	self:Register(self.btn_options, "btn_pda_options")
 	self:AddCallback("btn_pda_options", ui_events.BUTTON_CLICKED, self.ClickBtnNotepad, self)
     initial = true
-	log1("PDA WINDOW INIT DONE")
 end
 
 function PdaWindow:ShowWnd()
@@ -53,7 +51,6 @@ end
 
 local pda_window
 function on_info(info_id)
-	log1("PDA ON INFO: "..tostring(info_id))
 	if info_id=="ui_pda" then
 	    pda_window = level.main_input_receiver()
         if not initial then	rec_wnd = PdaWindow(level.main_input_receiver()) end  
