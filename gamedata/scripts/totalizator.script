@@ -789,7 +789,7 @@ end
 
 --[[-----------------------------------------------------------------------------------------------
  File          : binder_torch.script
- Description   : Биндер фонарика - используется для замены вызова функций  из bind_stalker.script
+ Description   : Биндер фонарика - используется для замены вызова функций из bind_stalker.script
  Copyright     : 2010 © Erlik
  Author        : Erlik (aka Garry_Galler)
  Last edit     : 4.10.2010 
@@ -814,7 +814,6 @@ end
 
 function torch_binder:update(delta)
 object_binder.update(self, delta)
-hud_med.HudShowMed()
 --m_art.CheckTimeUpdate()
 time_back.kvest_failed_update()
 Update()
@@ -827,7 +826,6 @@ end
 
 function torch_binder:net_destroy()
 object_binder.net_destroy(self)
-hud_med.RemoveStatic()
 end
 
 function torch_binder:net_save_relevant()
