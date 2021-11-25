@@ -28,7 +28,6 @@ end
 
 -- »спользование предмета
 function on_use(obj)
-	ui_hud_medicines.use(obj)
 end
 
 -- ‘окус на €чейке инвентар€
@@ -104,7 +103,6 @@ function update()
 	rx_shoot_enable.shoot_effect()
 	xr_signals.on_update(delta)
 	ui_fast_use_slots.FastUseSlotsHud()
-	ui_hud_medicines.update()
 	ui_hud_weight.update()
 	ui_hud_time.update()
 	ui_hud_mask.update()
