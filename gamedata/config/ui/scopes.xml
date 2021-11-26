@@ -1,0 +1,169 @@
+<w>
+  <!--  Ñòàíäàðòíûé ïðèöåë ÏÑÎ (Íå þçàåòñÿ) -->
+  <wpn_crosshair x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn_crosshair</texture>
+    </auto_static>
+  </wpn_crosshair>
+     
+  <!-- Ëåîïîëüä Ìàðê 4 (AW l96) x10 (12) -->
+  <wpn_crosshair_leo_mark4 x="0" y="0" width="1364" height="1024">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>shoker_mod\crosshair\leo_mark4</texture>
+    </auto_static>
+  </wpn_crosshair_leo_mark4>
+  
+  <!-- Ëåîïîëüä Ìàðê 4 (AW l96) x10 (12) -->
+  <wpn_crosshair_po4x34 x="0" y="0" width="1364" height="1024">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>shoker_mod\crosshair\wpn_crosshair_po4x34</texture>
+    </auto_static>
+  </wpn_crosshair_po4x34> 
+ 
+   <!-- Schmidt & Bender PM II 4 x5 (23)-->
+  <wpn_crosshair_sb_p4x5 x="0" y="0" width="1364" height="1024">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>shoker_mod\crosshair\SB_p4x5</texture>
+    </auto_static>
+  </wpn_crosshair_sb_p4x5>
+  
+   <!-- Rangefinder x10 (12)-->
+  <wpn_crosshair_rangefinder x="0" y="0" width="1364" height="1024">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>shoker_mod\crosshair\rangefinder</texture>
+    </auto_static>
+  </wpn_crosshair_rangefinder>
+    
+   <!-- ÐÏÃ -->    
+  <wpn_crosshair_rpg x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn_crosshair_rpg</texture>
+    </auto_static>
+  </wpn_crosshair_rpg>
+
+   <!-- Áèíîêëü -->    
+  <wpn_crosshair_bino x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn_crosshair_bino</texture>
+    </auto_static>
+  </wpn_crosshair_bino> 
+  
+  <!-- ÓÄÀËÈÒÜ ÓÄÀËÈÒÜ ÓÄÀËÈÒÜ  -->
+  
+  
+   <!-- ÓÄÀËÈÒÜ -->
+  <wpn_crosshair_milldot x="0" y="0" width="1364" height="1024">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_milldot</texture>
+    </auto_static>
+  </wpn_crosshair_milldot>
+  
+  
+  
+  <wpn_crosshair_pso1 x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn_crosshair_pso1</texture>
+    </auto_static>
+  </wpn_crosshair_pso1>
+
+  <wpn_crosshair_l85 x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn_crosshair_l85</texture>
+    </auto_static>
+  </wpn_crosshair_l85>
+  
+ <!-- SUSAT --> 
+ <wpn_crosshair_acog x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_susat</texture>
+	</auto_static>
+ </wpn_crosshair_acog>
+  
+ <!-- Aimpoints -->  
+  <wpn_crosshair_aimpoint x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_aimpoint</texture>
+    </auto_static>
+  </wpn_crosshair_aimpoint>
+
+  <wpn_crosshair_aimpoint_2 x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_aimpoint_2</texture>
+    </auto_static>
+  </wpn_crosshair_aimpoint_2>
+  
+  <wpn_crosshair_mongol x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_mongol</texture>
+    </auto_static>
+  </wpn_crosshair_mongol>
+  
+  <wpn_crosshair_optic x="0" y="0" width="1364" height="1024">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_optic</texture>
+    </auto_static>
+  </wpn_crosshair_optic>
+  
+  <wpn_crosshair_acog_2 x="0" y="0" width="2732" height="2048">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_acog_pax</texture>
+    </auto_static>
+  </wpn_crosshair_acog_2>
+  
+   <wpn_crosshair_spectr x="0" y="0" width="2048" height="1536">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_spectr</texture>
+    </auto_static>
+  </wpn_crosshair_spectr>
+  
+  <wpn_crosshair_p69 x="0" y="0" width="1364" height="1024">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_p69</texture>
+    </auto_static>
+  </wpn_crosshair_p69>
+
+  <wpn_crosshair_zf41 x="0" y="0" width="1364" height="1024">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_zf41</texture>
+    </auto_static>
+  </wpn_crosshair_zf41>
+  
+  <wpn_crosshair_leo x="0" y="0" width="1364" height="1024">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_leo</texture>
+    </auto_static>
+  </wpn_crosshair_leo>  
+  
+  <wpn_crosshair_l96 x="0" y="0" width="1364" height="1024">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_l96</texture>
+    </auto_static>
+  </wpn_crosshair_l96>
+  
+  <wpn_crosshair_pka x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_pka</texture>
+    </auto_static>
+  </wpn_crosshair_pka>
+  
+  <wpn_crosshair_fn x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn_crosshair_fn</texture>
+    </auto_static>
+  </wpn_crosshair_fn>
+
+  <wpn_crosshair_g36_up x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn_crosshair_g36_up</texture>
+    </auto_static>
+  </wpn_crosshair_g36_up>
+  
+  <wpn_crosshair_g36 x="0" y="0" width="1024" height="768">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn_crosshair_g36</texture>
+    </auto_static>
+  </wpn_crosshair_g36>
+
+  
+</w>
+

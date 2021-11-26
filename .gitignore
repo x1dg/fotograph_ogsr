@@ -1,12 +1,13 @@
 *.db*
 */*.db*
-backup_gamedates/
-
 *.rar
+*.log
+*.mdmp
+
 _appdata_/screenshots/steam_autocloud.vdf
 _appdata_/savedgames/steam_autocloud.vdf
 _appdata_/steam_autocloud.vdf
+backup_gamedates/
+gamedata_*/
 userdata/screenshots/
 userdata/savedgames/
-*.log
-*.mdmp
