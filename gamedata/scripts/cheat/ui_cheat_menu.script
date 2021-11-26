@@ -908,7 +908,7 @@ function init_cheat_table()
 					end
 					table.insert( t, { sec, name } )
 				else
-					table.insert( t, { sec, get_inv_name(sec,sec) } )
+					table.insert( t, { sec, sec.." ("..get_inv_name(sec,sec)..")" } )
 				end
 			end
 		end

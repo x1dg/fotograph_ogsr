@@ -1,5 +1,6 @@
 #include "delayed_action_fuse.ltx"
 #include "_main_shoker.ltx"
+#include "_weapons_stcop.ltx"
 #include "new_guns.ltx"
 ;----- Пистолеты -------
 #include "w_hpsa.ltx"
@@ -23,7 +24,7 @@
 #include "w_groza.ltx"
 #include "w_l85.ltx"
 #include "w_sig550.ltx"
-#include "w_g36.ltx"
+
 #include "w_ak00u.ltx"
 ;----- Снайперские винтовки -------
 #include "w_svd.ltx"
@@ -2136,6 +2137,32 @@ inv_grid_x		= 19
 inv_grid_y		= 1
 scope_texture		= wpn\SUSAT-AMK
 scope_zoom_factor	= 30
+
+[eot]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn 					= "sm\addons\scope_eot"
+class					= WP_SCOPE
+cform					= skeleton
+visual					= dynamics\weapons\addons\eot.ogf
+cost                	= 3000
+
+inv_name        		= st_addon_eot
+inv_name_short  		= st_addon_eot
+description     		= st_addon_eot_descr
+
+inv_weight       		= 0.3
+
+inv_grid_width     		= 1
+inv_grid_height    		= 1
+inv_grid_x         		= 21
+inv_grid_y         		= 0
+
+holder_range_modifier	= 1.1		; во сколько раз увеличивается eye_range
+holder_fov_modifier		= 0.9		; во сколько раз увеличивается eye_fov
+
+scope_texture			= wpn_crosshair
+scope_zoom_factor		= 30
 
 [wpn_addon_silencer]:identity_immunities
 GroupControlSection	= spawn_group
