@@ -563,6 +563,7 @@ function CUIDescriptionWnd:ShowWeaponParams()
 		if n == 1 then
 			text = "Интегрированный глушитель"
 		else
+			log1("ADDON"..addon)
 			text = get_inv_name(addon)
 		end
 		if n == 1 or bit_and(af, addon_flags.silencer) ~= 0 then
