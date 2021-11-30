@@ -1,3 +1,53 @@
+   <!--Свежатина-->
+<game_task id="new_portion_kkvest2_kvest">
+                <title>Найти ноутбук.</title>
+        <objective>
+						                <article>noyt_dryga</article>
+                <text>Найти ноутбук.</text>
+                <icon>kvest_starter1</icon>
+               <infoportion_complete>new_portion_kkvest2_f</infoportion_complete>
+	    </objective>
+        <objective>
+                <text>Обыскать место.</text>
+				<map_location_type hint="Место поиска">green_location</map_location_type>
+                <object_story_id>frend_zona1</object_story_id>
+                <infoportion_complete>new_portion_kkvest2_pf</infoportion_complete>
+       </objective>
+	           <objective>
+                <text>Поговорить с другом.</text>
+				<map_location_type hint="Друг">blue_location</map_location_type>
+                <object_story_id>frend1</object_story_id>
+                <infoportion_complete>new_portion_kkvest2_f</infoportion_complete>
+       </objective>
+      </game_task>  
+	  
+	  <game_task id="new_portion_kkvest3_kvest">
+                <title>Поговорить с другом.</title>
+        <objective>
+                <text>Поговорить с другом.</text>
+                <icon>kvest_starter2</icon>
+               <infoportion_complete>new_portion_kkvest3_f</infoportion_complete>
+	    </objective>
+        <objective>
+                <text>Поговорить с другом.</text>
+                <infoportion_complete>new_portion_kkvest3_f</infoportion_complete>
+       </objective>
+      </game_task>  
+	  
+	  	  <game_task id="new_portion_kkvest4_kvest">
+                <title>Разобраться со связью.</title>
+        <objective>
+                <text>Настроить антенну</text>
+                <icon>kvest_starter3</icon>
+               <infoportion_complete>new_portion_kkvest4_pf</infoportion_complete>
+	    </objective>
+        <objective>
+                <text>Поговорить с другом.</text>
+                <infoportion_complete>new_portion_kkvest4_f</infoportion_complete>
+       </objective>
+      </game_task>  
+   <!--Старое-->
+
 <game_task id="first_talk">
                 <title>Поговорить с Хароном.</title>
         <objective>

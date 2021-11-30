@@ -1,0 +1,186 @@
+--[[--------------------------------------------------------------------------------------------------------------------
+ Description       : Разные функции. основано на файле мода shadows addon 0,6 by shadows
+--]]-------------------------------------------------------------------------------------------------------------------- 
+        function update()
+
+	power_indicator()
+	red_effect()
+        sh_hud_wpn_panel.update()
+        
+        
+end
+------------------------------------------------------------------------------------------------------------------------
+-- билдовский индикатор выносливости
+function power_indicator()
+    local hud = get_hud()
+    local green_power  = 0.5
+	local yellow_power = 0.3
+	local red_power    = 0.1
+	if green_power >= db.actor.power and not hud:GetCustomStatic("green_power_static") then 
+	    hud:AddCustomStatic("green_power_static")
+		if hud:GetCustomStatic("yellow_power_static") then hud:RemoveCustomStatic("yellow_power_static")
+		elseif hud:GetCustomStatic("red_power_static") then hud:RemoveCustomStatic("red_power_static") 
+	    end
+	elseif green_power < db.actor.power then
+	    if hud:GetCustomStatic("green_power_static") then hud:RemoveCustomStatic("green_power_static") end
+	end
+	green_power = db.actor.power
+	if yellow_power >= db.actor.power and not hud:GetCustomStatic("yellow_power_static") then 
+	    hud:AddCustomStatic("yellow_power_static")
+		if hud:GetCustomStatic("green_power_static") then hud:RemoveCustomStatic("green_power_static")
+		elseif hud:GetCustomStatic("red_power_static") then hud:RemoveCustomStatic("red_power_static") 
+	    end
+	else 
+	    if hud:GetCustomStatic("yellow_power_static") then hud:RemoveCustomStatic("yellow_power_static") end
+	end
+	yellow_power = db.actor.power
+	if red_power >= db.actor.power and not hud:GetCustomStatic("red_power_static") then 
+	    hud:AddCustomStatic("red_power_static")
+		if hud:GetCustomStatic("green_power_static") then hud:RemoveCustomStatic("green_power_static")
+		elseif hud:GetCustomStatic("yellow_power_static") then hud:RemoveCustomStatic("yellow_power_static") 
+	    end
+	else 
+	    if hud:GetCustomStatic("red_power_static") then hud:RemoveCustomStatic("red_power_static") end
+	end
+	red_power = db.actor.power
+end
+------------------------------------------------------------------------------------------------------------------------
+-- эффект ранения ГГ
+local health = 0
+function red_effect()
+    if health > db.actor.health + 0.8 then level.add_pp_effector("fire_hit.ppe", 1974, false) end
+    health = db.actor.health
+end
+------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------
+-- сон главного героя
+function sleep_main(scale)
+    level.add_pp_effector("peace_fade.ppe", 1973, false)
+    basic_time_factor = level.get_time_factor()
+    db.actor:hide_weapon()
+    level.disable_input()   
+    sleep_starter(scale) 
+end
+ 
+function sleep_starter(scale)
+    local factor = scale*1325
+    game.start_tutorial("time_scaling")
+    level.set_time_factor(factor)
+    bind_stalker.actor_in_sleep = true
+end
+ 
+function sleep_dreamer()
+    level.set_time_factor(basic_time_factor)
+    game.start_tutorial("without_dream") 
+    bind_stalker.actor_in_sleep = false
+end
+ 
+function sleep_stopper()
+    level.add_pp_effector("peace_unfade.ppe", 1973, false)
+    db.actor:restore_weapon()
+    level.enable_input()
+end
+------------------------------------------------------------------------------------------------------------------------ 
+function olr_func_net_spawn()
+        get_console():execute("g_ammunition_on_belt 1")
+        get_console():execute("r2_allow_r1_lights 0")
+	get_console():execute("cam_inert 0.1")
+	get_console():execute("r2_tf_mipbias -0.5")
+        get_console():execute("r1_tf_mipbias -0.5")
+        get_console():execute("r__geometry_lod 3")
+        get_console():execute("r2_sun_near_border 1")
+   --   get_console():execute("r2_sun_near 27")  -- переведено на ручную настройку, так как разные при разных -smap
+        get_console():execute("r2_mblur 0")
+        get_console():execute("r1_tf_mipbias -0.5")
+
+        get_console():execute("unbind quick_save")
+        get_console():execute("unbind quick_load")
+        get_console():execute("hud_weapon on")    -- при off глюки на r2
+end
+------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------
+-- функция для воспроизведения звука
+function play_sound(sound,obj)
+	if obj == nil then obj = db.actor end
+	snd = xr_sound.get_safe_sound_object(sound)
+	snd:play_no_feedback(obj,sound_object.s2d,0,vector(),1.0)
+end
+------------------------------------------------------------------------------------------------------------------------
+-- функция установки меток на карту
+function add_spot_on_map(obj_id,type,text)
+    if obj_id then
+        if text == nil then text = " " end
+        level.map_add_object_spot_ser(obj_id,type,text)
+    end
+end
+
+-- функция удаления меток с карты
+function remove_spot_from_map(obj_id,type)
+    if obj_id and level.map_has_object_spot(obj_id,type) ~= 0 then
+        level.map_remove_object_spot(obj_id,type)
+    end
+end
+------------------------------------------------------------------------------------------------------------------------
+-- функция для проверки координат ГГ
+function actor_position()
+    local vid = db.actor:level_vertex_id()
+    local gvid = db.actor:game_vertex_id()
+    local a = db.actor:position()
+    local dir = db.actor:direction()
+    local text = "Позиция:\\nX= "..a.x.."\\nY= "..a.y.."\\nZ= "..a.z.."\\nDirX= "..dir.x.."\\nDirY= "..dir.y.."\\nDirZ= "..dir.z.."\\nlevel_vertex= "..vid.."\\ngame_vertex_id= "..gvid
+    news_manager.send_tip(db.actor,text,nil,nil,30000)
+end
+------------------------------------------------------------------------------------------------------------------------
+tips_icons = {default = {432,300,50,50}, encyclopedy_icon = {486,432,50,50}, military_icon = {432,400,50,50}}
+pda_news = xr_sound.get_safe_sound_object([[device\pda\pda_news]])
+pda_tips = xr_sound.get_safe_sound_object([[device\pda\pda_tip]])
+pda_task = xr_sound.get_safe_sound_object([[device\pda\pda_objective]])
+
+-- функция для проигрывания сообщений
+function send_tip(news_text,header,timeout,showtime,sender,sound)
+    if news_text == nil then return end
+    if header == nil then header = game.translate_string("st_tip") end
+    if timeout == nil then timeout = 0 end
+    if showtime == nil then showtime = 5 end
+    local player
+    if sound == "news" then player = pda_news
+    elseif sound == "task" then player = pda_task else player = pda_tips
+    end   
+    player:play(db.actor,timeout,sound_object.s2d)
+    if sender == nil then sender = "default" end
+    local x = tips_icons[sender][1]
+    local y = tips_icons[sender][2]
+    local width  = tips_icons[sender][3] 
+    local height = tips_icons[sender][4]
+    local news_text = "%c[255,160,160,160]"..header.."\\n".."%c[230,255,128,64]"..news_text
+    db.actor:give_game_news(news_text,"ui\\ui_iconsTotal",Frect():set(x,y,width,height),timeout*1000,showtime*1000)
+    return true
+end
+
+-------------------------------------------------------  СТОРОННИЕ ФУНКЦИИ --------------------------------------------------
+--Управление инфопоршнями
+function info(info_id, bool)
+	if info_id ~= nil then
+		if bool == nil or bool == "return" then
+			return alife():has_info(0, info_id)
+		elseif bool == true then
+			if not alife():has_info(0, info_id) then
+				db.actor:give_info_portion(info_id)
+			end
+		elseif bool == false then
+			if alife():has_info(0, info_id) then
+				db.actor:disable_info_portion(info_id)
+			end
+		else
+			this.cout("den.info(bool=nil)")
+		end
+	else
+		this.cout("den.info(info_id=nil)")
+	end
+end

@@ -82,8 +82,11 @@ ph_character_have_wounded_state = false; имеет ли персонаж состояние раненый
 actor_hit_effect = effector_monster_hit
 
 [default_weapon_params]:identity_immunities
+vis_frame_speed			= 6
+vis_frame_color			= 0.7,0.7,0.7,1.0
+vision_present					= false
 use_aim_bullet					= false
-use_first_bullet					= false
+use_first_bullet				= false
 k_hit_critical					= 0
 frag_hit_critical					= 0
 hit_power						= 0.30, 0.29, 0.28, 0.27
@@ -106,3 +109,105 @@ strafe_aim_enabled = false
 strafe_aim_transition_time = 0.15
 strafe_aim_hud_offset_pos = 0.005,0.0,0.00
 strafe_aim_hud_offset_rot = 0.0,0.0,2.5
+
+[wpn_main]:identity_immunities,weapon_probability,default_weapon_params
+;******[Параметры СДК\Прочее]******;
+GroupControlSection     = spawn_group
+discovery_dependency    =
+$npc              		= on
+$prefetch               = 8
+scheduled               = off
+cform                   = skeleton
+default_to_ruck         = false			; Автоматически помещать в слот
+
+ph_mass                 = 4
+launch_speed            = 0
+
+kill_msg_x        		= 0
+kill_msg_y        		= 0
+kill_msg_width    		= 1
+kill_msg_height   		= 1
+
+ammo_limit				= 300
+ammo_elapsed			= 300
+ammo_current			= 300
+startup_ammo            = 300
+
+hand_dependence         = 1				; Зависимость от рук (?)
+misfire_probability     = 0 			; Вероятность осечки при максимальном износе (В этой игре хоть что то работает как надо?)
+use_aim_bullet			= false			; Первая пуля наносит сверх-урон
+rpm_empty_click			= 300			; Частота ударов курка при пустом магазине
+
+fire_dispersion_condition_factor		= 3.0	; Увеличение разброса в процентах при максимальном износе
+
+;изношенность, при которой появляется шанс осечки
+misfire_start_condition		= 0.9
+;изношеность при которой шанс осечки становится константным
+misfire_end_condition		= 0.1
+;шанс осечки при изношености больше чем misfireStartCondition
+misfire_start_prob	     	= 0.00005
+;шанс осечки при изношености больше чем misfireEndCondition
+misfire_end_prob	     	= 0.1
+;увеличение изношености при одиночном выстреле
+;condition_shot_dec      	= 0.0
+;увеличение изношености при выстреле очередью
+;condition_queue_shot_dec	= 0.0
+
+; Апгрейды
+upgrades				=
+installed_upgrades		=
+upgrade_scheme			=
+
+; Разброс
+use_dispersion_mod			= false	; Использовать доп. модификатор разброса disp_aim_mod
+
+; Отдача (от бедра)
+cam_relax_speed				= 0			;скорость возврата в исходное положение
+cam_relax_speed_ai			= 360
+cam_dispersion_frac			= 1.0		;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle				= 20.0		;максимальный угол отдачи
+
+; Отдача (прицеливание)
+zoom_cam_relax_speed		= 0		;прицел\мушка
+zoom_cam_relax_speed_ai		= 180
+zoom_cam_dispersion_frac	= 1.0
+zoom_cam_max_angle			= 20.0
+
+; Увеличение самой модели ствола при зуме
+scope_zoom_hud_fov				= 45		;HUD FOV
+scope_zoom_hud_fov_speed		= 0.15	;Скорость изменения
+scope_zoom_hud_fov_alt			= 45		;HUD FOV при втором прицеле
+scope_zoom_hud_fov_speed_alt	= 0.15	;Скорость изменения при втором прицеле
+
+; Зум подстволов
+scope_zoom_factor_gl		= 60
+
+; Прочее
+cam_return					= 0       ;возврат прицела оружия в начальное состояние, 0 = не возвращать
+tracers                     = on      
+tracers_color_ID            = 2
+zoom_cam_return             = 0       ;возврат прицела оружия в начальное состояние, 0 = не возвращать
+
+; AI
+ef_main_weapon_type			= 0
+ef_weapon_type				= 0
+
+; SWM
+weapon_type					= none
+
+; Базовая секция для сошек
+[bipod_wpn]
+class						= SWM_MCHN
+cform						= skeleton
+visual						= dynamics\weapons\wpn_mounted\wpn_mounted_pkm_cover
+script_binding				= swm_turret.bind
+
+zoom_fov					= 40
+
+; 3D-Гильзы
+shell_name					= shell_object		;Секция гильзы для спавна
+shell_alowed				= false				;Нужно ли спавнить гильзу
+shell_bone					= wpn_body 			;Кость, относительно которой спавнится гильза (3 лицо)
+shell_impuls_vector			= 3, -0.5, -0.25	;Направление и сила полёта гильзы (X\Y\Z)
+shell_disp_vector			= 0.6, 1.3, 40		;Разброс импульса (миним. коэф \ максим. коэф \ угол поворота по Y 
+shell_pos_3p				= 0.05, 0, -0.03	;Смещение позиции спавна относительно кости shell_bone для 3-его лица

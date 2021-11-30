@@ -2,6 +2,9 @@
 
 <!-- new npc profile -->
 <xml>
+	<character id="stalker_freind_one">
+		<class>stalker_freind_one</class>
+	</character>
 	<character id="esc_strannik">
 		<class>esc_strannik</class>
 	</character>

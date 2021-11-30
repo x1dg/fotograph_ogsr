@@ -59,5 +59,9 @@
     <texture id="ui_npc_zombik1" x="660" y="864" width="165" height="108" />
     <texture id="ui_npc_zombik2" x="825" y="864" width="165" height="108" />
 	<texture id="ui_npc_pashka" x="330" y="972" width="165" height="108" />
-	
+	<!--Новые иконочки-->
+	    <texture id="kvest_starter1" x="495" y="972" width="165" height="108" />
+	    <texture id="kvest_starter2" x="660" y="972" width="165" height="108" />
+    <texture id="kvest_starter3" x="825" y="972" width="165" height="108" />
+    <texture id="kvest_starter4" x="660" y="1080" width="165" height="108" />
 </ui_texture>

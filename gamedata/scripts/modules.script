@@ -1,5 +1,5 @@
 
--- Типы схем:
+-- Г’ГЁГЇГ» Г±ГµГҐГ¬:
 stype_stalker    = 0
 stype_mobile     = 1
 stype_item       = 2
@@ -7,11 +7,11 @@ stype_heli       = 3
 stype_restrictor = 4
 
 ----------------------------------------------------------------------
--- Загрузка схем:
+-- Г‡Г ГЈГ°ГіГ§ГЄГ  Г±ГµГҐГ¬:
 ----------------------------------------------------------------------
 
 ----------------------------------------------------------------------
--- Загрузка модулей сталкеров:
+-- Г‡Г ГЈГ°ГіГ§ГЄГ  Г¬Г®Г¤ГіГ«ГҐГ© Г±ГІГ Г«ГЄГҐГ°Г®Гў:
 ----------------------------------------------------------------------
 if watcher_act then
         load_scheme("watcher_act",    "watcher_act",      stype_stalker)
@@ -41,7 +41,7 @@ load_scheme("xr_patrol",      "patrol",      stype_stalker)
 if xrs_ai then xrs_ai.load_schemes() end
 
 ----------------------------------------------------------------------
--- Загрузка модулей монстров:
+-- Г‡Г ГЈГ°ГіГ§ГЄГ  Г¬Г®Г¤ГіГ«ГҐГ© Г¬Г®Г­Г±ГІГ°Г®Гў:
 ----------------------------------------------------------------------
 load_scheme("mob_remark",       "mob_remark",   stype_mobile)
 load_scheme("mob_walker",       "mob_walker",   stype_mobile)
@@ -58,7 +58,7 @@ load_scheme("mob_panic",    "mob_panic",    stype_mobile)
 load_scheme("mob_trader",   "mob_trader",   stype_mobile)
 
 ----------------------------------------------------------------------
--- Загрузка модулей физических объектов:
+-- Г‡Г ГЈГ°ГіГ§ГЄГ  Г¬Г®Г¤ГіГ«ГҐГ© ГґГЁГ§ГЁГ·ГҐГ±ГЄГЁГµ Г®ГЎГєГҐГЄГІГ®Гў:
 ----------------------------------------------------------------------
 load_scheme("ph_door",        "ph_door",     stype_item)
 load_scheme("ph_gate",        "ph_gate",     stype_item)
@@ -78,13 +78,13 @@ load_scheme("ph_oscillate",   "ph_oscillate",stype_item)
 load_scheme("fx_sound",     "fx_sound",    stype_item)
 
 ----------------------------------------------------------------------
--- Загрузка модулей вертолёта:
+-- Г‡Г ГЈГ°ГіГ§ГЄГ  Г¬Г®Г¤ГіГ«ГҐГ© ГўГҐГ°ГІГ®Г«ВёГІГ :
 ----------------------------------------------------------------------
 load_scheme("heli_move",      "heli_move",   stype_heli)
 --load_scheme("heli_attack",    "heli_attack", stype_heli)
 
 ----------------------------------------------------------------------
--- Загрузка модулей рестрикторов:
+-- Г‡Г ГЈГ°ГіГ§ГЄГ  Г¬Г®Г¤ГіГ«ГҐГ© Г°ГҐГ±ГІГ°ГЁГЄГІГ®Г°Г®Гў:
 ----------------------------------------------------------------------
 load_scheme("sr_no_weapon",   "sr_no_weapon",   stype_restrictor)
 load_scheme("sr_tip",         "sr_tip",         stype_restrictor)
@@ -103,4 +103,4 @@ load_scheme("sr_postprocess", "sr_postprocess", stype_restrictor)
 load_scheme("sr_aes_deadzone","sr_aes_deadzone",stype_restrictor)
 load_scheme("sr_sleep",       "sr_sleep",       stype_restrictor)
 load_scheme("sr_cutscene",    "sr_cutscene",    stype_restrictor)
-
+load_scheme("sr_cutscenee",    "sr_cutscenee",    stype_restrictor)

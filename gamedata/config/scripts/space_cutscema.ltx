@@ -1,0 +1,11 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = {+new_portion_kkvest3_f} sr_cutscene
+
+[sr_cutscene]
+point = way_tpp1
+look = way_tpp2
+cam_effector = anm_1
+on_signal = cameff_end | nil 

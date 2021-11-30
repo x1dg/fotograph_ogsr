@@ -1,0 +1,208 @@
+;-----------------------------------------------------------------------------------
+; –учные гранаты
+;-----------------------------------------------------------------------------------
+[grenade_hand]:wpn_defines
+GroupControlSection		= spawn_group
+discovery_dependency	= 
+class					= G_F1
+cform					= skeleton
+
+$prefetch				= 128
+;belt				    = true
+ef_weapon_type		    = 10
+animation_slot			= 7
+single_handed			= 1
+
+slot					= 3
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_weight			    = 0.35
+
+;звуки
+snd_explode 				= weapons\grenade\f1_explosion
+snd_checkout 				= weapons\grenade\checkout
+snd_draw				= weapons\grenade\draw
+snd_holster				= weapons\grenade\holster
+
+force_min			= 10	; ~30% от максимума
+force_const			= 12 ;14
+force_max			= 19 ;20
+force_grow_speed		= 17.5 ;2 ;30
+
+destroy_time			= 2500;5500
+
+wm_size             = 0.1
+
+wallmark_section	= explosion_marks
+
+attach_position_offset			= -0.053,-0.089,0.0
+attach_angle_offset			= 0,0,0
+
+
+attach_bone_name			=
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 	= 0.0,0.0,0.0
+angle_offset			 	= 1.570790,1.570790,3.92699
+
+throw_point				= 0,0.3,0.2
+throw_dir				= 0,0,1
+
+default_to_ruck     = false
+
+[grenade_hand_hud]
+fire_point          = 0.05, 0.0, 0.1
+fire_bone           = grenade_0
+
+orientation         = 0,0,0
+position            = 0,0,0.1
+
+throw_point			= 0.0,0.4,0.3
+throw_dir			= 0,0,1
+
+anm_show				= lancew_f1_draw
+anm_hide				= lancew_f1_holster
+anm_idle				= lancew_f1_idle, idle
+anm_bore				= lancew_f1_no_reload
+anm_idle_moving				= lancew_f1_moving, moving
+anm_idle_sprint				= lancew_f1_sprint, sprint
+anm_throw_begin				= lancew_f1_throw_begin, throw_begin
+anm_throw_idle				= lancew_f1_throw_idle, throw_idle
+anm_throw				= lancew_f1_throw, throw
+
+hands_position				= -0.051000,-0.189000,0.163000
+hands_orientation			= -0.500000,1.000000,-2.000000
+
+hands_position_16x9			= -0.051000,-0.189000,0.163000
+hands_orientation_16x9			= -0.500000,1.000000,-2.000000
+
+;-----------------------------------------------------------------------------------
+; ќсветительна€ граната √ќ
+;-----------------------------------------------------------------------------------
+[grenade_light]:grenade_hand
+$spawn			= "weapons\grenades\gd-05"
+visual			= weapons\grenade\wpn_gr_light.ogf
+inv_name		= st_grenade_light
+inv_name_short	= st_grenade_lights
+description		= enc_weapons1_grenade_light
+inv_grid_x		= 4
+inv_grid_y		= 3
+
+hud			= grenade_light_hud
+
+cost			= 200
+
+blast			= 0
+blast_r			= 0
+blast_impulse		= 0
+;delete
+blast_impulse_factor	= 0
+
+frags			= 0
+frags_r			= 0
+frag_hit		= 0
+frag_hit_impulse	= 0
+
+hit_type_blast		= strike
+hit_type_frag		= fire_wound
+
+up_throw_factor		= 0
+
+explode_particles	= anomaly2\artefact\artefact_gravi
+
+light_color		= 1.4,1.6,1.5
+light_range		= 50
+light_time		= 47
+
+;трассы от осколков
+fragment_speed		= 50
+
+hide_in_explosion	= false
+explode_duration	= 40	;подолжительность взрыва (с)
+explode_hide_duration	= 40	;врем€, через которое гранату надо сделать невидимой (с)
+dynamic_explosion_particles = true
+
+;------------------------------------------------------------------------------------------
+;звук
+snd_explode		= anomaly\bfuzz_blowout
+;------------------------------------------------------------------------------------------
+
+default_to_ruck     = false
+
+[grenade_light_hud]:grenade_hand_hud
+visual			= weapons\grenade\wpn_gr_light_hud.ogf
+
+;-----------------------------------------------------------------------------------
+; √раната газова€
+;-----------------------------------------------------------------------------------
+[grenade_gas]:grenade_hand
+$spawn 				= "weapons\grenades\g_gas"
+class				= G_RGD5
+visual				= weapons\grenade\wpn_gd_05.ogf
+inv_name			= grenade_gas
+inv_name_short		= grenade_gas_s
+description			= enc_weapons1_grenade_gas
+
+inv_grid_x			= 5
+inv_grid_y			= 3
+
+kill_msg_x			= 240
+kill_msg_y			= 123
+kill_msg_width		= 14
+kill_msg_height		= 23
+
+hud			        = grenade_gas_hud
+
+force_max		    = 20
+force_grow_speed	= 15;2 ;30
+
+cost			    = 300	;40
+
+blast			= 10 ;1.50
+blast_r			= 10
+blast_impulse		= 0
+;delete
+blast_impulse_factor = 1
+
+;--test of damage over time
+effective_radius	= 10
+hit_type			= chemical_burn
+min_start_power		= 0.9
+max_start_power		= 0.95
+
+frags				= 25
+frags_r				= 10
+frag_hit			= 25
+frag_hit_impulse	= 0
+
+hit_type_blast		= chemical_burn
+hit_type_frag		= chemical_burn
+
+up_throw_factor		 = 1.2
+
+explode_particles	= a_ufp_particles\gas_grenade
+
+light_color		    = 0.1,0.8,0.1
+light_range		    = 5.0
+light_time 		    = 5
+
+;трассы от осколков
+fragment_speed		= 45
+
+explode_duration	= 60	;подолжительность взрыва (с)
+
+;------------------------------------------------------------------------------------------
+;звук
+snd_explode         = ambient\underground\steam_2		
+;------------------------------------------------------------------------------------------
+
+default_to_ruck     = false
+
+[grenade_gas_hud]:grenade_hand_hud
+visual              = weapons\grenade\wpn_gd_05_hud.ogf
+
+#include "w_f1.ltx"
+#include "w_gd5.ltx"
+#include "w_rgd5.ltx"

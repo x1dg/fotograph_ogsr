@@ -1480,7 +1480,8 @@ function start_syujet()
 end
 
 function foto_start_video()
-	game.start_tutorial("mov_intro_foto")
+	--game.start_tutorial("mov_intro_foto")
+	db.actor:give_info_portion("smith_nachalo_start")
 end
 
 function end_foto_video(actor, npc)

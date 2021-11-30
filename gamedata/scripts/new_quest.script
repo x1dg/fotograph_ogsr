@@ -1,0 +1,45 @@
+function script1()
+olr_func.play_sound([[characters_voice\human_01\bandit\talk\abuse\abuse_2]])
+end
+
+function script2()
+local gg = db.actor
+      alife():create("noytbook", gg:position(), gg:level_vertex_id(), gg:game_vertex_id(), gg:id())
+olr_func.play_sound([[characters_voice\human_01\bandit\fight\attack\attack_3]])
+end
+
+function script3()
+local oItem = db.actor:object("noytbook") --/ определяем предмет у ГГ
+if oItem then --/если у ГГ есть предмет
+db.actor:drop_item(oItem) --/ выбрасываем предмет (опционально)
+alife():release(alife():object(oItem:id()), true) --/ удаляем из игры
+end
+end
+
+function script4()
+olr_func.play_sound([[device\pda\pda_news]])
+local sactor = alife():actor()
+local cactor = level.object_by_id(sactor.id)
+cactor:give_game_news("%c[0,128,128,128]SMS: Сергей Вист\\n%c[0,255,255,255]Хей, Юрка, можешь подойти ко мне, я придумал кое-что!", "ui_iconsNpc_stalker_bandit_borov", Frect():set(0,658,83,47), math.random(200, 500), 8000)
+end
+
+function script6()
+olr_func.play_sound([[device\pda\pda_news]])
+local sactor = alife():actor()
+local cactor = level.object_by_id(sactor.id)
+cactor:give_game_news("%c[0,128,128,128]SMS: Сергей Вист\\n%c[0,255,255,255]Ты главное аккуратно там!", "ui_iconsNpc_stalker_bandit_borov", Frect():set(0,658,83,47), math.random(200, 500), 8000)
+end
+
+function script7()
+start_real_timer(3, "new_quest.script8")
+olr_func.play_sound([[ambient\mon_explosion]])
+local sactor = alife():actor()
+local cactor = level.object_by_id(sactor.id)
+cactor:give_game_news("%c[0,128,128,128]SMS: Сергей Вист\\n%c[0,255,255,255]Отлично, вроде сигнал идёт! Теперь слазь, хм, а как? Дайка подумаю.", "ui_iconsNpc_stalker_bandit_borov", Frect():set(0,658,83,47), math.random(200, 500), 8000)
+end
+
+function script8()
+local sactor = alife():actor()
+local cactor = level.object_by_id(sactor.id)
+cactor:give_game_news("%c[0,128,128,128]SMS: Сергей Вист\\n%c[0,255,255,255]Пробуй потихоньку сползти по лестницы, а дальше прийдётся прыгать.", "ui_iconsNpc_stalker_bandit_borov", Frect():set(0,658,83,47), math.random(200, 500), 8000)
+end

@@ -93,4 +93,34 @@
 
 	<info_portion id="autojump_enabled"></info_portion>
 
+   <!--Новые поршни-->
+			   			   <info_portion id="new_portion_kkvest1_s">
+			   			<action>new_quest.script1</action>
+			   </info_portion>
+			      <!--Квесты от друга на предбанники-->
+			   			   			   <info_portion id="new_portion_kkvest2_s">
+									   			<task>new_portion_kkvest2_kvest</task>
+			   </info_portion>
+			   			   			   			   <info_portion id="new_portion_kkvest2_pf">
+			   			<action>new_quest.script2</action>
+			   </info_portion>
+			   
+			   			   			   			   <info_portion id="new_portion_kkvest2_f">
+			   </info_portion>
+			   			   			   			   			   <info_portion id="new_portion_kkvest3_s">
+															   <action>new_quest.script4</action>
+															   <task>new_portion_kkvest3_kvest</task>
+			   </info_portion>
+			   			   			   			   			   <info_portion id="new_portion_kkvest3_f">
+<task>new_portion_kkvest4_kvest</task>															   
+			   </info_portion>
+			   
+<info_portion id="new_portion_kkvest4_s">		
+												   <action>new_quest.script6</action>   
+			   </info_portion>
+			   
+			   <info_portion id="new_portion_kkvest4_pf">	
+			   <action>new_quest.script7</action>			   
+			   </info_portion>
+			   
 </game_information_portions>

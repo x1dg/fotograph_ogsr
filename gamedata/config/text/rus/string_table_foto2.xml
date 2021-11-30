@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
+	<string id="usa_box_amk_kostav">
+		<text>Открыть железный ящик</text>
+	</string>
+	<string id="noytbook_d">
+		<text>Ноутбук с операционной системой "Windows XP", новая модель, используют все уважающее себя программисты.</text>
+	</string>
 	<string id="c_doc1_desc">
 		<text>Южнее сломанные краны в минувшем строили нам что-то. \nТам возле одного из них лежит тропинка на Болото.</text>
 	</string>

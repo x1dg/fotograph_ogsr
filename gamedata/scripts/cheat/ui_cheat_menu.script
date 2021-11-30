@@ -17,7 +17,7 @@ local function math_clamp(val, min, max)
 end
 local function get_inv_name( section, def )
 	if sys_ini:section_exist( section ) and sys_ini:line_exist( section, "inv_name" ) then
-		return translate( sys_ini:r_string_wq( section, "inv_name" ) )
+		return translate( get_string( section, "inv_name" ) )
 	end
 	return translate( def )
 end
@@ -30,7 +30,7 @@ function get_icon( section )
 			sys_ini:r_u32( section, "inv_grid_height" )*50 ),
 			"ui\\ui_icon_equipment"
 	elseif sys_ini:line_exist( section, "icon" ) then
-		local tex = sys_ini:r_string( section, "icon" )
+		local tex = get_string( section, "icon" )
 		local tex_info = GetTextureInfo( tex, tex )
 		local rect = tex_info:get_rect()
 		return Frect():set( rect.x1, rect.y1, rect.x2 - rect.x1, rect.y2 - rect.y1 ),
@@ -332,7 +332,7 @@ function cheat_menu:GetDescription(indx)
 	
 	local description = "%c[red]<no description>"
 	if sys_ini:line_exist(sect, "description") then
-		local str = sys_ini:r_string_wq(sect, "description")
+		local str = get_string(sect, "description")
 		if str and str ~= "" then
 			description = translate( str )
 		end
@@ -348,13 +348,13 @@ function cheat_menu:GetDescription(indx)
 	end
 
 	if sys_ini:line_exist(sect, "cost") then
-		self.cost:SetText( string_format( "Цена: %d руб.", sys_ini:r_float(sect, "cost") ) )
+		self.cost:SetText( string_format( "–ена: %d руб.", sys_ini:r_float(sect, "cost") ) )
 	else
 		self.cost:SetText("")
 	end
 
 	if sys_ini:line_exist(sect, "inv_weight") then
-		self.weight:SetText( string_format( "Вес: %.2f кг.", sys_ini:r_float(sect, "inv_weight") ) )
+		self.weight:SetText( string_format( "‚ес: %.2f кг.", sys_ini:r_float(sect, "inv_weight") ) )
 	else
 		self.weight:SetText("")
 	end
@@ -649,7 +649,7 @@ function GetAfParams(section)
 		end
 	end
 
-	local hit_absorbation_sect = sys_ini:r_string(section, "hit_absorbation_sect")
+	local hit_absorbation_sect = get_string(section, "hit_absorbation_sect")
 	for i,t in ipairs(hit_types) do
 		val = sys_ini:r_float(hit_absorbation_sect, t.prop.."_immunity")
 		if val~=1 then
@@ -724,7 +724,7 @@ function GetOutfitParams(section)
 
 	if sys_ini:line_exist(section, "immunities_sect") then
 		txt = txt.." \\n%c[white]Коэффициенты сопротивления к износу:\\n"
-		local immunities_sect = sys_ini:r_string(section, "immunities_sect")
+		local immunities_sect = get_string(section, "immunities_sect")
 		for i,t in ipairs(hit_types) do
 			val = sys_ini:r_float(immunities_sect, t.prop.."_immunity")
 			txt = txt.."• "..t.text.." "..string_format("%f",val).."\\n"
@@ -736,7 +736,7 @@ end
 function GetWeaponParams(section)
 	local text = "Боеприпасы:\\n"
 	local addons = nil
-	local s = sys_ini:r_string(section, 'ammo_class')
+	local s = get_string(section, 'ammo_class')
 	for a in string.gfind(s, "[%w_%-%.]+") do
 		text = text.."• "..get_inv_name(a).."\\n"
 	end
@@ -790,7 +790,7 @@ function GetInventoryBoxItems(section)
 		return text
 	end
 
-	local cd = sys_ini:r_string(section, "custom_data")
+	local cd = get_string(section, "custom_data")
 	local ini = ini_file(cd)
 	if ini:section_exist("spawn") then
 		local res, id, val
@@ -885,8 +885,8 @@ function init_cheat_table()
 				if v == "npc" or v == "mobs" then
 					name = sec
 					if v == "npc" then
-						local rank = sys_ini:line_exist( sec, "spec_rank" ) and sys_ini:r_string( sec, "spec_rank" )
-						local community = sys_ini:line_exist( sec, "community" ) and sys_ini:r_string( sec, "community" )
+						local rank = sys_ini:line_exist( sec, "spec_rank" ) and get_string( sec, "spec_rank" )
+						local community = sys_ini:line_exist( sec, "community" ) and get_string( sec, "community" )
 						if community and rank then
 							if community == "stalker" or community == "stranger" then
 								community = "neutral"
@@ -896,7 +896,7 @@ function init_cheat_table()
 					end
 					name = translate( name )
 					if sys_ini:line_exist( sec, "custom_data" )
-						and sys_ini:r_string( sec, "custom_data" ) ~= "stalker_custom_data.ltx"
+						and get_string( sec, "custom_data" ) ~= "stalker_custom_data.ltx"
 					then
 						name = "! "..name
 					end

@@ -1,8 +1,7 @@
 w_ak00u.ltx
 
-w_bolt.ltx
 w_dynamite.ltx
-w_f1.ltx
+
 w_flame.ltx
 w_fn2000.ltx
 w_foto.ltx
@@ -11,13 +10,18 @@ w_g36.ltx
 w_gravigun.ltx
 
 w_mounted.ltx
-w_rg6.ltx
-w_rgd5.ltx
-
-w_spas12.ltx
 
 w_wincheaster1300.ltx
 
+###SHOKER###
+wpn_lr300
+wpn_wincheaster1300
+wpn_gravigun
+
+###STCOP###
+wpn_binoc
+wpn_spas12
+wpn_fn2000
 
 ###GUNSLINGER###
 w_abakan.ltx
