@@ -49,7 +49,6 @@ local solid_list = {
  --Оружие--
  "wpn_addon_silencer",
  "wpn_mp5",
- "wpn_bm16",
  "wpn_fort",
  "wpn_pb",
  "wpn_pm",

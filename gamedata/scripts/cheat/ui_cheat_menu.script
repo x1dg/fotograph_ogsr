@@ -552,7 +552,6 @@ local is_magazined_weapon = {
 	[clsid.wpn_walther]		= true,
 	[clsid.wpn_ak74_s]		= true,
 	[clsid.wpn_binocular_s]	= true,
-	[clsid.wpn_bm16_s]		= true,
 	[clsid.wpn_groza_s]		= true,
 	[clsid.wpn_lr300_s]		= true,
 	[clsid.wpn_rg6_s]		= true,
@@ -737,7 +736,11 @@ function GetWeaponParams(section)
 	local text = "Боеприпасы:\\n"
 	local addons = nil
 	local s = get_string(section, 'ammo_class')
+	if s == nil then
+		return
+	end
 	for a in string.gfind(s, "[%w_%-%.]+") do
+	log1("INV NAME FOR: "..a)
 		text = text.."• "..get_inv_name(a).."\\n"
 	end
 

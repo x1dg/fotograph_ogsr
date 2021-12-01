@@ -552,7 +552,6 @@ local is_magazined_weapon = {
 	[clsid.wpn_walther]		= true,
 	[clsid.wpn_ak74_s]		= true,
 	[clsid.wpn_binocular_s]	= true,
-	[clsid.wpn_bm16_s]		= true,
 	[clsid.wpn_groza_s]		= true,
 	[clsid.wpn_lr300_s]		= true,
 	[clsid.wpn_rg6_s]		= true,

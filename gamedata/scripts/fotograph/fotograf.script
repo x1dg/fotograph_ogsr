@@ -2122,7 +2122,7 @@ function prom_desant_have(task, info)
 end
 
 function max_nagrada(first_speaker, second_speaker)
-   dialogs.relocate_item_section(second_speaker, "wpn_rem_870", "in", 1)
+   dialogs.relocate_item_section(second_speaker, "wpn_protecta", "in", 1)
    flamethrower.relocate_n_items_section(second_speaker, "ammo_12x76_zhekan", "in", 2)
 end
 
@@ -4121,7 +4121,7 @@ function shema_labs_otdal(first_speaker, second_speaker)
 	new_dialog.out_item_much("shema_labs",1)
         new_dialog.out_item_much("vacsina_aks",1)
         dialogs.relocate_money(first_speaker, 20000,"in")
-        dialogs.relocate_item_section(second_speaker, "wpn_mp41", "in", 1)
+        dialogs.relocate_item_section(second_speaker, "wpn_kriss_super_v", "in", 1)
         flamethrower.relocate_n_items_section(second_speaker, "ammo_7.62x51_ap", "in", 2)
 end
 

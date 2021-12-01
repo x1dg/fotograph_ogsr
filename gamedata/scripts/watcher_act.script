@@ -83,7 +83,6 @@ local valuable_clsid={
     [clsid.wpn_ammo_og7b]=true,
     [clsid.wpn_ammo_vog25]=true,
     [clsid.wpn_binocular_s]=true,
-    [clsid.wpn_bm16_s]=true,
     [clsid.wpn_fn2000]=true,
     [clsid.wpn_fort]=true,
     [clsid.wpn_groza_s]=true,

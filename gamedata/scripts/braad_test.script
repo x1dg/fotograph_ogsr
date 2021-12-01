@@ -2536,7 +2536,7 @@ local npc,obj
              obj = alife():object(npc:id())  
 		 clear_npc_inventory(npc)
              alife():create("part6",obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
-             alife():create("wpn_benellim4super90",obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
+             alife():create("wpn_wincheaster1300",obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
              alife():create("money_ggg",obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
 	    end
      end

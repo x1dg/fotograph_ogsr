@@ -26,7 +26,7 @@
 				wpn_colt1911\n
 				wpn_usp\n
 				wpn_desert_eagle\n
-				wpn_bm16\n			
+				wpn_toz34\n			
 				wpn_wincheaster1300\n
 				wpn_winchester_knyaz\n
 				wpn_spas12\n
@@ -91,7 +91,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_pmm = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x76_zhekan = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"

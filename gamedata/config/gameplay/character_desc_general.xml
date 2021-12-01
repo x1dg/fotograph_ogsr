@@ -55,7 +55,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_pmm = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x76_zhekan = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"
@@ -1678,7 +1678,7 @@
       [spawn] \n
       wpn_fort \n
       ammo_9x18_fmj = 1 \n
-      wpn_bm16 \n
+      wpn_toz34 \n
       ammo_12x70_buck \n
       device_torch \n
 #include "gameplay\character_drugs.xml"
@@ -3838,7 +3838,7 @@
       [spawn] \n
       wpn_pm \n
       ammo_9x18_pmm = 1 \n
-      wpn_bm16 \n
+      wpn_toz34 \n
       ammo_12x76_zhekan = 1 \n
       device_torch \n
 #include "gameplay\character_items.xml"\n
@@ -4948,7 +4948,7 @@
 			wpn_walther \n
 			ammo_9x19_fmj \n
 			device_torch \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
@@ -5028,7 +5028,7 @@
 			[spawn] \n
 			wpn_pb \n
 			ammo_9x18_pmm = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x76_dart = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"
@@ -5849,7 +5849,7 @@
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
@@ -5942,7 +5942,7 @@
 			wpn_walther \n
 			ammo_9x19_fmj \n
 			device_torch \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n			
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
@@ -6004,7 +6004,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_pmm = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x76_zhekan = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"
@@ -7444,7 +7444,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n
 			device_torch \n
 		</supplies>
@@ -7607,7 +7607,7 @@
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -7669,7 +7669,7 @@
 		<visual>actors\novice\green_stalker_2</visual>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml"
@@ -7730,7 +7730,7 @@
 		<visual>actors\novice\green_stalker_3</visual>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml"
@@ -7790,7 +7790,7 @@
 		<visual>actors\novice\green_stalker_4</visual>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -7821,7 +7821,7 @@
 		<visual>actors\novice\green_stalker_4</visual>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n		
 #include "gameplay\character_items.xml"	\n
 #include "gameplay\character_drugs.xml" \n
@@ -7916,7 +7916,7 @@
 		<visual>actors\novice\green_stalker_8</visual>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n	
 			hand_radio \n
 #include "gameplay\character_drugs.xml" \n
@@ -8584,7 +8584,7 @@
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml"							
@@ -8646,7 +8646,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"	\n	
@@ -8745,7 +8745,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_pmm = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -9046,7 +9046,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x76_dart \n
 			device_torch \n
 #include "gameplay\character_drugs.xml" \n
@@ -9178,7 +9178,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_pmm = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x76_zhekan = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"
@@ -9327,7 +9327,7 @@
 			[spawn] \n
 			wpn_pb \n
 			ammo_9x18_pbp = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x76_zhekan = 1 \n
 			device_torch \n
 		</supplies>
@@ -9709,7 +9709,7 @@
 			[spawn] \n
 			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
-		    wpn_bm16 \n
+		    wpn_toz34 \n
             ammo_12x70_buck \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
@@ -11040,7 +11040,7 @@
 			[spawn] \n
 			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
             ammo_12x70_buck \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
@@ -11071,7 +11071,7 @@
 			[spawn] \n
 			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
             ammo_12x70_buck \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
@@ -11133,7 +11133,7 @@
 			[spawn] \n
 			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
-		    wpn_bm16 \n
+		    wpn_toz34 \n
             ammo_12x70_buck \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
@@ -15670,7 +15670,7 @@
 			[spawn] \n
 			wpn_walther \n
 			ammo_9x19_pbp = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x76_zhekan = 1 \n
 			device_torch \n
 		</supplies>
@@ -17150,7 +17150,7 @@
 			wpn_pm \n
 			ammo_9x18_pmm = 1 \n
 			device_torch \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -17668,7 +17668,7 @@
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n	
 #include "gameplay\character_items.xml"	\n
 #include "gameplay\character_drugs.xml" \n
@@ -17758,7 +17758,7 @@
 				[spawn] \n
 				wpn_pm \n
 				ammo_9x18_pmm = 1 \n
-				wpn_bm16 \n
+				wpn_toz34 \n
 				ammo_12x70_buck = 1\n
 				device_torch \n
 	#include "gameplay\character_drugs.xml"
@@ -19326,7 +19326,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 		</supplies>
 		
@@ -19351,7 +19351,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 		</supplies>
 		
@@ -19608,7 +19608,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x76_dart = 1 \n
 		</supplies>
 		
@@ -20836,7 +20836,7 @@
 		<visual>actors\novice\green_stalker_4</visual>
 		<supplies>
 			[spawn] \n
-			wpn_bm16_arena \n
+			wpn_toz34_arena \n
 			ammo_12x70_buck \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
@@ -20946,7 +20946,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16_arena \n
+			wpn_toz34_arena \n
 			ammo_12x70_buck \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -23715,7 +23715,7 @@
 			[spawn] \n
 			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 			device_torch \n
 		</supplies>
@@ -23947,7 +23947,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_pmm = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x76_zhekan = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"
@@ -25575,7 +25575,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 			wpn_walther \n
 			ammo_9x19_fmj \n
@@ -25603,7 +25603,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
@@ -25924,7 +25924,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 			grenade_f1 = 2 \n
 			wpn_pm \n
@@ -25983,7 +25983,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
@@ -26133,7 +26133,7 @@
 			[spawn] \n
 			wpn_pb \n
 			ammo_9x18_fmj = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 		</supplies>
 			
@@ -26161,7 +26161,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 		</supplies>
 			

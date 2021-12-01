@@ -180,8 +180,8 @@
 	  	<crouch_type>0</crouch_type>
         <supplies>
             [spawn] \n
-            wpn_mp40 \n
-            ammo_9x18_pmm = 1 \n
+			wpn_microuzi \n
+			ammo_9x19_fmj = 1 \n
             wpn_fn2000 \n
 			ammo_5.56x45_ap = 2 \n
 #include "gameplay\character_drugs.xml"
@@ -214,8 +214,8 @@
             [spawn] \n
             wpn_usp \n
             ammo_11.43x23_hydro = 1 \n
-            wpn_mp41 \n
-			ammo_7.62x51_ap = 2 \n
+            wpn_kriss_super_v \n
+			ammo_11.43x23_hydro = 2 \n
 #include "gameplay\character_drugs.xml"
 #include "gameplay\character_items.xml" \n
         </supplies>
@@ -308,8 +308,8 @@
 	  	<crouch_type>0</crouch_type>
         <supplies>
             [spawn] \n
-            wpn_mp40 \n
-            ammo_9x18_pmm = 1 \n
+			wpn_microuzi \n
+			ammo_9x19_fmj = 1 \n
             wpn_ak9 \n
 			ammo_9x39_ap = 2 \n
 #include "gameplay\character_drugs.xml"
@@ -375,8 +375,8 @@
             [spawn] \n
             wpn_usp \n
             ammo_11.43x23_hydro = 1 \n
-            wpn_mp41 \n
-			ammo_7.62x51_ap = 2 \n
+            wpn_kriss_super_v \n
+			ammo_11.43x23_hydro = 2 \n
 #include "gameplay\character_drugs.xml"
 #include "gameplay\character_items.xml" \n
         </supplies>

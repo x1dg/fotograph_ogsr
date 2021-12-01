@@ -2,26 +2,35 @@ w_ak00u.ltx
 
 w_dynamite.ltx
 
-w_flame.ltx
-w_fn2000.ltx
 w_foto.ltx
-w_g36.ltx
-
-w_gravigun.ltx
-
 w_mounted.ltx
 
-w_wincheaster1300.ltx
+$$$REMOVED$$$
+wpn_tt33_sk1, wpn_ppsh, wpn_mp40, wpn_bizon, wpn_scorpion, wpn_bm16, wpn_benellim4super90, wpn_rem_870, wpn_saiga12c, wpn_winch1887, wpn_w1200, wpn_w2000, wpn_mp41
+
+wpn_mauzer, wpn_c96, wpn_g3_camo
 
 ###SHOKER###
 wpn_lr300
 wpn_wincheaster1300
 wpn_gravigun
+wpn_flame
+wpn_usas12
+wpn_mp7a3
 
 ###STCOP###
 wpn_binoc
-wpn_spas12
+wpn_bolt
+wpn_knife
+grenade_f1
+grenade_gd-05
+grenade_rgd5
+wpn_rg-6 --todo
+wpn_g36
 wpn_fn2000
+wpn_spas12
+wpn_microuzi
+
 
 ###GUNSLINGER###
 w_abakan.ltx
@@ -51,7 +60,6 @@ w_sig220.ltx
 w_ups.ltx
 w_walther.ltx
 
-w_bm16.ltx
 w_toz34.ltx
 
 w_rpg7.ltx

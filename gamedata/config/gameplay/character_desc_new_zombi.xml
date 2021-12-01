@@ -47,7 +47,7 @@
 
     <supplies>
       [spawn] \n
-	  wpn_rem_870 \n
+	  wpn_protecta \n
       ammo_12x70_buck = 1 \n
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
@@ -175,8 +175,8 @@
         <supplies>
 			[spawn] \n
 			mini_part = 1 \n
-			wpn_g3_camo \n
-			ammo_7.62x51_ap = 2 \n
+			wpn_m4_taktik = 1 \n
+			ammo_5.56x45_ap = 2 \n
 			ammo_m209 = 5 \n
 			device_torch \n
 			
@@ -5104,7 +5104,7 @@
 		<visual>actors\novice\green_stalker_2</visual>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml"
@@ -5134,7 +5134,7 @@
 		<visual>actors\novice\green_stalker_3</visual>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml"
@@ -6925,7 +6925,7 @@
 		<visual>actors\novice\green_stalker_8</visual>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n	
 			hand_radio \n
 #include "gameplay\character_drugs.xml" \n

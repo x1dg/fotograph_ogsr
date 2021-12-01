@@ -1,0 +1,245 @@
+[wpn_mp7a3]:wpn_main
+class					= WP_AK74				; Класс оружия
+$spawn					= "sm\wpn\SMG\MP7"		; Название оружия в СДК
+parent_section  		= wpn_mp7				; Секция оружия без обвесов
+weapon_class			= assault_rifle			; Раздел для магазина мультиплеера
+cost					= 8000					
+
+inv_name				= wpn_mp7a3
+inv_name_short			= wpn_mp7a3
+description				= enc_weapons_wpn-mp7a3
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 20
+inv_grid_y				= 15
+
+scope_x					= 9	
+scope_y					= -6
+silencer_x				= 76
+silencer_y				= 10
+grenade_launcher_x		= 0
+grenade_launcher_y		= 0
+
+;******[Параметры для НПС]******;
+min_radius				= 0				; [] for AI (Радиус не работает, на будущее)
+max_radius				= 50			; [] for AI
+
+holder_range_modifier	= 1.0			; во сколько раз увеличивается eye_range
+holder_fov_modifier		= 1.0			; во сколько раз увеличивается eye_fov
+
+ef_main_weapon_type		= 2
+ef_weapon_type			= 6
+
+weapon_type				= pdw
+;******[Аддоны и апгрейды]******;
+scope_status			= 2		; 0 - без аддона
+silencer_status			= 2		; 1 - встроенный
+grenade_launcher_status	= 0		; 2 - присоединяемый
+
+; Новые прицелы и магазины
+magazines 				= none
+scopes					= acog, eot	;--> Теперь используется как список прицелов, которые могут быть одеты на оружие при его раздаче НПС, требуется наличие соотв. секций оружия вида (<секция_ствола>_<имя_прицела>)
+additionals				= none
+scopes_sect				= scope_mp7_acog, scope_mp7_eot
+
+; Прицелы текстурой \ Мушка
+scope_zoom_factor		= 60	; FOV при прицеливании
+scope_name				= wpn_addon_scope
+scope_texture			= wpn_crosshair_acog
+
+; Глушитель
+silencer_name			= wpn_addon_silencer
+
+; Подствольное
+grenade_launcher_name	= wpn_addon_grenade_launcher_m203
+grenade_class			= ammo_m209
+grenade_vel				= 0
+
+;******[Характеристики оружия]******;
+sprint_allowed			= true
+slot					= 2
+single_handed			= 0				; Одноручное\Двуручное
+
+inv_weight				= 1.7
+control_inertion_factor	= 1.2f			; Коэфицент чувствительности мышки
+crosshair_inertion   	= 4
+
+fire_modes				= 1, -1
+
+ammo_mag_size			= 35
+ammo_class		 	= ammo_11.43x23_fmj, ammo_11.43x23_hydro
+
+; Отдача и разброс
+fire_dispersion_base				= 0.6	; Угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+use_dispersion_mod					= true	; Использовать доп. модификатор разброса disp_aim_mod
+
+PDM_disp_base						= 0.7
+PDM_disp_vel_factor					= 1.0
+PDM_disp_accel_factor				= 1.2
+PDM_disp_crouch	 					= 0.25
+PDM_disp_crouch_no_acc 				= 0.1
+
+hit_probability_gd_novice			= 0.65
+hit_probability_gd_stalker			= 0.65
+hit_probability_gd_veteran			= 0.65
+hit_probability_gd_master			= 0.65
+
+; Скорость возврата отдачи к норме
+time_to_aim					= 1.0
+
+; Отдача (от бедра)
+cam_dispersion				= 0.75		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.1		;увеличениe cam_dispersion с каждым выстрелом
+cam_max_angle_horz			= 1.26		;максимальный угол горизонтальной отдачи
+cam_step_angle_horz			= 0.42		;насколько сильна горизонтальная отдача
+
+; Отдача (прицеливание)
+zoom_cam_dispersion			= 0.75
+zoom_cam_dispersion_inc		= 0.1
+zoom_cam_max_angle_horz		= 1.26
+zoom_cam_step_angle_horz	= 0.42
+
+; Надёжность
+condition_shot_dec		= 0.0002		; Увеличение износа при каждом выстреле
+
+; ТТХ
+hit_power				= 0.2
+hit_impulse				= 1
+hit_type				= fire_wound
+
+fire_distance			= 1500	; Дистанция, после которой пуля исчезает
+bullet_speed			= 300	; Скорость пули
+rpm						= 950	; Скорострельность
+
+zoom_enabled			= true	; Можно целиться
+zoom_rotate_time		= 0.25	; Скорость зума
+
+;******[Визуальная часть]******;
+; DoF
+zoom_dof				= 0.5, 1.0, 180
+reload_dof				= 0.0, 0.5, 5, 3.1
+
+; Visual
+visual					= dynamics\weapons\wpn_mp7\wpn_mp7.ogf
+hud						= wpn_mp7_hud
+
+; Анимации от 3-го лица
+
+; Параметры от 3-его лица
+animation_slot			= 1				; Каким способом НПС держит ствол
+
+position				= -0.026, -0.135, 0.0
+orientation				= 0, 0, 0
+
+; Позиция под подмышкой
+strap_position			= -0.15,-0.36,0.25
+strap_orientation		= -10,-5,10
+strap_bone0				= bip01_spine2
+strap_bone1				= bip01_spine1
+
+; Партиклы и эффекты
+fire_point				= 0.0, 0.160, 0.235	; Позиция огня из основного ствола
+fire_point2				= 0.0, 0.135, 0.200	; Позиция огня из подствола
+
+flame_particles			= weapons\generic_weapon05
+smoke_particles			= weapons\generic_shoot_00
+silencer_smoke_particles= weapons\generic_shoot_00
+grenade_flame_particles	= weapons\generic_weapon01
+
+; 2D-Гильзы
+shell_point				= -0.020000,0.167000,0.082000
+shell_particles			= 
+
+;3D-Гильзы
+shell_alowed			= true				;Нужно ли спавнить гильзу
+shell_bone              = joint7 			;Кость, относительно которой спавнится гильза (3 лицо)
+shell_delay				= 0					;Задержка перед спавном гильзы (только для игрока + лишь 1 гильза)
+shell_impuls_vector		= 3, -0.5, -0.25	;Направление и сила полёта гильзы (X\Y\Z)
+shell_disp_vector		= 0.6, 1.3, 40		;Разброс импульса (миним. коэф \ максим. коэф \ угол поворота по Y 
+shell_pos_1p			= 0.25, -0.02, 0.2	;Смещение позиции спавна от позиции худа для 1-го лица
+shell_pos_3p			= 0, 0.0, 0.072		;Смещение позиции спавна относительно кости shell_bone для 3-его лица
+
+
+; Свет
+light_disabled			= false
+
+light_color				= 0.6,0.5,0.3
+light_range				= 5
+light_var_color			= 0.05
+light_var_range			= 0.5
+light_time				= 0.2
+
+silencer_light_color	= 0.6,0.5,0.3
+silencer_light_range	= 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time		= 0.2
+
+;******[Звуковая часть]******;
+snd_draw				= weapons\generic_draw
+snd_holster				= weapons\generic_holster
+snd_silncer_shot		= weapons\mp7\mp7_shoot_sil
+snd_shoot				= weapons\mp7\mp7_shoot
+snd_empty				= weapons\gen_empty, 0.5
+snd_reload				= weapons\mp7\mp7_reload
+snd_shoot_grenade		= weapons\gen_grenshoot
+snd_reload_grenade		= weapons\l85_grenload
+snd_switch				= weapons\groza_switch, 1.0, 0.5
+snd_bore				= weapons\no_sound
+
+[wpn_mp7_hud]:hud_base
+zoom_hide_crosshair		= true
+
+attach_place_idx		= 0
+item_visual				= dynamics\weapons\wpn_mp7\wpn_mp7_eotech_hud.ogf
+
+hands_position			= -0.042000,-0.172,0.165500
+hands_orientation		= 0.55,2.39,0.1499993
+hands_position_16x9		= -0.042000,-0.172,0.165500
+hands_orientation_16x9	= 0.55,2.39,0.1499993
+
+item_position			= 0.0,0.0,0.0
+item_orientation		= 0.0,0.0,0.0
+
+shell_point				= 0.02,0.06,-0.019
+shell_dir				= 0.0, 1.0, 0.0
+shell_bone				= wpn_body
+
+fire_point				= 0,0.037504,0.269238
+fire_bone				= wpn_body
+fire_point2				= 0.0,-0.029,0.525
+fire_bone2				= wpn_body
+
+anm_show                = lancew_mp7_draw
+anm_hide                = lancew_mp7_holster
+anm_idle                = lancew_mp7_idle
+anm_idle_sprint         = lancew_mp7_sprint
+anm_idle_moving         = lancew_mp7_moving
+anm_shots               = lancew_mp7_shoot, shoot
+anm_reload              = lancew_mp7_reload, reload
+anm_idle_aim           	= lancew_mp7_idle_aim, idle_aim
+anm_bore                = lancew_mp7_no_reload
+
+
+aim_hud_offset_pos 		= -0.108300,0.058900,-0.013500
+aim_hud_offset_rot 		= 0.041900,0.006900,-0.014500
+aim_hud_offset_pos_16x9 = -0.108300,0.058900,-0.013500
+aim_hud_offset_rot_16x9 = 0.041900,0.006900,-0.014500
+
+gl_hud_offset_pos		= 0,0,0
+gl_hud_offset_rot		= 0,0,0
+
+gl_hud_offset_pos_16x9	= 0,0,0
+gl_hud_offset_rot_16x9	= 0,0,0
+
+lean_hud_offset_pos		= 0,0,0
+lean_hud_offset_rot		= 0,0,0
+
+; Сдвиг при центрированном режиме
+alt_ofs_pos_x			= -0.05
+alt_ofs_pos_y			= -0.0
+alt_ofs_pos_z			= 0.16
+alt_ofs_rot_x			= 0
+alt_ofs_rot_y			= 0
+alt_ofs_rot_z			= 0

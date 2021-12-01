@@ -53,7 +53,7 @@
 			wpn_pm \n
 			ammo_9x18_pmm = 1 \n
 			device_torch \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -572,7 +572,7 @@
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck \n	
 #include "gameplay\character_items.xml"	\n
 #include "gameplay\character_drugs.xml" \n
@@ -662,7 +662,7 @@
 				[spawn] \n
 				wpn_pm \n
 				ammo_9x18_pmm = 1 \n
-				wpn_bm16 \n
+				wpn_toz34 \n
 				ammo_12x70_buck = 1\n
 				device_torch \n
 	#include "gameplay\character_drugs.xml"
@@ -2230,7 +2230,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 		</supplies>
 		
@@ -2255,7 +2255,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 		</supplies>
 		
@@ -2512,7 +2512,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x76_dart = 1 \n
 		</supplies>
 		
@@ -3760,7 +3760,7 @@
 		<visual>actors\novice\green_stalker_4</visual>
 		<supplies>
 			[spawn] \n
-			wpn_bm16_arena \n
+			wpn_toz34_arena \n
 			ammo_12x70_buck \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
@@ -3874,7 +3874,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16_arena \n
+			wpn_toz34_arena \n
 			ammo_12x70_buck \n
 #include "gameplay\character_drugs.xml"
 		</supplies>

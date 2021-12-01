@@ -39,9 +39,7 @@ local nagrad = {
   "wpn_groza_m1",
   "wpn_mp7a3",
   "wpn_sg552_sk1",
-  "wpn_bizon",
   "wpn_kriss_super_v",
-  "wpn_tt33_sk1",
   "wpn_m1891_30_scope",
   "wpn_mp5_m1"
  },
@@ -519,7 +517,7 @@ local item = ""
 		trader = first_speaker
 	end
 	new_dialog.out_item_much("vodka",5)
-	dialogs.relocate_item_section(actor, "wpn_tt33_sk1", "in", 1)
+	dialogs.relocate_item_section(actor, "wpn_usp", "in", 1)
 end
 
 function actor_10conserva_have()
@@ -1466,7 +1464,7 @@ local item = ""
 		trader = first_speaker
 	end
 	flamethrower.relocate_n_items_section(trader, "amk_kanistra", "out", 2)
-	dialogs.relocate_item_section(actor, "wpn_saiga12c", "in", 1)
+	dialogs.relocate_item_section(actor, "wpn_saiga12k", "in", 1)
 end
 
 function trader_bratok_ak_47(first_speaker, second_speaker)
@@ -2433,7 +2431,7 @@ local item = ""
 		actor = second_speaker
 		trader = first_speaker
 	end
-	dialogs.relocate_item_section(actor, "wpn_w2000", "in", 1)
+	dialogs.relocate_item_section(actor, "wpn_m14", "in", 1)
 	new_dialog.out_item_much("mutant_poltergeist_glas",5)
 end
 

@@ -1,0 +1,252 @@
+[wpn_usas12]:wpn_main
+class					= WP_LR300	;WP_AK74		; Класс оружия
+$spawn					= "sm\wpn\Shotguns\USAS-12"	; Название оружия в СДК
+parent_section  		= wpn_usas12				; Секция оружия без обвесов
+weapon_class			= assault_rifle				; Раздел для магазина мультиплеера
+cost					= 40000					
+
+;******[Описание, иконки]******;
+inv_name				= st_wpn_usas12
+inv_name_short			= st_wpn_usas12
+description		= "Боеприпасы:\n • 12х70 дробь\n • 12x76 Жакан\n • 12x76 дротик\nГладкоствольное боевое ружье USAS-12 разработано в США в конце 1980х годов конструктором Джоном Тревором, работавшим на небольшую компанию Gilbert Equipment Co. В основу нового автоматического гладкоствольного ружья легли идеи американца Максвелла Атчиссона, реализованные им в экспериментальных ружьях серии AA-12. Данная модель из серии "возобнёвленного" выпуска. Что собирается из комплектующих корейского производства."
+
+inv_grid_width			= 5
+inv_grid_height			= 2
+inv_grid_x				= 30
+inv_grid_y				= 16
+
+scope_x					= 35
+scope_y					= -9
+silencer_x				= 0
+silencer_y				= 0
+grenade_launcher_x		= 0
+grenade_launcher_y		= 0
+
+;******[Параметры для НПС]******;
+min_radius				= 0				; [] for AI (Радиус не работает, на будущее)
+max_radius				= 20			; [] for AI
+
+holder_range_modifier	= 1.0			; во сколько раз увеличивается eye_range
+holder_fov_modifier		= 1.0			; во сколько раз увеличивается eye_fov
+
+ef_main_weapon_type		= 1
+ef_weapon_type			= 5
+
+weapon_type				= shotgun
+;******[Аддоны и апгрейды]******;
+scope_status			= 0		; 0 - без аддона
+silencer_status			= 0		; 1 - встроенный
+grenade_launcher_status	= 0		; 2 - присоединяемый
+
+; Новые прицелы и магазины
+magazines 				= none
+scopes					= none
+additionals				= none
+
+; Прицелы текстурой \ Мушка
+scope_zoom_factor		= 60	; FOV при прицеливании
+scope_name				= wpn_addon_scope_aimpoint
+scope_texture			= wpn_crosshair_acog
+
+; Глушитель
+silencer_name			= wpn_addon_silencer
+
+; Подствольное
+grenade_launcher_name	= wpn_addon_grenade_launcher
+grenade_class			= ammo_vog-25, ammo_vog-25p
+grenade_vel				= 0
+
+; Апгрейды
+upgrades				= up_gr_usas12_1, up_gr_usas12_2, up_gr_usas12_3, up_gr_usas12_4, up_gr_usas12_5, up_gr_usas12_6, up_gr_usas12_7, up_gr_usas12_8, up_gr_usas12_9, up_gr_usas12_10
+installed_upgrades		=
+upgrade_scheme			= upgrade_scheme_six_column
+
+;******[Характеристики оружия]******;
+sprint_allowed			= true
+slot					= 2
+single_handed			= 0				; Одноручное\Двуручное
+
+inv_weight				= 6.0
+control_inertion_factor	= 1.8f			; Коэфицент чувствительности мышки
+crosshair_inertion   	= 6
+
+fire_modes				= 1, -1
+
+ammo_mag_size			= 20
+ammo_class				= ammo_12x70_buck, ammo_12x76_zhekan, ammo_12x76_dart
+
+; Отдача и разброс
+fire_dispersion_base				= 1.6	; Угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+
+PDM_disp_base						= 1.0
+PDM_disp_vel_factor					= 1.5
+PDM_disp_accel_factor				= 2.0
+PDM_disp_crouch	 					= 0.5
+PDM_disp_crouch_no_acc 				= 0.4
+
+hit_probability_gd_novice			= 0.60
+hit_probability_gd_stalker			= 0.60
+hit_probability_gd_veteran			= 0.60
+hit_probability_gd_master			= 0.60
+
+; Скорость возврата отдачи к норме
+time_to_aim					= 3.0
+
+; Отдача (от бедра)
+cam_dispersion				= 2.0		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.5		;увеличениe cam_dispersion с каждым выстрелом
+cam_max_angle_horz			= 3.5		;максимальный угол горизонтальной отдачи
+cam_step_angle_horz			= 1.17		;насколько сильна горизонтальная отдача
+
+; Отдача (прицеливание)
+zoom_cam_dispersion			= 2.0
+zoom_cam_dispersion_inc		= 0.5
+zoom_cam_max_angle_horz		= 3.5
+zoom_cam_step_angle_horz	= 1.17
+
+; Надёжность
+condition_shot_dec		= 0.00066		; Увеличение износа при каждом выстреле
+
+; ТТХ
+hit_power				= 0.6
+hit_impulse				= 1
+hit_type				= fire_wound
+
+fire_distance			= 1500	; Дистанция, после которой пуля исчезает
+bullet_speed			= 80	; Скорость пули
+rpm						= 360	; Скорострельность
+
+zoom_enabled			= true	; Можно целиться
+zoom_rotate_time		= 0.25	; Скорость зума
+
+;******[Визуальная часть]******;
+; DoF
+zoom_dof				= 0.3, 1.0, 180
+reload_dof				= 0.0, 0.5, 5, 3.0
+
+; Visual
+visual					= dynamics\weapons\wpn_usas12\wpn_usas12.ogf
+hud						= wpn_usas12_hud
+
+; Анимации от 3-го лица
+anm_world_idle    		= usas12_idle    		;Анимка, когда оружие в спокойном состоянии
+anm_world_idle_empty  	= usas12_idle    		;Анимка, когда 0 патронов
+anm_world_shoot   		= usas12_shoot,    0.1 	;Анимка, когда стрельба
+anm_world_reload   		= usas12_reload			;Анимка, когда перезарядка
+anm_world_reload_empty  = usas12_reload			;Анимка, когда перезарядка при 0
+
+; Параметры от 3-его лица
+animation_slot			= 2				; Каким способом НПС держит ствол
+
+position				= -0.026, -0.130, 0.0
+orientation				= 0.0, 0.0, 0.0х
+
+; Позиция под подмышкой
+strap_position			= -0.26,-0.10,0.05
+strap_orientation		= -15,-9,110
+strap_bone0				= bip01_spine2
+strap_bone1				= bip01_spine1
+
+; Партиклы и эффекты
+fire_point				= 0,  0.21,  0.674	; Позиция огня из основного ствола
+fire_point2				= 0,  0.17,  0.644	; Позиция огня из подствола
+
+flame_particles			= weapons\generic_weapon05
+smoke_particles			= weapons\generic_shoot_00
+silencer_smoke_particles= weapons\generic_shoot_00
+grenade_flame_particles	= weapons\generic_weapon01
+
+; 2D-Гильзы
+shell_point				= 0.0, 0.138, 0.07
+shell_particles			= 
+
+; 3D-Гильзы
+shell_alowed			= true				;Нужно ли спавнить гильзу
+shell_bone              = joint6 			;Кость, относительно которой спавнится гильза (3 лицо)
+shell_delay				= 0					;Задержка перед спавном гильзы (только для игрока + лишь 1 гильза)
+shell_impuls_vector		= 3, -0.5, -0.25	;Направление и сила полёта гильзы (X\Y\Z)
+shell_disp_vector		= 0.6, 1.3, 40		;Разброс импульса (миним. коэф \ максим. коэф \ угол поворота по Y 
+shell_pos_1p			= 0.2, 0.02, 0.2	;Смещение позиции спавна от позиции худа для 1-го лица
+shell_pos_3p			= 0.05, 0, -0.03	;Смещение позиции спавна относительно кости shell_bone для 3-его лица
+
+; Свет
+light_disabled			= true
+
+light_color				= 0.6,0.5,0.3
+light_range				= 6.0
+light_var_color			= 0.05
+light_var_range			= 0.5
+light_time				= 0.2
+
+silencer_light_color	= 0.6,0.5,0.3
+silencer_light_range	= 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time		= 0.2
+
+;******[Звуковая часть]******;
+snd_draw                = weapons\generic_draw
+snd_holster             = weapons\generic_holster
+snd_shoot               = weapons\usas12\usas12_shoot_1
+snd_shoot1              = weapons\usas12\usas12_shoot_2
+snd_shoot2              = weapons\usas12\usas12_shoot_3
+snd_shoot3              = weapons\usas12\usas12_shoot_4
+snd_shoot4              = weapons\usas12\usas12_shoot_5
+
+snd_empty               = weapons\gen_empty, 0.5
+snd_reload              = weapons\usas12\usas12_reload, 0.7	
+snd_shoot_grenade       = weapons\gen_grenshoot
+snd_reload_grenade      = weapons\gen_grenload, 1.0, 0.8
+snd_switch              = weapons\groza_switch, 1.0, 0.5
+
+[wpn_usas12_hud]:hud_base
+zoom_hide_crosshair        = true
+attach_place_idx        = 0
+item_visual                = dynamics\weapons\wpn_usas12\wpn_usas12_hud.ogf  
+
+hands_position			= -0.044000,-0.181999,0.205500
+hands_orientation		= 0.519999,2.409999,0.1499993
+hands_position_16x9		= -0.044000,-0.181999,0.205500
+hands_orientation_16x9	= 0.519999,2.409999,0.1499993
+
+item_position			= 0.0,0.0,0.0
+item_orientation		= 0.0,0.0,0.0
+
+shell_point				= 0.028,0.078,0.113
+shell_dir               = 0.0, 1.0, 0.0
+shell_bone              = wpn_body
+fire_point		= -0.011,0.041578,0.680409
+fire_bone      	= wpn_body
+fire_point2		= 0.0,-0.028,0.678
+fire_bone2		= wpn_body
+
+anm_show                = lancew_usas12_draw
+anm_hide                = lancew_usas12_holster
+anm_idle                = lancew_usas12_idle
+anm_idle_sprint         = lancew_usas12_sprint
+anm_idle_moving         = lancew_usas12_moving
+anm_shots               = lancew_usas12_shoot, shoot
+anm_reload              = lancew_usas12_reload, reload
+anm_idle_aim            = lancew_usas12_idle_aim
+anm_bore                = lancew_usas12_no_reload
+
+aim_hud_offset_pos = -0.110200,0.051300,-0.221000
+aim_hud_offset_rot = 0.030500,0.007900,-0.014204
+aim_hud_offset_pos_16x9 = -0.110200,0.051300,-0.221000
+aim_hud_offset_rot_16x9 = 0.030500,0.007900,-0.014204
+
+gl_hud_offset_pos       	= 0,0,0
+gl_hud_offset_rot       	= 0,0,0
+gl_hud_offset_pos_16x9    	= 0,0,0
+gl_hud_offset_rot_16x9    	= 0,0,0
+
+lean_hud_offset_pos        = 0,0,0
+lean_hud_offset_rot        = 0,0,0
+
+; Сдвиг при центрированном режиме
+alt_ofs_pos_x			= -0.05
+alt_ofs_pos_y			= 0
+alt_ofs_pos_z			= 0.15
+alt_ofs_rot_x			= 0
+alt_ofs_rot_y			= 0
+alt_ofs_rot_z			= 0

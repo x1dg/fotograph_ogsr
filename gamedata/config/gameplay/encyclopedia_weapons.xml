@@ -238,13 +238,6 @@
         <text>enc_weapons1_wpn-toz34</text>
     </article>
 
-    <!-------------------------------- wpn-bm16 ----------------------------->
-
-    <article id="weapons1_wpn-bm16" name="wpn-bm16" group="Weapons1">
-        <ltx>wpn_bm16</ltx>
-        <text>enc_weapons1_wpn-bm16</text>
-    </article>
-
     <!-------------------------------- wpn-spas12 ----------------------------->
 
     <article id="weapons1_wpn-spas12" name="wpn-spas12" group="Weapons1">

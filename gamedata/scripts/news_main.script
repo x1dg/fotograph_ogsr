@@ -589,11 +589,8 @@ function get_weapon_type(weapon)
                         id == "wpn_kolt" or
 			id == "wpn_colt_python" or
 			id == "wpn_gp100" or
-			id == "wpn_c96" or
-			id == "wpn_tt33_sk1" or
-                        id == "wpn_mp7a3" or
+			id == "wpn_mp7a3" or
                         id == "wpn_kriss_super_v" or
-			id == "wpn_mauzer" or
 			id == "wpn_colt_m1" then
 			return 1 --"Пистолет "..m_act:section()
 		        elseif id == "wpn_vintorez" or
@@ -616,9 +613,7 @@ function get_weapon_type(weapon)
 			id == "wpn_svd_c" or
                         id == "wpn_sr25_mk11_mod0_sk1" or
 			id == "wpn_m14" or
-			id == "wpn_w2000" or
 			id == "wpn_m82a3" or
-			id == "wpn_g3_camo" or
 			id == "wpn_m1918" or
 			id == "wpn_g43" or
 			id == "wpn_vint" or
@@ -659,17 +654,11 @@ function get_weapon_type(weapon)
                         id == "wpn_l86" or
                         id == "wpn_m4" or
                         id == "wpn_tavor" or
-                        id == "wpn_ppsh" or
-                        id == "wpn_thompson" or
-                        id == "wpn_thompson_1928" or
                         id == "wpn_type97" or
                         id == "wpn_lewis" or
-                        id == "wpn_mp40" or
-                        id == "wpn_mp41" or
                         id == "wpn_stg44" or
                         id == "wpn_fnc" or
                         id == "wpn_scar" or
-                        id == "wpn_scorpion" or
                         id == "wpn_taktik" or
                         id == "wpn_grozz" or
                         id == "wpn_grozm" or
@@ -683,22 +672,15 @@ function get_weapon_type(weapon)
 			id == "wpn_g36_m1" then
 			return 3 --"Автомат "..m_act:section()
 		        elseif id == "wpn_shotgun" or
-			id == "wpn_bm16" or
 			id == "wpn_toz34" or
 			id == "wpn_wincheaster1300" or
 			id == "wpn_spas12" or
 			id == "wpn_spas12_m1" or
 			id == "wpn_sayga12k" or
-			id == "wpn_benellim4super90" or
-			id == "wpn_w1200" or
 			id == "wpn_obrez" or
-			id == "wpn_rem_870" or
-                        id == "wpn_saiga12c" or
-                        id == "wpn_browningauto5" or
 			id == "wpn_protecta" or
                         id == "wpn_protecta_col" or
 			id == "wpn_usas12" or
-			id == "wpn_winch1887" or
 			id == "wpn_wincheaster1100" or
 			id == "wpn_winchester_m1" then
 			return 4 --"Обрез "..m_act:section()

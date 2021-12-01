@@ -31,7 +31,7 @@ TableWpnOutf = {
 		---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		WeaponsA = {"wpn_abakan","wpn_g36","wpn_ak74","wpn_l85","wpn_groza","wpn_lr300","wpn_val","wpn_fn2000","wpn_sig220","wpn_sig_m1"  },		
 		WeaponsB = {"wpn_desert_eagle","wpn_fort","wpn_hpsa","wpn_walther","wpn_usp","wpn_beretta","wpn_colt","wpn_pm","wpn_pb","wpn_mp5",
-					"wpn_eagle_m1","wpn_bm16","wpn_ak74u"																				  },	    							  			
+					"wpn_eagle_m1","wpn_ak74u"																				  },	    							  			
 		WeaponsC = {"wpn_winchester_m1","wpn_wincheaster1300","wpn_spas12"																  },
 		WeaponsD = {"wpn_svu","wpn_svd","wpn_vintorez","wpn_gauss","wpn_toz34","wpn_rg-6","wpn_rpg7"									  },
 		OutfitsA = {"novice_","bandit_","killer_","monolit_","svoboda_light","dolg_ou","ecolog_","neytral_novice_","svoboda_m1","dolg_gaz"},

@@ -156,8 +156,8 @@
 		<visual>actors\starik</visual>
 		<supplies>
 			[spawn] \n
-			wpn_ppsh \n
-			ammo_7.62x25_p = 3 \n
+			wpn_ak47 = 1 \n
+			ammo_7.62x39_fmj = 3 \n
 			#include "gameplay\character_items.xml" \n
 			#include "gameplay\character_food.xml" \n
 			#include "gameplay\character_drugs.xml"	
@@ -226,8 +226,8 @@
 		<visual>actors\otshelnik</visual>
 		<supplies>
 			[spawn] \n
-			wpn_mp40 \n
-			ammo_9x18_fmj \n
+			wpn_microuzi \n
+			ammo_9x19_fmj = 1 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"	
@@ -259,8 +259,8 @@
 		<visual>actors\otshelnik</visual>
 		<supplies>
 			[spawn] \n
-			wpn_mp40 \n
-			ammo_9x18_fmj \n
+			wpn_microuzi \n
+			ammo_9x19_fmj = 1 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"	
@@ -295,8 +295,8 @@
 		<visual>actors\otshelnik</visual>
 		<supplies>
 			[spawn] \n
-			wpn_mp40 \n
-			ammo_9x18_fmj \n
+			wpn_microuzi \n
+			ammo_9x19_fmj = 1 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"	
@@ -706,7 +706,7 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_bm16 = 1 \n
+			wpn_toz34 = 1 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n			
@@ -739,7 +739,7 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_bm16 = 1 \n
+			wpn_toz34 = 1 \n
 			ammo_12x70_buck = 2 \n
 			grenade_rgd5 = 1 \n
 			device_torch \n
@@ -995,8 +995,8 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_mp40 \n
-			ammo_9x18_fmj = 3 \n
+			wpn_microuzi \n
+			ammo_9x19_fmj = 1 \n
 			wpn_ak74 = 1 \n
 			ammo_5.45x39_fmj = 2 \n
 			device_torch \n
@@ -1182,8 +1182,8 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_mp40 \n
-			ammo_9x18_fmj \n
+			wpn_microuzi \n
+			ammo_9x19_fmj = 1 \n
 			wpn_ak74u = 1 \n
 			ammo_5.45x39_fmj = 2 \n
 			medkit = 1 \n
@@ -1477,8 +1477,8 @@
 		<visual>actors\novice\green_stalker_3</visual>
 		<supplies>
 			[spawn] \n
-			wpn_mp40 \n
-			ammo_9x18_fmj \n
+			wpn_microuzi \n
+			ammo_9x19_fmj = 1 \n
 			wpn_spas12 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
@@ -1803,8 +1803,8 @@
     <supplies>
       [spawn] \n
 	  zheton = 1 \n
-	  wpn_mp40 \n
-	  ammo_9x18_fmj =3 \n
+			wpn_microuzi \n
+			ammo_9x19_fmj = 1 \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"
     </supplies>
@@ -1869,7 +1869,7 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 2 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -1937,8 +1937,8 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-            wpn_mauzer \n
-	        ammo_9x19_pbp = 2 \n
+            wpn_gp100 \n
+	        ammo_357sw_jfp = 2 \n
 	        vacsina_aks = 1 \n
 			medkit = 1 \n
             #include "gameplay\character_food.xml" \n
@@ -1972,7 +1972,7 @@
 			wpn_fnc \n
 			ammo_357sw_jhp \n
 			ammo_357sw_jfp \n
-            wpn_benellim4super90 \n
+            wpn_wincheaster1300 \n
 	        ammo_12x76_dart = 2 \n
 			medkit = 1 \n
             #include "gameplay\character_food.xml" \n
@@ -2037,8 +2037,8 @@
     <supplies>
       [spawn] \n
 	  zheton = 1 \n
-	  wpn_mp40 \n
-	  ammo_9x18_fmj \n
+			wpn_microuzi \n
+			ammo_9x19_fmj = 1 \n
       wpn_val \n
       ammo_9x39_sp5 = 2 \n
 	  medkit_army = 1 \n
@@ -2075,8 +2075,8 @@
     <supplies>
       [spawn] \n
 	  zheton = 1 \n
-	  wpn_mp40 \n
-	  ammo_9x18_fmj \n
+			wpn_microuzi \n
+			ammo_9x19_fmj = 1 \n
       wpn_groza \n
       ammo_9x39_pab9 = 2 \n
 	  grenade_rgd5 = 1 \n
@@ -2257,8 +2257,8 @@
 		<supplies>
 			[spawn] \n
 			zheton = 1 \n
-			wpn_mp40 \n
-			ammo_9x18_fmj \n
+			wpn_microuzi \n
+			ammo_9x19_fmj = 1 \n
 			wpn_groza \n
 			ammo_9x39_ap = 5 \n	
 #include "gameplay\character_items.xml"	\n
@@ -2369,9 +2369,6 @@
 			zheton = 1 \n
 			wpn_usp \n
 			ammo_11.43x23_fmj \n
-			wpn_bizon \n
-			wpn_tulip_scope \n
-			ammo_7.62x25_ps = 3 \n	
 #include "gameplay\character_items.xml"	\n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -2407,8 +2404,8 @@
 			wpn_walther \n
 			ammo_9x19_pbp \n
 			grenade_rgd5 \n
-			wpn_scorpion \n
-			ammo_9x18_pmm = 2 \n	
+			wpn_m4_taktik \n
+			ammo_5.56x45_ss190 = 2 \n		
 #include "gameplay\character_items.xml"	\n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -2586,7 +2583,7 @@
         <supplies>
             [spawn] \n
 	        hand_radio \n
-			wpn_browningauto5 = 1 \n
+			wpn_usas12 = 1 \n
 			ammo_12x70_buck = 2 \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"

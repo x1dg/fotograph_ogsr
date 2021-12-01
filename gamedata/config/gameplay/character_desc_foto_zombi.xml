@@ -958,8 +958,8 @@
 
     <supplies>
     [spawn] \n
-    wpn_tt33_sk1 \n
-	ammo_7.62x25_p = 5 \n
+	wpn_ak9 = 1 \n
+	ammo_9x39_sp5 = 4 \n
 	device_torch \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -988,8 +988,8 @@
 
     <supplies>
     [spawn] \n
-    wpn_tt33_sk1 \n
-	ammo_7.62x25_p = 3 \n
+	wpn_ak9 = 1 \n
+	ammo_9x39_sp5 = 4 \n
 	medkit = 1 \n
 	device_torch \n
 #include "gameplay\character_food.xml" \n
@@ -1053,7 +1053,7 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -1185,7 +1185,7 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -1317,7 +1317,7 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -1385,7 +1385,7 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -1597,7 +1597,7 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -1729,7 +1729,7 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -1861,7 +1861,7 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -1928,7 +1928,7 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_bm16 \n
+			wpn_toz34 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -2109,7 +2109,7 @@
 			[spawn] \n
 			wpn_walther \n
 			ammo_9x19_fmj \n
-            wpn_winch1887 \n
+            wpn_marshall_12 \n
 			ammo_12x70_buck = 2 \n
 			grenade_rgd5 = 1 \n
 			medkit = 1 \n
@@ -2147,7 +2147,7 @@
 			[spawn] \n
 			wpn_walther \n
 			ammo_9x19_fmj \n
-            wpn_winch1887 \n
+            wpn_marshall_12 \n
 			ammo_12x70_buck = 2 \n
 			grenade_rgd5 = 1 \n
 			medkit = 1 \n
@@ -2354,7 +2354,7 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_bm16 = 1 \n
+			wpn_toz34 = 1 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
 #include "gameplay\character_food.xml" \n
@@ -2387,7 +2387,7 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_bm16 = 1 \n
+			wpn_toz34 = 1 \n
 			ammo_12x70_buck = 2 \n
 			grenade_rgd5 = 1 \n
 			device_torch \n
@@ -2456,7 +2456,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj = 2 \n
-			wpn_bm16 = 1 \n
+			wpn_toz34 = 1 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
 #include "gameplay\character_food.xml" \n
@@ -2491,7 +2491,7 @@
 			[spawn] \n
 			wpn_pb \n
 			ammo_9x18_fmj = 2 \n
-			wpn_bm16 = 1 \n
+			wpn_toz34 = 1 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
 #include "gameplay\character_food.xml" \n
@@ -2526,7 +2526,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj = 2 \n
-			wpn_bm16 = 1 \n
+			wpn_toz34 = 1 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
 #include "gameplay\character_food.xml" \n
@@ -3005,10 +3005,8 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_pb \n
-			ammo_9x18_fmj = 2 \n
-			wpn_bizon = 1 \n
-			ammo_7.62x25_p = 4 \n
+			wpn_desert_eagle \n
+			ammo_11.43x23_hydro = 3 \n
 			grenade_f1 = 1 \n
 			device_torch \n
 #include "gameplay\character_food.xml" \n
@@ -3040,10 +3038,8 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_pb \n
-			ammo_9x18_fmj = 2 \n
-			wpn_bizon = 1 \n
-			ammo_7.62x25_p = 4 \n
+			wpn_desert_eagle \n
+			ammo_11.43x23_hydro = 3 \n
 			medkit = 1 \n
 			device_torch \n
 #include "gameplay\character_food.xml" \n
@@ -3111,7 +3107,7 @@
 			[spawn] \n
 			wpn_beretta \n
 			ammo_9x19_fmj = 2 \n
-			wpn_w1200 = 1 \n
+			wpn_protecta_col = 1 \n
 			ammo_12x70_buck = 2 \n
 			device_torch \n
 #include "gameplay\character_food.xml" \n
@@ -3853,10 +3849,8 @@
 		<supplies>
 			[spawn] \n
 			zheton = 1 \n
-            wpn_pm \n
-            ammo_9x18_fmj \n
-            wpn_bizon \n
-            ammo_7.62x25_ps = 2 \n
+			wpn_desert_eagle \n
+			ammo_11.43x23_hydro = 3 \n
 			medkit_army = 1 \n
 			device_torch \n
 #include "gameplay\character_food.xml" \n

@@ -98,18 +98,6 @@ launch_speed					= 76
 grenade_flame_particles 			= amik\weapons\grenade_flame_particles\grenade_flame_particles_00
 grenade_class					= ammo_vog-25, ammo_vog-25p
 
-; Стрейфы
-strafe_enabled = true 
-strafe_transition_time = 0.25
-strafe_hud_offset_pos = 0.015,0.0,0.00
-strafe_hud_offset_rot = 0.0,0.0,4.5
-
-; Настройки для режима прицеливания
-strafe_aim_enabled = false
-strafe_aim_transition_time = 0.15
-strafe_aim_hud_offset_pos = 0.005,0.0,0.00
-strafe_aim_hud_offset_rot = 0.0,0.0,2.5
-
 [wpn_main]:identity_immunities,weapon_probability,default_weapon_params
 ;******[Параметры СДК\Прочее]******;
 GroupControlSection     = spawn_group
@@ -153,14 +141,6 @@ misfire_end_prob	     	= 0.1
 ;увеличение изношености при выстреле очередью
 ;condition_queue_shot_dec	= 0.0
 
-; Апгрейды
-upgrades				=
-installed_upgrades		=
-upgrade_scheme			=
-
-; Разброс
-use_dispersion_mod			= false	; Использовать доп. модификатор разброса disp_aim_mod
-
 ; Отдача (от бедра)
 cam_relax_speed				= 0			;скорость возврата в исходное положение
 cam_relax_speed_ai			= 360
@@ -168,32 +148,14 @@ cam_dispersion_frac			= 1.0		;ствол будет подыматься на cam_dispersion*cam_dispe
 cam_max_angle				= 20.0		;максимальный угол отдачи
 
 ; Отдача (прицеливание)
-zoom_cam_relax_speed		= 0		;прицел\мушка
-zoom_cam_relax_speed_ai		= 180
-zoom_cam_dispersion_frac	= 1.0
-zoom_cam_max_angle			= 20.0
-
-; Увеличение самой модели ствола при зуме
-scope_zoom_hud_fov				= 45		;HUD FOV
-scope_zoom_hud_fov_speed		= 0.15	;Скорость изменения
-scope_zoom_hud_fov_alt			= 45		;HUD FOV при втором прицеле
-scope_zoom_hud_fov_speed_alt	= 0.15	;Скорость изменения при втором прицеле
-
-; Зум подстволов
-scope_zoom_factor_gl		= 60
-
-; Прочее
-cam_return					= 0       ;возврат прицела оружия в начальное состояние, 0 = не возвращать
-tracers                     = on      
-tracers_color_ID            = 2
-zoom_cam_return             = 0       ;возврат прицела оружия в начальное состояние, 0 = не возвращать
-
-; AI
-ef_main_weapon_type			= 0
-ef_weapon_type				= 0
-
-; SWM
-weapon_type					= none
+zoom_cam_relax_speed			= 10
+zoom_cam_relax_speed_ai			= 120.75
+zoom_cam_dispersion			= 0.5
+zoom_cam_dispersion_inc			= 0.25
+zoom_cam_dispersion_frac		= 1
+zoom_cam_max_angle			= 50
+zoom_cam_max_angle_horz			= 50
+zoom_cam_step_angle_horz		= 1.5
 
 ; Базовая секция для сошек
 [bipod_wpn]

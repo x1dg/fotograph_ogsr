@@ -74,7 +74,7 @@ function off_corpses()
 		while twa > summ_weapons do
 			local wpn = tabl_weapons[twa]
 			local wpn_name = wpn:name()
-			if (get_dist_to_trup_9510(wpn) == true and get_dist_to_trup(wpn) == true and not string.find(wpn_name,"wpn_gauss") and not string.find(wpn_name,"wpn_svd") and not string.find(wpn_name,"wpn_vintorez") and not string.find(wpn_name,"wpn_svu") and not string.find(wpn_name,"wpn_fn2000") and not string.find(wpn_name,"wpn_saiga12c") and not string.find(wpn_name,"wpn_rpg7") and not string.find(wpn_name,"wpn_desert_eagle") and not string.find(wpn_name,"wpn_toz34") and not string.find(wpn_name,"wpn_rg-6")) then
+			if (get_dist_to_trup_9510(wpn) == true and get_dist_to_trup(wpn) == true and not string.find(wpn_name,"wpn_gauss") and not string.find(wpn_name,"wpn_svd") and not string.find(wpn_name,"wpn_vintorez") and not string.find(wpn_name,"wpn_svu") and not string.find(wpn_name,"wpn_fn2000") and not string.find(wpn_name,"wpn_saiga12k") and not string.find(wpn_name,"wpn_rpg7") and not string.find(wpn_name,"wpn_desert_eagle") and not string.find(wpn_name,"wpn_toz34") and not string.find(wpn_name,"wpn_rg-6")) then
 				local weapon = tabl_weapons[twa]
 				alife():release(weapon,true)
 				table.remove(tabl_weapons,twa)

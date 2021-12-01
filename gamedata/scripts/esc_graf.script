@@ -456,13 +456,13 @@ end
 
 function graf_second_dialog_have(task, objective)
 if db.actor ~= nil then 
-return db.actor:object("wpn_g3_camo") ~= nil
+return db.actor:object("wpn_m4_taktik") ~= nil
 end
 return false
 end
 
 function graf_second_dialog_done(first_speaker, second_speaker)
-dialogs.relocate_item_section(second_speaker, "wpn_g3_camo", "out")
+dialogs.relocate_item_section(second_speaker, "wpn_m4_taktik", "out")
 end
 
 function prince_first_dialog_have(task, objective)
@@ -760,7 +760,7 @@ end
 
 function lektor_dialog_done (first_speaker, second_speaker)
 new_dialog.out_item_much("anom_remover",1)
-flamethrower.relocate_n_items_section(second_speaker, "wpn_rem_870", "in", 1)
+flamethrower.relocate_n_items_section(second_speaker, "wpn_protecta", "in", 1)
 end
 
 function lektor_first_dialog_have(task, objective)
