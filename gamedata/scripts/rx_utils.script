@@ -93,7 +93,6 @@ function item_is_fa(o,c)
 		c = o and o:clsid()
 	end
 	local t = {
-	[clsid.wpn_pm_s] = true,
 	[clsid.wpn_walther_s] = true,
 	[clsid.wpn_usp45_s] = true,
 	[clsid.wpn_hpsa_s] = true,

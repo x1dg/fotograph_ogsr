@@ -1,0 +1,269 @@
+[wpn_m95]:wpn_main
+class					= WP_SVD				; Класс оружия
+$spawn					= "sm\wpn\Sniper\M95"	; Название оружия в СДК
+parent_section  		= wpn_m95				; Секция оружия без обвесов
+weapon_class			= sniper_rifle			; Раздел для магазина мультиплеера
+cost					= 60000					
+
+;******[Описание, иконки]******;
+inv_name				= st_wpn_m95
+inv_name_short			= st_wpn_m95
+description				= st_wpn_m95_descr
+
+inv_grid_width			= 6
+inv_grid_height			= 2
+inv_grid_x				= 35
+inv_grid_y				= 27
+
+upgr_icon_x				= 0
+upgr_icon_y				= 1710
+upgr_icon_width			= 330
+upgr_icon_height		= 120
+
+scope_x					= 0
+scope_y					= 0
+silencer_x				= 0
+silencer_y				= 0
+grenade_launcher_x		= 0
+grenade_launcher_y		= 0
+
+;******[Параметры для НПС]******;
+min_radius				= 50			; [] for AI (Радиус не работает, на будущее)
+max_radius				= 600			; [] for AI
+
+holder_range_modifier	= 1.5			; во сколько раз увеличивается eye_range
+holder_fov_modifier		= 0.5			; во сколько раз увеличивается eye_fov
+
+ef_main_weapon_type		= 3
+ef_weapon_type			= 8
+
+weapon_type				= sniper
+;******[Аддоны и апгрейды]******;
+scope_status			= 0		; 0 - без аддона
+silencer_status			= 0		; 1 - встроенный
+grenade_launcher_status	= 0		; 2 - присоединяемый
+
+;******[3D-Прицел]******;
+scope_hud_3d			= wpn_m95_scope_hud
+
+; Новые прицелы и магазины
+magazines 				= none
+scopes					= none
+additionals				= none
+
+; Прицелы текстурой \ Мушка
+scope_zoom_factor		= 15	; FOV при прицеливании
+scope_name				= wpn_addon_scope
+scope_texture			= wpn_crosshair_leo_mark4
+
+; Глушитель
+silencer_name			= wpn_addon_silencer
+
+; Подствольное
+grenade_launcher_name	= wpn_addon_grenade_launcher
+grenade_class			= ammo_vog-25
+grenade_vel				= 0
+
+; Апгрейды
+upgrades				= up_gr_m95_1, up_gr_m95_2, up_gr_m95_3, up_gr_m95_4, up_gr_m95_5, up_gr_m95_6, up_gr_m95_7, up_gr_m95_8, up_gr_m95_9, up_gr_m95_10
+installed_upgrades		=
+upgrade_scheme			= upgrade_scheme_six_column
+
+;******[Характеристики оружия]******;
+sprint_allowed			= true
+slot					= 2
+single_handed			= 0				; Одноручное\Двуручное
+
+inv_weight				= 10.5
+control_inertion_factor	= 3.5f			; Коэфицент чувствительности мышки
+crosshair_inertion   	= 7
+
+fire_modes				= 1
+
+ammo_mag_size			= 5
+ammo_class				= ammo_12.7x99_fmj
+
+; Отдача и разброс
+fire_dispersion_base				= 0.2	; Угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+
+PDM_disp_base						= 1.0
+PDM_disp_vel_factor					= 1.5
+PDM_disp_accel_factor				= 2.0
+PDM_disp_crouch	 					= 0.5
+PDM_disp_crouch_no_acc 				= 0.4
+
+hit_probability_gd_novice			= 0.95
+hit_probability_gd_stalker			= 0.95
+hit_probability_gd_veteran			= 0.95
+hit_probability_gd_master			= 0.95
+
+; Скорость возврата отдачи к норме
+time_to_aim					= 2.0
+
+; Отдача (от бедра)
+cam_dispersion				= 4.5		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 1.0		;увеличениe cam_dispersion с каждым выстрелом
+cam_max_angle_horz			= 4.0		;максимальный угол горизонтальной отдачи
+cam_step_angle_horz			= 1.3		;насколько сильна горизонтальная отдача
+
+; Отдача (прицеливание)
+zoom_cam_dispersion			= 4.5
+zoom_cam_dispersion_inc		= 1.0
+zoom_cam_max_angle_horz		= 4.0
+zoom_cam_step_angle_horz	= 1.3
+
+; Надёжность
+condition_shot_dec		= 0.001		; Увеличение износа при каждом выстреле
+
+; ТТХ
+hit_power				= 1.0
+hit_impulse				= 1
+hit_type				= fire_wound
+
+fire_distance			= 1500	; Дистанция, после которой пуля исчезает
+bullet_speed			= 430	; Скорость пули
+rpm						= 35	; Скорострельность
+
+zoom_enabled			= true	; Можно целиться
+zoom_rotate_time		= 0.25	; Скорость зума
+
+;******[Визуальная часть]******;
+; DoF
+;zoom_dof				= 0.0, 0.0, 180
+reload_dof				= 0.0, 0.5, 5, 4.0
+
+; Visual
+visual					= dynamics\weapons\wpn_m95\wpn_m95.ogf
+hud						= wpn_m95_hud
+
+; Анимации от 3-го лица
+
+; Параметры от 3-его лица
+animation_slot			= 2				; Каким способом НПС держит ствол
+
+position				= -0.026, -0.130, 0.0
+orientation				= 0.0, 0.0, 0.0
+
+; Позиция под подмышкой
+strap_position			= -0.15,-0.15,0.45
+strap_orientation		= -25,-189,65
+strap_bone0				= bip01_spine2
+strap_bone1				= bip01_spine1
+
+; Партиклы и эффекты
+fire_point				= 0.0, 0.129, 0.942	; Позиция огня из основного ствола
+fire_point2				= 0.0, 0.129, 0.942	; Позиция огня из подствола
+
+flame_particles			= weapons\generic_weapon06
+smoke_particles			= weapons\generic_shoot_00
+silencer_smoke_particles= weapons\generic_shoot_00
+grenade_flame_particles	= weapons\generic_weapon01
+
+; 2D-Гильзы
+shell_point				= 0.0, 0.129, 0.192
+shell_particles			= 
+
+;3D-Гильзы
+shell_alowed			= true				;Нужно ли спавнить гильзу
+shell_bone              = wpn_body			;Кость, относительно которой спавнится гильза (3 лицо)
+shell_delay				= 1000				;Задержка перед спавном гильзы (только для игрока + лишь 1 гильза)
+shell_impuls_vector		= 1.5, -0.4, 0.0	;Направление и сила полёта гильзы (X\Y\Z)
+shell_disp_vector		= 0.6, 1.3, 40		;Разброс импульса (миним. коэф \ максим. коэф \ угол поворота по Y 
+shell_pos_1p			= 0.5, 0.06, 0.11	;Смещение позиции спавна от позиции худа для 1-го лица
+shell_pos_3p			= 0, 0, 0			;Смещение позиции спавна относительно кости shell_bone для 3-его лица
+
+
+; Свет
+light_disabled			= false
+
+light_color				= 0.6,0.5,0.3
+light_range				= 4.0
+light_var_color			= 0.05
+light_var_range			= 0.5
+light_time				= 0.2
+
+silencer_light_color	= 0.6,0.5,0.3
+silencer_light_range	= 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time		= 0.2
+
+;******[Звуковая часть]******;
+snd_draw				= weapons\generic_draw
+snd_holster				= weapons\generic_holster
+snd_silncer_shot		= weapons\no_sound
+snd_shoot				= weapons\m95\m95_shoot
+snd_empty				= weapons\gen_empty, 0.5
+snd_reload				= weapons\m95\m95_reload, 0.5, 0.1
+snd_shoot_grenade		= weapons\no_sound
+snd_reload_grenade		= weapons\no_sound
+snd_switch				= weapons\no_sound
+snd_bore				= weapons\no_sound
+
+[wpn_m95_hud]:hud_base
+zoom_hide_crosshair			= true
+attach_place_idx			= 0
+item_visual					= dynamics\weapons\wpn_m95\wpn_m95_hud
+
+hands_position				= -0.041500,-0.210999,0.231000
+hands_orientation			= -0.580000,0.760001,0.599999
+hands_position_16x9			= -0.041500,-0.210999,0.231000
+hands_orientation_16x9		= -0.580000,0.760001,0.599999
+
+item_position				= 0.0,0.0,0.0
+item_orientation			= 0.0,0.0,0.0
+
+shell_point					= 0.025,0.055,0.221
+shell_dir               	= 0.0, 1.0, 0.0
+shell_bone					= wpn_body
+
+fire_point					= 0.0,0.081856,0.862124
+fire_bone               	= wpn_body
+
+aim_hud_offset_pos			= -0.1175,0.039165, 0.430000
+aim_hud_offset_rot			= 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9		= -0.1175,0.039165, 0.430000
+aim_hud_offset_rot_16x9		= 0.000000,0.000000,0.000000
+
+gl_hud_offset_pos			= 0,0,0
+gl_hud_offset_rot			= 0,0,0
+
+lean_hud_offset_pos			= 0,0,0
+lean_hud_offset_rot			= 0,0,0
+
+anm_show					= lancew_m95_draw
+anm_hide             		= lancew_m95_holster
+anm_shots					= lancew_m95_shoot, shoot
+anm_reload					= lancew_m95_reload, reload
+anm_bore					= lancew_m95_no_reload
+anm_idle             		= lancew_m95_idle
+anm_idle_aim				= lancew_m95_idle_aim
+anm_idle_moving 			= lancew_m95_moving
+anm_idle_sprint				= lancew_m95_sprint
+
+[wpn_m95_scope_hud]:wpn_m95_hud
+item_visual				= dynamics\weapons\wpn_m95\wpn_m95_scope
+disable_strafe			= false
+disable_shot_shake		= false
+disable_distance_mgr	= true
+
+hands_position			= -0.051500,-0.195,0.961000
+hands_orientation		= 0.420000,0.760001,0.599999
+hands_position_16x9		= -0.051500,-0.195,0.961000
+hands_orientation_16x9	= 0.420000,0.760001,0.599999
+
+anm_show				= lancew_scope_mk11_
+anm_hide				= lancew_scope_mk11_
+anm_shots				= lancew_scope_mk11_
+anm_reload				= lancew_scope_mk11_reload
+anm_bore				= lancew_scope_mk11_
+anm_idle				= lancew_scope_mk11_
+anm_idle_aim			= lancew_scope_mk11_
+anm_idle_moving			= lancew_scope_mk11_
+anm_idle_sprint			= lancew_scope_mk11_
+
+aim_hud_offset_pos = -0.104400,0.102000,1.569000
+aim_hud_offset_rot = 0.011000,0.005700,-0.000700
+aim_hud_offset_pos_16x9 = -0.104400,0.102000,1.569000
+aim_hud_offset_rot_16x9 = 0.011000,0.005700,-0.000700

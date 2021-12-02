@@ -268,7 +268,6 @@ function best_pistol(actor, npc)
 	end
 	if wpn == clsid.wpn_hpsa then return true
     elseif wpn == clsid.wpn_hpsa then return true
-    elseif wpn == clsid.wpn_pm then return true
     elseif wpn == clsid.wpn_fort then return true
     elseif wpn == clsid.wpn_walther then return true
     elseif wpn == clsid.wpn_usp45 then return true

@@ -40,13 +40,11 @@ local nagrad = {
   "wpn_mp7a3",
   "wpn_sg552_sk1",
   "wpn_kriss_super_v",
-  "wpn_m1891_30_scope",
-  "wpn_mp5_m1"
+  "wpn_m1891_30_scope"
  },
   level_4 = {
   "wpn_galatz_sk1",
   "wpn_sg551_sk1",
-  "wpn_m16a2_sk1",
   "wpn_hk417_sk1",
   "wpn_svd_m1",
   "wpn_gauss"
@@ -1006,7 +1004,7 @@ local item = ""
 	end
     new_dialog.out_item_much("box_food",1)
     new_dialog.out_item_much("box_remont",1)
-	dialogs.relocate_item_section(actor, "wpn_mp5_m1", "in", 1)
+	dialogs.relocate_item_section(actor, "wpn_microuzi", "in", 1)
 end
 
 function prizrak_zachita_have(task, info)
@@ -2119,7 +2117,7 @@ local item = ""
 		actor = second_speaker
 		trader = first_speaker
 	end
-	dialogs.relocate_item_section(actor, "wpn_m16a2_sk1", "in", 1)
+	dialogs.relocate_item_section(actor, "wpn_m16", "in", 1)
 	dialogs.relocate_item_section(actor, "wpn_addon_sil_556_ar", "in", 1)
 end
 
@@ -2913,7 +2911,7 @@ local item = ""
 		actor = second_speaker
 		trader = first_speaker
 	end
-	dialogs.relocate_item_section(actor, "wpn_m16a2_sk1", "in", 1)
+	dialogs.relocate_item_section(actor, "wpn_m16", "in", 1)
 	new_dialog.out_item_much("meat",5)
 end
 
@@ -2931,7 +2929,7 @@ local item = ""
 		actor = second_speaker
 		trader = first_speaker
 	end
-	dialogs.relocate_item_section(actor, "wpn_m4a1_sk1", "in", 1)
+	dialogs.relocate_item_section(actor, "wpn_m4a1", "in", 1)
 	new_dialog.out_item_much("meat",5)
 end
 

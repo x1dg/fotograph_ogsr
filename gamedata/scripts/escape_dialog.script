@@ -181,7 +181,7 @@ end
    
 
 function give_weapon_from_trader(trader, actor)
-    dialogs.relocate_item_section(trader, "wpn_pm", "in")
+    dialogs.relocate_item_section(trader, "wpn_fort", "in")
     dialogs.relocate_item_section(trader, "ammo_9x18_fmj", "in")
     dialogs.relocate_item_section(trader, "wpn_knife", "in")    
 	--dialogs.relocate_item_section(trader, "ammo_9x18_fmj", "in")
@@ -364,12 +364,12 @@ end
 
 function give_weapon_to_actor (trader, actor)
 	if not has_alife_info("kvest_art_started") then
-    dialogs.relocate_item_section(trader, "wpn_pm", "in")
+    dialogs.relocate_item_section(trader, "wpn_fort", "in")
     dialogs.relocate_item_section(trader, "ammo_9x18_fmj", "in")
 	dialogs.relocate_item_section(trader, "ammo_9x18_fmj", "in")
     dialogs.relocate_item_section(trader, "wpn_knife", "in")     
 	else
-	    --dialogs.relocate_item_section(trader, "wpn_pm", "in")
+	    --dialogs.relocate_item_section(trader, "wpn_fort", "in")
 	    dialogs.relocate_item_section(trader, "ammo_9x18_fmj", "in")
 	    dialogs.relocate_item_section(trader, "ammo_9x18_fmj", "in")
 	end

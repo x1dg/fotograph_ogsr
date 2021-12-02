@@ -401,7 +401,7 @@
 
     <supplies>
       [spawn] \n
-	    wpn_pm \n
+	    wpn_fort \n
         ammo_9x18_fmj \n
 	    wpn_type97 \n
 		ammo_6x35 \n
@@ -442,7 +442,7 @@
 
     <supplies>
       [spawn] \n
-	    wpn_pm \n
+	    wpn_fort \n
         ammo_9x18_fmj \n
 	    wpn_type97 \n
 		ammo_6x35 \n
@@ -832,8 +832,8 @@
 		<supplies>
 			[spawn] \n
 			zheton = 1 \n
-			wpn_mp5_m1 \n
-			ammo_9x19_fmj \n
+			wpn_kriss_super_v \n
+			ammo_11.43x23_hydro \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -894,8 +894,8 @@
 		<supplies>
 			[spawn] \n
 			zheton = 1 \n
-			wpn_mp5_m2 \n
-			ammo_9x19_fmj \n
+			wpn_kriss_super_v \n
+			ammo_11.43x23_hydro \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -987,8 +987,8 @@
 		<supplies>
 			[spawn] \n
 			zheton = 1 \n
-			wpn_mp5_m1 \n
-			ammo_9x19_fmj \n
+			wpn_kriss_super_v \n
+			ammo_11.43x23_hydro \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -1049,8 +1049,8 @@
 		<supplies>
 			[spawn] \n
 			zheton = 1 \n
-			wpn_mp5_m2 \n
-			ammo_9x19_fmj \n
+			wpn_kriss_super_v \n
+			ammo_11.43x23_hydro \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n

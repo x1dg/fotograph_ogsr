@@ -157,7 +157,7 @@
 		<supplies>
 			[spawn] \n
 			wpn_ak47 = 1 \n
-			ammo_7.62x39_fmj = 3 \n
+			ammo_5.45x39_fmj = 3 \n
 			#include "gameplay\character_items.xml" \n
 			#include "gameplay\character_food.xml" \n
 			#include "gameplay\character_drugs.xml"	
@@ -332,8 +332,8 @@
 			[spawn] \n
 			zheton = 1 \n
 			pda_agent_prom \n
-			wpn_mp5_m2 \n
-			ammo_9x19_fmj = 2 \n
+			wpn_kriss_super_v \n
+			ammo_11.43x23_hydro = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n			
 #include "gameplay\character_food.xml" \n
@@ -398,7 +398,7 @@
         <supplies>
 			[spawn] \n
 			zheton = 1 \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_fmj \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n			
@@ -600,8 +600,8 @@
 			zheton = 1 \n
 			pda_agent_mk \n
 			koran \n
-			wpn_mp5_m2 \n
-			ammo_9x19_fmj = 1 \n
+			wpn_kriss_super_v \n
+			ammo_11.43x23_hydro = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n			
 #include "gameplay\character_food.xml" \n
@@ -635,7 +635,7 @@
 			zheton = 1 \n
 			wpn_microuzi \n
 			ammo_9x19_fmj = 1 \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n			
@@ -668,7 +668,7 @@
         <supplies>
 			[spawn] \n
 			hand_radio \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 2 \n
 			wpn_ak74u = 1 \n
 			ammo_5.45x39_fmj = 2 \n
@@ -775,7 +775,7 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_mp5 = 1 \n
+			wpn_microuzi = 1 \n
 			ammo_9x19_fmj = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n			
@@ -849,7 +849,7 @@
 			wpn_hpsa \n
 			ammo_9x19_fmj = 2 \n
 			wpn_ak47 = 1 \n
-			ammo_7.62x39_fmj = 2 \n
+			ammo_5.45x39_fmj= 2 \n
 			grenade_f1 = 1 \n
 			medkit = 1 \n
 			device_torch \n
@@ -959,7 +959,7 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 2 \n
 			wpn_ak74u = 1 \n
 			ammo_5.45x39_fmj = 2 \n
@@ -1104,7 +1104,7 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_fmj = 2 \n
 			wpn_ak74u = 1 \n
 			ammo_5.45x39_fmj = 2 \n
@@ -1221,7 +1221,7 @@
         <supplies>
 			[spawn] \n
 			wpn_ak47 = 1 \n
-			ammo_7.62x39_fmj = 2 \n
+			ammo_5.45x39_fmj = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml" \n
@@ -1835,7 +1835,7 @@
 		<visual>actors\amerikanec</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml" \n
@@ -2116,7 +2116,7 @@
 			[spawn] \n
 			zheton = 1 \n
 			wpn_ak47 \n
-			ammo_7.62x39_ap = 2 \n			
+			ammo_5.45x39_ap = 2 \n			
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -2404,7 +2404,7 @@
 			wpn_walther \n
 			ammo_9x19_pbp \n
 			grenade_rgd5 \n
-			wpn_m4_taktik \n
+			wpn_m4 \n
 			ammo_5.56x45_ss190 = 2 \n		
 #include "gameplay\character_items.xml"	\n
 #include "gameplay\character_food.xml" \n
@@ -2438,7 +2438,7 @@
 		<supplies>
 			[spawn] \n
 			zheton = 1 \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_g36 \n
 			ammo_5.56x45_ss190 = 2 \n	
@@ -2512,7 +2512,7 @@
 			zheton = 1 \n
 			wpn_beretta \n
 			ammo_9x19_pbp = 2 \n
-			wpn_m4_taktik \n
+			wpn_m4 \n
 			ammo_5.56x45_ss190 = 2 \n	
 #include "gameplay\character_items.xml"	\n
 #include "gameplay\character_food.xml" \n
@@ -2583,7 +2583,7 @@
         <supplies>
             [spawn] \n
 	        hand_radio \n
-			wpn_usas12 = 1 \n
+			wpn_protecta = 1 \n
 			ammo_12x70_buck = 2 \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"

@@ -20,9 +20,9 @@
         <visual>amk\kulinar</visual>
         <supplies>
             [spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_fmj \n
 			device_torch \n
 			#include "gameplay\character_items.xml" \n
@@ -56,9 +56,9 @@
         <visual>actors\bandit\stalker_bandit_master</visual>
         <supplies>
             [spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_fmj \n
 			device_torch \n
         </supplies>

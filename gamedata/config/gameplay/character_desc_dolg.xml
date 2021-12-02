@@ -141,7 +141,7 @@
 		<visual>actors\dolg\stalker_do_antigas</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pbp = 1 \n
 			wpn_svu \n
 			ammo_7.62x54_ap = 1 \n
@@ -169,7 +169,7 @@
 		<visual>actors\dolg\stalker_do_balon_8</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pbp = 1 \n
 			wpn_svu \n
 			ammo_7.62x54_ap = 1 \n

@@ -47,9 +47,9 @@
 		<visual>actors\killer\stalker_ki_head_3</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_pmm = 1 \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_fmj = 1 \n
 			device_torch \n
 		</supplies>
@@ -77,7 +77,7 @@
 		<visual>actors\killer\stalker_ki_head_4</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pmm = 1 \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj = 1 \n
@@ -107,7 +107,7 @@
 		<visual>actors\killer\stalker_ki_head_5</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pbp = 1 \n
 			wpn_toz34 \n
 			ammo_12x76_zhekan = 1 \n

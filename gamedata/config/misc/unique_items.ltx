@@ -183,27 +183,6 @@ snd_shoot2			= weapons\ak74u\ak74u_m1_shot
 snd_shoot3			= weapons\ak74u\ak74u_m1_shot
 ;------------------------------------------------------------
 
-[wpn_mp5_m1]:wpn_mp5	        ;Модифицированный МП5
-$spawn             	        = "weapons\uniq\wpn_mp5_m1"
-description		        = enc_weapons1_wpn-mp5_m1
-inv_name	                = wpn-mp5_m1
-inv_name_short		        = wpn-mp5_m1
-ammo_class		        = ammo_9x18_fmj, ammo_9x18_pmm
-condition_shot_dec 	        = 0.000005
-inv_grid_x		        = 5
-inv_grid_y		        = 33
-slot	                        = 1
-
-cost				= 2800
-
-;---------------S.T.A.L.K.E.R`s sound remake-----------------
-snd_shoot			= weapons\mp5\mp5_m1_shoot       
-snd_shoot1			= weapons\mp5\mp5_m1_shoot1       
-snd_shoot2			= weapons\mp5\mp5_m1_shoot2       
-snd_shoot3			= weapons\mp5\mp5_m1_shoot3       
-snd_silncer_shot		= weapons\mp5\mp5_m1_shot_sil
-;------------------------------------------------------------
-
 [wpn_groza_m1]:wpn_groza	;--Гроза генерала Воронина
 $spawn             		= "weapons\uniq\wpn_groza_m1"	
 description			= enc_weapons1_wpn-groza_m1
@@ -387,32 +366,6 @@ inv_grid_y			= 31
 
 cost		 	 	= 13500
 
-[wpn_mp5_m2]:wpn_mp5	;Модифицированный МП5
-$spawn             		= "weapons\uniq\wpn_mp5_m2"
-description			= enc_weapons1_wpn-mp5_m2
-inv_name	        	= wpn-mp5_m2
-inv_name_short			= wpn-mp5_m2
-silencer_status			= 1
-fire_dispersion_base		= 0.15
-condition_shot_dec 		= 0.000001
-inv_grid_x			= 5
-inv_grid_y			= 22
-inv_grid_width			= 4
-
-slot	                        = 1
-cost				= 3750
-
-smoke_particles 		= weapons\generic_shoot_00
-flame_particles			= 
-light_disabled			= true
-
-;---------------S.T.A.L.K.E.R`s sound remake-------------
-snd_shoot			= weapons\mp5\mp5_m2_shot
-snd_shoot1			= weapons\mp5\mp5_m2_shot
-snd_shoot2			= weapons\mp5\mp5_m2_shot
-snd_shoot3			= weapons\mp5\mp5_m2_shot
-;--------------------------------------------------------
-
 [wpn_abakan_m2]:wpn_abakan	;АH-94 штурмовой
 $spawn              		= "weapons\uniq\wpn_abakan_m2"	
 description			= enc_weapons1_wpn-abakan_m2
@@ -524,11 +477,11 @@ snd_silncer_shot	        = weapons\walther\walther_m1_shot_sil
 ;--------------------------------------------------------------------
 
 ;-----------Arena-----------
-[wpn_pm_arena]:wpn_pm;
-$spawn             		= "weapons\arena\wpn_pm_arena"
+[wpn_fort_arena]:wpn_fort;
+$spawn             		= "weapons\arena\wpn_fort_arena"
 
-[wpn_mp5_arena]:wpn_mp5;
-$spawn             		= "weapons\arena\wpn_mp5_arena"
+[wpn_microuzi_arena]:wpn_microuzi;
+$spawn             		= "weapons\arena\wpn_microuzi_arena"
 slot	=	2
 
 [wpn_toz34_arena]:wpn_toz34;
@@ -568,7 +521,7 @@ condition_shot_dec 		= 0.00001
 hit_power                       = 1.3
 
 [wpn_protecta_col]:wpn_protecta
-$spawn             		= "devices\uniq\wpn_m1891_30_scope_ucen"
+$spawn             			= "weapons\wpn_protecta_c-more"
 description		= "Боеприпасы:\n • 12х70 дробь\n • 12x76 Жакан\n • 12x76 дротик\nГладкоствольное ружье "Стрикер", оснащенное коллиматорным прицелом. Ёмкость магазина на 12 патронов."
 inv_name			= "Стрикер"
 inv_name_short			= "Стрикер"
@@ -583,13 +536,19 @@ ammo_class		        = ammo_12x70_buck, ammo_12x76_dart, ammo_12x76_zhekan
 
 scope_zoom_factor	    	= 50
 hud                      	= wpn_striker_col_hud
-visual                   	= new_weapons\striker\wpn_striker_col.ogf
+visual					= dynamics\weapons\wpn_protecta\wpn_protecta_c-more.ogf
 
-[wpn_striker_col_hud]:wpn_striker_hud
-visual                   	= new_weapons\striker\wpn_striker_col_hud.ogf
-zoom_offset			= -0.1000,0.01300,-0.0530
-zoom_rotate_x		        = 0.02400
-zoom_rotate_y		        = 0.01900
+scope_x					= 116
+scope_y					= 1
+
+[wpn_striker_col_hud]:wpn_protecta_hud
+item_visual                		= dynamics\weapons\wpn_protecta\wpn_protecta_c-more_hud.ogf
+
+aim_hud_offset_pos			= -0.072400,-0.018300,-0.227852
+aim_hud_offset_rot			= -0.033331,-0.025525,0
+
+aim_hud_offset_pos_16x9			= -0.072400,-0.018300,-0.227852
+aim_hud_offset_rot_16x9			= -0.033331,-0.025525,0
 
 [wpn_m1891_30_scope_ucen]:wpn_protecta
 $spawn             		= "devices\uniq\wpn_m1891_30_scope_ucen"
@@ -608,13 +567,8 @@ hit_power                       = 0.1
 snd_shoot			= new_weapons\lr300\lr300_shot_sil
 snd_shoot_duplet	        = new_weapons\lr300\lr300_shot_sil
 scope_zoom_factor	    	= 50
-hud                      	= wpn_striker_col_hud1
-visual                   	= new_weapons\striker\wpn_striker_col.ogf
-[wpn_striker_col_hud1]:wpn_striker_hud
-visual                   	= new_weapons\striker\wpn_striker_col_hud.ogf
-zoom_offset			= -0.1000,0.01300,-0.0530
-zoom_rotate_x		        = 0.02400
-zoom_rotate_y		        = 0.01900
+hud                      	= wpn_striker_col_hud
+visual						= dynamics\weapons\wpn_protecta\wpn_protecta_c-more.ogf
 
 [wpn_colt_ucen]:wpn_colt_m1	
 $spawn             		= "weapons\uniq\wpn_colt_ucen"	

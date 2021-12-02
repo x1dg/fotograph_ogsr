@@ -1,8 +1,6 @@
 function main()
 	local level = level.name()
-    	local spawn_items = {	"wpn_pm",
-				"wpn_pb",
-				"wpn_fort",
+    	local spawn_items = {
 				"wpn_walther",
 				"wpn_sig220",
 				"wpn_colt1911",
@@ -14,7 +12,7 @@ function main()
 				"wpn_fn2000_comp",
 				"wpn_ak74u",
 				"wpn_ak74r",
-				"wpn_mp5",
+				"wpn_microuzi",
 				"wpn_ak74",
 				"wpn_abakan",
 				"wpn_l85",
@@ -29,8 +27,6 @@ function main()
 				"wpn_rg-6",
 				"wpn_rpg7",
 				"wpn_gauss",
-				"wpn_m16a2_sk1",
-				"wpn_m4a1_sk1",
 				"wpn_hk417_sk1",
 				"wpn_sg551_sk1",
 				"wpn_sg552_sk1",
@@ -45,6 +41,7 @@ function main()
 				"wpn_addon_grenade_launcher_m203",
 				"wpn_addon_acog",
 				"wpn_addon_scope1",
+				"wpn_addon_sil_545_ar",
 				"wpn_addon_sil_556_ar",
 				"wpn_addon_sil_762_ar",
 				"bandit_outfit",

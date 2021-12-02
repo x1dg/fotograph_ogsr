@@ -456,13 +456,13 @@ end
 
 function graf_second_dialog_have(task, objective)
 if db.actor ~= nil then 
-return db.actor:object("wpn_m4_taktik") ~= nil
+return db.actor:object("wpn_m4") ~= nil
 end
 return false
 end
 
 function graf_second_dialog_done(first_speaker, second_speaker)
-dialogs.relocate_item_section(second_speaker, "wpn_m4_taktik", "out")
+dialogs.relocate_item_section(second_speaker, "wpn_m4", "out")
 end
 
 function prince_first_dialog_have(task, objective)
@@ -564,7 +564,7 @@ end
 function skryaga_second_dialog_done(first_speaker, second_speaker)
 new_dialog.out_item_much("diplomat_skryaga",1)
 new_dialog.out_item_much("pda_chelnok",1)
-dialogs.relocate_item_section(second_speaker, "wpn_m4a1_sk1", "in")
+dialogs.relocate_item_section(second_speaker, "wpn_m4a1", "in")
 end
 
 function pekar_first_dialog_dal(first_speaker, second_speaker)

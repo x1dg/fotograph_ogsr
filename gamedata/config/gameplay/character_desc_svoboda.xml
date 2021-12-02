@@ -45,7 +45,7 @@
 		<visual>actors\svoboda\stalker_sv_rukzak_2</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			wpn_ak74u \n
 			ammo_5.45x39_ap = 1 \n
@@ -76,7 +76,7 @@
 		<visual>actors\svoboda\stalker_sv_rukzak_3</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			wpn_ak74u \n
 			ammo_5.45x39_ap = 1 \n
@@ -390,7 +390,7 @@
 		<visual>actors\svoboda\stalker_sv_cook</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			wpn_ak74u \n
 			ammo_5.45x39_ap = 1 \n

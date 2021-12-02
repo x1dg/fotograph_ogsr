@@ -18,7 +18,7 @@
 		<visual>actors\soldier\soldier_beret_1</visual>		
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pbp = 1 \n
 			wpn_ak74u \n
 			ammo_5.45x39_ap = 1 \n
@@ -47,7 +47,7 @@
 		<visual>actors\soldier\soldier_beret_2</visual>		
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pbp = 1 \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj = 1 \n
@@ -358,7 +358,7 @@
 		<visual>actors\soldier\soldier_spetsnaz</visual>		
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pbp = 1 \n
 			wpn_vintorez \n
 			ammo_9x39_ap = 1 \n
@@ -389,7 +389,7 @@
 		<visual>actors\soldier\soldier_spetsnaz</visual>		
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pbp = 1 \n
 			wpn_val \n
 			ammo_9x39_ap = 1 \n
@@ -420,7 +420,7 @@
 		<visual>actors\soldier\soldier_antigas</visual>		
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pbp = 1 \n
 			wpn_abakan = 1, scope launcher cond=0.9 \n
 	    	ammo_5.45x39_ap = 1 \n
@@ -639,7 +639,7 @@
 		<visual>actors\militari\stalker_militari_antigas_2</visual>		
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pbp = 1 \n
 			wpn_abakan = 1, scope launcher cond=0.9 \n
 	    	ammo_5.45x39_ap = 1 \n

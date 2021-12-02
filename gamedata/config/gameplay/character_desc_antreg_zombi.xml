@@ -237,7 +237,7 @@
     <supplies>
       [spawn] \n
 			wpn_ak47 = 1 \n	
-            ammo_7.62x39_fmj = 5 \n
+            ammo_5.45x39_fmj = 5 \n
 			kruglov_flash \n
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
@@ -300,7 +300,7 @@
 		<visual>actors\izgoy\izgoy</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			wpn_vintorez \n
 			ammo_9x39_ap = 1 \n
@@ -394,7 +394,7 @@
     <supplies>
       [spawn] \n
 			wpn_ak47 = 1 \n	
-            ammo_7.62x39_fmj = 1 \n
+            ammo_5.45x39_fmj = 1 \n
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"	  
@@ -424,7 +424,7 @@
 
     <supplies>
       [spawn] \n
-			wpn_m4a1_sk1 = 1 \n	
+			wpn_m4a1 = 1 \n	
             ammo_5.56x45_ap = 1 \n
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
@@ -548,7 +548,7 @@
     <supplies>
       [spawn] \n
 			wpn_ak47 = 1 \n	
-            ammo_7.62x39_fmj = 1 \n
+            ammo_5.45x39_fmj = 1 \n
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"	  
@@ -579,7 +579,7 @@
     <supplies>
       [spawn] \n
 			wpn_ak47 = 1 \n	
-            ammo_7.62x39_fmj = 1 \n
+            ammo_5.45x39_fmj = 1 \n
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"	  
@@ -768,7 +768,7 @@
     <supplies>
       [spawn] \n
 			wpn_ak47 = 1 \n	
-            ammo_7.62x39_fmj = 1 \n
+            ammo_5.45x39_fmj = 1 \n
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"	  

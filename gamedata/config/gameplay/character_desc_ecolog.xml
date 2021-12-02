@@ -19,7 +19,7 @@
 		<visual>actors\nauchniy\nauchniy_1</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			wpn_spas12 \n
 			ammo_12x70_buck = 1 \n
@@ -47,9 +47,9 @@
 		<visual>actors\nauchniy\nauchniy_1</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_fmj = 1 \n
 		</supplies>
 				

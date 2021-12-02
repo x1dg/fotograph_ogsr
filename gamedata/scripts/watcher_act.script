@@ -89,7 +89,6 @@ local valuable_clsid={
     [clsid.wpn_hpsa_s]=true,
     [clsid.wpn_knife_s]=true,
     [clsid.wpn_lr300_s]=true,
-    [clsid.wpn_pm_s]=true,
     [clsid.wpn_rg6_s]=true,
     [clsid.wpn_rpg7_s]=true,
     [clsid.wpn_scope_s]=true,

@@ -568,19 +568,13 @@ function get_weapon_type(weapon)
 		local id = get_weapon_name(weapon)
 		if id == nil then 
 			return 0
-		        elseif id == "wpn_pm" or
-			id == "wpn_pb" or
-			id == "wpn_fort" or
+		        elseif id == "wpn_fort" or
 			id == "wpn_fort_m1" or
 			id == "wpn_walther" or
 			id == "wpn_walther_m1" or
 			id == "wpn_hpsa" or
 			id == "wpn_usp" or
-			id == "wpn_bizon" or
-                        id == "wpn_microuzi" or
-                        id == "wpn_mp5" or
-			id == "wpn_mp5_m1" or
-			id == "wpn_mp5_m2" or
+            id == "wpn_microuzi" or
 			id == "wpn_beretta" or
 			id == "wpn_beretta_m1" or
 			id == "wpn_eagle_m1" or
@@ -601,10 +595,8 @@ function get_weapon_type(weapon)
 			id == "wpn_svu_m1" or
 			id == "wpn_lr300" or
 			id == "wpn_m4a1" or
-                        id == "wpn_m4a1_sk1" or
                         id == "wpn_galatz_sk1" or
                         id == "wpn_hk417_sk1" or
-			id == "wpn_m4_taktik" or
 			id == "wpn_lr300_m1" or
 			id == "wpn_l85" or
 			id == "wpn_l85_m1" or
@@ -667,7 +659,6 @@ function get_weapon_type(weapon)
                         id == "wpn_ak75" or
                         id == "wpn_g37" or
                         id == "wpn_fw900k" or
-                        id == "wpn_m16a2_sk1" or
                         id == "wpn_m16" or
 			id == "wpn_g36_m1" then
 			return 3 --"Автомат "..m_act:section()
@@ -680,7 +671,6 @@ function get_weapon_type(weapon)
 			id == "wpn_obrez" or
 			id == "wpn_protecta" or
                         id == "wpn_protecta_col" or
-			id == "wpn_usas12" or
 			id == "wpn_wincheaster1100" or
 			id == "wpn_winchester_m1" then
 			return 4 --"Обрез "..m_act:section()

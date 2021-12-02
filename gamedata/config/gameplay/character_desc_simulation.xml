@@ -21,7 +21,7 @@
 		<visual>actors\bandit\stalker_bandit_3</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_pmm = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -50,7 +50,7 @@
 		<visual>actors\bandit\stalker_bandit_4</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_pmm = 1 \n
 			device_torch \n
 			wpn_toz34 \n
@@ -81,7 +81,7 @@
 		<visual>actors\bandit\stalker_bandit_5</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_pmm = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"	\n
@@ -112,9 +112,9 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_pmm = 1 \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_fmj \n
 			device_torch \n
 #include "gameplay\character_items.xml"
@@ -143,7 +143,7 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74u = 1, 0, 1, 0 \n
 			ammo_5.45x39_fmj = 1 \n
@@ -173,7 +173,7 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74u = 1, 0, 1, 0 \n
 			ammo_5.45x39_fmj = 1 \n
@@ -203,9 +203,9 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_pbp = 1 \n
 			device_torch \n
 #include "gameplay\character_food.xml"
@@ -430,7 +430,7 @@
 		<visual>actors\novice\green_stalker_2</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -458,7 +458,7 @@
 		<visual>actors\novice\green_stalker_2</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -486,7 +486,7 @@
 		<visual>actors\novice\green_stalker_3</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml"
@@ -513,7 +513,7 @@
 		<visual>actors\novice\green_stalker_3</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n		
 #include "gameplay\character_items.xml" \n
@@ -541,7 +541,7 @@
 		<visual>actors\novice\green_stalker_4</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -569,7 +569,7 @@
 		<visual>actors\novice\green_stalker_4</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 			wpn_toz34 \n
@@ -600,7 +600,7 @@
 		<visual>actors\novice\green_stalker_5</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -629,7 +629,7 @@
 		<visual>actors\novice\green_stalker_5</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -660,7 +660,7 @@
 			<crouch_type>-1</crouch_type>
 			<supplies>
 				[spawn] \n
-				wpn_pm \n
+				wpn_fort \n
 				ammo_9x18_pmm = 1 \n
 				wpn_toz34 \n
 				ammo_12x70_buck = 1\n
@@ -692,9 +692,9 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_fmj = 1 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
@@ -723,9 +723,9 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_pbp = 1 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
@@ -754,7 +754,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj = 1 \n
@@ -785,7 +785,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj \n
@@ -816,7 +816,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj \n
@@ -910,7 +910,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pmm = 1 \n
 			wpn_l85 \n
 			ammo_5.56x45_ss190 = 1 \n
@@ -1418,7 +1418,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pmm = 1 \n
 			wpn_svu \n
 			ammo_7.62x54_ap = 1 \n
@@ -1449,7 +1449,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pmm = 1 \n
 			wpn_svu \n
 			ammo_7.62x54_ap = 1 \n
@@ -2180,7 +2180,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 		</supplies>
 		
@@ -2205,7 +2205,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 		</supplies>
 		
@@ -2330,7 +2330,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_fmj = 1 \n
 		</supplies>
 		
@@ -2357,7 +2357,7 @@
 
 		<supplies>
 			[spawn] \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_fmj = 1 \n
 		</supplies>
 		
@@ -2564,7 +2564,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_fmj = 1 \n
 		</supplies>
 		
@@ -2595,7 +2595,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj = 1 \n
@@ -2628,7 +2628,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj = 1 \n
@@ -2661,7 +2661,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj = 1 \n
@@ -2694,7 +2694,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj = 1 \n
@@ -2727,7 +2727,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj = 1 \n
@@ -2763,7 +2763,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74 \n
 			ammo_5.45x39_ap = 1 \n
@@ -2798,7 +2798,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n	
 			wpn_abakan \n
 			ammo_5.45x39_ap = 1 \n
@@ -2832,7 +2832,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n	
 			wpn_ak74u \n
 			ammo_5.45x39_ap = 1 \n
@@ -2865,7 +2865,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74u \n
 			ammo_5.45x39_ap = 1 \n
@@ -2898,7 +2898,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74 = 1, scope \n
 			ammo_5.45x39_fmj = 1 \n
@@ -2931,7 +2931,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74 = 1, scope \n
 			ammo_5.45x39_fmj = 1 \n
@@ -2964,7 +2964,7 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj \n
 			wpn_ak74 = 1, scope \n
 			ammo_5.45x39_fmj = 1 \n
@@ -3140,10 +3140,10 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pmm = 1 \n
-			wpn_mp5_m2 \n
-			ammo_9x19_pbp = 1\n
+			wpn_kriss_super_v \n
+			ammo_11.43x23_hydro = 1\n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
 #include "gameplay\character_food.xml"
@@ -3238,7 +3238,7 @@
 		<visual>actors\novice\green_stalker_2</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -3569,7 +3569,7 @@
 		<visual>actors\novice\green_stalker_2</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm_arena \n
+			wpn_fort_arena \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
@@ -3597,7 +3597,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_mp5_arena \n
+			wpn_microuzi_arena \n
 			ammo_9x19_pbp = 1 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -3952,7 +3952,7 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_mp5_arena \n
+			wpn_microuzi_arena \n
 			ammo_9x19_pbp = 1 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>

@@ -48,10 +48,8 @@ local solid_list = {
  "ammo_9x18_fmj",
  --Оружие--
  "wpn_addon_silencer",
- "wpn_mp5",
+ "wpn_microuzi",
  "wpn_fort",
- "wpn_pb",
- "wpn_pm",
  --Прочее--
  "bread",
  "bandage",
@@ -73,7 +71,7 @@ experienced_section = {
  "ammo_5.56x45_ss190",
  --Пушки--
  "wpn_addon_scope",
- "wpn_mp5",
+ "wpn_microuzi",
  "wpn_ak74u",
  "wpn_ak74u_m1",
  "wpn_walther",

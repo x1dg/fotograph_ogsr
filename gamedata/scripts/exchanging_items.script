@@ -11,8 +11,6 @@
 ------------------  Таблицы итемов  ------------------
 local all_items = 
 {
-	[102.3]  = "wpn_pb",
-	[102.75] = "wpn_pm",
 	[103.23] = "wpn_fort",
 	[104.7]  = "wpn_walther",
 	[104.9]  = "wpn_sig220",
@@ -28,8 +26,6 @@ local all_items =
 	[105.35] = "wpn_ak74u",
 	[114.15] = "wpn_sg552_sk1",
 	[114.29] = "wpn_sg551_sk1",
-	[105.92] = "wpn_mp5",
-	[111.25] = "wpn_bizon",
 	[108.25] = "wpn_kriss_super_v",
 	[112.23] = "wpn_famas_p3_sk1",
 	[107.5]  = "wpn_ak74",
@@ -58,9 +54,7 @@ local all_items =
 	[117.54] = "wpn_svd_c",
 	[119.92] = "wpn_m82a3",
 	[116.59] = "wpn_m4",
-	[116.89] = "wpn_m4_taktik",
 	[117.47] = "wpn_m16",
-	[118.18] = "wpn_m4a1_sk1",
 	[117.87] = "wpn_m4a1",
 	[118.74] = "wpn_vihlop",
 	[117.38] = "wpn_aug_a3",
@@ -73,7 +67,6 @@ local all_items =
 	[119.11] = "wpn_ak74_m1",	
 	[119.12] = "wpn_abakan_m1",
 	[119.13] = "wpn_ak74u_m1",
-	[119.14] = "wpn_mp5_m1",
 	[119.15] = "wpn_groza_m1",
 	[119.16] = "wpn_spas12_m1",
 	[119.17] = "wpn_winchester_m1",
@@ -84,7 +77,6 @@ local all_items =
 	[119.22] = "wpn_eagle_m1",
 	[119.23] = "wpn_colt_m1",
 	[119.24] = "wpn_val_m1",
-	[119.25] = "wpn_mp5_m2",
 	[119.26] = "wpn_abakan_m2",
 	[119.27] = "wpn_l85_m2",
 	[119.28] = "wpn_sig_m2",
@@ -230,15 +222,12 @@ local items_table_master = items_table_veteran
 	
 local weapons_table_novice = 
 {
-	[102.3] = "wpn_pb",
-	[102.75] = "wpn_pm",
 	[103.23] = "wpn_fort",
 	[104.9] = "wpn_sig220",
 	[105.9] = "wpn_hpsa",
 	[106.5] = "wpn_microuzi",
 	[107.5] = "wpn_toz34",
 	[105.35] = "wpn_ak74u",
-	[105.92] = "wpn_mp5",
 	[108.23] = "wpn_addon_scope",
 	[105.65] = "wpn_addon_silencer"
 }
@@ -257,7 +246,6 @@ local weapons_table_experienced =
 	[107.83] = "wpn_wincheaster1300",
 	[107.53] = "wpn_spas12",
 	[105.35] = "wpn_ak74u",
-	[105.92] = "wpn_mp5",
 	[108.25] = "wpn_kriss_super_v",
 	[107.5]  = "wpn_ak74",
 	[108.8]  = "wpn_l85",

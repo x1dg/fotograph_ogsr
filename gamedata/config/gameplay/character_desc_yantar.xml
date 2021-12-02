@@ -322,7 +322,7 @@
 			[spawn] \n
 			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 		</supplies>
@@ -350,7 +350,7 @@
 			[spawn] \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj = 1 \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 		</supplies>
@@ -378,7 +378,7 @@
 			[spawn] \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj = 1 \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 		</supplies>
@@ -404,9 +404,9 @@
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_fmj = 1 \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 		</supplies>
@@ -439,7 +439,7 @@
 			wpn_ak74 \n
 			ammo_5.45x39_fmj = 2 \n
 			grenade_f1 = 1 \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 		</supplies>
@@ -467,7 +467,7 @@
 			[spawn] \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj = 1 \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 		</supplies>
@@ -496,7 +496,7 @@
 			wpn_lr300 \n
 			ammo_5.56x45_ss190 = 1 \n
 			device_torch \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 		</supplies>
 			
@@ -525,7 +525,7 @@
 			ammo_5.45x39_fmj = 1 \n
 			device_torch \n
 			grenade_rgd5 = 1 \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 		</supplies>
 
@@ -553,7 +553,7 @@
 			wpn_lr300 \n
 			ammo_5.56x45_ss190 = 1 \n
 			device_torch \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 		</supplies>
 		
@@ -584,10 +584,10 @@
 			[spawn] \n
 			zheton = 1 \n
 			bandage \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_fmj = 1 \n
 			grenade_f1 = 1 \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 		</supplies>
@@ -615,7 +615,7 @@
 			[spawn] \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj = 1 \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 		</supplies>
@@ -646,7 +646,7 @@
 			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 			grenade_f1 = 2 \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 		</supplies>
@@ -706,7 +706,7 @@
 			zheton = 1 \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj = 2 \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 		</supplies>
@@ -735,7 +735,7 @@
 			[spawn] \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj = 1 \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 		</supplies>
@@ -763,9 +763,9 @@
 		<supplies>
 			[spawn] \n
 			bandage \n
-			wpn_mp5 \n
+			wpn_microuzi \n
 			ammo_9x19_fmj = 1 \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_fmj = 1 \n
 			device_torch \n
 		</supplies>

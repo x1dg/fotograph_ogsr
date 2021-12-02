@@ -2041,63 +2041,6 @@ chemical_burn_immunity	        = 1.0
 explosion_immunity		= 0.0
 fire_wound_immunity		= 0.0
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;	WEAPON ADDON
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-----------4-Dot-- (AMK SNIPER ADDON v1.0RC)_____________________________________________
-
-
-[wpn_addon_sil_556_ar]:identity_immunities
-GroupControlSection	= spawn_group
-discovery_dependency    = 
-$spawn			= "weapons\addons\sil_556_ar" ; option for Level Editor
-class			= W_SILENC
-cform                   = skeleton
-visual                  = Arsenal_Mod\addons\sil_556_ar.ogf
-description		= enc_arsenal_sil_556_ar
-$prefetch 		= 32
-
-cost			= 650
-inv_name		= ars-sil_556_ar
-inv_name_short	        = ars-sil_556_ar
-inv_weight		= .56
-
-inv_grid_width		= 2
-inv_grid_height		= 1
-inv_grid_x		= 24
-inv_grid_y		= 15
-
-bullet_hit_power_k	= 0.9
-bullet_speed_k	 	= 0.9
-fire_dispersion_base_k  = 1.25
-cam_dispersion_k	= 0.9
-
-[wpn_addon_sil_762_ar]:identity_immunities
-GroupControlSection	= spawn_group
-discovery_dependency    = 
-$spawn			= "weapons\addons\sil_762_ar" ; option for Level Editor
-class			= W_SILENC
-cform                   = skeleton
-visual                  = Arsenal_Mod\addons\sil_762_ar.ogf
-description		= enc_arsenal_sil_762_ar
-$prefetch 		= 32
-
-cost			= 750
-inv_name		= ars-sil_762_ar
-inv_name_short	        = ars-sil_762_ar
-inv_weight		= .6
-
-inv_grid_width		= 2
-inv_grid_height		= 1
-inv_grid_x		= 22
-inv_grid_y		= 15
-
-bullet_hit_power_k	= 0.9
-bullet_speed_k	 	= 0.9
-fire_dispersion_base_k  = 1.25
-cam_dispersion_k	= 0.9
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [ammo_7.62x54_ucen]:ammo_7.62x54_7h14 		
 GroupControlSection	= spawn_group

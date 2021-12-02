@@ -19,8 +19,6 @@
 		<supplies>
 			[spawn] \n
 				device_torch \n
-				wpn_pb \n
-				wpn_fort\n
 				wpn_walther\n
 				wpn_sig220\n
 				wpn_colt1911\n
@@ -31,7 +29,7 @@
 				wpn_winchester_knyaz\n
 				wpn_spas12\n
 				wpn_ak74u\n
-				wpn_mp5\n
+				wpn_microuzi\n
 				wpn_fn2000_old\n
 				wpn_ak74\n
 				wpn_abakan\n
@@ -89,7 +87,7 @@
 		<visual>actors\neytral\stalker_neytral_hood_9</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_pmm = 1 \n
 			wpn_toz34 \n
 			ammo_12x76_zhekan = 1 \n

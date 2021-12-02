@@ -224,7 +224,7 @@
 		<visual>actors\soldier\soldier_beret_5</visual>		
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
+			wpn_fort \n
 			ammo_9x18_pmm = 1 \n
 			wpn_fn2000 \n
 			ammo_5.56x45_ss190 = 1 \n
@@ -298,7 +298,7 @@
 		<visual>actors\soldier\soldier_antigas</visual>		
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pmm = 1 \n
 			wpn_val \n
 			ammo_9x39_sp5 = 1 \n
@@ -336,7 +336,7 @@
 		<visual>actors\militari\stalker_militari_antigas_2</visual>		
 		<supplies>
 			[spawn] \n
-			wpn_pb \n
+			wpn_fort \n
 			ammo_9x18_pmm = 1 \n
 			wpn_val \n
 			ammo_9x39_sp5 = 1 \n

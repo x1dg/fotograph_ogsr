@@ -182,20 +182,6 @@
     <!------------------------------------------------------------------->
 
 
-    <!-------------------------------- wpn-pm ----------------------------->
-
-    <article id="weapons1_wpn-pm" name="wpn-pm" group="Weapons1">
-        <ltx>wpn_pm</ltx>
-        <text>enc_weapons1_wpn-pm</text>
-    </article>
-
-    <!-------------------------------- wpn-pb ----------------------------->
-
-    <article id="weapons1_wpn-pb" name="wpn-pb" group="Weapons1">
-        <ltx>wpn_pb</ltx>
-        <text>enc_weapons1_wpn-pb</text>
-    </article>
-
     <!-------------------------------- wpn-fort ----------------------------->
 
     <article id="weapons1_wpn-fort" name="wpn-fort" group="Weapons1">
@@ -255,7 +241,7 @@
     <!-------------------------------- wpn-mp5 ----------------------------->
 
     <article id="weapons1_wpn-mp5" name="wpn-mp5" group="Weapons1">
-        <ltx>wpn_mp5</ltx>
+        <ltx>wpn_microuzi</ltx>
         <text>enc_weapons1_wpn-mp5</text>
     </article>
 

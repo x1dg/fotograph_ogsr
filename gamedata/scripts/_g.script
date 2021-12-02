@@ -962,7 +962,6 @@ function isWeapon(object)
     elseif id == clsid.wpn_ak74_s then return true
     elseif id == clsid.wpn_lr300_s then return true
     elseif id == clsid.wpn_hpsa_s then return true
-    elseif id == clsid.wpn_pm_s then return true
     elseif id == clsid.wpn_shotgun_s then return true
     elseif id == clsid.wpn_bm16_s then return true
     elseif id == clsid.wpn_svd_s then return true
@@ -1064,7 +1063,6 @@ function object_type(obj)
         otype == clsid.wpn_ak74 or
         otype == clsid.wpn_lr300 or
         otype == clsid.wpn_hpsa or
-        otype == clsid.wpn_pm or
         otype == clsid.wpn_fort or
         otype == clsid.wpn_binocular or
         otype == clsid.wpn_shotgun or
