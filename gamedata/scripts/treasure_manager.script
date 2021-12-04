@@ -4,7 +4,7 @@
 local rare_list = {
 
  novice_section = {
- "wpn_beretta",
+ "wpn_walther",
  "wpn_toz34",
  "ammo_vog-25p",
  "ammo_m209",
@@ -98,7 +98,7 @@ experienced_section = {
  --Пушки--
  "wpn_addon_scope_susat",
  "wpn_addon_grenade_launcher",
- "wpn_beretta",
+ "wpn_walther",
  "wpn_sig550",
  "wpn_toz34",
  "wpn_abakan_m2",

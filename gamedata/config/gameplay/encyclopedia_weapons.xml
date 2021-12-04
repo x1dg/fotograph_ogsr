@@ -196,13 +196,6 @@
         <text>enc_weapons1_wpn-walther</text>
     </article>
 
-    <!-------------------------------- wpn-beretta ----------------------------->
-
-    <article id="weapons1_wpn-beretta" name="wpn-beretta" group="Weapons1">
-        <ltx>wpn_beretta</ltx>
-        <text>enc_weapons1_wpn-beretta</text>
-    </article>
-
     <!-------------------------------- wpn-sig220 ----------------------------->
 
     <article id="weapons1_wpn-sig220" name="wpn-sig220" group="Weapons1">

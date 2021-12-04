@@ -1,31 +1,26 @@
-[wpn_ak105]:wpn_main
+[wpn_an94_taktik]:wpn_main
 class					= WP_AK74					; Класс оружия
 $spawn					= "sm\wpn\Rifles\AK-105"	; Название оружия в СДК
-parent_section  		= wpn_ak105					; Секция оружия без обвесов
+parent_section  		= wpn_an94_taktik					; Секция оружия без обвесов
 weapon_class			= assault_rifle				; Раздел для магазина мультиплеера
 cost					= 10000					
 
 ;******[Описание, иконки]******;
-inv_name				= st_wpn_ak105
-inv_name_short			= st_wpn_ak105
-description				= st_wpn_ak105_descr
+inv_name	        	= "АК-101 тактический"					
+inv_name_short			= "АК-101"
+description		= "Автомат АК-101 в обвесе западных фирм. Предыдущий владелец установил подствольный гранатомет, переходную планку Picatinni Rail и также коллиматор OKP. Ёмкость магазина 45 патронов."
 
-inv_grid_width			= 5
-inv_grid_height			= 2
-inv_grid_x				= 31
-inv_grid_y				= 33
+inv_grid_width			= 5	 
+inv_grid_height			= 2	 
+inv_grid_x			= 0
+inv_grid_y			= 20
 
-upgr_icon_x				= 0
-upgr_icon_y				= 440
-upgr_icon_width			= 295
-upgr_icon_height		= 110
-
-scope_x					= 59
-scope_y					= -5
+scope_x					= 74
+scope_y					= 9
 silencer_x				= 217
 silencer_y				= 6
-grenade_launcher_x		= 0
-grenade_launcher_y		= 0
+grenade_launcher_x      = 112
+grenade_launcher_y      = 27
 
 ;******[Параметры для НПС]******;
 min_radius				= 0				; [] for AI (Радиус не работает, на будущее)
@@ -39,33 +34,22 @@ ef_weapon_type			= 6
 
 weapon_type				= auto
 ;******[Аддоны и апгрейды]******;
-scope_status			= 2		; 0 - без аддона
+scope_status			= 1		; 0 - без аддона
 silencer_status			= 2		; 1 - встроенный
-grenade_launcher_status	= 0		; 2 - присоединяемый
-
-; Новые прицелы и магазины
-magazines 				= none
-scopes					= kobra, pso	;--> Теперь используется как список прицелов, которые могут быть одеты на оружие при его раздаче НПС, требуется наличие соотв. секций оружия вида (<секция_ствола>_<имя_прицела>)
-additionals				= none
-scopes_sect				= scope_ak105_pso, scope_ak105_kobra
+grenade_launcher_status	= 1		; 2 - присоединяемый
 
 ; Прицелы текстурой \ Мушка
 scope_zoom_factor		= 60	; FOV при прицеливании
-scope_name				= wpn_addon_scope
-scope_texture			= wpn_crosshair
+scope_name				= eot
 
 ; Глушитель
-silencer_name			= wpn_addon_silencer
+silencer_name			= wpn_addon_sil_545_ar
 
 ; Подствольное
 grenade_launcher_name	= wpn_addon_grenade_launcher
 grenade_class			= ammo_vog-25, ammo_vog-25p
 grenade_vel				= 0
 
-; Апгрейды 
-upgrades				= up_gr_ak105_1, up_gr_ak105_2, up_gr_ak105_3, up_gr_ak105_4, up_gr_ak105_5, up_gr_ak105_6, up_gr_ak105_7, up_gr_ak105_8, up_gr_ak105_9, up_gr_ak105_10
-installed_upgrades		=
-upgrade_scheme			= upgrade_scheme_six_column
 
 ;******[Характеристики оружия]******;
 sprint_allowed			= true
@@ -78,7 +62,7 @@ crosshair_inertion   	= 5
 
 fire_modes				= 1, 3, -1
 
-ammo_mag_size			= 30
+ammo_mag_size			= 45
 ammo_class				= ammo_5.45x39_fmj, ammo_5.45x39_ap
 
 ; Отдача и разброс
@@ -132,8 +116,8 @@ zoom_dof				= 0.5, 1.0, 180
 reload_dof				= 0.0, 0.5, 5, 3.0
 
 ; Visual
-visual					= dynamics\weapons\wpn_ak105\wpn_ak105.ogf
-hud						= wpn_ak105_hud
+visual					= dynamics\weapons\wpn_ak101\wpn_ak101_okp.ogf
+hud						= wpn_an94_hud
 
 ; Анимации от 3-го лица
 anm_world_idle			= ak105_idle			;Анимка, когда оружие в спокойном состоянии
@@ -158,24 +142,14 @@ strap_bone1				= bip01_spine1
 fire_point				= 0.0, 0.180, 0.600	; Позиция огня из основного ствола
 fire_point2				= 0.0, 0.150, 0.460	; Позиция огня из подствола
 
-flame_particles			= weapons\generic_weapon05
-smoke_particles			= weapons\generic_shoot_00
-silencer_smoke_particles= weapons\generic_shoot_00
-grenade_flame_particles	= weapons\generic_weapon01
+flame_particles				= amik\weapons\ak_shoot_00
+smoke_particles				= ghost_particles\weapons\flame_eft_ak
+grenade_flame_particles 		= amik\weapons\grenade_flame_particles\grenade_flame_particles_00
+silencer_smoke_particles   		= ghost_particles\weapons\generic_smoke_eft_sil
 
 ; 2D-Гильзы
 shell_point				= 0.00, 0.262, 0.189
 shell_particles			= 
-
-;3D-Гильзы
-shell_alowed			= true				;Нужно ли спавнить гильзу
-shell_bone              = zatvor			;Кость, относительно которой спавнится гильза (3 лицо)
-shell_delay				= 0					;Задержка перед спавном гильзы (только для игрока + лишь 1 гильза)
-shell_impuls_vector		= 3, -0.5, -0.25	;Направление и сила полёта гильзы (X\Y\Z)
-shell_disp_vector		= 0.6, 1.3, 40		;Разброс импульса (миним. коэф \ максим. коэф \ угол поворота по Y 
-shell_pos_1p			= 0.25, 0.04, 0.25	;Смещение позиции спавна от позиции худа для 1-го лица
-shell_pos_3p			= 0.0, 0.0, 0.0		;Смещение позиции спавна относительно кости shell_bone для 3-его лица
-
 
 ; Свет
 light_disabled			= false
@@ -204,11 +178,11 @@ snd_reload_grenade		= weapons\gen_grenload, 1.0, 0.8
 snd_switch				= weapons\groza_switch, 1.0, 0.5
 snd_bore				= weapons\no_sound, 0.7
 
-[wpn_ak105_hud]
+[wpn_an94_hud]
 zoom_hide_crosshair		= true
 
 attach_place_idx		= 0
-item_visual				= dynamics\weapons\wpn_ak105\wpn_ak105_hud.ogf
+item_visual             = dynamics\weapons\wpn_ak101\wpn_ak101_okp_hud.ogf
 
 hands_position			= -0.042000,-0.172,0.165500
 hands_orientation		= 0.55,2.39,0.1499993
@@ -227,20 +201,49 @@ fire_bone				= wpn_body
 fire_point2				= 0.0,-0.011,0.553
 fire_bone2				= wpn_body
 
-anm_show				= lancew_ak105_draw
-anm_hide                = lancew_ak105_holster
-anm_idle                = lancew_ak105_idle
-anm_idle_sprint         = lancew_ak105_sprint
-anm_idle_moving         = lancew_ak105_moving
-anm_shots               = lancew_ak105_shoot, shoot
-anm_reload              = lancew_ak105_reload, reload
-anm_idle_aim            = lancew_ak105_idle_aim, idle_aim
-anm_bore                = lancew_ak105_no_reload
-	
-aim_hud_offset_pos		= -0.109900,0.069400,-0.167000
-aim_hud_offset_rot		= 0.031000,0.009000,-0.011500
-aim_hud_offset_pos_16x9 = -0.109900,0.069400,-0.167000
-aim_hud_offset_rot_16x9 = 0.031000,0.009000,-0.011500
+anm_show				= ak74_draw
+anm_hide                		= ak74_holster
+anm_idle                		= ak74_idle
+anm_idle_aim            		= ak74_idle_aim
+anm_idle_sprint         		= ak74_idle_sprint
+anm_idle_moving         		= ak74_idle_moving
+anm_idle_moving_crouch			= ak74_idle_moving_crouch, idle
+anm_shots               		= ak74_shoot, shoot
+anm_shots_when_aim               	= ak74_shoot_scope
+anm_reload              		= ak74_reload, reload
+anm_reload_empty             		= ak74_reload_empty, reload_empty
+anm_reload_misfire			= ak74_misfire, misfire
+anm_bore                		= ak74_idle
+anm_switch              		= ak74_idle_aim_w_gl          
+anm_switch_g            		= ak74_idle_aim_w_gl          
+anm_hide_w_gl           		= ak74_holster_w_gl_ins
+anm_show_w_gl           		= ak74_draw_w_gl_ins
+anm_idle_w_gl           		= ak74_idle_w_gl
+anm_shots_w_gl          		= ak74_shoot_w_gl
+anm_shots_w_gl_when_aim          	= ak74_shoot_scope_w_gl
+anm_reload_w_gl         		= ak74_reload_w_gl, reload_w_gl
+anm_reload_empty_w_gl         		= ak74_reload_empty_w_gl, reload_empty_w_gl
+anm_reload_misfire_w_gl			= ak74_misfire_w_gl, misfire
+anm_idle_w_gl_aim       		= ak74_idle_aim_w_gl
+anm_idle_sprint_w_gl    		= ak74_idle_sprint_w_gl_ins
+anm_idle_moving_w_gl    		= ak74_idle_moving_w_gl_swp
+anm_idle_moving_crouch_w_gl    		= ak74_idle_crouch_w_gl
+anm_bore_w_gl           		= ak74_idle_aim_w_gl
+anm_show_g              		= ak74_draw_w_gl				
+anm_hide_g              		= ak74_holster_w_gl				
+anm_idle_g              		= ak74_idle_w_gl				
+anm_reload_g            		= ak74_reload_grenade
+anm_idle_g_aim          		= ak74_idle_aim_w_gl			
+anm_shots_g             		= ak74_shoot_grenade
+anm_idle_sprint_g       		= ak74_idle_sprint_w_gl			
+anm_idle_moving_g       		= ak74_idle_moving_w_gl	
+anm_idle_moving_crouch_g		= ak74_idle_crouch_w_gl		
+anm_bore_g              		= ak74_idle_aim_w_gl
+
+aim_hud_offset_pos 		= -0.113500,0.123600,-0.100300
+aim_hud_offset_rot 		= 0.115100,0.021300,-0.003500
+aim_hud_offset_pos_16x9				= -0.113500,0.123600,-0.100300
+aim_hud_offset_rot_16x9				= 0.115100,0.021300,-0.003500
 
 gl_hud_offset_pos		= 0,0,0
 gl_hud_offset_rot		= 0,0,0
@@ -256,53 +259,3 @@ alt_ofs_pos_z			= 0.06
 alt_ofs_rot_x			= 0
 alt_ofs_rot_y			= 0
 alt_ofs_rot_z			= 0
-
-;==========================================================
-[wpn_ak105_pso]:wpn_ak105
-replace_section			= wpn_ak105
-instal_scope			= scope_ak105_pso
-
-[scope_ak105_pso]
-scope_name 				= pso
-scope_x					= 44
-scope_y					= -4
-visual                  = dynamics\weapons\wpn_ak105\wpn_ak105_pso
-hud                     = wpn_ak105_pso_hud		;Секция худа данного прицела
-disable_scope			= true					;Убрать 2D-текстуру сетки
-;scope_hud_3d			= disabled 				;Секция 3D-прицела при прицеливании (если disabled то будет отключён если был)
-
-; Увеличение самой модели ствола при зуме
-scope_zoom_hud_fov		= 20			;HUD FOV
-
-[wpn_ak105_pso_hud]:wpn_ak105_hud
-item_visual				= dynamics\weapons\wpn_ak105\wpn_ak105_pso_hud.ogf
-anm_shots               = lancew_ak105_shoot, shoot
-anm_idle_aim           	= lancew_ak105_idle_aim, idle_aim
-aim_hud_offset_pos		= -0.105700,0.056100,-0.051000
-aim_hud_offset_rot		= 0.042500,0.005500,-0.026500
-aim_hud_offset_pos_16x9 = -0.105700,0.056100,-0.051000
-aim_hud_offset_rot_16x9 = 0.042500,0.005500,-0.026500
-
-
-;==========================================================
-[wpn_ak105_kobra]:wpn_ak105
-replace_section			= wpn_ak105
-instal_scope			= scope_ak105_kobra
-
-[scope_ak105_kobra]
-scope_name 				= kobra
-scope_x					= 78
-scope_y					= 6
-visual                  = dynamics\weapons\wpn_ak105\wpn_ak105_kobra
-hud                     = wpn_ak105_kobra_hud	;Секция худа данного прицела
-disable_scope			= true					;Убрать 2D-текстуру сетки
-;scope_hud_3d			= disabled 				;Секция 3D-прицела при прицеливании (если disabled то будет отключён если был)
-
-[wpn_ak105_kobra_hud]:wpn_ak105_hud
-item_visual				= dynamics\weapons\wpn_ak105\wpn_ak105_kobra_hud.ogf
-anm_shots               = lancew_ak105_shoot, shoot
-anm_idle_aim           	= lancew_ak105_idle_aim, idle_aim
-aim_hud_offset_pos 		= -0.107500,0.048600,-0.064300
-aim_hud_offset_rot 		= 0.035100,0.006300,-0.003500
-aim_hud_offset_pos_16x9 = -0.107500,0.048600,-0.064300
-aim_hud_offset_rot_16x9 = 0.035100,0.006300,-0.003500

@@ -656,7 +656,6 @@ function get_weapon_type(weapon)
                         id == "wpn_grozm" or
                         id == "wpn_m134" or
                         id == "wpn_pkm" or
-                        id == "wpn_ak75" or
                         id == "wpn_g37" or
                         id == "wpn_fw900k" or
                         id == "wpn_m16" or

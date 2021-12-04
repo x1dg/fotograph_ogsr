@@ -426,7 +426,7 @@
 		<supplies>
 			[spawn] \n
 			zheton = 1 \n
-			wpn_beretta \n
+			wpn_walther \n
 			ammo_9x19_pbp = 1 \n
 			wpn_groza = 1 \n
 			ammo_9x39_sp5 = 2 \n
@@ -1138,7 +1138,7 @@
 		<supplies>
 			[spawn] \n
 		    lavrov_pda \n
-			wpn_beretta \n
+			wpn_walther \n
 			ammo_9x19_fmj \n
 			medkit_scientic
 		</supplies>
@@ -4861,7 +4861,7 @@
 		<supplies>
 			[spawn] \n
 		    anom_remover \n
-			wpn_ak75 = 1 \n
+			wpn_taktik = 1 \n
 			ammo_5.45x39_ap = 2 \n
 			ammo_vog-25p = 3 \n
 			medkit = 1 \n

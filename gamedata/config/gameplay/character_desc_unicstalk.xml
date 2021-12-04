@@ -924,7 +924,7 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_beretta \n
+			wpn_walther \n
 			ammo_9x19_fmj = 2 \n
 			wpn_ak74 = 1 \n
 			ammo_5.45x39_fmj = 2 \n
@@ -1067,7 +1067,7 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_beretta \n
+			wpn_walther \n
 			ammo_9x19_fmj = 2 \n
 			wpn_ak74u = 1 \n
 			ammo_5.45x39_fmj = 2 \n
@@ -1298,7 +1298,7 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_beretta \n
+			wpn_walther \n
 			ammo_9x19_fmj = 2 \n
 			wpn_wincheaster1300 = 1 \n
 			ammo_12x70_buck = 2 \n
@@ -1404,7 +1404,7 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_beretta \n
+			wpn_walther \n
 			ammo_9x19_fmj = 2 \n
 			wpn_svu_a = 1 \n
 			ammo_7.62x54_ap = 2 \n
@@ -1765,7 +1765,7 @@
         <supplies>
 			[spawn] \n
 			zheton = 1 \n
-			wpn_beretta \n
+			wpn_walther \n
 			ammo_9x19_fmj = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n			
@@ -2331,7 +2331,7 @@
 			[spawn] \n
 			zheton = 1 \n
 			pda_pmc_aver \n
-			wpn_beretta_m1 \n
+			wpn_walther_m1 \n
 			ammo_9x19_pbp = 2 \n
 			wpn_taktik \n
 			ammo_7.62x39_ap = 2 \n	
@@ -2510,7 +2510,7 @@
 		<supplies>
 			[spawn] \n
 			zheton = 1 \n
-			wpn_beretta \n
+			wpn_walther \n
 			ammo_9x19_pbp = 2 \n
 			wpn_m4 \n
 			ammo_5.56x45_ss190 = 2 \n	

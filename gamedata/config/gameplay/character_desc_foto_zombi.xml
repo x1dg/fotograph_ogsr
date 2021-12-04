@@ -393,7 +393,7 @@
         <snd_config>characters_voice\human_01\military\</snd_config>		
 		<supplies>
 			[spawn] \n
-			wpn_beretta \n
+			wpn_walther \n
 			ammo_9x19_pbp = 1 \n
 			wpn_groza = 1 \n
 			ammo_9x39_sp5 = 2 \n
@@ -2833,7 +2833,7 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_beretta \n
+			wpn_walther \n
 			ammo_9x19_fmj = 3 \n
 			wpn_microuzi = 1 \n
 			device_torch \n
@@ -3105,7 +3105,7 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_beretta \n
+			wpn_walther \n
 			ammo_9x19_fmj = 2 \n
 			wpn_protecta_col = 1 \n
 			ammo_12x70_buck = 2 \n

@@ -1,0 +1,10 @@
+diff a/gamedata/scripts/exchanging_items.script b/gamedata/scripts/exchanging_items.script	(rejected hunks)
+@@ -11,7 +11,7 @@
+ ------------------  ������� ������  ------------------
+ local all_items = 
+ {
+-	[103.23] = "wpn_fort",
++	[103.23] = "wpn_fort",
+ 	[104.7]  = "wpn_walther",
+ 	[104.9]  = "wpn_sig220",
+ 	[108.92] = "wpn_colt1911",

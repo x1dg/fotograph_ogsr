@@ -1,0 +1,10 @@
+diff a/gamedata/scripts/treasure_manager.script b/gamedata/scripts/treasure_manager.script	(rejected hunks)
+@@ -49,7 +49,7 @@
+  --������--
+  "wpn_addon_silencer",
+  "wpn_microuzi",
+- "wpn_fort",
++ "wpn_fort",
+  --������--
+  "bread",
+  "bandage",

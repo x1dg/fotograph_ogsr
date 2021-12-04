@@ -738,6 +738,7 @@ function GetWeaponParams(section)
 		return
 	end
 	for a in string.gfind(s, "[%w_%-%.]+") do
+		log1("AMMO_CLASS: "..s)
 		text = text.."• "..get_inv_name(a).."\\n"
 	end
 

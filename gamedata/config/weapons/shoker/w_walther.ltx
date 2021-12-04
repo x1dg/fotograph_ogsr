@@ -1,0 +1,252 @@
+[wpn_walther]:wpn_main
+class					= WP_PM							; Класс оружия
+$spawn					= "sm\wpn\Pistols\Walther P99"	; Название оружия в СДК
+parent_section  		= wpn_walther					; Секция оружия без обвесов
+weapon_class			= assault_rifle					; Раздел для магазина мультиплеера
+cost					= 4000					
+
+;******[Описание, иконки]******;
+inv_name				= st_wpn_walther
+inv_name_short			= st_wpn_walther
+description				= st_wpn_walther_descr
+
+inv_grid_width				= 1
+inv_grid_height				= 1
+inv_grid_x				= 20
+inv_grid_y				= 5
+
+upgr_icon_x				= 135
+upgr_icon_y				= 990
+upgr_icon_width			= 135
+upgr_icon_height		= 110
+
+scope_x					= 0
+scope_y					= 0
+silencer_x				= 38
+silencer_y				= -13
+grenade_launcher_x		= 0
+grenade_launcher_y		= 0
+
+;******[Параметры для НПС]******;
+min_radius				= 0				; [] for AI (Радиус не работает, на будущее)
+max_radius				= 50			; [] for AI
+
+holder_range_modifier	= 1.0			; во сколько раз увеличивается eye_range
+holder_fov_modifier		= 1.0			; во сколько раз увеличивается eye_fov
+
+ef_main_weapon_type		= 0
+ef_weapon_type			= 5
+
+weapon_type				= pistol
+;******[Аддоны и апгрейды]******;
+scope_status			= 0		; 0 - без аддона
+silencer_status			= 2		; 1 - встроенный
+grenade_launcher_status	= 0		; 2 - присоединяемый
+
+; Прицелы текстурой \ Мушка
+scope_zoom_factor		= 70	; FOV при прицеливании
+scope_name				= wpn_addon_scope
+scope_texture			= wpn_crosshair
+
+; Глушитель
+silencer_name			= wpn_addon_silencer
+
+; Подствольное
+grenade_launcher_name	= wpn_addon_grenade_launcher
+grenade_class			= ammo_vog-25
+grenade_vel				= 0
+
+;******[Характеристики оружия]******;
+sprint_allowed			= true
+slot					= 1
+single_handed			= 1				; Одноручное\Двуручное
+
+inv_weight				= 0.7
+control_inertion_factor	= 1.0			; Коэфицент чувствительности мышки
+crosshair_inertion   	= 2.5
+
+fire_modes				= 1
+
+ammo_mag_size			= 16
+ammo_class				= ammo_9x19_fmj, ammo_9x19_pbp
+
+; Отдача и разброс
+fire_dispersion_base				= 0.7	; Угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+
+PDM_disp_base						= 0.7
+PDM_disp_vel_factor					= 1.0
+PDM_disp_accel_factor				= 1.2
+PDM_disp_crouch	 					= 0.25
+PDM_disp_crouch_no_acc 				= 0.1
+
+hit_probability_gd_novice			= 0.60
+hit_probability_gd_stalker			= 0.60
+hit_probability_gd_veteran			= 0.60
+hit_probability_gd_master			= 0.60
+
+; Скорость возврата отдачи к норме
+time_to_aim					= 1.0
+
+; Отдача (от бедра)
+cam_dispersion				= 1.25		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.07		;увеличениe cam_dispersion с каждым выстрелом
+cam_max_angle_horz			= 0.85		;максимальный угол горизонтальной отдачи
+cam_step_angle_horz			= 0.3		;насколько сильна горизонтальная отдача
+
+; Отдача (прицеливание)
+zoom_cam_dispersion			= 1.25
+zoom_cam_dispersion_inc		= 0.07
+zoom_cam_max_angle_horz		= 0.85
+zoom_cam_step_angle_horz	= 0.3
+
+; Надёжность
+condition_shot_dec		= 0.0001425		; Увеличение износа при каждом выстреле
+
+; ТТХ
+hit_power				= 0.4
+hit_impulse				= 1
+hit_type				= fire_wound
+
+fire_distance			= 1500	; Дистанция, после которой пуля исчезает
+bullet_speed			= 180	; Скорость пули
+rpm						= 400	; Скорострельность
+
+zoom_enabled			= true	; Можно целиться
+zoom_rotate_time		= 0.25	; Скорость зума
+
+;******[Визуальная часть]******;
+; DoF
+zoom_dof				= -1000, 1.0, 1000
+reload_dof				= 0.0, 0.5, 5, 2.1
+
+; Visual
+visual					= dynamics\weapons\wpn_walter99\wpn_walter99.ogf
+hud						= wpn_walther_hud
+
+; Анимации от 3-го лица
+anm_world_idle			= p99_idle			;Анимка, когда оружие в спокойном состоянии
+anm_world_idle_empty	= p99_empty			;Анимка, когда 0 патронов
+anm_world_shoot			= p99_shoot,    0.1	;Анимка, когда стрельба
+anm_world_reload		= p99_reload		;Анимка, когда перезарядка
+anm_world_reload_empty	= p99_reload_empty	;Анимка, когда перезарядка при 0
+
+; Параметры от 3-его лица
+animation_slot			= 1				; Каким способом НПС держит ствол
+
+position				= -0.021, -0.085, 0.0
+orientation				= 0, 0, 0
+
+; Позиция под подмышкой
+strap_position			= 0, 0, 0
+strap_orientation		= 0, 0, 0
+strap_bone0				= bip01_spine2
+strap_bone1				= bip01_spine1
+
+; Партиклы и эффекты
+fire_point				= 0.0, 0.133, 0.161	; Позиция огня из основного ствола
+fire_point2				= 0, 0, 0	; Позиция огня из подствола
+
+flame_particles			= weapons\generic_weapon03
+smoke_particles			= weapons\generic_shoot_00
+silencer_smoke_particles= weapons\generic_shoot_00
+grenade_flame_particles	= weapons\generic_weapon01
+
+; 2D-Гильзы
+shell_point				= 0.0, 0.133, 0.047
+shell_particles			= 
+
+; 3D-Гильзы
+shell_alowed			= true				;Нужно ли спавнить гильзу
+shell_bone              = wpn_body 			;Кость, относительно которой спавнится гильза (3 лицо)
+shell_delay				= 0					;Задержка перед спавном гильзы (только для игрока + лишь 1 гильза)
+shell_impuls_vector		= 3, -0.5, -0.25	;Направление и сила полёта гильзы (X\Y\Z)
+shell_disp_vector		= 0.6, 1.3, 40		;Разброс импульса (миним. коэф \ максим. коэф \ угол поворота по Y 
+shell_pos_1p			= 0.17, 0.07, 0.33	;Смещение позиции спавна от позиции худа для 1-го лица
+shell_pos_3p			= 0, 0, 0			;Смещение позиции спавна относительно кости shell_bone для 3-его лица
+
+
+; Свет
+light_disabled			= true
+
+light_color				= 0.6,0.5,0.3
+light_range				= 3.0
+light_var_color			= 0.05
+light_var_range			= 0.5
+light_time				= 0.2
+
+silencer_light_color	= 0.6,0.5,0.3
+silencer_light_range	= 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time		= 0.2
+
+;******[Звуковая часть]******;
+snd_close				= weapons\walther\walther_close
+snd_draw				= weapons\walther\walther_draw
+snd_empty				= weapons\walther\walther_empty
+snd_holster				= weapons\pistol_holster
+snd_reload				= weapons\walther\walther_reload
+snd_reload_empty			= weapons\walther\walther_reload_empty
+snd_reload_misfire			= weapons\walther\walther_reload_empty
+snd_shoot				= weapons\walther\walther_shoot
+snd_silncer_shot			= weapons\walther\walther_shot_sil
+
+[wpn_walther_hud]:hud_base
+zoom_hide_crosshair		= true
+
+item_visual				= dynamics\weapons\wpn_walter99\wpn_walter99_hud.ogf
+attach_place_idx		= 0
+
+hands_position			= -0.021000,-0.160000,0.002500
+hands_orientation		= -0.500000,1.000000,1.149999
+hands_position_16x9		= 0.033000,-0.189500,0.039000
+hands_orientation_16x9	= 2.349998,2.749999,2.849998
+item_position			= 0.000746,-0.000321,0.003479
+item_orientation		= 1.239378,-0.134046,-2.052052
+
+
+shell_point				= -0.015,0.048,0.071
+shell_bone				= wpn_body
+fire_point				= 0.0,0.032485,0.120030
+fire_bone				= wpn_body
+
+anm_show				= lancew_p99_draw
+anm_show_empty			= lancew_p99_draw, idle_2
+anm_hide            	= lancew_p99_holster
+anm_hide_empty			= lancew_p99_holster, idle_2
+
+anm_idle            	= lancew_p99_idle
+anm_idle_empty      	= lancew_p99_idle, idle_2
+anm_shots				= lancew_p99_shoot, shoot
+anm_shot_l				= lancew_p99_shoot, shoot_2
+anm_idle_aim			= lancew_p99_idle_aim
+anm_idle_aim_empty		= lancew_p99_idle_aim, idle_2
+
+anm_reload				= lancew_p99_reload, reload
+anm_reload_empty		= lancew_p99_reload_full, reload_full
+anm_idle_moving			= lancew_p99_moving
+anm_idle_moving_empty	= lancew_p99_moving, idle_2
+anm_idle_sprint			= lancew_p99_sprint
+anm_idle_sprint_empty	= lancew_p99_sprint, idle_2
+anm_bore				= lancew_p99_no_reload
+anm_bore_empty			= lancew_p99_no_reload, idle_2
+
+
+aim_hud_offset_pos = -0.108880,0.051550,-0.010500
+aim_hud_offset_rot = 0.004000,0.008850,-0.042500
+aim_hud_offset_pos_16x9 = -0.169880,0.082550,-0.001500
+aim_hud_offset_rot_16x9 = 0.036000,0.058850,-0.002500
+
+gl_hud_offset_pos		= 0,0,0
+gl_hud_offset_rot		= 0,0,0
+
+lean_hud_offset_pos		= 0,0,0
+lean_hud_offset_rot		= 0,0,0
+
+; Сдвиг при центрированном режиме
+alt_ofs_pos_x			= -0.07
+alt_ofs_pos_y			= -0.01
+alt_ofs_pos_z			= 0.05
+alt_ofs_rot_x			= 0
+alt_ofs_rot_y			= 0
+alt_ofs_rot_z			= 0

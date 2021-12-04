@@ -25,7 +25,7 @@
     <supplies>
       [spawn] \n
 	  kruglov_flash \n
-	  wpn_beretta \n
+	  wpn_walther \n
 	  ammo_9x19_pbp = 3 \n
 	  medkit_army = 1 \n
       device_torch \n
@@ -672,7 +672,7 @@
 			[spawn] \n
 			wpn_binoc \n
 			hand_radio \n
-			wpn_beretta \n
+			wpn_walther \n
 			ammo_9x19_pbp = 3 \n
         </supplies>
 		

@@ -6,23 +6,19 @@ $prefetch				= 8
 scheduled				= off
 cform					= skeleton
 class					= WP_AK74
-description				= st_wpn_akm_descr
+description				= enc_weapons1_wpn-ak47
 
-scope_names 				= 1p78,1pn34,kobra,pso,ekp,okp
-scope_respawn_1p78 			= wpn_ak47_1p78
-scope_respawn_1pn34 		= wpn_ak47_1pn34
+scope_names 				= kobra,wpn_addon_scope
 scope_respawn_kobra 		= wpn_ak47_kobra
-scope_respawn_pso 			= wpn_ak47_pso
-scope_respawn_ekp 			= wpn_ak47_ekp
-scope_respawn_okp 			= wpn_ak47_okp
+scope_respawn_wpn_addon_scope	= wpn_ak47_wpn_addon_scope
 
 parent_section  			= wpn_akm
 
 ef_main_weapon_type			= 2
 ef_weapon_type				= 8
 
-inv_name				= st_wpn_akm
-inv_name_short				= st_wpn_akm
+inv_name				= "AK-47"
+inv_name_short				= "AK-47"
 
 inv_grid_width			= 5
 inv_grid_height			= 2
@@ -157,7 +153,7 @@ zoom_enabled				= true
 zoom_rotate_time			= 0.2
 scope_zoom_factor			= 90
 
-scope_name 				= pso
+scope_name 				= wpn_addon_scope
 scope_x                     		= 48
 scope_y                     		= 9
 
@@ -185,20 +181,20 @@ zoom_hide_crosshair			= true
 attach_place_idx			= 0
 item_visual				= dynamics\weapons\wpn_akm\wpn_akm_hud.ogf
 
-hands_position				= -0.076875,-0.104750,-0.047750
-hands_orientation			= -3.671315,-1.240038,0
+hands_position				= -0.029375,-0.162750,0.116750
+hands_orientation			= -3.771315,2.709960,-0.100000
 
-hands_position_16x9			= -0.076875,-0.104750,-0.047750
-hands_orientation_16x9			= -3.671315,-1.240038,0
+hands_position_16x9				= -0.029375,-0.162750,0.116750
+hands_orientation_16x9			= -3.771315,2.709960,-0.100000
 
 item_position				= 0,0,0
 item_orientation			= 0,0,0
 
-aim_hud_offset_pos 			= -0.081825,0.017675,-0.12
-aim_hud_offset_rot 			= -0.020925,-0.064076,0
+aim_hud_offset_pos 			= -0.126325,0.076675,-0.165999
+aim_hud_offset_rot 			= 0.048549,-0.030140,0.014063
 
-aim_hud_offset_pos_16x9			= -0.081825,0.017675,-0.12
-aim_hud_offset_rot_16x9			= -0.020925,-0.064076,0
+aim_hud_offset_pos_16x9				= -0.126325,0.076675,-0.165999
+aim_hud_offset_rot_16x9				= 0.048549,-0.030140,0.014063
 
 gl_hud_offset_pos	 		= -0.042750,-0.013900,0.007052
 gl_hud_offset_rot	 		= -0.127111,-0.067581,0.000000
@@ -258,122 +254,60 @@ lean_hud_offset_pos     		= 0,0,0
 lean_hud_offset_rot     		= 0,0,0
 
 [wpn_ak47_m]:wpn_ak47
-;-----------------------------------------------------------------------------
-; РђРґРґРѕРЅС‹
-;-----------------------------------------------------------------------------
+$spawn             			= "weapons\wpn_akm_1p78"
+hud					= wpn_ak47_m_hud
+visual					= dynamics\weapons\wpn_akm\wpn_akm_1p78.ogf
+scope_status				= 1
+scope_name 				= 1p78
+inv_name	        	= "АКМ 'Мечта'"
+inv_name_short			= "АКМ 'Мечта'"
+description		= "Боеприпасы:\n • 5,45x39 обычный.\n • 5,45x39 бронебойный.\nАвтомат Калашникова модернизированный (АКМ) является автоматическим оружием с газовым двигателем автоматики, магазинным питанием и воздушным охлаждением ствола. В 1959г АК был модифицирован и принят на вооружение под индексом АКМ - ствольная коробка стала изготавливаться штамповкой, уменьшилась на 700г масса, изменена штамповка крышки ствольной коробки, введено замедление срабатывания курка. На ствол стал устанавливаться специальный компенсатор, уменьшающий увод ствола вверх и влево при автоматической стрельбе. В данной модификации установлен несъемный оптический прибор 1П78 «Каштан», дисковый магазин на 75 патронов, а также имеется возможность установить глушитель."
+ammo_mag_size				= 75
+scope_texture			= wpn\wpn_crosshair_1p78
+scope_lense_fov_factor	= 24
+
+inv_grid_width                  = 5
+inv_grid_height                 = 2
+inv_grid_x                      = 36
+inv_grid_y                      = 0
+
+[wpn_ak47_m_hud]:wpn_ak47_hud
+item_visual                		= dynamics\weapons\wpn_akm\wpn_akm_1p78_hud.ogf
+
+aim_hud_offset_pos			= -0.123825,0.035675,-0.152500
+aim_hud_offset_rot			= -0.001451,-0.045140,0.014063
+
 [wpn_ak47_kobra]:wpn_ak47
 $spawn             			= "weapons\wpn_akm_kobra"
-hud					= wpn_akm_kobra_hud
+hud					= wpn_ak47_kobra_hud
 visual					= dynamics\weapons\wpn_akm\wpn_akm_kobra.ogf
 
 scope_x					= 71
 scope_y					= 13
 scope_respawn 			= wpn_ak47
+ignore_scope_texture	= true
+scope_name 				= kobra
 
 [wpn_ak47_kobra_hud]:wpn_ak47_hud
 item_visual                		= dynamics\weapons\wpn_akm\wpn_akm_kobra_hud.ogf
 
-aim_hud_offset_pos			= -0.080800,-0.005200,-0.134123
-aim_hud_offset_rot			= -0.018638,-0.064576,0.000750
+aim_hud_offset_pos			= -0.115325,0.048175,-0.094000
+aim_hud_offset_rot			= 0.028862,-0.069576,-0.004250
 
-aim_hud_offset_pos_16x9			= -0.080800,-0.005200,-0.134123
-aim_hud_offset_rot_16x9			= -0.018638,-0.064576,0.000750
+aim_hud_offset_pos_16x9				= -0.115325,0.048175,-0.094000
+aim_hud_offset_rot_16x9				= 0.028862,-0.069576,-0.004250
 
-[wpn_ak47_1p78]:wpn_ak47
-$spawn             			= "weapons\wpn_akm_1p78"
-hud					= wpn_akm_1p78_hud
-visual					= dynamics\weapons\wpn_akm\wpn_akm_1p78.ogf
 
-scope_x					= 61
-scope_y					= 2
-scope_respawn 			= wpn_ak47
-
-[wpn_ak47_1p78_hud]:wpn_ak47_hud
-item_visual                		= dynamics\weapons\wpn_akm\wpn_akm_1p78_hud.ogf
-
-aim_hud_offset_pos			= -0.096550,0.000800,-0.115
-aim_hud_offset_rot			= 0.026049,0.019860,0.014063
-
-aim_hud_offset_pos_16x9			= -0.096550,0.000800,-0.115
-aim_hud_offset_rot_16x9			= 0.026049,0.019860,0.014063
-
-[wpn_ak47_1pn34]:wpn_ak47
-$spawn             			= "weapons\wpn_akm_1pn34"
-hud					= wpn_akm_1pn34_hud
-visual					= dynamics\weapons\wpn_akm\wpn_akm_1pn34.ogf
-
-scope_x					= 77
-scope_y					= 5
-scope_respawn 			= wpn_ak47
-
-[wpn_ak47_1pn34_hud]:wpn_ak47_hud
-item_visual                		= dynamics\weapons\wpn_akm\wpn_akm_1pn34_hud.ogf
-
-hands_position				= -0.054375,-0.104750,-0.047750
-hands_orientation			= -3.671315,-1.240038,0
-
-hands_position_16x9			= -0.054375,-0.104750,-0.047750
-hands_orientation_16x9			= -3.671315,-1.240038,0
-
-aim_hud_offset_pos			= -0.102325,-0.033325,-0.120500
-aim_hud_offset_rot			= -0.017425,-0.063576,0
-
-aim_hud_offset_pos_16x9			= -0.102325,-0.033325,-0.120500
-aim_hud_offset_rot_16x9			= -0.017425,-0.063576,0
-
-gl_hud_offset_pos			= -0.011250,-0.013900,0.007052
-gl_hud_offset_rot			= -0.127111,-0.140580,0.000000
-
-gl_hud_offset_pos_16x9			= -0.011250,-0.013900,0.007052
-gl_hud_offset_rot_16x9			= -0.127111,-0.140580,0.000000
-
-[wpn_ak47_ekp]:wpn_ak47
-$spawn             			= "weapons\wpn_akm_ekp"
-hud					= wpn_akm_ekp_hud
-visual					= dynamics\weapons\wpn_akm\wpn_akm_ekp.ogf
-
-scope_x					= 73
-scope_y					= 9
-scope_respawn 			= wpn_ak47
-
-[wpn_ak47_ekp_hud]:wpn_ak47_hud
-item_visual                		= dynamics\weapons\wpn_akm\wpn_akm_ekp_hud.ogf
-
-aim_hud_offset_pos			= -0.076550,-0.004575,-0.152
-aim_hud_offset_rot			= 0.004174,-0.069539,0
-
-aim_hud_offset_pos_16x9			= -0.076550,-0.004575,-0.152
-aim_hud_offset_rot_16x9			= 0.004174,-0.069539,0
-
-[wpn_ak47_pso]:wpn_ak47
-$spawn             			= "weapons\wpn_akm_pso"
-hud					= wpn_akm_pso_hud
-
+[wpn_ak47_wpn_addon_scope]:wpn_ak47
+$spawn             			= "weapons\wpn_akm_wpn_addon_scope"
+hud					= wpn_ak47_wpn_addon_scope_hud
 scope_x					= 48
 scope_y					= 9
 scope_respawn 			= wpn_ak47
 
-[wpn_ak47_pso_hud]:wpn_ak47_hud
-aim_hud_offset_pos			= -0.080425,0.015050,-0.066
+[wpn_ak47_wpn_addon_scope_hud]:wpn_ak47_hud
+aim_hud_offset_pos			= -0.129325,0.072175,-0.129000
 aim_hud_offset_rot			= 0.071236,0.021424,0.002375
 
-aim_hud_offset_pos_16x9			= -0.080425,0.015050,-0.066
-aim_hud_offset_rot_16x9			= 0.071236,0.021424,0.002375
-
-[wpn_ak47_okp]:wpn_ak47
-$spawn             			= "weapons\wpn_akm_okp"
-hud					= wpn_akm_okp_hud
-visual					= dynamics\weapons\wpn_akm\wpn_akm_okp.ogf
-
-scope_x					= 79
-scope_y					= 10
-scope_respawn 			= wpn_ak47
-
-[wpn_ak47_okp_hud]:wpn_ak47_hud
-item_visual                		= dynamics\weapons\wpn_akm\wpn_akm_okp_hud.ogf
-
-aim_hud_offset_pos			= -0.084800,0.023550,-0.169996
-aim_hud_offset_rot			= 0.028299,-0.037201,0.000000
-
-aim_hud_offset_pos_16x9			= -0.084800,0.023550,-0.169996
-aim_hud_offset_rot_16x9			= 0.028299,-0.037201,0.000000
+aim_hud_offset_pos_16x9				= -0.129325,0.072175,-0.129000
+aim_hud_offset_rot_16x9				= 0.071236,0.021424,0.002375
