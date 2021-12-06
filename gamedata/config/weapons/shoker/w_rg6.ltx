@@ -1,0 +1,265 @@
+[wpn_rg-6]:wpn_main
+class					= WP_RG6				; Класс оружия
+$spawn					= "sm\wpn\Heavy\RG-6"	; Название оружия в СДК
+parent_section  		= wpn_rg-6				; Секция оружия без обвесов
+weapon_class			= heavy_weapon			; Раздел для магазина мультиплеера
+cost					= 20000					
+
+immunities_sect			= sect_zero_immunities
+
+;******[Описание, иконки]******;
+inv_name				= st_wpn_rg6
+inv_name_short			= st_wpn_rg6
+description				= st_wpn_rg6_descr
+
+inv_grid_width				= 4
+inv_grid_height				= 2
+inv_grid_x					= 0
+inv_grid_y					= 8
+
+scope_x					= 0
+scope_y					= 0
+silencer_x				= 0
+silencer_y				= 0
+grenade_launcher_x		= 0
+grenade_launcher_y		= 0
+
+;******[Параметры для НПС]******;
+min_radius				= 15			; [] for AI (Радиус не работает, на будущее)
+max_radius				= 80			; [] for AI
+
+holder_range_modifier	= 1.0			; во сколько раз увеличивается eye_range
+holder_fov_modifier		= 1.0			; во сколько раз увеличивается eye_fov
+
+ef_main_weapon_type		= 4
+ef_weapon_type			= 9
+
+weapon_type				= explosive
+;******[Аддоны и апгрейды]******;
+scope_status			= 0		; 0 - без аддона
+silencer_status			= 0		; 1 - встроенный
+grenade_launcher_status	= 0		; 2 - присоединяемый
+
+; Новые прицелы и магазины
+magazines 				= none
+scopes					= none
+additionals				= none
+
+; Прицелы текстурой \ Мушка
+scope_zoom_factor		= 55	; FOV при прицеливании
+scope_name				= wpn_addon_scope
+scope_texture			= wpn_crosshair
+
+; Глушитель
+silencer_name			= wpn_addon_silencer
+
+; Подствольное
+grenade_launcher_name	= wpn_addon_grenade_launcher
+grenade_class			= ammo_vog-25
+grenade_vel				= 0
+
+; Апгрейды
+;upgrades				= 
+;installed_upgrades		= 
+;upgrade_scheme			= 
+
+;******[Характеристики оружия]******;
+sprint_allowed			= true
+slot					= 2
+single_handed			= 0				; Одноручное\Двуручное
+tri_state_reload		= on
+
+inv_weight				= 6.2
+control_inertion_factor	= 2.7f			; Коэфицент чувствительности мышки
+crosshair_inertion   	= 8
+
+fire_modes				= 1
+
+ammo_mag_size			= 6
+ammo_class				= ammo_vog-25, ammo_vog-25p
+
+; Отдача и разброс
+fire_dispersion_base				= 1.5	; Угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+
+PDM_disp_base						= 1.5
+PDM_disp_vel_factor					= 1.6
+PDM_disp_accel_factor				= 1.6
+PDM_disp_crouch	 					= 1.0
+PDM_disp_crouch_no_acc 				= 1.0
+
+hit_probability_gd_novice			= 0.80
+hit_probability_gd_stalker			= 0.80
+hit_probability_gd_veteran			= 0.80
+hit_probability_gd_master			= 0.80
+
+; Скорость возврата отдачи к норме
+time_to_aim					= 2.0
+
+; Отдача (от бедра)
+cam_relax_speed				= 0			;скорость возврата в исходное положение
+cam_relax_speed_ai			= 360
+cam_dispersion				= 0.0		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.0		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac			= 0.0		;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle				= 1			;максимальный угол отдачи
+cam_max_angle_horz			= 1			;максимальный угол горизонтальной отдачи
+cam_step_angle_horz			= 1			;насколько сильна горизонтальная отдача
+
+; Отдача (прицеливание)
+zoom_cam_relax_speed		= 0			;прицел\мушка
+zoom_cam_relax_speed_ai		= 360.0
+zoom_cam_dispersion			= 0.0
+zoom_cam_dispersion_inc		= 0.0
+zoom_cam_dispersion_frac	= 0.0
+zoom_cam_max_angle			= 1
+zoom_cam_max_angle_horz		= 1
+zoom_cam_step_angle_horz	= 1
+
+; Надёжность
+condition_shot_dec			= 0.0		; Увеличение износа при каждом выстреле
+;изношенность, при которой появляется шанс осечки
+misfire_start_condition		= 0.0
+;изношеность при которой шанс осечки становится константным
+misfire_end_condition		= 0.0
+;шанс осечки при изношености больше чем misfireStartCondition
+misfire_start_prob	     	= 0.0
+;шанс осечки при изношености больше чем misfireEndCondition
+misfire_end_prob	     	= 0.0
+
+; ТТХ
+hit_power				= 1.0
+hit_impulse				= 60
+hit_type				= fire_wound
+
+fire_distance			= 1500	; Дистанция, после которой пуля исчезает
+bullet_speed			= 300	; Скорость пули (Для схемы дальнего боя <!>, делить на 3)
+launch_speed			= 75	; Скорость гранаты
+rpm						= 120	; Скорострельность
+
+zoom_enabled			= true	; Можно целиться
+zoom_rotate_time		= 0.25	; Скорость зума
+
+;******[Визуальная часть]******;
+; DoF
+zoom_dof				= 0.5, 1.0, 180
+reload_dof				= 0.0, 0.5,5, 1.7
+
+; Visual
+visual					= dynamics\weapons\wpn_rg6\wpn_rg6.ogf
+hud						= wpn_rg-6_hud
+
+; Анимации от 3-го лица
+
+; Параметры от 3-его лица
+animation_slot			= 10				; Каким способом НПС держит ствол
+
+position				= -0.026, -0.111, 0.
+orientation				= 0, 0, 0
+
+; Позиция под подмышкой
+strap_position			= -0.26,-0.11,0.15
+strap_orientation		= -15,-9,110
+strap_bone0				= bip01_spine2
+strap_bone1				= bip01_spine1
+
+; Партиклы и эффекты
+fire_point				= 0.0, 0.120, 0.452	; Позиция огня из основного ствола
+fire_point2				= 0.0, 0.120, 0.452	; Позиция огня из подствола
+
+flame_particles			= weapons\generic_weapon05
+smoke_particles			= weapons\generic_shoot_00
+silencer_smoke_particles= weapons\generic_shoot_00
+grenade_flame_particles	= weapons\generic_weapon01
+
+; 2D-Гильзы
+shell_point				= 0.0, 0.120, 0.20
+shell_particles			= 
+
+; 3D-Гильзы
+shell_alowed			= false		;Нужно ли спавнить гильзу
+
+; Свет
+light_disabled			= true
+
+light_color				= 0.6,0.5,0.3
+light_range				= 6.0
+light_var_color			= 0.05
+light_var_range			= 0.5
+light_time				= 0.2
+
+silencer_light_color	= 0.6,0.5,0.3
+silencer_light_range	= 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time		= 0.2
+
+;******[Звуковая часть]******;
+snd_draw				= weapons\rg6\rg6_draw
+snd_holster				= weapons\generic_holster
+snd_shoot				= weapons\rg6\rg6_shoot
+snd_empty				= weapons\rg6\rg6_empty
+snd_reload				= weapons\rg6\rg6_reload
+snd_shoot_duplet			= weapons\n_toz34_shot
+snd_open_weapon				= weapons\rg6\rg6_reload_start
+snd_add_cartridge			= weapons\rg6\rg6_reload
+snd_close_weapon			= weapons\rg6\rg6_reload_end
+
+
+snd_open_weapon					= weapons\rg6\rg6_close		
+snd_add_cartridge				= weapons\rg6\rg6_load		
+snd_close_weapon				= weapons\rg6\rg6_close	
+
+[wpn_rg-6_hud]:hud_base
+zoom_hide_crosshair		= true
+
+hands_position			= -0.013000,-0.176999,0.118000
+hands_orientation		= 6.250005,-0.649999,0.000000
+hands_position_16x9		= -0.029000,-0.186000,0.112000
+hands_orientation_16x9	= 1.699999,0.000001,0.600000
+
+item_position			= -0.003178,0.002246,0.000581
+item_orientation		= -181.191742,180.482727,-180.330688
+
+shell_point				= 0,0,0
+shell_dir				= 0.0, 1.0, 0.0
+shell_bone				= wpn_body
+
+
+fire_point				= -0.0,0.0,0.513
+fire_bone				= wpn_body
+
+attach_place_idx		= 0
+item_visual				= dynamics\weapons\wpn_rg6\wpn_rg6_hud.ogf
+
+anm_show				= rg6_draw
+anm_hide				= rg6_holster
+anm_idle				= rg6_idle
+anm_idle_aim			= rg6_idle_aim
+anm_idle_moving			= rg6_idle_moving
+anm_idle_sprint			= rg6_idle_sprint
+anm_open				= rg6_reload_start
+anm_add_cartridge		= rg6_reload
+anm_close				= rg6_reload_end
+anm_shots				= rg6_shoot
+anm_bore				= rg6_idle_bore
+
+
+aim_hud_offset_pos		= -0.125001,0.006000,0.156500
+aim_hud_offset_rot		= 0.015000,0.085000,-0.002500
+aim_hud_offset_pos_16x9	= -0.091000,0.000500,0.120000
+aim_hud_offset_rot_16x9	= -0.010000,-0.010000,0.000000
+	
+gl_hud_offset_pos		= 0,0,0
+gl_hud_offset_rot		= 0,0,0
+
+lean_hud_offset_pos		= 0,0,0
+lean_hud_offset_rot		= 0,0,0
+
+; Сдвиг при центрированном режиме
+alt_ofs_pos_x			= 0
+alt_ofs_pos_y			= -0.01
+alt_ofs_pos_z			= 0.15
+alt_ofs_rot_x			= 0
+alt_ofs_rot_y			= 0
+alt_ofs_rot_z			= 0
+
