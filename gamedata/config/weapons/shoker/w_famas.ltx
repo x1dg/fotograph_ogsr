@@ -1,0 +1,280 @@
+[wpn_famas_p3_sk1]:wpn_main
+class					= WP_AK74					; Класс оружия
+$spawn					= "sm\wpn\Rifles\FAMAS G2"	; Название оружия в СДК
+parent_section  		= wpn_famas_p3_sk1				; Секция оружия без обвесов
+weapon_class			= assault_rifle				; Раздел для магазина мультиплеера
+cost					= 12000					
+
+;******[Описание, иконки]******;
+inv_name				= st_wpn_famas_pro
+inv_name_short			= st_wpn_famas_pro
+description				= st_wpn_famas_pro_descr
+
+scope_names 				= eot, specter
+scope_respawn_eot			= wpn_famas_pro_eot
+scope_respawn_specter		= wpn_famas_pro_specter
+
+inv_grid_width			= 4
+inv_grid_height			= 2
+inv_grid_x				= 34
+inv_grid_y				= 6
+
+scope_x					= 74
+scope_y					= -17
+silencer_x				= 173
+silencer_y				= 12
+grenade_launcher_x		= 0
+grenade_launcher_y		= 0
+
+;******[Параметры для НПС]******;
+min_radius				= 0				; [] for AI (Радиус не работает, на будущее)
+max_radius				= 150			; [] for AI
+
+holder_range_modifier	= 1.0			; во сколько раз увеличивается eye_range
+holder_fov_modifier		= 1.0			; во сколько раз увеличивается eye_fov
+
+ef_main_weapon_type		= 2
+ef_weapon_type			= 6
+
+wpn_main				= auto
+;******[Аддоны и апгрейды]******;
+scope_status			= 2		; 0 - без аддона
+silencer_status			= 2		; 1 - встроенный
+grenade_launcher_status	= 0		; 2 - присоединяемый
+
+; Прицелы текстурой \ Мушка
+scope_zoom_factor		= 60	; FOV при прицеливании
+scope_name				= eot
+scope_texture			= wpn_crosshair_l85
+
+; Глушитель
+silencer_name			= wpn_addon_sil_556_ar
+
+; Подствольное
+grenade_launcher_name	= wpn_addon_grenade_launcher_m203
+grenade_class			= ammo_m209
+grenade_vel				= 0
+
+;******[Характеристики оружия]******;
+sprint_allowed			= true
+slot					= 2
+single_handed			= 0				; Одноручное\Двуручное
+
+inv_weight				= 3.8
+control_inertion_factor	= 1.3f			; Коэфицент чувствительности мышки
+crosshair_inertion   	= 6
+
+fire_modes				= 1, 3, -1
+
+ammo_mag_size			= 30
+ammo_class				= ammo_5.56x45_ss190, ammo_5.56x45_ap
+
+; Отдача и разброс
+fire_dispersion_base				= 0.7	; Угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+use_dispersion_mod					= true	; Использовать доп. модификатор разброса disp_aim_mod
+
+PDM_disp_base						= 1.0
+PDM_disp_vel_factor					= 1.3
+PDM_disp_accel_factor				= 1.7
+PDM_disp_crouch	 					= 0.4
+PDM_disp_crouch_no_acc 				= 0.3
+
+hit_probability_gd_novice			= 0.70
+hit_probability_gd_stalker			= 0.70
+hit_probability_gd_veteran			= 0.70
+hit_probability_gd_master			= 0.70
+
+; Скорость возврата отдачи к норме
+time_to_aim					= 2.0
+
+; Отдача (от бедра)
+cam_dispersion				= 0.9		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.2		;увеличениe cam_dispersion с каждым выстрелом
+cam_max_angle_horz			= 2.2		;максимальный угол горизонтальной отдачи
+cam_step_angle_horz			= 0.735		;насколько сильна горизонтальная отдача
+
+; Отдача (прицеливание)
+zoom_cam_dispersion			= 0.9
+zoom_cam_dispersion_inc		= 0.2
+zoom_cam_max_angle_horz		= 2.2
+zoom_cam_step_angle_horz	= 0.735
+
+; Надёжность
+condition_shot_dec		= 0.000125		; Увеличение износа при каждом выстреле
+
+; ТТХ
+hit_power				= 0.56
+hit_impulse				= 10
+hit_type				= fire_wound
+
+fire_distance			= 1500	; Дистанция, после которой пуля исчезает
+bullet_speed			= 440	; Скорость пули
+rpm						= 1100	; Скорострельность
+
+zoom_enabled			= true	; Можно целиться
+zoom_rotate_time		= 0.25	; Скорость зума
+
+;******[Визуальная часть]******;
+; DoF
+zoom_dof				= 0.5, 1.0, 180
+reload_dof				= 0.0, 0.5, 5, 3.1
+
+; Visual
+visual					= dynamics\weapons\wpn_famas\wpn_famas.ogf
+hud						= wpn_famas_hud
+
+; Анимации от 3-го лица
+
+; Параметры от 3-его лица
+animation_slot			= 8				; Каким способом НПС держит ствол
+
+position				= -0.026, 0, 0.0
+orientation				= 0, 0, 0
+
+; Позиция под подмышкой
+strap_position			= -0.26,-0.11,0.25
+strap_orientation		= -10,-5,10
+strap_bone0				= bip01_spine2
+strap_bone1				= bip01_spine1
+
+; Партиклы и эффекты
+fire_point				= 0.0, 0.05, 0.420	; Позиция огня из основного ствола
+fire_point2				= 0.0, 0.10, 0.340	; Позиция огня из подствола
+
+flame_particles			= weapons\generic_weapon05
+smoke_particles			= weapons\generic_shoot_00
+silencer_smoke_particles= weapons\generic_shoot_00
+grenade_flame_particles	= weapons\generic_weapon01
+
+; 2D-Гильзы
+shell_point				= -0.020000,0.167000,0.082000
+shell_particles			= 
+
+;3D-Гильзы
+shell_alowed			= true				;Нужно ли спавнить гильзу
+shell_bone              = wpn_body			;Кость, относительно которой спавнится гильза (3 лицо)
+shell_delay				= 0					;Задержка перед спавном гильзы (только для игрока + лишь 1 гильза)
+shell_impuls_vector		= 3, -0.5, -0.25	;Направление и сила полёта гильзы (X\Y\Z)
+shell_disp_vector		= 0.6, 1.3, 40		;Разброс импульса (миним. коэф \ максим. коэф \ угол поворота по Y 
+shell_pos_1p			= 0.37, -0.06, 0.13	;Смещение позиции спавна от позиции худа для 1-го лица
+shell_pos_3p			= 0, 0.07, -0.14	;Смещение позиции спавна относительно кости shell_bone для 3-его лица
+
+; Свет
+light_disabled			= false
+
+light_color				= 0.6,0.5,0.3
+light_range				= 5
+light_var_color			= 0.05
+light_var_range			= 0.5
+light_time				= 0.2
+
+silencer_light_color	= 0.6,0.5,0.3
+silencer_light_range	= 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time		= 0.2
+
+;******[Звуковая часть]******;
+snd_draw				= weapons\generic_draw
+snd_holster				= weapons\generic_holster
+snd_silncer_shot		= weapons\famas\famas_shoot_sil
+snd_shoot				= weapons\famas\famas_shoot
+snd_empty				= weapons\gen_empty, 0.5
+snd_reload				= weapons\famas\famas_reload
+snd_shoot_grenade		= weapons\gen_grenshoot
+snd_reload_grenade		= weapons\m203_reload
+snd_switch				= weapons\groza_switch, 1.0, 0.5
+snd_bore				= weapons\no_sound
+
+[wpn_famas_hud]:hud_base
+zoom_hide_crosshair		= true
+
+attach_place_idx		= 0
+item_visual				= dynamics\weapons\wpn_famas\wpn_famas_hud.ogf
+
+hands_position			= -0.044000,-0.181999,0.205500
+hands_orientation		= 0.519999,2.409999,0.1499993
+hands_position_16x9		= -0.044000,-0.181999,0.205500
+hands_orientation_16x9	= 0.519999,2.409999,0.1499993
+
+item_position			= 0.0,0.0,0.0
+item_orientation		= 0.0,0.0,0.0
+
+shell_point				= 0.02,0.06,-0.099
+shell_dir               = 0.0, 1.0, 0.0
+shell_bone				= wpn_body
+
+fire_point				= -0.011,0.043190,0.438116
+fire_bone				= wpn_body
+fire_point2				= 0.0,-0.028,0.678
+fire_bone2				= wpn_body
+
+aim_hud_offset_pos 		= -0.109500,0.057800,-0.116100
+aim_hud_offset_rot 		= 0.048700,0.008500,-0.007000
+aim_hud_offset_pos_16x9 = -0.109500,0.057800,-0.116100
+aim_hud_offset_rot_16x9 = 0.048700,0.008500,-0.007000
+
+gl_hud_offset_pos		= 0,0,0;-0.053000,-0.059000,0.000000
+gl_hud_offset_rot		= 0,0,0;-0.145000,0.000000,0.000000
+
+gl_hud_offset_pos_16x9	= 0,0,0;-0.053000,-0.059000,0.000000
+gl_hud_offset_rot_16x9	= 0,0,0;-0.145000,0.000000,0.000000
+
+lean_hud_offset_pos		= 0,0,0
+lean_hud_offset_rot		= 0,0,0
+
+anm_show             	= lancew_famas_draw
+anm_hide             	= lancew_famas_holster
+anm_idle             	= lancew_famas_idle
+anm_idle_sprint         = lancew_famas_sprint
+anm_idle_moving 		= lancew_famas_mvoing
+anm_shots               = lancew_famas_shoot, shoot
+anm_reload              = lancew_famas_reload, reload
+anm_idle_aim           	= lancew_famas_idle_aim, idle_aim
+anm_bore				= lancew_famas_no_reload
+
+; Сдвиг при центрированном режиме
+alt_ofs_pos_x			= -0.05
+alt_ofs_pos_y			= -0.01
+alt_ofs_pos_z			= 0.15
+alt_ofs_rot_x			= 0
+alt_ofs_rot_y			= 0
+alt_ofs_rot_z			= 0
+
+;==========================================================
+[wpn_famas_pro_eot]:wpn_famas_p3_sk1   
+scope_name 				= eot
+scope_x					= 88
+scope_y					= -20
+visual                  = dynamics\weapons\wpn_famas\wpn_famas_eot
+hud                     = wpn_famas_pro_eot_hud	 ;Секция худа данного прицела
+disable_scope			= true					 ;Убрать 2D-текстуру сетки
+scope_respawn 			= wpn_famas_p3_sk1
+
+[wpn_famas_pro_eot_hud]:wpn_famas_hud
+item_visual				= dynamics\weapons\wpn_famas\wpn_famas_eot_hud.ogf
+anm_shots               = lancew_famas_shoot_scope, shoot
+anm_idle_aim           	= lancew_famas_idle_aim, idle_aim
+aim_hud_offset_pos 		= -0.109400,-0.002900,-0.046000
+aim_hud_offset_rot 		= 0.046100,0.007800,-0.007000
+aim_hud_offset_pos_16x9 = -0.109400,-0.002900,-0.046000
+aim_hud_offset_rot_16x9 = 0.046100,0.007800,-0.007000
+
+;==========================================================
+[wpn_famas_pro_specter]:wpn_famas_p3_sk1
+visual                  = dynamics\weapons\wpn_famas\wpn_famas_acog
+scope_x					= 77
+scope_y					= -18
+hud                     = wpn_famas_pro_acog_hud ;Секция худа данного прицела
+disable_scope			= true					 ;Убрать 2D-текстуру сетки
+scope_zoom_hud_fov		= 30			;HUD FOV
+scope_respawn 			= wpn_famas_p3_sk1
+
+[wpn_famas_pro_acog_hud]:wpn_famas_hud
+item_visual				= dynamics\weapons\wpn_famas\wpn_famas_acog_hud.ogf
+anm_shots               = lancew_famas_shoot_scope, shoot
+anm_idle_aim           	= lancew_famas_idle_aim, idle_aim
+aim_hud_offset_pos 		= -0.109400,-0.007100,-0.055900
+aim_hud_offset_rot 		= 0.039800,0.007700,-0.007000
+aim_hud_offset_pos_16x9 = -0.109400,-0.007100,-0.055900
+aim_hud_offset_rot_16x9 = 0.039800,0.007700,-0.007000

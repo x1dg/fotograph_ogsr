@@ -1,0 +1,412 @@
+[wpn_gp100]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection			= spawn_group
+discovery_dependency 		=
+$spawn                  	= "weapons\gp100"		; option for Level Editor
+$npc			 			= on							; option for Level Editor
+$prefetch 					= 8
+scheduled         			= off              		; option for ALife Simulator
+cform             			= skeleton
+class                   	= WP_PM
+description					= st_wpn_mp412_descr
+
+ef_weapon_type					= 5
+
+cost					= 16980
+
+inv_weight				= 0.9
+
+;-----------------------------------------------------------------------------
+; ttc
+hit_power           		= 0.4, 0.4, 0.4, 0.4
+hit_impulse	 		 		= 15
+hit_type 					= fire_wound
+fire_distance           	= 400
+bullet_speed		 		= 440
+rpm                     	= 290
+rpm_empty_click 	 		= 120
+; end ttc
+
+use_aim_bullet					= true		;ѕьCдерживаетс€ БE БEрвБE суБEер БEБE
+time_to_aim			= 1.0
+
+hud                     	= wpn_mp412_hud
+
+;-----------------------------------------------------------------------------
+
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.01
+misfire_start_prob = 0.002 ;	     	= 0.008
+misfire_end_prob = 0.05 ;	     	= 0.08
+condition_shot_dec      	= 0.0012
+condition_queue_shot_dec	= 0.0012
+
+ammo_limit		 		= 120
+ammo_current		 	= 90
+ammo_elapsed		 	= 12
+
+ammo_mag_size		 	= 6
+ammo_class		 		= ammo_357sw_jhp, ammo_357sw_jfp
+hand_dependence		 	= 1
+single_handed			= 1
+
+;---DOF-------------------------------------------------------------------------
+zoom_dof					= -1000, 1.0, 1000
+reload_dof				= 0.0, 0.5, 5, 1.7
+
+;--дисперси€----------------------------------------------------------------------------
+;базова€ дисперси€
+fire_dispersion_base		= 0.78		;угол (в градусах) базовой дисперсии оружи€ (оружи€ зажатого в тисках)
+control_inertion_factor		= 1.04f
+crosshair_inertion			= 4.7
+
+
+;отдача
+cam_return = 0 ;				= 0
+cam_relax_speed         = 6		;скорость возврата в исходное положение
+cam_relax_speed_ai      = 360
+cam_dispersion          = 1.93	;увеличени€ угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 1.67	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac		= 1.1	;ствол будет подыматьс€ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle			= 50.0	;максимальный угол отдачи
+cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 1.1	;(degree) size of step camera moved in horizontal position while shooting
+
+PDM_disp_base 				= 0.85
+PDM_disp_vel_factor 		= 1.35
+PDM_disp_accel_factor 		= 1.355
+PDM_disp_crouch = 1.0 ;  				= 0.925
+PDM_disp_crouch_no_acc = 1.0 ; 			= 1.135
+
+fire_dispersion_condition_factor = 0.060 ; 0.001 ; = 0.01 ; 5		;увеличение дисперсиБEБEБEъGентаБEБEБEБEБEималБEьK изыMсе
+
+;-------------------------------------------------------------------------------
+;--- scope weapons -------------------------------------------------------------
+holder_range_modifier	= 1.0               ; во скьJБEБEраБEувеличиваетс€ eye_range
+holder_fov_modifier		= 1.0              ; во скьJБEБEраБEувеличиваетс€ eye_fov
+;-------------------------------------------------------------------------------
+
+min_radius = 0 ;              	= 0
+max_radius = 500 ; = 250 ;              	= 50
+
+hit_probability_gd_novice = 1.00 ;	= 0.80
+hit_probability_gd_stalker = 1.00 ;	= 0.80
+hit_probability_gd_veteran = 1.00 ;	= 0.80
+hit_probability_gd_master = 1.00 ;	= 0.80
+
+
+slot 			 	= 1
+animation_slot			= 1									; type of the animation that will be used
+default_to_ruck			= false
+sprint_allowed			= true
+
+inv_name					= st_wpn_mp412_cust
+inv_name_short				= st_wpn_mp412_cust
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 49
+inv_grid_y         = 77
+
+upgr_icon_x			= 1724 ; 599
+upgr_icon_y			= 802 ; 559
+upgr_icon_width		= 167 ; 272
+upgr_icon_height   	= 159 ; 54
+
+kill_msg_x			= 194
+kill_msg_y			= 123
+kill_msg_width			= 46
+kill_msg_height			= 27
+
+
+;silencer_hit_power      	= 0.57
+;silencer_hit_impulse	 		= 60
+;silencer_fire_distance  	= 100
+;silencer_bullet_speed		= 250
+
+;-------------------------------------------------------------------------------
+visual             			= dynamics\weapons\wpn_mp412\wpn_mp412_custom
+position                	= -0.021, -0.085, 0.0
+orientation             	= 0, 0, 0
+
+fire_point              	= 0.0, 0.133, 0.22
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;strap_position         	= -0.1,-0.45,0.2			; position (offset) and orientation of the weapon when it is strapped
+;strap_orientation      	= 1.57,0,0						; (3rd person view)
+;strap_bone0					= bip01_spine2
+;strap_bone1					= bip01_spine1
+
+smoke_particles         = weapons\effects\kyky_smoke
+;flame_particles		   	= weapons\effects\kyky_muzzleflash
+
+shell_point		 				= 0.0, 0.133, 0.047
+shell_dir		 				= 0.0, 0.0, 0.4
+shell_particles	 			= 
+
+;-------------------------------------------------------------------------------
+;startup_ammo           		= 90
+
+light_color		 		= 0.6,0.5,0.3
+light_range		 		= 3.0
+light_var_color		 		= 0.05
+light_var_range		 		= 0.5
+light_time 		 		= 0.2
+
+ph_mass			 		= 1
+;cost			 		= 350
+
+;addons
+scope_status				= 0
+silencer_status				= 0
+grenade_launcher_status			= 0
+
+zoom_enabled				= true
+zoom_rotate_time			= 0.25
+scope_zoom_factor	    		= 95; 74.8
+
+;звукБE
+snd_draw					= weapons\mp412\mp412_deploy
+snd_holster					= weapons\mp412\mp412_holster
+snd_shoot					= weapons\mp412\mp412_1
+snd_shoot1					= weapons\mp412\mp412_2
+snd_shoot2					= weapons\mp412\mp412_3  
+snd_shoot3					= weapons\mp412\mp412_4  
+
+snd_empty					= weapons\mp412\mp412_click
+snd_reload					= weapons\mp412\mp412_reload_new
+snd_close					= weapons\colt1911\colt1911_draw_silent
+snd_silncer_shot			= weapons\silencers\silencer_556x45
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; silencer
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+silencer_name  				= wpn_addon_silencer		; section name for the attachable silencer
+silencer_x 						= 78						; offset in inventory icon
+silencer_y 						= -18
+
+;params when silencer is attached
+;similar to corresponding params without prefix silencer_
+
+;silencer_flame_particles 	= weapons\generic_weapon01
+silencer_smoke_particles   = weapons\effects\kyky_smoke
+silencer_light_color			= 0.6,0.5,0.3
+silencer_light_range			= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 			= 0.2
+
+[wpn_mp412_hud]:hud_base
+zoom_hide_crosshair			= true
+
+item_visual             				= dynamics\weapons\wpn_mp412\wpn_mp412_custom_hud.ogf
+attach_place_idx				= 0
+
+hands_position				= 0.033, -0.15, 0.0625
+hands_orientation				= 0, 0, 0
+
+hands_position_16x9				= 0.033, -0.15, 0.0625
+hands_orientation_16x9			= 0, 0, 0
+
+item_position					= 0,0,0
+item_orientation				= 0,0,0
+
+aim_hud_offset_pos = -0.136100,0.033000,-0.125000
+aim_hud_offset_rot = -0.010000,0.000900,0.000000
+
+aim_hud_offset_pos_16x9 = -0.136100,0.033000,-0.125000
+aim_hud_offset_rot_16x9 = -0.010000,0.000900,0.000000
+
+shell_point				= 0,0,-50
+shell_bone             		 		= wpn_body
+
+fire_point					= 0,0,0
+fire_bone               				= muzzle
+
+anm_show				= mp412_draw
+anm_show_empty				= mp412_draw, opened
+
+anm_hide            				= mp412_holster
+anm_hide_empty				= mp412_holster, opened
+
+anm_idle            				= mp412_idle
+anm_idle_empty      				= mp412_idle, opened
+
+anm_shots				= mp412_shoot, shoot
+anm_shot_l				= mp412_shoot, shoot_last
+
+anm_idle_aim				= mp412_aim
+anm_idle_aim_empty			= mp412_aim, opened
+
+anm_reload				= mp412_reload, reload
+anm_reload_empty				= mp412_reload, reload_empty
+
+anm_idle_moving				= mp412_move
+anm_idle_moving_empty			= mp412_move, opened
+
+anm_idle_sprint				= mp412_sprint
+anm_idle_sprint_empty			= mp412_sprint, opened
+
+anm_bore					= mp412_aim
+anm_bore_empty				= mp412_aim, opened
+
+gl_hud_offset_pos				= 0,0,0
+gl_hud_offset_rot				= 0,0,0
+
+lean_hud_offset_pos			= 0,0,0
+lean_hud_offset_rot			= 0,0,0
+
+
+;===============================
+[wpn_mp412_alt]:wpn_gp100
+
+inv_name					= st_wpn_mp412_alt
+inv_name_short				= st_wpn_mp412_alt
+
+upgrades                = up_gr_firstab_beretta_camo, up_gr_seconab_beretta_camo, up_gr_thirdab_beretta_camo, up_gr_fourtab_beretta_camo, up_gr_fifthab_beretta_camo, up_gr_fifthcd_beretta_camo
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_beretta
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 51
+inv_grid_y         = 77
+
+hud				= wpn_mp412_alt_hud
+
+visual             				= dynamics\weapons\wpn_mp412\wpn_mp412_alt
+
+[wpn_mp412_alt_hud]:wpn_mp412_hud
+
+item_visual             				= dynamics\weapons\wpn_mp412\wpn_mp412_alt_hud.ogf
+
+;===============================
+[wpn_snub]:wpn_gp100
+
+inv_name					= st_wpn_snub
+inv_name_short				= st_wpn_snub
+
+cost					= 5228
+inv_weight				= 0.54
+
+hit_power           		= 0.29, 0.29, 0.29, 0.29
+hit_impulse		 			= 15
+hit_type 					= fire_wound
+fire_distance       		= 250
+bullet_speed				= 260
+rpm                     	= 290
+rpm_empty_click      		= 120
+
+ammo_mag_size		 	= 6
+ammo_class		 		= ammo_357sw_jhp, ammo_357sw_jfp
+
+fire_dispersion_base		= 0.75
+control_inertion_factor = 1.0f
+crosshair_inertion		= 2.1
+
+misfire_start_condition		= 0.4
+misfire_end_condition		= 0.11
+misfire_start_prob = 0.0045 ;	     	= 0.008
+misfire_end_prob = 0.005 ;	     	= 0.08
+condition_shot_dec      	= 0.0012
+condition_queue_shot_dec	= 0.0012
+
+;ъCдача
+cam_return = 0 ;				= 0
+cam_relax_speed         = 8				;скорость возврата в исходное положение
+cam_relax_speed_ai      = 360
+cam_dispersion          = 1.49			;увеличени€ угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 1.6				;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac		= 1.2				;ствол будет подыматьс€ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle			= 50.0			;максимальный угол отдачи
+cam_max_angle_horz		= 50.0			;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 1.39				;(degree) size of step camera moved in horizontal position while shooting
+
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 53
+inv_grid_y         = 78
+
+snd_draw					= weapons\generic\revolver_generic_deploy_1
+snd_holster					= weapons\generic\revolver_generic_holster_1
+snd_shoot					= weapons\snub\snub_1
+snd_shoot1					= weapons\snub\snub_2
+snd_shoot2					= weapons\snub\snub_3
+snd_shoot3					= weapons\snub\snub_4
+snd_shoot4					= weapons\snub\snub_1   
+snd_empty					= weapons\snub\snub_trigger
+snd_reload					= weapons\snub\snub_reload
+snd_close						= weapons\colt1911\colt1911_draw_silent
+snd_silncer_shot			= weapons\silencers\silencer_556x45
+
+hud				= wpn_snub_hud
+
+visual             				= dynamics\weapons\wpn_snub\wpn_snub
+
+[wpn_snub_hud]:wpn_mp412_hud
+
+item_visual             		= dynamics\weapons\wpn_snub\wpn_snub_hud.ogf
+
+aim_hud_offset_pos = -0.136100,0.037000,-0.125000
+aim_hud_offset_rot = -0.001000,0.001900,0.000000
+
+aim_hud_offset_pos_16x9 = -0.136100,0.037000,-0.125000
+aim_hud_offset_rot_16x9 = -0.001000,0.001900,0.000000
+;===============================
+
+;===============================
+[wpn_schofield]:wpn_gp100
+
+inv_name					= st_wpn_schofield
+inv_name_short				= st_wpn_schofield
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 53
+inv_grid_y         = 75
+
+hud				= wpn_schofield_hud
+
+visual             				= dynamics\weapons\wpn_schofield\wpn_schofield
+
+[wpn_schofield_hud]:wpn_mp412_hud
+
+item_visual             				= dynamics\weapons\wpn_schofield\wpn_schofield_hud.ogf
+
+item_position					= 0,0,0.005
+item_orientation				= 0,0,0
+
+aim_hud_offset_pos = -0.134600,0.040000,-0.125000
+aim_hud_offset_rot = 0.004000,0.000200,0.000000
+
+aim_hud_offset_pos_16x9 = -0.134600,0.040000,-0.125000
+aim_hud_offset_rot_16x9 = 0.004000,0.000200,0.000000
+
+;===============================
+[wpn_schofield_snub]:wpn_gp100
+
+inv_name					= st_wpn_schofield_snub
+inv_name_short				= st_wpn_schofield_snub
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 55
+inv_grid_y         = 75
+
+hud				= wpn_schofield_snub_hud
+
+visual             				= dynamics\weapons\wpn_schofield\wpn_schofield_snub
+
+[wpn_schofield_snub_hud]:wpn_mp412_hud
+
+item_visual             				= dynamics\weapons\wpn_schofield\wpn_schofield_snub_hud.ogf
+
+item_position					= 0,0,0.005
+
+aim_hud_offset_pos = -0.134600,0.040000,-0.125000
+aim_hud_offset_rot = 0.004000,0.000200,0.000000
+
+aim_hud_offset_pos_16x9 = -0.134600,0.040000,-0.125000
+aim_hud_offset_rot_16x9 = 0.004000,0.000200,0.000000

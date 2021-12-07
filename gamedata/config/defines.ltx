@@ -141,11 +141,13 @@ misfire_end_prob	     	= 0.1
 ;увеличение изношености при выстреле очередью
 ;condition_queue_shot_dec	= 0.0
 
-; Отдача (от бедра)
-cam_relax_speed				= 0			;скорость возврата в исходное положение
-cam_relax_speed_ai			= 360
-cam_dispersion_frac			= 1.0		;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle				= 20.0		;максимальный угол отдачи
+cam_relax_speed         		= 5.0 
+cam_dispersion          	    = 0.64
+cam_dispersion_inc			    = 0.18
+cam_dispertion_frac			    = 0.85
+cam_max_angle					= 16.0
+cam_max_angle_horz				= 16.0
+cam_step_angle_horz				= 2.8
 
 ; Отдача (прицеливание)
 zoom_cam_relax_speed			= 10
