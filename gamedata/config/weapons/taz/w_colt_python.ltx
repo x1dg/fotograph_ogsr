@@ -7,18 +7,17 @@ $prefetch 					= 8
 scheduled         			= off              		; option for ALife Simulator
 cform             			= skeleton
 class                   	= WP_PM
-description					= st_wpn_gp100_descr
+description					= st_wpn_357_descr
 
 ;Ruger Redhawk
 
 ef_weapon_type					= 5
 
-cost					= 18520
-inv_weight				= 1.386
-
+cost					= 18500
+inv_weight				= 1.2
 
 ; ttc
-hit_power           		= 0.495, 0.495, 0.495, 0.495
+hit_power           		= 0.6, 0.4, 0.4, 0.4
 hit_impulse	 		 		= 15
 hit_type 					= fire_wound
 fire_distance           	= 400
@@ -30,7 +29,7 @@ rpm_empty_click 	 		= 120
 use_aim_bullet					= true		;
 time_to_aim			= 1.0
 
-hud                     	= wpn_gp100_hud
+hud                     	= wpn_colt_python_hud
 
 ;-----------------------------------------------------------------------------
 
@@ -39,8 +38,8 @@ misfire_start_condition		= 0.6
 misfire_end_condition		= 0.01
 misfire_start_prob = 0.002 ;	     	= 0.008
 misfire_end_prob = 0.05 ;	     	= 0.08
-condition_shot_dec      	= 0.00105
-condition_queue_shot_dec	= 0.00105
+condition_shot_dec      	= 0.0010
+condition_queue_shot_dec	= 0.0010
 
 ammo_limit		 		= 120
 ammo_current		 	= 90
@@ -58,20 +57,20 @@ reload_dof				= 0.0, 0.5, 5, 1.7
 
 ;--дисперсия----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.67		;угол (в градусах) базовой дисперсии оружиЯ (оружиЯ зажатого в тисках)
+fire_dispersion_base		= 0.6
 control_inertion_factor = 1.1f
 crosshair_inertion		= 4.5
 
 ;отдача
 cam_return = 0 ;				= 0
-cam_relax_speed         = 5		;скорость возврата в исходное положение
+cam_relax_speed         = 6		;скорость возврата в исходное положение
 cam_relax_speed_ai      = 360
-cam_dispersion          = 2.7	;увеличени¤ угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 2.7	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion          = 1.93	;увеличени¤ угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 1.67	;увеличениe cam_dispersion с каждым выстрелом
 cam_dispersion_frac		= 1.1	;ствол будет подыматьс¤ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle			= 50.0	;максимальный угол отдачи
 cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz		= 1.9	;(degree) size of step camera moved in horizontal position while shooting
+cam_step_angle_horz		= 1.1	;(degree) size of step camera moved in horizontal position while shooting
 
 PDM_disp_base 				= 0.85
 PDM_disp_vel_factor 		= 1.35
@@ -95,19 +94,18 @@ hit_probability_gd_stalker = 1.00 ;	= 0.80
 hit_probability_gd_veteran = 1.00 ;	= 0.80
 hit_probability_gd_master = 1.00 ;	= 0.80
 
-
-slot 			 	= 1
+slot 			 		= 1
 animation_slot			= 1									; type of the animation that will be used
 default_to_ruck			= false
 sprint_allowed			= true
 
-inv_name			= st_wpn_gp100
-inv_name_short			= st_wpn_gp100
+inv_name				= st_wpn_357
+inv_name_short			= st_wpn_357
 
-inv_grid_width		        = 2
-inv_grid_height			= 1
-inv_grid_x			= 36
-inv_grid_y			= 11
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x			= 5
+inv_grid_y			= 28
 
 upgr_icon_x			= 1724 ; 599
 upgr_icon_y			= 802 ; 559
@@ -139,7 +137,7 @@ fire_point              	= 0.0, 0.133, 0.22
 ;strap_bone0					= bip01_spine2
 ;strap_bone1					= bip01_spine1
 
-flame_particles				= weapons\generic_weapon05
+flame_particles					= weapons\generic_weapon05
 smoke_particles     			= ghost_particles\weapons\flame_eft_shotgun
 silencer_smoke_particles   		= ghost_particles\weapons\generic_smoke_eft_sil
 
@@ -170,7 +168,7 @@ silencer_y 					= -15;-20
 
 zoom_enabled				= true
 zoom_rotate_time			= 0.25
-scope_zoom_factor	    		= 95; 74.8
+scope_zoom_factor	    	= 95; 74.8
 
 ;звукЃE
 snd_draw						= weapons\357\357_deploy
@@ -179,19 +177,20 @@ snd_shoot						= weapons\357\357_1
 snd_shoot1						= weapons\357\357_2
 snd_shoot2						= weapons\357\357_3
 snd_shoot3						= weapons\357\357_4
-snd_empty						= weapons\metro_revolver\metro_hammer
-snd_reload						= weapons\metro_revolver\metro_reload
-snd_close						= weapons\no_sound
+snd_empty						= weapons\357\357_hammer
+snd_reload						= weapons\357\357_reload
+snd_close						= weapons\colt1911\colt1911_draw_silent
 snd_silncer_shot				= weapons\357\357_1
 snd_silncer_shot1				= weapons\357\357_2
 snd_silncer_shot2				= weapons\357\357_3
 snd_silncer_shot3				= weapons\357\357_4
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; silencer
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;params when silencer is attached
-;similar to corresponding params without prefix silencer_
+snd_draw						= weapons\357\357_deploy
+snd_holster						= weapons\357\357_holster
+snd_shoot						= weapons\357\357_1
+snd_shoot1						= weapons\357\357_2
+snd_shoot2						= weapons\357\357_3
+snd_shoot3						= weapons\357\357_4
 
 silencer_light_color			= 0.6,0.5,0.3
 silencer_light_range			= 0.01
@@ -199,7 +198,7 @@ silencer_light_var_color	= 0.05
 silencer_light_var_range	= 0.5
 silencer_light_time 			= 0.2
 
-[wpn_gp100_hud]:hud_base
+[wpn_colt_python_hud]:hud_base
 zoom_hide_crosshair			= true
 
 item_position					= 0,0.010,0
@@ -211,7 +210,7 @@ hands_orientation		= 0,0,0
 hands_position_16x9			= 0.0,-0.165,0.0
 hands_orientation_16x9		= 0,0,0
 
-item_visual             	= dynamics\weapons\wpn_metro_revolver\wpn_revolver_hud.ogf
+item_visual             	= dynamics\weapons\wpn_357\wpn_357_cadpat_hud.ogf
 attach_place_idx				= 0
 
 shell_point						= 0.021,0.057,0.456
@@ -246,619 +245,8 @@ gl_hud_offset_rot				= 0,0,0
 lean_hud_offset_pos			= 0,0,0
 lean_hud_offset_rot			= 0,0,0
 
-aim_hud_offset_pos = -0.092800,0.035200,-0.038600
-aim_hud_offset_rot = 0.001000,0.003100,0.013500
-
-aim_hud_offset_pos_16x9 = -0.092800,0.035200,-0.038600
-aim_hud_offset_rot_16x9 = 0.001000,0.003100,0.013500
-;=======================================================
-[wpn_mag44]:wpn_colt_python
-;Taurus M44
-
-upgrades                = up_gr_firstab_beretta_camo, up_gr_seconab_beretta_camo, up_gr_thirdab_beretta_camo, up_gr_fourtab_beretta_camo, up_gr_fifthab_beretta_camo, up_gr_fifthcd_beretta_camo
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_beretta
-
-inv_name			= st_wpn_mag44
-inv_name_short			= st_wpn_mag44
-description					= st_wpn_mag44_descr
-
-cost					= 15010
-inv_weight				= 1.45
-
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 64
-inv_grid_y         = 79
-
-silencer_status		= 0
-
-scope_status		= 2
-
-scope_name 				= wpn_addon_scope_swm
-
-scope_x              	= 10
-scope_y                 = -30
-
-fire_dispersion_base		= 0.67
-
-hud			= wpn_mag44_hud
-
-misfire_probability        	= 0.005
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.05
-misfire_start_prob = 0.00225 ;	     	= 0.008
-misfire_end_prob = 0.055 ;	     	= 0.08
-condition_shot_dec      	= 0.0012
-condition_queue_shot_dec	= 0.0012
-
-visual             	= dynamics\weapons\wpn_mag_44\wpn_mag_44.ogf
-
-snd_draw						= weapons\mag44\mag44_deploy
-snd_holster						= weapons\mag44\mag44_holster
-snd_shoot						= weapons\mag44\mag44_1
-snd_shoot1						= weapons\mag44\mag44_2
-snd_shoot2						= weapons\mag44\mag44_3
-snd_shoot3						= weapons\mag44\mag44_4
-snd_empty						= weapons\mag44\mag44_trigger
-snd_reload						= weapons\mag44\mag44_reload
-snd_close						= weapons\colt1911\colt1911_draw_silent
-snd_silncer_shot				= weapons\mag44\mag44_1
-
-[wpn_mag44_hud]:wpn_gp100_hud
-
-item_visual             	= dynamics\weapons\wpn_mag_44\wpn_mag_44_hud.ogf
-
-aim_hud_offset_pos = -0.091600,0.021300,-0.177300
-aim_hud_offset_rot = -0.020200,0.000750,-0.006000
-
-aim_hud_offset_pos_16x9 = -0.091600,0.021300,-0.177300
-aim_hud_offset_rot_16x9 = -0.020200,0.000750,-0.006000
-
-;=======================================================
-[wpn_mateba]:wpn_mag44
-
-upgrades                = up_gr_firstab_walther_custom, up_gr_seconab_walther_custom, up_gr_thirdab_walther_custom, up_gr_fourtab_walther_custom, up_gr_fifthab_walther_custom
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_walther
-
-inv_name				= st_wpn_mateba
-inv_name_short			= st_wpn_mateba
-description				= st_wpn_mateba_descr
-
-cost					= 40160
-inv_weight				= 1.35
-
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 50
-inv_grid_y         = 80
-
-scope_status		= 0
-silencer_status		= 0
-
-misfire_probability        	= 0.005
-misfire_start_condition		= 0.7
-misfire_end_condition		= 0.075
-misfire_start_prob = 0.00225 ;	     	= 0.008
-misfire_end_prob = 0.06 ;	     	= 0.08
-condition_shot_dec      	= 0.0012
-condition_queue_shot_dec	= 0.0012
-
-
-;отдача
-cam_return = 0 ;				= 0
-cam_relax_speed         = 6		;скорость возврата в исходное положение
-cam_relax_speed_ai      = 360
-cam_dispersion          = 2.0	;увеличени¤ угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 2.0	;увеличениe cam_dispersion с каждым выстрелом
-cam_dispersion_frac		= 1.1	;ствол будет подыматьс¤ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle			= 50.0	;максимальный угол отдачи
-cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz		= 1.7	;(degree) size of step camera moved in horizontal position while shooting
-
-snd_draw						= weapons\mateba\mateba_deploy
-snd_holster						= weapons\mateba\mateba_holster
-snd_shoot						= weapons\mateba\mateba_1
-snd_shoot1						= weapons\mateba\mateba_2
-snd_shoot2						= weapons\mateba\mateba_3
-snd_shoot3						= weapons\mateba\mateba_4
-
-snd_empty						= weapons\mateba\mateba_trigger
-snd_reload						= weapons\mateba\mateba_reload
-snd_silncer_shot				= weapons\mateba\mateba_1
-snd_silncer_shot1				= weapons\mateba\mateba_2
-snd_silncer_shot2				= weapons\mateba\mateba_3
-snd_silncer_shot3				= weapons\mateba\mateba_4
-
-
-hud			= wpn_mateba_hud
-
-fire_dispersion_base		= 0.51
-
-visual             	= dynamics\weapons\wpn_mateba\wpn_mateba.ogf
-
-silencer_name  				= wpn_addon_mateba_barrel		; section name for the attachable silencer
-silencer_x 						= -21						; offset in inventory icon
-silencer_y 						= -13
-
-[wpn_mateba_hud]:wpn_mag44_hud
-
-item_position					= 0,0,0
-
-item_visual             	= dynamics\weapons\wpn_mateba\wpn_mateba_hud.ogf
-
-anm_reload					= kyky_revolver_mateba_reload, reload
-anm_reload_empty			= kyky_revolver_mateba_reload, reload
-
-aim_hud_offset_pos = -0.092300,0.037700,0.033400
-aim_hud_offset_rot = -0.017000,0.003800,0.001500
-
-aim_hud_offset_pos_16x9 = -0.092300,0.037700,0.033400
-aim_hud_offset_rot_16x9 = -0.017000,0.003800,0.001500
-;=======================================================
-[wpn_357_cadpat]:wpn_357
-
-upgrades                = up_gr_firstab_beretta_camo, up_gr_seconab_beretta_camo, up_gr_thirdab_beretta_camo, up_gr_fourtab_beretta_camo, up_gr_fifthab_beretta_camo, up_gr_fifthcd_beretta_camo
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_beretta
-
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 78
-inv_grid_y         = 81
-
-hit_power           		= 0.4, 0.4, 0.4, 0.4
-hit_impulse	 		 		= 15
-hit_type 					= fire_wound
-fire_distance           	= 400
-bullet_speed		 		= 440
-rpm                     	= 280
-rpm_empty_click 	 		= 120
-
-fire_dispersion_base		= 0.6
-
-
-;отдача
-cam_return = 0 ;				= 0
-cam_relax_speed         = 6		;скорость возврата в исходное положение
-cam_relax_speed_ai      = 360
-cam_dispersion          = 1.93	;увеличени¤ угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 1.67	;увеличениe cam_dispersion с каждым выстрелом
-cam_dispersion_frac		= 1.1	;ствол будет подыматьс¤ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle			= 50.0	;максимальный угол отдачи
-cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz		= 1.1	;(degree) size of step camera moved in horizontal position while shooting
-
-silencer_status				= 0
-
-snd_draw						= weapons\357\357_deploy
-snd_holster						= weapons\357\357_holster
-snd_shoot						= weapons\357\357_1
-snd_shoot1						= weapons\357\357_2
-snd_shoot2						= weapons\357\357_3
-snd_shoot3						= weapons\357\357_4
-
-snd_empty						= weapons\357\357_hammer
-snd_reload						= weapons\357\357_reload
-snd_close						= weapons\colt1911\colt1911_draw_silent
-snd_silncer_shot				= weapons\357\357_1
-
-hud			= wpn_357_cadpat_hud
-
-visual             	= dynamics\weapons\wpn_357\wpn_357_cadpat
-
-[wpn_357_cadpat_hud]:wpn_357_hud
-
-item_visual             	= dynamics\weapons\wpn_357\wpn_357_cadpat_hud.ogf
-;=======================================================
-[wpn_raging]:wpn_colt_python
-
-upgrades                = up_gr_firstab_beretta_camo, up_gr_seconab_beretta_camo, up_gr_thirdab_beretta_camo, up_gr_fourtab_beretta_camo, up_gr_fifthab_beretta_camo, up_gr_fifthcd_beretta_camo
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_beretta
-
-inv_name			= st_wpn_raging
-inv_name_short		= st_wpn_raging
-description			= st_wpn_raging_descr
-
-ammo_mag_size		 	= 5
-ammo_class		 		= ammo_357sw_jhp, ammo_357sw_jfp
-
-cost					= 39950
-
-hit_power       = 0.6, 0.6, 0.6, 0.6
-hit_impulse     = 15
-hit_type 		= fire_wound
-fire_distance       	= 70
-bullet_speed			= 180
-rpm                 	= 270
-
-fire_dispersion_base		= 2.3  	;угол (в градусах) базовой дисперсии оружиџ (оружиџ зажатого в тисках)
-control_inertion_factor = 1.25f
-crosshair_inertion		= 5.8
-
-control_inertion_factor    	= 1.1f
-crosshair_inertion			= 4.1
-
-misfire_start_condition		= 0.7
-misfire_end_condition		= 0.1
-misfire_start_prob = 0.00225 ;	     	= 0.008
-misfire_end_prob = 0.06 ;	     	= 0.08
-condition_shot_dec      	= 0.0014
-condition_queue_shot_dec	= 0.0014
-
-;отдача
-cam_return = 0 ;				= 0
-cam_relax_speed         = 0.85		;скорость возврата в исходное положение
-cam_relax_speed_ai      = 180
-cam_dispersion          = 7.5	;увеличени¤ угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 7.1	;увеличениe cam_dispersion с каждым выстрелом
-cam_dispersion_frac		= 1.1	;ствол будет подыматьс¤ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle			= 50.0	;максимальный угол отдачи
-cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz		= 12.5	;(degree) size of step camera moved in horizontal position while shooting
-
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 70
-inv_grid_y         = 77
-
-snd_draw						= weapons\raging_judge\judge_deploy
-snd_holster						= weapons\raging_judge\judge_holster
-snd_shoot						= weapons\raging_judge\judge_1
-snd_shoot1						= weapons\raging_judge\judge_2
-snd_shoot2						= weapons\raging_judge\judge_3
-snd_shoot3						= weapons\raging_judge\judge_4
-
-
-snd_empty						= weapons\raging_judge\judge_hammer
-snd_reload						= weapons\raging_judge\judge_reload
-
-silencer_status				= 0
-
-hud			= wpn_raging_hud
-
-visual             	= dynamics\weapons\wpn_raging\wpn_raging
-
-[wpn_raging_hud]:wpn_gp100_hud
-
-item_visual             	= dynamics\weapons\wpn_raging\wpn_raging_hud.ogf
-
-aim_hud_offset_pos = -0.092200,0.040300,-0.118900
-aim_hud_offset_rot = 0.007400,0.003100,0.003600
-
-aim_hud_offset_pos_16x9 = -0.092200,0.040300,-0.118900
-aim_hud_offset_rot_16x9 = 0.007400,0.003100,0.003600
-
-;=======================================================
-
-[wpn_w500]:wpn_colt_python
-
-inv_name			= st_wpn_w500
-inv_name_short		= st_wpn_w500
-description			= st_wpn_w500_descr
-
-upgrades                = up_gr_firstab_beretta_camo, up_gr_seconab_beretta_camo, up_gr_thirdab_beretta_camo, up_gr_fourtab_beretta_camo, up_gr_fifthab_beretta_camo, up_gr_fifthcd_beretta_camo
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_beretta
-
-cost					= 35060
-
-ammo_mag_size		 	= 5
-
-hit_power           		= 0.84, 0.84, 0.84, 0.84
-hit_impulse	 		 		= 15
-hit_type 					= fire_wound
-fire_distance           	= 400
-bullet_speed		 		= 495
-rpm                     	= 140
-rpm_empty_click 	 		= 120
-
-fire_dispersion_base		= 0.55
-control_inertion_factor = 1.2f
-crosshair_inertion		= 5.3
-
-ammo_class		 		= ammo_357sw_jhp, ammo_357sw_jfp
-
-misfire_probability        	= 0.005
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.05
-misfire_start_prob = 0.002 ;	     	= 0.008
-misfire_end_prob = 0.05 ;	     	= 0.08
-condition_shot_dec      	= 0.00115
-condition_queue_shot_dec	= 0.00115
-
-;отдача
-cam_return = 0 ;				= 0
-cam_relax_speed         = 0.25		;скорость возврата в исходное положение
-cam_relax_speed_ai      = 120
-cam_dispersion          = 19.5	;увеличени¤ угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 19.1	;увеличениe cam_dispersion с каждым выстрелом
-cam_dispersion_frac		= 1.1	;ствол будет подыматьс¤ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle			= 50.0	;максимальный угол отдачи
-cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz		= 15.5	;(degree) size of step camera moved in horizontal position while shooting
-
-
-inv_grid_width     = 3
-inv_grid_height    = 1
-inv_grid_x         = 67
-inv_grid_y         = 77
-
-silencer_status				= 0
-scope_status				= 0
-scopes_sect				   = scope_susat_w500_moist, scope_susat_w500, scope_susat_w500_worn, scope_susat_x1.6_w500, scope_susat_custom_w500, scope_susat_dusk_w500, scope_susat_night_w500
-
-hud			= wpn_w500_hud
-
-snd_draw						= weapons\s&w500\sw500_deploy
-
-
-snd_holster						= weapons\s&w500\sw500_holster
-snd_shoot			            = weapons\s&w500\sw500_1
-snd_shoot1			            = weapons\s&w500\sw500_2
-snd_shoot2			            = weapons\s&w500\sw500_3
-snd_shoot3			            = weapons\s&w500\sw500_4
-snd_empty						= weapons\s&w500\sw500_hammer
-snd_reload						= weapons\s&w500\sw500_reload
-
-visual             	= dynamics\weapons\wpn_w500\wpn_w500
-
-[wpn_w500_hud]:wpn_gp100_hud
-
-item_visual             	= dynamics\weapons\wpn_w500\wpn_w500_hud.ogf
-
-
-aim_hud_offset_pos = -0.092900,0.018000,-0.118900
-aim_hud_offset_rot = -0.020800,0.003600,0.003500
-
-aim_hud_offset_pos_16x9 = -0.092900,0.018000,-0.118900
-aim_hud_offset_rot_16x9 = -0.020800,0.003600,0.003500
-
-;=======================================================
-[wpn_bull]:wpn_colt_python
-
-cost					= 19030
-inv_weight				= 1.8
-
-inv_name			= st_wpn_bull
-inv_name_short			= st_wpn_bull
-description			= st_wpn_bull_descr
-
-upgrades                = up_gr_firstab_beretta_camo, up_gr_seconab_beretta_camo, up_gr_thirdab_beretta_camo, up_gr_fourtab_beretta_camo, up_gr_fifthab_beretta_camo, up_gr_fifthcd_beretta_camo
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_beretta
-
-;отдача
-cam_return = 0 ;				= 0
-cam_relax_speed         = 5		;скорость возврата в исходное положение
-cam_relax_speed_ai      = 360
-cam_dispersion          = 2.27	;увеличени¤ угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 2.33	;увеличениe cam_dispersion с каждым выстрелом
-cam_dispersion_frac		= 1.0	;ствол будет подыматьс¤ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle			= 50.0	;максимальный угол отдачи
-cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz		= 1.8	;(degree) size of step camera moved in horizontal position while shooting
-
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 61
-inv_grid_y         = 77
-
-snd_draw						= weapons\raging_bull\bull_deploy
-
-
-snd_holster						= weapons\raging_bull\bull_holster
-snd_shoot						= weapons\raging_bull\bull_1
-snd_shoot1						= weapons\raging_bull\bull_2
-snd_shoot2						= weapons\raging_bull\bull_3
-snd_shoot3						= weapons\raging_bull\bull_4
-snd_empty						= weapons\raging_bull\bull_hammer
-snd_reload						= weapons\raging_bull\bull_reload
-
-silencer_status				= 0
-
-fire_dispersion_base		= 0.65
-
-misfire_probability        	= 0.005
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.05
-misfire_start_prob = 0.002 ;	     	= 0.008
-misfire_end_prob = 0.055 ;	     	= 0.08
-condition_shot_dec      	= 0.0011
-
-condition_queue_shot_dec	= 0.0011
-
-hud			= wpn_bull_hud
-
-visual             	= dynamics\weapons\wpn_raging_bull\wpn_raging_bull
-
-[wpn_bull_hud]:wpn_gp100_hud
-
-item_visual             	= dynamics\weapons\wpn_raging_bull\wpn_raging_bull_hud.ogf
-
-aim_hud_offset_pos = -0.092000,0.028000,-0.124600
-aim_hud_offset_rot = -0.006200,0.002200,0.003500
-
-aim_hud_offset_pos_16x9 = -0.092000,0.028000,-0.124600
-aim_hud_offset_rot_16x9 = -0.006200,0.002200,0.003500
-;=======================================================
-[wpn_mr96]:wpn_colt_python
-
-inv_name			= st_wpn_mr96
-inv_name_short		= st_wpn_mr96
-description			= st_wpn_mr96_descr
-
-upgrades                = up_gr_firstab_beretta_camo, up_gr_seconab_beretta_camo, up_gr_thirdab_beretta_camo, up_gr_fourtab_beretta_camo, up_gr_fifthab_beretta_camo, up_gr_fifthcd_beretta_camo
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_beretta
-
-cost					= 22720
-
-hit_power           		= 0.4, 0.4, 0.4, 0.4
-hit_impulse	 		 		= 15
-hit_type 					= fire_wound
-fire_distance           	= 400
-bullet_speed		 		= 440
-rpm                     	= 280
-rpm_empty_click 	 		= 120
-
-ammo_mag_size		 	= 6
-ammo_class		 		= ammo_357sw_jhp, ammo_357sw_jfp
-hand_dependence		 	= 1
-single_handed			= 1
-
-misfire_probability        	= 0.005
-misfire_start_condition		= 0.6
-misfire_end_condition		= 0.01
-misfire_start_prob = 0.00175 ;	     	= 0.008
-misfire_end_prob = 0.05 ;	     	= 0.08
-condition_shot_dec      	= 0.00085
-
-condition_queue_shot_dec	= 0.00085
-
-;отдача
-cam_return = 0 ;				= 0
-cam_relax_speed         = 6		;скорость возврата в исходное положение
-cam_relax_speed_ai      = 360
-cam_dispersion          = 1.93	;увеличени¤ угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 1.67	;увеличениe cam_dispersion с каждым выстрелом
-cam_dispersion_frac		= 1.1	;ствол будет подыматьс¤ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle			= 50.0	;максимальный угол отдачи
-cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz		= 1.1	;(degree) size of step camera moved in horizontal position while shooting
-
-fire_dispersion_base		= 0.53
-
-inv_grid_width     = 2
-inv_grid_height    = 1
-inv_grid_x         = 53
-inv_grid_y         = 77
-
-snd_draw						= weapons\357\357_deploy
-snd_holster						= weapons\357\357_holster
-snd_shoot						= weapons\357\357_1
-snd_shoot1						= weapons\357\357_2
-snd_shoot2						= weapons\357\357_3
-snd_shoot3						= weapons\357\357_4
-snd_empty						= weapons\mr96\mr96_hammer
-snd_reload						= weapons\357\357_reload
-snd_close						= weapons\colt1911\colt1911_draw_silent
-snd_silncer_shot				= weapons\357\357_1
-
-silencer_status				= 0
-
-hud			= wpn_mr96_hud
-
-visual             	= dynamics\weapons\wpn_mr96\wpn_mr96
-
-[wpn_mr96_hud]:wpn_gp100_hud
-
-item_visual             	= dynamics\weapons\wpn_mr96\wpn_mr96_hud.ogf
-
-aim_hud_offset_pos = -0.092300,0.030700,-0.063600
-aim_hud_offset_rot = -0.002000,0.002800,0.008500
-
-aim_hud_offset_pos_16x9 = -0.092300,0.030700,-0.063600
-aim_hud_offset_rot_16x9 = -0.002000,0.002800,0.008500
-;=======================================================
-[wpn_hunter]:wpn_colt_python
-
-cost					= 21895
-inv_weight				= 1.96
-
-single_handed			= 0
-
-inv_name				= st_wpn_hunter
-inv_name_short			= st_wpn_hunter
-description				= st_wpn_hunter_descr
-
-silencer_status				= 0
-scope_status				= 0
-
-inv_grid_width     = 3
-inv_grid_height    = 1
-inv_grid_x         = 47
-inv_grid_y         = 76
-
-silencer_name  			= wpn_addon_sil_revolver		; section name for the attachable silencer
-silencer_x 					= -66						; offset in inventory icon
-silencer_y 					= -20
-
-silencer_hit_power      = 0.595, 0.595, 0.595, 0.595
-silencer_fire_distance  = 500
-silencer_bullet_speed   = 510
-
-fire_dispersion_base		= 0.62
-control_inertion_factor = 1.2f
-crosshair_inertion		= 5.5
-
-misfire_start_condition		= 0.485
-;отдача
-cam_return = 0 ;				= 0
-cam_relax_speed         = 6		;скорость возврата в исходное положение
-cam_relax_speed_ai      = 360
-cam_dispersion          = 1.86	;увеличениЯ угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 1.67	;увеличениe cam_dispersion с каждым выстрелом
-cam_dispersion_frac		= 1.1	;ствол будет подыматьсЯ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle			= 50.0	;максимальный угол отдачи
-cam_max_angle_horz		= 50.0	;(degree) maximum shot horizontal degree
-cam_step_angle_horz		= 1.3	;(degree) size of step camera moved in horizontal position while shooting
-
-hud			= wpn_hunter_hud
-
-snd_reload						= weapons\hunter_revolver\hunter_revolver_reload
-
-visual             	= dynamics\weapons\wpn_metro_revolver\wpn_hunter.ogf
-
-[wpn_hunter_hud]:wpn_gp100_hud
-
-item_visual             	= dynamics\weapons\wpn_metro_revolver\wpn_hunter_hud.ogf
-
-item_position					= 0,0.010,0
-item_orientation				= 0,-90,0
-
-hands_position			= 0.120,-0.135,0.130
-hands_orientation		= 0,0,0
-
-hands_position_16x9 	= 0.120,-0.135,0.130
-hands_orientation_16x9  = 0,0,0
-
-shell_point						= 0.021,0.057,0.456
-shell_bone              	= wpn_body
-
-fire_point			= -0.5,0.05,-0.6; -0.5,0.05,-0.5 ; z, x, y rotated crap
-fire_bone               	= muzzle
-
-anm_show				= kyky_revolver_hunter_draw
-anm_hide            	= kyky_revolver_hunter_holster
-anm_idle            	= kyky_revolver_hunter_idle
-anm_shots				= kyky_revolver_hunter_shoot, shoot
-anm_idle_aim			= kyky_revolver_hunter_idle_aim
-anm_reload				= kyky_revolver_hunter_reload, reload
-anm_idle_moving			= kyky_revolver_hunter_idle_move
-anm_idle_sprint			= kyky_revolver_hunter_idle_sprint
-anm_bore				= kyky_revolver_hunter_idle
-
-anm_show_empty				= kyky_revolver_hunter_draw
-anm_hide_empty            	= kyky_revolver_hunter_holster
-anm_idle_empty            	= kyky_revolver_hunter_idle
-anm_shot_l					= kyky_revolver_hunter_shoot, shoot
-anm_idle_aim_empty			= kyky_revolver_hunter_idle_aim
-anm_reload_empty			= kyky_revolver_hunter_reload, reload
-anm_idle_moving_empty		= kyky_revolver_hunter_idle_move
-anm_idle_sprint_empty		= kyky_revolver_hunter_idle_sprint
-anm_bore_empty				= kyky_revolver_hunter_idle
-
-gl_hud_offset_pos				= 0,0,0
-gl_hud_offset_rot				= 0,0,0
-
-lean_hud_offset_pos			= 0,0,0
-lean_hud_offset_rot			= 0,0,0
-
-aim_hud_offset_pos_16x9 = -0.121900,0.029500,-0.038600
-aim_hud_offset_rot_16x9 = -0.023600,-0.000600,0.013500
-
-aim_hud_offset_pos = -0.121900,0.029500,-0.038600
-aim_hud_offset_rot = -0.023600,-0.000600,0.013500
+aim_hud_offset_pos = -0.092250,0.027600,-0.081100
+aim_hud_offset_rot = -0.007600,0.003600,-0.002000
+
+aim_hud_offset_pos_16x9 = -0.092250,0.027600,-0.081100
+aim_hud_offset_rot_16x9 = -0.007600,0.003600,-0.002000

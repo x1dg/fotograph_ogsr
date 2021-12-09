@@ -28,6 +28,8 @@ wpn_rg-6 (сделать иконку апгрейженного)
 wpn_famas_p3_sk1 (иконка вроде норм)
 wpn_desert_eagle (вроде норм, иконку можно еще посмотреть)
 wpn_g36 (можно найти иконку и получше)
+wpn_l85 (иконка норм)
+wpn_sig550 (иконка хз)
 
 ###STCOP###
 wpn_binoc (иконку я поменял, все ок)
@@ -54,18 +56,7 @@ wpn_toz34
 wpn_sig220 (иконку я поменял, все ок)
 wpn_gp100 (вылетает, можно поискать иконку покрасивее)
 wpn_colt_python (вылетает, можно поискать иконку покрасивее)
-
-###GUNSLINGER###
-w_abakan.ltx
-w_ak74.ltx
-w_ak74u.ltx
-w_l85.ltx
-w_sig550.ltx
-
-w_gauss.ltx
-w_svd.ltx
-w_svu.ltx
-w_val.ltx
-w_vintorez.ltx
-
-w_toz34.ltx
+wpn_sig550 (иконка норм)
+wpn_svd (иконка норм)
+wpn_svu (иконка норм)
+wpn_vintorez (иконка норм)
