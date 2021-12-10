@@ -18,7 +18,7 @@ inv_grid_y         		= 2
 scope_texture		= wpn\wpn_crosshair
 scope_zoom_factor	= 30
 scope_lense_fov_factor	= 18
-scope_inertion_factor   = 12
+scope_inertion_factor   = 8
 scope_dynamic_zoom 	= true
 ;-------------------------------------------------------------------------------
 [wpn_addon_scope_susat]:identity_immunities
@@ -47,7 +47,7 @@ inv_grid_y         		= 1
 scope_texture			= wpn\wpn_crosshair_mark4
 scope_zoom_factor		= 30
 scope_lense_fov_factor	= 18
-scope_inertion_factor   = 12
+scope_inertion_factor   = 8
 scope_dynamic_zoom 	= true
 ;=======================================================================
 [eot]:identity_immunities
@@ -66,8 +66,8 @@ inv_grid_width     		= 1
 inv_grid_height    		= 1
 inv_grid_x         		= 10
 inv_grid_y         		= 6
-scope_zoom_factor		= 90
-3d_zoom_factor			= 90
+
+scope_zoom_factor		= 8
 ;=======================================================================
 [c-more]:identity_immunities
 GroupControlSection		= spawn_group
@@ -85,8 +85,8 @@ inv_grid_width     		= 1
 inv_grid_height    		= 1
 inv_grid_x         		= 12
 inv_grid_y         		= 6
-scope_zoom_factor		= 90
-3d_zoom_factor			= 90
+
+scope_zoom_factor		= 56
 ;=======================================================================
 [kobra]:identity_immunities
 GroupControlSection		= spawn_group
@@ -104,10 +104,8 @@ inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x				= 13
 inv_grid_y				= 6
-scope_zoom_factor	= 10
-scope_lense_fov_factor	= 24
-scope_inertion_factor   = 5
-scope_dynamic_zoom 	= false
+
+scope_zoom_factor	= 56
 ;=======================================================================
 [1p78]:identity_immunities
 GroupControlSection		= spawn_group
@@ -126,8 +124,8 @@ inv_grid_height    		= 1
 inv_grid_x         		= 11
 inv_grid_y         		= 6
 scope_texture			= wpn\wpn_crosshair_1p78
-3d_fov 				= 0.12
-scope_zoom_factor	= 25
+
+scope_zoom_factor	= 35
 scope_lense_fov_factor	= 18
 scope_inertion_factor   = 8
 scope_dynamic_zoom 	= true
@@ -149,30 +147,8 @@ inv_grid_height    		= 1
 inv_grid_x         		= 14
 inv_grid_y         		= 6
 scope_texture			= wpn\wpn_crosshair_specter
+
 scope_zoom_factor		= 25
 scope_lense_fov_factor	= 18
 scope_inertion_factor   = 8
 scope_dynamic_zoom 	= true
-;=======================================================================
-[9x39scope]:identity_immunities
-GroupControlSection		= spawn_group
-discovery_dependency		=
-cform				= skeleton
-class				= WP_SCOPE
-$spawn 				= "mod\9x39scope"
-visual          		= dynamics\weapons\wpn_upgrade\wpn_scope_pso-1m2-01.ogf
-cost				= 10000
-inv_name			= st_addon_scope_pso-1m2-01
-inv_name_short			= st_addon_scope_pso-1m2-01
-description			= st_addon_scope_pso-1m2-01_descr
-inv_weight			= 0.600
-inv_grid_width     		= 2
-inv_grid_height    		= 1
-inv_grid_x         		= 10
-inv_grid_y         		= 17
-scope_texture			= wpn\wpn_crosshair_vss
-scope_zoom_factor		= 25
-scope_lense_fov_factor	= 18
-scope_inertion_factor   = 8
-scope_dynamic_zoom 		= true
-;=======================================================================

@@ -1,0 +1,294 @@
+[wpn_sig550]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection     = spawn_group
+$spawn               	= "weapons\vhsk2"      ; option for Level Editor
+$npc                    = on                                ; option for Level Editor
+$prefetch               = 8
+scheduled               = off                                ; option for ALife Simulator
+cform                   = skeleton
+class                   = WP_AK74
+description          	= st_wpn_vhsk2_descr
+ef_main_weapon_type     = 2
+ef_weapon_type          = 7
+default_to_ruck         = false
+sprint_allowed       	= true
+
+;VHS-K2, new improved version, 16" barrel
+
+;-------------------------------------------------------------------------------
+cost                    = 15000
+weapon_class            = assault_rifle        ; Type of the weapon
+inv_weight           	= 3.75
+
+
+;--TTX--------------------------------------------------------------------------
+hit_power		= 0.46, 0.46, 0.46, 0.46
+hit_impulse             = 15
+hit_type		= fire_wound
+fire_distance           = 1000
+bullet_speed            = 870        ;начальна¤ скорость пули
+rpm                     = 830
+rpm_empty_click         = 120
+
+use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
+time_to_aim             = 3.0
+
+hud                     = wpn_vhsk2_hud
+
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.85
+misfire_end_condition		= 0.1
+misfire_start_prob = 0.003 ;	     	= 0.0045
+misfire_end_prob = 0.0625 ;	     	= 0.045
+condition_shot_dec      	= 0.00075
+condition_queue_shot_dec	= 0.001
+
+ammo_elapsed            = 30
+ammo_mag_size           = 30
+
+ammo_class				= ammo_5.56x45_ss190, ammo_5.56x45_ap
+grenade_class           = ammo_m209
+fire_modes              = 1, -1
+launch_speed            = 0
+hand_dependence         = 1
+single_handed           = 0
+
+;--дисперсия----------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base    = 0.425
+control_inertion_factor = 1.35f
+crosshair_inertion		= 6.3
+
+;отдача
+cam_return = 0 ;				= 1
+cam_relax_speed             = 10		;???????? ???????? ? ???????? ?????????
+cam_relax_speed_ai      	= 360
+cam_dispersion	         	= 0.6
+cam_dispersion_inc         	= 0.55
+cam_dispersion_frac        	= 1.17	    ;????? ????? ?????????? ?? cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle				= 50.0      ;???????????? ???? ??????
+cam_max_angle_horz         	= 50.0      ;(degree) maximum shot horizontal degree
+cam_step_angle_horz        	= 1.3		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_relax_speed         = 10	    ; scope & ironsight
+zoom_cam_relax_speed_ai      = 360
+zoom_cam_dispersion          = 0.687
+zoom_cam_dispersion_inc      = 0.69
+zoom_cam_dispersion_frac     = 0.75
+zoom_cam_max_angle           = 50.0
+zoom_cam_max_angle_horz      = 50.0
+zoom_cam_step_angle_horz     = 1.78
+
+PDM_disp_base 				= 1.0
+PDM_disp_vel_factor 		= 2.5
+PDM_disp_accel_factor 		= 2.5
+PDM_disp_crouch = 1.0 ;  			= 1.165
+PDM_disp_crouch_no_acc = 1.0 ; 		= 1.325
+PDM_disp_crouch_no_acc = 1.0 ; 		= 1.325
+
+fire_dispersion_condition_factor = 0.015 ; 0.001 ; = 0.01 ; 11        
+
+;---DOF-------------------------------------------------------------------------
+zoom_dof						= 0.5, 1.0, 180
+reload_dof					= 0.0, 0.5, 5, 2
+
+;-------------------------------------------------------------------------------
+holder_range_modifier   = 1.85             ; во сколько раз увеличивается eye_range
+holder_fov_modifier     = 1.0              ; во сколько раз увеличивается eye_fov
+
+hit_probability_gd_novice = 1.00 ;  = 0.80
+hit_probability_gd_stalker = 1.00 ; = 0.80
+hit_probability_gd_veteran = 1.00 ; = 0.80
+hit_probability_gd_master = 1.00 ;  = 0.80
+
+min_radius = 0 ;              = 30
+max_radius = 500 ; = 250 ;              = 100
+
+;-------------------------------------------------------------------------------
+slot                    = 2                ; // secondary
+animation_slot          = 2                ; type of the animation that will be used
+
+inv_name          		= st_wpn_vhsk2
+inv_name_short       	= st_wpn_vhsk2
+
+inv_grid_width			= 5
+inv_grid_height			= 2
+inv_grid_x				= 5
+inv_grid_y				= 7
+
+upgr_icon_x			= 1724 ; 303
+upgr_icon_y			= 802 ; 515
+upgr_icon_width		= 167 ; 294
+upgr_icon_height   	= 159 ; 110
+
+kill_msg_x           	= 84
+kill_msg_y           	= 28
+kill_msg_width       	= 73
+kill_msg_height         = 30
+
+;-------------------------------------------------------------------------------
+position                   				= -0.026, -0.130, 0.0
+orientation                				= 0.0, 0.0, 0.0
+
+fire_point              				= 0.0, 0.199, 0.575
+fire_point2             				= 0.0, 0.199, 0.575
+
+flame_particles			= weapons\generic_weapon05
+smoke_particles			= weapons\generic_shoot_00
+silencer_smoke_particles= weapons\generic_shoot_00
+grenade_flame_particles	= weapons\generic_weapon01
+
+shell_point             = -0.020000,0.167000,0.082000
+shell_dir               = 0.0, 0.0, 0.4
+shell_particles						= weapons\556x45
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;под мишкой
+strap_position         	= -0.15,-0.36,0.25			; position (offset) and orientation of the weapon when it is strapped
+strap_orientation      	= -10,-5,10					; (3rd person view in degrees)
+strap_bone0             = bip01_spine2
+strap_bone1             = bip01_spine1
+
+startup_ammo            = 90
+visual                     = dynamics\weapons\wpn_vhs2\wpn_vhs2.ogf
+
+light_disabled				= false
+light_color             = 0.6,0.5,0.3
+light_range             = 5
+light_var_color         = 0.05
+light_var_range         = 0.5
+light_time              = 0.2
+
+ph_mass                 = 5
+;cost                   = 2100
+
+;addons
+scope_status                = 2
+silencer_status         	= 2
+grenade_launcher_status = 0
+
+zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
+zoom_rotate_time		= 0.25
+scope_zoom_factor       = 75 ;        = 85
+
+scopes_sect				   = scope_susat_vhsk2_moist, scope_susat_vhsk2, scope_susat_vhsk2_worn, scope_susat_x1.6_vhsk2, scope_susat_custom_vhsk2, scope_susat_dusk_vhsk2, scope_susat_night_vhsk2
+
+scope_name 					= wpn_addon_scope_susat
+scope_x 						= 60
+scope_y 						= -2
+silencer_name           = wpn_addon_sil_556_ar
+silencer_x 				= -57
+silencer_y 					= 10
+grenade_launcher_name 	= wpn_addon_grenade_launcher_m203
+grenade_launcher_x 	= 128
+grenade_launcher_y 	= 28
+
+;звуки
+snd_draw                = weapons\vhsk2\vhsk2_deploy
+snd_holster    			= weapons\vhsk2\vhsk2_holster
+snd_shoot				= weapons\vhsk2\vhsk2_1
+snd_shoot1				= weapons\vhsk2\vhsk2_2
+snd_shoot2				= weapons\vhsk2\vhsk2_3
+snd_shoot3				= weapons\vhsk2\vhsk2_4
+
+
+
+snd_empty               = weapons\vhsk2\vhsk2_trigger
+snd_reload				= weapons\vhsk2\vhsk2_reload
+snd_shoot_grenade       = weapons\explo\grenade_launch_explo
+snd_reload_grenade		= weapons\l85_grenload
+snd_switch				= weapons\groza_switch
+snd_bore				= weapons\draw_silent
+snd_silncer_shot        = weapons\vhsk2\vhsk2_sil1
+snd_silncer_shot1       = weapons\vhsk2\vhsk2_sil2
+snd_silncer_shot2       = weapons\vhsk2\vhsk2_sil3
+snd_silncer_shot3       = weapons\vhsk2\vhsk2_sil4
+
+silencer_light_color    = 0.6,0.5,0.3
+silencer_light_range    = 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time     = 0.2
+
+
+[wpn_vhsk2_hud]:hud_base
+zoom_hide_crosshair		= true
+attach_place_idx			= 0
+item_visual					= dynamics\weapons\wpn_vhs2\wpn_vhs2_hud.ogf
+
+hands_position				= -0.064,-0.19,0.2055
+hands_orientation				= 0.52,2.409999,0.15
+
+hands_position_16x9				= -0.064,-0.19,0.2055
+hands_orientation_16x9			= 0.52,2.409999,0.15
+
+item_position				= 0,0,0
+item_orientation				= 0,0,0
+
+shell_point					= 0.02,0.06,-0.099
+shell_dir               				= 0,1,0
+shell_bone					= wpn_body
+
+fire_point					= -0.011,0.043190,0.438116
+fire_bone					= wpn_body
+fire_point2					= 0,-0.028,0.678
+fire_bone2					= wpn_body
+
+aim_hud_offset_pos = -0.090700,0.055900,-0.097800
+aim_hud_offset_rot = 0.041400,0.009090,-0.007000
+
+aim_hud_offset_pos_16x9 = -0.090700,0.055900,-0.097800
+aim_hud_offset_rot_16x9 = 0.041400,0.009090,-0.007000
+
+gl_hud_offset_pos				= 0,0,0
+gl_hud_offset_rot				= 0,0,0
+
+gl_hud_offset_pos_16x9			= 0,0,0
+gl_hud_offset_rot_16x9			= 0,0,0
+
+anm_show             				= lancew_famas_draw
+anm_hide             				= lancew_famas_holster
+anm_idle             				= lancew_famas_idle
+anm_idle_sprint         			= lancew_famas_sprint
+anm_idle_moving 					= lancew_famas_mvoing
+anm_shots               			= lancew_famas_shoot, shoot
+anm_reload              			= lancew_famas_reload, reload
+anm_idle_aim           				= lancew_famas_idle_aim, idle_aim
+anm_bore							= lancew_famas_no_reload
+
+lean_hud_offset_pos		= 0,0,0
+lean_hud_offset_rot		= 0,0,0
+
+[scope_susat_vhsk2]
+scope_name 					= wpn_addon_scope_susat
+scope_x 					= 75
+scope_y 					= -20
+
+[scope_susat_vhsk2_moist]
+scope_name 					= wpn_addon_scope_susat_moist
+scope_x 					= 75
+scope_y 					= -20
+
+[scope_susat_vhsk2_worn]
+scope_name 					= wpn_addon_scope_susat_worn
+scope_x 					= 75
+scope_y 					= -20
+
+[scope_susat_x1.6_vhsk2]
+scope_name 					= wpn_addon_scope_susat_x1.6
+scope_x 					= 75
+scope_y 					= -20
+
+[scope_susat_custom_vhsk2]
+scope_name 					= wpn_addon_scope_susat_custom
+scope_x 					= 75
+scope_y 					= -20
+
+[scope_susat_dusk_vhsk2]
+scope_name 					= wpn_addon_scope_susat_dusk
+scope_x 					= 75
+scope_y 					= -20
+
+[scope_susat_night_vhsk2]
+scope_name 					= wpn_addon_scope_susat_night
+scope_x 					= 75
+scope_y 					= -20
