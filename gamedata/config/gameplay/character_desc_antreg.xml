@@ -1843,7 +1843,7 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_marshall_12 \n
+			wpn_sayga12k \n
 			ammo_12x70_buck = 1 \n
 			maloy_pda \n
 			device_torch \n

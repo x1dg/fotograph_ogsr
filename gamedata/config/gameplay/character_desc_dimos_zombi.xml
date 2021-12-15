@@ -1593,7 +1593,7 @@
 			[spawn] \n
 			wpn_fort \n
 			ammo_9x18_fmj = 2 \n
-			wpn_marshall_12 \n
+			wpn_sayga12k \n
 			ammo_12x76_zhekan = 2 \n
 			ammo_12x76_dart = 2 \n
 			medkit = 1 \n
@@ -1630,7 +1630,7 @@
 			[spawn] \n
 			wpn_walther \n
 			ammo_9x19_fmj \n
-			wpn_marshall_12 \n
+			wpn_sayga12k \n
 			ammo_12x76_zhekan = 2 \n
 			ammo_12x76_dart = 2 \n
 			grenade_f1 = 1 \n
@@ -1766,8 +1766,8 @@
   		<crouch_type>-1</crouch_type>
         <supplies>
 			[spawn] \n
-			wpn_sg552_sk1 = 1 \n
-			ammo_5.56x45_ss190 = 3 \n
+			wpn_gp100 = 1 \n
+			ammo_357sw_jfp = 3 \n
 			grenade_f1 = 1 \n
 			medkit = 1 \n
 			device_torch \n

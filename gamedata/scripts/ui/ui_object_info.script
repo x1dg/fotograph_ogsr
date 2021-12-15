@@ -1,0 +1,39 @@
+local progress = nil
+local hide = 0
+local hud = get_hud()
+function get_info()
+	local obj =  level.get_target_obj()
+	if obj == nil then
+		return
+	end
+	local cs = hud:GetCustomStatic("obj_info")
+
+	if (cs == nil) then
+		hud:AddCustomStatic("obj_info", true)
+		local xml = CScriptXmlInit()
+		xml:ParseFile("ui_custom_msgs.xml")
+		cs = hud:GetCustomStatic("obj_info")
+		local w = cs:wnd()
+		local text = obj:name()
+		cs:wnd():SetText(text)
+		wait()
+	end
+end
+
+-- Таймер = 10 секунд
+function wait()
+	hide = time_global() + 10000
+	local function check_timer()
+		return time_global() > hide
+	end
+	level.add_call(check_timer, cs_remove)
+end
+
+--Удалить статики
+function cs_remove()
+	hide = 0
+	local cs = hud and hud:GetCustomStatic("obj_info")
+	if (cs) then
+		hud:RemoveCustomStatic("obj_info")
+	end
+end

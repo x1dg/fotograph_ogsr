@@ -642,7 +642,7 @@ function hit_by_actor_mosin(actor, npc)
      printf("_bp: hit_by_actor: %s", if_then_else(hit_by_actor, "true", "false"))
      if hit_by_actor_mosin then
       local weapon = db.actor:item_in_slot(2)
-      if weapon and weapon:section() == "wpn_m1891_30_scope_ucen" then
+      if weapon and weapon:section() == "wpn_striker_col_ucen" then
         return hit_by_actor_mosin
       end
     end

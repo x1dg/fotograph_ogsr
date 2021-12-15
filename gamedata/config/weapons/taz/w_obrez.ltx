@@ -1,0 +1,242 @@
+[wpn_obrez]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection		= spawn_group
+$spawn                  = "weapons\bm16"		; option for Level Editor
+$npc			 		= on						; option for Level Editor
+$prefetch 		 		= 8
+scheduled               = off    				; option for ALife Simulator
+cform                   = skeleton
+class                   = WP_BM16
+
+description				= st_wpn_duplet_descr
+
+ef_main_weapon_type		= 1
+ef_weapon_type			= 9
+
+;-----------------------------------------------------------------------------
+cost					= 5000
+weapon_class			= shotgun
+inv_weight				= 3.13
+
+;---TTX-------------------------------------------------------------------------
+hit_power       = 0.73, 0.73, 0.73, 0.73
+hit_impulse     = 15
+hit_type 		= fire_wound
+fire_distance       	= 200
+bullet_speed			= 220
+rpm                 	= 800
+
+hud                      		= wpn_duplet_hud
+
+misfire_start_condition		= 0.825
+misfire_end_condition		= 0.1
+misfire_start_prob = 0.004 ;	     	= 0.008
+misfire_end_prob = 0.05 ;	     	= 0.08
+condition_shot_dec      	= 0.0024
+condition_queue_shot_dec	= 0.0024
+
+ammo_elapsed		 	= 3
+ammo_mag_size		 	= 3
+fire_modes				= 1
+
+ammo_class		 		= ammo_12x76_dart,ammo_12x76_zhekan,ammo_12x70_buck
+hand_dependence 		= 1
+single_handed			= 0
+
+;---DOF-------------------------------------------------------------------------
+zoom_dof			    = 0.5, 1.0, 180
+;reload_dof           = 0.0, 0.5, 5, 1.7
+;----дисперсия--------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base		= 1.5  	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor    	= 1.075f
+crosshair_inertion			= 4.9
+
+;отдача
+cam_return = 0 ;				= 0
+cam_relax_speed			= 2		;???????? ???????? ? ???????? ?????????
+cam_relax_speed_ai      = 360
+cam_dispersion          = 7.86		;?????????? ???? (? ????????) ? ?????? ?????????
+cam_dispersion_inc      = 7.5		;?????????e cam_dispersion ? ?????? ?????????
+cam_dispersion_frac     = 1.1		;????? ????? ?????????? ?? cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle        	= 50.0		;???????????? ???? ??????
+cam_max_angle_horz      = 50.0		;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 7.3		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_relax_speed		= 0.85     ; scope & ironsight
+zoom_cam_relax_speed_ai		= 360
+zoom_cam_dispersion			= 7.86
+zoom_cam_dispersion_inc		= 7.2
+zoom_cam_dispersion_frac	= 1.1
+zoom_cam_max_angle			= 50.0
+zoom_cam_max_angle_horz		= 50.0
+zoom_cam_step_angle_horz	= 7.3
+
+fire_dispersion_condition_factor = 0.015 ; 0.001 ; = 0.01 ; 2	
+
+misfire_probability 		= 0.0005    ;вероятность осечки при максимальном износе 
+misfire_condition_k		= 0.01
+
+;-------------------------------------------------------------------------------
+holder_range_modifier	= 1.0     ; во сколько раз увеличивается eye_range
+holder_fov_modifier		= 1.0     ; во сколько раз увеличивается eye_fov
+
+min_radius = 0 ;              = 0
+max_radius = 500 ; = 250 ;              = 50
+
+hit_probability_gd_novice = 1.00 ;	= 0.80
+hit_probability_gd_stalker = 1.00 ;	= 0.80
+hit_probability_gd_veteran = 1.00 ;	= 0.80
+hit_probability_gd_master = 1.00 ;	= 0.80
+
+;-------------------------------------------------------------------------------
+slot 					= 2
+animation_slot			= 3
+
+inv_name				= st_wpn_duplet
+inv_name_short			= st_wpn_duplet
+
+inv_grid_width     = 5
+inv_grid_height    = 1
+inv_grid_x         = 25
+inv_grid_y         = 5
+
+kill_msg_x				= 0
+kill_msg_y		  		= 104
+kill_msg_width			= 54
+kill_msg_height			= 16
+
+position                   = -0.023,-0.09, 0.05
+orientation                = 0, 30, 0      ;значение устанавливается в градусах
+
+shell_point      = 0.0, 0.183, 0.07
+fire_point       = 0.0, 0.168, 0.755
+fire_point2      = 0.0, 0.168, 0.755		;l
+
+flame_particles				= weapons\generic_weapon05
+smoke_particles     			= ghost_particles\weapons\flame_eft_shotgun
+silencer_smoke_particles   		= ghost_particles\weapons\generic_smoke_eft_sil
+
+rpm_empty_click = 200
+
+PDM_disp_base 				= 1.35
+PDM_disp_vel_factor 		= 1.35
+PDM_disp_accel_factor 		= 1.35
+PDM_disp_crouch = 1.0 ;  				= 0.925
+PDM_disp_crouch_no_acc = 1.0 ; 			= 2.205
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;под мишкой
+strap_position         			= -0.26,-0.11,0.15
+strap_orientation      			= -15,-9,110
+;на спине
+strap_bone0							= bip01_spine2
+strap_bone1							= bip01_spine1
+
+startup_ammo             		= 10
+visual                   		= dynamics\weapons\wpn_duplet\wpn_duplet.ogf
+
+light_color		 					= 0.6,0.5,0.3
+light_range		 					= 6.0
+light_var_color		 			= 0.05
+light_var_range		 			= 0.5
+light_time 		 					= 0.2
+
+ph_mass			 					= 3
+
+;addons
+scope_status						= 0
+silencer_status					= 0
+grenade_launcher_status			= 0
+
+zoom_enabled						= true
+scope_zoom_factor       = 80 ; 	    			= 85
+
+;звуки
+snd_draw				        = weapons\duplet\duplet_deploy
+snd_holster			            = weapons\duplet\duplet_holster
+snd_shoot						= weapons\duplet\duplet_1
+snd_shoot1						= weapons\duplet\duplet_2
+snd_shoot2						= weapons\duplet\duplet_3
+snd_shoot3						= weapons\duplet\duplet_4
+snd_empty			            = weapons\duplet\duplet_empty
+snd_reload			            = weapons\duplet\duplet_reload_lr_new		;reload both
+snd_shoot_duplet				= weapons\duplet\duplet_1
+snd_shoot_1						= weapons\duplet\duplet_2
+snd_reload_1		            = weapons\duplet\duplet_reload_l		;reload left
+
+
+[wpn_duplet_hud]:hud_base
+zoom_hide_crosshair				= true
+
+
+hands_position			= 0.156500,-0.096000,-0.004000
+hands_orientation		= 0.300000,1.350000,-2.599999
+
+
+hands_position_16x9				= 0.156500,-0.096000,-0.004000
+hands_orientation_16x9			= 0.300000,1.350000,-2.599999
+
+item_position						= -0.003178,0.002246,0.000581
+item_orientation					= -181.191742,180.482727,-180.330688
+
+shell_point							= 0,0,0
+shell_dir                    		= 0.0, 1.0, 0.0
+shell_bone							= wpn_body
+
+fire_point		= 0, 0.066, 0.514
+fire_bone                     = wpn_body
+
+attach_place_idx					= 0
+item_visual							= dynamics\weapons\wpn_duplet\wpn_duplet_hud.ogf
+
+item_position						= 0,0,0
+item_orientation					= 0,0,0
+
+fire_bone                     		= muzzle
+fire_point							= 0,0,0
+
+
+anm_show_0			            = duplet_draw
+anm_show_1			            = duplet_draw
+anm_show_2			            = duplet_draw
+
+anm_hide_0			            = duplet_holster
+anm_hide_1			            = duplet_holster
+anm_hide_2			            = duplet_holster
+
+anm_idle_0			            = duplet_idle
+anm_idle_1			            = duplet_idle
+anm_idle_2			            = duplet_idle
+
+anm_idle_aim_0			         = duplet_aim
+anm_idle_aim_1			         = duplet_aim
+anm_idle_aim_2			         = duplet_aim
+
+anm_idle_moving_0		         = duplet_move
+anm_idle_moving_1		         = duplet_move
+anm_idle_moving_2		         = duplet_move
+
+anm_idle_sprint_0		         = duplet_sprint
+anm_idle_sprint_1		         = duplet_sprint
+anm_idle_sprint_2		         = duplet_sprint
+
+anm_reload_1						= duplet_reload_l, reload_l
+anm_reload_2						= duplet_reload_lr, reload_lr
+anm_shot_1							= duplet_shoot, shoot
+anm_shot_2							= duplet_shoot, shoot
+
+anm_bore_0							= duplet_aim
+anm_bore_1							= duplet_aim
+anm_bore_2							= duplet_aim
+
+aim_hud_offset_pos = -0.153600,0.103000,-0.029000
+aim_hud_offset_rot = 0.023000,0.006200,-0.036000
+
+aim_hud_offset_pos_16x9 = -0.153600,0.103000,-0.029000
+aim_hud_offset_rot_16x9 = 0.023000,0.006200,-0.036000
+
+gl_hud_offset_pos					= 0,0,0
+gl_hud_offset_rot					= 0,0,0
+
+lean_hud_offset_pos				= 0,0,0
+lean_hud_offset_rot				= 0,0,0

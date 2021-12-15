@@ -2,20 +2,20 @@
 <ui_texture>
 	<file_name>ui\ui_PDA</file_name>
 	<texture id="ui_PDA"				x="0" y="0" width="1024" height="768"/>		<!-- окно кпк -->
-	<texture id="ui_pda_frame_b"		x="598" y="796" width="4" height="4"/>		<!-- рамка окон bottom -->
-	<texture id="ui_pda_frame_back"		x="628" y="782" width="4" height="4"/>		<!-- рамка окон body -->
-	<texture id="ui_pda_frame_bl"		x="648" y="796" width="4" height="4"/>		<!-- рамка окон bottom left -->
-	<texture id="ui_pda_frame_br"		x="708" y="796" width="4" height="4"/>		<!-- рамка окон bottom right -->
-	<texture id="ui_pda_frame_e"		x="628" y="782" width="4" height="4"/>		<!-- рамка окон bottom -->
-	<texture id="ui_pda_frame_l"		x="712" y="782" width="4" height="4"/>		<!-- рамка окон left -->
-	<texture id="ui_pda_frame_lb"		x="648" y="796" width="4" height="4"/>		<!-- рамка окон left bottom -->
-	<texture id="ui_pda_frame_lt"		x="775" y="768" width="4" height="4"/>		<!-- рамка окон left top -->
-	<texture id="ui_pda_frame_r"		x="772" y="782" width="4" height="4"/>		<!-- рамка окон right -->
-	<texture id="ui_pda_frame_rb"		x="708" y="796" width="4" height="4"/>		<!-- рамка окон right bottom -->
-	<texture id="ui_pda_frame_rt"		x="805" y="768" width="4" height="4"/>		<!-- рамка окон tight top -->
-	<texture id="ui_pda_frame_t"		x="822" y="768" width="4" height="4"/>		<!-- рамка окон top -->
-	<texture id="ui_pda_frame_tl"		x="775" y="768" width="4" height="4"/>		<!-- рамка окон top left-->
-	<texture id="ui_pda_frame_tr"		x="868" y="768" width="4" height="4"/>		<!-- рамка окон top right-->
+	<texture id="ui_pda_frame_b"		x="588" y="776" width="24" height="24"/>	<!-- рамка окон bottom -->
+	<texture id="ui_pda_frame_back"		x="620" y="770" width="24" height="24"/>	<!-- рамка окон body -->
+	<texture id="ui_pda_frame_bl"		x="648" y="776" width="24" height="24"/>	<!-- рамка окон bottom left -->
+	<texture id="ui_pda_frame_br"		x="688" y="768" width="24" height="24"/>	<!-- рамка окон bottom right -->
+	<texture id="ui_pda_frame_e"		x="620" y="770" width="24" height="24"/>	<!-- рамка окон bottom -->
+	<texture id="ui_pda_frame_l"		x="712" y="772" width="24" height="24"/>	<!-- рамка окон left -->
+	<texture id="ui_pda_frame_lb"		x="648" y="776" width="24" height="24"/>	<!-- рамка окон left bottom -->
+	<texture id="ui_pda_frame_lt"		x="775" y="768" width="24" height="24"/>	<!-- рамка окон left top -->
+	<texture id="ui_pda_frame_r"		x="752" y="772" width="24" height="24"/>	<!-- рамка окон right -->
+	<texture id="ui_pda_frame_rb"		x="688" y="776" width="24" height="24"/>	<!-- рамка окон right bottom -->
+	<texture id="ui_pda_frame_rt"		x="848" y="768" width="24" height="24"/>	<!-- рамка окон tight top -->
+	<texture id="ui_pda_frame_t"		x="780" y="768" width="24" height="24"/>	<!-- рамка окон top -->
+	<texture id="ui_pda_frame_tl"		x="775" y="768" width="24" height="24"/>	<!-- рамка окон top left-->
+	<texture id="ui_pda_frame_tr"		x="848" y="768" width="24" height="24"/>	<!-- рамка окон top right-->
 	<texture id="ui_pda_tab_line"		x="267" y="797" width="1" height="4"/>		<!-- разделитель вкладок -->
 	<texture id="ui_pda_task_line"		x="525" y="896" width="300" height="1"/>	<!-- разделитель заданий -->
 	<texture id="ui_pda_button_d"		x="907" y="768" width="117" height="29"/>	<!-- кнопка кпк неактивная -->

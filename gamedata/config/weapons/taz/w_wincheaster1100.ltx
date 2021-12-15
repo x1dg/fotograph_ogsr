@@ -1,0 +1,228 @@
+[wpn_wincheaster1100]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection			= spawn_group
+$spawn                   	= "weapons\m3"					; option for Level Editor
+$npc			 			= on				; option for Level Editor
+$prefetch 		 			= 8
+scheduled                	= off              ; option for ALife Simulator
+cform                    	= skeleton
+class                    	= WP_SHOTG
+description			= enc_weapons1_wpn-wincheaster1100
+
+;SERBU Super-Shorty: customised Mossberg 500
+
+ef_main_weapon_type			= 1
+ef_weapon_type				= 7
+
+;----------------------------------------------------------------------------
+cost					 	= 24640
+weapon_class			 	= shotgun
+inv_weight					= 3.2
+
+
+;--TTX----------------------------------------------------------------------------
+hit_power     				 = 0.8, 0.8, 0.8, 0.8
+hit_impulse    				 = 15
+hit_type 				  	 = fire_wound
+fire_distance       		 = 300
+bullet_speed				 = 340
+rpm                      	= 85            ;60 = 1 секунда
+
+hud                      	= wpn_super_shorty_hud
+
+misfire_probability        = 0.005
+misfire_start_condition		= 0.875
+misfire_end_condition		= 0.10
+misfire_start_prob = 0.002 ;	     	= 0.0065
+misfire_end_prob = 0.07 ;	     	= 0.065
+condition_shot_dec      	= 0.0016
+condition_queue_shot_dec	= 0.0016
+
+tri_state_reload			= on
+
+ammo_elapsed		 		= 6
+ammo_mag_size		 		= 6
+ammo_class		 		= ammo_12x76_dart, ammo_12x76_zhekan, ammo_12x70_buck
+fire_modes					= 1
+
+;--дисперсия----------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base		= 0.82  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor		= 1.3f
+crosshair_inertion			= 6.5
+
+;отдача
+cam_return = 0 ;				= 0
+cam_relax_speed			= 2		;???????? ???????? ? ???????? ?????????
+cam_relax_speed_ai      = 360
+cam_dispersion          = 7.35		;?????????? ???? (? ????????) ? ?????? ?????????
+cam_dispersion_inc      = 5.8		;?????????e cam_dispersion ? ?????? ?????????
+cam_dispersion_frac     = 1.1		;????? ????? ?????????? ?? cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle        	= 50.0		;???????????? ???? ??????
+cam_max_angle_horz      = 50.0		;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 6.9		;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_relax_speed		= 0.85     ; scope & ironsight
+zoom_cam_relax_speed_ai		= 360
+zoom_cam_dispersion			= 6.97
+zoom_cam_dispersion_inc		= 6.2
+zoom_cam_dispersion_frac	= 1.1
+zoom_cam_max_angle			= 50.0
+zoom_cam_max_angle_horz		= 50.0
+zoom_cam_step_angle_horz	= 6.1
+
+PDM_disp_base 				= 1.7
+PDM_disp_vel_factor 		= 1.75
+PDM_disp_accel_factor 		= 1.755
+PDM_disp_crouch = 1.0 ;  				= 0.925
+PDM_disp_crouch_no_acc = 1.0 ; 			= 2.205
+
+fire_dispersion_condition_factor = 0.015 ; 0.001 ; = 0.01 ; 2.5	
+
+;---DOF-------------------------------------------------------------------------
+zoom_dof					= 0.5, 1.0, 180
+;reload_dof           = 0.0, 0.5, 5, 1.7
+;-------------------------------------------------------------------------------
+holder_range_modifier	= 1.0               ; во сколько раз увеличивается eye_range
+holder_fov_modifier		= 1.0              ; во сколько раз увеличивается eye_fov
+
+min_radius = 0 ;               	= 0
+max_radius = 500 ; = 250 ;               	= 50
+
+hit_probability_gd_novice = 1.00 ;	= 0.70
+hit_probability_gd_stalker = 1.00 ;	= 0.70
+hit_probability_gd_veteran = 1.00 ;	= 0.70
+hit_probability_gd_master = 1.00 ;	= 0.70
+
+;-------------------------------------------------------------------------------
+position                 	= -0.024, -0.097, 0.
+orientation              	= 0, -4, 0      ;значение устанавливается в градусах
+
+shell_point				= 0.0, 0.180, 0.647
+
+fire_point              = 0.0, 0.158, 0.647
+fire_point2				= 0.0, 0.158, 0.647
+hand_dependence 	 		= 1
+single_handed				= 0
+
+slot 				 		= 2		; // secondary
+animation_slot		 		= 9		; type of the animation that will be used
+
+inv_name			= wpn-wincheaster1100
+inv_name_short		= wpn-wincheaster1100
+
+inv_grid_width     = 4
+inv_grid_height    = 1
+inv_grid_x         = 5
+inv_grid_y         = 22
+
+kill_msg_x			= 171
+kill_msg_y			= 104
+kill_msg_width		= 75
+kill_msg_height		= 20
+
+flame_particles				= weapons\generic_weapon05
+smoke_particles     			= ghost_particles\weapons\flame_eft_shotgun
+silencer_smoke_particles   		= ghost_particles\weapons\generic_smoke_eft_sil
+rpm_empty_click 	   	= 200
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;под мишкой
+strap_position         		= -0.26,-0.10,0.05			; position (offset) and orientation of the weapon when it is strapped
+strap_orientation      		= -15,-9,110				; (3rd person view in degrees)
+strap_bone0				= bip01_spine2
+strap_bone1				= bip01_spine1
+
+startup_ammo             		= 8
+visual				= dynamics\weapons\wpn_rem870_surv\wpn_rem870_surv.ogf
+
+light_color		 		= 0.6,0.5,0.3
+light_range		 		= 6.0
+light_var_color		 		= 0.05
+light_var_range		 		= 0.5
+light_time 		 		= 0.2
+
+ph_mass			 		= 3
+
+;addons
+scope_status				= 0
+silencer_status				= 0
+grenade_launcher_status			= 0
+
+zoom_enabled				= true
+scope_zoom_factor       = 95 ; 	    		= 85
+
+;звуки
+snd_draw				= weapons\mossberg\moss_deploy
+snd_holster				= weapons\mossberg\moss_holster
+snd_shoot				= weapons\mossberg\rem870surv_1
+snd_shoot1				= weapons\mossberg\rem870surv_2
+snd_shoot2				= weapons\mossberg\rem870surv_3
+snd_shoot3				= weapons\mossberg\rem870surv_4
+snd_reload				= weapons\moss\mossberg_reload_3
+snd_bore				= weapons\draw_silent
+snd_open_weapon			= weapons\draw_silent
+snd_add_cartridge		= weapons\mossberg\moss_insert1
+snd_add_cartridge1		= weapons\mossberg\moss_insert2
+snd_add_cartridge2		= weapons\mossberg\moss_insert3
+snd_add_cartridge3		= weapons\mossberg\moss_insert4
+snd_close_weapon		= weapons\mossberg\rem870surv_pump
+
+snd_empty				= weapons\generic_empty
+snd_shoot_duplet		= new_weapons\toz34_shoot_both
+
+[wpn_super_shorty_hud]:hud_base
+zoom_hide_crosshair = true
+
+attach_place_idx		= 0
+item_visual				= dynamics\weapons\wpn_rem870_surv\wpn_rem870_surv_hud.ogf
+
+shell_point				= 0.02,0.072,0.228
+shell_dir				= 0.0, 1.0, 0.0
+shell_bone				= wpn_body
+
+fire_point				= 0, 0.043689, 0.537374
+fire_bone				= wpn_body
+
+hands_position			= -0.032000,-0.184499,0.155001
+hands_orientation		= 0.519999,2.409999,0.149999
+ands_position_16x9				= -0.032000,-0.184499,0.155001
+hands_orientation_16x9			= 0.519999,2.409999,0.149999
+
+item_position			= 0.0,0.0,0.0
+item_orientation		= 0.0,0.0,0.0
+
+aim_hud_offset_pos = -0.115000,0.126400,-0.179499
+aim_hud_offset_rot = 0.035600,0.007800,-0.010500
+
+aim_hud_offset_pos_16x9				= -0.115000,0.126400,-0.179499
+aim_hud_offset_rot_16x9				= 0.035600,0.007800,-0.010500
+
+shell_point               				= 0,0,0
+shell_dir                 				= 0,0,0
+shell_bone                				= gilza
+
+fire_point		 			= 0,0,0
+fire_bone                 				= muzzle
+
+anm_show				= lancew_mossberg_draw
+anm_hide				= lancew_mossberg_holster
+anm_idle				= lancew_mossberg_idle
+anm_idle_aim			= lancew_mossberg_idle_aim
+anm_idle_moving			= lancew_mossberg_moving
+anm_idle_sprint			= lancew_mossberg_sprint
+anm_bore				= lancew_mossberg_no_reload
+anm_shots				= lancew_mossberg_shoot, shoot
+anm_open				= lancew_mossberg_reload_1
+anm_add_cartridge		= lancew_mossberg_reload_2, reload_2
+anm_close				= lancew_mossberg_reload_3, reload_3
+anm_reload 				= kyky_shorty_reload_1
+
+gl_hud_offset_pos               = 0,0,0
+gl_hud_offset_rot               = 0,0,0
+
+gl_hud_offset_pos_16x9          = 0,0,0
+gl_hud_offset_rot_16x9          = 0,0,0
+
+lean_hud_offset_pos             = 0,0,0
+lean_hud_offset_rot             = 0,0,0
+;=======================================================================

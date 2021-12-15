@@ -1,0 +1,245 @@
+[wpn_lewis]:wpn_main
+class					= WP_AK74						; Класс оружия
+$spawn					= "sm\wpn\Special\Wunderwaffe"	; Название оружия в СДК
+parent_section  		= wpn_lewis				; Секция оружия без обвесов
+weapon_class			= sniper_rifle					; Раздел для магазина мультиплеера
+cost					= 50000					
+
+;******[Описание, иконки]******;
+inv_name				= st_wpn_wunderwaffe
+inv_name_short			= st_wpn_wunderwaffe
+description				= st_wpn_wunderwaffe_descr
+
+inv_grid_width			= 5
+inv_grid_height			= 2
+inv_grid_x				= 30
+inv_grid_y				= 16
+
+scope_x					= 76
+scope_y					= -6
+silencer_x				= 0
+silencer_y				= 0
+grenade_launcher_x		= 0
+grenade_launcher_y		= 0
+
+;******[Параметры для НПС]******;
+min_radius				= 0			; [] for AI (Радиус не работает, на будущее)
+max_radius				= 100		; [] for AI
+
+holder_range_modifier	= 1.0		; во сколько раз увеличивается eye_range
+holder_fov_modifier		= 1.0		; во сколько раз увеличивается eye_fov
+
+ef_main_weapon_type		= 3
+ef_weapon_type			= 12
+
+weapon_type				= special
+;******[Аддоны и апгрейды]******;
+scope_status			= 0		; 0 - без аддона
+silencer_status			= 0		; 1 - встроенный
+grenade_launcher_status	= 0		; 2 - присоединяемый
+
+; Новые прицелы и магазины
+magazines 				= none
+scopes					= none
+additionals				= none
+
+; Прицелы текстурой \ Мушка
+scope_zoom_factor		= 60	; FOV при прицеливании
+scope_name				= wpn_addon_scope
+scope_texture			= wpn\wpn_crosshair_l85
+
+; Глушитель
+silencer_name			= wpn_addon_silencer
+
+; Подствольное
+grenade_launcher_name	= wpn_addon_grenade_launcher
+grenade_class			= ammo_vog-25
+grenade_vel				= 0
+
+; Апгрейды
+;upgrades				= 
+;installed_upgrades		= 
+;upgrade_scheme			= 
+
+;******[Характеристики оружия]******;
+sprint_allowed			= true
+slot					= 2
+single_handed			= 0				; Одноручное\Двуручное
+
+inv_weight				= 5.0
+control_inertion_factor	= 1.0			; Коэфицент чувствительности мышки
+crosshair_inertion   	= 4
+
+fire_modes				= 1, -1
+
+ammo_mag_size			= 30
+ammo_class				= ammo_gauss
+
+; Отдача и разброс
+fire_dispersion_base				= 0.8	; Угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+
+PDM_disp_base						= 2.0
+PDM_disp_vel_factor					= 2.0
+PDM_disp_accel_factor				= 2.0
+PDM_disp_crouch	 					= 1.0
+PDM_disp_crouch_no_acc 				= 1.0
+
+hit_probability_gd_novice			= 1
+hit_probability_gd_stalker			= 1
+hit_probability_gd_veteran			= 1
+hit_probability_gd_master			= 1
+
+; Скорость возврата отдачи к норме
+time_to_aim					= 1.0
+
+; Отдача (от бедра)
+cam_relax_speed				= 3		;скорость возврата в исходное положение
+cam_relax_speed_ai			= 360
+cam_dispersion				= 0.01		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.01		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac			= 1.0		;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle				= 0.01		;максимальный угол отдачи
+cam_max_angle_horz			= 0.01		;максимальный угол горизонтальной отдачи
+cam_step_angle_horz			= 0.01		;насколько сильна горизонтальная отдача
+
+; Отдача (прицеливание)
+zoom_cam_relax_speed		= 3		;прицел\мушка
+zoom_cam_relax_speed_ai		= 360
+zoom_cam_dispersion			= 0.01
+zoom_cam_dispersion_inc		= 0.01
+zoom_cam_dispersion_frac	= 1.0
+zoom_cam_max_angle			= 0.01
+zoom_cam_max_angle_horz		= 0.01
+zoom_cam_step_angle_horz	= 0.01
+
+; Надёжность
+condition_shot_dec		= 0.0002		; Увеличение износа при каждом выстреле
+
+; ТТХ
+hit_power				= 0.25
+hit_impulse				= 1
+hit_type				= shock
+
+fire_distance			= 1500	; Дистанция, после которой пуля исчезает
+bullet_speed			= 1000	; Скорость пули
+rpm						= 500	; Скорострельность
+
+zoom_enabled			= true	; Можно целиться
+zoom_rotate_time		= 0.25	; Скорость зума
+
+;******[Визуальная часть]******;
+; DoF
+;zoom_dof				= 0.0, 0.0, 180
+reload_dof				= 0.0, 0.5, 5, 1.7
+
+; Visual
+visual					= dynamics\weapons\wpn_wundf\wpn_wundf.ogf
+hud						= wpn_wunderwaffe_hud
+
+; Анимации от 3-го лица
+
+; Параметры от 3-его лица
+animation_slot			= 2				; Каким способом НПС держит ствол
+
+position				= -0.026, -0.17, 0.0
+orientation				= 0, 0, 0
+
+; Позиция под подмышкой
+strap_position			= -0.26,-0.11,0.15
+strap_orientation		= -15,-9,110
+strap_bone0				= bip01_spine2
+strap_bone1				= bip01_spine1
+
+; Партиклы и эффекты
+fire_point				= 0.00,0.18,0.52	; Позиция огня из основного ствола
+fire_point2				= 0.00,0.18,0.52	; Позиция огня из подствола
+
+flame_particles			= weapons\generic_weapon_gauss
+smoke_particles			= ;weapons\generic_weapon07
+silencer_smoke_particles= weapons\generic_weapon07
+grenade_flame_particles	= weapons\generic_weapon01
+
+; 2D-Гильзы
+shell_point				= 0.0, 0.129, 0.192
+shell_particles			= ;weapons\generic_shells
+
+; 3D-Гильзы
+shell_alowed			= false		;Нужно ли спавнить гильзу
+
+; Свет
+light_disabled			= false
+
+light_color				= 1.3,1.5,2
+light_range				= 4.0
+light_var_color			= 0.05
+light_var_range			= 0.5
+light_time				= 0.5
+
+silencer_light_color	= 0.6,0.5,0.3
+silencer_light_range	= 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time		= 0.2
+
+;******[Звуковая часть]******;
+snd_draw				= weapons\generic_draw
+snd_holster				= weapons\generic_holster
+snd_silncer_shot		= weapons\no_sound
+snd_shoot				= weapons\gauss\volt_shoot
+snd_empty				= weapons\gauss\volt_empty, 0.5
+snd_reload				= weapons\gauss\x_gauss_reload
+snd_shoot_grenade		= weapons\no_sound
+snd_reload_grenade		= weapons\no_sound
+snd_switch				= weapons\no_sound
+snd_bore				= weapons\no_sound
+snd_bore1				= weapons\no_sound
+
+[wpn_wunderwaffe_hud]:hud_base
+zoom_hide_crosshair		= true
+
+attach_place_idx		= 0
+item_visual				= dynamics\weapons\wpn_wundf\wpn_wundf_hud.ogf
+
+hands_position			= -0.044000,-0.191999,0.135500
+hands_orientation		= 0.549999,2.399999,0.1499993
+hands_position_16x9		= -0.044000,-0.191999,0.135500
+hands_orientation_16x9	= 0.549999,2.399999,0.1499993
+
+item_position			= 0.0,0.0,0.0
+item_orientation		= 0.0,0.0,0.0
+
+shell_point				= 0,0,0
+shell_dir				= 0.0, 1.0, 0.0
+shell_bone				= wpn_body
+
+fire_point				= 0.0,0.095097,0.540139
+fire_bone               = wpn_body
+
+aim_hud_offset_pos		= -0.104500,0.061500,-0.137500
+aim_hud_offset_rot		= 0.037500,0.006500,-0.010000
+aim_hud_offset_pos_16x9 = -0.104500,0.061500,-0.137500
+aim_hud_offset_rot_16x9 = 0.037500,0.006500,-0.010000
+
+gl_hud_offset_pos		= 0,0,0
+gl_hud_offset_rot		= 0,0,0
+
+lean_hud_offset_pos		= 0,0,0
+lean_hud_offset_rot		= 0,0,0
+
+anm_show				= lancew_gauss_draw
+anm_hide				= lancew_gauss_holster
+anm_shots				= lancew_gauss_shoot, shoot
+anm_reload				= lancew_gauss_reload, reload
+anm_bore				= lancew_gauss_no_reload
+anm_idle				= lancew_gauss_idle
+anm_idle_aim			= lancew_gauss_idle_aim
+anm_idle_moving			= lancew_gauss_moving
+anm_idle_sprint			= lancew_gauss_sprint
+
+; Сдвиг при центрированном режиме
+alt_ofs_pos_x			= -0.05
+alt_ofs_pos_y			= 0
+alt_ofs_pos_z			= 0.15
+alt_ofs_rot_x			= 0
+alt_ofs_rot_y			= 0
+alt_ofs_rot_z			= 0

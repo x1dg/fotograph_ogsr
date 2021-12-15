@@ -176,9 +176,6 @@ function main_menu:OnKeyboard(dik, keyboard_action)
 		if dik == DIK_keys.DIK_F1 then
 			ui_cheat_menu.start_menu(self)	-- вот сам вызов
 		end
-		if dik == DIK_keys.DIK_F2 then
-			scripts_cleanup.garbage_collect()
-		end
 	end
 
 	return true

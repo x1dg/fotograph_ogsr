@@ -144,3 +144,9 @@ binds_actions[key_bindings.kUN_AMMO] = function()
 	end
 	return true
 end
+
+-- 'Z' - Инфа про объект, на который смотришь
+binds_actions[key_bindings.kINFO] = function()
+	ui_object_info.get_info()
+	return true
+end

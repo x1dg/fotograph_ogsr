@@ -24,6 +24,9 @@
 	<string id="kb_set_unlimitedammo">
 		<text>Бесконечные патроны</text>
 	</string>
+	<string id="kb_get_object_info">
+		<text>Инфа про Объект на которы смотрим</text>
+	</string>
 	<string id="st_ui_hudmask_off">
 		<text>Шлем/противогаз снят</text>
 	</string>

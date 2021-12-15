@@ -2109,7 +2109,7 @@
 			[spawn] \n
 			wpn_walther \n
 			ammo_9x19_fmj \n
-            wpn_marshall_12 \n
+            wpn_sayga12k \n
 			ammo_12x70_buck = 2 \n
 			grenade_rgd5 = 1 \n
 			medkit = 1 \n
@@ -2147,7 +2147,7 @@
 			[spawn] \n
 			wpn_walther \n
 			ammo_9x19_fmj \n
-            wpn_marshall_12 \n
+            wpn_sayga12k \n
 			ammo_12x70_buck = 2 \n
 			grenade_rgd5 = 1 \n
 			medkit = 1 \n

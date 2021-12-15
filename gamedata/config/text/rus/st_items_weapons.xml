@@ -1721,9 +1721,57 @@
 		<text>\n \n%c[0,93,0,116] Х %c[0,140,140,140] Main characteristic and advantages: %c[0,170,170,170]Low ammo capacity. High power. Very high reliability - the cylinder doesn't jam unless seriously damaged. %c[0,140,140,140]  \n \n%c[0,170,170,170]MP-412 REX is a Russian double-action/single-action revolver designed by the state-owned Izhevsk Mechanical Plant, with a break-action chamber and an automatic ejector, chambered for the .357 Magnum round. The MP-412 is a double action revolver with a break-open frame and simultaneous extraction. The bottom frame is a composite type Ц it consists of a steel basic frame and a polymer envelope, which forms the grip and trigger guard. Polymer grip/trigger guard unit can be removed from the steel frame if necessary. The trigger is a conventional type, double action/single action, with exposed hammer. The firing pin is mounted in the frame. The barrel/cylinder group latch is located at the top rear of the frame, and is operated by two buttons that must be pushed inwards to unlock the frame. The cylinder holds 6 rounds and has an automatic ejector that throws the cases out of the cylinder once the barrel is fully tipped down. If necessary, the automatic ejection feature can be manually switched off. Only about a hundred of these revolvers were manufactured, since US banned the import of Russian firearms, the IzhMash lost their primary market. Some of them were sold to civilian owners in Europe and small number of these revolvers reached The Zone, where they are extremely rare. .357 Magnum revolvers, together with MP-412, are a popular sidearm in areas with high activity of wild animals, such as Alaska or Ukrainian Exclusion Zone.\n \n%c[0,93,0,116] Х %c[0,140,140,140] Reliability: %c[0,170,170,170]very high\n%c[0,93,0,116] Х %c[0,140,140,140] Durability: %c[0,170,170,170]high\n%c[0,93,0,116] Х %c[0,140,140,140] Ergonomics: %c[0,170,170,170]average</text>
 	</string>
 	<string id="st_wpn_357">
-		<text>SW Model 29</text>
+		<text>–евольвер .357</text>
 	</string>
 	<string id="st_wpn_357_descr">
 		<text>\n \n%c[0,93,0,116] Х %c[0,140,140,140] Main characteristic and advantages: %c[0,170,170,170]Low ammo capacity. High damage per shot. Effective vs mutants. Very high reliability - the cylinder doesn't jam unless seriously damaged. %c[0,140,140,140]  \n \n%c[0,170,170,170]The Smith and Wesson Model 29 is a double action handgun chambered for the .44 Magnum cartridge. Smith and Wesson Revolvers have a reputation for accuracy, smooth trigger pull, and a tight cylinder lock-up. They are similar in size and function to the Colt Trooper and Colt Lawman revolvers. Smith and Wesson revolvers are available in many variants, M29, M629, Quiet Special Purpose Revolvers (QSPR), Mountain Gun Variation, and others. The Model 29 was offered with 3, 4, 5, 6, 6 1/2, 8 3/8 and 10 5/8 inches (76, 102, 127, 152, 165, 213 and 270 mm) barrels as standard models. Other barrel lengths were available either by special order from Smith and Wesson's Custom Shop or custom built by gunsmiths. The 5 inches (130 mm) barreled variant had a full length underlug. Finish options available included a highly polished blued or nickel-plated surface. The six-inch model was the most popular generally, and the 8-inch model was intended for hunting. A 3-inch barrel version is very collectible, although not rare. A revolver is a repeating handgun that is fed from a revolving cylinder containing multiple chambers. Since the cylinder doesn't rely on gas or blowback for the cycling, it will cycle with each trigger pull, even if misfire occured - because of this, revolvers are usually considered much more reliable than semi-automatic pistols. They however have very complicated internals and are expensive to manufacture. The Model 29 was known for its very high quality finish and outstanding durability. The grip is very well profiled and the hand instantly takes a perfect position for accurate aiming. This revolver is still used and valued as a defensive sidearm. It is heavy and .44 Magnum loads have higher recoil than standard handgun rounds, but are nonetheless still controllable. Due to its high power it is effective at defeating both human attackers and wild animals. Because of this, .44 Magnum revolvers are still a popular sidearm for personal defense against robberies and in areas with high activity of wild animals, such as Alaska or Ukrainian Exclusion Zone. Model 29 was made famous worldwide by association with the fictional character "Dirty Harry" Callahan.\n \n%c[0,93,0,116] Х %c[0,140,140,140] Reliability: %c[0,170,170,170]very high\n%c[0,93,0,116] Х %c[0,140,140,140] Durability: %c[0,170,170,170]very high\n%c[0,93,0,116] Х %c[0,140,140,140] Ergonomics: %c[0,170,170,170]average</text>
+	</string>
+	<string id="st_wpn_duplet">
+		<text>ƒуплет</text>
+	</string>
+	<string id="st_wpn_duplet_descr">
+		<text>\n \n%c[0,93,0,116] Х %c[0,140,140,140] Main characteristic and advantages: %c[0,170,170,170]Simple homemade production. Very high spread. Lowered weight and good handling. Very high damage. Low durability. %c[0,140,140,140]  \n \n%c[0,170,170,170]Duplet is an improvised double-barreled shotgun manufactured by technicians in workshops near and in The Zone. It was produced by first stalkers in The Zone, since the black market of firearms was almost non-existent back then. Currently the Duplets are increasingly less common as more weaponry is available for cheap from traders and arms smugglers. It is a simple, crude firearm made from reinforced scrap metal and wood, with two barrels placed horizontally. The accuracy is low due to crude finish of the inside of the barrel, but it's not an issue since the gun is made for point-blank ranges. Two barrels hold one shell each and can be fired both in the same time. Since the weapon is manually operated, it works relatively reliably - the only issue can be misfires, but nonetheless they don't happen as often as jams in semi-automatic improvised weapons (like Borz or homemade pistols). The spread is very wide. The weapon features a stock that is mounted with a spring, which slightly reduces felt recoil, but also lowers the stability. The durability is very low and as with every improvised firearm, adequate safety precautions should be retained, as there's always a risk of catastrophic failure, which can injure the shooter. These weapons are sold for cheap and are the last ditch protection for those who can't spare more for a real weapon. Duplet can also be used as a cheap sidearm for those who want to buy a more expensive rifle or other primary weapon, but still want something as a backup. \n \n%c[0,93,0,116] Х %c[0,140,140,140] Reliability: %c[0,170,170,170]average\n%c[0,93,0,116] Х %c[0,140,140,140] Durability: %c[0,170,170,170]very low\n%c[0,93,0,116] Х %c[0,140,140,140] Ergonomics: %c[0,170,170,170]above average </text>
+	</string>
+		<string id="st_wpn_m3super90">
+		<text>Benelli M3 ЂSuper 90ї</text>
+	</string>
+	<string id="st_wpn_m3super90_descr">
+		<text>
+		\n%c[255,1,255,255]Х %c[default] алибр: 12x70 мм.
+		\n%c[255,1,255,255]Х %c[default]ћагазин: 8
+		\n%c[255,1,255,255]Х %c[default]»знос: 1500 выстр.
+		\n%c[255,1,255,255]Х %c[default]ќтдача: 4.3 (+0.35)
+		\n%c[255,1,255,255]Х %c[default]—корость пули: 130 м\с.
+		\n
+		\n***********************
+		\n%c[255,1,255,255]Х %c[default]–ежим стрельбы: 1
+		\n%c[255,1,255,255]Х %c[default]ѕрицелы: ¬строен x1.6
+		\n%c[255,1,255,255]Х %c[default]ѕодствольник: ќтсутствует
+		\n%c[255,1,255,255]Х %c[default]ѕоддержка глушител€: Ќету
+		\n%c[255,1,255,255]Х %c[default]—пециализаци€: ƒробовик
+		</text>
+	</string>
+	<string id="st_wpn_wunderwaffe">
+		<text>X-25 ЂWunderwaffeї</text>
+	</string>
+	<string id="st_wpn_wunderwaffe_descr">
+		<text>
+		\n%c[255,1,255,255]Х %c[default] алибр: јккумул€тор
+		\n%c[255,1,255,255]Х %c[default]ћагазин: 30
+		\n%c[255,1,255,255]Х %c[default]»знос: 5000 выстр.
+		\n%c[255,1,255,255]Х %c[default]ќтдача: 0.01 (+0.01)
+		\n%c[255,1,255,255]Х %c[default]ѕерезар€дка: 1.7 сек.
+		\n%c[255,1,255,255]Х %c[default]—корость пули: 1000 м\с.
+		\n
+		\n***********************
+		\n%c[255,1,255,255]Х %c[default]–ежим стрельбы: 1, A
+		\n%c[255,1,255,255]Х %c[default]ѕрицелы: Ќету
+		\n%c[255,1,255,255]Х %c[default]ѕодствольник: ќтсутствует
+		\n%c[255,1,255,255]Х %c[default]ѕоддержка глушител€: Ќету
+		\n%c[255,1,255,255]Х %c[default]—пециализаци€: јвтомат
+		\n«аметка: ќчень странна€ пушка. ѕроисхождение неизвестно.
+		\n
+		\n%c[255,1,255,255]ѕробивает стены%c[default]			
+		</text>
 	</string>
 </string_table>

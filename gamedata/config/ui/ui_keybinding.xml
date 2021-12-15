@@ -66,5 +66,6 @@
 		<command id="kb_set_hudmask"				exe="set_hudmask"/>
 		<command id="kb_set_godmode"				exe="set_godmode"/>
 		<command id="kb_set_unlimitedammo"			exe="set_unlimitedammo"/>
+		<command id="kb_get_object_info"			exe="get_object_info"/>
 	</group>
 </keybingidg>

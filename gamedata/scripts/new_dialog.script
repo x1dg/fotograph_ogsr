@@ -38,14 +38,14 @@ local nagrad = {
   "wpn_spas12_m1",
   "wpn_groza_m1",
   "wpn_mp7a3",
-  "wpn_sg552_sk1",
+  "wpn_gp100",
   "wpn_kriss_super_v",
   "wpn_m1891_30_scope"
  },
   level_4 = {
   "wpn_galatz_sk1",
-  "wpn_sg551_sk1",
-  "wpn_hk417_sk1",
+  "wpn_l86",
+  "wpn_g43",
   "wpn_svd_m1",
   "wpn_gauss"
  },
@@ -2181,16 +2181,16 @@ local item = ""
 		actor = second_speaker
 		trader = first_speaker
 	end
-	dialogs.relocate_item_section(actor, "wpn_m1891_30_scope_ucen", "in", 1)
+	dialogs.relocate_item_section(actor, "wpn_striker_col_ucen", "in", 1)
 	flamethrower.relocate_n_items_section(actor, "ammo_7.62x54_ucen", "in", 3)
 end
 
 function sahar_have()
-     return new_dialog.item_much("wpn_m1891_30_scope_ucen",1) ~= false 
+     return new_dialog.item_much("wpn_striker_col_ucen",1) ~= false 
 end
 
 function sahar_vzal()
-   new_dialog.out_item_much("wpn_m1891_30_scope_ucen",1)
+   new_dialog.out_item_much("wpn_striker_col_ucen",1)
 end
 
 function ucen_need_metka_have(task, info)
@@ -2411,7 +2411,7 @@ local item = ""
 		actor = second_speaker
 		trader = first_speaker
 	end
-	dialogs.relocate_item_section(actor, "wpn_hk417_sk1", "in", 1)
+	dialogs.relocate_item_section(actor, "wpn_l86", "in", 1)
 	new_dialog.out_item_much("mutant_krovosos_jaw",10)
 end
 
@@ -2875,7 +2875,7 @@ local item = ""
 		actor = second_speaker
 		trader = first_speaker
 	end
-	dialogs.relocate_item_section(actor, "wpn_sg552_sk1", "in", 1)
+	dialogs.relocate_item_section(actor, "wpn_gp100", "in", 1)
 	new_dialog.out_item_much("pashtet",7)
 end
 
@@ -2893,7 +2893,7 @@ local item = ""
 		actor = second_speaker
 		trader = first_speaker
 	end
-	dialogs.relocate_item_section(actor, "wpn_sg551_sk1", "in", 1)
+	dialogs.relocate_item_section(actor, "wpn_g43", "in", 1)
 	new_dialog.out_item_much("vodka",6)
 end
 

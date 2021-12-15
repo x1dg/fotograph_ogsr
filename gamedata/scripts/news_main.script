@@ -596,7 +596,6 @@ function get_weapon_type(weapon)
 			id == "wpn_lr300" or
 			id == "wpn_m4a1" or
                         id == "wpn_galatz_sk1" or
-                        id == "wpn_hk417_sk1" or
 			id == "wpn_lr300_m1" or
 			id == "wpn_l85" or
 			id == "wpn_l85_m1" or
@@ -635,15 +634,12 @@ function get_weapon_type(weapon)
 			id == "wpn_sig_m1" or
 			id == "wpn_sig220" or
 			id == "wpn_sig550" or
-                        id == "wpn_sg551_sk1" or
-                        id == "wpn_sg552_sk1" or
 			id == "wpn_g36" or
                         id == "wpn_ak47" or
                         id == "wpn_ak47_m" or
                         id == "wpn_aug_a3" or
                         id == "wpn_famas_p3_sk1" or
                         id == "wpn_g36c_sk1" or
-                        id == "wpn_l86" or
                         id == "wpn_m4" or
                         id == "wpn_tavor" or
                         id == "wpn_type97" or
@@ -687,7 +683,8 @@ function get_weapon_type(weapon)
 			return 7 --"Граната "..m_act:section()
 		        elseif id == "wpn_gravigun" or
                         id == "wpn_rg10_ognemet" or
-                        id == "wpn_flame" then
+                        id == "wpn_flame" or
+                        id == "wpn_l86" then
 			return 8 --"Нож "..m_act:section()
 		end
 		trace("Unknown weapon type ["..id.."] "..weapon:name())

@@ -55,6 +55,12 @@
 		<text font="letterica18" color="hud_main_task" align="c" vert_align="c"/>
 	</main_task>
 	
+	<!-- Инфа о объекте -->
+	<obj_info x="358" y="80" width="308.8" height="52" complex_mode="1" stretch="1" light_anim="buy_menu_info" la_cyclic="0" la_texture="1" la_text="1" la_alpha="1">
+		<texture>ui_hud_frame_task</texture>
+		<text font="letterica18" color="hud_main_task" align="c" vert_align="c"/>
+	</obj_info>
+	
 	<!-- Активация функций -->
 	<func_task  x="358" y="80" width="308.8" height="52" stretch="1" light_anim="buy_menu_info" la_cyclic="0" la_texture="1" la_text="1" la_alpha="1" ttl="5">
 		<texture>ui_hud_frame_task</texture>
@@ -199,24 +205,6 @@
 	<sleep_001 x="20" y="20" width="984" height="728">
 		<texture x="0" y="0" width="984" height="728">car\trabantnoise</texture>
 	</sleep_001>
-
-	<!-- Пинг в мультиплеере -->
-	<max_ping_warn_1 x="512" y="300" width="360" height="64" alignment="c" ttl="8">
-		<texture x="0" y="0" width="360" height="64" a="30">ui\ui_cm_connection_error</texture>
-		<text x="80" y="50" font="graffiti32" color="white_2"/>
-	</max_ping_warn_1>
-	<max_ping_warn_2 x="512" y="300" width="360" height="64" alignment="c" ttl="8">
-		<texture x="0" y="0" width="360" height="64" a="64">ui\ui_cm_connection_error</texture>
-		<text x="80" y="50" font="graffiti32" color="white_2"/>
-	</max_ping_warn_2>
-	<max_ping_warn_3 x="512" y="300" width="360" height="64" alignment="c" ttl="8">
-		<texture x="0" y="0" width="360" height="64" a="160">ui\ui_cm_connection_error</texture>
-		<text x="80" y="50" font="graffiti32" color="white_2"/>
-	</max_ping_warn_3>
-	<max_ping_warn_4 x="512" y="300" width="360" height="64" alignment="c" ttl="8">
-		<texture x="0" y="0" width="360" height="64" a="255">ui\ui_cm_connection_error</texture>
-		<text x="80" y="50" font="graffiti32" color="white_2"/>
-	</max_ping_warn_4>
 	
 	<!-- Вес -->
 	<inv_weight_static x="990" y="600" width="26.8" height="35" stretch="1">
