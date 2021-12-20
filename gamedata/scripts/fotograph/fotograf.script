@@ -1167,7 +1167,7 @@ local tbl_svd={
 }
 function freedom_stvol1_spawn()
 	local a = tbl_svd[math.random(table.getn(tbl_svd))]
-	alife():create("wpn_svd_c", vector():set(a.position.x,a.position.y,a.position.z), a.lv, a.gv)
+	alife():create("wpn_galatz_sk1", vector():set(a.position.x,a.position.y,a.position.z), a.lv, a.gv)
 end
 
 local tbl_spas12={
@@ -3430,7 +3430,7 @@ end
 
 function smith_dal_main(first_speaker, second_speaker)
 	dialogs.relocate_item_section(second_speaker, "wpn_sr25_mk11_mod0_sk1", "in", 1)
-	flamethrower.relocate_n_items_section(second_speaker, "ammo_7.62x51_ap", "in", 3)
+	flamethrower.relocate_n_items_section(second_speaker, "ammo_12.7x54", "in", 3)
 	dialogs.relocate_item_section(second_speaker, "military_outfit", "in", 1)
 	flamethrower.relocate_n_items_section(second_speaker, "medkit_army", "in", 2)
 	flamethrower.relocate_n_items_section(second_speaker, "bandage", "in", 3)

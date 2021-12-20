@@ -589,9 +589,8 @@ function get_weapon_type(weapon)
 			return 1 --"Пистолет "..m_act:section()
 		        elseif id == "wpn_vintorez" or
 			id == "wpn_svd" or
-			id == "wpn_svd_m1" or
 			id == "wpn_svu" or
-                        id == "wpn_svu_a" or
+            id == "wpn_svu_a" or
 			id == "wpn_svu_m1" or
 			id == "wpn_lr300" or
 			id == "wpn_m4a1" or
@@ -601,8 +600,7 @@ function get_weapon_type(weapon)
 			id == "wpn_l85_m1" or
 			id == "wpn_l85_m2" or
 			id == "wpn_sig_m2" or
-			id == "wpn_svd_c" or
-                        id == "wpn_sr25_mk11_mod0_sk1" or
+            id == "wpn_sr25_mk11_mod0_sk1" or
 			id == "wpn_m14" or
 			id == "wpn_m82a3" or
 			id == "wpn_m1918" or

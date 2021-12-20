@@ -494,7 +494,7 @@
     <supplies>
     [spawn] \n
     wpn_sr25_mk11_mod0_sk1 \n
-	ammo_7.62x51_ap = 3 \n
+	ammo_12.7x54  = 3 \n
 	device_torch \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"

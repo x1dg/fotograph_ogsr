@@ -10,9 +10,9 @@ inv_name				= st_wpn_wa2000
 inv_name_short			= st_wpn_wa2000
 description				= st_wpn_wa2000_descr
 
-inv_grid_width			= 6
+inv_grid_width			= 4
 inv_grid_height			= 2
-inv_grid_x				= 30
+inv_grid_x				= 24
 inv_grid_y				= 0
 
 scope_x					= 0
@@ -51,6 +51,7 @@ scope_zoom_factor		= 12	; FOV при прицеливании
 scope_name				= wpn_addon_scope
 scope_texture			= wpn\wpn_crosshair_rangefinder
 zoom_enabled			= true
+force_scope_texture 	= true
 
 ; Глушитель
 silencer_name			= wpn_addon_silencer
@@ -72,7 +73,7 @@ crosshair_inertion   	= 7
 fire_modes				= 1
 
 ammo_mag_size			= 12
-ammo_class		 		= ammo_7.62x51_fmj, ammo_7.62x51_ap
+ammo_class				= ammo_7.62x54_7h14,ammo_7.62x54_ap,ammo_7.62x54_7h1
 
 ; Отдача и разброс
 fire_dispersion_base				= 0.15	; Угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
@@ -126,8 +127,6 @@ reload_dof				= 0.0, 0.5, 5, 3.1
 ; Visual
 visual					= dynamics\weapons\wpn_wa2000\wpn_wa2000.ogf
 hud						= wpn_wa2000_hud
-
-; Анимации от 3-го лица
 
 ; Параметры от 3-его лица
 animation_slot			= 2				; Каким способом НПС держит ствол

@@ -1512,7 +1512,7 @@ return false
 end
 
 function izlom_dialog_done (first_speaker, second_speaker)
-flamethrower.relocate_n_items_section(second_speaker, "wpn_svd_c", "in", 1)
+flamethrower.relocate_n_items_section(second_speaker, "wpn_galatz_sk1", "in", 1)
 flamethrower.relocate_n_items_section(second_speaker, "ammo_7.62x54_7h14", "in", 1)
 end
 

@@ -4,14 +4,15 @@ w_dynamite.ltx
 
 w_foto.ltx
 w_mounted.ltx
-(^\s*)=(\s*[0-9]*$)
+ammo_7.62x51_fmj(\s*)=(\s*.*$)
 
 $$$REMOVED$$$
 wpn_tt33_sk1, wpn_ppsh, wpn_mp40, wpn_bizon, wpn_scorpion, wpn_bm16, 
 wpn_benellim4super90, wpn_rem_870, wpn_saiga12c, wpn_winch1887, wpn_w1200, 
 wpn_w2000, wpn_mp41, wpn_mauzer, wpn_c96, wpn_thompson, wpn_g3_camo, wpn_m4a1_sk1, 
 wpn_m16a2_sk1, wpn_m4_taktik, wpn_pb, wpn_pm, wpn_mp5, wpn_ak75, wpn_beretta, 
-wpn_marshall_12, wpn_sg551_sk1, wpn_sg552_sk1, wpn_hk417_sk1
+wpn_marshall_12, wpn_sg551_sk1, wpn_sg552_sk1, wpn_hk417_sk1, wpn_svd_m1,
+wpn_svd_c
 
 ###SHOKER###
 wpn_lr300 (иконку я поменял, все ок)
@@ -65,6 +66,8 @@ wpn_pkm (иконка норм)
 wpn_l86 (теперь это топор)
 wpn_lewis (теперь это вундервафля)
 wpn_m82a3 (иконка норм)
+wpn_ak74 (иконка классная, но она больше подходит для ak47, если найдешь хорошую, то меняй ак47 на текущую, а в текущую заливай хорошую)
+wpn_ak74_m1 (нужна иконка апгрейда)
 
 ###TAZ###
 wpn_sig220 (иконку я поменял, все ок)
@@ -72,6 +75,7 @@ wpn_gp100 (вылетает, можно поискать иконку покра
 wpn_colt_python (вылетает, можно поискать иконку покрасивее)
 wpn_svd (иконка норм)
 wpn_svu (иконка норм)
+wpn_svu_a (иконка норм)
 wpn_vintorez (нужна иконка с прицелом)
 wpn_val (можно глянуть другую иконку)
 wpn_sig550 (иконка норм)
@@ -79,3 +83,12 @@ wpn_vihlop (вроде норм)
 wpn_wincheaster1100 (нужна лычка апгрейда)
 wpn_g43 (теперь это STEN, иконка вроде норм)
 wpn_m1918 (теперь это P90, иконка норм)
+wpn_sr25_mk11_mod0_sk1 (теперь это PTRS)
+wpn_vint (нужно добавить и перевести описание)
+wpn_oicw (все норм)
+wpn_g36c_sk1 (все норм)
+wpn_scar (все норм)
+wpn_m16 (теперь это XM8, нужно добавить и перевести описание)
+
+##NS
+wpn_m4 (все норм, добавить партиклы @1beer)

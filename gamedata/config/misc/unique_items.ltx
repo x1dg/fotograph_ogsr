@@ -107,29 +107,6 @@ inv_grid_x			= 14
 inv_grid_y			= 24
 nightvision_sect	= effector_nightvision_blackwhite
 cost				= 70000
-; TODO Уменьшить износ
-
-;-----------Weapons-----------
-
-[wpn_ak74_m1]:wpn_ak74	;--- Скорострельный АК-74 ( АК-107 )
-$spawn             		= "weapons\uniq\wpn_ak74_m1"	
-description			= enc_weapons1_wpn-ak74_m1
-inv_name	        	= wpn-ak74_m1
-inv_name_short			= wpn-ak74_m1
-
-fire_modes			= 1, 3, -1
-
-cam_dispersion			= 0.45		
-cam_dispersion_inc		= 0.12
-
-misfire_probability 	        = 0.0004	;вероятность осечки при максимальном износе 
-misfire_condition_k		= 0.05
-
-rpm                      	= 850
-
-inv_grid_x			= 0
-inv_grid_y			= 30
-
 
 [wpn_abakan_m1]:wpn_abakan	;--- АH-94 снайперский
 $spawn              		= "weapons\uniq\wpn_abakan_m1"	
@@ -288,14 +265,6 @@ inv_grid_width			= 6
 inv_grid_height			= 2
 inv_grid_x		        = 35
 inv_grid_y			= 20
-
-[wpn_svd_m1]:wpn_svu_a
-$spawn             		= "weapons\uniq\wpn_svd_m1"	
-description			= enc_weapons1_wpn-svd_m1
-inv_grid_x			= 9
-inv_grid_y			= 33
-inv_grid_width			= 5
-inv_grid_height			= 1
 
 [wpn_sig_m1]:wpn_sig550	        ;Штурмовой SiG
 $spawn             		= "weapons\uniq\wpn_sig_m1"	

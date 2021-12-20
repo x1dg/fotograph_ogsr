@@ -257,7 +257,7 @@
   		<crouch_type>1</crouch_type>
         <supplies>
             [spawn] \n
-			wpn_svd_c  \n
+			wpn_galatz_sk1 \n
 			ammo_7.62x54_7h14 = 1 \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -392,7 +392,7 @@
         <supplies>
             [spawn] \n
 			wpn_galatz_sk1  \n
-			ammo_7.62x51_ap = 1 \n
+			ammo_7.62x54_ap = 1 \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
         </supplies>

@@ -1,0 +1,84 @@
+[wpn_g36c_sk1]:wpn_g36
+
+;G36K with rails, front grip and EOTech sight, 320mm/12.5inch barrel
+
+cost                 	= 68970
+inv_weight              = 3.487
+
+hit_power         = 0.42, 0.42, 0.42, 0.42
+bullet_speed            = 810
+
+control_inertion_factor = 1.35f
+crosshair_inertion	= 6.2
+
+;מעהאקא
+cam_dispersion	         	= 0.8
+cam_dispersion_inc         	= 0.7
+
+zoom_cam_dispersion          = 0.685
+zoom_cam_dispersion_inc      = 0.76
+zoom_cam_dispersion_frac     = 0.7
+zoom_cam_step_angle_horz     = 1.775
+
+inv_grid_width			= 4
+inv_grid_height			= 2
+inv_grid_x				= 30
+inv_grid_y				= 6
+
+silencer_x 				= -64
+silencer_y 				= 13
+
+snd_reload				= weapons\g36_pop\g36_shoker_reload_new
+snd_reload1				= weapons\g36_pop\g36_shoker_reload_new
+snd_reload2				= weapons\g36_pop\g36_shoker_reload_new
+snd_reload3				= weapons\g36_pop\g36_shoker_reload_new
+
+scope_status            = 0
+scope_zoom_factor       = 85
+scope_inertion_factor 	= 5
+
+inv_name				= ars-g36c
+inv_name_short			= ars-g36c
+description				= enc_arsenal_g36c
+
+hud				= wpn_g36k_cust_hud
+
+visual		= dynamics\weapons\wpn_g36\wpn_g36k_custom
+
+[wpn_g36k_cust_hud]:wpn_g36_hud
+
+item_visual		= dynamics\weapons\wpn_g36\wpn_g36k_custom_hud
+
+hands_position			= -0.044000,-0.191999,0.135500
+hands_orientation		= 0.549999,2.399999,0.1499993
+
+hands_position_16x9			= -0.044000,-0.191999,0.135500
+hands_orientation_16x9		= 0.549999,2.399999,0.1499993
+
+aim_hud_offset_pos = -0.106200,0.022200,-0.021200
+aim_hud_offset_rot = 0.038000,0.006100,-0.005104
+
+aim_hud_offset_pos_16x9 = -0.106200,0.022200,-0.021200
+aim_hud_offset_rot_16x9 = 0.038000,0.006100,-0.005104
+
+item_position			= 0.0,0.0,0.0
+item_orientation		= 0.0,0.0,0.0
+
+shell_point				= 0.028,0.078,0.113
+shell_dir               = 0.0, 1.0, 0.0
+shell_bone              = wpn_body
+
+fire_point				= 0.0011,0.055296,0.417750
+fire_bone               = wpn_body
+fire_point2				= 0.0,-0.009,0.601
+fire_bone2               = wpn_body
+
+anm_show                = lancew_g36c_draw
+anm_hide                = lancew_g36c_holster
+anm_idle                = lancew_g36c_idle
+anm_idle_sprint         = lancew_g36c_sprint
+anm_idle_moving         = lancew_g36c_moving
+anm_reload              = lancew_g36c_reload, reload
+anm_shots               = lancew_g36c_shoot_scope, shoot
+anm_idle_aim            = lancew_g36c_idle_aim, idle_aim
+anm_bore                = lancew_g36c_no_reload

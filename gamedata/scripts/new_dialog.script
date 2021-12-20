@@ -46,13 +46,12 @@ local nagrad = {
   "wpn_galatz_sk1",
   "wpn_l86",
   "wpn_g43",
-  "wpn_svd_m1",
+  "wpn_lewis",
   "wpn_gauss"
  },
   level_5 = {
   "ammo_9x39_ap",
-  "ammo_7.62x51_fmj",
-  "ammo_7.62x51_ap",
+  "ammo_7.62x54_7h14",
   "ammo_7.62x54_7h14",
   "ammo_7.62x54_7h1",
   "ammo_7.62x54_ap",
@@ -61,8 +60,6 @@ local nagrad = {
  },
  level_6 = {
   "ammo_9x39_ap",
-  "ammo_7.62x51_fmj",
-  "ammo_7.62x51_ap",
   "ammo_7.62x54_7h14",
   "ammo_7.62x54_7h1",
   "ammo_7.62x54_ap",
@@ -2302,7 +2299,7 @@ local item = ""
 		trader = first_speaker
 	end
 	dialogs.relocate_item_section(actor, "wpn_m14", "in", 1)
-	flamethrower.relocate_n_items_section(actor, "ammo_7.62x51_ap", "in", 3)
+	flamethrower.relocate_n_items_section(actor, "ammo_7.62x54_ap", "in", 3)
 	new_dialog.out_item_much("af_fireball",4)
 end
 
@@ -2321,7 +2318,7 @@ local item = ""
 		actor = second_speaker
 		trader = first_speaker
 	end
-	flamethrower.relocate_n_items_section(actor, "ammo_7.62x51_fmj", "in", 2)
+	flamethrower.relocate_n_items_section(actor, "ammo_7.62x54_7h14", "in", 2)
 	new_dialog.out_item_much("meat",1)
 end
 
@@ -2339,7 +2336,7 @@ local item = ""
 		actor = second_speaker
 		trader = first_speaker
 	end
-	flamethrower.relocate_n_items_section(actor, "ammo_7.62x51_ap", "in", 2)
+	flamethrower.relocate_n_items_section(actor, "ammo_7.62x54_7h14", "in", 2)
 	new_dialog.out_item_much("mineral",2)
 end
 

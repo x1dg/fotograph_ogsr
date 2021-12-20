@@ -1,0 +1,227 @@
+; M4 A1 SOPMOD
+[wpn_m4]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency 	= 
+$spawn                  = "weapons\wpn_m4"
+$npc			 		= on				
+$prefetch 		 	= 8
+scheduled               = off              
+cform                   = skeleton
+class                   = WP_VINT
+min_radius              = 0
+max_radius              = 150
+description		= "Боеприпасы:\n • 5,56x45 SS109 - основной\n • 5,56x45 АР - бронебойный\nАвтоматический карабин М4 отличается от винтовки М16А2 укороченным стволом с соответственно укороченным цевьём и телескопическим выдвижным прикладом, имеющим 4 фиксированных положения. Данная модель была переделана с использованием комплектующих фирмы SOPMOD, а также оснащена пулемётным магазином на 100 патронов."
+hidden_bones 		= s_barska,s_c-more,s_pn23,s_specter,wpn_scope,wpn_iron_sights
+
+script_binding  = bind_wpn.init
+
+ef_main_weapon_type		= 2
+ef_weapon_type			= 6
+
+holder_range_modifier	= 1.0		        
+holder_fov_modifier		= 0.7              
+
+weapon_class			= assault_rifle
+
+cost					= 45000
+
+ammo_limit		 		= 210
+ammo_current			= 30
+ammo_elapsed		 	= 30
+
+ammo_mag_size		 	= 80
+real_mag_wpn				= true
+mag_bones	  			= magazin, magazin2
+ammo_class		 		= ammo_5.56x45_ss190, ammo_5.56x45_ap
+grenade_class			= ammo_m209
+fire_modes				= 1,  -1
+launch_speed            = 0
+
+hand_dependence			= 1
+single_handed			= 0
+
+inv_name				= M4A1-SOPMOD  
+inv_name_short			= M4A1-SOPMOD
+inv_weight				= 2.8     ;3.7
+inv_grid_width     = 6
+inv_grid_height    = 2
+inv_grid_x         = 35
+inv_grid_y         = 20
+
+kill_msg_x			= 175
+kill_msg_y			= 0
+kill_msg_width		     = 82
+kill_msg_height		= 28
+
+slot 				= 13, 2		
+animation_slot			= 8		
+; animation_slot			= 2		
+
+;params of weapon recoil
+fire_dispersion_base         = 0.085
+control_inertion_factor			= 1.25f
+
+;отдача
+cam_relax_speed              = 3
+cam_relax_speed_ai         		= 6
+cam_dispersion          	= 0.3		
+cam_dispersion_inc	         = 0.085
+cam_dispertion_frac			= 0.9		
+cam_max_angle	              = 6.5	    	
+cam_max_angle_horz			= 16		
+cam_step_angle_horz			= 1.35
+
+fire_dispersion_condition_factor 	= 3	    	 
+misfire_probability 		= 0.0018	 
+misfire_condition_k			= 0.08
+condition_shot_dec 			= 0.00013	
+
+direction               = 0, 0, 1
+
+fire_point                               = 0, 0.199, 0.575         
+smoke_particles				= weapons\generic_shoot_00
+shell_particles	 			= weapons\shells_r_ns_556
+
+shell_point             	             = 0.12,0,0.07
+shell_dir               = 0.0, 0.0, 0.4
+
+rpm_empty_click 	 	= 200
+
+PDM_disp_base 			= 1.0
+PDM_disp_vel_factor 	= 0.8
+PDM_disp_accel_factor 	= 0.8
+PDM_crouch	 		= 1.0
+PDM_crouch_no_acc 		= 1.0
+
+; ttc
+hit_power        	     = 0.75
+hit_impulse		 	= 4
+hit_type 			= fire_wound
+
+fire_distance          	= 175
+bullet_speed			= 750 
+rpm                     = 800
+
+use_aim_bullet				= true		
+time_to_aim					= 1.0
+
+silencer_hit_power       	= 0.68
+silencer_hit_impulse	 	= 3
+silencer_fire_distance   	= 150
+silencer_bullet_speed	 	= 660
+
+hud                     = wpn_m4_hud
+normal                  = 0, 1, 0
+position                                 = -0.026, 0, 0
+orientation                              = 0, 0, 0
+
+strap_position                           = -0.15, -0.37, 0.2
+strap_orientation                        = -10, -5, 10					
+strap_bone0					= bip01_spine2
+strap_bone1					= bip01_spine1
+
+startup_ammo            = 1000
+visual                              = dynamics\weapons\wpn_m4\wpn_m4.ogf
+
+ph_mass			 		= 5
+
+scope_status					= 1
+silencer_status			= 2
+grenade_launcher_status	     = 0
+
+scope_name 					= eot
+scope_x                     = 89		; offset in inventory icon
+scope_y                     = -3
+
+silencer_name  				= wpn_addon_sil_556_ar
+silencer_x                  = 189		; offset in inventory icon
+silencer_y                  = 15
+
+grenade_launcher_name 		= wpn_addon_grenade_launcher_m203
+grenade_launcher_x 			= 128
+grenade_launcher_y 			= 28
+
+scope_names 			= wpn_addon_acog, wpn_addon_scope_eotech, wpn_addon_scope_ac10632, wpn_addon_scope_c-more, wpn_addon_scope_specter, wpn_addon_scope_pn23
+scope_respawn_wpn_addon_acog = wpn_m4_acog
+scope_respawn_wpn_addon_scope_eotech = wpn_m4_eot
+scope_respawn_wpn_addon_scope_ac10632 = wpn_m4_ac10632
+scope_respawn_wpn_addon_scope_c-more = wpn_m4_c-more
+scope_respawn_wpn_addon_scope_specter = wpn_m4_specter
+scope_respawn_wpn_addon_scope_pn23 = wpn_m4_pn23
+
+light_color		 		= 0.6,0.5,0.3
+light_range		 		= 5
+light_var_color		 	= 0.05
+light_var_range		 	= 0.5
+light_time 		 		= 0.2
+
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 2
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+zoom_enabled			= true
+scope_zoom_factor	    = 80
+
+;звуки
+snd_draw				= weapons\ru556\ru556_draw
+snd_reload				= weapons\ru556\ru556_reload
+snd_shoot				                 = weapons\sa58\sa58_shoot, 2.5
+snd_silncer_shot		= weapons\ru556\ru556_shot_sil
+snd_holster				= weapons\rifle_holster
+snd_switch				= weapons\groza_switch, 1.0, 0.5
+snd_empty				= weapons\lr300\lr300_empty,	0.7
+
+[wpn_m4_hud]
+item_visual                              = dynamics\weapons\wpn_m4\wpn_m4_hud.ogf
+
+attach_place_idx                         = 0
+zoom_hide_crosshair                      = true   
+
+hands_position                           = 0.028875,-0.284300,0.256427
+hands_orientation                        = -6.152150,0.666254,3.450000
+
+aim_hud_offset_pos			= -0.187800,0.095800,-0.079000
+aim_hud_offset_rot			=  0.049412,0.039844,-0.022500
+
+gl_hud_offset_pos                        = 0, 0, 0
+gl_hud_offset_pos_16x9                   = 0, 0, 0
+gl_hud_offset_rot                        = 0, 0, 0
+gl_hud_offset_rot_16x9                   = 0, 0, 0
+
+;-----------
+hands_position_16x9				= 0.028875,-0.284300,0.256427
+hands_orientation_16x9			= -6.152150,0.666254,3.450000
+
+aim_hud_offset_pos_16x9				= -0.187800,0.095800,-0.079000
+aim_hud_offset_rot_16x9				= 0.049412,0.039844,-0.022500
+
+item_position				= -0.001011,0.016997,0.018845
+item_orientation			= -0.325678,-1.861864,-1.541847
+;-----------
+
+lowered_hud_offset_pos_16x9		= 0.1,0,0
+lowered_hud_offset_rot_16x9		= 0.1,-0.8,0.1  
+				
+anm_show                		= mka_draw
+anm_hide                		= mka_holster
+anm_idle                		= mka_idle
+anm_idle_sprint         		= mka_idle_sprint
+anm_idle_moving 			    = mka_idle_moving
+anm_shots              		 	= mka_fire
+anm_reload              		= mka_tac_reload, mka_tac_reload_zz
+anm_idle_aim            		= mka_idle_aim
+anm_bore				        = mka_idle_bore
+anm_reload_misfire              = mka_draw
+
+freelook_z_offset_mul					 = 0.3
+
+shell_point                		= 0.018,0.06,0.188
+shell_dir               		= 0,1,0
+shell_bone                		= wpn_body
+
+fire_point				= -0.009000,0.085200,0.490497
+fire_bone                  	 	= wpn_body
+fire_point2                 		= 0,0,0
+fire_bone2                		= wpn_body
