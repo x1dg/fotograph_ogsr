@@ -25,22 +25,16 @@
 		</progress>
 	</progress_bar_armor>
 
-	<!-- Патроны: фон, счетчик, иконка -->
-	<static_weapon x="828" y="642" width="190" height="90">
-		<text align="r" complex_mode="0" x="-9" y="68" font="letterica16" color="hud_weapon_name"/>
-		<auto_static x="2" y="110" width="192" height="8" stretch="1">
-			<texture color="hud_weapon_pane">ui\seq\ui_weapon_pane</texture>
-		</auto_static>
+	<static_weapon x="900" y="695" width="124" height="65" stretch="1">
+		<text complex_mode="0" x="17" y="5" font="letterica16" r="255" g="255" b="255" a="130"/>
 		<texture>ui_hud_frame_patron</texture>
 	</static_weapon>
-	<static_ammo x="0" y="16" width="132" height="45">
-		<text x="-8" y="13" align="c" complex_mode="1" font="letterica25" color="hud_scale_ammo">Ammo</text>
-		<auto_static x="10" y="0" width="172" height="52">
-			<texture>ui_hud_frame_ammo</texture>
-		</auto_static>
+	
+	<static_ammo x="68" y="30" width="50" height="25">
+		<text align="c" complex_mode="0" font="letterica16" r="238" g="155" b="23" a="255">Ammo</text>
 	</static_ammo>
-	<static_wpn_icon x="150" y="45" width="48" height="24" heading="1" alignment="c">
-	</static_wpn_icon>
+	
+	<static_wpn_icon x="15" y="18" width="20" height="20"/>
 
 	<!-- Состояние автомобиля из car_panel.xml -->
 	<car_panel x="837" y="728" width="220" height="6"/>

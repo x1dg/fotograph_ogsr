@@ -1,0 +1,215 @@
+[wpn_tavor]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	= 
+$spawn              	= "weapons\tavor"	
+$npc					= on				
+$prefetch 				= 8
+scheduled				= off               
+cform               	= skeleton
+class               	= WP_LR300			
+min_radius          	= 30				
+max_radius          	= 100				
+description				= "Ѕоеприпасы:\n Х 5,56x45 SS109 - основной\n Х 5,56x45 ј– - бронебойный\nTavor CTAR-21 - укороченный автомат компании Israel Military Industries."
+	
+ef_main_weapon_type		= 2
+ef_weapon_type			= 6
+
+holder_range_modifier	= 1.0		        
+holder_fov_modifier		= 0.7              
+
+cost					= 6000				
+weapon_class			= assault_rifle		
+	
+ammo_limit				= 210
+ammo_elapsed			= 30	
+	
+ammo_mag_size			= 30
+real_mag_wpn				= true
+mag_bones	  			= magazin, mag
+fire_modes				= 1,  -1
+
+ammo_class				= ammo_5.56x45_ap, ammo_5.56x45_ss190
+
+hand_dependence			= 1	
+single_handed			= 0
+	
+slot 					= 13, 2
+animation_slot			= 8	
+
+inv_name	        	= "Tavor"	
+inv_name_short	         = "Tavor"	
+inv_weight				= 2.4
+inv_grid_width     = 4
+inv_grid_height    = 2
+inv_grid_x         = 30
+inv_grid_y         = 12
+
+kill_msg_x			= 0
+kill_msg_y			= 123
+kill_msg_width		     = 69
+kill_msg_height		= 30
+
+;params of weapon recoil
+fire_dispersion_base         = 0.09
+	
+control_inertion_factor			= 1.09f
+
+;отдача
+cam_relax_speed              = 4
+cam_dispersion          	= 0.2		
+cam_dispersion_inc	          = 0.09			
+cam_dispertion_frac			= 0.9		
+cam_max_angle	               = 6			
+cam_max_angle_horz			= 20		
+cam_step_angle_horz			= 1.25
+
+fire_dispersion_condition_factor 	= 3		 
+misfire_probability 		= 0.002	 
+misfire_condition_k			= 0.07
+condition_shot_dec 			= 0.00015	
+
+fire_point             	=  0.0,0.170,0.300		 
+
+flame_particles				= weapons\generic_weapon05	
+smoke_particles				= weapons\generic_shoot_00
+grenade_flame_particles		= weapons\generic_weapon01
+	
+shell_point		 		= 0.0,0.165,-0.175			
+shell_particles	 			= weapons\shells_r_ns_556
+
+PDM_disp_base 				= 1.0
+PDM_disp_vel_factor 		= 0.95
+PDM_disp_accel_factor 		= 0.95
+PDM_crouch	 			= 1.0
+PDM_crouch_no_acc 			= 1.0
+
+; ttc
+hit_power                    =  0.83		
+hit_impulse		 		= 4			
+hit_type 				= fire_wound 	
+
+fire_distance            		= 225
+bullet_speed				     = 910		
+rpm                      		= 900		
+
+use_aim_bullet				= true		
+time_to_aim					= 1.0	
+
+silencer_hit_power       		= 0.75
+silencer_hit_impulse	 		= 3
+silencer_fire_distance   		= 200
+silencer_bullet_speed	 		= 820
+
+hud                      	= wpn_tavor_hud				
+
+position         	        = -0.024, -0.126, -0.0092  
+orientation      	        = 0,0,0					
+
+strap_position         		= -0.16,-0.36,0.15			
+strap_orientation      		= -10,-5,10					
+strap_bone0					= bip01_spine2
+strap_bone1					= bip01_spine1
+
+visual						= dynamics\weapons\wpn_tavor\wpn_tavor_eot.ogf
+
+ph_mass						= 5							
+
+;addons
+scope_status				= 1
+silencer_status			= 2
+grenade_launcher_status		= 0
+
+zoom_enabled				= true
+scope_zoom_factor	     	= 75							
+
+scope_name 					= eot
+use_scope_zoom 				= true
+scope_x                     = 64		; offset in inventory icon
+scope_y                     = -6
+
+silencer_name  			= wpn_addon_sil_556_ar			
+silencer_x              = 157
+silencer_y              = 15		
+
+snd_draw                = weapons\tavor\tavor_deploy
+snd_holster             = weapons\tavor\tavor_holster
+snd_shoot				= weapons\tavor\tavor_1
+snd_shoot1				= weapons\tavor\tavor_2
+snd_shoot2				= weapons\tavor\tavor_3
+snd_shoot3				= weapons\tavor\tavor_4
+snd_empty               = weapons\tavor\tavor_trigger
+snd_reload				= weapons\tavor\tavor_reload1
+
+snd_shoot_grenade       = weapons\explo\grenade_launch_explo
+snd_reload_grenade		= weapons\l85\l85_grenload
+snd_switch				= weapons\groza_switch
+snd_bore 				= weapons\draw_silent
+
+snd_silncer_shot        = weapons\tavor\tavor_sil1
+snd_silncer_shot1       = weapons\tavor\tavor_sil2
+snd_silncer_shot2       = weapons\tavor\tavor_sil3
+snd_silncer_shot3       = weapons\tavor\tavor_sil4
+
+silencer_smoke_particles 	= weapons\generic_shoot_00
+
+light_color					= 0.6,0.5,0.3				
+light_range					= 5							
+light_var_color				= 0.05						
+light_var_range				= 0.5
+light_time 					= 0.2						
+
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 2
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+[wpn_tavor_hud]
+zoom_hide_crosshair		= true
+attach_place_idx		= 0
+item_visual				= dynamics\weapons\wpn_tavor\wpn_tavor_eot_hud.ogf
+
+hands_position			= 0.083000,-0.080500,0.086000
+hands_orientation		= 2.000000,2.000000,0.000000
+hands_position_16x9				= 0.083000,-0.080500,0.086000
+hands_orientation_16x9			= 2.000000,2.000000,0.000000
+
+item_position			= 0.0,0,0
+item_orientation		= 0,0,0
+
+shell_point				= 0.0,0.0,0.0
+shell_dir               = 0.0, 1.0, 0.0
+shell_bone				= wpn_body
+
+fire_point				= 0,0,0
+fire_bone      	      	= muzzle
+
+anm_show             	= kyky_tavor_draw
+anm_hide             	= kyky_tavor_holster
+anm_idle             	= kyky_tavor_idle
+anm_idle_sprint         = kyky_tavor_idle_sprint
+anm_idle_moving 		= kyky_tavor_idle_move
+anm_shots               = kyky_tavor_shoot
+anm_reload              = kyky_tavor_reload, reload
+anm_reload_empty        = kyky_tavor_reload_empty, reload_empty
+anm_idle_aim           	= kyky_tavor_idle;_aim
+anm_bore				= kyky_tavor_idle
+
+aim_hud_offset_pos = -0.077250,0.022250,-0.113000
+aim_hud_offset_rot = -0.014000,0.030900,0.004000
+
+aim_hud_offset_pos_16x9 = -0.077250,0.022250,-0.113000
+aim_hud_offset_rot_16x9 = -0.014000,0.030900,0.004000
+
+gl_hud_offset_pos_16x9 = -0.12025,-0.2,-0.05
+gl_hud_offset_rot_16x9 = -0.255,0.0349,0
+
+gl_hud_offset_pos = -0.12025,-0.2,-0.05
+gl_hud_offset_rot = -0.255,0.0349,0
+
+lean_hud_offset_pos		= 0,0,0
+lean_hud_offset_rot		= 0,0,0
+
+scope_zoom_offset			= -0.077250,0.022250,-0.113000
+scope_zoom_rotate_x			= -0.014000
+scope_zoom_rotate_y			= 0.030900

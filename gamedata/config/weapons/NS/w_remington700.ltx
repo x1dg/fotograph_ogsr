@@ -1,0 +1,222 @@
+[wpn_type97]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	 	= 
+$spawn          			= "weapons\w_crossbow"
+$npc				= on
+$prefetch 			= 8
+scheduled                  = off
+cform           	        = skeleton
+class           	        = WP_SVD
+min_radius      	        = 0
+max_radius      	        = 160
+description		= st_wpn_remington700_descr
+
+holder_range_modifier  = 1.0
+holder_fov_modifier  = 1.0
+
+ef_weapon_type	= 8
+
+cost			= 12800
+weapon_class	= sniper_rifle
+ammo_limit		= 5
+ammo_current	= 5
+ammo_elapsed	= 0
+
+ammo_mag_size	= 20
+real_mag_wpn		= true
+mag_bones 		= magazine, ammo1, ammo2, ammo3, ammo4
+ammo_class		= ammo_12.7x54
+f_mode			= 1
+
+;тип анимации 
+hand_dependence = 1
+single_handed 	= 0
+slot 			= 2
+animation_slot 	= 8			  
+
+;иконка в инвентаре
+inv_name		= st_wpn_remington700_magpul_pro
+inv_name_short	= st_wpn_remington700_magpul_pro
+inv_weight		= 3.96
+inv_grid_width			= 7
+inv_grid_height			= 2
+inv_grid_x			= 34
+inv_grid_y			= 12
+
+kill_msg_x		= 0
+kill_msg_y		= 0
+kill_msg_width		= 98
+kill_msg_height		= 23
+
+;базовая дисперсия
+fire_dispersion_base        = 0.4
+control_inertion_factor      = 1.0f
+disp_rate		 = 1.85
+
+;отдача
+cam_relax_speed         		= 4.5
+cam_relax_speed_ai        	= 120.75
+cam_dispersion        		= 2.5
+cam_dispersion_inc		= 2.5
+cam_dispertion_frac		= 1.0
+cam_max_angle			= 50.0
+cam_max_angle_horz		= 50.0
+cam_step_angle_horz		= 0.25
+
+fire_dispersion_condition_factor = 0.001
+misfire_probability         = 0.005
+misfire_condition_k		= 0.05
+condition_shot_dec 		= 0.001
+
+PDM_disp_accel_factor       = 3.0
+PDM_disp_base               = 1.5
+PDM_disp_crouch             = 1.0
+PDM_disp_crouch_no_acc      = 1.0
+PDM_disp_vel_factor         = 3.0
+
+;партиклы (от 3 лица)
+direction           	    = 0, 0, 1
+fire_point                  = 0, 0.168, 0.755
+fire_point2                 = 0, 0.168, 0.755
+
+smoke_particles = ;weapons\generic_shoot_00
+shell_point		 		    = 0, 0.129, 0.192
+shell_dir		 		    = 0, 0, 0.4
+shell_particles = ;weapons\generic_shoot_00
+
+;;;;;;  Для Народной солянки 2009
+hit_power      = 1.3
+hit_impulse    = 30
+hit_type       = fire_wound
+hit_rate	   = 4.0
+fire_distance  = 1200
+bullet_speed   = 830
+rpm            = 40;7
+
+use_aim_bullet = true
+time_to_aim = 0.3
+
+rpm_empty_click = 200
+
+;насторойки для камеры от 3 лица
+hud              	        = wpn_crossbow_hud
+normal           	        = 0, 1, 0
+; position         	        = -0.021, -0.09, 0.05
+position                    = -0.019, 0.014, -0.037									  
+orientation      	        = 0, 0, 0
+
+strap_bone0                 = bip01_spine2
+strap_bone1                 = bip01_spine1
+strap_position              = -0.15, -0.15, 0.45
+strap_orientation           = -25, -189, 65
+
+visual					= dynamics\weapons\wpn_remington700\wpn_remington700.ogf
+
+light_disabled = true
+ph_mass = 5
+
+;аддоны
+scope_status				= 1
+silencer_status				= 0
+grenade_launcher_status		= 0
+
+scope_zoom_factor	    	= 10 ;80		
+scope_lense_fov_factor = 15;13.6;
+scope_lense_hud_fov    = 0.15
+scope_inertion_factor  = 6;0
+
+;прицел
+zoom_enabled = true
+zoom_hide_crosshair = true
+scope_texture = wpn\crosshairs\scope_ar_pnv
+
+;звуки
+snd_draw				                                          = weapons\lr300\lr300_draw
+snd_holster				                                          = weapons\sniper_holster
+snd_shoot				                                          = weapons\dvl_10\dvl_shoot
+snd_empty				                                          = weapons\lr300\lr300_empty,	0.8
+snd_reload						= weapons\toz106\reload
+snd_reload_empty				= weapons\toz106\reload_empty 
+snd_silncer_shot			                                      = weapons\dvl_10\dvl_shoot_silenced
+snd_bore				                                          = $no_sound
+
+snd_close	= weapons\generic_holster;, 0.0
+
+[wpn_crossbow_hud]
+
+        item_visual                 = dynamics\weapons\wpn_remington700\wpn_remington700_hud.ogf
+				
+        attach_place_idx            = 0
+        zoom_hide_crosshair         = true
+        
+;--------
+item_position				= -0.000156,0.000233,-0.004162
+item_orientation			= 0.000000,0.000000,0.000000
+
+hands_position					= -0.004400,-0.014400,-0.100201
+hands_orientation				= 2.249999,1.350000,-2.649999
+
+hands_position_16x9				= -0.004400,-0.014400,-0.100201
+hands_orientation_16x9			= 2.249999,1.350000,-2.649999
+
+aim_hud_offset_pos				= -0.083750,0.014700,-0.054400
+aim_hud_offset_rot				= 0.024500,0.050790,-0.034000
+
+aim_hud_offset_pos_16x9				= -0.083750,0.014700,-0.054400
+aim_hud_offset_rot_16x9				= 0.024500,0.050790,-0.034000
+ 
+anm_show						= toz106_draw, draw
+anm_show_empty					= toz106_draw, draw_empty
+
+anm_hide             			= toz106_hide, hide
+anm_hide_empty             		= toz106_hide, hide_empty
+
+anm_idle             			= toz106_idle, idle
+anm_idle_empty             		= toz106_idle, idle_empty
+
+anm_shots						= toz106_shoot_fullstock_1, shoot_1
+anm_shots1						= toz106_shoot_fullstock_2, shoot_2
+anm_shots2						= toz106_shoot_fullstock_3, shoot_3
+anm_shot_l						= toz106_shoot_fullstock_2, shoot_2 ;shoot_last
+
+anm_shots						= toz106_shoot_1, shoot_1
+anm_shots1						= toz106_shoot_2, shoot_2
+anm_shots2						= toz106_shoot_3, shoot_3
+anm_shot_l						= toz106_shoot_1, shoot_1
+
+anm_shots_aim					= toz106_shoot_aim, shoot_1
+anm_shots_aim1					= toz106_shoot_aim, shoot_2
+anm_shots_aim2					= toz106_shoot_aim, shoot_3
+anm_shot_l_aim					= toz106_shoot_aim, shoot_1
+
+anm_idle_aim					= toz106_idle_aim, idle_aim
+anm_idle_aim_empty				= toz106_idle_aim, idle_aim_empty
+
+anm_reload						= toz106_reload_4rnd_fullstock, reload
+anm_reload_empty				= toz106_reload_empty_4rnd_fullstock, reload_empty_old
+
+anm_idle_moving 				= toz106_idle_moving, idle
+anm_idle_moving_empty 			= toz106_idle_moving, idle_empty
+
+anm_idle_moving_crouch 			= toz106_idle_moving, idle
+anm_idle_moving_empty_crouch 	= toz106_idle_moving, idle_empty
+
+anm_idle_sprint					= toz106_idle_sprint, idle
+anm_idle_sprint_empty			= toz106_idle_sprint, idle_empty
+
+anm_bore						= toz106_inspect, inspect
+anm_bore_empty					= toz106_inspect, inspect_empty
+
+shell_dir                   = 0, 1, 0
+
+shell_point				    = 0,0,0 ;0.013,0.046,0.463
+shell_bone              	= shell
+
+fire_point				= 0.000000,0.009000,0.224000
+fire_bone               	= muzzle
+fire_point2		            = 0.0,0.0,0.0
+freelook_z_offset_mul		= 0.4
+fire_bone2                  = wpn_body
+
+lowered_hud_offset_pos_16x9		= 0.1,0,0
+lowered_hud_offset_rot_16x9		= 0.1,-0.8,0.1 

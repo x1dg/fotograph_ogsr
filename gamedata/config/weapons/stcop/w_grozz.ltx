@@ -1,0 +1,155 @@
+[wpn_grozz]:wpn_groza
+min_radius              = 30
+max_radius              = 100
+description		= "Автоматно-гранатомётный комплекс ОЦ-14 «Гроза», пролежавший какое-то время в аномалии 'Электра'. Приобрёл совершенно невероятное и необъяснимое свойство, а именно: теперь этот ствол использует заряды от винтовки 'Гаусс'. По истине, Зона иногда творит чудеса не только с человеком, но и с предметами. Эти чудеса и метаморфозы неподвластны пониманию."
+
+cost					= 70000
+
+ammo_limit				= 60
+ammo_current			= 10
+ammo_elapsed			= 0
+
+ammo_mag_size		 	= 20
+ammo_class		 		= ammo_gauss
+fire_modes				= 1, -1
+f_mode				    = 2
+
+inv_name	         	= Аномальная "Гроза"
+inv_name_short		 	= Аномальная "Гроза"
+inv_weight		 		= 3.6
+
+inv_grid_width			= 4
+inv_grid_height			= 2
+inv_grid_x				= 32
+inv_grid_y				= 2
+
+;-----------------------------------------------------------------------------------
+fire_dispersion_base		= 0.11
+control_inertion_factor		= 1.05f
+disp_rate                   = 1.7
+cam_relax_speed         	= 7.2
+cam_dispersion          	= 0.3
+cam_dispersion_inc		= 0.12
+cam_dispertion_frac		= 0.75
+cam_max_angle			= 14.5
+cam_max_angle_horz		= 9.0
+cam_step_angle_horz		= 1.85
+
+fire_dispersion_condition_factor = 1.5
+misfire_probability 		= 0.001
+misfire_condition_k			= 0.05
+condition_shot_dec 			= 0.0005
+;-----------------------------------------------------------------------------------
+
+direction               = 0, 0, 1
+
+fire_point              = 0.0, 0.194, 0.274
+
+flame_particles		    = weapons\generic_weapon_gauss
+smoke_particles			= weapons\generic_weapon07
+grenade_flame_particles = weapons\generic_weapon01
+
+shell_point				= 0.0, 0.194, 0.04
+shell_dir				= 0.0, 0.0, 0.4
+shell_particles			= weapons\generic_shells
+rpm_empty_click 		= 200
+
+PDM_disp_base 			= 6.0
+PDM_disp_vel_factor 		= 1.45
+PDM_disp_accel_factor 		= 1.3
+PDM_crouch	 		= 1.0
+PDM_crouch_no_acc 		= 1.0
+
+hit_power                   = 0.8
+hit_impulse		 	        = 60
+hit_type 			        = fire_wound
+hit_rate	                = 1.95
+
+fire_distance           	= 300
+bullet_speed			    = 8000
+rpm                    		= 250
+
+use_aim_bullet				= false
+time_to_aim					= 1.0	
+
+grenade_vel			= 76
+
+hud                     = wpn_grozz_hud
+normal                  = 0, 1, 0
+
+visual                  = dynamics\weapons\wpn_groza\wpn_grozz.ogf
+
+
+ph_mass			 		= 5
+;cost			 		= 2100
+
+;addons
+scope_status			= 2
+silencer_status			= 0
+grenade_launcher_status	= 1
+
+zoom_enabled			= true
+scope_zoom_factor	    = 75    ; 30
+
+scope_name 					= wpn_addon_scope			; section name for the attachable scope
+scope_x 					= 63						; offset in inventory icon
+scope_y 					= -1
+silencer_name  				= wpn_addon_silencer		; section name for the attachable silencer
+silencer_x 					= 180						; offset in inventory icon
+silencer_y 					= 16				
+
+;------------------------------ S.T.A.L.K.E.R`s sound remake ------------------------------
+;звуки
+snd_draw			= weapons\groza\groza_draw
+snd_holster			= weapons\rifle_holster
+snd_shoot			= weapons\gauss\gauss_shoot
+snd_shoot1			= weapons\gauss\gauss_shoot
+snd_shoot2			= weapons\gauss\gauss_shoot
+snd_shoot3			= weapons\gauss\gauss_shoot
+snd_empty			= weapons\abakan\abakan_empty, 0.7
+snd_reload			= weapons\groza\groza_reload, 0.7, 0.45
+snd_shoot_grenade		= weapons\gp30\GP30_grenshoot
+snd_reload_grenade		= weapons\gp30\gp30_grenload, 1.0, 1.3
+snd_switch			= weapons\groza\groza_switch, 1.0, 0.45
+snd_silncer_shot		= weapons\groza\groza_shot_sil 
+;------------------------------------------------------------------------------------------
+ 
+[wpn_grozz_hud]:wpn_groza_hud
+item_visual				= dynamics\weapons\wpn_groza\wpn_grozz_hud.ogf
+anm_show				= groza_draw
+anm_hide                		= groza_holster
+anm_idle                		= groza_idle
+anm_shots               		= groza_shoot, shoot
+anm_reload              		= groza_reload, reload
+anm_reload_empty        		= groza_reload_empty, reload_empty
+anm_reload_misfire       		= groza_misfire, misfire
+anm_idle_aim            		= groza_idle_aim
+anm_idle_sprint         		= groza_idle_sprint
+anm_idle_moving         		= groza_idle_moving
+anm_idle_moving_crouch			= groza_idle_crouch
+anm_bore                		= groza_idle_aim
+anm_switch              		= groza_sw_off, sw_off          
+anm_switch_g            		= groza_sw_on, sw_on          
+anm_show_w_gl           		= groza_draw
+anm_hide_w_gl           		= groza_holster
+anm_idle_w_gl           		= groza_idle
+anm_shots_w_gl          		= groza_shoot, shoot
+anm_reload_w_gl         		= groza_reload, reload
+anm_reload_empty_w_gl   		= groza_reload_empty, reload_empty
+anm_idle_w_gl_aim       		= groza_idle_aim
+
+anm_idle_sprint_w_gl    		= gauss_idle_sprint
+
+anm_idle_moving_w_gl    		= groza_idle_moving
+anm_idle_moving_crouch_w_gl    		= groza_idle_crouch
+anm_bore_w_gl           		= groza_idle_aim
+anm_show_g              		= groza_draw, idle_g		
+anm_hide_g              		= groza_holster, idle_g			
+anm_idle_g              		= groza_idle, idle_g
+anm_shots_g             		= groza_shoot_g, shoot_g			
+anm_reload_g            		= groza_reload_g, reload_g
+anm_idle_g_aim          		= groza_idle_aim, idle_g		
+anm_idle_sprint_g       		= groza_idle_sprint, idle_g			
+anm_idle_moving_g       		= groza_idle_moving, idle_g	
+anm_idle_moving_crouch_g		= groza_idle_crouch, idle_g		
+anm_bore_g              		= groza_idle_aim, idle_g

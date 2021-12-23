@@ -89,25 +89,8 @@
 		<btn name="btn_quit"		caption="ui_mm_quit2windows" />
 	</menu_main_mm>
 	
-	<menu_sound random="1">
-		<whell_click>device\pda\menu_click</whell_click>
-		<!--whell_sound>car\apc_run</whell_sound-->		
-		<menu_music>music\depot</menu_music>
-		<menu_music>music\emitted_dust</menu_music>
-		<menu_music>music\heat_flow</menu_music>
-		<menu_music>music\magnetosphere</menu_music>
-		<menu_music>music\night_owl_1</menu_music>
-		<menu_music>music\night_owl_2_1</menu_music>
-		<menu_music>music\night_owl_2_2</menu_music>
-		<menu_music>music\night_owl_3_1</menu_music>
-		<menu_music>music\night_owl_3_2</menu_music>
-		<menu_music>music\overgrown_forest_1</menu_music>
-		<menu_music>music\overgrown_forest_2</menu_music>
-		<menu_music>music\radar</menu_music>
-		<menu_music>music\schacht_1</menu_music>
-		<menu_music>music\schacht_2</menu_music>
-		<menu_music>music\swampland_1</menu_music>
-		<menu_music>music\swampland_2</menu_music>
+	<menu_sound random="0" >
+		<menu_music>music\mauvais_main_title</menu_music>
 	</menu_sound>
 	
 	<static_version x="247" y="750" width="530" height="30">

@@ -1,0 +1,316 @@
+[ammo_357sw_jhp]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn			= "weapons\wpn_ammo\ammo_357_hp_mag" ; option for Level Editor
+class			= AMMO
+cform                   = skeleton
+visual                  = dynamics\weapons\wpn_ammo\ammo_357_jhp.ogf
+description		= ammo-357-hp_descr
+$prefetch 		= 64
+
+cost			= 1200
+
+box_size		= 15	
+
+inv_name		= ammo-357-hp
+inv_name_short		= ammo-357-hp_s
+inv_weight		= 0.240
+
+inv_grid_width     = 1
+inv_grid_height    = 1
+inv_grid_x         = 40
+inv_grid_y         = 2
+
+k_dist			= 1.0
+k_disp			= 2.0; 3
+k_hit			= 1.5
+k_impulse		= 1.0
+k_pierce		= 0.32
+k_ap		    = 0.65
+impair			= 1.0 ; 1.1
+buck_shot		= 1
+tracer			= off        ;  off
+wm_size        		= 0.049
+k_air_resistance = 1.0
+
+;belt				= true;
+slot				= -1
+explosive			= false
+
+;-------------------------------------------
+;   патрон .357 Smith & Wesson Magnum (9x32мм R)
+;   Тип пули: Jacketed Flat Point (Оболочечная с плоской головной частью)
+;   Вес пули, гр: 10.27
+;   Диаметр пули, мм: 9.02
+;   Дульная скорость, м\с:  377
+;   Энергия, Дж: 728
+;   Вес патрона, гр: ---
+;-------------------------------------------
+
+[ammo_357sw_jfp]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn			= "weapons\wpn_ammo\ammo_357_hp_mag" ; option for Level Editor
+class			= AMMO
+cform                   = skeleton
+visual                  = dynamics\weapons\wpn_ammo\ammo_357_jhp.ogf
+description		= ammo-357-incendiary_descr
+$prefetch 		= 64
+
+cost			= 1900
+
+box_size		= 15	
+
+inv_name			= ammo-357-incendiary
+inv_name_short		= ammo-357-incendiary_s
+inv_weight		= 0.283
+
+inv_grid_width     = 1
+inv_grid_height    = 1
+inv_grid_x         = 40
+inv_grid_y         = 3
+
+k_dist			= 1.0
+k_disp			= 1.45; 3
+k_hit			= 1.86
+k_impulse		= 1.1
+k_pierce		= 0.21
+k_ap			= 0.725
+impair			= 1.15 ; 1.1
+buck_shot		= 1
+tracer			= on        ;  off
+wm_size        		= 0.049
+k_air_resistance = 1.0
+
+;belt				= true;
+slot				= -1
+explosive			= false
+
+[ammo_12.7x99_bmg]:identity_immunities	
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\ammo\ammo_7.62x54_7h1" ; option for Level Editor
+class			= AMMO
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_762x54_7h1.ogf
+description		= ammo_50bmg_ap_descr
+$prefetch 		= 64
+
+cost			= 9290
+
+box_size		= 10
+
+inv_name		= ammo_50bmg_api
+inv_name_short	= ammo_50bmg_api_s
+inv_weight		= 1.14
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 26
+inv_grid_y         = 37
+
+k_dist			= 1
+k_disp			= 1.1	; 3.2
+k_hit			= 1.6
+k_impulse		= 1.0
+k_pierce		= 9.1
+k_ap			= 2.8
+impair			= 1.05 ; 0.95
+buck_shot		= 1
+tracer			= on        ;  off
+wm_size         = 0.25
+explosive		= on
+
+[ammo_12.7x54]:identity_immunities		
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\ammo\ammo_7.62x54_7h1" ; option for Level Editor
+class			= AMMO
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_762x54_7h1.ogf
+description		= ammo_12.7x54_ap_descr
+$prefetch 		= 64
+
+cost			= 3990
+
+box_size		= 10
+
+inv_name		= ammo_12.7x54_ap
+inv_name_short	= ammo_12.7x54_ap_s
+inv_weight		= 0.57
+
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 18
+inv_grid_y         = 16
+
+k_dist			= 1
+k_disp			= 0.66	; 3.2
+k_hit			= 0.85
+k_impulse		= 1.0
+k_pierce		= 8.1
+k_ap			= 3.75
+impair			= 1.0 ; 0.95
+buck_shot		= 1
+tracer			= off        ;  off
+wm_size         = 0.125
+explosive		= off
+k_air_resistance = 1.6
+
+[ammo_balon_rg10]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn			= "weapons\ammo\ammo_balon" ; option for Level Editor
+class			= A_OG7B
+cform                   = skeleton
+visual                  = weapons\ammo\ammo_vog-25m.ogf
+description		= "Огнемётный заряд ВОГ-40. Внешне, практически не отличается от младшего тёзки - ВОГ-25. Содержит зажигательную смесь для Онемёта Гром-10."
+$prefetch 		= 64
+
+cost			=1000
+
+box_size		=20
+
+inv_name		= "Огнемётный заряд ВОГ-40"
+inv_name_short		= ВОГ-40
+inv_weight		=.1
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 40
+inv_grid_y		= 4
+
+k_dist			= 1
+k_disp			= 5
+k_hit			= 3
+k_impulse		= 3
+k_pierce		= 0.34
+impair			= 1
+buck_shot		= 12
+tracer			= off
+wm_size                 = 0.5
+explosive		= on
+
+can_be_unlimited = true
+
+;-------------------------------------------
+;   патрон 7.62х39мм обр.1943г (8ПО)
+;   Тип пули: полуоболочечная
+;   Вес пули, гр: 8,1
+;   Диаметр пули, мм: 7,9
+;   Дульная скорость, м\с: 745
+;   Энергия, Дж: 2250
+;   Вес патрона, гр: ---
+;   Кучность 300м, R50, см:	---
+;-------------------------------------------
+[ammo_7.62x39_fmj]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn			= "weapons\ammo\ammo_7.62x39_fmj" ; option for Level Editor
+class			= AMMO
+cform                   = skeleton
+visual                  = weapons\ammo_762x39_fmj.ogf
+description		= enc_weapons1_ammo_ammo-7.62x39-fmj
+$prefetch 		= 64
+
+cost			= 500
+
+box_size		= 30
+
+inv_name		= ammo-7.62x39-fmj
+inv_name_short	= ammo-7.62x39-fmj_s
+inv_weight		= .5
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 34
+inv_grid_y		= 38
+
+k_dist			= 1
+k_disp			= 1.1
+k_hit			= 3.35
+k_impulse		= 1.1
+k_pierce		= 2
+impair			= 1
+buck_shot		= 1
+tracer			= off
+wm_size                 = 0.05
+
+;-------------------------------------------
+;   патрон 7.62х39мм ПС обр.1943г (57-Н-231С)
+;   Тип пули: оболочечная с сердечником из высокоуглеродистой стали
+;   Вес пули, гр: 7.9
+;   Диаметр пули, мм: 7,9
+;   Дульная скорость, м\с: 718
+;   Энергия, Дж: 1990
+;   Вес патрона, гр: 16.3
+;   Кучность 300м, R50, см:	не более 7.5
+;-------------------------------------------
+[ammo_7.62x39_ap]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn			= "weapons\ammo\ammo_7.62x39_ap" ; option for Level Editor
+class			= AMMO
+cform                   = skeleton
+visual                  = weapons\ammo_762x39_ap.ogf
+description		= enc_weapons1_ammo_ammo-7.62x39-ap
+$prefetch 		= 64
+
+cost			= 650
+
+box_size		= 30
+
+inv_name		= ammo-7.62x39-ap
+inv_name_short	        = ammo-7.62x39-ap_s
+inv_weight		= .5
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 36
+inv_grid_y		= 38
+
+k_dist			= 1.3
+k_disp			= 1
+k_hit			= 3.35
+k_impulse		= 1
+k_pierce		= 2.5 
+impair			= 1
+buck_shot		= 1
+tracer			= on
+wm_size                 = 0.05
+
+;-------------------------------------------
+
+[ammo_5.5x40_ucen]:identity_immunities 		
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn			= "weapons\ammo\ammo_5.5x40_ucen" ; option for Level Editor
+class			= AMMO
+cform                   = skeleton
+;visual                   = weapons\ammo\ammo_545x39_mg.ogf
+description		   = "Этот 5х40мм патрон (маркировка по стандарту SOTHOTH - UHN-IN) с бронебойной подкалиберной пулей разработан для персонального оружия самообороны военнослужащих СОМЖ (Сил обороны мира от живых) разработанный компанией Йог-Сотот. При низком весе и слабой отдаче обладает неплохими пробивными характеристиками и кучностью. Используется в штурмовой винтовке AK-00."
+$prefetch 		= 64
+
+cost					 = 10000
+
+box_size		= 60
+visual                  = weapons\ammo\ammo_550x40_mg.ogf
+inv_name		= "UHN-IN"
+inv_name_short	= "UHN-IN"
+inv_weight		= .2
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 28
+inv_grid_y			= 40
+
+k_dist			= 1.0
+k_disp			= 1.0
+k_hit			= 2.05
+k_impulse		= 1.2
+k_pierce		= 4.5 
+impair			= 1.0
+buck_shot		= 1
+tracer			= off
+wm_size         = 0.04
+explosive		= off ;on

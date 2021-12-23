@@ -527,7 +527,7 @@ end
 
 function tsezar_second_dialog_done(first_speaker, second_speaker)
 dialogs.relocate_item_section(second_speaker, "wpn_type97", "in", 1)
-flamethrower.relocate_n_items_section(second_speaker, "ammo_6x35", "in", 2)
+flamethrower.relocate_n_items_section(second_speaker, "ammo_12.7x54", "in", 2)
 end
 
 function graf_four_dialog_otdal(first_speaker, second_speaker)

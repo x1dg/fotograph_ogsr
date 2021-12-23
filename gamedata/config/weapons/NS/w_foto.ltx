@@ -6,12 +6,12 @@ $npc			 			= on
 $prefetch 					= 8
 scheduled            		= off              
 cform                    	= skeleton
-class                    	= WP_PM
+class                    	= WP_SVD
 min_radius               	= 0
 max_radius               	= 75
 description				= "Цифровая фотокамера со специальным объективом, оснащённым уникальными фильтрами, чтобы можно было избежать серьёзных искажений изображения, вызываемого аномальным воздействием Зоны. Но тем не менее, качество картинки далеко от идеала. Обычная цифровая и тем более плёночная камера вообще не в состоянии в пределах Зоны производить фотосъёмку - изображение оказывается полностью засвеченным."
-script_binding          = bind_photo.init
 
+script_binding          = bind_photo.init
 ef_main_weapon_type		    = 0
 ef_weapon_type				= 5
 
@@ -20,16 +20,12 @@ holder_fov_modifier			= 1.0
 
 cost			     		= 45000
 
-ammo_limit		 			= 120
-ammo_current		 		= 90
-ammo_elapsed		 		= 12
+ammo_limit			= 60
+ammo_current			= 10
+ammo_elapsed			= 0
 
-f_mode				     	= 1
-
-ammo_mag_size		 		= 40
-real_mag_wpn				= true
-mag_bones 					= magazin, clip, bullet
-ammo_class		     		= ammo_sd
+ammo_mag_size			= 40
+ammo_class			= ammo_sd
 
 hand_dependence		 		= 1
 single_handed				= 1
@@ -38,13 +34,8 @@ slot 				 		= 1, 13, 2
 animation_slot		 		= 1		
 
 inv_name			= Фотокамера
-inv_name_short			= Фотокамера
+inv_name_short		= Фотокамера
 inv_weight			= 0.8
-
-inv_grid_width     = 2
-inv_grid_height    = 2
-inv_grid_x         = 37
-inv_grid_y         = 13
 
 inv_grid_width			= 2
 inv_grid_height			= 1
@@ -122,13 +113,13 @@ ph_mass			 			= 1
 
 ;addons
 scope_status		     = 1
+silencer_status		= 0
+zoom_enabled				= true
 scope_texture				= wpn\crosshair_foto
 scope_zoom_factor	   		= 75;15;75;15
 silencer_status		= 0
+silencer_name  				= wpn_addon_silencer	
 grenade_launcher_status		= 0
-
-zoom_enabled				= true
-scope_zoom_factor	   		= 75
 
 ;sound
 snd_draw		= weapons\fot\fot_draw
@@ -207,6 +198,18 @@ gl_hud_offset_rot			= 0,0,0
 
 lean_hud_offset_pos			= 0,0,0
 lean_hud_offset_rot			= 0,0,0
+
+[wpn_foto1]:wpn_foto
+$spawn                  = "weapons\foto1"
+description            = "Цифровая фотокамера, оснащённая специальным уникальным объективом, который позволяет делать снимки в зоне повышенной аномальной и радиационной активности с минимальными искажениями."
+script_binding          = bind_photo.init
+inv_weight				= 1.3
+cost					= 75000
+
+inv_grid_width			= 3
+inv_grid_height			= 2
+inv_grid_x				= 32
+inv_grid_y				= 14
 
 [ammo_sd]:identity_immunities
 GroupControlSection	= spawn_group

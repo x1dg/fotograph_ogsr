@@ -8,7 +8,7 @@
     <texture id="ui_hud_shkala_health"		x="0" y="304" width="190" height="30"/>		<!-- фоновая текстура шкалы здоровья/выносливлсти -->
     <texture id="ui_hud_shkala_car"			x="0" y="335" width="173" height="5"/>		<!-- фоновая текстура шкалы здоровья авто -->
     <texture id="ui_hud_shkala_rad"			x="11" y="307" width="169" height="12"/>	<!-- фоновая текстура шкалы радиации -->
-    <texture id="ui_hud_frame_patron"		x="0" y="214" width="190" height="90"/>		<!-- фоновая текстура патронов -->
+    <texture id="ui_hud_frame_patron" 		x="0" y="208" width="157" height="65" />		<!-- фоновая текстура патронов -->
     <texture id="ui_hud_frame_clock"		x="708" y="426" width="316" height="60"/>	<!-- фоновая текстура таймера -->
     <texture id="ui_hud_frame_flash"		x="351" y="236" width="94" height="27"/>	<!-- фоновая текстура мигающего индикатора таймера -->
     <texture id="ui_hud_frame_rank"			x="342" y="341" width="60" height="65"/>	<!-- фоновая текстура для значка ранга в мп-->

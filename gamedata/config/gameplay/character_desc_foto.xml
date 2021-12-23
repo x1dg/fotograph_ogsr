@@ -577,7 +577,7 @@
       [spawn] \n
 	  zheton = 1 \n
 	  wpn_g37 \n
-	  ammo_11.43x23_hydro = 2 \n
+	  ammo_gauss = 2 \n
 	  medkit_army = 1 \n
       device_torch \n
 #include "gameplay\character_drugs.xml" \n

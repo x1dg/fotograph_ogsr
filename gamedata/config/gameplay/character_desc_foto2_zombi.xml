@@ -398,7 +398,7 @@
 	    wpn_fort \n
         ammo_9x18_fmj \n
 	    wpn_type97 \n
-		ammo_6x35 \n
+		ammo_12.7x54 \n
 		device_torch \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"
@@ -435,7 +435,7 @@
 	    wpn_fort \n
         ammo_9x18_fmj \n
 	    wpn_type97 \n
-		ammo_6x35 \n
+		ammo_12.7x54 \n
 		device_torch \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"
@@ -748,7 +748,7 @@
 			[spawn] \n
 			zheton = 1 \n
 			wpn_type97 \n
-			ammo_6x35 = 2 \n
+			ammo_12.7x54 = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -806,7 +806,7 @@
 			[spawn] \n
 			zheton = 1 \n
 			wpn_type97 \n
-			ammo_6x35 = 2 \n
+			ammo_12.7x54 = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -835,7 +835,7 @@
 			[spawn] \n
 			zheton = 1 \n
 			wpn_type97 \n
-			ammo_6x35 = 2 \n
+			ammo_12.7x54 = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -895,7 +895,7 @@
 			[spawn] \n
 			zheton = 1 \n
 			wpn_type97 \n
-			ammo_6x35 = 2 \n
+			ammo_12.7x54 = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n

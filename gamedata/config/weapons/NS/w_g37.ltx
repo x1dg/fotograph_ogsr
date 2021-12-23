@@ -1,0 +1,182 @@
+; Гаусс-пистолет
+[wpn_g37]:identity_immunities 
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn                  = "weapons\gungauss"	
+$npc			 		= on				
+$prefetch 		 		= 8
+scheduled               = off              	
+cform                   = skeleton
+class                   = WP_SVD
+min_radius              = 0
+max_radius              = 10
+description				= enc_wpn-gungauss
+
+ef_weapon_type			 = 5
+
+holder_range_modifier	= 1.0
+holder_fov_modifier		= 1.0
+
+cost			 			= 50000
+
+ammo_limit		 			= 999
+ammo_current		 		= 90
+ammo_elapsed		 		= 12
+ammo_mag_size		 		= 1
+real_mag_wpn					= true
+mag_bones	  				= magazin, clip, bullet
+ammo_class					= ammo_gauss
+
+sprint_allowed				= true
+f_mode						= 1
+
+;базовая дисперсия
+fire_dispersion_base		= 0.20
+control_inertion_factor		= 1.4f
+
+;отдача
+cam_dispertion_frac 		= 1.0 
+cam_relax_speed         	= 3
+cam_dispersion          	= 0.01	
+cam_max_angle				= 1.0	
+cam_max_angle_horz			= 5.0	
+cam_step_angle_horz			= 0.5	
+
+fire_dispersion_condition_factor = 3	 
+misfire_probability 		= 0.003  
+misfire_condition_k			= 0.05
+condition_shot_dec 			= 0.0001 
+
+hand_dependence 		= 1
+single_handed			= 1
+
+slot 					= 1, 13, 2	
+animation_slot			= 1		
+
+inv_name				= wpn-gungauss
+inv_name_short			= wpn-gungauss
+inv_weight				= 3
+inv_grid_width     = 3
+inv_grid_height    = 2
+inv_grid_x         = 20
+inv_grid_y         = 12
+
+kill_msg_x				= 166
+kill_msg_y				= 59
+kill_msg_width			= 82
+kill_msg_height			= 23
+
+direction               = 0, 0, 1
+fire_point			= 0.0, 0.130, 0.16
+;fire_point				= 0.00,0.12,0.69
+flame_particles         = weapons\generic_weapon_gauss
+shell_point			= 0.00,0.12,0.174				
+smoke_particles	 		= weapons\generic_weapon07	
+rpm_empty_click 		= 120
+
+;;;;;;  Для Народной солянки 2009
+hit_power                   = 12
+hit_impulse		 	        = 5
+hit_type 			        = fire_wound
+hit_rate	                = 1.85
+fire_distance           	= 150
+bullet_speed		 	    = 4000
+rpm                     	= 50
+
+disp_rate = 1.85
+
+hud                    		= wpn_gungauss_hud
+normal                   	= 0, 1, 0
+position                 	= -0.021,-0.004,-0.015
+orientation              	= 0, 0, 0
+
+startup_ammo            = 1
+visual                  = dynamics\weapons\wpn_gauss\wpn_gauss_p.ogf
+
+light_color		 		= 1.3,1.5,2
+light_range		 		= 3.0
+light_var_color		 	= 0.05
+light_var_range		 	= 0.5
+light_time 		 		= 0.5
+
+ph_mass			 		= 5
+
+;addons
+scope_status			= 0
+silencer_status			= 0
+grenade_launcher_status	= 0
+
+zoom_enabled			= true
+scope_zoom_factor	    = 55		;ПСО-1 4X
+
+scope_texture			= wpn\crosshairs\l85
+
+scope_name 				= wpn_addon_scope
+scope_x 				= 60
+scope_y 				= -2
+
+;звуки
+snd_draw				= weapons\gauss_pistol\gauss_pistol_draw
+snd_holster				= weapons\gauss_pistol\gauss_pistol_holster
+snd_shoot				= weapons\gauss_pistol\gauss_pistol_shoot
+snd_empty				= weapons\gauss_pistol\gauss_pistol_empty
+snd_reload				= weapons\beretta\beretta_reload
+snd_reload_empty			= weapons\beretta\beretta_reload_empty
+snd_reload_misfire			= weapons\beretta\beretta_reload_empty
+snd_close				= weapons\beretta\beretta_close
+snd_close				= weapons\gauss_pistol\gauss_pistol_close
+ 
+[wpn_gungauss_hud]
+
+zoom_hide_crosshair			= true
+item_visual				= dynamics\weapons\wpn_gauss\wpn_gauss_p_hud.ogf
+attach_place_idx			= 0
+
+hands_position				= 0.03,-0.18,0
+hands_orientation			= 4,3.5,1.15
+
+hands_position_16x9			= 0.03,-0.18,0
+hands_orientation_16x9			= 4,3.5,1.15
+
+item_position				= 0.000746,-0.000321,0.003479
+item_orientation			= 1.239378,-0.134046,-2.052052
+
+aim_hud_offset_pos			= -0.160400,0.053100,-0.180000
+aim_hud_offset_rot			= 0.063806,0.091681,-0.02
+
+aim_hud_offset_pos_16x9 		= -0.160400,0.053100,-0.180000
+aim_hud_offset_rot_16x9 		= 0.063806,0.091681,-0.02
+
+shell_point				= 0,0,0
+shell_bone              		= gilza
+
+fire_point				= 0,0,0
+fire_bone               		= muzzle
+
+anm_show				= beretta_draw
+anm_show_empty				= beretta_draw, opened
+anm_hide            			= beretta_holster
+anm_hide_empty				= beretta_holster, opened
+anm_idle            			= beretta_idle
+anm_idle_empty      			= beretta_idle, opened
+anm_shots				= beretta_shoot, shoot
+anm_shot_l				= beretta_shoot, shoot_last
+anm_idle_aim				= beretta_idle_aim
+anm_idle_aim_empty			= beretta_idle_aim, opened
+anm_reload				= beretta_reload, reload
+anm_reload_empty			= beretta_reload_empty, reload_empty
+anm_reload_misfire			= beretta_reload_empty, reload_empty
+anm_idle_moving				= beretta_idle_moving
+anm_idle_moving_empty			= beretta_idle_moving, opened
+anm_idle_moving_crouch			= beretta_idle_crouch
+anm_idle_moving_crouch_empty		= beretta_idle_crouch, opened
+anm_idle_sprint				= pistol_idle_sprint
+anm_idle_sprint_empty			= pistol_idle_sprint, opened
+anm_bore				= beretta_idle_aim
+anm_bore_empty				= beretta_idle_aim, opened
+
+gl_hud_offset_pos			= 0,0,0
+gl_hud_offset_rot			= 0,0,0
+
+lean_hud_offset_pos			= 0,0,0
+lean_hud_offset_rot			= 0,0,0

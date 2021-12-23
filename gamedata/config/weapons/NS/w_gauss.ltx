@@ -1,0 +1,183 @@
+[wpn_gauss]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn                  = "weapons\gauss_krayzis"	
+$npc			 		= on
+$prefetch 		 	= 8
+scheduled               = off
+cform                   = skeleton
+class                   = WP_SVD
+min_radius              = 0
+max_radius              = 50
+description			= enc_weapons_wpn-gauss_krayzis
+
+ef_main_weapon_type		 = 3
+ef_weapon_type			 = 8
+
+holder_range_modifier	= 2.85            
+holder_fov_modifier		= 0.3              
+
+cost					= 38000
+weapon_class			= sniper_rifle
+
+ammo_limit				= 60
+ammo_current			= 10
+ammo_elapsed			= 0
+
+ammo_mag_size			= 10
+real_mag_wpn				= true
+mag_bones	  			= magazin, bullets
+ammo_class				= ammo_gauss
+
+sprint_allowed			= true
+
+;базовая дисперсия
+fire_dispersion_base		= 0.01 
+control_inertion_factor		= 1.4f
+
+;отдача
+cam_relax_speed         	= 3
+cam_dispersion          	= 0.05	
+cam_max_angle			= 4.0	
+cam_max_angle_horz		= 5.0	
+cam_step_angle_horz		= 0.5	
+
+fire_dispersion_condition_factor = 3	 
+misfire_probability 		= 0.0025  
+misfire_condition_k			= 0.1
+condition_shot_dec 			= 0.00025 
+
+hand_dependence 		= 1
+single_handed			= 0
+
+slot 					= 2
+animation_slot			= 2
+
+inv_name				= wpn-gauss_krayzis
+inv_name_short			= wpn-gauss_krayzis
+inv_weight			= 4.5
+inv_grid_width     = 6
+inv_grid_height    = 2
+inv_grid_x         = 30
+inv_grid_y         = 0
+
+kill_msg_x			= 166
+kill_msg_y			= 59
+kill_msg_width		     = 82
+kill_msg_height		= 23
+
+direction               = 0, 0, 1
+
+fire_point                  = 0.00, 0.12, 0.69
+flame_particles         = weapons\generic_weapon_gauss
+shell_point		 	= 0.00,0.12,0.174
+smoke_particles	 	= weapons\generic_weapon07
+rpm_empty_click 		= 120
+
+hit_power               = 25
+hit_impulse		 	= 10
+hit_type 			     = fire_wound
+hit_rate	               = 1.85
+
+fire_distance           = 1000
+bullet_speed		 	= 15000	
+rpm                     = 100;60
+
+hud                     = wpn_gauss_krayzis_hud
+normal                  = 0, 1, 0
+ position                    = -0.026, 0.0, 0.0
+orientation             = 0, 0, 0
+
+strap_position              = -0.26, -0.11, 0.15
+strap_orientation           = -15, -9, 110
+
+strap_bone0				= bip01_spine2
+strap_bone1				= bip01_spine1
+
+startup_ammo            = 10
+visual                  = dynamics\weapons\wpn_gauss\wpn_gauss_cry.ogf
+
+light_color		 		= 1.3,1.5,2
+light_range		 		= 4.0
+light_var_color		 	= 0.05
+light_var_range		 	= 0.5
+light_time 		 		= 0.5
+
+ph_mass			 		= 3
+
+;addons
+scope_status			     = 1
+silencer_status			= 0
+grenade_launcher_status	     = 0
+
+zoom_enabled			= true
+
+scope_zoom_factor	    	= 15 ;80		
+scope_lense_fov_factor = 10.5;11;13
+scope_lense_hud_fov    = 0.15
+scope_inertion_factor  = 6;0
+
+scope_texture			= wpn\crosshairs\scope_gauss_un
+
+scope_name 			= wpn_addon_scope
+scope_x 				= 60
+scope_y 				= -2
+
+;звуки
+snd_shoot				= weapons\gauss_cry\gauss_shoot
+snd_draw					                                      = weapons\gauss_cry\gauss_draw
+snd_holster				                                          = weapons\gauss_cry\gauss_holster
+snd_empty				                                          = weapons\gauss_cry\gauss_empty
+snd_reload				                                          = weapons\gauss_cry\gauss_reload
+snd_bore 					                                      = weapons\mp5_bore
+
+[wpn_gauss_krayzis_hud]
+
+item_visual                 = dynamics\weapons\wpn_gauss\wpn_gauss_cry_hud.ogf
+        attach_place_idx            = 0
+        zoom_hide_crosshair         = true
+        
+        item_position               = 0, 0, 0
+        item_orientation            = 0, 0, 0
+        
+        hands_position              = 0.023125,-0.011500,-0.138501
+
+        hands_orientation           = 2.469976,3.000000,0.000000
+
+        
+        aim_hud_offset_pos          = -0.081275,0.015000,0.029875
+
+        aim_hud_offset_rot          = 0.048687,0.042625,-0.012500
+
+        
+        gl_hud_offset_pos           = 0, 0, 0
+        gl_hud_offset_rot           = 0, 0, 0
+        
+        lean_hud_offset_pos         = 0, 0, 0
+        lean_hud_offset_rot         = 0, 0, 0
+
+	   aim_hud_offset_pos_16x9				= -0.081275,0.015000,0.029875
+       aim_hud_offset_rot_16x9				= 0.048687,0.042625,-0.012500
+
+       hands_position_16x9				= 0.023125,-0.011500,-0.138501
+       hands_orientation_16x9			= 2.469976,3.000000,0.000000
+
+     		lowered_hud_offset_pos_16x9		= 0.1,0,0
+		    lowered_hud_offset_rot_16x9		= 0.1,-0.8,0.1 
+        
+anm_show				        = ak12_mono_ins_vgrip_draw
+anm_hide                		= ak12_mono_ins_vgrip_hide
+anm_idle                		= ak12_mono_ins_vgrip_idle
+anm_idle_sprint         		= ak12_mono_ins_vgrip_idle_sprint
+anm_idle_moving         		= ak12_mono_ins_vgrip_idle_moving
+anm_shots               		= ak12_mono_ins_vgrip_shoot, shoot
+anm_reload	        		    = ak12_mono_ins_vgrip_reload, reload
+anm_idle_aim            		= ak12_mono_ins_vgrip_idle_aim
+anm_bore                        = ak12_mono_ins_vgrip_idle
+        
+        shell_bone                  = wpn_body
+        shell_dir                   = 0, 1, 0
+        shell_point                 = 0, 0, 0
+        
+        fire_bone                   = muzzle
+        fire_point                  = 0, 0, 0
