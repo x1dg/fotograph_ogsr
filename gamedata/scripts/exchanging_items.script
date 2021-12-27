@@ -80,7 +80,7 @@ local all_items =
 	[111.7] = "wpn_addon_acog",
 	[104.6] = "wpn_addon_silencer",
 	[107.8] = "wpn_addon_sil_556_ar",
-	[108.7] = "wpn_addon_sil_762_ar",
+	[108.7] = "wpn_addon_sil_545_ar",
 	[105.3] = "wpn_addon_grenade_launcher",
 	[105.8] = "wpn_addon_grenade_launcher_m203",
 	
@@ -239,7 +239,7 @@ local weapons_table_experienced =
 	[111.75] = "wpn_addon_acog",
 	[105.65] = "wpn_addon_silencer",
 	[107.85] = "wpn_addon_sil_556_ar",
-	[108.75] = "wpn_addon_sil_762_ar"
+	[108.75] = "wpn_addon_sil_545_ar"
 }
 
 local weapons_table_veteran = 
@@ -263,7 +263,7 @@ local weapons_table_veteran =
 	[111.75] = "wpn_addon_acog",
 	[105.65] = "wpn_addon_silencer",
 	[107.85] = "wpn_addon_sil_556_ar",
-	[108.75] = "wpn_addon_sil_762_ar",
+	[108.75] = "wpn_addon_sil_545_ar",
 	[115.35] = "wpn_addon_grenade_launcher"
 }
 
@@ -291,7 +291,7 @@ local weapons_table_master =
 	[111.75] = "wpn_addon_acog",
 	[105.65] = "wpn_addon_silencer",
 	[107.85] = "wpn_addon_sil_556_ar",
-	[108.75] = "wpn_addon_sil_762_ar",
+	[108.75] = "wpn_addon_sil_545_ar",
 	[115.35] = "wpn_addon_grenade_launcher",
 	[115.85] = "wpn_addon_grenade_launcher_m203"
 } 

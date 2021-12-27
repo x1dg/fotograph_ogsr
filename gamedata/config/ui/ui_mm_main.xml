@@ -104,7 +104,7 @@
 	</menu_main_mm>
 	
 	<menu_sound random="0" >
-		<menu_music>music\mauvais_main_title</menu_music>
+		<menu_music>music\alien_shooter</menu_music>
 	</menu_sound>
 
 	<static_version x="8" y="744" width="300" height="30">

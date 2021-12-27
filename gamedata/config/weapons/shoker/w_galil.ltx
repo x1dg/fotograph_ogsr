@@ -1,0 +1,249 @@
+[wpn_fw900k]:wpn_main
+class					= WP_AK74					; Класс оружия
+$spawn					= "sm\wpn\Rifles\Galil ARM"	; Название оружия в СДК
+parent_section  		= wpn_galil					; Секция оружия без обвесов
+weapon_class			= assault_rifle				; Раздел для магазина мультиплеера
+cost					= 25000					
+
+;******[Описание, иконки]******;
+inv_name				= st_wpn_galil
+inv_name_short			= st_wpn_galil
+description				= st_wpn_galil_descr
+
+inv_grid_width			= 5
+inv_grid_height			= 2
+inv_grid_x				= 15
+inv_grid_y				= 4
+
+upgr_icon_x				= 295
+upgr_icon_y				= 550
+upgr_icon_width			= 295
+upgr_icon_height		= 110
+
+scope_x					= 83
+scope_y					= -10
+silencer_x				= 223
+silencer_y				= 8
+grenade_launcher_x		= 0
+grenade_launcher_y		= 0
+
+;******[Параметры для НПС]******;
+min_radius				= 0				; [] for AI (Радиус не работает, на будущее)
+max_radius				= 150			; [] for AI
+
+holder_range_modifier	= 1.0			; во сколько раз увеличивается eye_range
+holder_fov_modifier		= 1.0			; во сколько раз увеличивается eye_fov
+
+ef_main_weapon_type		= 2
+ef_weapon_type			= 6
+
+weapon_type				= auto
+scope_status			= 0		; 0 - без аддона
+silencer_status			= 2		; 1 - встроенный
+grenade_launcher_status	= 0		; 2 - присоединяемый
+
+; Прицелы текстурой \ Мушка
+scope_zoom_factor		= 50	; FOV при прицеливании
+scope_name				= specter
+force_scope_texture 	= false
+
+; Глушитель
+silencer_name			= wpn_addon_sil_556_ar
+
+; Подствольное
+grenade_launcher_name	= wpn_addon_grenade_launcher
+grenade_class			= ammo_vog-25, ammo_vog-25p
+grenade_vel				= 0
+
+
+;******[Характеристики оружия]******;
+sprint_allowed			= true
+slot					= 2
+single_handed			= 0				; Одноручное\Двуручное
+
+inv_weight				= 4.35
+control_inertion_factor	= 1.6f			; Коэфицент чувствительности мышки
+crosshair_inertion   	= 6
+
+fire_modes				= 1, -1
+
+ammo_mag_size			= 40
+ammo_class		 		= ammo_5.56x45_ss190, ammo_5.56x45_ap
+
+; Отдача и разброс
+fire_dispersion_base				= 0.55	; Угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+use_dispersion_mod					= true	; Использовать доп. модификатор разброса disp_aim_mod
+
+PDM_disp_base						= 1.0
+PDM_disp_vel_factor					= 1.3
+PDM_disp_accel_factor				= 1.7
+PDM_disp_crouch	 					= 0.4
+PDM_disp_crouch_no_acc 				= 0.3
+
+hit_probability_gd_novice			= 0.75
+hit_probability_gd_stalker			= 0.75
+hit_probability_gd_veteran			= 0.75
+hit_probability_gd_master			= 0.75
+
+; Скорость возврата отдачи к норме
+time_to_aim					= 2.0
+
+; Отдача (от бедра)
+cam_dispersion				= 1.5		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.24		;увеличениe cam_dispersion с каждым выстрелом
+cam_max_angle_horz			= 3.675		;максимальный угол горизонтальной отдачи
+cam_step_angle_horz			= 1.225		;насколько сильна горизонтальная отдача
+
+; Отдача (прицеливание)
+zoom_cam_dispersion			= 1.5
+zoom_cam_dispersion_inc		= 0.24
+zoom_cam_max_angle_horz		= 3.675
+zoom_cam_step_angle_horz	= 1.225
+
+; Надёжность
+condition_shot_dec		= 0.0001		; Увеличение износа при каждом выстреле
+
+; ТТХ
+hit_power				= 1.4
+hit_impulse				= 1
+hit_type				= fire_wound
+
+fire_distance			= 1500	; Дистанция, после которой пуля исчезает
+bullet_speed			= 460	; Скорость пули
+rpm						= 650	; Скорострельность
+
+zoom_enabled			= true	; Можно целиться
+zoom_rotate_time		= 0.25	; Скорость зума
+
+;******[Визуальная часть]******;
+; DoF
+zoom_dof				= 0.5, 1.0, 180
+reload_dof				= 0.0, 0.5, 5, 3.1
+
+; Visual
+visual                  = dynamics\weapons\wpn_galil\wpn_galil_acog.ogf
+hud						= wpn_galil_hud
+
+; Анимации от 3-го лица
+anm_world_idle			= galil_idle			;Анимка, когда оружие в спокойном состоянии
+anm_world_idle_empty	= galil_idle			;Анимка, когда 0 патронов
+anm_world_shoot			= galil_shoot,    0.1	;Анимка, когда стрельба
+anm_world_reload		= galil_reload			;Анимка, когда перезарядка
+anm_world_reload_empty	= galil_reload			;Анимка, когда перезарядка при 0
+
+; Параметры от 3-его лица
+animation_slot			= 2				; Каким способом НПС держит ствол
+
+position				= -0.026, -0.130, 0.0
+orientation				= 0.0, 0.0, 0.0
+
+; Позиция под подмышкой
+strap_position			= -0.15,-0.37,0.2
+strap_orientation		= -10,-5,10
+strap_bone0				= bip01_spine2
+strap_bone1				= bip01_spine1
+
+; Партиклы и эффекты
+fire_point				= 0, 0.180, 0.65	; Позиция огня из основного ствола
+fire_point2				= 0, 0.00, 0.583	; Позиция огня из подствола
+
+flame_particles			= weapons\generic_weapon05
+smoke_particles			= weapons\generic_shoot_00
+silencer_smoke_particles= weapons\generic_shoot_00
+grenade_flame_particles	= weapons\generic_weapon01
+
+; 2D-Гильзы
+shell_point				= 0,0.216,0.174
+shell_particles			= ;weapons\generic_shells
+
+;3D-Гильзы
+shell_alowed			= true				;Нужно ли спавнить гильзу
+shell_bone              = joint7			;Кость, относительно которой спавнится гильза (3 лицо)
+shell_delay				= 0					;Задержка перед спавном гильзы (только для игрока + лишь 1 гильза)
+shell_impuls_vector		= 3, -0.5, -0.25	;Направление и сила полёта гильзы (X\Y\Z)
+shell_disp_vector		= 0.6, 1.3, 40		;Разброс импульса (миним. коэф \ максим. коэф \ угол поворота по Y 
+shell_pos_1p			= 0.25, 0.04, 0.25	;Смещение позиции спавна от позиции худа для 1-го лица
+shell_pos_3p			= 0.0, 0.0, 0.0		;Смещение позиции спавна относительно кости shell_bone для 3-его лица
+
+
+; Свет
+light_disabled			= false
+
+light_color				= 0.6,0.5,0.3
+light_range				= 5
+light_var_color			= 0.05
+light_var_range			= 0.5
+light_time				= 0.2
+
+silencer_light_color	= 0.6,0.5,0.3
+silencer_light_range	= 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time		= 0.2
+
+;******[Звуковая часть]******;
+snd_draw				= weapons\generic_draw
+snd_holster				= weapons\generic_holster
+snd_silncer_shot		= weapons\galil\galil_shoot_sil
+snd_shoot				= weapons\galil\galil_shoot
+snd_empty				= weapons\gen_empty, 0.5
+snd_reload				= weapons\galil\galil_reload
+snd_shoot_grenade		= weapons\gen_grenshoot
+snd_reload_grenade		= weapons\gen_grenload, 1.0, 0.8
+snd_switch				= weapons\groza_switch, 1.0, 0.5
+snd_bore				= weapons\no_sound
+
+[wpn_galil_hud]
+zoom_hide_crosshair     = true
+
+attach_place_idx        = 0
+item_visual				= dynamics\weapons\wpn_galil\wpn_galil_acog_hud.ogf
+
+hands_position			= -0.044000,-0.191999,0.135500
+hands_orientation		= 0.549999,2.399999,0.1499993
+hands_position_16x9		= -0.044000,-0.191999,0.135500
+hands_orientation_16x9	= 0.549999,2.399999,0.1499993
+
+item_position			= 0.0,0.0,0.0
+item_orientation		= 0.0,0.0,0.0
+
+shell_point             = 0.017,0.054,0.17
+shell_dir               = 0.0, 1.0, 0.0
+shell_bone              = wpn_body
+
+fire_point	        	= -0.011,0.051639,0.953686
+fire_bone               = wpn_body
+fire_point2             = 0.0,-0.011,0.553
+fire_bone2              = wpn_body
+
+anm_shots               = lancew_galil_shoot_scope, shoot
+anm_idle_aim            = lancew_galil_idle_aim, idle_aim
+anm_show				= lancew_galil_draw
+anm_hide                = lancew_galil_holster
+anm_idle                = lancew_galil_idle
+anm_idle_sprint         = lancew_galil_sprint
+anm_idle_moving         = lancew_galil_moving
+anm_shots               = lancew_galil_shoot, shoot
+anm_reload              = lancew_galil_reload, reload
+anm_bore                = lancew_galil_no_reload
+
+aim_hud_offset_pos 		= -0.107100,0.048600,-0.052000
+aim_hud_offset_rot 		= 0.040000,0.009000,-0.007500
+aim_hud_offset_pos_16x9 = -0.107100,0.048600,-0.052000
+aim_hud_offset_rot_16x9 = 0.040000,0.009000,-0.007500
+
+gl_hud_offset_pos 	   = -0.103000,-0.095000,0.000000
+gl_hud_offset_rot	   = -0.144000,-0.030000,0.000000
+gl_hud_offset_pos_16x9 = -0.104000,-0.099000,0.000000
+gl_hud_offset_rot_16x9 = -0.143000,0.000000,0.000000
+
+lean_hud_offset_pos     = 0,0,0
+lean_hud_offset_rot     = 0,0,0
+
+; Сдвиг при центрированном режиме
+alt_ofs_pos_x			= -0.05
+alt_ofs_pos_y			= 0.0
+alt_ofs_pos_z			= 0.15
+alt_ofs_rot_x			= 0
+alt_ofs_rot_y			= 0
+alt_ofs_rot_z			= 0

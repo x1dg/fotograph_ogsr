@@ -1,0 +1,148 @@
+[wpn_grozm]:wpn_groza
+$spawn                   = "weapons\wpn_grozm"					; option for Level Editor
+min_radius              = 30
+max_radius              = 100
+description				= "Автоматно-гранатомётный комплекс ОЦ-14 «Гроза», пролежавший какое-то время в аномалии 'Студень'. Приобрёл совершенно невероятное и необъяснимое свойство, а именно: теперь этот ствол использует в качестве зарядов - патроны для дробовика. По истине, Зона иногда творит чудеса не только с человеком, но и с предметами. Эти чудеса и метаморфозы неподвластны пониманию."
+
+cost					= 45000
+
+ammo_limit				= 210
+ammo_current			= 180
+ammo_elapsed			= 20
+
+ammo_mag_size		 	= 20
+ammo_class		 		= ammo_12x70_buck, ammo_12x76_zhekan, ammo_12x76_dart
+fire_modes				= 1, -1
+f_mode					= 2
+
+inv_name	         	= "Гроза Танкиста"
+inv_name_short		 	= "Гроза Танкиста"
+inv_weight		 		= 3.2
+
+inv_grid_width			= 4
+inv_grid_height			= 2
+inv_grid_x				= 24
+inv_grid_y				= 2
+
+;-----------------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base		= 0.18
+control_inertion_factor		= 1.05f
+disp_rate = 1.7
+
+;отдача
+cam_relax_speed         	= 4.2
+cam_dispersion          	= 1.3
+cam_dispersion_inc		= 0.56
+cam_dispertion_frac		= 1.2
+cam_max_angle			= 14
+cam_max_angle_horz		= 35
+cam_step_angle_horz		= 7.0
+
+fire_dispersion_condition_factor = 1.5
+misfire_probability 		= 0.0003
+misfire_condition_k			= 0.05
+condition_shot_dec 			= 0.0003
+;-----------------------------------------------------------------------------------
+
+direction               = 0, 0, 1
+
+fire_point              = 0.0, 0.194, 0.274
+
+flame_particles					= weapons\generic_weapon05
+smoke_particles     			= ghost_particles\weapons\flame_eft_shotgun
+silencer_smoke_particles   		= ghost_particles\weapons\generic_smoke_eft_sil
+grenade_flame_particles			= weapons\generic_weapon_gauss
+
+
+shell_point				= 0.0, 0.194, 0.04
+shell_dir				= 0.0, 0.0, 0.4
+shell_particles         		= weapons\12ga
+rpm_empty_click 		= 200
+
+PDM_disp_base 			= 6.0
+PDM_disp_vel_factor 		= 1.45
+PDM_disp_accel_factor 		= 1.3
+PDM_crouch	 		= 1.0
+PDM_crouch_no_acc 		= 1.0
+
+hit_power                       = 0.75
+hit_impulse		 	            = 40
+hit_type 			            = fire_wound
+hit_rate	                    = 1.85
+
+fire_distance           	    = 150
+bullet_speed			        = 410
+rpm                    		    = 350
+
+use_aim_bullet				= false
+time_to_aim					= 1.0	
+
+grenade_vel			= 76
+
+
+silencer_hit_power       	= 0.78
+silencer_hit_impulse	 	= 40
+silencer_fire_distance   	= 100
+silencer_bullet_speed	 	= 315
+
+hud                     = wpn_grozm_hud
+normal                  = 0, 1, 0
+
+;----------------------------------------------------------
+position                = -0.026, -0.144, 0.0
+orientation      	    = 0, 0, 0
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+strap_position         		= -0.15,-0.38,0.35			; position (offset) and orientation of the weapon when it is strapped
+strap_orientation      		= -10,-5,10					; (3rd person view in degrees)
+strap_bone0					= bip01_spine2
+strap_bone1					= bip01_spine1
+
+startup_ammo            = 90
+visual					= dynamics\weapons\wpn_groza\wpn_grozm.ogf
+
+light_color		 		= 0.6,0.5,0.3
+light_range		 		= 5
+light_var_color		 	= 0.05
+light_var_range		 	= 0.5
+light_time 		 		= 0.2
+
+ph_mass			 		= 5
+;cost			 		= 2100
+
+;addons
+scope_status			= 0
+silencer_status			= 0
+grenade_launcher_status	= 1
+grenade_class			= ammo_gauss
+
+zoom_enabled			= true
+scope_zoom_factor	    = 75
+
+scope_name 					= wpn_addon_scope
+scope_x 					= 63
+scope_y 					= -1
+silencer_name  				= wpn_addon_silencer
+silencer_x 					= 180
+silencer_y 					= 16				
+
+;------------------------------ S.T.A.L.K.E.R`s sound remake ------------------------------
+;звуки
+snd_draw				= weapons\spas12\spas12_draw
+snd_holster				= weapons\shotgun_holster
+snd_shoot				= weapons\spas12\spas12_shoot
+snd_shoot1				= weapons\spas12\spas12_shoot
+snd_shoot2				= weapons\spas12\spas12_shoot
+snd_shoot3				= weapons\spas12\spas12_shoot
+snd_empty				= weapons\spas12\spas12_empty
+snd_reload				= weapons\spas12\spas12_insertshell
+snd_shoot_grenade		= weapons\gp30\GP30_grenshoot
+snd_reload_grenade		= weapons\gp30\gp30_grenload, 1.0, 1.3
+;------------------------------------------------------------------------------------------
+
+;silencer_flame_particles 	= weapons\generic_weapon01
+silencer_smoke_particles 	= weapons\generic_shoot_00
+
+[wpn_grozm_hud]:wpn_groza_hud
+item_visual				= dynamics\weapons\wpn_groza\wpn_grozm_hud.ogf

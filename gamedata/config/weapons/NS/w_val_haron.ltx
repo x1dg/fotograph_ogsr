@@ -2,9 +2,9 @@
 hidden_bones 				= s_1pn34,s_ekp,s_kobra,s_okp
 $spawn             				= "weapons\val\wpn_val_m2"	
 description					= enc_weapons1_wpn-val_m2
-inv_name						= "Аномальный Вал"
-inv_name_short					= "Аномальный Вал"
-scope_status					= 0 ; 2; --прицел есть
+inv_name						= Аномальный "Вал"
+inv_name_short					= Аномальный "Вал"
+scope_status					= 1
 visual					= dynamics\weapons\wpn_va1\wpn_val_anom.ogf
 
 inv_grid_width				= 5
@@ -12,75 +12,10 @@ inv_grid_height				= 2
 inv_grid_x				= 36
 inv_grid_y				= 16
 
-scope_x                     = 51		; offset in inventory icon
-scope_y                     = 4
-
-anm_show						= ak74_beard_eft_draw
-anm_hide                		= ak74_beard_eft_hide
-anm_idle                		= ak74_beard_eft_idle
-anm_idle_sprint         		= ak74_beard_eft_idle_sprint
-anm_idle_moving         		= ak74_beard_eft_idle_moving
-anm_idle_moving_crouch			= ak74_beard_eft_idle_crouch
-anm_shots               		= ak74_beard_eft_shoot, shoot
-anm_reload              		= ak74_beard_eft_reload, reload
-anm_reload_empty        		= ak74_beard_eft_reload_empty, reload_empty
-anm_idle_aim            		= ak74_beard_eft_idle_aim
-anm_bore                        = ak74_eft_ins_idle_bore
-anm_reload_misfire              = ak74_beard_misfire, misfire
-
 condition_shot_dec 		= 0.0001
 
 hud             	        = wpn_val_m2_hud
 
 [wpn_val_m2_hud]:wpn_val_hud
-zoom_hide_crosshair			= true
 attach_place_idx			= 0
 item_visual				= dynamics\weapons\wpn_va1\wpn_val_anom_hud.ogf
-
-hands_position				= 0.018599,-0.000626,-0.100299
-hands_orientation			= 1.078683,1.809961,0.000000
-
-hands_position_16x9				= 0.018599,-0.000626,-0.100299
-hands_orientation_16x9			= 1.078683,1.809961,0.000000
-
-item_position				= 0.004015,0.000231,-0.000073
-item_orientation			= 0.000000,0.000000,0.000000
-
-aim_hud_offset_pos_16x9				= -0.086465,0.045150,-0.060101
-aim_hud_offset_rot_16x9				= 0.033637,0.018860,0.000000
-
-aim_hud_offset_pos				= -0.086465,0.045150,-0.060101
-aim_hud_offset_rot				= 0.033637,0.018860,0.000000
-
-shell_point				= 0,0,0
-shell_dir               		= 0,1,0
-shell_bone				= gilza
-
-fire_point				= 0,0,0
-fire_bone      	      			= muzzle
-fire_point2				= 0,0,0
-fire_bone2				= muzzle
-
-anm_show						= ak74_beard_eft_draw
-anm_hide                		= ak74_beard_eft_hide
-anm_idle                		= ak74_beard_eft_idle
-anm_idle_sprint         		= ak74_beard_eft_idle_sprint
-anm_idle_moving         		= ak74_beard_eft_idle_moving
-anm_idle_moving_crouch			= ak74_beard_eft_idle_crouch
-anm_shots               		= ak74_beard_eft_shoot, shoot
-anm_reload              		= ak74_beard_eft_reload, reload
-anm_reload_empty        		= ak74_beard_eft_reload_empty, reload_empty
-anm_idle_aim            		= ak74_beard_eft_idle_aim
-anm_bore                        = ak74_eft_ins_idle_bore
-anm_reload_misfire              = ak74_beard_misfire, misfire
-
-gl_hud_offset_pos			= 0,0,0
-gl_hud_offset_rot			= 0,0,0
-
-gl_hud_offset_pos_16x9			= 0,0,0
-gl_hud_offset_rot_16x9			= 0,0,0
-
-lean_hud_offset_pos			= 0,0,0
-lean_hud_offset_rot			= 0,0,0
-
-grenade_bone            		= grenade

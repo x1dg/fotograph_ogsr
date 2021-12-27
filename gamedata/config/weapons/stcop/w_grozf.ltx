@@ -1,0 +1,134 @@
+[wpn_rg10_ognemet]:wpn_groza
+$spawn                   = "weapons\ognemet"					; option for Level Editor
+$npc					= on				; option for Level Editor
+$prefetch 				= 16
+scheduled				= off              ; option for ALife Simulator
+cform                   = skeleton
+class                   = WP_GROZA
+description				= enc_weapons1_rg10_ognemet
+
+ammo_limit			= 210
+ammo_current			= 180
+ammo_elapsed			= 20
+
+ammo_mag_size		 	= 20
+ammo_class		 	= ammo_balon_rg10
+fire_modes			= -1
+launch_speed			= 0
+
+grenade_class			= ammo_vog-25, ammo_vog-25p
+
+hand_dependence		 	= 1
+single_handed			= 0
+
+slot 				= 2		; // secondary
+animation_slot			= 8		; type of the animation that will be used
+
+inv_name	         	= wpn-rg10_ognemet
+inv_name_short		 	= Огненная "Гроза"
+inv_weight		 		= 5.2
+
+inv_grid_width			= 4
+inv_grid_height			= 2
+inv_grid_x			= 36
+inv_grid_y			= 4
+
+kill_msg_x			= 67
+kill_msg_y			= 123
+kill_msg_width		= 64
+kill_msg_height		= 30
+
+;-----------------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base		=0.61	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor		= 1.05f
+
+;отдача
+cam_relax_speed         	= 5.2;0.3	;скорость возврата в исходное положение
+cam_dispersion          	= 0.3	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 0.12	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispertion_frac		= 0.75	;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle			= 8.5	;максимальный угол отдачи
+cam_max_angle_horz		= 9.0	;(degree) maximum shot horizontal degree 
+cam_step_angle_horz		= 0.85	;(degree) size of step camera moved in horizontal position while shooting
+
+fire_dispersion_condition_factor =5	;увеличение дисперсии в процентах при максимальном износе 
+misfire_probability 		=0.0001	;вероятность осечки при максимальном износе 
+misfire_condition_k			= 0.05
+condition_shot_dec 			=0.00005	;увеличение износа при каждом выстреле
+;-----------------------------------------------------------------------------------
+
+direction               = 0, 0, 1
+
+fire_point              = 0.0, 0.194, 0.274
+
+flame_particles			= monsters\flamethrower ;!!! ;damage_fx\burn_creatures ;static\fire_tube
+smoke_particles			= damage_fx\burn_creatures ;shoker_mod\flame\flame_tube ;weapons\generic_shoot_00	;monsters\polter_flame_fire
+grenade_flame_particles	= weapons\generic_weapon01
+
+shell_point				= 0.0, 0.194, 0.04
+shell_dir				= 0.0, 1.0, 0.0
+shell_particles			= weapons\generic_shells
+rpm_empty_click 		= 200
+
+PDM_disp_base 			= 1.0
+PDM_disp_vel_factor 		= 1.1
+PDM_disp_accel_factor 		= 1.1
+PDM_crouch	 		= 1.0
+PDM_crouch_no_acc 		= 1.0
+
+hit_power                   = 1.1
+hit_impulse		 	        = 1
+hit_type 			        = fire_wound
+hit_rate	                = 2.0
+fire_distance           	= 25
+bullet_speed			    = 200
+rpm                    		= 230
+
+use_aim_bullet				= true
+time_to_aim					= 1.0	
+
+grenade_vel			        = 76
+; end ttc
+
+silencer_hit_power       	=1.58
+silencer_hit_impulse	 	=120
+silencer_fire_distance   	=250
+silencer_bullet_speed	 	=280
+
+hud                     = wpn_ognemet_rg10_hud
+normal                  = 0, 1, 0
+
+startup_ammo            = 90
+visual                  = dynamics\weapons\wpn_groza\wpn_grozf.ogf
+
+ph_mass			 		= 5
+cost			 		= 30000
+
+scope_status				=0
+silencer_status				=0
+grenade_launcher_status		=1
+
+zoom_enabled			= true
+scope_zoom_factor	    = 75
+
+scope_name 					= wpn_addon_scope	; section name for the attachable scope		
+
+snd_draw				= weapons\generic_draw
+snd_holster				= weapons\generic_holster
+snd_shoot				= weapons\flamer\flamer_shoot
+snd_shoot1				= weapons\flamer\flamer_shoot_2
+snd_shoot2				= weapons\flamer\flamer_shoot_3
+snd_shoot3				= weapons\flamer\flamer_shoot_4
+snd_empty				= weapons\gen_empty, 0.5
+snd_reload				= weapons\flamer\flamer_reload, 0.7	
+snd_shoot_grenade		= weapons\gen_grenshoot
+snd_reload_grenade		= weapons\gen_grenload, 1.0, 0.8
+snd_switch				= weapons\groza_switch, 1.0, 0.5
+snd_silncer_shot			= weapons\w_ak74_shot1 
+ 
+[wpn_ognemet_rg10_hud]:wpn_groza_hud
+allow_inertion			= true
+item_visual				= dynamics\weapons\wpn_groza\wpn_grozf_hud.ogf
+
+zoom_hide_crosshair	= true						;to hide crosshair in zoom

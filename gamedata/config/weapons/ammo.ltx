@@ -37,17 +37,46 @@ k_air_resistance = 1.0
 slot				= -1
 explosive			= false
 
-;-------------------------------------------
-;   патрон .357 Smith & Wesson Magnum (9x32мм R)
-;   Тип пули: Jacketed Flat Point (Оболочечная с плоской головной частью)
-;   Вес пули, гр: 10.27
-;   Диаметр пули, мм: 9.02
-;   Дульная скорость, м\с:  377
-;   Энергия, Дж: 728
-;   Вес патрона, гр: ---
-;-------------------------------------------
-
 [ammo_357sw_jfp]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn			= "weapons\wpn_ammo\ammo_357_hp_mag" ; option for Level Editor
+class			= AMMO
+cform                   = skeleton
+visual                  = dynamics\weapons\wpn_ammo\ammo_357_jhp.ogf
+description		= ammo-357-incendiary_descr
+$prefetch 		= 64
+
+cost			= 1900
+
+box_size		= 15	
+
+inv_name			= ammo-357-incendiary
+inv_name_short		= ammo-357-incendiary_s
+inv_weight		= 0.283
+
+inv_grid_width     = 1
+inv_grid_height    = 1
+inv_grid_x         = 40
+inv_grid_y         = 3
+
+k_dist			= 1.0
+k_disp			= 1.45; 3
+k_hit			= 1.86
+k_impulse		= 1.1
+k_pierce		= 0.21
+k_ap			= 0.725
+impair			= 1.15 ; 1.1
+buck_shot		= 1
+tracer			= on        ;  off
+wm_size        		= 0.049
+k_air_resistance = 1.0
+
+;belt				= true;
+slot				= -1
+explosive			= false
+
+[ammo_357sw_flame]:ammo_357sw_jfp
 GroupControlSection	= spawn_group
 discovery_dependency = 
 $spawn			= "weapons\wpn_ammo\ammo_357_hp_mag" ; option for Level Editor

@@ -1970,8 +1970,7 @@
 		<supplies>
 			[spawn] \n
 			wpn_fnc \n
-			ammo_357sw_jhp \n
-			ammo_357sw_jfp \n
+			ammo_flame = 10 \n
             wpn_wincheaster1300 \n
 	        ammo_12x76_dart = 2 \n
 			medkit = 1 \n
