@@ -168,7 +168,7 @@
     <rank>785</rank>
     <reputation>120</reputation>
 
-    <visual>actors\soldier_usa\soldier_usa_smith</visual>   
+    <visual>actors\soldier_usa\soldier_usa_smith_ogsr</visual>   
     <snd_config>characters_voice\human_02\military\</snd_config>
     <crouch_type>0</crouch_type>
 
@@ -262,7 +262,7 @@
     <rank>490</rank>
     <reputation>70</reputation>
 
-    <visual>actors\soldier_usa\soldier_usa_spetsnaz</visual>    
+    <visual>actors\soldier_usa\soldier_usa_spetsnaz_ogsr</visual>    
     <snd_config>characters_voice\human_01\military\</snd_config>
     <crouch_type>0</crouch_type>
 
@@ -328,7 +328,7 @@
     <rank>490</rank>
     <reputation>70</reputation>
 
-    <visual>actors\soldier_usa\soldier_usa_spetsnaz</visual>    
+    <visual>actors\soldier_usa\soldier_usa_spetsnaz_ogsr</visual>    
     <snd_config>characters_voice\human_01\military\</snd_config>
     <crouch_type>0</crouch_type>
 
@@ -425,7 +425,7 @@
     <rank>590</rank>
     <reputation>80</reputation>
 
-    <visual>actors\soldier_usa\soldier_usa_spetsnaz</visual>    
+    <visual>actors\soldier_usa\soldier_usa_spetsnaz_ogsr</visual>    
     <snd_config>characters_voice\human_01\military\</snd_config>
     <crouch_type>0</crouch_type>
 
@@ -1378,7 +1378,7 @@
     <rank>650</rank>
     <reputation>93</reputation>
 
-    <visual>actors\soldier_usa\soldier_usa_spetsnaz1</visual>    
+    <visual>actors\soldier_usa\soldier_usa_spetsnaz1_ogsr</visual>    
     <snd_config>characters_voice\human_01\military\</snd_config>
     <crouch_type>0</crouch_type>
 

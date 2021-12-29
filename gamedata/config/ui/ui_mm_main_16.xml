@@ -8,7 +8,7 @@
 		<auto_static x="104" y="24" width="115.1" height="153.6" stretch="1" light_anim="asus_logo_01" la_cyclic="1" la_texture="1" la_alpha="1">
 			<texture>ui\ui_fotograph_logo</texture>
 		</auto_static>
-		<auto_static x="530" y="24" width="191.9" height="256" stretch="1" light_anim="asus_logo_01" la_cyclic="1" la_texture="1" la_alpha="1">
+		<auto_static x="104" y="180" width="115.1" height="153.6" stretch="1" light_anim="asus_logo_01" la_cyclic="1" la_texture="1" la_alpha="1">
 			<texture>ui\ui_fotograph_logo2</texture>
 		</auto_static>
 	</background>
