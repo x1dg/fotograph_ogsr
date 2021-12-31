@@ -1,13 +1,16 @@
 --[[-----------------------------------------------------------------------------------------------
  File			: ui_loader_hud.script
  Description	: Функции для худа
- Copyright		: SGM Mod
+ Copyright		: SGM Mod, Call Of Chernobyl
  Date			: 07.10.2020
- Last edit		: 07.10.2020
+ Last edit		: 19.11.2021
 --]]-----------------------------------------------------------------------------------------------
 
 function update()
 	check_binoc()
+	init_ranks_reps()
+	check_actor_rank_change()
+	check_actor_reputation_change()
 end
 
 -- Универсальная анимация камеры для перезарядки
@@ -40,3 +43,71 @@ function check_binoc()
 	return
 	end
 end
+
+local init = true
+local ranks, reputations = {}, {}
+local actor_statistic = {
+	actual_rank = db.actor:character_rank(),
+	actual_reputation = db.actor:character_reputation()}
+function init_ranks_reps()
+	if init == false then return end
+	local function parse_str(s)
+		local t = {}
+		for name in string.gmatch( s, "([%w_%-.\\]+)[%,%s]*" ) do table.insert( t, name ) end
+		return t
+	end
+	local ini = ini_file("creatures\\game_relations.ltx")
+	local tbl = parse_str(ini:r_string("game_relations","rating"))
+	local tbl2 = parse_str(ini:r_string("game_relations","reputation"))
+	for i=2, #tbl, 2 do
+		table.insert(ranks, tonumber(tbl[i]))
+	end
+	for i=2, #tbl2, 2 do
+		table.insert(reputations, tonumber(tbl2[i]))
+	end
+	init = false
+end
+
+-- Check for actor rank change.
+function check_actor_rank_change()
+	local current_rank = db.actor:character_rank()
+	local new, old = 0, 0
+	for i=1,#ranks do
+		if current_rank <= ranks[i] then break end
+		new = new + 1
+	end
+	for i=1,#ranks do
+		if actor_statistic.actual_rank <= ranks[i] then break end
+		old = old + 1
+	end
+	if old > new then
+		ui_pda_dialogs.send_tip(game.translate_string("st_rank_decreased"),
+		game.translate_string("st_pda_statistic_score"), nil, nil, "rank", "rank")
+	elseif new > old then
+		ui_pda_dialogs.send_tip(game.translate_string("st_rank_increased"),
+		game.translate_string("st_pda_statistic_score"), nil, nil, "rank", "rank")
+	end
+	actor_statistic.actual_rank = current_rank
+end
+
+-- Check for actor reputation change.
+function check_actor_reputation_change()
+	local current_reputation = db.actor:character_reputation()
+	local new, old = 0, 0
+	for i=1,#reputations do
+		if current_reputation <= reputations[i] then break end
+		new = new + 1
+	end
+	for i=1,#reputations do
+		if actor_statistic.actual_reputation <= reputations[i] then break end
+		old = old + 1
+	end
+	if old > new then
+		ui_pda_dialogs.send_tip(game.translate_string("st_reputation_decreased"),
+		game.translate_string("st_pda_statistic_score"), nil, nil, "reputation_down")
+	elseif new > old then
+		ui_pda_dialogs.send_tip(game.translate_string("st_reputation_increased"),
+		game.translate_string("st_pda_statistic_score"), nil, nil, "reputation_up")
+	end
+	actor_statistic.actual_reputation = current_reputation
+ end

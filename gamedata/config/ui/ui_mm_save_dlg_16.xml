@@ -14,6 +14,9 @@
 		<auto_static x="897" width="127.4" height="768" stretch="1">
 			<texture x="510" width="170" height="768">ui\ui_sidepanels</texture>
 		</auto_static>
+		<auto_static x="680" y="76" width="2" height="623" stretch="1">
+			<texture>ui_list_header_v</texture>
+		</auto_static>
 	</background>
 
 	<back_video/>

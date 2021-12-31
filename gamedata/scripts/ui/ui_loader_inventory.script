@@ -51,8 +51,12 @@ function InventoryWindow:InitControls()
 
 	-- Характеристики ГГ
 	icon_s = xml:InitStatic("actor_chars:icon_static", self.stat)
+	icon_s:InitTexture(ui_data.load("mui_actor_icon"))
+	l_char = xml:InitStatic("actor_chars:layer_actor", self.stat)
+	l_char:InitTexture("ui_icon_layer")
+	
 	name_s = xml:InitStatic("actor_chars:name_static", self.stat)
-	name_s:SetText(game.translate_string("actor_name"))
+	name_s:SetText(db.actor:character_name())
 
 	rank_c = xml:InitStatic("actor_chars:rank_caption", self.stat)
 	rank_s = xml:InitStatic("actor_chars:rank_static", self.stat)
@@ -80,10 +84,10 @@ function InventoryWindow:InitControls()
 	outfit:Show(false)
 	wpn1:Show(false)
 	wpn2:Show(false)
-	
+
 	-- Отображение отключенных слотов
 	local slot_exist = system_ini():r_bool("features","ogse_new_slots")
-	if slot_exist == false then 
+	if slot_exist == false then
 		slots_cover = xml:InitStatic("slots_cover", self.stat)
 	end
 

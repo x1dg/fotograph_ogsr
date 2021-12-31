@@ -1,28 +1,6 @@
 <?xml version='1.0' encoding="UTF-8"?>
 <!-- ПОЛЬЗОВАТЕЛЬСКИЙ ХУД -->
 <header>
-	<priboy_dump_vertex  x="800" y="10" width="200" height="30" complex_mode="1">
-        <text align="l" font="small"  r="240" g="217" b="182" a="255"/>
-    </priboy_dump_vertex>
-		
-	<priboy_gasmask_hud x="940" y="170" width="64" height="64">
-		<texture x="851" y="1756" width="64" height="64">ui\ui_icon_equipment</texture>
-	</priboy_gasmask_hud>
-	
-	<priboy_house_hud x="940" y="100" width="64" height="64">
-		<texture>ui_hud_icon_sleep</texture>
-	</priboy_house_hud>
-	
-	<priboy_kill_counter  x="400" y="0" width="157" height="67">
-		<text x="40" y="5it" font="graffiti32" r="255" g="0" b="0" a="255" align="c"/>
-		<texture>ui_hud_fragBig</texture>
-	</priboy_kill_counter>
-	
-	<priboy_hud_timer  x="852" y="15" width="157" height="67">
-		<text light_anim="ui_slow_blinking_alpha" la_cyclic="1" la_texture="0" la_text="1" la_alpha="1" x="-15" y="23it" font="graffiti32" r="238" g="155" b="23" a="255" align="r"/>
-		<texture>ui_hud_frame_clock</texture>
-	</priboy_hud_timer>
-	
 	<timer_hud  x="852" y="15" width="157" height="67">
 		<text x="-15" y="23it" font="graffiti22" r="238" g="155" b="23" a="255" align="r" />
 		<texture>ui_hud_frame_clock</texture>
@@ -39,6 +17,18 @@
 	<hud_timer_text x="338" y="5" width="350" height="18">
 		<text font="letterica16" color="hud_timer_name" align="c"/>
 	</hud_timer_text>
+
+	<msl_gg_1 x="440" y="153" width="350" height="18">
+		<text font="graffiti22" r="255" g=" 128" b=" 64" complex_mode="1">msssl1</text>
+	</msl_gg_1>
+	
+		<msl_gg_2 x="440" y="153" width="350" height="18">
+		<text font="graffiti22" r="255" g=" 128" b=" 64" complex_mode="1">msssl2</text>
+	</msl_gg_2>
+	
+			<msl_gg_3 x="410" y="688" width="350" height="18">
+		<text font="letterica16" r="255" g=" 128" b=" 64" complex_mode="1">msssl3</text>
+	</msl_gg_3>
 
 	<!-- Часы на миникарте -->
     <hud_show_time  x="-26" y="12" width="98" height="19" complex_mode="1">
@@ -205,6 +195,24 @@
 	<sleep_001 x="20" y="20" width="984" height="728">
 		<texture x="0" y="0" width="984" height="728">car\trabantnoise</texture>
 	</sleep_001>
+
+	<!-- Пинг в мультиплеере -->
+	<max_ping_warn_1 x="512" y="300" width="360" height="64" alignment="c" ttl="8">
+		<texture x="0" y="0" width="360" height="64" a="30">ui\ui_cm_connection_error</texture>
+		<text x="80" y="50" font="graffiti32" color="white_2"/>
+	</max_ping_warn_1>
+	<max_ping_warn_2 x="512" y="300" width="360" height="64" alignment="c" ttl="8">
+		<texture x="0" y="0" width="360" height="64" a="64">ui\ui_cm_connection_error</texture>
+		<text x="80" y="50" font="graffiti32" color="white_2"/>
+	</max_ping_warn_2>
+	<max_ping_warn_3 x="512" y="300" width="360" height="64" alignment="c" ttl="8">
+		<texture x="0" y="0" width="360" height="64" a="160">ui\ui_cm_connection_error</texture>
+		<text x="80" y="50" font="graffiti32" color="white_2"/>
+	</max_ping_warn_3>
+	<max_ping_warn_4 x="512" y="300" width="360" height="64" alignment="c" ttl="8">
+		<texture x="0" y="0" width="360" height="64" a="255">ui\ui_cm_connection_error</texture>
+		<text x="80" y="50" font="graffiti32" color="white_2"/>
+	</max_ping_warn_4>
 	
 	<!-- Вес -->
 	<inv_weight_static x="990" y="600" width="26.8" height="35" stretch="1">

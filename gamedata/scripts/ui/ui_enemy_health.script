@@ -1,6 +1,6 @@
 --[[-----------------------------------------------------------------------------------------------
  File			: ui_enemy_health.script
- Description	: Шкала здоровья врага на экране
+ Description	: ГГЄГ Г«Г  Г§Г¤Г®Г°Г®ГўГјГї ГўГ°Г ГЈГ  Г­Г  ГЅГЄГ°Г Г­ГҐ
  Source			: Call Of Chernobyl
  Author			: Alundaio
  Modified		: Enframed
@@ -11,25 +11,24 @@
 local progress = nil
 local hide = 0
 local hud = get_hud()
-local show_health = system_ini():r_bool ("mui_options","mui_show_health")
 --------------------------------------------------------------------------------------------------
--- не используется
-function IsHelicopter(o,c)
-	if not (c) then
-		c = o and o:clsid()
-	end
-	-- нет классов clsid.helicopter / clsid.script_heli
-	return c and (c == clsid.helicopter or c == clsid.car or c == clsid.script_heli) or false
+-- Г­ГҐ ГЁГ±ГЇГ®Г«ГјГ§ГіГҐГІГ±Гї
+function IsHelicopter(object, class_id)
+    local id = class_id or get_clsid (object)
+    if id == clsid.helicopter or id == clsid.script_heli then
+       return true
+    end
+    return false
 end
 --------------------------------------------------------------------------------------------------
--- Callback на хит
+-- Callback Г­Г  ГµГЁГІ
 function on_hit(obj, amount, local_direction, who, bone_index)
 	if obj:who_hit_name() == "single_player" then
 	local cls = obj:clsid()
 	local hp =  obj.health or 0
 	local cs = hud:GetCustomStatic("cs_enemy_health")
 
-	if (show_health == true) and (cs == nil) then
+	if (ui_data.load("mui_show_health") == true) and (cs == nil) then
 		hud:AddCustomStatic("cs_enemy_health", true)
 		local xml = CScriptXmlInit()
 		xml:ParseFile("ui_custom_msgs.xml")
@@ -40,7 +39,7 @@ function on_hit(obj, amount, local_direction, who, bone_index)
 		mutant_icon = xml:InitStatic("cs_enemy_health:mutant_icon", w)
 	end
 
-	if  (show_health == true) and (hp > 0.005) then
+	if  (ui_data.load("mui_show_health") == true) and (hp > 0.005) then
 		progress:Show(true)
 		progress:SetProgressPos(hp*100)
 		local text = ""
@@ -57,7 +56,7 @@ function on_hit(obj, amount, local_direction, who, bone_index)
 			mutant_icon:Show(true)
 			text = game.translate_string(get_string( obj:section(), "mutant_name" ))
 		elseif (IsHelicopter(nil,cls)) then
-			text = "Вертолет"
+			text = "Г‚ГҐГ°ГІГ®Г«ГҐГІ"
 		else
 			local sid = get_object_story_id(obj:id())
 			if (sid) then
@@ -70,14 +69,14 @@ function on_hit(obj, amount, local_direction, who, bone_index)
 		end
 end
 
--- Callback на убийство
+-- Callback Г­Г  ГіГЎГЁГ©Г±ГІГўГ®
 function on_death(victim, who)
 	if not (victim:alive()) then
 		cs_remove()
 	end
 end
 
--- Таймер = 10 секунд
+-- Г’Г Г©Г¬ГҐГ° = 10 Г±ГҐГЄГіГ­Г¤
 function wait()
 	hide = time_global() + 10000
 	local function check_timer()
@@ -86,7 +85,7 @@ function wait()
 	level.add_call(check_timer, cs_remove)
 end
 
---Удалить статики
+--Г“Г¤Г Г«ГЁГІГј Г±ГІГ ГІГЁГЄГЁ
 function cs_remove()
 	hide = 0
 	local cs = hud and hud:GetCustomStatic("cs_enemy_health")

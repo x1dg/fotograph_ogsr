@@ -15,6 +15,7 @@
 	<texture id="ui_inventory_button_h"		x="648" y="960" width="133" height="24"/>	<!-- кнопка "торговать","взять все"/"выход" подсвеченная -->
 	<texture id="ui_inventory_button_t"		x="648" y="984" width="133" height="24"/>	<!-- кнопка "торговать","взять все"/"выход" активная -->
 	<texture id="ui_inventory_button_d"		x="648" y="936" width="133" height="24"/>	<!-- кнопка "торговать","взять все"/"выход" неактивная -->
+	<texture id="ui_icon_layer"				x="348" y="768" width="167" height="110"/>	<!-- текстура над иконками гг/нпс -->
 	<texture id="ui_shadow_box"				x="648" y="918" width="376" height="16"/>	<!-- йоу нигга, это еще чо за черный квадрат, мать вашу!? -->
 	<texture id="ui_item_line"				x="648" y="1023" width="298" height="1"/>	<!-- пунткирная линия -->
 </ui_texture>

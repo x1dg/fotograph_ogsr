@@ -1,26 +1,24 @@
 <?xml version='1.0' encoding="UTF-8" ?>
 <!-- ХУД -->
 <window x="0" y="0" w="640" h="480" texture="1">
-	<speech_menu x="260" y="550" width="300" height="265" always_show_scroll="0">
+	<speech_menu x="10" y="214" width="300" height="265" always_show_scroll="0">
 		<text font="letterica18" color="hud_tutorial"/>
 	</speech_menu>
 
 	<!-- Здоровье: фон, шкала -->
-	<static_health x="877" y="732" width="142.4" height="30" stretch="1">
+	<static_health x="900" y="732" width="119.9" height="30" stretch="1">
 		<texture>ui_hud_shkala_health</texture>
 	</static_health>
-	<progress_bar_health x="9" y="4" width="125.1" height="10" horz="1" min="0" max="100" pos="0">
-		<progress width="125.1" height="10" stretch="1">
+	<progress_bar_health x="9" y="4" width="101.9" height="10" horz="1" min="0" max="100" pos="0">
+		<progress width="101.9" height="10" stretch="1">
 			<texture color="hud_scale_health">ui_hud_shk_health</texture>
 		</progress>
 	</progress_bar_health>
 
 	<!-- Броня: фон, шкала -->
-	<static_armor x="877" y="732" width="142.4" height="90" stretch="1">
-		<texture></texture>
-	</static_armor>
-	<progress_bar_armor x="9" y="4" width="125.1" height="10" horz="1" min="0" max="100" pos="0">
-		<progress width="125.1" height="10" stretch="1">
+	<static_armor x="900" y="732" width="119.9" height="30" stretch="1"/>
+	<progress_bar_armor x="9" y="4" width="101.9" height="10" horz="1" min="0" max="100" pos="0">
+		<progress width="101.9" height="10" stretch="1">
 			<texture color="hud_scale_armor">ui_hud_shk_armour</texture>
 		</progress>
 	</progress_bar_armor>
@@ -37,7 +35,7 @@
 	<static_wpn_icon x="15" y="18" width="20" height="20"/>
 
 	<!-- Состояние автомобиля из car_panel.xml -->
-	<car_panel x="884" y="728" width="132" height="5"/>
+	<car_panel x="906" y="728" width="106.4" height="6"/>
 
 	<!-- Текст взаимодействия с объектами -->
 	<quick_info x="1" y="712" width="1022" height="50" complex_mode="1" light_anim="ui_btn_hint" la_cyclic="0" la_texture="1" la_text="1" la_alpha="1">

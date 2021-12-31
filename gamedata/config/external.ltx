@@ -276,18 +276,20 @@ select_mode_1342 = true
 ;waypoints_file = <name_of_file.ltx> ; путь к файлу в $game_config$
 ; --------------------------------------------------------------------------------------------
 
-; Настройки MonolithUI
-[mui_options]
-mui_show_health	= true		;показывать шкалу здоровья НПС (true)
-mui_show_fast_slots = true	;показывать быстрые слоты (true)
-mui_show_condition = false	;показывать шкалу состояния предмета (false)
-mui_description_delay = 800 ;появления окна описания при наведении курсора, ms (800)
-mui_shoot_enable = false	;включить эффект стрельбы (true)
-mui_zoom_enable = false		;включить эффект прицеливания (true)
-mui_blurs_enable = false		;включить эффект запотевания (true)
-mui_blood_enable = true		;включить эффект ранения (true)
-mui_bleed_enable = false	;включить эффект плохого самочувствия (false)
-mui_use_enable = true		;включить эффект использования предметов (true)
+; Настройки MonolithUI (с 18.2 - удалить)
+; [mui_options]
+; mui_actor_icon	= ui_npc_u_stalker_neytral_hood_6	;иконка ГГ (ui_npc_u_actor)
+; mui_show_health	= true		;показывать шкалу здоровья НПС (true)
+; mui_show_fast_slots = true	;показывать быстрые слоты (true)
+; mui_show_condition = false	;показывать шкалу состояния предмета (false)
+; mui_show_minimap = true		;показывать миникарту (true)
+; mui_description_delay = 800 ;появления окна описания при наведении курсора, ms (800)
+; mui_shoot_enable = true		;включить эффект стрельбы (true)
+; mui_zoom_enable = true		;включить эффект прицеливания (true)
+; mui_blurs_enable = true		;включить эффект запотевания (true)
+; mui_blood_enable = true		;включить эффект ранения (true)
+; mui_bleed_enable = false	;включить эффект плохого самочувствия (false)
+; mui_use_enable = true		;включить эффект использования предметов (true)
 
 ; Настройки инвентаря (MonolithUI)
 [inv_properties]
@@ -296,16 +298,19 @@ max_weight		= 2050
 max_ruck		= 56
 max_belt		= 14 //5
 slots			= 14
-slot_persistent_1  = true   ;knife    0
-slot_persistent_2  = false    ;pistol 1
-slot_persistent_3  = false    ;automatic  2
-slot_persistent_4  = true   ;grenades 3
-slot_persistent_5  = true   ;binocular  4
-slot_persistent_6  = true   ;bolt 5
-slot_persistent_7  = false    ;outfit 6
-slot_persistent_8  = true   ;pda  7
-slot_persistent_9  = true   ;detector 8
-slot_persistent_10  = true    ;torch  9
+slot_persistent_1	= false		;knife
+slot_persistent_2	= false		;pistol
+slot_persistent_3	= false		;automatic
+slot_persistent_4	= true		;grenades
+slot_persistent_5	= false		;binocular
+slot_persistent_6	= true		;bolt
+slot_persistent_7	= false		;outfit
+slot_persistent_8	= true		;pda
+slot_persistent_9	= false		;detector
+slot_persistent_10	= false		;torch
+slot_persistent_11	= false		;helmet
+slot_persistent_12	= false		;nightvision googles
+slot_persistent_13	= false		;biodetector
 
 ; Назначение горячих клавиш (MonolithUI)
 [custom_keyboard_action]
@@ -317,6 +322,10 @@ set_godmode=kGOD_MODE
 set_unlimitedammo=kUN_AMMO
 get_object_info=kINFO
 set_hudmask=kMASK
+
+; Локализация
+[string_table_files]
+ui_st_hud
 
 ; Раскачка оружия (использование = false)
 [wpn_bobbing_effector]

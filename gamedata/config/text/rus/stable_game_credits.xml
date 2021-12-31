@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="st_stuff">
+		<text>Winter mod:</text>
+	</string>
+	<string id="st_producer">
+		<text>Автор:</text>
+	</string>
+	<string id="st_gsc">
+		<text>Zereset</text>
+	</string>
+	<string id="st_project_lead">
+		<text>Огромное спасибо:</text>
+	</string>
+	<string id="st_bolshakov">
+		<text>Шустрый</text>
+	</string>
+	<string id="st_lead_designer">
+		<text>И отдельное спасибо:</text>
+	</string>
+	<string id="st_prokhorov">
+		<text>xStream</text>
+	</string>
+	<string id="st_pod">
+		<text>Спасибо за поддержку:</text>
+	</string>
+	<string id="st_daimon">
+		<text>DaimoN</text>
+	</string>
+	<string id="st_site1">
+		<text>Официальный сайт мода:</text>
+	</string>
+	<string id="st_site2">
+		<text>WWW.WINTERMOD.3DN.RU</text>
+	</string>
+	<string id="st_fan">
+		<text>Спасибо всем фанатам мода</text>
+	</string>
+</string_table>
+

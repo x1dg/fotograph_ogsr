@@ -1,4 +1,4 @@
-#include "defines.ltx"е
+#include "defines.ltx"
 #include "prefetch\prefetch.ltx"
 #include "weathers\environment.ltx"
 #include "creatures\monsters.ltx"
@@ -122,6 +122,7 @@ script_func = ;trader_job.artefacts_task_list_text
 [game_tasks]
 files = game_tasks
 
+; ïåðåíåñåíî â external.ltx (MonolithUI)
 [inventory]:inv_properties
 
 [lights_hanging_lamp]
@@ -178,6 +179,7 @@ blood_drop_time_min = 0.3     ;
 blood_drop_time_max = 2.0     ;
 blood_drop_size   = 0.2     ;ðàçìåð êàïëè (ì) êðîâè, êîòîðàÿ óïàëà
 
+
 [entity_fire_particles]
 fire_particles = damage_fx\burn_creatures
 start_burn_size = 0.0003    ;ðàçìåð îæåãà ïîñëå êîòîðîãî íà÷àòü èãðàòü ïàðòèêëû îãíÿ
@@ -218,6 +220,7 @@ hit_mark_texture = ui\ui_hud_hit_mark
 ;; inventory items
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
 [document]
 GroupControlSection = spawn_group
 ;discovery_dependency = 
@@ -237,10 +240,14 @@ inv_grid_x      = 0
 inv_grid_y      = 0
 cost        = 0
 
+
+
+
 [spectator]
  $player        = on
 class                   = SPECT
 
+      
 [??tg_event]
 class        = EVENT
 
@@ -475,8 +482,8 @@ cform                   = skeleton
 class         = II_ATTCH
 visual                  = equipments\item_fmradio.ogf
 cost          = 1000
-inv_name        = "Ðàöèÿ"
-inv_name_short      = "Ðàöèÿ"
+inv_name        = "hand_radio"
+inv_name_short      = "hand_radio"
 inv_weight        = .3
 inv_grid_width      = 2
 inv_grid_height     = 1

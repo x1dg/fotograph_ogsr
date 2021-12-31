@@ -66,7 +66,7 @@ function FastUseSlotsWnd:__init(handler) super()
 	handler:Register(self.slot4, "slot4")
 	self:AttachChild(self.slot4)
 	handler:AddCallback("slot4", ui_events.BUTTON_CLICKED, self.UseSlot4, self)
-	
+
 	-- Отображение назначенных клавиш в инвентаре
 	local strings=strings_1
 	strings=strings_1
@@ -214,12 +214,10 @@ end
 -- Slots on HUD --
 ------------------
 
-local show_fast_slots = system_ini():r_bool ("mui_options","mui_show_fast_slots")
 local last_item_in_fast_slot1, last_item_in_fast_slot2, last_item_in_fast_slot3, last_item_in_fast_slot4
-
 function FastUseSlotsHud()
-
-if (show_fast_slots == true) and (not bind_stalker.scopeUsed) then
+if not ui_data.load("mui_show_fast_slots") then remove_elements_2() end
+if (ui_data.load("mui_show_fast_slots") == true) and (not bind_stalker.scopeUsed) then
 	local item_in_fast_slot1, item_in_fast_slot2, item_in_fast_slot3, item_in_fast_slot4 = GetItemInFastSlot1(), GetItemInFastSlot2(), GetItemInFastSlot3(), GetItemInFastSlot4()
 
 	if hud:GetCustomStatic("quick_slot0") then

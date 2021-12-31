@@ -46,6 +46,65 @@
                 <infoportion_complete>new_portion_kkvest4_f</infoportion_complete>
        </objective>
       </game_task>  
+	  
+	  	<game_task id="new_portion_kkvest5_kvest">
+		<title>«Алкаш»</title>
+		<objective>
+			<icon>kvest_starter4</icon>
+			<infoportion_complete>new_portion_kkvest6_kvest_f</infoportion_complete>
+		</objective>
+		<objective>
+			<text>Договориться с алкашём</text>
+							<map_location_type hint="Алкаш">blue_location</map_location_type>
+                <object_story_id>alkash</object_story_id>
+		</objective>
+	</game_task>
+	
+		  	<game_task id="new_portion_kkvest6_kvest">
+		<title>«Кража пива»</title>
+		<objective>
+			<icon>kvest_starter5</icon>
+			<infoportion_complete>new_portion_kkvest6_kvest_f</infoportion_complete>
+		</objective>
+		<objective>
+			<text>Украсть пиво</text>
+			<infoportion_complete>new_portion_kkvest6_kvest_pf</infoportion_complete>
+							<map_location_type hint="Пивко">green_location</map_location_type>
+                <object_story_id>ihek_polen</object_story_id>
+		</objective>
+				<objective>
+			<text>Отдать страннику</text>
+							<map_location_type hint="Алкаш">blue_location</map_location_type>
+                <object_story_id>alkash</object_story_id>
+				<infoportion_complete>new_portion_kkvest6_kvest_f</infoportion_complete>
+		</objective>
+	</game_task>
+	
+			  	<game_task id="new_portion_kkvest7_kvest">
+		<title>«Висты в беде!»</title>
+		<objective>
+			<icon>kvest_starter5</icon>
+			<infoportion_complete>new_portion_kkvest7_kvest_f</infoportion_complete>
+		</objective>
+		<objective>
+			<text>Помочь брату друга</text>
+			<infoportion_complete>new_portion_kkvest7_kvest_f</infoportion_complete>
+		</objective>
+	</game_task>
+	
+				  	<game_task id="zap_kvest_14">
+		<title>«Пси пещера»</title>
+		<objective>
+			<icon>kvest_starter6</icon>
+			<infoportion_complete>zap_kvest_14_f</infoportion_complete>
+		</objective>
+		<objective>
+			<text>Исследовать пещеру</text>
+										<map_location_type hint="Пси активность">green_location</map_location_type>
+                <object_story_id>contler_peherka</object_story_id>
+			<infoportion_complete>zap_kvest_14_f</infoportion_complete>
+		</objective>
+	</game_task>
    <!--Старое-->
 
 <game_task id="first_talk">

@@ -26,6 +26,13 @@ function TradeWindow:InitControls()
 	-- [TRADE] init --------------------------------------------------
 	
 	-- Характеристики ГГ
+	icon_s = xml:InitStatic("actor_chars:icon_static", self.stat)
+	icon_s:InitTexture(ui_data.load("mui_actor_icon"))
+	l_npc = xml:InitStatic("actor_chars:layer_npc", self.stat)
+	l_char = xml:InitStatic("actor_chars:layer_actor", self.stat)
+	l_npc:InitTexture("ui_icon_layer")
+	l_char:InitTexture("ui_icon_layer")
+	
 	reputation_c = xml:InitStatic("actor_chars:reputation_caption", self.stat)
 	reputation_s = xml:InitStatic("actor_chars:reputation_static", self.stat)
 	reputation_c:SetText(game.translate_string("ui_st_reputation"))

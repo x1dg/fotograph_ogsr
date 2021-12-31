@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<sys_gotov>
+    <Static1 x="328" y="209" width="470" height="359" stretch="1">
+        <texture>ui_menu_options_dlg</texture>
+        <Static2 x="178" y="57" width="98" height="19" stretch="1">
+            <text font="graffiti32" r="255" g=" 128" b=" 64" complex_mode="1">ГОТОВИТЬ</text>
+        </Static2>
+        <button3 x="178" y="288" width="117" height="29">
+            <texture>ui_button_ordinary</texture>
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Выход</text>
+        </button3>
+    </Static1>
+	<btn_1 x="500" y="319" width="110" height="25">
+		<texture_e>ui_button_ordinary_e</texture_e>
+		<texture_t>ui_button_ordinary_t</texture_t>
+		<texture_h>ui_button_ordinary_h</texture_h>
+		<text>Копыто кабана</text>
+	</btn_1>
+		<btn_2 x="500" y="359" width="110" height="25">
+		<texture_e>ui_button_ordinary_e</texture_e>
+		<texture_t>ui_button_ordinary_t</texture_t>
+		<texture_h>ui_button_ordinary_h</texture_h>
+		<text>Глаз плоти</text>
+	</btn_2>
+			<btn_3 x="500" y="409" width="110" height="25">
+		<texture_e>ui_button_ordinary_e</texture_e>
+		<texture_t>ui_button_ordinary_t</texture_t>
+		<texture_h>ui_button_ordinary_h</texture_h>
+		<text>Щупальца кровососа</text>
+	</btn_3>
+</sys_gotov>

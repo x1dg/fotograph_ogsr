@@ -93,7 +93,14 @@
 
 	<info_portion id="autojump_enabled"></info_portion>
 
+			   			   			   	<info_portion id="kill_actor">
+									<action>new_quest.kill_actor</action>
+			   </info_portion>
    <!--Новые поршни-->
+   			   			   			   <info_portion id="perevod_off_predbannik">	
+			   <action>new_quest.off1</action>	   
+			   </info_portion>
+			   
 			   			   <info_portion id="new_portion_kkvest1_s">
 			   			<action>new_quest.script1</action>
 			   </info_portion>
@@ -121,6 +128,57 @@
 			   
 			   <info_portion id="new_portion_kkvest4_pf">	
 			   <action>new_quest.script7</action>			   
+			   </info_portion>
+			   
+			   			   <info_portion id="new_portion_kkvest4_f">	
+			   <task>new_portion_kkvest5_kvest</task>		   
+			   </info_portion>
+			   
+			   			   			   <info_portion id="new_portion_kkvest5_f">			   
+			   </info_portion>
+			   
+			   			   			   <info_portion id="new_portion_kkvest6_s">	
+			   <task>new_portion_kkvest6_kvest</task>		   
+			   </info_portion>
+			   
+			   			   			   			   <info_portion id="new_portion_kkvest6_kvest_pf">	
+			   <action>new_quest.del_polen_ihek</action>	   
+			   <action>new_quest.on1</action>	  
+			   <action>new_quest.script9</action>
+			   </info_portion>
+			   
+			    <!--Квест c алканафтом-->
+				
+			   			   			   			   <info_portion id="new_portion_kkvest6_kvest_f">
+<action>new_quest.script10</action>	  												   
+			   </info_portion>
+			   
+			   <!--Квест с братом друга-->
+			   
+			   			   			   			   <info_portion id="new_portion_kkvest7_s">	
+			   <task>new_portion_kkvest7_kvest</task>		   
+			   </info_portion>
+			   
+			   <!--Объявления на Предбаннике-->
+			   
+			   	<info_portion id="zap_kvest_11_s">	
+			   <action>new_quest.script12</action>
+<task>zap_kvest_14</task>		   			   
+			   </info_portion>
+			   
+			   			   	<info_portion id="zap_kvest_14_s">		   
+			   </info_portion>
+			   
+			   			   			   	<info_portion id="zap_kvest_14_p">
+									<action>new_quest.kontr_dial1</action>
+			   </info_portion>
+			   
+			   			   			   			   	<info_portion id="zap_kvest_15_spawn">
+									<action>new_quest.script15</action>
+			   </info_portion>
+			   
+			   			   			   			   			   	<info_portion id="zap_kvest_14_f">
+									<action>new_quest.tel_1</action>
 			   </info_portion>
 			   
 </game_information_portions>

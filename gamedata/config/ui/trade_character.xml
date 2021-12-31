@@ -3,7 +3,7 @@
 <window>
 	<icon_static x="0" y="0" width="165" height="108"/>
 
-	<name_static x="-327" y="3" width="142" height="32">
+	<name_static x="-327" y="3" width="266" height="32">
 		<text font="letterica16" color="inv_rel_name" align="l" complex_mode="1"/>
 	</name_static>
 

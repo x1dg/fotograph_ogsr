@@ -770,7 +770,7 @@
         <reputation>25</reputation>
 		<money min="250" max="350" infinitive="0"/>		
 
-        <visual>actors\petruha</visual>
+        <visual>actors\petruha_ogsr</visual>
         <snd_config>characters_voice\human_02\newbie\</snd_config>
   		<crouch_type>-1</crouch_type>
         <supplies>

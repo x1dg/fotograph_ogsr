@@ -1,0 +1,10 @@
+local t={}
+
+function on_use_object(obj)
+	(t[obj:section()] or function()end)()
+end
+
+t['matches'] = function()
+sys_gotov.actor_disable_inventory()
+sys_gotov.matches_use(action)
+end

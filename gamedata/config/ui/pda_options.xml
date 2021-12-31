@@ -37,18 +37,18 @@
 		</pda_money>
 
 		<!-- PDA labels -->
-		<pda_btn_box1 x="36" y="140" width="188" height="184">
+		<pda_btn_box1 x="36" y="140" width="188" height="150">
 			<texture>ui_pda_frame</texture>
 		</pda_btn_box1>
-		<pda_btn_box2 x="36" y="336" width="188" height="45">
+		<pda_btn_box2 x="36" y="302" width="188" height="45">
 			<texture>ui_pda_frame</texture>
 		</pda_btn_box2>
-		<pda_btn_box3 x="36" y="393" width="188" height="313">
+		<pda_btn_box3 x="36" y="359" width="188" height="346">
 			<texture>ui_pda_frame</texture>
 		</pda_btn_box3>
 
 		<!-- PDA textbox -->
-		<pda_text_box x="236" y="101" width="755" height="605">
+		<pda_text_box x="236" y="101" width="755" height="604">
 			<!-- <texture>ui_tablist_textbox</texture> -->
 			<texture>ui_pda_frame</texture>
 		</pda_text_box>
@@ -112,19 +112,19 @@
 			<sound_t>device\pda\pda_tap_active</sound_t>
 			<text y="0" font="letterica16" align="c" color="grey_4"/>
 		</pda_reminder>
-		<pda_exe x="44" y="289" width="172" height="27" hint="">
+		<pda_exe x="-2044" y="289" width="172" height="27" hint="">
 			<texture>ui_pda_action_btn</texture>
 			<sound_h>device\pda\pda_tap_hover</sound_h>
 			<sound_t>device\pda\pda_tap_active</sound_t>
 			<text y="0" font="letterica16" align="c" color="grey_4"/>
 		</pda_exe>
-		<pda_radio x="44" y="345" width="172" height="27" hint="">
+		<pda_radio x="44" y="311" width="172" height="27" hint="">
 			<texture>ui_pda_action_btn</texture>
 			<sound_h>device\pda\pda_tap_hover</sound_h>
 			<sound_t>device\pda\pda_tap_active</sound_t>
 			<text y="0" font="letterica16" align="c" color="grey_4"/>
 		</pda_radio>
-		<pda_games x="44" y="402" width="172" height="27" hint="">
+		<pda_games x="44" y="367" width="172" height="27" hint="">
 			<texture>ui_pda_action_btn</texture>
 			<sound_h>device\pda\pda_tap_hover</sound_h>
 			<sound_t>device\pda\pda_tap_active</sound_t>

@@ -1,0 +1,57 @@
+function zap1_start()
+	local spwn = zap1(get_hud())
+	level.start_stop_menu(spwn,true)
+end
+
+class "zap1" (CUIScriptWnd)
+
+function zap1:__init() super()
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function zap1:__finalize()
+end
+
+function zap1:InitControls()
+	local xml = CScriptXmlInit()
+	self:Init(0,0,1024,768)
+	xml:ParseFile("zap1.xml")
+	self.Static1 = xml:InitStatic("Static1", self)
+	self.Static2 = xml:InitStatic("Static1:Static2", self.Static1)
+	self.Static3 = xml:InitStatic("Static1:Static3", self.Static1)
+	-- кнопка 1
+	self.btn_1 = xml:Init3tButton("btn_1", self)
+	self:Register(self.btn_1, "btn_1")
+	self.btn_1:Enable(true)
+end
+
+function zap1:InitCallBacks()
+		self:AddCallback("btn_1", ui_events.BUTTON_CLICKED,  self.btn1, self)
+end
+
+function zap1:btn1()
+actor_disable_inventory()
+new_quest.script13()
+end
+
+function zap1:OnKeyboard(dik,keyboard_action)    --Функция закрытия окна по нажатию на клавиатуре "Escape"
+           CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)      --Инициализируем нажатие кнопки на клаве
+           if keyboard_action == ui_events.WINDOW_KEY_PRESSED then  --Условие: если нажата кнопка на клаве
+              if dik == DIK_keys.DIK_ESCAPE then                    --Условие: если нажата конкретно кнопка "Escape"
+				 new_quest.script13()
+end
+end
+end
+
+function zap1:Hide()
+	self:GetHolder():start_stop_menu(self, true)
+end
+
+function actor_disable_inventory()
+	-- закрываем верхнее окно
+	local wnd = level.main_input_receiver()
+	if wnd then
+		wnd:GetHolder():start_stop_menu(wnd, true)
+	end
+end

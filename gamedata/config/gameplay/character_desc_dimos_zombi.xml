@@ -199,7 +199,7 @@
 		<rank>322</rank>
 		<reputation>13</reputation>
 
-		<visual>actors\soldier_usa\soldier_usa_mask</visual>
+		<visual>actors\soldier_usa\soldier_usa_mask_ogsr</visual>
 		<snd_config>characters_voice\human_02\military\</snd_config>
 		<crouch_type>0</crouch_type>
 		<supplies>
@@ -230,7 +230,7 @@
 		<rank>322</rank>
 		<reputation>13</reputation>
 
-		<visual>actors\soldier_usa\soldier_usa_mask</visual>
+		<visual>actors\soldier_usa\soldier_usa_mask_ogsr</visual>
 		<snd_config>characters_voice\human_03\military\</snd_config>
 		<crouch_type>0</crouch_type>
 		<supplies>
@@ -360,7 +360,7 @@
     <rank>420</rank>
     <reputation>55</reputation>
 
-    <visual>actors\soldier_usa\soldier_usa_antigas</visual>    
+    <visual>actors\soldier_usa\soldier_usa_antigas_ogsr</visual>    
     <snd_config>characters_voice\human_01\military\</snd_config>
     <crouch_type>0</crouch_type>
 
@@ -392,7 +392,7 @@
     <rank>420</rank>
     <reputation>55</reputation>
 
-    <visual>actors\soldier_usa\soldier_usa_antigas</visual>    
+    <visual>actors\soldier_usa\soldier_usa_antigas_ogsr</visual>    
     <snd_config>characters_voice\human_01\military\</snd_config>
     <crouch_type>0</crouch_type>
 

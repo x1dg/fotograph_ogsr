@@ -1,0 +1,38 @@
+--[[-----------------------------------------------------------------------------------------------
+ File			: ui_data.script
+ Description	: Настройки
+ Source			: MonolithUI
+ Author			: Enframed
+ Date			: 04.12.2021
+ Last edit		: 04.12.2021
+--]]-----------------------------------------------------------------------------------------------
+
+local defaults = {
+	["mui_show_health"]			= true, -- показывать шкалу здоровья НПС
+	["mui_show_condition"]		= false, -- показывать шкалу состояния предмета
+	["mui_show_fast_slots"]		= true, -- показывать быстрые слоты
+	["mui_shoot_enable"]		= true, -- включить эффект стрельбы
+	["mui_zoom_enable"]			= true, -- включить эффект прицеливания
+	["mui_blurs_enable"]		= false, -- включить эффект запотевания
+	["mui_blood_enable"]		= true, -- включить эффект ранения
+	["mui_bleed_enable"]		= false, -- включить эффект плохого самочувствия
+	["mui_use_enable"]			= true, -- включить эффект использования предметов
+	["mui_description_delay"]	= 800, -- появления окна описания при наведении курсора, ms
+	["mui_actor_icon"]			= "ui\\ui_noise"} -- иконка ГГ
+
+-- Загружаем переменную
+function load(name)
+	return xr_logic.pstor_retrieve(db.actor, name, defaults[name])
+end
+
+-- Записываем переменную
+function save(name, value)
+	xr_logic.pstor_store(db.actor, name, value)
+end
+
+-- Удаляем переменную
+function delete(name)
+	if db.storage[db.actor:id()].pstor[name] then
+		db.storage[db.actor:id()].pstor[name] = nil
+	end
+end

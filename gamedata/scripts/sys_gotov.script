@@ -1,0 +1,159 @@
+--костёр доступен--
+function matches_use()
+if ( xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0000"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0001"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0002"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0003"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0004"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0005"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0006"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0007"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0008"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0009"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0010"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0011"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0012"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0013"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0014"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0015"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0016"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"camp_fire_0017"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"obelisk_kamp_koster_particle_zone"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"kpp_kamp_koster_particle_zone"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"scient_kamp_koster_particle_zone"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"dar_kamp_koster1_particle_zone"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"dar_holm_koster_particle_zone"}) or 
+xr_conditions.actor_in_zone(nil,nil,{"mil_village_dedok_house_pechka_zone"}) or
+xr_conditions.actor_in_zone(nil,nil,{"predb_fabrik_koster_zone"}) or
+xr_conditions.actor_in_zone(nil,nil,{"yan_bunker_yard_koster_snd_zone"}) or
+xr_conditions.actor_in_zone(nil,nil,{"agr_kamp_koster1_particle_zone"}) ) then
+
+sys_gotov_start()
+
+else
+_G.sms_koster()
+end
+end
+
+---вызыв костра--
+
+function sys_gotov_start()
+	local spwn = sys_gotov(get_hud())
+	level.start_stop_menu(spwn,true)
+end
+
+class "sys_gotov" (CUIScriptWnd)
+
+function sys_gotov:__init() super()
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function sys_gotov:__finalize()
+end
+
+function sys_gotov:InitControls()
+	local xml = CScriptXmlInit()
+	self:Init(0,0,1024,768)
+	xml:ParseFile("sys_gotov.xml")
+	self.Static1 = xml:InitStatic("Static1", self)
+	self.Static2 = xml:InitStatic("Static1:Static2", self.Static1)
+	self:Register(xml:Init3tButton("Static1:button3", self.Static1), "button3")
+	-- кнопка 1
+	self.btn_1 = xml:Init3tButton("btn_1", self)
+	self:Register(self.btn_1, "btn_1")
+	self.btn_1:Enable(false)
+		-- кнопка 2
+	self.btn_2 = xml:Init3tButton("btn_2", self)
+	self:Register(self.btn_2, "btn_2")
+	self.btn_2:Enable(false)
+		-- кнопка 3
+	self.btn_3 = xml:Init3tButton("btn_3", self)
+	self:Register(self.btn_3, "btn_3")
+	self.btn_3:Enable(false)
+
+	-- определяем доступность кнопок
+	if db.actor:object("mutant_boar_leg") ~= nil then
+	self.btn_1:Enable(true)
+	end
+		if db.actor:object("mutant_flesh_eye") ~= nil then
+	self.btn_2:Enable(true)
+	end
+		if db.actor:object("mutant_krovosos_jaw") ~= nil then
+	self.btn_3:Enable(true)
+	end
+end
+
+function sys_gotov:InitCallBacks()
+	self:AddCallback("button3", ui_events.BUTTON_CLICKED, self.button3_button_clicked, self)
+		self:AddCallback("btn_1", ui_events.BUTTON_CLICKED,  self.btn1, self)
+		self:AddCallback("btn_2", ui_events.BUTTON_CLICKED,  self.btn2, self)
+		self:AddCallback("btn_3", ui_events.BUTTON_CLICKED,  self.btn3, self)
+end
+
+function sys_gotov:button3_button_clicked()
+actor_disable_inventory()
+end
+
+function sys_gotov:btn1()
+actor_disable_inventory()
+otberaem_one()
+local gg = db.actor
+alife():create("boar_fire", gg:position(), gg:level_vertex_id(), gg:game_vertex_id(), gg:id())
+local snd = sound_object([[new\varka_syp]]) --путь к звуковому файлу в папке sounds
+snd:play_no_feedback(db.actor,sound_object.s2d, 5, vector():set(0, 0, 0), 0.7)
+end
+
+function sys_gotov:btn2()
+actor_disable_inventory()
+otberaem_2()
+local gg = db.actor
+local snd = sound_object([[new\varka_syp]]) --путь к звуковому файлу в папке sounds
+snd:play_no_feedback(db.actor,sound_object.s2d, 5, vector():set(0, 0, 0), 0.7)
+alife():create("flesh_fire", gg:position(), gg:level_vertex_id(), gg:game_vertex_id(), gg:id())
+end
+
+function sys_gotov:btn3()
+actor_disable_inventory()
+otberaem_3()
+local gg = db.actor
+local snd = sound_object([[new\varka_syp]]) --путь к звуковому файлу в папке sounds
+snd:play_no_feedback(db.actor,sound_object.s2d, 5, vector():set(0, 0, 0), 0.7)
+alife():create("krov_fire", gg:position(), gg:level_vertex_id(), gg:game_vertex_id(), gg:id())
+end
+
+function sys_gotov:Hide()
+	self:GetHolder():start_stop_menu(self, true)
+end
+
+function actor_disable_inventory()
+	-- закрываем верхнее окно
+	local wnd = level.main_input_receiver()
+	if wnd then
+		wnd:GetHolder():start_stop_menu(wnd, true)
+	end
+end
+
+function otberaem_one(first_speaker, second_speaker)
+local oItem = db.actor:object("mutant_boar_leg") --/ определяем предмет у ГГ
+if oItem then --/если у ГГ есть предмет
+db.actor:drop_item(oItem) --/ выбрасываем предмет (опционально)
+alife():release(alife():object(oItem:id()), true) --/ удаляем из игры
+end
+end
+
+function otberaem_2(first_speaker, second_speaker)
+local oItem = db.actor:object("mutant_flesh_eye") --/ определяем предмет у ГГ
+if oItem then --/если у ГГ есть предмет
+db.actor:drop_item(oItem) --/ выбрасываем предмет (опционально)
+alife():release(alife():object(oItem:id()), true) --/ удаляем из игры
+end
+end
+
+function otberaem_3(first_speaker, second_speaker)
+local oItem = db.actor:object("mutant_krovosos_jaw") --/ определяем предмет у ГГ
+if oItem then --/если у ГГ есть предмет
+db.actor:drop_item(oItem) --/ выбрасываем предмет (опционально)
+alife():release(alife():object(oItem:id()), true) --/ удаляем из игры
+end
+end

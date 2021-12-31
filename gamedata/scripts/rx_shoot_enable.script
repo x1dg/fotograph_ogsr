@@ -1,11 +1,9 @@
 --------------------------------------------------------------------------------
--- Эффект стрельбы
+-- ГќГґГґГҐГЄГІ Г±ГІГ°ГҐГ«ГјГЎГ»
 -- by Rulix aka Bak
--- Адаптация by Shadows
+-- ГЂГ¤Г ГЇГІГ Г¶ГЁГї by Shadows
 --------------------------------------------------------------------------------
-local shoot_enable = system_ini():r_bool("mui_options","mui_shoot_enable")
 local dh_ini = ini_file("misc\\rx_shoot_enable.ltx")
-
 local wpn_tbl = {}
 local ammon = 0
 local shotc = 1
@@ -62,7 +60,7 @@ local function parse_anims(sec)
 end
 
 function shoot_effect()
-	if shoot_enable == false then return end
+	if not ui_data.load("mui_shoot_enable") then return end
 	if shott and shott < time_global() then
 		shotc = 1
 		shott = nil

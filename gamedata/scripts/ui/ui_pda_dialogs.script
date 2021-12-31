@@ -31,12 +31,21 @@ local tips_icons = {
 	trader			= {249, 361},
 	monolith		= {332, 361},
 	military_chat	= {0, 314},
-	stalkers_chat	= {83, 314}
+	stalkers_chat	= {83, 314},
+	rank			= {0, 408},
+	reputation_up	= {83, 408},
+	reputation_down	= {166, 408},
+	exp_icon		= {249, 408},
+	level_icon		= {332, 408},
+	article			= {415, 408}
 }
 local pda_news = xr_sound.get_safe_sound_object([[device\pda\pda_news]])
 local pda_tips = xr_sound.get_safe_sound_object([[device\pda\pda_tip]])
 local pda_task = xr_sound.get_safe_sound_object([[device\pda\pda_objective]])
 local pda_sos = xr_sound.get_safe_sound_object([[device\pda\pda_sos]])
+local pda_rank = xr_sound.get_safe_sound_object([[device\pda\pda_rank]])
+local pda_rep = xr_sound.get_safe_sound_object([[device\pda\pda_reputation]])
+local pda_enc = xr_sound.get_safe_sound_object([[device\pda\pda_encyclopedia]])
 
 -- Сообщения: текст, заголовок, через сколько, сколько показывать, иконка, звук
 function send_tip(news_text, header, timeout, showtime, sender, sound)
@@ -51,6 +60,12 @@ function send_tip(news_text, header, timeout, showtime, sender, sound)
 		player = pda_task
 	elseif sound=="questman_death" then
 		player = pda_sos
+	elseif sound=="rank" then
+		player = pda_rank
+	elseif sound=="reputation" then
+		player = pda_rep
+	elseif sound=="enc" then
+		player = pda_enc
 	else
 		player = pda_tips
 	end
@@ -83,6 +98,47 @@ end
 -- Склонение слов в зависимости от числа
 function string_declension(n, a, b, c)
 	return (n%10 == 1 and n%100 ~= 11) and (tostring(n).." "..a) or (n%10 >= 2 and n%10 <= 4 and (n%100 < 10 or n%100 >= 20) and (tostring(n).." "..b) or (tostring(n).." "..c))
+end
+
+-- Новая статья в 'Энциклопедии'
+function encyclopedy_news(group, name)
+	if group == "Diary" then
+		news_manager.send_encyclopedy("diary", group)
+		send_tip(game.translate_string(name), "Заметка в журнале:", nil, 7, "article", "enc")
+	elseif group == "Mutants" then
+		news_manager.send_encyclopedy("encyclopedy", group)
+		send_tip(game.translate_string(name), "Заметка о мутантах:", nil, 7, "article", "enc")
+	elseif group == "Social" then
+		news_manager.send_encyclopedy("encyclopedy", group)
+		send_tip(game.translate_string(name), "Информация о группировке:", nil, 7, "article", "enc")
+	elseif group == "Artifacts" then
+		news_manager.send_encyclopedy("encyclopedy", group)
+		send_tip(game.translate_string(name), "Заметка об артефактах:", nil, 7, "article", "enc")
+	elseif group == "Anomalies" then
+		news_manager.send_encyclopedy("encyclopedy", group)
+		send_tip(game.translate_string(name), "Заметка об аномалиях:", nil, 7, "article", "enc")
+	elseif group == "Locations" then
+		news_manager.send_encyclopedy("encyclopedy", group)
+		send_tip(game.translate_string(name), "Информация о локации:", nil, 7, "article", "enc")
+	elseif group == "Zone-story" then
+		news_manager.send_encyclopedy("encyclopedy", group)
+		send_tip(game.translate_string(name), "История Зоны:", nil, 7, "article", "enc")
+	elseif group == "Stories" then
+		news_manager.send_encyclopedy("encyclopedy", group)
+		send_tip(game.translate_string(name), "Местный фольклор:", nil, 7, "article", "enc")
+	elseif group == "memuars" then
+		news_manager.send_encyclopedy("encyclopedy", group)
+		send_tip(game.translate_string(name), "Личная заметка:", nil, 7, "article", "enc")
+	elseif group == "Vehicles" then
+		news_manager.send_encyclopedy("encyclopedy", group)
+		send_tip(game.translate_string(name), "Информация о транспорте:", nil, 7, "article", "enc")
+	elseif group == "Found_PDA" then
+		news_manager.send_encyclopedy("encyclopedy", group)
+		send_tip(game.translate_string(name), "Скачаны данные:", nil, 7, "article", "enc")
+	elseif group == "st_operation_agroprom" or group == "LabX18_information" or group == "aes_military_task" then
+		news_manager.send_encyclopedy("encyclopedy", group)
+		send_tip(game.translate_string(name), "Заметка в журнале:", nil, 7, "article", "enc")
+	end
 end
 
 ---------------------------------------------------------------------------------------------------
@@ -240,7 +296,7 @@ function pda_dialogs(text)
 			if string.find(text, escape_army_question[i]) then
 				escape_army_sound:play_no_feedback(db.actor, sound_object.s2d, 5, vector(), 1.0)
 				send_tip(escape_army_answer[math.random(#escape_army_answer)], "Военные", 5, 15, "military_chat")
-				-- db.actor:give_info_portion("esc_btr_killed")
+				-- db.actor:give_info_portion("esc_btr_killed") -- NS
 				return
 			end
 		end

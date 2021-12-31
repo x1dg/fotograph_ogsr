@@ -16,8 +16,6 @@ local IsBlocked = false
 local kScreen = math.min( (1024/768) / (device().width/device().height), 1 )
 local isWideScreen = kScreen <= 0.85
 local inv_icon_color = GetARGB(255,170,170,170) --цвет значков параметров предмета
-local shift_show_descr  = system_ini():r_string("mui_options","mui_description_delay")
-local show_condition = system_ini():r_bool("mui_options","mui_show_condition")
 local vert_interval = 1 -- параметр vert_interval в скролле
 local cell_size = 25  -- размер иконки в описании свойств предмета
 
@@ -115,6 +113,8 @@ local weapon_classes  = {
 	[clsid.wpn_ak74_s] 			= true,
 	[clsid.wpn_binocular] 		= true,
 	[clsid.wpn_binocular_s] 	= true,
+	[clsid.wpn_bm16] 			= true,
+	[clsid.wpn_bm16_s] 			= true,
 	[clsid.wpn_fn2000] 			= true,
 	[clsid.wpn_fort]			= true,
 	[clsid.wpn_grenade_f1] 		= false,
@@ -131,6 +131,8 @@ local weapon_classes  = {
 	[clsid.wpn_lr300] 			= true,
 	[clsid.wpn_lr300_s] 		= true,
 	[clsid.wpn_mounted] 		= true,
+	[clsid.wpn_pm] 				= true,
+	[clsid.wpn_pm_s] 			= true,
 	[clsid.wpn_rg6] 			= true,
 	[clsid.wpn_rg6_s] 			= true,
 	[clsid.wpn_rpg7] 			= true,
@@ -199,8 +201,7 @@ function IsAmmoGrenade( object, class_id )
 end
 
 function need_show_condition(item)
-	-- local show_condition = sys_ini:r_bool(item:section(), "show_condition", nil)
-	return ( ( item:is_weapon() or item:is_outfit() ) and show_condition ~= false ) or show_condition == true
+	return ( ( item:is_weapon() or item:is_outfit() ) and ui_data.load("mui_show_condition") ~= false ) or ui_data.load("mui_show_condition")
 end
 
 function r_bool(spawn_ini, section, line, default)
@@ -559,7 +560,6 @@ function CUIDescriptionWnd:ShowWeaponParams()
 		if n == 1 then
 			text = "Интегрированный глушитель"
 		else
-			log1("ADDON"..addon)
 			text = get_inv_name(addon)
 		end
 		if n == 1 or bit_and(af, addon_flags.silencer) ~= 0 then
@@ -787,7 +787,7 @@ end
 
 function CUIDescriptionWnd:OnItemFocus(item)
 	self.itemInFocus = item:id()
-	self.shift_tmr = time_global() + shift_show_descr
+	self.shift_tmr = time_global() + ui_data.load("mui_description_delay")
 end
 
 function CUIDescriptionWnd:OnItemFocusLost(item)

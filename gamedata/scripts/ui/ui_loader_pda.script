@@ -8,6 +8,7 @@
 
 local rec_wnd = nil
 local initial = false
+local hide_stats = {}
 local pda_window
 OrganizerMenu = nil
 
@@ -23,20 +24,44 @@ function PdaWindow:InitControls()
     self.stat = CUIStatic()
     self.stat:Init(0,0,1024,768)
     self.owner:AttachChild(self.stat)
-	local ctrl
+
+	-- [PDA] init --------------------------------------------------
 	local xml = CScriptXmlInit()
 	xml:ParseFile("pda.xml")
-	-- [PDA] init --------------------------------------------------
 	-- Кнопка "Выход"
-	ctrl = xml:Init3tButton("btn_pda_exit",self.stat)
-	self:Register(ctrl,"btn_pda_exit")
-	self:AddCallback("btn_pda_exit",ui_events.BUTTON_CLICKED,self.PdaClose,self)
+	off_button = xml:Init3tButton("off_button",self.stat)
+	self:Register(off_button,"off_button")
+	self:AddCallback("off_button",ui_events.BUTTON_CLICKED,self.PdaClose,self)
 	-- Кнопка "Функции"
 	self.ClickBtnNotepad = function() OrganizerMenu = ui_pda_options.OrganizerWnd(self.owner) level.start_stop_menu(OrganizerMenu, true) end
 	self.btn_options = xml:Init3tButton("btn_pda_options", self.stat)
 	self:Register(self.btn_options, "btn_pda_options")
 	self:AddCallback("btn_pda_options", ui_events.BUTTON_CLICKED, self.ClickBtnNotepad, self)
+
+	-- [PDA-Statistics] init --------------------------------------------------
+	local xml = CScriptXmlInit()
+	xml:ParseFile("pda_dialog_character.xml")
+	-- Иконка ГГ
+	character_icon = xml:InitStatic("icon_static:icon",self.stat)
+	character_icon:InitTexture(ui_data.load("mui_actor_icon"))
+	character_icon:Show(false)
+	show_stats = xml:InitButton("icon_static:icon_on",self.stat)
+	for n=1, 6 do
+		hide_stats[n] = xml:InitButton("icon_static:icon_off"..n,self.stat)
+		self:Register(hide_stats[n],"hide_statistics")
+	end
+	self:Register(show_stats,"show_statistics")
+	self:AddCallback("hide_statistics",ui_events.BUTTON_DOWN,self.HideStatistics,self)
+	self:AddCallback("show_statistics",ui_events.BUTTON_DOWN,self.ShowStatistics,self)
     initial = true
+end
+
+function PdaWindow:ShowStatistics()
+    character_icon:Show(true)
+end
+
+function PdaWindow:HideStatistics()
+    character_icon:Show(false)
 end
 
 function PdaWindow:ShowWnd()
@@ -53,8 +78,8 @@ local pda_window
 function on_info(info_id)
 	if info_id=="ui_pda" then
 	    pda_window = level.main_input_receiver()
-        if not initial then	rec_wnd = PdaWindow(level.main_input_receiver()) end  
-    	if not rec_wnd.stat:IsShown() then rec_wnd:ShowWnd() end 
+        if not initial then	rec_wnd = PdaWindow(level.main_input_receiver()) end
+    	if not rec_wnd.stat:IsShown() then rec_wnd:ShowWnd() end
 	elseif info_id=="ui_pda_hide" then
 		if rec_wnd then rec_wnd:DetachWnd() end
  	end

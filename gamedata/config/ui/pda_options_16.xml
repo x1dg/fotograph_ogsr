@@ -28,7 +28,7 @@
 		<pda_frame x="128" y="24" width="767.6" height="744" stretch="1" light_anim="ui_btn_hint" la_cyclic="0" la_texture="1" la_alpha="1">
 			<texture x="0" y="24" width="1024" height="744">ui\ui_pda</texture>
 		</pda_frame>
-		<pda_frame_line x="155" y="60" width="716" height="29" stretch="1" light_anim="asus_logo_01" la_alpha="1" la_texture="0" la_text="1" la_cyclic="1">
+		<pda_frame_line x="155" y="60" width="715" height="29" stretch="1" light_anim="asus_logo_01" la_alpha="1" la_texture="0" la_text="1" la_cyclic="1">
 			<texture x="0" y="924" width="955" height="29">ui\ui_pda</texture>
 			<text font="letterica18" x="7" y="6" color="grey_2">st_pda_header_options</text>
 		</pda_frame_line>
@@ -37,18 +37,18 @@
 		</pda_money>
 
 		<!-- PDA labels -->
-		<pda_btn_box1 x="155" y="140" width="140.9" height="184" stretch="1">
+		<pda_btn_box1 x="155" y="140" width="140.9" height="150" stretch="1">
 			<texture>ui_pda_frame</texture>
 		</pda_btn_box1>
-		<pda_btn_box2 x="155" y="336" width="140.9" height="45" stretch="1">
+		<pda_btn_box2 x="155" y="302" width="140.9" height="45" stretch="1">
 			<texture>ui_pda_frame</texture>
 		</pda_btn_box2>
-		<pda_btn_box3 x="155" y="393" width="140.9" height="313" stretch="1">
+		<pda_btn_box3 x="155" y="359" width="140.9" height="346" stretch="1">
 			<texture>ui_pda_frame</texture>
 		</pda_btn_box3>
 
 		<!-- PDA textbox -->
-		<pda_text_box x="305" y="101" width="566" height="605" stretch="1">
+		<pda_text_box x="305" y="101" width="565" height="604" stretch="1">
 			<!-- <texture>ui_tablist_textbox</texture> -->
 			<texture>ui_pda_frame</texture>
 		</pda_text_box>
@@ -112,19 +112,19 @@
 			<sound_t>device\pda\pda_tap_active</sound_t>
 			<text y="0" font="letterica16" align="c" color="grey_4"/>
 		</pda_reminder>
-		<pda_exe x="161" y="289" width="128.9" height="27" stretch="1" hint="">
+		<pda_exe x="-2161" y="289" width="128.9" height="27" stretch="1" hint="">
 			<texture>ui_pda_action_btn</texture>
 			<sound_h>device\pda\pda_tap_hover</sound_h>
 			<sound_t>device\pda\pda_tap_active</sound_t>
 			<text y="0" font="letterica16" align="c" color="grey_4"/>
 		</pda_exe>
-		<pda_radio x="161" y="345" width="128.9" height="27" stretch="1" hint="">
+		<pda_radio x="161" y="311" width="128.9" height="27" stretch="1" hint="">
 			<texture>ui_pda_action_btn</texture>
 			<sound_h>device\pda\pda_tap_hover</sound_h>
 			<sound_t>device\pda\pda_tap_active</sound_t>
 			<text y="0" font="letterica16" align="c" color="grey_4"/>
 		</pda_radio>
-		<pda_games x="161" y="402" width="128.9" height="27" stretch="1" hint="">
+		<pda_games x="161" y="367" width="128.9" height="27" stretch="1" hint="">
 			<texture>ui_pda_action_btn</texture>
 			<sound_h>device\pda\pda_tap_hover</sound_h>
 			<sound_t>device\pda\pda_tap_active</sound_t>

@@ -27,8 +27,8 @@
 		<texture>ui_weight_wnd</texture>
 	</bottom_background>
 
-	<!-- Иконка ГГ -->
-	<static_icon x="848" y="11" width="165" height="108"/>
+	<!-- Иконка ГГ (не используется) -->
+	<static_icon x="848" y="11" width="1" height="1"/>
 
 	<!-- Иконка НПС -->
 	<static_icon x="341" y="11" width="165" height="108"/>
@@ -57,6 +57,13 @@
 
 	<!-- Характеристики ГГ -->
 	<actor_chars>
+		<!-- иконка -->
+		<icon_static x="848" y="11" width="165" height="108" stretch="1"/>
+	
+		<!-- покрытие -->
+		<layer_actor x="847" y="10" width="167" height="110" stretch="1"/>
+		<layer_npc x="340" y="10" width="167" height="110" stretch="1"/>
+	
 		<!-- репутация -->
 		<reputation_caption x="521" y="75" width="153" height="15">
 			<text align="l" font="letterica16" color="inv_rel_caption"/>

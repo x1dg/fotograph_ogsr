@@ -64,4 +64,7 @@
 	    <texture id="kvest_starter2" x="660" y="972" width="165" height="108" />
     <texture id="kvest_starter3" x="825" y="972" width="165" height="108" />
     <texture id="kvest_starter4" x="660" y="1080" width="165" height="108" />
+	    <texture id="kvest_starter5" x="825" y="1080" width="165" height="108" />
+		    <texture id="kvest_starter6" x="495" y="1080" width="165" height="108" />
+			    <texture id="kvest_starter7" x="330" y="1080" width="165" height="108" />
 </ui_texture>

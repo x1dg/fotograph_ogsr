@@ -73,13 +73,14 @@
 	<!-- Характеристики ГГ -->
 	<actor_chars>
 		<!-- иконка -->
-		<icon_static x="190" y="11">
-			<texture>ui_npc_u_actor</texture>
-		</icon_static>
+		<icon_static x="190" y="11" width="165" height="108" stretch="1"/>	
+		
+		<!-- покрытие -->
+		<layer_actor x="189" y="10" width="167" height="110" stretch="1"/>
 
 		<!-- имя -->
-		<name_static x="15" y="15">
-			<text font="letterica16" color="inv_rel_name" align="l"/>
+		<name_static x="15" y="15" width="150" height="18">
+			<text font="letterica16" color="inv_rel_name" align="l" complex_mode="1"/>
 		</name_static>
 
 		<!-- ранг -->
@@ -212,7 +213,7 @@
 			<texture_h>ui_slot_highlight</texture_h>
 		</highlight_f4>
 	</highlights>
-	
+
 	<!-- Отображение отключенных слотов -->
 	<slots_cover x="10" y="184">
 		<texture>ui_slots_cover</texture>

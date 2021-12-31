@@ -1,5 +1,4 @@
 --Меню настроек геймплея. Используется скриптом ui_mm_opt_main.script
-
 class "opt_gameplay" (CUIWindow)
 function opt_gameplay:__init() super()
 end
@@ -7,23 +6,267 @@ end
 function opt_gameplay:__finalize()
 end
 
-function opt_gameplay:InitControls(x, y, xml)
-	self:Init(x,y, 738, 712) -- изменено MonolithUI
+function opt_gameplay:InitControls(x, y, xml, handler)
+	self:Init(x, y, 738, 712) -- изменено MonolithUI
 	self:SetAutoDelete(true)
-
+	
 	xml:InitFrame("frame_gameplay", self)
+	self.scroll_v = xml:InitScrollView("tab_gameplay:scroll_v", self)
 
+	-- character name edit box (MonolithUI)
+	xml:InitStatic("tab_gameplay:cap_character_name", self)
+	xml:InitFrameLine("tab_gameplay:cap_character_name:line", self)
+	character_name = xml:InitEditBox("tab_gameplay:edit_character_name",self)
+	if level.present() and (db.actor ~= nil) and db.actor:alive()
+		then character_name:SetText(db.actor:character_name())
+		else character_name:SetText(game.translate_string("ui_mm_character_load"))
+			 character_name:SetTextPosY(-1.5)
+			 character_name:Enable(false)
+	end
+	handler:Register(character_name,"edit_character_name")
+	handler:AddCallback("edit_character_name", ui_events.EDIT_TEXT_COMMIT, self.ActorName, self)
+
+	-- character icon change (MonolithUI)
+	xml:InitFrame("tab_gameplay:cap_character_icon:frame", self)
+	xml:InitFrame("tab_gameplay:list_character_icon:frame", self)
+	xml:InitStatic("tab_gameplay:cap_character_icon:caption", self)
+	xml:InitFrameLine("tab_gameplay:cap_character_icon:line", self)
+	list_icon = xml:InitList("tab_gameplay:list_character_icon:list", self)
+	char_icon = xml:InitStatic("tab_gameplay:cap_character_icon:icon", self)
+	xml:InitStatic("tab_gameplay:cap_character_icon:layer", self):InitTexture("ui_icon_layer")
+	load_info_back = xml:InitStatic("tab_gameplay:load_info_back", self)
+	load_info_text = xml:InitStatic("tab_gameplay:load_info_text", self)
+	if level.present() and (db.actor ~= nil) and db.actor:alive()
+		then char_icon:InitTexture(ui_data.load("mui_actor_icon"))
+		else char_icon:InitTexture("ui\\ui_noise")
+			 load_info_back:InitTexture("ui_shadow_box")
+			 load_info_text:SetText(game.translate_string("ui_mm_need_load"))
+			 list_icon:Enable(false)
+	end
+	handler:Register(list_icon, "list_icon")
+	local icons = ini_file("misc\\portraits.ltx")
+	local n = icons:section_exist("portraits") and icons:line_count("portraits") or 0
+	for i=0, n do
+		local result, id, value = icons:r_line("portraits",i,"","" )
+		if (id ~= "") then
+			local _itm = text_item()
+			_itm.fn:SetText(id)
+			list_icon:AddItem(_itm)
+		end
+	end
+	handler:AddCallback("list_icon", ui_events.LIST_ITEM_CLICKED, self.PreviewIcon, self)
+	handler:AddCallback("list_icon", ui_events.WINDOW_LBUTTON_DB_CLICK, self.ActorIcon, self)
+
+	-- show enemy health (MonolithUI)
+	show_health = xml:InitCheck("tab_gameplay:check_enemy_health", self.scroll_v)
+	handler:Register(show_health,"show_health")
+	if level.present() and (db.actor ~= nil) and db.actor:alive()
+		then show_health:SetCheck(ui_data.load("mui_show_health"))
+		else show_health:Enable(false)
+	end
+	handler:AddCallback("show_health", ui_events.BUTTON_CLICKED, self.ShowHealth, self.scroll_v)
+
+	-- show item condition (MonolithUI)
+	show_condition = xml:InitCheck("tab_gameplay:check_show_condition", self.scroll_v)
+	handler:Register(show_condition,"show_condition")
+	if level.present() and (db.actor ~= nil) and db.actor:alive()
+		then show_condition:SetCheck(ui_data.load("mui_show_condition"))
+		else show_condition:Enable(false)
+	end
+	handler:AddCallback("show_condition", ui_events.BUTTON_CLICKED, self.ShowCondition, self.scroll_v)
+
+	-- show fast use slots (MonolithUI)
+	show_fast_slots = xml:InitCheck("tab_gameplay:check_show_fast_slots", self.scroll_v)
+	handler:Register(show_fast_slots,"show_fast_use_slots")
+	if level.present() and (db.actor ~= nil) and db.actor:alive()
+		then show_fast_slots:SetCheck(ui_data.load("mui_show_fast_slots"))
+		else show_fast_slots:Enable(false)
+	end
+	handler:AddCallback("show_fast_use_slots", ui_events.BUTTON_CLICKED, self.ShowFastUseSlots, self.scroll_v)
+
+	-- shoot fx enable (MonolithUI)
+	shoot_enable = xml:InitCheck("tab_gameplay:check_shoot_enable", self.scroll_v)
+	handler:Register(shoot_enable,"shoot_enable")
+	if level.present() and (db.actor ~= nil) and db.actor:alive()
+		then shoot_enable:SetCheck(ui_data.load("mui_shoot_enable"))
+		else shoot_enable:Enable(false)
+	end
+	handler:AddCallback("shoot_enable", ui_events.BUTTON_CLICKED, self.ShootEffect, self.scroll_v)
+
+	-- use fx enable (MonolithUI)
+	use_enable = xml:InitCheck("tab_gameplay:check_use_enable", self.scroll_v)
+	handler:Register(use_enable,"use_enable")
+	if level.present() and (db.actor ~= nil) and db.actor:alive()
+		then use_enable:SetCheck(ui_data.load("mui_use_enable"))
+		else use_enable:Enable(false)
+	end
+	handler:AddCallback("use_enable", ui_events.BUTTON_CLICKED, self.UseEffect, self.scroll_v)
+
+	-- zoom fx enable (MonolithUI)
+	zoom_enable = xml:InitCheck("tab_gameplay:check_zoom_enable", self.scroll_v)
+	handler:Register(zoom_enable,"zoom_enable")
+	if level.present() and (db.actor ~= nil) and db.actor:alive()
+		then zoom_enable:SetCheck(ui_data.load("mui_zoom_enable"))
+		else zoom_enable:Enable(false)
+	end
+	handler:AddCallback("zoom_enable", ui_events.BUTTON_CLICKED, self.ZoomEffect, self.scroll_v)
+
+	-- blood fx enable (MonolithUI)
+	blood_enable = xml:InitCheck("tab_gameplay:check_blood_enable", self.scroll_v)
+	handler:Register(blood_enable,"blood_enable")
+	if level.present() and (db.actor ~= nil) and db.actor:alive()
+		then blood_enable:SetCheck(ui_data.load("mui_blood_enable"))
+		else blood_enable:Enable(false)
+	end
+	handler:AddCallback("blood_enable", ui_events.BUTTON_CLICKED, self.BloodEffect, self.scroll_v)
+
+	-- bleed fx enable (MonolithUI)
+	bleed_enable = xml:InitCheck("tab_gameplay:check_bleed_enable", self.scroll_v)
+	handler:Register(bleed_enable,"bleed_enable")
+	if level.present() and (db.actor ~= nil) and db.actor:alive()
+		then bleed_enable:SetCheck(ui_data.load("mui_bleed_enable"))
+		else bleed_enable:Enable(false)
+	end
+	handler:AddCallback("bleed_enable", ui_events.BUTTON_CLICKED, self.BleedEffect, self.scroll_v)
+
+	xml:InitCheck("tab_gameplay:check_autopause", self.scroll_v)
+	xml:InitCheck("tab_gameplay:check_tips", self.scroll_v)
+	xml:InitCheck("tab_gameplay:check_crosshair", self.scroll_v)
+	xml:InitCheck("tab_gameplay:check_dyn_crosshair", self.scroll_v)
+	xml:InitCheck("tab_gameplay:check_show_weapon", self.scroll_v)
+	xml:InitCheck("tab_gameplay:check_dist", self.scroll_v)
+	xml:InitCheck("tab_gameplay:check_ambient", self.scroll_v)
+	xml:InitCheck("tab_gameplay:check_ammunition_on_belt", self.scroll_v)
+	xml:InitCheck("tab_gameplay:check_build_crosshair", self.scroll_v)
+	xml:InitCheck("tab_gameplay:check_small_font", self.scroll_v)
+	xml:InitCheck("tab_gameplay:check_crosshair_hard", self.scroll_v)
 	xml:InitStatic("tab_gameplay:cap_difficulty", self)
-
-	xml:InitCheck("tab_gameplay:check_autopause", self)
-	xml:InitCheck("tab_gameplay:check_tips", self)
-	xml:InitCheck("tab_gameplay:check_crosshair", self)
-	xml:InitCheck("tab_gameplay:check_dyn_crosshair", self)
-	xml:InitCheck("tab_gameplay:check_show_weapon", self)
-	xml:InitCheck("tab_gameplay:check_dist", self)
-	xml:InitCheck("tab_gameplay:check_ambient", self)
-	xml:InitCheck("tab_gameplay:check_ammunition_on_belt", self)
-	xml:InitCheck("tab_gameplay:check_build_crosshair", self)
-	xml:InitCheck("tab_gameplay:check_small_font", self)
 	xml:InitComboBox("tab_gameplay:list_difficulty", self)
+end
+
+function opt_gameplay:ShowHealth()
+	show_health:SetCheck(ui_data.load("mui_show_health"))
+	if show_health:GetCheck() then
+		ui_data.save("mui_show_health", false)
+		show_health:SetCheck(false) else 
+		ui_data.save("mui_show_health", true)
+		show_health:SetCheck(true)
+	end
+end
+
+function opt_gameplay:ShowCondition()
+	show_condition:SetCheck(ui_data.load("mui_show_condition"))
+	if show_condition:GetCheck() then
+		ui_data.save("mui_show_condition", false)
+		show_condition:SetCheck(false) else 
+		ui_data.save("mui_show_condition", true)
+		show_condition:SetCheck(true)
+	end
+end
+
+function opt_gameplay:ShowFastUseSlots()
+	show_fast_slots:SetCheck(ui_data.load("mui_show_fast_slots"))
+	if show_fast_slots:GetCheck() then
+		ui_data.save("mui_show_fast_slots", false)
+		show_fast_slots:SetCheck(false) else 
+		ui_data.save("mui_show_fast_slots", true)
+		show_fast_slots:SetCheck(true)
+	end
+end
+
+function opt_gameplay:ShootEffect()
+	shoot_enable:SetCheck(ui_data.load("mui_shoot_enable"))
+	if shoot_enable:GetCheck() then
+		ui_data.save("mui_shoot_enable", false)
+		shoot_enable:SetCheck(false) else 
+		ui_data.save("mui_shoot_enable", true)
+		shoot_enable:SetCheck(true)
+	end
+end
+
+function opt_gameplay:UseEffect()
+	use_enable:SetCheck(ui_data.load("mui_use_enable"))
+	if use_enable:GetCheck() then
+		ui_data.save("mui_use_enable", false)
+		use_enable:SetCheck(false) else 
+		ui_data.save("mui_use_enable", true)
+		use_enable:SetCheck(true)
+	end
+end
+
+function opt_gameplay:ZoomEffect()
+	zoom_enable:SetCheck(ui_data.load("mui_zoom_enable"))
+	if zoom_enable:GetCheck() then
+		ui_data.save("mui_zoom_enable", false)
+		zoom_enable:SetCheck(false) else 
+		ui_data.save("mui_zoom_enable", true)
+		zoom_enable:SetCheck(true)
+	end
+end
+
+function opt_gameplay:BloodEffect()
+	blood_enable:SetCheck(ui_data.load("mui_blood_enable"))
+	if blood_enable:GetCheck() then
+		ui_data.save("mui_blood_enable", false)
+		blood_enable:SetCheck(false) else 
+		ui_data.save("mui_blood_enable", true)
+		blood_enable:SetCheck(true)
+	end
+end
+
+function opt_gameplay:BleedEffect()
+	bleed_enable:SetCheck(ui_data.load("mui_bleed_enable"))
+	if bleed_enable:GetCheck() then
+		ui_data.save("mui_bleed_enable", false)
+		bleed_enable:SetCheck(false) else 
+		ui_data.save("mui_bleed_enable", true)
+		bleed_enable:SetCheck(true)
+	end
+end
+
+function opt_gameplay:ActorName()
+	if level.present() and (db.actor ~= nil) and db.actor:alive() then
+		local name = character_name:GetText()
+		db.actor:get_inventory_owner():SetName(name)
+		local sobj   = db.actor:get_alife_object()
+		local trader = sobj:get_trader()
+		trader.character_name = name
+		accept_snd()
+	end
+end
+
+function opt_gameplay:ActorIcon()
+	if level.present() and (db.actor ~= nil) and db.actor:alive() then
+		local item_id		= list_icon:GetFocusedItem()
+		local item			= list_icon:GetItem(item_id)
+		if item==nil then return end
+		local item_text		= item.fn:GetText()
+		ui_data.save("mui_actor_icon", item_text)
+		char_icon:InitTexture(item_text)
+		accept_snd()
+	end
+end
+
+function opt_gameplay:PreviewIcon()
+	if level.present() and (db.actor ~= nil) and db.actor:alive() then
+		local item_id		= list_icon:GetFocusedItem()
+		local item			= list_icon:GetItem(item_id)
+		if item==nil then return end
+		local item_text		= item.fn:GetText()
+		char_icon:InitTexture(item_text)
+	end
+end
+
+function accept_snd()
+	start = xr_sound.get_safe_sound_object([[device\pda\pda_tip]])
+	start:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+end
+
+class "text_item" (CUIListItemEx)
+function text_item:__init() super()
+	self.fn= CUIStatic()
+	self.fn:SetTextColor(255, 184, 184, 184)
+	self.fn:SetAutoDelete(true)
+	self:AttachChild(self.fn)
+	self.fn:SetText("item")
 end

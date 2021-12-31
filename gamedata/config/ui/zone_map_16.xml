@@ -18,5 +18,6 @@
 		<center width="3" height="4" alignment="c" stretch="1">
 			<texture>ui_minimap_point</texture>
 		</center>
+
 	</minimap>
 </window>

@@ -1,6 +1,6 @@
 --[[-----------------------------------------------------------------------------------------------
  File			: hotkey.script
- Description 	: ѓорЯчие клавиши
+ Description 	: Ж’Г®Г°ГџГ·ГЁГҐ ГЄГ«Г ГўГЁГёГЁ
 --]]-----------------------------------------------------------------------------------------------
 
 local get_wnd = level.main_input_receiver
@@ -53,65 +53,65 @@ end
 
 ----------------------------------------
 
--- 'F1' - ‘лот быстрого использованиЯ F1
+-- 'F1' - вЂГ«Г®ГІ ГЎГ»Г±ГІГ°Г®ГЈГ® ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ Г­ГЁГџ F1
 binds_actions[key_bindings.kUSE_ANTIRAD] = function()
 	local section = ui_fast_use_slots.GetItemInFastSlot1()
 	if section then
 		local item = db.actor:object(section)
 		if item and item ~= nil then
-			this.hud_msg("slot_used", "использовано: "..game.translate_string(system_ini():r_string(item:section(), "inv_name")))
+			this.hud_msg("slot_used", "ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ Г­Г®: "..game.translate_string(system_ini():r_string(item:section(), "inv_name")))
 			db.actor:eat(item)
 		end
 	end
 	return true
 	end
 
--- 'F2' - ‘лот быстрого использованиЯ F2
+-- 'F2' - вЂГ«Г®ГІ ГЎГ»Г±ГІГ°Г®ГЈГ® ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ Г­ГЁГџ F2
 binds_actions[key_bindings.kUSE_ENERGY_DRINK] = function()
 	local section = ui_fast_use_slots.GetItemInFastSlot2()
 	if section then
 		local item = db.actor:object(section)
 		if item and item ~= nil then
-			this.hud_msg("slot_used", "использовано: "..game.translate_string(system_ini():r_string(item:section(), "inv_name")))
+			this.hud_msg("slot_used", "ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ Г­Г®: "..game.translate_string(system_ini():r_string(item:section(), "inv_name")))
 			db.actor:eat(item)
 		end
 	end
 	return true
 end
 
--- 'F3' - ‘лот быстрого использованиЯ F3
+-- 'F3' - вЂГ«Г®ГІ ГЎГ»Г±ГІГ°Г®ГЈГ® ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ Г­ГЁГџ F3
 binds_actions[key_bindings.kUSE_B190] = function()
 	local section = ui_fast_use_slots.GetItemInFastSlot3()
 	if section then
 		local item = db.actor:object(section)
 		if item and item ~= nil then
-			this.hud_msg("slot_used", "использовано: "..game.translate_string(system_ini():r_string(item:section(), "inv_name")))
+			this.hud_msg("slot_used", "ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ Г­Г®: "..game.translate_string(system_ini():r_string(item:section(), "inv_name")))
 			db.actor:eat(item)
 		end
 	end
 	return true
 end
 
--- 'F4' - ‘лот быстрого использованиЯ F4
+-- 'F4' - вЂГ«Г®ГІ ГЎГ»Г±ГІГ°Г®ГЈГ® ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ Г­ГЁГџ F4
 binds_actions[key_bindings.kUSE_BIPSIZON] = function()
 	local section = ui_fast_use_slots.GetItemInFastSlot4()
 	if section then
 		local item = db.actor:object(section)
 		if item and item ~= nil then
-			this.hud_msg("slot_used", "использовано: "..game.translate_string(system_ini():r_string(item:section(), "inv_name")))
+			this.hud_msg("slot_used", "ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ Г­Г®: "..game.translate_string(system_ini():r_string(item:section(), "inv_name")))
 			db.actor:eat(item)
 		end
 	end
 	return true
 end
 
--- 'Numpad 0' - •уд-маска вкл./выкл
+-- 'Numpad 0' - вЂўГіГ¤-Г¬Г Г±ГЄГ  ГўГЄГ«./ГўГ»ГЄГ«
 binds_actions[key_bindings.kMASK] = function()
 	ui_hud_mask.on_off_mask()
 	return true
 end
 
--- 'Numpad 1' - Ѓессмертие вкл./выкл
+-- 'Numpad 1' - ВЃГҐГ±Г±Г¬ГҐГ°ГІГЁГҐ ГўГЄГ«./ГўГ»ГЄГ«
 binds_actions[key_bindings.kGOD_MODE] = function()
 	local value = get_console():get_string("g_god")
 	local note = xr_sound.get_safe_sound_object([[intro\godmode]])
@@ -128,7 +128,7 @@ binds_actions[key_bindings.kGOD_MODE] = function()
 	return true
 end
 
--- 'Numpad 2' - Ѓесконечные патроны вкл./выкл
+-- 'Numpad 2' - ВЃГҐГ±ГЄГ®Г­ГҐГ·Г­Г»ГҐ ГЇГ ГІГ°Г®Г­Г» ГўГЄГ«./ГўГ»ГЄГ«
 binds_actions[key_bindings.kUN_AMMO] = function()
 	local value = get_console():get_string("g_unlimitedammo")
 	local note = xr_sound.get_safe_sound_object([[intro\unlimited_ammo]])
@@ -145,8 +145,45 @@ binds_actions[key_bindings.kUN_AMMO] = function()
 	return true
 end
 
--- 'Z' - €нфа про объект, на который смотришь
-binds_actions[key_bindings.kINFO] = function()
-	ui_object_info.get_info()
-	return true
+-- 'L' вЂќГ®Г­Г Г°Гј: 2 Г°ГҐГ¦ГЁГ¬Г  Г®Г±ГўГҐГ№ГҐГ­ГЁГџ
+binds_actions[key_bindings.kTORCH] = function()
+	local on = xr_sound.get_safe_sound_object([[interface\inv_torch_on]])
+	local off = xr_sound.get_safe_sound_object([[interface\inv_torch_off]])
+	if db.actor:alive() then
+		local torch = db.actor:item_in_slot(9)
+		if torch and torch:is_torch() then
+			torch = get_torch_obj(torch)
+			if torch.on then
+				if torch_mode == "near" then
+					on:play(db.actor, 0, sound_object.s2d)
+					set_far_mode(torch)
+					torch:switch(true)
+				else
+					torch_mode = "off"
+					off:play(db.actor, 0, sound_object.s2d)
+				end
+				torch:switch(true)
+			else
+				set_near_mode(torch)
+				torch:switch(true)
+			end
+			torch:switch(true)
+		end
+	end
+	if db.actor:item_in_slot(9) then
+		on:play(db.actor, 0, sound_object.s2d)
+	end
+end
+
+
+function set_near_mode(torch, r)
+	torch_mode = "near"
+	torch:set_range(20)
+	torch:set_angle(math.rad(50))
+end
+
+function set_far_mode(torch, r)
+	torch_mode = "far"
+	torch:set_range(60)
+	torch:set_angle( math.rad(40))
 end

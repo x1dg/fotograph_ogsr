@@ -46,7 +46,7 @@
 				<d color="grey_1"/>
 			</text_color>
 		</btn_accept>
-		
+
 		<btn_cancel x="188" y="726" width="86" height="24" stretch="1">
 			<texture>ui_button_menu</texture>
 			<sound_h>device\pda\menu_button_h</sound_h>
@@ -192,12 +192,12 @@
 			<list_font color="grey_5" font="letterica16"/>
 		</list_fps_lock>
 
-		<cap_always_active x="12" y="276" width="143" height="21">
+		<cap_always_active x="12" y="256" width="143" height="21">
 			<text font="letterica16" color="grey_5">ui_mm_always_active</text>
 		</cap_always_active>
-		<check_always_active x="-25" y="273" width="300" height="21">
+		<check_always_active x="-25" y="253" width="300" height="21">
 			<options_item entry="rs_always_active" group="mm_opt_video"/>
-		</check_always_active>				
+		</check_always_active>
 		<btn_advanced x="221" y="607" width="80.9" height="24" stretch="1">
             <texture>ui_button_menu_extended</texture>
 			<sound_h>device\pda\menu_button_h</sound_h>
@@ -351,7 +351,7 @@
 			<options_item entry="r__detail_radius" group="mm_opt_video_adv"/>
 		</track_detail_distance>
 
-		<cap_texture_lod  x="20" y="5" width="143" height="21" >												  
+		<cap_texture_lod  x="20" y="5" width="143" height="21" >
 			<text font="letterica16" color="grey_5">ui_mm_texture_quality</text>
 		</cap_texture_lod>
 		<track_texture_lod x="194" y="3" width="130" height="21" invert="1" step="1" is_integer="1">
@@ -608,14 +608,14 @@
         <check_r3_msaa_opt x="194" y="3" width="30" height="21">
             <options_item entry="r3_msaa_opt" group="mm_opt_video_adv" depend="vid"/>
         </check_r3_msaa_opt>
-		
+
 		<cap_r_sslr_enable x="20" y="5" width="143" height="21">
 			<text font="letterica16" color="grey_5">r_sslr_enable</text>
 		</cap_r_sslr_enable>
 		<check_r_sslr_enable x="194" y="3" width="30" height="21">
 			<options_item entry="r_sslr_enable" group="mm_opt_video_adv"/>
 		</check_r_sslr_enable>
-		
+
 		<cap_r2_rain_drops  x="20" y="5" width="143" height="21">
 			<text font="letterica16" color="grey_5">ui_mm_r2_rain_drops</text>
 		</cap_r2_rain_drops>
@@ -629,6 +629,13 @@
 		<check_r2_actor_shadow x="194" y="3" width="30" height="21">
 			<options_item entry="r__actor_shadow" group="mm_opt_video_adv"/>
 		</check_r2_actor_shadow>
+
+		<cap_3d_scopes_fps_factor x="20" y="5" width="143" height="21">
+			<text font="letterica16" color="grey_5">ui_mm_3d_scopes_fps_factor</text>
+		</cap_3d_scopes_fps_factor>
+		<track_3d_scopes_fps_factor x="194" y="0" width="130" height="21" is_integer="1" step="1">
+			<options_item entry="g_3d_scopes_fps_factor" group="mm_opt_video_adv"/>
+		</track_3d_scopes_fps_factor>
 
 		<btn_to_simply x="221" y="607" width="80.9" height="24" stretch="1">
 			<texture>ui_button_menu_extended</texture>
@@ -699,10 +706,53 @@
 
 	<!-- [GAMEPLAY] tab specified -->
 	<tab_gameplay>
-		<cap_difficulty x="-20" y="6" width="143" height="21">
+		<scroll_v	x="-23" y="188" width="311.5" height="428"
+					right_ident="0" left_ident="0" top_indent="0" bottom_indent="0"
+					vert_interval="12" always_show_scroll="1"/>
+					
+		<load_info_back x="-36" y="-10" width="340" height="178" stretch="1"
+			light_anim="asus_logo_01" la_cyclic="0" la_texture="1" la_alpha="1">
+		</load_info_back>
+		<load_info_text x="42" y="26" width="180" height="116"
+			light_anim="asus_logo_01" la_cyclic="0" la_text="1" la_alpha="1">
+			<text  font="letterica18" color="grey_1" align="c" vert_align="c" complex_mode="1"/>
+		</load_info_text>
+
+		<cap_character_name x="-22.5" y="134" width="64" height="29">
+			<line x="12" y="137.5" width="94" height="21" stretch="1">
+				<texture>ui_brokenline</texture>
+			</line>
+			<text color="grey_5" font="letterica16" align="l" vert_align="c">ui_mm_character_name</text>
+		</cap_character_name>
+		<edit_character_name x="112.5" y="138.5" width="176.5" height="20">
+			<texture>ui_table_button_e</texture>
+			<text  font="letterica16" color="grey_5" vert_align="c" align="l"/>
+		</edit_character_name>
+
+		<cap_character_icon>
+			<caption x="113" y="10" width="180" height="24">
+				<text color="grey_5" font="letterica16" align="l" vert_align="c">ui_mm_character_icon</text>
+			</caption>
+			<line x="198" y="10" width="90" height="21" stretch="1">
+				<texture>ui_brokenline</texture>
+			</line>
+			<icon x="-19.5" y="12" width="123,6" height="108" stretch="1"/>
+			<layer x="-19.5" y="11" width="125.1" height="110" stretch="1"/>
+			<frame x="-22" y="6" width="133.5" height="122">
+				<texture>ui_tablist_textbox</texture>
+			</frame>
+		</cap_character_icon>
+		<list_character_icon>
+			<frame x="113" y="36" width="180" height="92">
+				<texture>ui_tablist_textbox</texture>
+			</frame>
+			<list x="117" y="40" width="170" height="80" active_bg="1" item_height="16"/>
+		</list_character_icon>
+
+		<cap_difficulty x="-22.5" y="168" width="143" height="21">
 			<text font="letterica16" color="grey_5">ui_mm_difficulty</text>
 		</cap_difficulty>
-		<list_difficulty x="98" y="3" width="195" height="21" list_length="4">
+		<list_difficulty x="114" y="165" width="176.5" height="21" list_length="4">
 			<options_item entry="g_game_difficulty" group="mm_opt_gameplay"/>
 			<text_color>
 				<e color="grey_5"/>
@@ -712,63 +762,92 @@
 			<list_font	 color="grey_5" font="letterica16"/>
 		</list_difficulty>
 
-		<check_autochange_difficulty x="-26" y="6" width="435" height="21">
-			<text font="letterica16" color="grey_5" y="2.5">ui_mm_autochange_difficulty</text>
-		</check_autochange_difficulty>
+		<check_enemy_health x="0" y="198" width="344" height="21">
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_show_enemy_health</text>
+		</check_enemy_health>
 
-		<check_crosshair x="-26" y="36" width="320" height="21">
+		<check_show_condition x="0" y="228" width="344" height="21">
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_show_condition</text>
+		</check_show_condition>
+
+		<check_show_fast_slots x="0" y="258" width="344" height="21">
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_show_fast_slots</text>
+		</check_show_fast_slots>
+
+		<check_shoot_enable x="0" y="288" width="344" height="21">
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_shoot_enable</text>
+		</check_shoot_enable>
+
+		<check_use_enable x="0" y="318" width="344" height="21">
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_use_enable</text>
+		</check_use_enable>
+
+		<check_zoom_enable x="0" y="348" width="344" height="21">
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_zoom_enable</text>
+		</check_zoom_enable>
+
+		<check_blood_enable x="0" y="378" width="344" height="21">
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_blood_enable</text>
+		</check_blood_enable>
+
+		<check_bleed_enable x="0" y="408" width="344" height="21">
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_bleed_enable</text>
+		</check_bleed_enable>
+
+		<check_crosshair x="0" y="438" width="344" height="21">
 			<options_item entry="hud_crosshair" group="mm_opt_gameplay"/>
-			<text font="letterica16" color="grey_5" y="2.5">ui_mm_show_crosshair</text>
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_show_crosshair</text>
 		</check_crosshair>
 
-		<check_dyn_crosshair x="-26" y="66" width="320" height="21">
+		<check_dyn_crosshair x="0" y="468" width="344" height="21">
 			<options_item entry="cl_dynamiccrosshair" group="mm_opt_gameplay"/>
-			<text font="letterica16" color="grey_5" y="2.5">ui_mm_dyn_crosshair</text>
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_dyn_crosshair</text>
 		</check_dyn_crosshair>
+		
+		<check_crosshair_hard x="0" y="498" width="344" height="21">
+			<options_item entry="hud_crosshair_hard" group="mm_opt_gameplay"/>
+			<text font="letterica16" color="grey_5" y="2.5">ui_mm_crosshair_hard</text>
+		</check_crosshair_hard>
 
-		<check_show_weapon x="-26" y="96" width="320" height="21">
+		<check_show_weapon x="0" y="528" width="344" height="21">
 			<options_item entry="hud_weapon" group="mm_opt_gameplay"/>
-			<text font="letterica16" color="grey_5" y="2.5">ui_mm_show_weapon</text>
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_show_weapon</text>
 		</check_show_weapon>
 
-		<check_dist x="-26" y="126" width="320" height="21">
+		<check_dist x="0" y="558" width="344" height="21">
 			<options_item entry="hud_crosshair_dist" group="mm_opt_gameplay"/>
-			<text font="letterica16" color="grey_5" y="2.5">ui_mm_crosshair_distance</text>
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_crosshair_distance</text>
 		</check_dist>
 
-		<check_tips x="-26" y="156" width="320" height="21">
+		<check_tips x="0" y="588" width="344" height="21">
 			<options_item entry="hud_info" group="mm_opt_gameplay"/>
-			<text font="letterica16" color="grey_5" y="2.5">ui_mm_tips</text>
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_tips</text>
 		</check_tips>
 
-		<check_ammunition_on_belt x="-26" y="186" width="435" height="21">
+		<check_ambient x="0" y="618" width="344" height="21">
+			<options_item entry="g_music_tracks" group="mm_opt_gameplay"/>
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_ambient</text>
+		</check_ambient>
+
+		<check_ammunition_on_belt x="0" y="648" width="344" height="21">
 			<options_item entry="g_ammunition_on_belt" group="mm_opt_gameplay"/>
-			<text font="letterica16" color="grey_5" x="6" y="2.5">ui_mm_ammunition_on_belt</text>
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_ammunition_on_belt</text>
 		</check_ammunition_on_belt>
 
-		<check_build_crosshair x="-26" y="216" width="435" height="21">
+		<check_build_crosshair x="0" y="678" width="344" height="21">
 			<options_item entry="hud_crosshair_build" group="mm_opt_gameplay"/>
-			<text font="letterica16" color="grey_5" x="6" y="2.5">ui_mm_build_crosshair</text>
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_build_crosshair</text>
 		</check_build_crosshair>
-		
-		<check_small_font x="-26" y="246" width="435" height="21">
+
+		<check_small_font x="0" y="708" width="344" height="21">
 			<options_item entry="hud_small_font" group="mm_opt_gameplay"/>
-			<text font="letterica16" color="grey_5" x="6" y="2.5">ui_mm_small_font</text>
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_small_font</text>
 		</check_small_font>
-		
-		<check_autopause x="-26" y="276" width="435" height="21">
-			<options_item entry="keypress_on_start" group="mm_opt_gameplay"/>														
-			<text font="letterica16" color="grey_5" x="6" y="2.5">ui_mm_keypress_on_start</text>
+
+		<check_autopause x="0" y="738" width="344" height="21">
+			<options_item entry="keypress_on_start" group="mm_opt_gameplay"/>
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_keypress_on_start</text>
 		</check_autopause>
-		
-		<!-- within complex_mode="1" -->
-		<check_ambient x="-26" y="322"  width="286" height="48" complex_mode="1">
-			<auto_static x="32" y="-15" width="223.3" height="1" stretch="1">
-				<texture>ui_item_line</texture>
-			</auto_static>
-			<options_item entry="g_music_tracks" group="mm_opt_gameplay"/>
-			<text font="letterica16" color="grey_5" x="6" y="5">ui_mm_ambient</text>
-		</check_ambient>
 
 		<btn_check_updates/>
 	</tab_gameplay>
@@ -867,7 +946,7 @@
 	<hint_caption_adv x="420" y="60" width="550" height="220">
 		<text align="l" font="letterica16" color="white_2" complex_mode="1">hint_caption_adv_text</text>
 	</hint_caption_adv>
-	
+
 	<!-- Patch dialog -->
 	<download_static x="206" y="717" width="603" height="51">
 		<texture>ui_patch_back</texture>

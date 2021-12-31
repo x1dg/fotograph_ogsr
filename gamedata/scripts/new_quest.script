@@ -1,3 +1,7 @@
+function kill_actor()
+    db.actor:kill(db.actor)
+end
+
 function script1()
 olr_func.play_sound([[characters_voice\human_01\bandit\talk\abuse\abuse_2]])
 end
@@ -42,4 +46,122 @@ function script8()
 local sactor = alife():actor()
 local cactor = level.object_by_id(sactor.id)
 cactor:give_game_news("%c[0,128,128,128]SMS: Сергей Вист\\n%c[0,255,255,255]Пробуй потихоньку сползти по лестницы, а дальше прийдётся прыгать.", "ui_iconsNpc_stalker_bandit_borov", Frect():set(0,658,83,47), math.random(200, 500), 8000)
+end
+
+function script9()
+local gg = db.actor
+      alife():create("abakan_pivko", gg:position(), gg:level_vertex_id(), gg:game_vertex_id(), gg:id())
+	  alife():create("abakan_pivko", gg:position(), gg:level_vertex_id(), gg:game_vertex_id(), gg:id())
+	  alife():create("abakan_pivko", gg:position(), gg:level_vertex_id(), gg:game_vertex_id(), gg:id())
+	  alife():create("abakan_pivko", gg:position(), gg:level_vertex_id(), gg:game_vertex_id(), gg:id())
+end
+
+function script10()
+local st = get_hud():GetCustomStatic("msl_gg_1") or get_hud():AddCustomStatic("msl_gg_1",true)
+	st.m_endTime = time_global()/1000 + 8
+	start_real_timer(3, "new_quest.script11")
+	start_real_timer(10, "new_quest.del_2")
+end
+
+function script11()
+olr_func.play_sound([[device\pda\pda_news]])
+local sactor = alife():actor()
+local cactor = level.object_by_id(sactor.id)
+cactor:give_game_news("%c[0,128,128,128]SMS: Сергей Вист\\n%c[0,255,255,255]Эй, дружище, скорее подойди ко мне, у меня серьёзные проблемы...", "ui_iconsNpc_stalker_bandit_borov", Frect():set(0,658,83,47), math.random(200, 500), 8000)
+end
+
+function script12()
+start_real_timer(5, "new_quest.script13")
+olr_func.play_sound([[new\inv_open_body]])
+local sim = alife()
+local se_obj = sim:story_object(9117)
+if se_obj then
+sim:release(se_obj, true)
+zap1.zap1_start()
+end
+end
+
+function script13()
+db.actor:give_info_portion("zap_kvest_14_s")
+local st = get_hud():GetCustomStatic("msl_gg_2") or get_hud():AddCustomStatic("msl_gg_2",true)
+	st.m_endTime = time_global()/1000 + 8
+end
+
+function kontr_dial1()
+olr_func.play_sound([[ambient\gluki\gluki_8]])
+kontr_1.kontr_1_start()
+end
+
+function script15()
+olr_func.play_sound([[new\zombie_idle_1]])
+kontr_1.kontr_6_start()
+end
+
+function kont1_space()
+if ( xr_conditions.actor_in_zone(nil,nil,{"space_konler_1"})) then
+
+local st = get_hud():GetCustomStatic("msl_gg_3") or get_hud():AddCustomStatic("msl_gg_3",true)
+	st.m_endTime = time_global()/1000 + 1
+				dik_quest2.update()
+
+end
+end
+
+function script14()
+db.actor:set_character_community("zombied", 0, 0)
+end 
+
+function tel_1()
+local a = vector()
+a.x = -234,66
+a.y = 16,99
+a.z = 236,36
+db.actor:set_actor_position(a)
+olr_func.play_sound([[crystal_zones\horror]])
+end
+
+--оффлайны--
+
+function off1()
+ 
+local npc = alife():story_object(9116)
+ 
+if npc then
+ 
+alife():set_switch_offline (npc.id, true)
+alife():set_switch_online (npc.id, false)
+alife():set_interactive (npc.id, false)
+ 
+end
+end
+
+--онлайны--
+function on1()
+ 
+local npc = alife():story_object(9116)
+ 
+if npc then
+ 
+alife():set_switch_offline (npc.id, false)
+alife():set_switch_online (npc.id, true)
+alife():set_interactive (npc.id, true)
+ 
+end
+end
+
+--удалялки--
+function del_polen_ihek()
+local sim = alife()
+local se_obj = sim:story_object(9115)
+if se_obj then
+sim:release(se_obj, true)
+end
+end
+
+function del_2()
+local sim = alife()
+local se_obj = sim:story_object(9114)
+if se_obj then
+sim:release(se_obj, true)
+end
 end
