@@ -5,6 +5,10 @@
     <article id="noyt_dryga" name="Ноутбук" article_type="task" group="agr_meet_krot_band/0">
         <text>Серёга швырнул свой ноутбук куда-то под дерево и теперь грустит, но зато не может за ним сходить, надеюсь его ещё не украли.</text>
     </article>
+	
+    <article id="psy_myt_1" name="Ноутбук" article_type="task" group="agr_meet_krot_band/0">
+        <text>Неизвестный мутант приказал найти ему людей для охраны его тела, думаю стоит распросить торговца в деревни, может он знает нескольких "плохишей" для мутанта.</text>
+    </article>
 
 <article article_type="journal" group="tainik_semeckii" id="first_part" name="first">
  <text>first_part_text</text>

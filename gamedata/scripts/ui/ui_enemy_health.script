@@ -35,8 +35,6 @@ function on_hit(obj, amount, local_direction, who, bone_index)
 		cs = hud:GetCustomStatic("cs_enemy_health")
 		local w = cs:wnd()
 		progress = xml:InitProgressBar("cs_enemy_health:enemy_health", w)
-		enemy_icon = xml:InitStatic("cs_enemy_health:enemy_icon", w)
-		mutant_icon = xml:InitStatic("cs_enemy_health:mutant_icon", w)
 	end
 
 	if  (ui_data.load("mui_show_health") == true) and (hp > 0.005) then
@@ -44,19 +42,15 @@ function on_hit(obj, amount, local_direction, who, bone_index)
 		progress:SetProgressPos(hp*100)
 		local text = ""
 		if (IsStalker(nil,cls)) then
-			mutant_icon:Show(false)
-			enemy_icon:Show(true)
 			text = obj:character_name()
 			local community = obj:character_community()
 			if community then
 				text = text.." ["..game.translate_string(community).."]"
 			end
 		elseif (IsMonster(nil,cls)) then
-			enemy_icon:Show(false)
-			mutant_icon:Show(true)
 			text = game.translate_string(get_string( obj:section(), "mutant_name" ))
 		elseif (IsHelicopter(nil,cls)) then
-			text = "Âåðòîëåò"
+			text = "��������"
 		else
 			local sid = get_object_story_id(obj:id())
 			if (sid) then
@@ -69,14 +63,12 @@ function on_hit(obj, amount, local_direction, who, bone_index)
 		end
 end
 
--- Callback íà óáèéñòâî
 function on_death(victim, who)
 	if not (victim:alive()) then
 		cs_remove()
 	end
 end
 
--- Òàéìåð = 10 ñåêóíä
 function wait()
 	hide = time_global() + 10000
 	local function check_timer()
@@ -85,7 +77,6 @@ function wait()
 	level.add_call(check_timer, cs_remove)
 end
 
---Óäàëèòü ñòàòèêè
 function cs_remove()
 	hide = 0
 	local cs = hud and hud:GetCustomStatic("cs_enemy_health")

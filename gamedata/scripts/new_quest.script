@@ -120,6 +120,24 @@ db.actor:set_actor_position(a)
 olr_func.play_sound([[crystal_zones\horror]])
 end
 
+function script16()
+db.actor:set_character_community("actor", 0, 0)
+local st = get_hud():GetCustomStatic("msl_gg_4") or get_hud():AddCustomStatic("msl_gg_4",true)
+	st.m_endTime = time_global()/1000 + 8
+end 
+
+function script17()
+local st = get_hud():GetCustomStatic("msl_gg_5") or get_hud():AddCustomStatic("msl_gg_5",true)
+	st.m_endTime = time_global()/1000 + 8
+end 
+
+function script18()
+olr_func.play_sound([[device\pda\pda_news]])
+local sactor = alife():actor()
+local cactor = level.object_by_id(sactor.id)
+cactor:give_game_news("%c[0,128,128,128]SMS: Потапов\\n%c[0,255,255,255]Слышь, фотограф, забирай своего друга, он задалбал уже бухать за мой счёт! Найдёшь его в гараже у Марио.", "ui_iconsNpc_stalker_bandit_borov", Frect():set(249,893,83,47), math.random(200, 500), 8000)
+end
+
 --оффлайны--
 
 function off1()

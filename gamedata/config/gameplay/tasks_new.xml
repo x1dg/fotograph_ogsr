@@ -105,6 +105,54 @@
 			<infoportion_complete>zap_kvest_14_f</infoportion_complete>
 		</objective>
 	</game_task>
+	
+					  	<game_task id="zap_kvest_15">
+		<title>«Пси мутант»</title>
+		<objective>
+			<article>psy_myt_1</article>
+			<icon>ui_npc_monster_kontroler</icon>
+			<infoportion_complete>zap_kvest_15_f</infoportion_complete>
+		</objective>
+		<objective>
+												<map_location_type hint="Сидорович">blue_location</map_location_type>
+                <object_story_id>sidor</object_story_id>
+			<text>Найти людей для мутанта</text>
+			<infoportion_complete>zap_kvest_15_f</infoportion_complete>
+		</objective>
+	</game_task>
+	
+						  	<game_task id="kvest_kent_poisk">
+		<title>«Друг»</title>
+		<objective>
+			<icon>kvest_starter2</icon>
+			<infoportion_complete>new_portion_kkvest2_s</infoportion_complete>
+		</objective>
+		<objective>
+			<text>Поговорить с Серёгой</text>
+			<infoportion_complete>new_portion_kkvest2_s</infoportion_complete>
+		</objective>
+	</game_task>
+	
+						<game_task id="zap_kvest_16">
+		<title>«Подозрительные сталкеры»</title>
+		<objective>
+			<icon>ui_npc_maroder_mask</icon>
+			<infoportion_complete>zap_kvest_16_f</infoportion_complete>
+					<infoportion_fail>zap_kvest_15_fail</infoportion_fail>
+		</objective>
+		<objective>
+				<map_location_type hint="Гнойный">blue_location</map_location_type>
+                <object_story_id>gnoqnaq</object_story_id>
+			<text>Уговорить гнойного</text>
+			<infoportion_complete>zap_kvest_16_p</infoportion_complete>
+		</objective>
+						<objective>
+				<map_location_type hint="Степан тихий">blue_location</map_location_type>
+                <object_story_id>stepa_mar</object_story_id>
+			<text>Уговорить Стёпу</text>
+			<infoportion_complete>zap_kvest_16_ppp</infoportion_complete>
+		</objective>
+	</game_task>
    <!--Старое-->
 
 <game_task id="first_talk">

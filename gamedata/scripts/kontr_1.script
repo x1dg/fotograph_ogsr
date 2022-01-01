@@ -1,0 +1,498 @@
+function kontr_1_start()
+	local spwn = kontr_1(get_hud())
+	level.start_stop_menu(spwn,true)
+end
+
+function actor_disable_inventory()
+	-- закрываем верхнее окно
+	local wnd = level.main_input_receiver()
+	if wnd then
+		wnd:GetHolder():start_stop_menu(wnd, true)
+	end
+end
+
+class "kontr_1" (CUIScriptWnd)
+
+function kontr_1:__init() super()
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function kontr_1:__finalize()
+end
+
+function kontr_1:InitControls()
+	local xml = CScriptXmlInit()
+	self:Init(0,0,1024,768)
+	xml:ParseFile("kontr_1.xml")
+	self.Static1 = xml:InitStatic("Static1", self)
+	self.Static2 = xml:InitStatic("Static1:Static2", self.Static1)
+	self:Register(xml:Init3tButton("Static1:button3", self.Static1), "button3")
+	self.Static6 = xml:InitStatic("Static1:Static6", self.Static1)
+
+end
+
+function kontr_1:InitCallBacks()
+	self:AddCallback("button3", ui_events.BUTTON_CLICKED, self.button3_button_clicked, self)
+end
+
+function kontr_1:OnKeyboard(dik,keyboard_action)    --Функция закрытия окна по нажатию на клавиатуре "Escape"
+           CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)      --Инициализируем нажатие кнопки на клаве
+           if keyboard_action == ui_events.WINDOW_KEY_PRESSED then  --Условие: если нажата кнопка на клаве
+              if dik == DIK_keys.DIK_ESCAPE then                    --Условие: если нажата конкретно кнопка "Escape"
+				 new_quest.kill_actor()
+end
+end
+end
+
+function kontr_1:button3_button_clicked()
+actor_disable_inventory()
+kontr_2_start()
+end
+
+function kontr_1:Hide()
+	self:GetHolder():start_stop_menu(self, true)
+end
+
+---второй диалог---
+function kontr_2_start()
+	local spwn = kontr_2(get_hud())
+	level.start_stop_menu(spwn,true)
+end
+
+class "kontr_2" (CUIScriptWnd)
+
+function kontr_2:__init() super()
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function kontr_2:__finalize()
+end
+
+function kontr_2:InitControls()
+	local xml = CScriptXmlInit()
+	self:Init(0,0,1024,768)
+	xml:ParseFile("kontr_1.xml")
+	self.Static1 = xml:InitStatic("Static1", self)
+	self.Static2 = xml:InitStatic("Static1:Static2", self.Static1)
+	self:Register(xml:Init3tButton("Static1:button4", self.Static1), "button4")
+	self.Static7 = xml:InitStatic("Static1:Static7", self.Static1)
+
+end
+
+function kontr_2:InitCallBacks()
+	self:AddCallback("button4", ui_events.BUTTON_CLICKED, self.button4_button_clicked, self)
+end
+
+function kontr_2:OnKeyboard(dik,keyboard_action)    --Функция закрытия окна по нажатию на клавиатуре "Escape"
+           CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)      --Инициализируем нажатие кнопки на клаве
+           if keyboard_action == ui_events.WINDOW_KEY_PRESSED then  --Условие: если нажата кнопка на клаве
+              if dik == DIK_keys.DIK_ESCAPE then                    --Условие: если нажата конкретно кнопка "Escape"
+				 new_quest.kill_actor()
+end
+end
+end
+
+function kontr_2:button4_button_clicked()
+actor_disable_inventory()
+kontr_3_start()
+end
+
+function kontr_2:Hide()
+	self:GetHolder():start_stop_menu(self, true)
+end
+
+---3 диалог---
+function kontr_3_start()
+	local spwn = kontr_3(get_hud())
+	level.start_stop_menu(spwn,true)
+end
+
+class "kontr_3" (CUIScriptWnd)
+
+function kontr_3:__init() super()
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function kontr_3:__finalize()
+end
+
+function kontr_3:InitControls()
+	local xml = CScriptXmlInit()
+	self:Init(0,0,1024,768)
+	xml:ParseFile("kontr_1.xml")
+	self.Static1 = xml:InitStatic("Static1", self)
+	self.Static2 = xml:InitStatic("Static1:Static2", self.Static1)
+	self:Register(xml:Init3tButton("Static1:button5", self.Static1), "button5")
+	self.Static8 = xml:InitStatic("Static1:Static8", self.Static1)
+
+end
+
+function kontr_3:InitCallBacks()
+	self:AddCallback("button5", ui_events.BUTTON_CLICKED, self.button5_button_clicked, self)
+end
+
+function kontr_3:OnKeyboard(dik,keyboard_action)    --Функция закрытия окна по нажатию на клавиатуре "Escape"
+           CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)      --Инициализируем нажатие кнопки на клаве
+           if keyboard_action == ui_events.WINDOW_KEY_PRESSED then  --Условие: если нажата кнопка на клаве
+              if dik == DIK_keys.DIK_ESCAPE then                    --Условие: если нажата конкретно кнопка "Escape"
+				 new_quest.kill_actor()
+end
+end
+end
+
+function kontr_3:button5_button_clicked()
+actor_disable_inventory()
+kontr_4_start()
+end
+
+function kontr_3:Hide()
+	self:GetHolder():start_stop_menu(self, true)
+end
+
+---4 диалог---
+function kontr_4_start()
+	local spwn = kontr_4(get_hud())
+	level.start_stop_menu(spwn,true)
+end
+
+class "kontr_4" (CUIScriptWnd)
+
+function kontr_4:__init() super()
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function kontr_4:__finalize()
+end
+
+function kontr_4:InitControls()
+	local xml = CScriptXmlInit()
+	self:Init(0,0,1024,768)
+	xml:ParseFile("kontr_1.xml")
+	self.Static1 = xml:InitStatic("Static1", self)
+	self.Static2 = xml:InitStatic("Static1:Static2", self.Static1)
+	self:Register(xml:Init3tButton("Static1:button6", self.Static1), "button6")
+	self.Static9 = xml:InitStatic("Static1:Static9", self.Static1)
+
+end
+
+function kontr_4:InitCallBacks()
+	self:AddCallback("button6", ui_events.BUTTON_CLICKED, self.button6_button_clicked, self)
+end
+
+function kontr_4:OnKeyboard(dik,keyboard_action)    --Функция закрытия окна по нажатию на клавиатуре "Escape"
+           CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)      --Инициализируем нажатие кнопки на клаве
+           if keyboard_action == ui_events.WINDOW_KEY_PRESSED then  --Условие: если нажата кнопка на клаве
+              if dik == DIK_keys.DIK_ESCAPE then                    --Условие: если нажата конкретно кнопка "Escape"
+				 new_quest.kill_actor()
+end
+end
+end
+
+function kontr_4:button6_button_clicked()
+actor_disable_inventory()
+kontr_5_start()
+level.add_cam_effector("camera_effects\\fusker.anm", 1, false, "")
+end
+
+function kontr_4:Hide()
+	self:GetHolder():start_stop_menu(self, true)
+end
+
+---4 диалог---
+function kontr_5_start()
+	local spwn = kontr_5(get_hud())
+	level.start_stop_menu(spwn,true)
+end
+
+class "kontr_5" (CUIScriptWnd)
+
+function kontr_5:__init() super()
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function kontr_5:__finalize()
+end
+
+function kontr_5:InitControls()
+	local xml = CScriptXmlInit()
+	self:Init(0,0,1024,768)
+	xml:ParseFile("kontr_1.xml")
+	self.Static1 = xml:InitStatic("Static1", self)
+	self.Static2 = xml:InitStatic("Static1:Static2", self.Static1)
+	self:Register(xml:Init3tButton("Static1:button7", self.Static1), "button7")
+	self.Static10 = xml:InitStatic("Static1:Static10", self.Static1)
+
+end
+
+function kontr_5:InitCallBacks()
+	self:AddCallback("button7", ui_events.BUTTON_CLICKED, self.button7_button_clicked, self)
+end
+
+function kontr_5:OnKeyboard(dik,keyboard_action)    --Функция закрытия окна по нажатию на клавиатуре "Escape"
+           CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)      --Инициализируем нажатие кнопки на клаве
+           if keyboard_action == ui_events.WINDOW_KEY_PRESSED then  --Условие: если нажата кнопка на клаве
+              if dik == DIK_keys.DIK_ESCAPE then                    --Условие: если нажата конкретно кнопка "Escape"
+				 new_quest.kill_actor()
+end
+end
+end
+
+function kontr_5:button7_button_clicked()
+actor_disable_inventory()
+new_quest.script14()
+end
+
+function kontr_5:Hide()
+	self:GetHolder():start_stop_menu(self, true)
+end
+
+---2 разговор 1 диалог---
+function kontr_6_start()
+	local spwn = kontr_6(get_hud())
+	level.start_stop_menu(spwn,true)
+end
+
+class "kontr_6" (CUIScriptWnd)
+
+function kontr_6:__init() super()
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function kontr_6:__finalize()
+end
+
+function kontr_6:InitControls()
+	local xml = CScriptXmlInit()
+	self:Init(0,0,1024,768)
+	xml:ParseFile("kontr_1.xml")
+	self.Static1 = xml:InitStatic("Static1", self)
+	self.Static11 = xml:InitStatic("Static1:Static11", self.Static1)
+	self:Register(xml:Init3tButton("Static1:button8", self.Static1), "button8")
+	self.Static12 = xml:InitStatic("Static1:Static12", self.Static1)
+
+end
+
+function kontr_6:InitCallBacks()
+	self:AddCallback("button8", ui_events.BUTTON_CLICKED, self.button8_button_clicked, self)
+end
+
+function kontr_6:OnKeyboard(dik,keyboard_action)    --Функция закрытия окна по нажатию на клавиатуре "Escape"
+           CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)      --Инициализируем нажатие кнопки на клаве
+           if keyboard_action == ui_events.WINDOW_KEY_PRESSED then  --Условие: если нажата кнопка на клаве
+              if dik == DIK_keys.DIK_ESCAPE then                    --Условие: если нажата конкретно кнопка "Escape"
+				 new_quest.kill_actor()
+end
+end
+end
+
+function kontr_6:button8_button_clicked()
+actor_disable_inventory()
+kontr_7_start()
+end
+
+function kontr_6:Hide()
+	self:GetHolder():start_stop_menu(self, true)
+end
+
+---2 разговор 2 диалог---
+function kontr_7_start()
+	local spwn = kontr_7(get_hud())
+	level.start_stop_menu(spwn,true)
+end
+
+class "kontr_7" (CUIScriptWnd)
+
+function kontr_7:__init() super()
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function kontr_7:__finalize()
+end
+
+function kontr_7:InitControls()
+	local xml = CScriptXmlInit()
+	self:Init(0,0,1024,768)
+	xml:ParseFile("kontr_1.xml")
+	self.Static1 = xml:InitStatic("Static1", self)
+	self.Static11 = xml:InitStatic("Static1:Static11", self.Static1)
+	self:Register(xml:Init3tButton("Static1:button9", self.Static1), "button9")
+	self.Static13 = xml:InitStatic("Static1:Static13", self.Static1)
+
+end
+
+function kontr_7:InitCallBacks()
+	self:AddCallback("button9", ui_events.BUTTON_CLICKED, self.button9_button_clicked, self)
+end
+
+function kontr_7:OnKeyboard(dik,keyboard_action)    --Функция закрытия окна по нажатию на клавиатуре "Escape"
+           CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)      --Инициализируем нажатие кнопки на клаве
+           if keyboard_action == ui_events.WINDOW_KEY_PRESSED then  --Условие: если нажата кнопка на клаве
+              if dik == DIK_keys.DIK_ESCAPE then                    --Условие: если нажата конкретно кнопка "Escape"
+				 new_quest.kill_actor()
+end
+end
+end
+
+function kontr_7:button9_button_clicked()
+actor_disable_inventory()
+kontr_8_start()
+end
+
+function kontr_7:Hide()
+	self:GetHolder():start_stop_menu(self, true)
+end
+
+---2 разговор 3 диалог---
+function kontr_8_start()
+	local spwn = kontr_8(get_hud())
+	level.start_stop_menu(spwn,true)
+end
+
+class "kontr_8" (CUIScriptWnd)
+
+function kontr_8:__init() super()
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function kontr_8:__finalize()
+end
+
+function kontr_8:InitControls()
+	local xml = CScriptXmlInit()
+	self:Init(0,0,1024,768)
+	xml:ParseFile("kontr_1.xml")
+	self.Static1 = xml:InitStatic("Static1", self)
+	self.Static11 = xml:InitStatic("Static1:Static11", self.Static1)
+	self:Register(xml:Init3tButton("Static1:button10", self.Static1), "button10")
+	self.Static14 = xml:InitStatic("Static1:Static14", self.Static1)
+
+end
+
+function kontr_8:InitCallBacks()
+	self:AddCallback("button10", ui_events.BUTTON_CLICKED, self.button10_button_clicked, self)
+end
+
+function kontr_8:OnKeyboard(dik,keyboard_action)    --Функция закрытия окна по нажатию на клавиатуре "Escape"
+           CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)      --Инициализируем нажатие кнопки на клаве
+           if keyboard_action == ui_events.WINDOW_KEY_PRESSED then  --Условие: если нажата кнопка на клаве
+              if dik == DIK_keys.DIK_ESCAPE then                    --Условие: если нажата конкретно кнопка "Escape"
+				 new_quest.kill_actor()
+end
+end
+end
+
+function kontr_8:button10_button_clicked()
+actor_disable_inventory()
+kontr_9_start()
+end
+
+function kontr_8:Hide()
+	self:GetHolder():start_stop_menu(self, true)
+end
+
+---2 разговор 4 диалог---
+function kontr_9_start()
+	local spwn = kontr_9(get_hud())
+	level.start_stop_menu(spwn,true)
+end
+
+class "kontr_9" (CUIScriptWnd)
+
+function kontr_9:__init() super()
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function kontr_9:__finalize()
+end
+
+function kontr_9:InitControls()
+	local xml = CScriptXmlInit()
+	self:Init(0,0,1024,768)
+	xml:ParseFile("kontr_1.xml")
+	self.Static1 = xml:InitStatic("Static1", self)
+	self.Static11 = xml:InitStatic("Static1:Static11", self.Static1)
+	self:Register(xml:Init3tButton("Static1:button11", self.Static1), "button11")
+	self.Static15 = xml:InitStatic("Static1:Static15", self.Static1)
+
+end
+
+function kontr_9:InitCallBacks()
+	self:AddCallback("button11", ui_events.BUTTON_CLICKED, self.button11_button_clicked, self)
+end
+
+function kontr_9:OnKeyboard(dik,keyboard_action)    --Функция закрытия окна по нажатию на клавиатуре "Escape"
+           CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)      --Инициализируем нажатие кнопки на клаве
+           if keyboard_action == ui_events.WINDOW_KEY_PRESSED then  --Условие: если нажата кнопка на клаве
+              if dik == DIK_keys.DIK_ESCAPE then                    --Условие: если нажата конкретно кнопка "Escape"
+				 new_quest.kill_actor()
+end
+end
+end
+
+function kontr_9:button11_button_clicked()
+actor_disable_inventory()
+kontr_10_start()
+end
+
+function kontr_9:Hide()
+	self:GetHolder():start_stop_menu(self, true)
+end
+
+---2 разговор 5 диалог---
+function kontr_10_start()
+	local spwn = kontr_10(get_hud())
+	level.start_stop_menu(spwn,true)
+end
+
+class "kontr_10" (CUIScriptWnd)
+
+function kontr_10:__init() super()
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function kontr_10:__finalize()
+end
+
+function kontr_10:InitControls()
+	local xml = CScriptXmlInit()
+	self:Init(0,0,1024,768)
+	xml:ParseFile("kontr_1.xml")
+	self.Static1 = xml:InitStatic("Static1", self)
+	self.Static11 = xml:InitStatic("Static1:Static11", self.Static1)
+	self:Register(xml:Init3tButton("Static1:button12", self.Static1), "button12")
+	self.Static16 = xml:InitStatic("Static1:Static16", self.Static1)
+		self.Static17 = xml:InitStatic("Static1:Static17", self.Static1)
+
+end
+
+function kontr_10:InitCallBacks()
+	self:AddCallback("button12", ui_events.BUTTON_CLICKED, self.button12_button_clicked, self)
+end
+
+function kontr_10:OnKeyboard(dik,keyboard_action)    --Функция закрытия окна по нажатию на клавиатуре "Escape"
+           CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)      --Инициализируем нажатие кнопки на клаве
+           if keyboard_action == ui_events.WINDOW_KEY_PRESSED then  --Условие: если нажата кнопка на клаве
+              if dik == DIK_keys.DIK_ESCAPE then                    --Условие: если нажата конкретно кнопка "Escape"
+				 new_quest.kill_actor()
+end
+end
+end
+
+function kontr_10:button12_button_clicked()
+actor_disable_inventory()
+db.actor:give_info_portion("zap_kvest_14_f")
+end
+
+function kontr_10:Hide()
+	self:GetHolder():start_stop_menu(self, true)
+end

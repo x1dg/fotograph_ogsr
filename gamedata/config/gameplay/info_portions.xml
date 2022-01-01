@@ -105,6 +105,11 @@
 			   			<action>new_quest.script1</action>
 			   </info_portion>
 			      <!--Квесты от друга на предбанники-->
+				  			   			   			   <info_portion id="new_portion_kkvest1_ss">
+									   			<task>kvest_kent_poisk</task>
+												<action>new_quest.script18</action>
+			   </info_portion>
+				  
 			   			   			   <info_portion id="new_portion_kkvest2_s">
 									   			<task>new_portion_kkvest2_kvest</task>
 			   </info_portion>
@@ -179,6 +184,19 @@
 			   
 			   			   			   			   			   	<info_portion id="zap_kvest_14_f">
 									<action>new_quest.tel_1</action>
+									<task>zap_kvest_15</task>
+			   </info_portion>
+			   
+			   			   			   			   			   			   	<info_portion id="zap_kvest_15_s">
+									<action>new_quest.script16</action>
+			   </info_portion>
+			   
+	<info_portion id="zap_kvest_15_f">
+									<task>zap_kvest_16</task>
+			   </info_portion>
+			   
+			   	<info_portion id="zap_kvest_15_fail">
+									<action>new_quest.kill_actor</action>
 			   </info_portion>
 			   
 </game_information_portions>

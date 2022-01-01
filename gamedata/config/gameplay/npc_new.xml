@@ -2,6 +2,21 @@
 
 <!-- new npc profile -->
 <xml>
+	<character id="zomb_2">
+		<class>zomb_2</class>
+	</character>
+		<character id="zomb_1">
+		<class>zomb_1</class>
+	</character>
+			<character id="mar_1_kontr">
+		<class>mar_1_kontr</class>
+	</character>
+				<character id="mar_2_kontr">
+		<class>mar_2_kontr</class>
+	</character>
+				<character id="mar_3_kontr">
+		<class>mar_3_kontr</class>
+	</character>
 	<character id="stalker_freind_one">
 		<class>stalker_freind_one</class>
 	</character>

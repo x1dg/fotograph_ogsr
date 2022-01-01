@@ -1,58 +1,138 @@
 <?xml version='1.0' encoding="windows-1251"?>
+
 <xml>
+
+<!------------------------------------------------->
 <specific_character id="zomb_1" team_default = "1">
-<name>Неизвестный миротворец</name>
-<icon>kvest_starter7</icon>
-<map_icon x="3" y="2"></map_icon>
-<bio>sim_stalker_general_bio</bio>
+		<name>Неизвестный миротворец</name>		
+		<icon>kvest_starter7</icon>
+    <map_icon x="3" y="2"></map_icon>
+    <bio>sim_stalker_general_bio</bio>
 
-<class>zomb_1</class>
-<community>zombied</community> <terrain_sect>stalker_terrain</terrain_sect>
-<money min="200" max="300" infinitive="0"></money>
+    <class>zomb_1</class>
+    <community>zombied</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <money min="200" max="300" infinitive="0"></money>
+    
+    <rank>650</rank>
+    <reputation>50</reputation>
+ 
+		<visual>new_actors\zomb_amer</visual>
+        <snd_config>characters_voice\human_02\zombied\</snd_config>
+    <crouch_type>1</crouch_type>
 
-<rank>650</rank>
-<reputation>50</reputation>
+    <supplies>
+      [spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj = 1 \n
+			wpn_ak74u_m1 \n
+			ammo_12x76_zhekan = 1 \n
+    </supplies>
+	
+	</specific_character>
+	
+	<specific_character id="zomb_2" team_default = "1">
+		<name>Неизвестный сталкер</name>		
+		<icon>kvest_starter7</icon>
+    <map_icon x="3" y="2"></map_icon>
+    <bio>sim_stalker_general_bio</bio>
 
-<visual>new_actors\zomb_amer</visual>
-<snd_config>characters_voice\human_02\zombied\</snd_config>
-<crouch_type>1</crouch_type>
+    <class>zomb_2</class>
+    <community>zombied</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <money min="200" max="300" infinitive="0"></money>
+    
+    <rank>650</rank>
+    <reputation>50</reputation>
+ 
+		<visual>new_actors\zomb_nov</visual>
+        <snd_config>characters_voice\human_02\zombied\</snd_config>
+    <crouch_type>1</crouch_type>
 
-<supplies>
-[spawn] \n
-wpn_pm \n
-ammo_9x18_fmj = 1 \n
-wpn_ak74u_m1 \n
-ammo_12x76_zhekan = 1 \n
-</supplies>
+    <supplies>
+      [spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj = 1 \n
+			wpn_wincheaster1300 \n
+			ammo_12x76_zhekan = 1 \n
+    </supplies>
+	
+	</specific_character>
+	
+<!---------------------------Марадёры для контрика---------------------->
 
-</specific_character>
+		<specific_character id="mar_1_kontr" team_default = "1">
+		<name>Гнойный</name>		
+		<icon>ui_npc_u_green_stalker_4</icon>
+    <map_icon x="3" y="2"></map_icon>
+    <bio>sim_stalker_general_bio</bio>
 
-<specific_character id="zomb_2" team_default = "1">
-<name>Неизвестный сталкер</name>
-<icon>kvest_starter7</icon>
-<map_icon x="3" y="2"></map_icon>
-<bio>sim_stalker_general_bio</bio>
+    <class>mar_1_kontr</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <money min="200" max="300" infinitive="0"></money>
+    
+    <rank>650</rank>
+    <reputation>50</reputation>
+ 
+		<visual>actors\novice\green_stalker_4</visual>
+		<snd_config>characters_voice\human_02\newbie\</snd_config>
+    <crouch_type>1</crouch_type>
 
-<class>zomb_2</class>
-<community>zombied</community> <terrain_sect>stalker_terrain</terrain_sect>
-<money min="200" max="300" infinitive="0"></money>
+    <supplies>
+      [spawn] \n
+			wpn_toz34 \n
+			ammo_12x70_buck \n
+    </supplies>
+	
+	</specific_character>
+	
+			<specific_character id="mar_2_kontr" team_default = "1">
+		<name>Миха ствол</name>		
+		<icon>ui_npc_u_green_stalker_4</icon>
+    <map_icon x="3" y="2"></map_icon>
+    <bio>sim_stalker_general_bio</bio>
 
-<rank>650</rank>
-<reputation>50</reputation>
+    <class>mar_2_kontr</class>
+    <community>stranger</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <money min="200" max="300" infinitive="0"></money>
+    
+    <rank>650</rank>
+    <reputation>50</reputation>
+ 
+		<visual>actors\novice\green_stalker_6</visual>
+		<snd_config>characters_voice\human_02\newbie\</snd_config>
+    <crouch_type>1</crouch_type>
 
-<visual>new_actors\zomb_nov</visual>
-<snd_config>characters_voice\human_02\zombied\</snd_config>
-<crouch_type>1</crouch_type>
+    <supplies>
+      [spawn] \n
+			wpn_toz34 \n
+			ammo_12x70_buck \n
+    </supplies>
+	
+	</specific_character>
+	
+			<specific_character id="mar_3_kontr" team_default = "1">
+		<name>Степан тихий</name>		
+		<icon>kvest_starter7</icon>
+    <map_icon x="3" y="2"></map_icon>
+    <bio>sim_stalker_general_bio</bio>
 
-<supplies>
-[spawn] \n
-wpn_pm \n
-ammo_9x18_fmj = 1 \n
-wpn_wincheaster1300 \n
-ammo_12x76_zhekan = 1 \n
-</supplies>
+    <class>mar_3_kontr</class>
+    <community>stranger</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <money min="200" max="300" infinitive="0"></money>
+    
+    <rank>650</rank>
+    <reputation>50</reputation>
+ 
+		<visual>new_actors\mar3_mod</visual>
+		<snd_config>characters_voice\human_02\newbie\</snd_config>
+    <crouch_type>1</crouch_type>
 
-</specific_character>
+    <supplies>
+      [spawn] \n
+			wpn_toz34 \n
+			ammo_12x70_buck \n
+    </supplies>
+	
+	</specific_character>
 
 <!---------------------------Друг нашего любителя селфи---------------------->
 <specific_character id="stalker_freind_one" team_default = "1">
