@@ -1527,7 +1527,7 @@ function get_npc_current_visual_level(id)
 	local sect
 	if t then
 		local vis = t.visual
-		if vis then
+		if vis and xrs_utils.str_explode("\\",vis)[3] ~= nil then
 			vis = xrs_utils.str_explode("\\",vis)
 			vis = xrs_utils.str_explode(".",vis[3])
 			vis = vis[1]

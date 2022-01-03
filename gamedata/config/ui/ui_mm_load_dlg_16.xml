@@ -29,7 +29,7 @@
 			<texture x="0" y="0" width="16" height="1024" a="128">ui\ui_crete</texture>
 		</auto_static>
 
-		<picture x="0" y="40" width="95.9" height="128" clipper="1">
+		<picture x="0" y="41" width="95.9" height="127" clipper="1">
 			<texture>ui\ui_noise</texture>
 		</picture>
 
@@ -41,9 +41,9 @@
 			<auto_static x="228" y="-11" width="307" height="48" stretch="1">
 				<texture x="0" y="206" width="425" height="48">ui\ui_static_loadgameinfo</texture>
 			</auto_static>
-			<auto_static x="286" y="2" width="191" height="36" stretch="1" light_anim="asus_logo_01" la_cyclic="1" la_texture="1" la_alpha="1">
+			<!--auto_static x="286" y="2" width="191" height="36" stretch="1" light_anim="asus_logo_01" la_cyclic="1" la_texture="1" la_alpha="1">
 				<texture x="438" y="209" width="94" height="36"color="black_1">ui\ui_static_loadgameinfo</texture>
-			</auto_static>
+			</auto_static-->
 			<text align="c" vert_align="c" font="graffiti32" color="grey_2">ui_mm_load_game</text>
 		</caption>
 

@@ -106,8 +106,6 @@ function ph_item_box:spawn_items()
         local spawn_items = item_by_community["def_box"]
 	end
     
-	
-	log1("COUNT BY LEVEL: "..tostring_all(count_by_level))
     for k,v in pairs(spawn_items) do		
 		--' По каждому объекту необходимо получить количество
 		local number = math.ceil(math.random(count_by_level[k].min, count_by_level[k].max))

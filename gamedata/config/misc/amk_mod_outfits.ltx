@@ -445,7 +445,7 @@ explosion_protection 		= 0.35
 fire_wound_protection  		= 0.4
 
 ;#######################################################################################
-[broken_exoskeleton]:exo_outfit;ћодифицированный экзоскелет broken
+[broken_exoskeleton]:exo_outfit;
 $spawn= "outfit\uniq\outfit_exo_m1"
 inv_name= broken_exoskeleton_name
 inv_name_short= broken_exoskeleton_name
@@ -671,6 +671,7 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\bandit_suit
 actor_visual	= actors\bandit\stalker_bandit_veteran.ogf
+player_hud_section	= actor_hud_bandit_veteran_brown
 
 ef_equipment_type	= 3
 
@@ -679,9 +680,9 @@ inv_name_short		= bandit_veteran_outfit_m1_name
 description			= bandit_veteran_outfit_m1_description
 inv_weight			= 3.5
 inv_grid_width		= 2
-inv_grid_height		= 2
-inv_grid_x			= 16
-inv_grid_y			= 27
+inv_grid_height		= 3
+inv_grid_x			= 24
+inv_grid_y			= 29
 full_icon_name		= npc_icon_bandit_veteran_outfit
 
 cost				= 4500
@@ -713,6 +714,8 @@ telepatic_immunity			= 0.00
 chemical_burn_immunity		= 0.04
 explosion_immunity			= 0.03
 fire_wound_immunity			= 0.01
+
+[bandit_veteran_outfit]:bandit_veteran_outfit_m1
 
 ;##########################################################################
 ;# Свобода
@@ -782,6 +785,7 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\svoboda_heavy_suit
 actor_visual	= actors\svoboda\stalker_sv_hood_9.ogf
+player_hud_section	= actor_hud_svoboda_light
 
 ef_equipment_type	= 3
 
@@ -827,8 +831,7 @@ explosion_immunity			= 0.03
 fire_wound_immunity			= 0.01
 
 ;#######################################################################################
-
-[svoboda_yellow_exo_outfit_m1]:outfit_base
+[svoboda_yellow_exo_outfit_m1]:exo_outfit
 GroupControlSection	= spawn_group
 discovery_dependency = 
 $spawn 			= "outfit\exo_outfit"
@@ -837,6 +840,7 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\exoskelet_sv_skunk
 actor_visual	= actors\svoboda\stalker_sv_exoskeleton.ogf
+player_hud_section	= actor_hud_exo_free
 
 ef_equipment_type	= 5
 
@@ -847,8 +851,8 @@ inv_weight			= 14.0
 slot				= 6
 inv_grid_width		= 2
 inv_grid_height		= 3
-inv_grid_x			= 14
-inv_grid_y			= 24
+inv_grid_x			= 28
+inv_grid_y			= 1
 full_icon_name		= npc_icon_svoboda_yellow_exo_outfit_m1
 nightvision_sect	= effector_nightvision_good
 
@@ -884,6 +888,7 @@ chemical_burn_immunity		= 0.03
 explosion_immunity			= 0.03
 fire_wound_immunity			= 0.005
 
+[svoboda_exoskeleton]:svoboda_yellow_exo_outfit_m1;ћодифицированный экзоскелет svoboda
 ;##########################################################################
 ;# Долг
 ;##########################################################################
@@ -1011,6 +1016,7 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\monolit_suit
 actor_visual	= actors\monolit\stalker_mo_hood_9.ogf
+player_hud_section	= actor_hud_monolith
 
 ef_equipment_type	= 3
 
@@ -1053,6 +1059,3 @@ telepatic_immunity			= 0.00
 chemical_burn_immunity		= 0.03
 explosion_immunity			= 0.03
 fire_wound_immunity			= 0.01
-
-
-

@@ -19,18 +19,39 @@ ancor_1        			= l_hand
 
 [actor_hud_00]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_stalker
+
 [actor_hud_00_blue]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_stalker_blue
+
 [actor_hud_loner_sunrise_tigerstripe]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_loner_sunrise_tigerstripe
+
 [actor_hud_loner_sunrise_wolven]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_loner_sunrise_wolven
+
 [actor_hud_merc]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_merc
+
+[actor_hud_bandit]:actor_hud
+visual = dynamics\weapons\wpn_hand\wpn_hand_bandit
+
+[actor_hud_bandit_veteran_brown]:actor_hud
+visual = dynamics\weapons\wpn_hand\wpn_hand_cloak_brown
+
+[actor_hud_bandit_veteran_black]:actor_hud
+visual         			= dynamics\weapons\wpn_hand\wpn_hand_bandit_trench
+
+[actor_hud_svoboda_light]:actor_hud
+visual         			= dynamics\weapons\wpn_hand\wpn_hand_svoboda_light
+
+[actor_hud_dolg]:actor_hud
+visual = dynamics\weapons\wpn_hand\wpn_hand_dolg
+
+[actor_hud_monolith]:actor_hud
+visual = dynamics\weapons\wpn_hand\wpn_hand_monolith
+
 [actor_hud_01]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_bandit_light
-[actor_hud_02]:actor_hud
-visual = dynamics\weapons\wpn_hand\wpn_hand_dolg
 [actor_hud_03]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_specops
 [actor_hud_04]:actor_hud
@@ -47,8 +68,7 @@ visual = dynamics\weapons\wpn_hand\wpn_hand_dolg_heavy
 visual = dynamics\weapons\wpn_hand\wpn_hand_monolith_scientific
 [actor_hud_10]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_svoboda_middle
-[actor_hud_11]:actor_hud
-visual = dynamics\weapons\wpn_hand\wpn_hand_merc
+
 [actor_hud_12]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_ecolog
 [actor_hud_13]:actor_hud
@@ -57,12 +77,7 @@ visual = dynamics\weapons\wpn_hand\wpn_hand_neutral_assault
 visual = dynamics\weapons\wpn_hand\wpn_hand_monolith_assault
 [actor_hud_16]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_military
-[actor_hud_17]:actor_hud
-visual = dynamics\weapons\wpn_hand\wpn_hand_monolith
-[actor_hud_18]:actor_hud
-visual = dynamics\weapons\wpn_hand\wpn_hand_bandit
-[actor_hud_19]:actor_hud
-visual = dynamics\weapons\wpn_hand\wpn_hand_monolith_assault
+
 [actor_hud_20]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_bandit_light
 [actor_hud_21]:actor_hud
@@ -109,7 +124,7 @@ class= E_STLK
 cform= skeleton
 visual= equipments\bandit_suit
 actor_visual= actors\hero\stalker_bandit.ogf
-player_hud_section= actor_hud_18 ;actor_hud_01
+player_hud_section			= actor_hud_bandit
 
 ef_equipment_type= 3
 
@@ -186,8 +201,7 @@ class= E_STLK
 cform= skeleton
 visual= equipments\stalker_killer_suit
 actor_visual= actors\hero\stalker_killer.ogf
-
-player_hud_section= actor_hud_11 ;actor_hud_01
+player_hud_section			= actor_hud_merc
 
 ef_equipment_type= 4
 
@@ -231,9 +245,6 @@ chemical_burn_immunity= 0.04
 explosion_immunity= 0.04
 fire_wound_immunity= 0.012
 
-;---------------------------------------------------------------------------------------------
-; Œ—“ﬁÃ ÃŒÕŒÀ»“Œ¬÷¿
-;---------------------------------------------------------------------------------------------
 [monolit_outfit]:outfit_base
 GroupControlSection= spawn_group
 discovery_dependency =
@@ -244,7 +255,7 @@ cform= skeleton
 visual= equipments\monolit_suit
 actor_visual= actors\hero\stalker_monolit.ogf
 
-player_hud_section= actor_hud_17 ;actor_hud_01
+player_hud_section= actor_hud_monolith ;actor_hud_01
 
 ef_equipment_type= 3
 
@@ -859,7 +870,7 @@ cform= skeleton
 visual= equipments\svoboda_light_suit
 actor_visual= actors\hero\stalker_svoboda_light.ogf
 
-player_hud_section= actor_hud_03
+player_hud_section= actor_hud_svoboda_light
 
 ef_equipment_type= 3
 
@@ -916,8 +927,7 @@ class= E_STLK
 cform= skeleton
 visual= equipments\svoboda_heavy_suit
 actor_visual= actors\hero\stalker_svoboda_light.ogf
-
-player_hud_section= actor_hud_24
+player_hud_section= actor_hud_svoboda_light
 
 ef_equipment_type= 3
 
@@ -974,8 +984,7 @@ class= E_STLK
 cform= skeleton
 visual= equipments\dolg_suit
 actor_visual= actors\hero\stalker_dolg.ogf
-
-player_hud_section= actor_hud_02
+player_hud_section			= actor_hud_dolg
 
 ef_equipment_type= 3
 
@@ -1411,53 +1420,6 @@ chemical_burn_immunity = 0.03
 explosion_immunity= 0.02
 fire_wound_immunity= 0.005
 
-;============================================SVOBODA==========================================
-[svoboda_exoskeleton]:exo_outfit;ÃÓ‰ËÙËˆËÓ‚‡ÌÌ˚È ˝ÍÁÓÒÍÂÎÂÚ svoboda
-$spawn= "outfit\uniq\outfit_exo_m1"
-inv_name= svoboda_exoskeleton_name
-inv_name_short= svoboda_exoskeleton_name
-description= svoboda_exoskeleton_description
-inv_grid_x= 24
-inv_grid_y= 38
-
-visual = equipments\exoskelet_sv_skunk
-actor_visual= actors\svoboda\stalker_sv_exoskeleton.ogf
-full_icon_name= npc_icon_svoboda_exo_outfit
-
-inv_weight= 14.0
-cost= 70000
-
-nightvision_sect= effector_nightvision_good
-
-; MEDIUM RESISTANCE
-burn_protection = 0.3
-strike_protection = 0.45
-shock_protection = 0.3
-wound_protection= 0.6
-radiation_protection = 0.3
-telepatic_protection = 0.0
-chemical_burn_protection = 0.25
-explosion_protection = 0.55
-fire_wound_protection = 0.5
-
-immunities_sect= sect_svoboda_exoskeleton_immunities
-sprint_allowed= false
-bones_koeff_protection= exo_helmet_damage
-additional_inventory_weight= 25
-additional_inventory_weight2 = 25
-
-[sect_svoboda_exoskeleton_immunities]
-; From exo_outfit v.1.1
-burn_immunity= 0.03
-strike_immunity= 0.01
-shock_immunity= 0.03
-wound_immunity= 0.01
-radiation_immunity = 0.00
-telepatic_immunity= 0.00
-chemical_burn_immunity= 0.03
-explosion_immunity= 0.02
-fire_wound_immunity= 0.005
-
 ;=========================================Monolit=======================================
 [monolit_exoskeleton]:exo_outfit;ÃÓ‰ËÙËˆËÓ‚‡ÌÌ˚È ˝ÍÁÓÒÍÂÎÂÚ monolit
 $spawn= "outfit\uniq\outfit_exo_m1"
@@ -1691,6 +1653,7 @@ class= E_STLK
 cform = skeleton
 visual = equipments\bandit_black_suit
 actor_visual= actors\bandit\stalker_bandit_master.ogf
+player_hud_section	= actor_hud_bandit_veteran_black
 
 ef_equipment_type= 3
 
@@ -1700,7 +1663,7 @@ description= bandit_master_outfit_description
 inv_weight= 3.5
 inv_grid_width= 2
 inv_grid_height= 3
-inv_grid_x= 24
+inv_grid_x= 22
 inv_grid_y= 29
 full_icon_name= npc_icon_bandit_master_outfit
 
@@ -1784,58 +1747,6 @@ telepatic_immunity= 0.00
 chemical_burn_immunity= 0.04
 explosion_immunity= 0.03
 fire_wound_immunity= 0.01
-
-;=============================Veteran_bandit========================
-[bandit_veteran_outfit]:outfit_base
-GroupControlSection= spawn_group
-discovery_dependency =
-$spawn = "outfit\bandit_outfit"
-;$prefetch = 32
-class= E_STLK
-cform = skeleton
-visual = equipments\bandit_brown_suit
-actor_visual= actors\bandit\stalker_bandit_veteran.ogf
-
-ef_equipment_type= 3
-
-inv_name= bandit_veteran_outfit_name
-inv_name_short= bandit_veteran_outfit_name
-description= bandit_veteran_outfit_description
-inv_weight= 3.5
-inv_grid_width= 2
-inv_grid_height= 3
-inv_grid_x= 22
-inv_grid_y= 29
-full_icon_name= npc_icon_bandit_veteran_outfit
-
-cost= 4800
-slot= 6
-full_scale_icon= 0,6
-
-; NO RESISTANCE
-burn_protection = 0.1
-strike_protection = 0.1
-shock_protection = 0.1
-wound_protection= 0.2
-radiation_protection = 0.0
-telepatic_protection = 0.0
-chemical_burn_protection = 0.05
-explosion_protection = 0.1
-fire_wound_protection = 0.2
-
-immunities_sect= sect_bandit_veteran_outfit_immunities
-
-[sect_bandit_veteran_outfit_immunities]
-burn_immunity= 0.04
-strike_immunity= 0.01
-shock_immunity= 0.04
-wound_immunity= 0.02
-radiation_immunity = 0.00
-telepatic_immunity= 0.00
-chemical_burn_immunity= 0.04
-explosion_immunity= 0.03
-fire_wound_immunity= 0.01
-;==========================================end from Lexx==========================
 
 ;---------------------------------------------------------------------------------------------
 ;”—“¿–≈¬ÿ»≈  Œ—“ﬁÃ€! Õ≈ ﬁ«¿“‹
