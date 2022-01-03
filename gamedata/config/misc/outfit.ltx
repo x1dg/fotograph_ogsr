@@ -19,6 +19,14 @@ ancor_1        			= l_hand
 
 [actor_hud_00]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_stalker
+[actor_hud_00_blue]:actor_hud
+visual = dynamics\weapons\wpn_hand\wpn_hand_stalker_blue
+[actor_hud_loner_sunrise_tigerstripe]:actor_hud
+visual = dynamics\weapons\wpn_hand\wpn_hand_loner_sunrise_tigerstripe
+[actor_hud_loner_sunrise_wolven]:actor_hud
+visual = dynamics\weapons\wpn_hand\wpn_hand_loner_sunrise_wolven
+[actor_hud_merc]:actor_hud
+visual = dynamics\weapons\wpn_hand\wpn_hand_merc
 [actor_hud_01]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_bandit_light
 [actor_hud_02]:actor_hud
@@ -47,8 +55,6 @@ visual = dynamics\weapons\wpn_hand\wpn_hand_ecolog
 visual = dynamics\weapons\wpn_hand\wpn_hand_neutral_assault
 [actor_hud_14]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_monolith_assault
-[actor_hud_15]:actor_hud
-visual = dynamics\weapons\wpn_hand\wpn_hand_novice
 [actor_hud_16]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_military
 [actor_hud_17]:actor_hud
@@ -70,15 +76,15 @@ visual = dynamics\weapons\wpn_hand\wpn_hand_svoboda_heavy
 [actor_hud_25]:actor_hud
 visual = dynamics\weapons\wpn_hand\wpn_hand_protection
 [actor_hud_exo]:actor_hud
-visual = dynamics\weapons\wpn_hand\wpn_hand_exo
+visual 				= dynamics\weapons\wpn_hand\wpn_hand_exo
 [actor_hud_exo_free]:actor_hud
-visual = dynamics\weapons\wpn_hand\wpn_hand_exo_free
+visual 				= dynamics\weapons\wpn_hand\wpn_hand_exo_free
 [actor_hud_exo_dolg]:actor_hud
-visual = dynamics\weapons\wpn_hand\wpn_hand_exo_dolg
+visual 				= dynamics\weapons\wpn_hand\wpn_hand_exo_dolg
 [actor_hud_exo_kill]:actor_hud
-visual = dynamics\weapons\wpn_hand\wpn_hand_exo_kill
+visual 				= dynamics\weapons\wpn_hand\wpn_hand_exo_kill
 [actor_hud_exo_mono]:actor_hud
-visual = dynamics\weapons\wpn_hand\wpn_hand_exo_mono
+visual				= dynamics\weapons\wpn_hand\wpn_hand_exo_mono
 
 [outfit_base]
 ; delete full_scale_iconnext update- obsolete, usefull_icon_name instead !!!
@@ -90,110 +96,6 @@ full_icon_name= npc_icon_without_outfit
 [without_outfit]:outfit_base
 ;базовый костюм сталкера - костюм новичка. Обычная одежда туриста - штормовка+сапоги
 full_scale_icon= 6,6
-
-;---------------------------------------------------------------------------------------------
-;КОСТЮМ НОВИЧКА
-;---------------------------------------------------------------------------------------------
-[novice_outfit]:outfit_base
-GroupControlSection= spawn_group
-discovery_dependency =
-$spawn= "outfit\novice_outfit"
-;$prefetch= 32
-class= E_STLK
-cform= skeleton
-visual= equipments\novice_suit
-actor_visual= actors\hero\stalker_novice.ogf
-
-player_hud_section=actor_hud_15
-
-ef_equipment_type= 3
-
-inv_name= outfit_soldier_name
-inv_name_short= outfit_soldier_name
-description= outfit_soldier_description
-inv_weight= 3.0
-inv_grid_width= 2
-inv_grid_height= 2
-inv_grid_x= 0
-inv_grid_y= 18
-
-full_icon_name= npc_icon_novice_outfit
-
-cost= 1000
-slot= 6
-full_scale_icon= 0,11;иконка сталкера в костюме в полный рост
-
-immunities_sect= sect_novice_outfit_immunities
-
-; NO RESISTANCE
-burn_protection= 0.1
-strike_protection= 0.1
-shock_protection= 0.1
-wound_protection= 0.1
-radiation_protection= 0.0
-telepatic_protection= 0.0
-chemical_burn_protection= 0.1
-explosion_protection= 0.1
-fire_wound_protection= 0.1
-
-bones_koeff_protection = kurtka_mask_damage
-
-[sect_novice_outfit_immunities]
-burn_immunity= 0.04;коэффициенты иммунитета самого костюма
-strike_immunity= 0.01
-shock_immunity= 0.04
-wound_immunity= 0.025
-radiation_immunity= 0.00
-telepatic_immunity= 0.00
-chemical_burn_immunity= 0.04
-explosion_immunity= 0.04
-fire_wound_immunity= 0.015
-
-[novice_outfit_rain_1]:novice_outfit
-visual = equipments\rain_stalker_1_suit
-actor_visual= actors\novice\green_stalker_3.ogf
-
-inv_name= outfit_rain_name
-inv_name_short= outfit_rain_name
-description= outfit_rain_description
-inv_weight= 4.0
-inv_grid_x= 16
-inv_grid_y= 27
-
-full_icon_name= npc_icon_novice_outfit_rain
-
-[novice_outfit_rain_2]:novice_outfit
-visual = equipments\rain_stalker_2_suit
-actor_visual= actors\novice\green_stalker_6.ogf
-
-inv_name= outfit_rain_name
-inv_name_short= outfit_rain_name
-description= outfit_rain_description
-inv_weight= 4.0
-inv_grid_x= 16
-inv_grid_y= 27
-
-full_icon_name= npc_icon_novice_outfit_rain
-
-[novice_outfit_new_1]:novice_outfit
-visual = equipments\novice_new_1_suit
-actor_visual= actors\novice\green_stalker_9.ogf
-
-inv_grid_x= 26
-inv_grid_y= 16
-cost= 1250
-
-full_icon_name= npc_icon_novice_outfit_new_1
-
-[novice_outfit_new_2]:novice_outfit
-visual = equipments\novice_new_2_suit
-actor_visual= actors\novice\green_stalker_5.ogf
-
-inv_grid_x= 22
-inv_grid_y= 16
-cost= 1300
-
-full_icon_name= npc_icon_novice_outfit_new_2
 
 ;---------------------------------------------------------------------------------------------
 ;КОСТЮМ БАНДИТА
@@ -275,9 +177,6 @@ inv_grid_y= 18
 cost= 2380
 full_icon_name= npc_icon_bandit_outfit_blue
 
-;---------------------------------------------------------------------------------------------
-;КОСТЮМ НАЕМНИКА
-;---------------------------------------------------------------------------------------------
 [killer_outfit]:outfit_base
 GroupControlSection= spawn_group
 discovery_dependency =
@@ -684,9 +583,6 @@ chemical_burn_immunity= 0.04
 explosion_immunity= 0.03
 fire_wound_immunity= 0.01
 
-;---------------------------------------------------------------------------------------------
-;КОСТЮМ НЕЙТРАЛЬНОГО СТАЛКЕРА
-;---------------------------------------------------------------------------------------------
 [stalker_outfit]:outfit_base
 GroupControlSection= spawn_group
 discovery_dependency =
@@ -696,8 +592,7 @@ class= E_STLK
 cform= skeleton
 visual= equipments\stalker_suit
 actor_visual= actors\hero\stalker_hood.ogf
-
-player_hud_section= actor_hud_00
+player_hud_section	= actor_hud_00
 
 ef_equipment_type= 3
 
@@ -757,6 +652,7 @@ inv_grid_x= 20
 inv_grid_y= 18
 cost= 13500
 full_icon_name= npc_icon_stalker_outfit_v1
+player_hud_section	= actor_hud_loner_sunrise_wolven
 
 ; LOW RESISTANCE
 burn_protection = 0.5
@@ -782,6 +678,7 @@ inv_grid_x= 20
 inv_grid_y= 21
 cost= 13800
 full_icon_name= npc_icon_stalker_outfit_v2
+player_hud_section	= actor_hud_loner_sunrise_tigerstripe
 
 ; LOW RESISTANCE
 burn_protection = 0.5
@@ -807,6 +704,7 @@ inv_grid_x= 24
 inv_grid_y= 24
 cost= 14200
 full_icon_name= npc_icon_stalker_outfit_v3
+player_hud_section	= actor_hud_merc
 
 nightvision_sect= effector_nightvision_good
 
@@ -1609,50 +1507,7 @@ explosion_immunity= 0.02
 fire_wound_immunity= 0.005
 
 ;=========================================Broken=======================================
-[broken_exoskeleton]:exo_outfit;Модифицированный экзоскелет broken
-$spawn= "outfit\uniq\outfit_exo_m1"
-inv_name= broken_exoskeleton_name
-inv_name_short= broken_exoskeleton_name
-description= broken_exoskeleton_description
-inv_grid_x= 28
-inv_grid_y= 38
 
-visual = equipments\exoskelet
-actor_visual = actors\neytral\stalker_neytral_exoskeleton.ogf
-full_icon_name= npc_icon_broken_exo_outfit
-
-inv_weight= 15.0
-cost= 7500
-
-nightvision_sect= ; destroy
-immunities_sect= sect_broken_exoskeleton_immunities
-; MEDIUM RESISTANCE
-burn_protection = 0.2
-strike_protection = 0.2
-shock_protection = 0.15
-wound_protection= 0.25
-radiation_protection = 0.1
-telepatic_protection = 0.0
-chemical_burn_protection = 0.15
-explosion_protection = 0.0
-fire_wound_protection = 0.25
-
-sprint_allowed= false
-
-additional_inventory_weight= 5
-additional_inventory_weight2 = 5
-
-[sect_broken_exoskeleton_immunities]
-; From exo_outfit v.1.1
-burn_immunity= 0.03
-strike_immunity= 0.01
-shock_immunity= 0.03
-wound_immunity= 0.01
-radiation_immunity = 0.00
-telepatic_immunity= 0.00
-chemical_burn_immunity= 0.03
-explosion_immunity= 0.03
-fire_wound_immunity= 0.005
 
 ;==========================================end exo===================================================
 ;=========================================Scientific outfit==========================================
@@ -1924,64 +1779,6 @@ burn_immunity= 0.04;коэффициенты иммунитета самого костюма
 strike_immunity= 0.01
 shock_immunity= 0.04
 wound_immunity= 0.02
-radiation_immunity = 0.00
-telepatic_immunity= 0.00
-chemical_burn_immunity= 0.04
-explosion_immunity= 0.03
-fire_wound_immunity= 0.01
-
-;===================================From Lexx_antigas_mod=========================
-;====================================Mk1==========================================
-
-[neytral_exo_antigas_outfit]:outfit_base
-GroupControlSection= spawn_group
-discovery_dependency =
-$spawn = "outfit\exo_outfit"
-$prefetch = 32
-class= E_STLK
-cform = skeleton
-visual = equipments\exoskelet
-actor_visual= actors\neytral\stalker_neytral_exoskeleton.ogf
-
-ef_equipment_type= 5
-
-inv_name= neytral_exo_antigas_outfit_name
-inv_name_short= neytral_exo_antigas_outfit_name
-description= neytral_exo_antigas_outfit_description
-inv_weight= 12.0
-slot= 6
-inv_grid_width= 2
-inv_grid_height= 3
-inv_grid_x= 14
-inv_grid_y= 29
-full_icon_name= npc_icon_neytral_exo_antigas_outfit
-nightvision_sect=
-
-cost= 48000
-full_scale_icon= 2,11
-immunities_sect= sect_neytral_exo_antigas_outfit_immunities
-
-; MEDIUM RESISTANCE
-burn_protection = 0.25
-strike_protection = 0.3
-shock_protection = 0.25
-wound_protection= 0.3
-radiation_protection = 0.15
-telepatic_protection = 0.0
-chemical_burn_protection = 0.25
-explosion_protection = 0.3
-fire_wound_protection = 0.3
-
-sprint_allowed= false
-bones_koeff_protection= exo_helmet_damage
-additional_inventory_weight= 5
-additional_inventory_weight2 = 5
-
-[sect_neytral_exo_antigas_outfit_immunities]
-burn_immunity= 0.03
-strike_immunity= 0.01
-shock_immunity= 0.03
-wound_immunity= 0.015
 radiation_immunity = 0.00
 telepatic_immunity= 0.00
 chemical_burn_immunity= 0.04

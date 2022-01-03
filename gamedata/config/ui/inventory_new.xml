@@ -114,7 +114,7 @@
 			unlimited="1" group_similar="1" condition_progress_bar="1"/>
 
 	<!-- Слот костюма -->
-    <dragdrop_outfit x="9" y="298" width="100" height="150" custom_placement="0"
+	 <dragdrop_outfit x="23" y="298" width="50" height="145" custom_placement="0"
             cell_width="50" cell_height="50" rows_num="3" cols_num="2"
             virtual_cells="1" vc_vert_align="c" vc_horiz_align="c"
 			condition_progress_bar="0" a="0"/>
