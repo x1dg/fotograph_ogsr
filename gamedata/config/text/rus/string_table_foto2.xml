@@ -15,6 +15,9 @@
 				<string id="msssl3">
 		<text>Поговорить с мутантом (J)</text>
 	</string>
+					<string id="msssl4">
+		<text>Чёрт, надо быстрее идти к Сидоровичу, чувствую тварь меня не отпустит</text>
+	</string>
 		<string id="usa_box_pivo">
 		<text>Украсть пиво</text>
 	</string>
@@ -85,5 +88,7 @@
 		<text>Ловец</text>
 	</string>
 	
-	
+	<string id="fotograph_bloknot">
+		<text>Записная книжка</text>
+	</string>
 </string_table>

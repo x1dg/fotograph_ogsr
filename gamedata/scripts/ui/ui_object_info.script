@@ -13,9 +13,10 @@ function get_info()
 		local xml = CScriptXmlInit()
 		xml:ParseFile("ui_custom_msgs.xml")
 		cs = hud:GetCustomStatic("obj_info")
-		local w = cs:wnd()
-		local text = obj:name()
-		cs:wnd():SetText(text)
+		cs:wnd():SetText(obj:name())
+		local visual = obj:get_visual_name()
+		cs2 = hud:GetCustomStatic("obj_info")
+		cs2:wnd():SetText("visual: "..visual)
 		wait()
 	end
 end
@@ -35,5 +36,8 @@ function cs_remove()
 	local cs = hud and hud:GetCustomStatic("obj_info")
 	if (cs) then
 		hud:RemoveCustomStatic("obj_info")
+	end
+	if (cs2) then
+		hud:RemoveCustomStatic("obj_visual")
 	end
 end

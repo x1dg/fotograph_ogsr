@@ -29,6 +29,10 @@
 			<msl_gg_3 x="410" y="688" width="350" height="18">
 		<text font="letterica16" r="255" g=" 128" b=" 64" complex_mode="1">msssl3</text>
 	</msl_gg_3>
+	
+				<msl_gg_4 x="410" y="688" width="350" height="18">
+		<text font="letterica16" r="255" g=" 128" b=" 64" complex_mode="1">msssl4</text>
+	</msl_gg_4>
 
 	<!-- Часы на миникарте -->
     <hud_show_time  x="-26" y="12" width="98" height="19" complex_mode="1">
@@ -50,6 +54,12 @@
 		<texture>ui_hud_frame_task</texture>
 		<text font="letterica18" color="hud_main_task" align="c" vert_align="c"/>
 	</obj_info>
+	
+		<!-- Инфа о объекте -->
+	<obj_visual x="358" y="142" width="308.8" height="52" complex_mode="1" stretch="1" light_anim="buy_menu_info" la_cyclic="0" la_texture="1" la_text="1" la_alpha="1">
+		<texture>ui_hud_frame_task</texture>
+		<text font="letterica18" color="hud_main_task" align="c" vert_align="c"/>
+	</obj_visual>
 	
 	<!-- Активация функций -->
 	<func_task  x="358" y="80" width="308.8" height="52" stretch="1" light_anim="buy_menu_info" la_cyclic="0" la_texture="1" la_text="1" la_alpha="1" ttl="5">

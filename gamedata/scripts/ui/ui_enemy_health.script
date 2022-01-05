@@ -12,7 +12,7 @@ local progress = nil
 local hide = 0
 local hud = get_hud()
 --------------------------------------------------------------------------------------------------
--- Г­ГҐ ГЁГ±ГЇГ®Г«ГјГ§ГіГҐГІГ±Гї
+
 function IsHelicopter(object, class_id)
     local id = class_id or get_clsid (object)
     if id == clsid.helicopter or id == clsid.script_heli then
@@ -48,7 +48,7 @@ function on_hit(obj, amount, local_direction, who, bone_index)
 				text = text.." ["..game.translate_string(community).."]"
 			end
 		elseif (IsMonster(nil,cls)) then
-			text = game.translate_string(get_string( obj:section(), "mutant_name" ))
+			text = "Мутант"
 		elseif (IsHelicopter(nil,cls)) then
 			text = "Вертолет"
 		else

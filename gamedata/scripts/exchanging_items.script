@@ -528,7 +528,7 @@ local exchanging_items_phr_12 = "Дело твое."
 
 function init_exchanging_items_dialog(dlg)
 	local intro_phrase = exchanging_items_intro_phrase[math.random(1, table.getn(exchanging_items_intro_phrase))]
-    phr0 = dlg:AddPhrase(intro_phrase, "0", "-1", -10000)
+    phr0 = dlg:AddPhrase(intro_phrase, "0", "", -10000)
 	phr1 = dlg:AddPhrase(exchanging_items_phr_1, "1", "0", -10000)
 	phr1:GetPhraseScript():AddAction("exchanging_items.give_message_proposed_items")
 	phr3 = dlg:AddPhrase(exchanging_items_phr_3, "3", "1", -10000)

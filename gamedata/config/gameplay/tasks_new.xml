@@ -54,7 +54,7 @@
 			<infoportion_complete>new_portion_kkvest6_kvest_f</infoportion_complete>
 		</objective>
 		<objective>
-			<text>Договориться с алкашём</text>
+			<text>Договориться с алкашом</text>
 							<map_location_type hint="Алкаш">blue_location</map_location_type>
                 <object_story_id>alkash</object_story_id>
 		</objective>
