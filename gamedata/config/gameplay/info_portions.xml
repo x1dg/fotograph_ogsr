@@ -195,8 +195,22 @@
 									<task>zap_kvest_16</task>
 			   </info_portion>
 			   
+			   	<info_portion id="zap_kvest_16_p">
+			   </info_portion>
+			   
 			   	<info_portion id="zap_kvest_15_fail">
 									<action>new_quest.kill_actor</action>
+			   </info_portion>
+			   
+			   			   	<info_portion id="zap_kvest_16_f">
+			   </info_portion>
+			   
+			   			   	<info_portion id="tp_pehera">
+			   </info_portion>
+			   
+			   			   			   	<info_portion id="tp_pehera2">
+									<action>new_quest.tel_2</action>
+																		<action>new_quest.dis_tp_pehera</action>
 			   </info_portion>
 			   
 </game_information_portions>

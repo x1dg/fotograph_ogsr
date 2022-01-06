@@ -3,9 +3,6 @@
 <window>
 	<!-- Диалоговое окно -->
 	<top_background x="273" y="0">
-		<auto_static x="10" y="724" width="457" height="36" stretch="1">
-			<texture color="talk_pane">ui\seq\ui_dialog_pane</texture>
-		</auto_static>
 		<auto_static width="475.2" height="760" stretch="1">
 			<texture>ui_talk_dialogue</texture>
 		</auto_static>
@@ -19,13 +16,13 @@
 	<right_character_icon x="-2000"/>
 	
 	<!-- Кнопка "Торговать" -->
-	<button x="390" y="731" width="243" height="24" highlight_text="1" accel="kX">
+	<button x="492" y="729.5" width="243" height="24" highlight_text="1" accel="kX">
         <texture>ui_talk_button</texture>
 		<text align="c"	font="letterica18">ui_st_trade</text>
         <text_color>
-			<e color="grey_3"/>
-			<t color="grey_1"/>
-			<d color="transparent"/>
+			<e color="white_1"/>
+			<t color="white_1"/>
+			<d color="white_1"/>
 			<h color="white_1"/>
 		</text_color>
 	</button>
@@ -60,22 +57,22 @@
 	</question_item>
 	
 	<!-- ГГ: имя и реплика -->
-	<actor_answer_item x="0" y="0" width="418" height="40" min_height="13" bottom_footer="10">
-		<name_caption x="0" y="0" width="410" height="10">
+	<actor_answer_item x="13" y="0" width="418" height="40" min_height="13" bottom_footer="10">
+		<name_caption x="13" y="0" width="410" height="10">
 			<text font="graffiti22" color="talk_log_heroname" complex_mode="0"/>
 		</name_caption>
-		<content_text x="20" y="22" width="390" height="40" complex_mode="1">
+		<content_text x="33" y="22" width="390" height="40" complex_mode="1">
 			<text font="letterica18" color="talk_log_heroreplica"/>
 		</content_text>
 	</actor_answer_item>
 
 	<!-- ГГ: имя, реплика и значок сообщения -->
-	<iconed_answer_item x="0" y="0" width="418" height="40" min_height="30" bottom_footer="5">
-		<name_caption x="0" y="0" width="0" height="0"/>
-		<content_text x="67" y="0" width="390" height="40" complex_mode="1">
+	<iconed_answer_item x="13" y="0" width="418" height="40" min_height="30" bottom_footer="5">
+		<name_caption x="13" y="0" width="0" height="0"/>
+		<content_text x="70" y="0" width="390" height="40" complex_mode="1">
 			<text font="letterica16" color="talk_log_npcreplica"/> <!-- ! -->
 		</content_text>
-		<msg_icon x="20" y="3" width="38.2" height="29" stretch="1">
+		<msg_icon x="33" y="3" width="38.2" height="29" stretch="1">
 		</msg_icon>
 	</iconed_answer_item>
 

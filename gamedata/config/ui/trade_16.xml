@@ -41,7 +41,7 @@
 
 	<!-- ГГ: панель "продать", сумма денег, сетка инвентаря-->
 	<our_bag_static x="510" y="222" width="369" height="506" always_show_scroll="1">
-		<text x="143" y="47" font="letterica18" color="black_4" align="c">st_ui_sell</text>
+		<text x="143" y="47" font="letterica18" color="black_4" align="c"></text>
 	</our_bag_static>
 
 	<our_money_static x="121" y="-126" width="119" height="46">
@@ -54,7 +54,7 @@
 
 	<!-- НПС: панель "продать", сумма денег, сетка инвентаря-->
 	<others_bag_static x="134" y="222" width="372" height="506" stretch="1" always_show_scroll="1">
-		<text x="137" y="47" font="letterica18" color="black_4" align="c">st_ui_buy</text>
+		<text x="137" y="47" font="letterica18" color="black_4" align="c"></text>
 	</others_bag_static>
 
 	<other_money_static x="117" y="-126" width="119" height="46">
@@ -106,27 +106,27 @@
 	<desc_static/>
 
 	<!-- Торговать -->
-	<button x="265" y="738" width="240" height="24" accel="kSPACE" highlight_text="1">
+	<button x="128" y="743" width="240" height="24" accel="kSPACE" highlight_text="1">
         <texture>ui_big_inventory_button</texture>
 		<sound_t>interface\inv_money</sound_t>
         <text font="graffiti22" color="grey_5" align="c">ui_st_trade</text>
 		<text_color>
 			<e color="white_1"/>
-			<t color="grey_2"/>
-			<d color="grey_2"/>
-			<h color="black_1"/>
+			<t color="white_1"/>
+			<d color="white_1"/>
+			<h color="white_1"/>
 		</text_color>
 	</button>
 
 	<!-- Уйти -->
-    <button x="514" y="738" width="240" height="24" accel="kX" highlight_text="1">
+    <button x="652.5" y="743" width="240" height="24" accel="kX" highlight_text="1">
         <texture>ui_big_inventory_button</texture>
         <text font="graffiti22" color="grey_5" align="c">ui_st_leave</text>
 		<text_color>
 			<e color="white_1"/>
-			<t color="grey_2"/>
-			<d color="grey_2"/>
-			<h color="black_1"/>
+			<t color="white_1"/>
+			<d color="white_1"/>
+			<h color="white_1"/>
 		</text_color>
     </button>
 </window>

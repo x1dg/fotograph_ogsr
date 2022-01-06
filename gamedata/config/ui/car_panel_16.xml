@@ -8,9 +8,9 @@
 	</car_health_static>
 
 	<!-- Шкала состояния автомобиля -->
-	<car_health_progress_bar x="1.5" y="2" width="103.4" height="2" stretch="1" horz="1" min="0" max="100" pos="0">
+	<car_health_progress_bar x="1.5" y="2" width="100" height="2" stretch="1" horz="1" min="0" max="100" pos="0">
 		<progress>
-			<texture color="hud_scale_car">ui_hud_shk_car</texture>
+			<texture>ui_hud_shk_car</texture>
 		</progress>
 	</car_health_progress_bar>
 	

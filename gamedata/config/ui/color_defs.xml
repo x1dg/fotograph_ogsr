@@ -105,9 +105,9 @@
 
 	<color name="talk_question_e"		r="192" g="192" b="192"/>			<!-- диалог: вопрос гг обычный -->
 	<color name="talk_question_h"		r="255" g="255" b="255"/>			<!-- диалог: вопрос гг подсвеченный -->
-	<color name="talk_question_t"		r="24" g="192" b="192"/>			<!-- диалог: вопрос гг активный -->
-	<color name="talk_log_heroname"		r="96" g="192" b="192"/>			<!-- диалог: имя гг -->
-	<color name="talk_log_heroreplica"	r="96" g="192" b="192"/>			<!-- диалог: реплика гг -->
+	<color name="talk_question_t"		r="128" g="128" b="128"/>			<!-- диалог: вопрос гг активный -->
+	<color name="talk_log_heroname"		r="133" g="133" b="133"/>			<!-- диалог: имя гг -->
+	<color name="talk_log_heroreplica"	r="133" g="133" b="133"/>			<!-- диалог: реплика гг -->
 	<color name="talk_log_npcname"		r="192" g="192" b="192"/>			<!-- диалог: имя нпс-->
 	<color name="talk_log_npcreplica"	r="192" g="192" b="192"/>			<!-- диалог: реплика нпс -->
 	<color name="talk_log_npc_iconed"	r="150" g="150" b="150"/>			<!-- диалог: реплика нпс с контекстом -->

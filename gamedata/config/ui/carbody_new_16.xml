@@ -26,7 +26,7 @@
 	<top_background x="128" y="0" width="767.6" height="768" stretch="1">
 		<texture>ui_trade_wnd</texture>
 	</top_background>
-	<bottom_background x="763" y="736" width="126" height="27" stretch="1">
+	<bottom_background x="511" y="741" width="126" height="27" stretch="1">
 		<texture>ui_weight_wnd</texture>
 	</bottom_background>
 
@@ -38,7 +38,7 @@
 
 	<!-- Рюкзак ГГ -->
 	<our_bag_static x="517" y="130" width="372" height="600" always_show_scroll="1">
-		<text x="297" y="611" font="letterica16" color="white_1" complex_mode="1"/>
+		<text x="20" y="618" font="letterica16" color="white_1" complex_mode="1"/>
 		<texture/>
 	</our_bag_static>
 
@@ -82,7 +82,7 @@
     </money_static>
 
 	<!-- Единица массы -->
-	<auto_static x="872" y="741" width="48" height="30">
+	<auto_static x="613" y="747" width="48" height="30">
 		<text font="letterica16" color="inv_kg">st_ui_kg</text>
 	</auto_static>
 
@@ -90,27 +90,27 @@
     <descr_static/>
 
 	<!-- Взять все -->
-	<take_all_btn x="265" y="738" width="240" height="24" accel="kX" highlight_text="1">
+	<take_all_btn x="128" y="743" width="240" height="24" accel="kX" highlight_text="1">
         <texture>ui_big_inventory_button</texture>
 		<sound_t>interface\inv_take</sound_t>
-        <text font="graffiti22" color="grey_5" align="c">ui_st_take_all</text>
+        <text y="1" font="graffiti22" color="grey_5" align="c">ui_st_take_all</text>
 		<text_color>
 			<e color="white_1"/>
-			<t color="grey_2"/>
-			<d color="grey_2"/>
-			<h color="black_1"/>
+			<t color="white_1"/>
+			<d color="white_1"/>
+			<h color="white_1"/>
 		</text_color>
 	</take_all_btn>
 
 	<!-- Выход -->
-    <exit_button x="514" y="738" width="240" height="24" highlight_text="1">
+    <exit_button x="652.5" y="743" width="240" height="24" highlight_text="1">
         <texture>ui_big_inventory_button</texture>
-        <text font="graffiti22" color="grey_5" align="c">ui_inv_exit</text>
+        <text y="1" font="graffiti22" color="grey_5" align="c">ui_inv_exit</text>
 		<text_color>
 			<e color="white_1"/>
-			<t color="grey_2"/>
-			<d color="grey_2"/>
-			<h color="black_1"/>
+			<t color="white_1"/>
+			<d color="white_1"/>
+			<h color="white_1"/>
 		</text_color>
     </exit_button>
 

@@ -82,6 +82,8 @@
 			ammo_12x70_buck \n
     </supplies>
 	
+	<start_dialog>dial_mar_1_kont</start_dialog>
+	
 	</specific_character>
 	
 			<specific_character id="mar_2_kontr" team_default = "1">
@@ -131,6 +133,8 @@
 			wpn_toz34 \n
 			ammo_12x70_buck \n
     </supplies>
+	
+	<actor_dialog>stepa_dial1</actor_dialog>
 	
 	</specific_character>
 

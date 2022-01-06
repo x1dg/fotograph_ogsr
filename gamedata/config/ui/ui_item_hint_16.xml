@@ -3,7 +3,7 @@
 <main>
 	<description x="0" y="0" width="242" height="768">
 		<item_pane x="2" y="2" width="235.3" height="36" stretch="1">
-			<texture color="inv_hint_pane">ui\seq\ui_hint_pane</texture>
+			<texture color="inv_hint_pane"></texture>
 		</item_pane>
 
 		<item_line x="8" y="62" width="223.3" height="1" stretch="1">
