@@ -55,12 +55,6 @@
 		<text font="letterica18" color="hud_main_task" align="c" vert_align="c"/>
 	</obj_info>
 	
-		<!-- Инфа о объекте -->
-	<obj_visual x="358" y="142" width="308.8" height="52" complex_mode="1" stretch="1" light_anim="buy_menu_info" la_cyclic="0" la_texture="1" la_text="1" la_alpha="1">
-		<texture>ui_hud_frame_task</texture>
-		<text font="letterica18" color="hud_main_task" align="c" vert_align="c"/>
-	</obj_visual>
-	
 	<!-- Активация функций -->
 	<func_task  x="358" y="80" width="308.8" height="52" stretch="1" light_anim="buy_menu_info" la_cyclic="0" la_texture="1" la_text="1" la_alpha="1" ttl="5">
 		<texture>ui_hud_frame_task</texture>

@@ -120,5 +120,5 @@ function update()
 	ui_loader_trade.update()
 	ui_loader_hud.update()
 	ui_loader_pda.update()
-	--ui_object_info.get_info()
+	ui_object_info.get_info()
 end

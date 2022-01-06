@@ -13,10 +13,7 @@ function get_info()
 		local xml = CScriptXmlInit()
 		xml:ParseFile("ui_custom_msgs.xml")
 		cs = hud:GetCustomStatic("obj_info")
-		cs:wnd():SetText(obj:name())
-		local visual = obj:get_visual_name()
-		cs2 = hud:GetCustomStatic("obj_info")
-		cs2:wnd():SetText("visual: "..visual)
+		cs:wnd():SetText(obj:name().." \n"..obj:get_visual_name())
 		wait()
 	end
 end
