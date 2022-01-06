@@ -59,6 +59,22 @@
 											<Static17 x="20" y="176" width="204" height="19" stretch="1">
             <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Только не задерживайся. Отложи все свои задания на потом. И главное, никому не говори об этой ситуации. Если ты только заикнёшься, у тебя мозги вскипят.</text>
         </Static17>
+											<Static18 x="20" y="76" width="204" height="19" stretch="1">
+            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Умничка. Ты все сделал правильно, не переживай. Здесь война, здесь либо ты, либо тебя.</text>
+        </Static18>
+													<Static19 x="20" y="76" width="204" height="19" stretch="1">
+            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">А как же репортаж? Не будешь меня фоткать? Я специально надел свой самый красивый плащ.</text>
+        </Static19>
+															<Static20 x="20" y="76" width="204" height="19" stretch="1">
+            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Я и не собирался их тебе давать. Я про них, так, для красного словца вставил.</text>
+        </Static20>
+																	<Static21 x="20" y="76" width="204" height="19" stretch="1">
+            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Ладно не ворчи. У меня для тебя есть полезная инфа. Миротворцы, на которых ты работаешь, тебя воспринимают как расходный материал. Если ты узнаешь какие-то серьезные тайны, пойдешь в расход. Тебя просто утилизируют как перестанешь быть полезен.
+</text>
+        </Static21>
+																	<Static22 x="20" y="76" width="204" height="19" stretch="1">
+            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Не верь. Просто оглядывайся чаще. И всё, ты меня утомил. До свидания! Ещё увидимся!</text>
+        </Static22>
 										        <button9 x="152" y="470" width="117" height="29">
             <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Каких людей?</text>
         </button9>
@@ -71,5 +87,20 @@
 																        <button12 x="152" y="470" width="117" height="29">
             <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Я могу идти?</text>
         </button12>
+																		        <button13 x="152" y="470" width="117" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">С этим как-нибудь сам разберусь. Я могу быть свободен?</text>
+        </button13>
+																				        <button14 x="152" y="470" width="117" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Не буду. Я просто хочу свалить отсюда. Даже артов не надо.</text>
+        </button14>
+																				        <button15 x="152" y="470" width="117" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Ах какая неожиданность!</text>
+        </button15>
+																						        <button16 x="152" y="470" width="117" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Ты только что сознался в обмане. С чего бы мне верить тебе сейчас?</text>
+        </button16>
+																								        <button17 x="152" y="470" width="117" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Угу</text>
+        </button17>
     </Static1>
 </kontr_1>

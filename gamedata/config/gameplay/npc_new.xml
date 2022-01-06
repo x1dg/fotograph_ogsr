@@ -8,14 +8,20 @@
 		<character id="zomb_1">
 		<class>zomb_1</class>
 	</character>
-			<character id="mar_1_kontr">
+				<character id="mar_1_kontr">
 		<class>mar_1_kontr</class>
+	</character>
+			<character id="mar_1_kont_zomb">
+		<class>mar_1_kont_zomb</class>
 	</character>
 				<character id="mar_2_kontr">
 		<class>mar_2_kontr</class>
 	</character>
 				<character id="mar_3_kontr">
 		<class>mar_3_kontr</class>
+	</character>
+					<character id="mar_3_kont_zomb">
+		<class>mar_3_kont_zomb</class>
 	</character>
 	<character id="stalker_freind_one">
 		<class>stalker_freind_one</class>

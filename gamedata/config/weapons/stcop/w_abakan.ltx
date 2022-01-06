@@ -7,6 +7,7 @@ scheduled				= off
 cform					= skeleton
 class					= WP_AK74
 description				= st_wpn_abakan_descr
+hidden_bones 			= s_1p78,s_1pn34,s_ekp,s_kobra,s_okp,ak_d_30,ak_d_45,ak_r_45
 
 scope_names 				= 1p78,kobra,wpn_addon_scope
 scope_respawn_1p78	= wpn_abakan_1p78
@@ -264,6 +265,7 @@ alt_ofs_rot_z			= 0
 $spawn             			= "weapons\wpn_abakan_kobra"
 hud					= wpn_abakan_kobra_hud
 visual					= dynamics\weapons\wpn_abakan\wpn_abakan_kobra.ogf
+hidden_bones 		= s_1p78,s_1pn34,s_ekp,s_okp,wpn_scope,ak_d_30,ak_d_45,ak_r_45
 scope_x					= 70
 scope_y					= 7
 
@@ -272,7 +274,7 @@ ignore_scope_texture	= true
 scope_name 				= kobra
 
 [wpn_abakan_kobra_hud]:wpn_abakan_hud
-item_visual                		= dynamics\weapons\wpn_abakan\wpn_abakan_kobra_hud.ogf
+item_visual                		= dynamics\weapons\wpn_abakan\wpn_abakan_hud.ogf
 
 anm_shots               = lancew_an94_shoot, shoot
 anm_idle_aim           	= lancew_an94_idle_aim, idle_aim
@@ -287,15 +289,20 @@ aim_hud_offset_rot_16x9				= -0.048437,-0.020875,0.000375
 $spawn             			= "weapons\wpn_abakan_1p78"
 hud					= wpn_abakan_1p78_hud
 visual					= dynamics\weapons\wpn_abakan\wpn_abakan_1p78.ogf
-scope_x					= 58
-scope_y					= -5
+hidden_bones 		= s_1pn34,s_ekp,s_kobra,s_okp,wpn_scope,ak_d_30,ak_d_45,ak_r_45
+scope_x                     = 81		; offset in inventory icon
+scope_y                     = 0
 
 scope_respawn 			= wpn_abakan
-ignore_scope_texture	= true
 scope_name 				= 1p78
+scope_zoom_factor			= 45
+
+scope_lense_fov_factor	= 24  
+scope_inertion_factor   = 5
+scope_dynamic_zoom = false
 
 [wpn_abakan_1p78_hud]:wpn_abakan_hud
-item_visual                		= dynamics\weapons\wpn_abakan\wpn_abakan_1p78_hud.ogf
+item_visual                		= dynamics\weapons\wpn_abakan\wpn_abakan_hud.ogf
 
 anm_shots_when_aim               	= abakan_shoot_scope
 anm_shots_w_gl_when_aim          	= abakan_shoot_scope_w_gl
@@ -317,6 +324,11 @@ scope_y					= 2
 scope_respawn 			= wpn_abakan
 ignore_scope_texture	= true
 scope_name 				= wpn_addon_scope
+scope_zoom_factor			= 45
+
+scope_lense_fov_factor	= 24  
+scope_inertion_factor   = 5
+scope_dynamic_zoom = false
 
 [wpn_abakan_wpn_addon_scope_hud]:wpn_abakan_hud
 anm_shots_when_aim               	= abakan_shoot_scope
@@ -326,7 +338,7 @@ anm_shots               = lancew_an94_shoot, shoot
 anm_idle_aim           	= lancew_an94_idle_aim, idle_aim
 anm_shots_w_gl          = lancew_an94_shoot_w_gl, shoot
 anm_idle_aim_w_gl   	= lancew_an94_idle_aim_w_gl, idle_aim
-aim_hud_offset_pos		= -0.094400,0.045500,-0.134500
+aim_hud_offset_pos		= -0.083900,0.056000,-0.203500
 aim_hud_offset_rot		= 0.018000,0.000400,-0.029000
-aim_hud_offset_pos_16x9				= -0.094400,0.045500,-0.134500
+aim_hud_offset_pos_16x9				= -0.083900,0.056000,-0.203500
 aim_hud_offset_rot_16x9				= 0.018000,0.000400,-0.029000

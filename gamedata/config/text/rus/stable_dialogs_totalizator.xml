@@ -60,6 +60,18 @@
     <string id="alka_dial2_9">
         <text>Получается согласен. Ты ещё тысячу вопросов задашь или может быть я всё-таки пойду собираться?</text>
     </string>
+    <string id="dial_mar_1_kont2_0">
+        <text>Расскажи о себе.</text>
+    </string>
+    <string id="dial_mar_1_kont2_1">
+        <text>Давай дела делать, а не разговоры разговаривать.</text>
+    </string>
+    <string id="dial_mar_1_kont2_2">
+        <text>Понятно, ладно, надо идти в другой зал, пошли?</text>
+    </string>
+    <string id="dial_mar_1_kont2_3">
+        <text>Пошли, что поделаешь.</text>
+    </string>
     <string id="dial_mar_1_kont_0">
         <text>Это кто у нас тут нарисовался? Заблудился?</text>
     </string>

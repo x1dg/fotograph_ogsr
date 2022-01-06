@@ -469,9 +469,9 @@
         <text font="graffiti22" color="grey_5" align="c">ui_inv_exit</text>
 		<text_color>
 			<e color="white_1"/>
-			<t color="grey_2"/>
-			<d color="grey_2"/>
-			<h color="black_1"/>
+			<t color="white_1"/>
+			<d color="white_1"/>
+			<h color="white_1"/>
 		</text_color>
     </exit_button>
 

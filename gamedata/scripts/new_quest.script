@@ -102,7 +102,6 @@ if ( xr_conditions.actor_in_zone(nil,nil,{"space_konler_1"})) then
 
 local st = get_hud():GetCustomStatic("msl_gg_3") or get_hud():AddCustomStatic("msl_gg_3",true)
 	st.m_endTime = time_global()/1000 + 1
-				dik_quest2.update()
 
 end
 end
@@ -118,6 +117,19 @@ a.y = 16,99
 a.z = 236,36
 db.actor:set_actor_position(a)
 olr_func.play_sound([[crystal_zones\horror]])
+end
+
+function tel_2()
+local a = vector()
+a.x = -262,06
+a.y = 20,40
+a.z = 263,59
+db.actor:set_actor_position(a)
+end
+
+function dis_tp_pehera()
+db.actor:disable_info_portion("tp_pehera2")
+tel_2()
 end
 
 function script16()
@@ -138,11 +150,100 @@ local cactor = level.object_by_id(sactor.id)
 cactor:give_game_news("%c[0,128,128,128]SMS: Потапов\\n%c[0,255,255,255]Слышь, фотограф, забирай своего друга, он задалбал уже бухать за мой счёт! Найдёшь его в гараже у Марио.", "ui_iconsNpc_stalker_bandit_borov", Frect():set(249,893,83,47), math.random(200, 500), 8000)
 end
 
+function script19()
+start_game_timer(1, "new_quest.script20")
+start_game_timer(53, "new_quest.script21")
+olr_func.play_sound([[monsters\controller\controller_presence_r]])
+olr_func.play_sound([[monsters\controller\controller_presence_l]])
+end
+
+function script20()
+level.add_cam_effector2("camera_effects\\new_anim_pehera1.anm", 999, false, "")
+db.actor:disable_info_portion("tp_pehera")
+del_mar11()
+del_mar22()
+level.disable_input()
+level.hide_indicators()
+db.actor:hide_weapon()
+end
+
+function script21()
+level.enable_input()
+level.show_indicators()
+db.actor:restore_weapon()
+off3()
+off4()
+local a = vector()
+a.x = -264,90
+a.y = 17,18
+a.z = 232,72
+db.actor:set_actor_position(a)
+local st = get_hud():GetCustomStatic("msl_gg_6") or get_hud():AddCustomStatic("msl_gg_6",true)
+	st.m_endTime = time_global()/1000 + 8
+db.actor:give_info_portion("zap_kvest_17_spawn")
+db.actor:set_character_community("zombied", 0, 0)
+end
+
+function script22()
+olr_func.play_sound([[ambient\gluki\gluki_15]])
+kontr_1.kontr_11_start()
+end
+
+function script23()
+db.actor:give_info_portion("final_alternative_2_s")
+db.actor:disable_info_portion("zap_kvest_14_s")
+local st = get_hud():GetCustomStatic("msl_gg_7") or get_hud():AddCustomStatic("msl_gg_7",true)
+	st.m_endTime = time_global()/1000 + 8
+end
+
+function script24()
+	news_manager.send_tip(db.actor,"Я все слышу, не забывай об этом!",nil,nil,30000)
+end
+
 --оффлайны--
 
 function off1()
  
 local npc = alife():story_object(9116)
+ 
+if npc then
+ 
+alife():set_switch_offline (npc.id, true)
+alife():set_switch_online (npc.id, false)
+alife():set_interactive (npc.id, false)
+ 
+end
+end
+
+function del_kontr1()
+ 
+local npc = alife():story_object(9118)
+ 
+if npc then
+ 
+alife():set_switch_offline (npc.id, true)
+alife():set_switch_online (npc.id, false)
+alife():set_interactive (npc.id, false)
+ 
+end
+end
+
+function off3()
+ 
+local npc = alife():story_object(9127)
+ 
+if npc then
+ 
+alife():set_switch_offline (npc.id, true)
+alife():set_switch_online (npc.id, false)
+alife():set_interactive (npc.id, false)
+ 
+end
+end
+
+function off4()
+ 
+local npc = alife():story_object(9128)
  
 if npc then
  
@@ -167,6 +268,45 @@ alife():set_interactive (npc.id, true)
 end
 end
 
+function on2()
+ 
+local npc = alife():story_object(9118)
+ 
+if npc then
+ 
+alife():set_switch_offline (npc.id, false)
+alife():set_switch_online (npc.id, true)
+alife():set_interactive (npc.id, true)
+ 
+end
+end
+
+function on3()
+ 
+local npc = alife():story_object(9127)
+ 
+if npc then
+ 
+alife():set_switch_offline (npc.id, false)
+alife():set_switch_online (npc.id, true)
+alife():set_interactive (npc.id, true)
+ 
+end
+end
+
+function on4()
+ 
+local npc = alife():story_object(9128)
+ 
+if npc then
+ 
+alife():set_switch_offline (npc.id, false)
+alife():set_switch_online (npc.id, true)
+alife():set_interactive (npc.id, true)
+ 
+end
+end
+
 --удалялки--
 function del_polen_ihek()
 local sim = alife()
@@ -179,6 +319,58 @@ end
 function del_2()
 local sim = alife()
 local se_obj = sim:story_object(9114)
+if se_obj then
+sim:release(se_obj, true)
+end
+end
+
+function del_zomb1()
+local sim = alife()
+local se_obj = sim:story_object(9122)
+if se_obj then
+sim:release(se_obj, true)
+end
+end
+
+function del_zomb2()
+local sim = alife()
+local se_obj = sim:story_object(9123)
+if se_obj then
+sim:release(se_obj, true)
+end
+end
+
+function del_mar1()
+local sim = alife()
+local se_obj = sim:story_object(9119)
+if se_obj then
+sim:release(se_obj, true)
+end
+end
+
+function zaglyxa1()
+start_real_timer(1, "new_quest.del_mar2")
+end
+
+function del_mar2()
+local sim = alife()
+local se_obj = sim:story_object(9124)
+if se_obj then
+sim:release(se_obj, true)
+end
+end
+
+function del_mar11()
+local sim = alife()
+local se_obj = sim:story_object(9125)
+if se_obj then
+sim:release(se_obj, true)
+end
+end
+
+function del_mar22()
+local sim = alife()
+local se_obj = sim:story_object(9126)
 if se_obj then
 sim:release(se_obj, true)
 end

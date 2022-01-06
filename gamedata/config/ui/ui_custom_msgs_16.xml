@@ -34,6 +34,14 @@
 		<text font="graffiti22" r="255" g=" 128" b=" 64" complex_mode="1">msssl4</text>
 	</msl_gg_4>
 
+		<msl_gg_6 x="440" y="153" width="350" height="18">
+		<text font="graffiti22" r="255" g=" 128" b=" 64" complex_mode="1">msssl6</text>
+	</msl_gg_6>
+	
+			<msl_gg_7 x="440" y="153" width="350" height="18">
+		<text font="graffiti22" r="255" g=" 128" b=" 64" complex_mode="1">msssl7</text>
+	</msl_gg_7>
+
 	<!-- Часы на миникарте -->
     <hud_show_time  x="-26" y="12" width="98" height="19" complex_mode="1">
        <text align="c" font="letterica16" color="hud_game_time"/>
