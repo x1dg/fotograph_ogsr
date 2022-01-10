@@ -29,3 +29,13 @@ function on_item_drop(item)
 		--dbg.log("anomaly[%s] disabled", obj:name())		
 	end
 end
+
+function on_item_drop2()
+	local anoms = get_anoms(db.actor, radius)
+	if table.getn(anoms) == 0 then
+		return
+	end
+	for i, obj in ipairs(anoms) do
+		obj:disable_anomaly()		
+	end
+end

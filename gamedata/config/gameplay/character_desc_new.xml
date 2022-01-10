@@ -59,6 +59,33 @@
 	
 <!---------------------------Марадёры для контрика---------------------->
 
+		<specific_character id="mar_1_kontr_zombi" team_default = "1">
+		<name>Гнойный</name>		
+		<icon>ui_npc_u_green_stalker_4</icon>
+    <map_icon x="3" y="2"></map_icon>
+    <bio>sim_stalker_general_bio</bio>
+
+    <class>mar_1_kontr_zombi</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <money min="200" max="300" infinitive="0"></money>
+    
+    <rank>650</rank>
+    <reputation>50</reputation>
+ 
+		<visual>new_actors\mar_1</visual>
+		<snd_config>characters_voice\human_02\newbie\</snd_config>
+    <crouch_type>1</crouch_type>
+
+    <supplies>
+      [spawn] \n
+			wpn_toz34 \n
+			ammo_12x70_buck \n
+    </supplies>
+	
+	<actor_dialog>mar1_fin_dial</actor_dialog>
+	
+	</specific_character>
+
 		<specific_character id="mar_1_kontr" team_default = "1">
 		<name>Гнойный</name>		
 		<icon>ui_npc_u_green_stalker_4</icon>
@@ -72,7 +99,7 @@
     <rank>650</rank>
     <reputation>50</reputation>
  
-		<visual>actors\novice\green_stalker_4</visual>
+		<visual>new_actors\mar_1</visual>
 		<snd_config>characters_voice\human_02\newbie\</snd_config>
     <crouch_type>1</crouch_type>
 
@@ -84,6 +111,7 @@
 	
 	<start_dialog>dial_mar_1_kont</start_dialog>
 <actor_dialog>dial_mar_1_kont2</actor_dialog>
+<actor_dialog>mar1_fin_dial</actor_dialog>
 	
 	</specific_character>
 	
@@ -101,6 +129,31 @@
     <reputation>50</reputation>
  
 		<visual>actors\novice\green_stalker_6</visual>
+		<snd_config>characters_voice\human_02\newbie\</snd_config>
+    <crouch_type>1</crouch_type>
+
+    <supplies>
+      [spawn] \n
+			wpn_toz34 \n
+			ammo_12x70_buck \n
+    </supplies>
+	
+	</specific_character>
+	
+				<specific_character id="mar_3_kontr_zombi" team_default = "1">
+		<name>Степан тихий</name>		
+		<icon>kvest_starter7</icon>
+    <map_icon x="3" y="2"></map_icon>
+    <bio>sim_stalker_general_bio</bio>
+
+    <class>mar_3_kontr_zombi</class>
+    <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <money min="200" max="300" infinitive="0"></money>
+    
+    <rank>150</rank>
+    <reputation>-50</reputation>
+ 
+		<visual>new_actors\mar3_mod</visual>
 		<snd_config>characters_voice\human_02\newbie\</snd_config>
     <crouch_type>1</crouch_type>
 
@@ -1503,8 +1556,8 @@ ammo_5.45x39_fmj \n
 </supplies>
 
 <actor_dialog>semecky_first_dialog</actor_dialog>
-<start_dialog>hello_dialog</start_dialog>
-#include "gameplay\character_dialogs.xml"
+<start_dialog>semecky_start</start_dialog>
+#include "gameplay\dialogs_semecky.xml"
 </specific_character>
 
 <!---------------------------esc_saha----------------------->

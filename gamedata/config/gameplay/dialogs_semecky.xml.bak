@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+
+<dialog id="semecky_start">
+		<has_info>semecky_first_meet</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>radio_start_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>radio_start_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>radio_start_2</text>
+				<action>semecky.back_to_predbannik</action>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>radio_start_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>radio_start_4</text>
+				<give_info>radio_start</give_info>
+				<give_info>story_1</give_info>
+				<action>foto2.archiv_spawn</action>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+</game_dialogs>

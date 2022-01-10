@@ -100,7 +100,9 @@
    			   			   			   <info_portion id="perevod_off_predbannik">	
 			   <action>new_quest.off1</action>	   
 			   			   <action>new_quest.off3</action>	   
-						   			   <action>new_quest.off4</action>	   
+						   			   <action>new_quest.off4</action>
+<action>new_quest.off5</action>	 									   
+<action>new_quest.off6</action>	 
 			   </info_portion>
 			   
 			   			   <info_portion id="new_portion_kkvest1_s">
@@ -229,8 +231,31 @@
 										<action>new_quest.script22</action>
 			   </info_portion>
 			   
+			   			   			   			   	<info_portion id="zap_kvest_18_s">
+										<action>new_quest.script25</action>
+			   </info_portion>
+			   
+			   			   			   			   			   	<info_portion id="zap_kvest_18_f">
+			   </info_portion>
+			   
+			   			   			   			   			   			   	<info_portion id="zap_kvest_19_f">
+			   </info_portion>
+			   
 			   			   			   			   	<info_portion id="final_alternative_2_s">
 													<action>new_quest.script23</action>
-			   </info_portion> 
+			   </info_portion>
+
+			   			   			   			   			   			   	<info_portion id="zap_kvest_20_s">
+															<action>new_quest.script28</action>
+			   </info_portion>			   
 			   
+			   			   			   			   			   			   			   	<info_portion id="test_flaim">
+															<action>new_quest.spawn_flame_test</action>
+			   </info_portion>			   
+			   
+			   			   			   			   			   			   			   			   	<info_portion id="test_flaim2">
+															<action>new_quest.del_flame_test</action>
+			   </info_portion>			 
+			   <info_portion id="semecky_first_meet">
+			   </info_portion> 
 </game_information_portions>

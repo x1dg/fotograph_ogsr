@@ -21,7 +21,6 @@ function IsHelicopter(object, class_id)
     return false
 end
 --------------------------------------------------------------------------------------------------
--- Callback íà õèò
 function on_hit(obj, amount, local_direction, who, bone_index)
 	if obj:who_hit_name() == "single_player" then
 	local cls = obj:clsid()

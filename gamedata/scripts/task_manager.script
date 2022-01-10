@@ -715,7 +715,6 @@ end
 --' Ïðîâåðêà äîñòóïåí ëè òåêóùèé òàñê äëÿ âûäà÷è
 function CRandomTask:task_avail(actor, npc, p1, p2, p3, calculate)
   local task_desc = self.task_info[self.task_id_by_init_phrase_id[p3]]
-  --' Åñëè calculate == true òî íóæíî ïðîâåðÿòü check_task_props, èíà÷à ïðîñòî âåðíóòü çíà÷åíèÿ.
   if calculate == "reset" then    
     self.current_parent_type_prior = {}
     return
@@ -724,7 +723,6 @@ function CRandomTask:task_avail(actor, npc, p1, p2, p3, calculate)
 
     local t = task_desc.enabled and task_desc.enabled_props and task_desc.init_condition == nil
 
-    --' Óñòàíàâëèâàòü îáðåçàíèÿ ïî ïðèîðèòåòàì òóò.
     if t == true and (self.current_parent_type_prior[task_desc.complex_type] == nil or
        self.current_parent_type_prior[task_desc.complex_type] > task_desc.prior )
     then
@@ -736,7 +734,8 @@ function CRandomTask:task_avail(actor, npc, p1, p2, p3, calculate)
 
 --' printf("@@@prior %s -> %s [%s]", task_desc.complex_type, task_desc.prior, tostring(calculate))
 --' print_table(self.current_parent_type_prior)
-
+log1("TASK DESC: "..tostring(tostring_all(task_desc)))
+log1("p3: "..tostring(self.task_id_by_init_phrase_id[p3]))
   if self.current_parent_type_prior[task_desc.complex_type] ~= nil and
      self.current_parent_type_prior[task_desc.complex_type] < task_desc.prior then
     return false

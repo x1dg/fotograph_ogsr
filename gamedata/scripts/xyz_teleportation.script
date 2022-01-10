@@ -106,7 +106,18 @@ packet:w_u8(p_silent) -- 1 for silent level changing
 packet:r_seek(0)
 obj:STATE_Read(packet, packet:w_tell())
 level.add_pp_effector ("teleport.ppe", 2006, false)
+end
 
+function create_immediate_level_changer(
+p_story_id, -- STORY_ID нового level_changer (понадобится нам позже)
+
+p_dest_lv, -- level_vertex_id - идентифицируют уровень, на который level_changer будет перебрасывать игрока 
+p_dest_gv, -- game_vertex_id
+p_dest_pos, -- координаты точки, в которой на новом уровне окажется игрок
+p_dest_dir, -- направрение взгляда игрока
+p_dest_level -- название уровня, например "L11_Pripyat"
+)
+create_level_changer(p_story_id, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), p_dest_lv, p_dest_gv, p_dest_pos, p_dest_dir, p_dest_level, 1)
 end
 
 -----------------------------Телепортация--------------------------------

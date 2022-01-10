@@ -40,7 +40,7 @@
 	</intro_logo>	
 
 	<intro_game>
-		<play_each_item>1</play_each_item>
+		<play_each_item>0</play_each_item>
 		<global_wnd x="0" y="0" width="1024" height="768">
 			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
 				<window_name>back</window_name>
@@ -49,7 +49,7 @@
 		</global_wnd>
 
 		<item type="video">
-			<sound>characters_voice\scenario\video\intro_my</sound>
+			<sound>characters_voice\scenario\video\intro_zona_che</sound>
 			<pause_state>on</pause_state>
 			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
 				<texture x="0" y="1" width="1024" height="768">intro\intro_stalker</texture>

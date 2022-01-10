@@ -200,6 +200,51 @@ function script24()
 	news_manager.send_tip(db.actor,"Я все слышу, не забывай об этом!",nil,nil,30000)
 end
 
+function script25()
+start_game_timer(1, "new_quest.script26")
+start_game_timer(53, "new_quest.script27")
+end
+
+function script26()
+level.add_cam_effector2("camera_effects\\new_cutschene_2.anm", 999, false, "")
+db.actor:disable_info_portion("tp_pehera")
+del_mar11()
+del_mar22()
+level.disable_input()
+level.hide_indicators()
+db.actor:hide_weapon()
+del_mar11()
+del_mar22()
+on5()
+on6()
+olr_func.play_sound([[monsters\controller\controller_presence_r]])
+olr_func.play_sound([[characters_voice\human_01\bandit\help\wounded_psy\psy_2]])
+start_quick_timer(3, nil, {snd = "characters_voice\\human_01\\bandit\\help\\wounded_psy\\psy_6"})
+local a = vector()
+a.x = -264,31
+a.y = 10,06
+a.z = 239,30
+db.actor:set_actor_position(a)
+end
+
+function script27()
+db.actor:give_info_portion("zap_kvest_18_f")
+level.enable_input()
+level.show_indicators()
+db.actor:restore_weapon()
+off5()
+off6()
+del_kontr2()
+olr_func.play_sound([[weapons\toz34_shoot_both]])
+start_quick_timer(2, nil, {snd = "weapons\\toz34_shoot_both"})
+start_quick_timer(3, nil, {snd = "monsters\\controller\\controller_die_0"})
+end
+
+function script28()
+del_zap2()
+zap1.zap2_start()
+end
+
 --оффлайны--
 
 function off1()
@@ -254,6 +299,45 @@ alife():set_interactive (npc.id, false)
 end
 end
 
+function off5()
+ 
+local npc = alife():story_object(9129)
+ 
+if npc then
+ 
+alife():set_switch_offline (npc.id, true)
+alife():set_switch_online (npc.id, false)
+alife():set_interactive (npc.id, false)
+ 
+end
+end
+
+function off6()
+ 
+local npc = alife():story_object(9130)
+ 
+if npc then
+ 
+alife():set_switch_offline (npc.id, true)
+alife():set_switch_online (npc.id, false)
+alife():set_interactive (npc.id, false)
+ 
+end
+end
+
+function off7()
+ 
+local npc = alife():story_object(9132)
+ 
+if npc then
+ 
+alife():set_switch_offline (npc.id, true)
+alife():set_switch_online (npc.id, false)
+alife():set_interactive (npc.id, false)
+ 
+end
+end
+
 --онлайны--
 function on1()
  
@@ -297,6 +381,32 @@ end
 function on4()
  
 local npc = alife():story_object(9128)
+ 
+if npc then
+ 
+alife():set_switch_offline (npc.id, false)
+alife():set_switch_online (npc.id, true)
+alife():set_interactive (npc.id, true)
+ 
+end
+end
+
+function on5()
+ 
+local npc = alife():story_object(9129)
+ 
+if npc then
+ 
+alife():set_switch_offline (npc.id, false)
+alife():set_switch_online (npc.id, true)
+alife():set_interactive (npc.id, true)
+ 
+end
+end
+
+function on6()
+ 
+local npc = alife():story_object(9130)
  
 if npc then
  
@@ -373,5 +483,261 @@ local sim = alife()
 local se_obj = sim:story_object(9126)
 if se_obj then
 sim:release(se_obj, true)
+end
+end
+
+function del_kontr2()
+local sim = alife()
+local se_obj = sim:story_object(9118)
+if se_obj then
+sim:release(se_obj, true)
+end
+end
+
+function del_zap2()
+local sim = alife()
+local se_obj = sim:story_object(9131)
+if se_obj then
+sim:release(se_obj, true)
+end
+end
+
+function del_flame_test()
+local sim = alife()
+local se_obj = sim:story_object(9132)
+if se_obj then
+sim:release(se_obj, true)
+end
+end
+
+---спавним хреномалии и костры---
+----------
+-- чтение формы из нет-пакета --------------------------Restrictors------------------
+----------
+function r_shape(packet)
+	local s
+	local st = {}
+	st.count = packet:r_u8()
+	st.shapes = {}
+	for i=1, st.count do
+		s = {}
+		s.type = packet:r_u8()
+		if s.type == 0 then
+			s.center = packet:r_vec3()
+			s.radius = packet:r_float()
+		else
+			s.axis_x = packet:r_vec3()
+			s.axis_y = packet:r_vec3()
+			s.axis_z = packet:r_vec3()
+			s.offset = packet:r_vec3()
+		end
+		st.shapes[i] = s
+	end
+	return st
+end
+
+----------
+-- запись формы в нет-пакет
+----------
+function w_shape(packet, st)
+	local s
+	packet:w_u8(st.count)
+	for i=1, st.count do
+		s = st.shapes[i]
+		packet:w_u8(s.type)
+		if s.type == 0 then
+			packet:w_vec3(s.center)
+			packet:w_float(s.radius)
+		else
+			packet:w_vec3(s.axis_x)
+			packet:w_vec3(s.axis_y)
+			packet:w_vec3(s.axis_z)
+			packet:w_vec3(s.offset)
+		end
+	end
+end
+
+----------
+-- перепаковка нет-пакета созданного скриптом рестрикта
+----------
+function rewrite_restrictor(sobj, custom, radius)
+	local packet = net_packet()
+	sobj:STATE_Write(packet)
+	local game_vertex_id	= packet:r_u16()
+	local distance		= packet:r_float()
+	local direct_control	= packet:r_s32()
+	local level_vertex_id	= packet:r_s32()
+	local object_flags		= packet:r_s32()
+	local custom_data		= packet:r_stringZ()
+	local story_id		= packet:r_s32()
+	local spawn_story_id	= packet:r_s32()
+	local shape		= r_shape(packet)
+	local restrictor_type	= packet:r_u8()
+
+	custom_data = custom
+	shape = {}
+	shape.count = 1
+	shape.shapes = {}
+	shape.shapes[1] = {}
+	shape.shapes[1].type = 0
+	shape.shapes[1].center = vector():set(0,0,0)
+	shape.shapes[1].radius = radius
+
+	packet:w_u16(game_vertex_id)
+	packet:w_float(distance)
+	packet:w_s32(direct_control)
+	packet:w_s32(level_vertex_id)
+	packet:w_s32(object_flags)
+	packet:w_stringZ(custom_data)
+	packet:w_s32(story_id)
+	packet:w_s32(spawn_story_id)
+	w_shape(packet, shape)
+	packet:w_u8(restrictor_type)
+	sobj:STATE_Read(packet, packet:w_tell() - packet:r_tell())
+end
+
+----------------------------------------------------------------------Anoms---------
+function get_story_id_not_replay() 
+ local ST 
+ ST = xr_logic.pstor_retrieve(db.actor, "ScriptAnomId", 0) 
+ if type(ST) ~= "number" or ST == nil then 
+ ST = 9000 
+ xr_logic.pstor_store(db.actor, "ScriptAnomId", ST) 
+ end 
+ if type(ST) == "number" or ST ~= nil then 
+ ST = ST + 1 
+ xr_logic.pstor_store(db.actor, "ScriptAnomId", ST) 
+ end 
+ return tonumber(ST) 
+ end 
+
+function create_anom(name_anom, posit_anom, lvid_anom, gvid_anom, radius_anom, power_anom)
+ local sobj = alife():create(name_anom, posit_anom, lvid_anom, gvid_anom) 
+
+ -----------------------write---------------------- 
+ local packet = net_packet() 
+ sobj:STATE_Write(packet) 
+
+ -----------------------load----------------------- 
+ -- cse_alife_object 
+ local game_vertex_id = packet:r_u16() 
+ local distance = packet:r_float() 
+ local direct_control = packet:r_u32() 
+ local level_vertex_id = packet:r_u32() 
+ local object_flags = packet:r_u32() 
+ local custom_data = packet:r_stringZ() 
+ story_id = s_id
+ local story_id = packet:r_u32() 
+ local spawn_story_id = packet:r_u32() 
+
+ -- cse_shape 
+ local shape_count = packet:r_u8() 
+ for i=1,shape_count do 
+ local shape_type = packet:r_u8() 
+ if shape_type == 0 then 
+ -- sphere 
+ local center = packet:r_vec3() 
+ local radius = packet:r_float() 
+ else 
+ -- box 
+ local box = packet:r_matrix() 
+ end 
+ end 
+
+ -- cse_alife_space_restrictor 
+ local restrictor_type = packet:r_u8() 
+
+ -- cse_alife_custom_zone 
+ local max_power = packet:r_float() 
+ local owner_id = packet:r_u32() 
+ local enabled_time = packet:r_u32() 
+ local disabled_time = packet:r_u32() 
+ local start_time_shift = packet:r_u32() 
+
+ -- cse_alife_anomalous_zone 
+ local offline_interactive_radius = packet:r_float() 
+ local artefact_spawn_count = packet:r_u16() 
+ local artefact_position_offset = packet:r_u32() 
+
+ -- se_zone_anom 
+ local last_spawn_time_present = packet:r_u8() 
+
+ if (string.find (name_anom, 'zone_zharka_static') ~= nil 
+ or string.find (name_anom, 'zone_witches_galantine') ~= nil 
+ or string.find (name_anom, 'zone_mosquito_bald') ~= nil 
+ or string.find (name_anom, 'zone_mincer') ~= nil 
+ or string.find (name_anom, 'zone_gravi_zone') ~= nil 
+ or string.find (name_anom, 'zone_buzz') ~= nil ) 
+ and packet:r_elapsed() ~= 0 then 
+ abort("left=%d", left) 
+ end 
+
+ ---------------------------save-------------------- 
+ -- cse_alife_object 
+ packet:w_begin(game_vertex_id) 
+ packet:w_float(distance) 
+ packet:w_u32(direct_control) 
+ packet:w_u32(level_vertex_id) 
+ object_flags = bit_not(193) 
+ packet:w_u32(object_flags) 
+ packet:w_stringZ(custom_data) 
+ packet:w_u32(get_story_id_not_replay()) 
+ packet:w_u32(get_story_id_not_replay()) 
+
+ -- cse_shape 
+ packet:w_u8(1) -- количество фигур 
+ packet:w_u8(0) -- тип фигуры: сфера 
+ packet:w_vec3(vector():set(0, 0, 0)) 
+ if radius_anom ~= nil then 
+ packet:w_float(radius_anom) 
+ else 
+ packet:w_float(1.0) 
+ end 
+
+ -- cse_alife_space_restrictor 
+ packet:w_u8(restrictor_type) 
+
+ -- cse_alife_custom_zone 
+ if power_anom ~= nil then 
+ packet:w_float(power_anom) 
+ else 
+ packet:w_float(max_power) 
+ end 
+ packet:w_u32(owner_id) 
+ packet:w_u32(enabled_time) 
+ packet:w_u32(disabled_time) 
+ packet:w_u32(start_time_shift) 
+
+ -- cse_alife_anomalous_zone 
+ packet:w_float(offline_interactive_radius) 
+ packet:w_u16(artefact_spawn_count) 
+ packet:w_u32(artefact_position_offset) 
+
+ -- se_zone_anom 
+ packet:w_u8(last_spawn_time_present) 
+
+ ------------------------read------------------------ 
+ packet:r_seek(0) 
+ sobj:STATE_Read(packet, packet:w_tell()) 
+end
+ ------------------
+ 
+ function spawn_flame() 
+	create_anom('zone_flame_small', vector():set(-451.637847900391,2.28922438621521,-131.554672241211),250882,643, 10, 1) 
+end
+
+---аномалии со стори (testing)---
+function spawn_flame_test()
+	local pos,dir = db.actor:position(),db.actor:direction()
+	local lvid,gvid = db.actor:level_vertex_id(),db.actor:game_vertex_id()
+  local sobj = alife():create( "zone_flame_small", vector():set(-451.637847900391,2.28922438621521,-131.554672241211), lvid, gvid )
+  if sobj then
+  local pk = get_netpk( sobj, 1 )
+  	if pk:isOk() then
+  local data = pk:get()
+  data.story_id = 9132
+  pk:set( data )
+  return sobj
+end
 end
 end

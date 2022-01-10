@@ -341,6 +341,7 @@ end
 
 function del_manuscript(first_speaker, second_speaker)
    new_dialog.out_item_much("manuscript",1)
+   semecky.manuscript_after_eat()
 end
 
 -----------------------------wpn_trup_spawn----------------------------

@@ -24,8 +24,9 @@ function on_actor_before_use( obj )
 	local sect = obj:section()
 	if animation_enable == true then
 		local snd = get_string( sect, "use_sound_anm" )
+		log1("before use")
+		log1("anim_in_action="..tostring(anim_in_action))
 		if not(db.actor.inventory:is_active_slot_blocked()) and snd and not( anim_in_action ) then
-
 			anm_sect = "anm_" .. obj:section()
 			cam_effect = get_string( anm_sect, "cam_effect")
 			anim_used_tm = get_u32( anm_sect, "item_used_timing" )
@@ -35,7 +36,7 @@ function on_actor_before_use( obj )
 
 			ogse.save_var( "drop_bind", bind_to_dik( key_bindings.kDROP )  )
 			cmd( "unbind drop" )
-			alife():create( anm_sect, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id() )
+			alife():create(anm_sect, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id() )
 			if db.actor:has_info( "ui_inventory" ) then
 				level.start_stop_menu( level.main_input_receiver(), true )
 			end			
@@ -90,7 +91,8 @@ function on_item_to_slot( obj )
 		return
 	end
 	if not( string.find( obj:section(), "anm_" ) ) then return end
-	db.actor:activate_slot(8)
+	log1("laucer item_to_slot")
+	db.actor:activate_slot(4)
 	anim_in_action = true
 end
 
@@ -118,7 +120,7 @@ function on_update()
 	local tg = time_global()
 	if anim_in_action then
 		if not anim_exist_tm then
-			if db.actor:active_slot() == 8 then
+			if db.actor:active_slot() == 4 then
 				db.actor:hide_weapon()
 				anim_exist_tm = tg + anim_completed_tm
 				anim_exist_used_tm = tg + anim_used_tm

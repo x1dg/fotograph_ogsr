@@ -1,0 +1,83 @@
+function manuscript_after_eat()
+	level.add_pp_effector("nano.ppe", 999, true)
+	level.add_pp_effector("noise.ppe", 999, true)
+	level.add_cam_effector("camera_effects\\fusker.anm", 999, false, "")	
+	wait()
+end
+
+function wait()
+	hide = time_global() + 2000
+	local function check_timer()
+		return time_global() > hide
+	end
+	level.add_call(check_timer, to_strelok_treasure)
+end
+
+local semecky_id = 1339
+
+function to_strelok_treasure()
+	actor_predbannik_position = db.actor:position()
+	actor_predbannik_level_vertex = db.actor:level_vertex_id()
+	actor_predbannik_game_vertex = db.actor:game_vertex_id()
+	
+	level.add_pp_effector("teleport.ppe", 999, true)
+	
+	local actor_position = vector():set(-69.0196, -6.8737, -73.7216)
+	local actor_strelok_treasure_level_vertex = 3490
+	local actor_strelok_treasure_game_vertex = 16
+	xyz_teleportation.create_immediate_level_changer(1337, actor_strelok_treasure_level_vertex, actor_strelok_treasure_game_vertex, actor_position, vector():set(0.0,-5.2,0.0), "l03u_agr_underground")
+	--db.actor:set_actor_position(vector():set(-69.0196, -6.8737, -73.7216), 3490, 16)
+	level.set_weather("vivid_foggy_weather_06", true)
+	local semecky_position = vector():set(-76.0466, -6.8754, -69.7093)
+	foto2.create_anom("zone_fog_indoor", vector():set(-73.7661, -6.9034, -71.1406), 3188, 16, 20, 0)
+	db.actor:give_info_portion("semecky_first_meet")
+-------записываем его сид
+		local sobj = alife():create("esc_semecky", semecky_position, actor_strelok_treasure_level_vertex, actor_strelok_treasure_game_vertex)
+	local params = sobj and amk.read_stalker_params(sobj)
+	if params then
+		params.sid = semecky_id
+		amk.write_stalker_params(params,sobj)
+	end
+end
+
+function back_to_predbannik()
+	zaglyxa()
+	level.add_pp_effector("nano.ppe", 999, true)
+	level.add_pp_effector("noise.ppe", 999, true)
+	level.add_cam_effector("camera_effects\\fusker.anm", 999, false, "")
+	level.add_pp_effector("teleport.ppe", 999, true)
+	xyz_teleportation.create_immediate_level_changer(1338, 118713, 626, vector():set(-540.5781, 5.8334, -131.3515), vector():set(0.0,-5.0,0.0), "predbannik")
+end
+
+function delete_agr()
+	local sim = alife()
+	local se_obj = sim:story_object(1337)
+	if se_obj then
+		sim:release(se_obj, true)
+	end 
+	local actor = db.actor
+end
+
+function delete_predbannik()
+	local sim = alife()
+	local se_obj = sim:story_object(1338)
+	if se_obj then
+		sim:release(se_obj, true)
+	end 
+	local actor = db.actor
+end
+
+--временая заглушка если ты не вставил ещё--
+function zaglyxa()
+start_game_timer(1, "new_quest.del_semetskiq")
+end
+----
+
+---удаляем его---
+function del_semetskiq()
+	local sim = alife()
+	local se_obj = sim:story_object(semecky_id)
+	if se_obj then
+		sim:release(se_obj, true)
+	end
+end
