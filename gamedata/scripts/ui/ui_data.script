@@ -16,7 +16,6 @@ local defaults = {
 	["mui_blurs_enable"]		= false, -- включить эффект запотевания
 	["mui_blood_enable"]		= true, -- включить эффект ранения
 	["mui_bleed_enable"]		= false, -- включить эффект плохого самочувствия
-	["mui_use_enable"]			= true, -- включить эффект использования предметов
 	["mui_description_delay"]	= 800, -- появления окна описания при наведении курсора, ms
 	["mui_actor_icon"]			= "ui\\ui_noise"} -- иконка ГГ
 

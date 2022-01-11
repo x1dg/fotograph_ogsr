@@ -2293,7 +2293,7 @@
 		<supplies>
 			[spawn] \n
 			zheton = 1 \n
-			wpn_colt_m1 \n
+			wpn_colt \n
 			ammo_11.43x23_hydro = 2 \n
 			wpn_m4a1 \n
 			ammo_5.56x45_ap = 2 \n	

@@ -162,9 +162,6 @@
 <string id="ui_mm_shoot_enable">
 <text>Ёффект стрельбы</text>
 </string>
-<string id="ui_mm_use_enable">
-<text>Ёффект использовани€ предметов</text>
-</string>
 <string id="ui_mm_blurs_enable">
 <text>Ёффект запотевани€ маски</text>
 </string>

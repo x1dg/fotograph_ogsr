@@ -1742,22 +1742,11 @@
 		<text>\n \n%c[0,93,0,116] Х %c[0,140,140,140] Main characteristic and advantages: %c[0,170,170,170]Simple homemade production. Very high spread. Lowered weight and good handling. Very high damage. Low durability. %c[0,140,140,140]  \n \n%c[0,170,170,170]Duplet is an improvised double-barreled shotgun manufactured by technicians in workshops near and in The Zone. It was produced by first stalkers in The Zone, since the black market of firearms was almost non-existent back then. Currently the Duplets are increasingly less common as more weaponry is available for cheap from traders and arms smugglers. It is a simple, crude firearm made from reinforced scrap metal and wood, with two barrels placed horizontally. The accuracy is low due to crude finish of the inside of the barrel, but it's not an issue since the gun is made for point-blank ranges. Two barrels hold one shell each and can be fired both in the same time. Since the weapon is manually operated, it works relatively reliably - the only issue can be misfires, but nonetheless they don't happen as often as jams in semi-automatic improvised weapons (like Borz or homemade pistols). The spread is very wide. The weapon features a stock that is mounted with a spring, which slightly reduces felt recoil, but also lowers the stability. The durability is very low and as with every improvised firearm, adequate safety precautions should be retained, as there's always a risk of catastrophic failure, which can injure the shooter. These weapons are sold for cheap and are the last ditch protection for those who can't spare more for a real weapon. Duplet can also be used as a cheap sidearm for those who want to buy a more expensive rifle or other primary weapon, but still want something as a backup. \n \n%c[0,93,0,116] Х %c[0,140,140,140] Reliability: %c[0,170,170,170]average\n%c[0,93,0,116] Х %c[0,140,140,140] Durability: %c[0,170,170,170]very low\n%c[0,93,0,116] Х %c[0,140,140,140] Ergonomics: %c[0,170,170,170]above average </text>
 	</string>
 		<string id="st_wpn_m3super90">
-		<text>Benelli M3 ЂSuper 90ї</text>
+		<text>ƒробовик  н€з€</text>
 	</string>
 	<string id="st_wpn_m3super90_descr">
 		<text>
-		\n%c[255,1,255,255]Х %c[default] алибр: 12x70 мм.
-		\n%c[255,1,255,255]Х %c[default]ћагазин: 8
-		\n%c[255,1,255,255]Х %c[default]»знос: 1500 выстр.
-		\n%c[255,1,255,255]Х %c[default]ќтдача: 4.3 (+0.35)
-		\n%c[255,1,255,255]Х %c[default]—корость пули: 130 м\с.
-		\n
-		\n***********************
-		\n%c[255,1,255,255]Х %c[default]–ежим стрельбы: 1
-		\n%c[255,1,255,255]Х %c[default]ѕрицелы: ¬строен x1.6
-		\n%c[255,1,255,255]Х %c[default]ѕодствольник: ќтсутствует
-		\n%c[255,1,255,255]Х %c[default]ѕоддержка глушител€: Ќету
-		\n%c[255,1,255,255]Х %c[default]—пециализаци€: ƒробовик
+		ƒробовик  н€з€. »меет встроенный прицел и глушитель. ќбладает повышенной убойностью и износоустойчивостью.
 		</text>
 	</string>
 	<string id="st_wpn_wunderwaffe">

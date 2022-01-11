@@ -12,8 +12,8 @@ description				= st_wpn_cz75_auto_descr
 
 inv_grid_width			    = 2
 inv_grid_height			    = 1
-inv_grid_x			        = 21
-inv_grid_y			        = 8
+inv_grid_x			        = 10
+inv_grid_y			        = 30
 
 scope_x					= 0
 scope_y					= 0
@@ -210,10 +210,10 @@ anm_idle_sprint_empty	= lancew_cz75_sprint, idle_2
 anm_bore				= lancew_cz75_no_reload
 anm_bore_empty			= lancew_cz75_no_reload, idle_2
 
-aim_hud_offset_pos = -0.107850,0.043200,-0.010000
-aim_hud_offset_rot = -0.008000,0.004500,-0.016000
-aim_hud_offset_pos_16x9 = -0.168850,0.075900,-0.010000
-aim_hud_offset_rot_16x9 = 0.025900,0.055500,0.010000
+aim_hud_offset_pos = -0.168850,0.076400,-0.095500
+aim_hud_offset_rot = 0.025900,0.055500,0.010000
+aim_hud_offset_pos_16x9				= -0.168850,0.076400,-0.095500
+aim_hud_offset_rot_16x9				= 0.025900,0.055500,0.010000
 
 gl_hud_offset_pos		= 0,0,0
 gl_hud_offset_rot		= 0,0,0
@@ -228,3 +228,18 @@ alt_ofs_pos_z			= 0.05
 alt_ofs_rot_x			= 0
 alt_ofs_rot_y			= 0
 alt_ofs_rot_z			= 0
+
+[wpn_colt_ucen]:wpn_colt1911	
+$spawn             		= "weapons\uniq\wpn_colt_ucen"	
+description			= wpn_colt_ucen_desc
+inv_name			= wpn_colt_ucen
+inv_name_short			= wpn_colt_ucen
+ammo_class			= ammo_9x19_ucen
+hit_power                       = 0.1
+inv_grid_x			        = 23
+inv_grid_y			        = 11
+visual					= dynamics\weapons\wpn_cz75\wpn_cz75_auto_ucen.ogf
+hud						= wpn_cz75_auto_ucen_hud
+
+[wpn_cz75_auto_ucen_hud]:wpn_cz75_auto_hud
+item_visual				= dynamics\weapons\wpn_cz75\wpn_cz75_auto_ucen_hud.ogf

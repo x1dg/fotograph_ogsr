@@ -108,58 +108,6 @@ inv_grid_y			= 21
 ;can_trade                      = false
 cost				= 8000
 
-[wpn_groza_m1]:wpn_groza	;--Гроза генерала Воронина
-$spawn             		= "weapons\uniq\wpn_groza_m1"	
-description			= enc_weapons1_wpn-groza_m1
-inv_name	        	= wpn-groza_m1
-inv_name_short			= wpn-groza_m1
-ammo_mag_size		 	= 45
-ammo_class			= ammo_5.45x39_fmj, ammo_5.45x39_ap
-
-cost				= 10500
-
-fire_dispersion_base		= 0.19		;0.000001 ;0.23		;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor		= 1.25f
-
-;--отдача
-cam_relax_speed         	= 5.5 		;скорость возврата в исходное положение
-cam_dispersion          	= 0.1	;0.68	;0.98		;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 0.12		;увеличениe cam_dispersion с каждым выстрелом
-cam_dispertion_frac		= 0.15	;0.000001 ;0.85		;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
-cam_max_angle			= 9.0		;максимальный угол отдачи
-cam_max_angle_horz		= 12.0		;(degree) maximum shot horizontal degree 
-cam_step_angle_horz		= 2.4	;2.8	;0.18		;(degree) size of step camera moved in horizontal position while shooting
-;--износ
-fire_dispersion_condition_factor = 1.5	  ;увеличение дисперсии в процентах при максимальном износе 
-misfire_probability 	        = 0.0001	;вероятность осечки при максимальном износе 
-misfire_condition_k		= 0.03
-condition_shot_dec 		= 0.000001	;увеличение износа при каждом выстреле
-
-hit_power                       = 0.68
-hit_impulse		 	= 20
-
-fire_distance            	= 400
-bullet_speed			= 700
-
-silencer_status			= 2
-silencer_hit_power       	= 0.65
-silencer_hit_impulse	 	= 1
-silencer_fire_distance   	= 150
-silencer_bullet_speed	 	= 650
-
-scope_status			= 1
-scope_zoom_factor		= 20
-scope_texture			= wpn\HAKKO-15CH-b-AMK
-inv_grid_x			= 20
-inv_grid_y			= 2
-;------------------------------ S.T.A.L.K.E.R`s sound remake ------------------------------
-snd_shoot		        = weapons\groza\groza_m1_shoot
-snd_shoot1			= weapons\groza\groza_m1_shoot1
-snd_shoot2		        = weapons\groza\groza_m1_shoot2
-snd_shoot3			= weapons\groza\groza_m1_shoot3
-snd_silncer_shot		= weapons\groza\groza_m1_shot_sil 
-;------------------------------------------------------------------------------------------
-
 [wpn_spas12_m1]:wpn_spas12	;Спас-12 Хантера
 $spawn             		= "weapons\uniq\wpn_spas12_m1"	
 description		        = enc_weapons1_wpn-spas12_m1
@@ -188,20 +136,6 @@ inv_grid_x			= 0
 inv_grid_y			= 35
 ;can_trade                      = false
 cost				= 7850
-
-[wpn_l85_m1]:wpn_l85	;Сбалансированная L85
-$spawn             		= "weapons\uniq\wpn_l85_m1"	
-description			= enc_weapons1_wpn-l85_m1
-inv_name	        	= wpn-l85_m1
-inv_name_short			= wpn-l85_m1
-cam_dispersion			= 0.75		
-cam_dispersion_inc		= 0.2
-; condition_shot_dec 		= 0.000001
-scope_texture			= wpn\SUSAT-AMK
-inv_grid_x			= 5
-inv_grid_y			= 25
-;can_trade                      = false
-cost				= 6500
 
 [wpn_lr300_m1]:wpn_m16
 $spawn             		= "weapons\uniq\wpn_lr300_m1"	
@@ -246,29 +180,6 @@ snd_shoot3			= weapons\de\de_m1_shoot3
 snd_silncer_shot	        = weapons\de\de_m1_shot_sil
 ;----------------------------------------------------------
 
-[wpn_colt_m1]:wpn_colt1911	;Модифицированный кольт
-$spawn             		= "weapons\uniq\wpn_colt_m1"	
-description			= enc_weapons1_wpn-colt_m1
-inv_name			= wpn-colt_m1
-inv_name_short			= wpn-colt_m1
-silencer_status			= 1
-condition_shot_dec 		= 0.000001
-inv_grid_x			= 28
-inv_grid_y			= 35
-
-cost				= 1950
-
-smoke_particles 		= weapons\generic_shoot_00
-flame_particles			= 
-light_disabled			= true
-
-;--------------S.T.A.L.K.E.R`s sound remake----------------
-snd_shoot			= weapons\colt\colt_m1_shot
-snd_shoot1			= weapons\colt\colt_m1_shot
-snd_shoot2			= weapons\colt\colt_m1_shot
-snd_shoot3			= weapons\colt\colt_m1_shot
-;----------------------------------------------------------
-
 [wpn_val_m1]:wpn_val	;Модифицированный Вал
 $spawn             		= "weapons\uniq\wpn_val_m1"	
 description			= enc_weapons1_wpn-val_m1
@@ -283,23 +194,7 @@ inv_grid_y			= 31
 
 cost		 	 	= 13500
 
-[wpn_l85_m2]:wpn_l85	        ;Облегченная l85
-$spawn             		= "weapons\uniq\wpn_l85_m2"	
-description			= enc_weapons1_wpn-l85_m2
-inv_name	        	= wpn-l85_m2
-inv_name_short			= wpn-l85_m2
-silencer_status			= 1
-inv_weight			= 3
-;condition_shot_dec 		= 0.000001
-scope_texture			= wpn\SUSAT-AMK
-inv_grid_x			= 0
-inv_grid_y			= 24
 
-smoke_particles 		= weapons\generic_shoot_00
-flame_particles			= 
-light_disabled			= true
-
-cost				= 6150
 
 ;---------------S.T.A.L.K.E.R`s sound remake-------------
 snd_shoot			= weapons\l85\l85_m2_shot
@@ -461,14 +356,6 @@ snd_shoot_duplet	        = new_weapons\lr300\lr300_shot_sil
 scope_zoom_factor	    	= 50
 hud                      	= wpn_striker_col_hud
 visual						= dynamics\weapons\wpn_protecta\wpn_protecta_c-more.ogf
-
-[wpn_colt_ucen]:wpn_colt_m1	
-$spawn             		= "weapons\uniq\wpn_colt_ucen"	
-description			= wpn_colt_ucen_desc
-inv_name			= wpn_colt_ucen
-inv_name_short			= wpn_colt_ucen
-ammo_class			= ammo_9x19_ucen
-hit_power                       = 0.1
 
 [hunters_toz]:wpn_toz34
 $spawn                          = "devices\uniq\hunters_toz"   ; option for Level Editor

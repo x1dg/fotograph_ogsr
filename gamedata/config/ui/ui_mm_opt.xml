@@ -774,10 +774,6 @@
 			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_shoot_enable</text>
 		</check_shoot_enable>
 
-		<check_use_enable x="0" y="318" width="435" height="21">
-			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_use_enable</text>
-		</check_use_enable>
-
 		<check_zoom_enable x="0" y="348" width="435" height="21">
 			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_zoom_enable</text>
 		</check_zoom_enable>

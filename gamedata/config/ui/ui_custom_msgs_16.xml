@@ -1,6 +1,30 @@
 <?xml version='1.0' encoding="UTF-8"?>
 <!-- ПОЛЬЗОВАТЕЛЬСКИЙ ХУД -->
 <header>
+    <ogse_debug  x="0" y="0" width="1024" height="768" complex_mode="1">
+	</ogse_debug>
+	
+
+    <logic_debug  x="100" y="210" width="470" height="350" complex_mode="1">
+		<text font="letterica18"  r="255" g="255" b="255" a="255" align="l"/>
+	</logic_debug>
+
+    <cs_debug  x="180" y="10" width="270" height="150" complex_mode="1">
+		<text font="letterica18"  r="255" g="255" b="255" a="255" align="l"/>
+	</cs_debug>
+	
+    <prs_debug  x="450" y="10" width="290" height="300" complex_mode="1">
+		<text font="letterica18"  r="255" g="255" b="255" a="255" align="l"/>
+	</prs_debug>
+	
+    <act_debug  x="10" y="250" width="250" height="300" complex_mode="1">
+		<text font="letterica18"  r="255" g="255" b="255" a="255" align="l"/>
+	</act_debug>
+	
+    <gul_debug  x="740" y="10" width="300" height="300" complex_mode="1">
+		<text font="letterica18"  r="255" g="255" b="255" a="255" align="l"/>
+	</gul_debug>
+	
 	<timer_hud  x="852" y="15" width="157" height="67">
 		<text x="-15" y="23it" font="graffiti22" r="238" g="155" b="23" a="255" align="r" />
 		<texture>ui_hud_frame_clock</texture>
@@ -56,18 +80,6 @@
 		<texture>ui_hud_frame_task</texture>
 		<text font="letterica18" color="hud_main_task" align="c" vert_align="c"/>
 	</main_task>
-	
-	<!-- Инфа о объекте -->
-	<obj_info x="358" y="80" width="308.8" height="52" complex_mode="1" stretch="1" light_anim="buy_menu_info" la_cyclic="0" la_texture="1" la_text="1" la_alpha="1">
-		<texture>ui_hud_frame_task</texture>
-		<text font="letterica18" color="hud_main_task" align="c" vert_align="c"/>
-	</obj_info>
-	
-		<!-- Инфа о объекте -->
-	<obj_visual x="358" y="142" width="308.8" height="52" complex_mode="1" stretch="1" light_anim="buy_menu_info" la_cyclic="0" la_texture="1" la_text="1" la_alpha="1">
-		<texture>ui_hud_frame_task</texture>
-		<text font="letterica18" color="hud_main_task" align="c" vert_align="c"/>
-	</obj_visual>
 	
 	<!-- Активация функций -->
 	<func_task  x="358" y="80" width="308.8" height="52" stretch="1" light_anim="buy_menu_info" la_cyclic="0" la_texture="1" la_text="1" la_alpha="1" ttl="5">

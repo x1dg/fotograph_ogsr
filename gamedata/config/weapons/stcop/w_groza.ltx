@@ -273,3 +273,25 @@ aim_hud_offset_rot			= 0.001826,0.014500,-0.001313
 
 aim_hud_offset_pos_16x9			= -0.113200,-0.004200,-0.262746
 aim_hud_offset_rot_16x9			= 0.001826,0.014500,-0.001313
+
+[wpn_groza_m1]:wpn_groza	;--Гроза генерала Воронина
+$spawn             		= "weapons\uniq\wpn_groza_m1"	
+description			= enc_weapons1_wpn-groza_m1
+inv_name	        	= wpn-groza_m1
+inv_name_short			= wpn-groza_m1
+ammo_mag_size		 	= 45
+ammo_class			= ammo_5.45x39_fmj, ammo_5.45x39_ap
+
+cost				= 10500
+
+hit_power                       = 0.68
+hit_impulse		 	= 20
+scope_status				= 2
+
+inv_grid_x			= 20
+inv_grid_y			= 2
+
+hud					= wpn_groza_m1_hud
+
+[wpn_groza_m1_hud]:wpn_groza_po4x34_hud
+item_visual				= dynamics\weapons\wpn_groza\wpn_groza_m1_hud.ogf

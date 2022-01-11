@@ -31,9 +31,7 @@ function encyclopedy_news(group, name)
 	ui_pda_dialogs.encyclopedy_news(group, name)
 end
 
--- »спользование предмета
 function on_use(obj)
-	ui_hud_medicines.use(obj)
 end
 
 -- ‘окус на €чейке инвентар€
@@ -111,7 +109,6 @@ function update()
 	rx_shoot_enable.shoot_effect()
 	ui_pda_options.timer_update(delta)
 	ui_fast_use_slots.FastUseSlotsHud()
-	ui_hud_medicines.update()
 	ui_hud_weight.update()
 	ui_hud_time.update()
 	ui_hud_mask.update()
@@ -120,5 +117,4 @@ function update()
 	ui_loader_trade.update()
 	ui_loader_hud.update()
 	ui_loader_pda.update()
-	ui_object_info.get_info()
 end

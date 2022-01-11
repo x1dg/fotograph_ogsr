@@ -67,7 +67,6 @@ local all_items =
 	[119.19] = "wpn_lr300_m1",
 	[119.21] = "wpn_sig_m1",
 	[119.22] = "wpn_eagle_m1",
-	[119.23] = "wpn_colt_m1",
 	[119.24] = "wpn_val_m1",
 	[119.26] = "wpn_abakan_m2",
 	[119.27] = "wpn_l85_m2",

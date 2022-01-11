@@ -93,15 +93,6 @@ function opt_gameplay:InitControls(x, y, xml, handler)
 	end
 	handler:AddCallback("shoot_enable", ui_events.BUTTON_CLICKED, self.ShootEffect, self.scroll_v)
 
-	-- use fx enable (MonolithUI)
-	use_enable = xml:InitCheck("tab_gameplay:check_use_enable", self.scroll_v)
-	handler:Register(use_enable,"use_enable")
-	if level.present() and (db.actor ~= nil) and db.actor:alive()
-		then use_enable:SetCheck(ui_data.load("mui_use_enable"))
-		else use_enable:Enable(false)
-	end
-	handler:AddCallback("use_enable", ui_events.BUTTON_CLICKED, self.UseEffect, self.scroll_v)
-
 	-- zoom fx enable (MonolithUI)
 	zoom_enable = xml:InitCheck("tab_gameplay:check_zoom_enable", self.scroll_v)
 	handler:Register(zoom_enable,"zoom_enable")
@@ -181,16 +172,6 @@ function opt_gameplay:ShootEffect()
 		shoot_enable:SetCheck(false) else 
 		ui_data.save("mui_shoot_enable", true)
 		shoot_enable:SetCheck(true)
-	end
-end
-
-function opt_gameplay:UseEffect()
-	use_enable:SetCheck(ui_data.load("mui_use_enable"))
-	if use_enable:GetCheck() then
-		ui_data.save("mui_use_enable", false)
-		use_enable:SetCheck(false) else 
-		ui_data.save("mui_use_enable", true)
-		use_enable:SetCheck(true)
 	end
 end
 

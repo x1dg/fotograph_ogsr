@@ -584,8 +584,7 @@ function get_weapon_type(weapon)
 			id == "wpn_colt_python" or
 			id == "wpn_gp100" or
 			id == "wpn_mp7a3" or
-                        id == "wpn_kriss_super_v" or
-			id == "wpn_colt_m1" then
+                        id == "wpn_kriss_super_v" then
 			return 1 --"Пистолет "..m_act:section()
 		        elseif id == "wpn_vintorez" or
 			id == "wpn_svd" or

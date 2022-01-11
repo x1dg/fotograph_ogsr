@@ -655,7 +655,7 @@
 		</item>
 	</mov_intro_foto>
 
-	<manuscript>
+	<manuscript la_texture="1" la_alpha="1">
 		<global_wnd x="0" y="0" width="1024" height="768">
 			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
 				<texture>intro\intro_back</texture>
@@ -663,11 +663,11 @@
 		</global_wnd>
 		<play_each_item>1</play_each_item>		
 		
-		<item type="image">
+		<item type="image"  la_texture="1" la_alpha="1">
 			<length_sec>35</length_sec>
 			<function_on_stop>fotograf.check_time_manuscript</function_on_stop>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="34"  x="0" y="0" width="1024" height="768" stretch="1">
+				<auto_static start_time="0" length_sec="34"  x="128" y="96" width="768" height="576" stretch="1" la_texture="1" la_alpha="1">
 					<window_name>back</window_name>
 					<texture>ui\ui_manuscript</texture>
 			</auto_static>

@@ -43,7 +43,7 @@ scope_name				= wpn_addon_scope
 scope_texture			= wpn\wpn_crosshair_acog
 scope_zoom_factor			= 90
 scope_lense_fov_factor		= 24  
-scope_inertion_factor   	= 5
+scope_inertion_factor   	= 2
 scope_dynamic_zoom 			= true
 
 ; Глушитель
@@ -245,3 +245,28 @@ alt_ofs_pos_z			= 0.16
 alt_ofs_rot_x			= 0
 alt_ofs_rot_y			= 0
 alt_ofs_rot_z			= 0
+
+
+[wpn_l85_m1]:wpn_l85	;Сбалансированная L85
+$spawn             		= "weapons\uniq\wpn_l85_m1"	
+description			= enc_weapons1_wpn-l85_m1
+inv_name	        	= wpn-l85_m1
+inv_name_short			= wpn-l85_m1
+cam_dispersion			= 0.75		
+cam_dispersion_inc		= 0.2
+inv_grid_x			= 5
+inv_grid_y			= 25
+cost				= 20000
+
+[wpn_l85_m2]:wpn_l85	        ;Облегченная l85
+$spawn             		= "weapons\uniq\wpn_l85_m2"	
+description			= enc_weapons1_wpn-l85_m2
+inv_name	        	= wpn-l85_m2
+inv_name_short			= wpn-l85_m2
+silencer_status			= 1
+inv_weight			= 3
+inv_grid_width			= 6
+inv_grid_x			= 22
+inv_grid_y			= 41
+cost				= 23000
+snd_shoot				= weapons\l85a2\l85a2_shoot_sil
