@@ -664,10 +664,10 @@
 		<play_each_item>1</play_each_item>		
 		
 		<item type="image"  la_texture="1" la_alpha="1">
-			<length_sec>35</length_sec>
+			<length_sec>120</length_sec>
 			<function_on_stop>fotograf.check_time_manuscript</function_on_stop>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="34"  x="128" y="96" width="768" height="576" stretch="1" la_texture="1" la_alpha="1">
+				<auto_static start_time="0" length_sec="119"  x="325" y="13" width="375" height="750" stretch="1" la_texture="1" la_alpha="1">
 					<window_name>back</window_name>
 					<texture>ui\ui_manuscript</texture>
 			</auto_static>

@@ -92,7 +92,7 @@ function on_item_to_slot( obj )
 	end
 	if not( string.find( obj:section(), "anm_" ) ) then return end
 	log1("laucer item_to_slot")
-	db.actor:activate_slot(4)
+	db.actor:activate_slot(8)
 	anim_in_action = true
 end
 
@@ -120,7 +120,7 @@ function on_update()
 	local tg = time_global()
 	if anim_in_action then
 		if not anim_exist_tm then
-			if db.actor:active_slot() == 4 then
+			if db.actor:active_slot() == 8 then
 				db.actor:hide_weapon()
 				anim_exist_tm = tg + anim_completed_tm
 				anim_exist_used_tm = tg + anim_used_tm

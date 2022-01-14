@@ -149,7 +149,7 @@
             cell_width="26.9" cell_height="36" rows_num="1" cols_num="2"
 			virtual_cells="1" vc_vert_align="c" vc_horiz_align="c" a="0"/>
 	<dragdrop_detector x="321" y="245" width="29.9" height="40" custom_placement="0"
-            cell_width="29.9" cell_height="40" rows_num="1" cols_num="1"
+            cell_width="26.9" cell_height="36" rows_num="1" cols_num="2"
 			virtual_cells="1" vc_vert_align="c" vc_horiz_align="c" a="0"/>
 	<dragdrop_torch x="281" y="191" width="53.9" height="36" custom_placement="0"
             cell_width="26.9" cell_height="36" rows_num="1" cols_num="2"

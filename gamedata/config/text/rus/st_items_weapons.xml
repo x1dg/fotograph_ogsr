@@ -1772,4 +1772,7 @@
 		\n%c[255,1,255,255]Пробивает стены%c[default]			
 		</text>
 	</string>
+	<string id="st_wpn_binoc_descr">
+        <text>Армейский Бинокль.</text>
+	</string>
 </string_table>

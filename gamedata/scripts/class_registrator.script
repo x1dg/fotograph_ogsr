@@ -48,6 +48,7 @@ function register(object_factory)
 	cs_register	(object_factory, "CPsyDogPhantom",  "se_monster.se_monster",	"SM_DOG_F", "psy_dog_phantom_s")
 	
 	cs_register	(object_factory, "CTorch",          "se_item.se_item_torch",	"TORCH_S",  "device_torch_s")
+	--cs_register (object_factory, "CFlashlight",		"se_item.se_item",			"D_FLALIT",	"device_flashlight") --61
 	cs_register	(object_factory, "CStalkerOutfit",  "se_item.se_outfit",		"E_STLK",	"equ_stalker_s")
 	cs_register	(object_factory, "CScope",			"se_item.se_item",			"WP_SCOPE",	"wpn_scope_s")
 	
@@ -82,5 +83,4 @@ function register(object_factory)
     cs_register    (object_factory, "CMosquitoBald",    "se_zones.se_zone_anom",  "ZS_ELECT",    "zone_electra_s")
 	cs_register	(object_factory, "CMosquitoBald",			"se_zones.se_zone_anom",	"Z_MBALD",	"zone_mosquito_bald") --zone_mosquito_bald = 177
 	cs_register	(object_factory, "CMosquitoBald",			"se_zones.se_zone_anom",	"ZS_ICE",	"zone_ice_s")
-	
 end
