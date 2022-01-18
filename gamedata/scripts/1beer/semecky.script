@@ -26,18 +26,19 @@ function to_strelok_treasure()
 	local actor_strelok_treasure_level_vertex = 3490
 	local actor_strelok_treasure_game_vertex = 16
 	xyz_teleportation.create_immediate_level_changer(1337, actor_strelok_treasure_level_vertex, actor_strelok_treasure_game_vertex, actor_position, vector():set(0.0,-5.2,0.0), "l03u_agr_underground")
-	--db.actor:set_actor_position(vector():set(-69.0196, -6.8737, -73.7216), 3490, 16)
 	level.set_weather("vivid_foggy_weather_06", true)
 	local semecky_position = vector():set(-76.0466, -6.8754, -69.7093)
 	foto2.create_anom("zone_fog_indoor", vector():set(-73.7661, -6.9034, -71.1406), 3188, 16, 20, 0)
 	db.actor:give_info_portion("semecky_first_meet")
--------записываем его сид
-		local sobj = alife():create("esc_semecky", semecky_position, actor_strelok_treasure_level_vertex, actor_strelok_treasure_game_vertex)
+	local sobj = alife():create("esc_semecky", semecky_position, actor_strelok_treasure_level_vertex, actor_strelok_treasure_game_vertex)
 	local params = sobj and amk.read_stalker_params(sobj)
 	if params then
 		params.sid = semecky_id
 		amk.write_stalker_params(params,sobj)
 	end
+	alife():create("device_glowstick_orange", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id())
+	db.actor:activate_slot(0)
+	db.actor:activate_slot(8)	
 end
 
 function back_to_predbannik()
