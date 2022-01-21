@@ -669,7 +669,7 @@
 			<main_wnd>
 				<auto_static start_time="0" length_sec="119"  x="325" y="13" width="375" height="750" stretch="1" la_texture="1" la_alpha="1">
 					<window_name>back</window_name>
-					<texture>ui\ui_manuscript</texture>
+					<texture la_alpha="1">ui\ui_manuscript</texture>
 			</auto_static>
 			</main_wnd>
 		</item>

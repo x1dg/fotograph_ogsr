@@ -36,7 +36,7 @@ function to_strelok_treasure()
 		params.sid = semecky_id
 		amk.write_stalker_params(params,sobj)
 	end
-	alife():create("device_glowstick_orange", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id())
+	alife():create("device_glowstick_orange", db.actor:position(), 1, db.actor:game_vertex_id(), db.actor:id())
 	db.actor:activate_slot(0)
 	db.actor:activate_slot(8)	
 end

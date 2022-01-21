@@ -18,7 +18,11 @@ function eva_state_mgr_animation:evaluate()
 		return false
 	end
 
-	return state_lib.states[self.st.target_state].animation == self.st.animation:state()
+	if state_lib.states[self.st.target_state].animation == self.st.animation:state() then
+		ogse_debug.add_active_anim( self.object, "anim" )
+		return true
+	end
+	return false
 end
 --' нужно ли нам отыгрывать извращенную анимацию
 class "eva_state_mgr_animation_play" (property_evaluator)
@@ -26,7 +30,11 @@ function eva_state_mgr_animation_play:__init(name, st) super (nil, name)
 	self.st = st
 end
 function eva_state_mgr_animation_play:evaluate()
-	return state_lib.states[self.st.target_state].animation ~= nil
+	if state_lib.states[self.st.target_state].animation ~= nil then
+		ogse_debug.add_active_anim( self.object, string.format( "anim_play[%s]", tostring( state_lib.states[self.st.target_state].animation ) ) )
+		return true
+	end
+	return false
 end
 --' Отыгрываем ли мы сейчас извращенную анимацию
 class "eva_state_mgr_animation_play_now" (property_evaluator)
@@ -34,7 +42,11 @@ function eva_state_mgr_animation_play_now:__init(name, st) super (nil, name)
 	self.st = st
 end
 function eva_state_mgr_animation_play_now:evaluate()
-	return self.st.animation:state() ~= "_wait" and self.st.animation:state() ~= nil
+	if self.st.animation:state() ~= nil and self.st.animation:state() ~= "_wait" then
+		ogse_debug.add_active_anim( self.object, "anim_play_now" )
+		return true
+	end	
+	return false
 end
 --' нужно ли нам вообще не отыгрывать анимацию
 class "eva_state_mgr_animation_none" (property_evaluator)
@@ -42,7 +54,11 @@ function eva_state_mgr_animation_none:__init(name, st) super (nil, name)
 	self.st = st
 end
 function eva_state_mgr_animation_none:evaluate()
-	return state_lib.states[self.st.target_state].animation == nil
+	if state_lib.states[self.st.target_state].animation == nil then
+		ogse_debug.add_active_anim( self.object, "anim_none" )
+		return true
+	end		
+	return false
 end
 --' мы уже не отыгрываем никакую извращенную анимацию
 class "eva_state_mgr_animation_none_now" (property_evaluator)
@@ -50,7 +66,11 @@ function eva_state_mgr_animation_none_now:__init(name, st) super (nil, name)
 	self.st = st
 end
 function eva_state_mgr_animation_none_now:evaluate()
-	return self.st.animation:state() == nil
+	if self.st.animation:state() == nil then
+		ogse_debug.add_active_anim( self.object, "anim_none_now" )
+		return true
+	end		
+	return false
 end
 --' нужен ли схеме экстренный ресет
 class "eva_state_mgr_animation_reset" (property_evaluator)
@@ -69,13 +89,21 @@ function eva_state_mgr_animation_reset:evaluate()
 		state_lib.states[self.st.target_state].animation == nil and
 		self.st.callback.begin == nil
 	then
+		ogse_debug.add_active_anim( self.object, "anim_reset_call" )
 		return true
 	end
 	
-	return self.st.reset_state == true and
-		   state_lib.states[self.st.target_state] ~= nil and
-		   self.st.current_state == self.st.target_state and
-		   state_lib.states[self.st.target_state].reset == true	
+	if
+		self.st.reset_state == true and
+		state_lib.states[self.st.target_state] ~= nil and
+		self.st.current_state == self.st.target_state and
+		state_lib.states[self.st.target_state].reset == true
+	then
+		ogse_debug.add_active_anim( self.object, "anim_reset" )
+		return true
+	end		
+	
+	return false
 end
 --' залочена ли схема
 class "eva_state_mgr_animation_locked" (property_evaluator)
@@ -84,8 +112,11 @@ function eva_state_mgr_animation_locked:__init(name, st) super (nil, name)
 end
 function eva_state_mgr_animation_locked:evaluate()
 --	printf("animstate %s", utils.to_str(self.st.animation:state()))
-	return self.st.animation:state() == "_wait" or
-		   self.st.animation:state() == "_new"
+	if (self.st.animation:state() == "_wait" or self.st.animation:state() == "_new") and state_lib.states[self.st.target_state].animation ~= nil then
+		ogse_debug.add_active_anim( self.object, "anim_locked" )
+		return true
+	end		
+	return false
 end
 
 
@@ -96,6 +127,7 @@ function act_state_mgr_animation_start:__init(name, st) super (nil, name)
 end
 function act_state_mgr_animation_start:initialize()
 	action_base.initialize(self)
+	ogse_debug.add_active_anim( self.object, "start["..tostring(state_lib.states[self.st.target_state].animation).."]" )
 	self.st.animation:set_state(state_lib.states[self.st.target_state].animation)
 end
 function act_state_mgr_animation_start:execute()
@@ -111,7 +143,7 @@ function act_state_mgr_animation_reset:__init(name, st) super (nil, name)
 end
 function act_state_mgr_animation_reset:initialize()
 	action_base.initialize(self)
-	--printf("RESET")
+	ogse_debug.add_active_anim( self.object, "reset["..tostring(state_lib.states[self.st.target_state].animation).."]" )
 	self.st.animation:set_state(state_lib.states[self.st.target_state].animation, true)
 	self.st.reset_state = false
 end
@@ -128,6 +160,7 @@ function act_state_mgr_animation_stop:__init(name, st) super (nil, name)
 end
 function act_state_mgr_animation_stop:initialize()
 	action_base.initialize(self)
+	ogse_debug.add_active_anim( self.object, "stop!" )
 	self.st.animation:set_state(nil)
 end
 function act_state_mgr_animation_stop:execute()
