@@ -27,7 +27,9 @@
 			</phrase>
 			<phrase id="41">
 				<text>semecky_start_41</text>
+				<give_info>semecky_talk_done</give_info>
 				<action>semecky.back_to_predbannik</action>
 			</phrase>
 		</phrase_list>
-	</dialog></game_dialogs>
+	</dialog>
+</game_dialogs>

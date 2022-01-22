@@ -1,10 +1,7 @@
 <?xml version='1.0' encoding="windows-1251"?>
 
 <xml>
-
-<!---------------------------Марадёры для контрика---------------------->
-
-		<specific_character id="commander_kontuzheniy" team_default = "1">
+	<specific_character id="commander_kontuzheniy" team_default = "1">
 		<name>Командер</name>		
 		<icon>ui_npc_u_green_stalker_4</icon>
     <map_icon x="3" y="2"></map_icon>
@@ -15,16 +12,15 @@
     <money min="50000" max="100000" infinitive="0"></money>
     
     <rank>650</rank>
-    <reputation>50</reputation>
+    <reputation>10</reputation>
  
-		<visual>new_actors\mar_1</visual>
+	<visual>1beer\commandor</visual>
 		<snd_config>characters_voice\human_02\newbie\</snd_config>
     <crouch_type>1</crouch_type>
 
     <supplies>
       [spawn] \n
-			wpn_toz34 \n
-			ammo_12x70_buck \n
+			wpn_l86 \n
     </supplies>
 	
 	<actor_dialog>ebnituy_dialog</actor_dialog>

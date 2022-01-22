@@ -1,0 +1,9 @@
+<game_task id="misty_stalker_task">
+<title>Таинственный Незнакомец</title>
+<objective>
+<text>С кем я столкнулся? Нужно узнать больше информации про таинственного сталкера.</text>
+<icon>ui_npc_u_prince</icon>
+<infoportion_complete>graf_second_dialog_done</infoportion_complete>
+<article>graf_prince</article>
+</objective>
+</game_task>

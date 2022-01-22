@@ -148,7 +148,7 @@ local sound_zone = {
 	[5] = "crystal_zones\\fly",
 	[6] = "crystal_zones\\horror",
 	[7] = "crystal_zones\\swist",
-	[8] = "crystal_zones\wind"
+	[8] = "crystal_zones\\wind"
 }
 local transform_data = {
 --[[ Заполнение:

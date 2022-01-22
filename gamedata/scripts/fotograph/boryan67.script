@@ -679,7 +679,7 @@ function InfectUpdate()
 		if has_alife_info("GG_recover_1") then db.actor:disable_info_portion("GG_recover_1") end -- опять заразился, забираем поршень излечения
 		if has_alife_info("GG_recover_2") then db.actor:disable_info_portion("GG_recover_2") end -- опять заразился, забираем поршень излечения
 	else	-- иначе проверяем на источник заражения
-		if level.name()=="l08u_brainlab" or level.name()=="l04u_labx18" or level.name()=="l10u_bunker" or level.name()=="l03u_agr_underground" then	-- если подземка
+		if level.name()=="l08u_brainlab" or level.name()=="l04u_labx18" or level.name()=="l10u_bunker" or (level.name()=="l03u_agr_underground" and not has_alife_info("semecky_first_meet")) then	-- если подземка
 			local actor = db.actor
 			if actor and Bor67_1==0 then	-- если вакцина не действует
 				InfectCount=1	-- подземка, вакцина не действует, считаем, что заразились

@@ -1,0 +1,31 @@
+local commandor_id = 1340
+
+function spawn_on_predbannik()
+	spawn_commandor(vector():set(-76.0466, -6.8754, -69.7093), 1, 1, "1")
+end
+
+function spawn_commandor(commandor_position, level_vertex, game_vertex, infoportion)
+	local semecky_position = vector():set(-76.0466, -6.8754, -69.7093)
+	--db.actor:give_info_portion(infoportion)
+	local sobj = alife():create("commander_kontuzheniy", commandor_position, level_vertex, game_vertex)
+	local params = sobj and amk.read_stalker_params(sobj)
+	if params then
+		params.sid = commandor_id
+		amk.write_stalker_params(params,sobj)
+	end
+end
+
+--временая заглушка если ты не вставил ещё--
+function zaglyxa()
+	start_game_timer(1, "new_quest.del_semetskiq")
+end
+----
+
+---удаляем его---
+function del_semetskiq()
+	local sim = alife()
+	local se_obj = sim:story_object(commandor_id)
+	if se_obj then
+		sim:release(se_obj, true)
+	end
+end

@@ -258,4 +258,7 @@
 			   </info_portion>			 
 			   <info_portion id="semecky_first_meet">
 			   </info_portion> 
+			   <info_portion id="semecky_talk_done">
+			   <task>misty_stalker_task</task>
+			   </info_portion> 
 </game_information_portions>
