@@ -3,7 +3,7 @@
 <xml>
 	<specific_character id="commander_kontuzheniy" team_default = "1">
 		<name>Командер</name>		
-		<icon>ui_npc_u_green_stalker_4</icon>
+		<icon>ui_npc_u_soldier_antigas</icon>
     <map_icon x="3" y="2"></map_icon>
     <bio>sim_stalker_general_bio</bio>
 

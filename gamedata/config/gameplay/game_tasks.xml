@@ -17,6 +17,7 @@
 #include "gameplay\tasks_dimos.xml"
 #include "gameplay\tasks_antreg.xml"
 #include "gameplay\tasks_foto2.xml"
+#include "gameplay\tasks_1beer.xml"
 
 	<game_task id="user_task">
 		<title>My map task</title>

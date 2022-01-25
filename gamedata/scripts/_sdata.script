@@ -268,11 +268,19 @@ function info_about_npc()
       local best_danger = target_obj:best_danger()
       local best_danger_name
       local best_danger_type
+	  local best_danger_position
+	  local best_danger_lvid
+	  local best_danger_gvid
       if best_danger and best_danger:object() then
         best_danger_name = best_danger:object():name()
       end
       if best_danger then
         best_danger_type = danger_types[ best_danger:type() ] or "not specified"
+      end
+      if best_danger then
+        best_danger_position = best_danger:position()
+		--best_danger_lvid = best_danger:dependent_object():level_vertex_id()
+		--best_danger_gvid = best_danger:dependent_object():game_vertex_id()
       end
 
       local community = "monster"
@@ -309,6 +317,9 @@ function info_about_npc()
         "------------------",
         string.format( "best_danger: %s", tostring( best_danger_name ) ),
         string.format( "best_danger_type: %s", tostring( best_danger_type ) ),
+        tostring(best_danger_position and string.format( "best_danger_position: %s", tostring("X= "..best_danger_position.x.." Y= "..best_danger_position.y.." Z= "..best_danger_position.z) )),
+        --string.format( "best_danger_lvid: %s", tostring( best_danger_lvid ) ),
+        --string.format( "best_danger_gvid: %s", tostring( best_danger_gvid ) ),
         string.format(
           "is wounded: %s, health: %s, bleeding: %s",
           tostring( xr_wounded.is_wounded( target_obj ) ), target_obj.health,
