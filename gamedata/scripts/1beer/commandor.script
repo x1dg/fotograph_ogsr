@@ -1,12 +1,12 @@
 local commandor_id = 1340
 
 function spawn_on_predbannik()
-	spawn_commandor(vector():set(-76.0466, -6.8754, -69.7093), 1, 1, "1")
+	spawn_commandor(vector():set(-76.0466, -6.8754, -69.7093), 1, 1, "commandor_predbannik_spawn")
 end
 
 function spawn_commandor(commandor_position, level_vertex, game_vertex, infoportion)
 	local semecky_position = vector():set(-76.0466, -6.8754, -69.7093)
-	--db.actor:give_info_portion(infoportion)
+	db.actor:give_info_portion(infoportion)
 	local sobj = alife():create("commander_kontuzheniy", commandor_position, level_vertex, game_vertex)
 	local params = sobj and amk.read_stalker_params(sobj)
 	if params then

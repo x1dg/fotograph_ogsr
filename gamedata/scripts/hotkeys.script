@@ -105,6 +105,12 @@ binds_actions[key_bindings.kUSE_BIPSIZON] = function()
 	return true
 end
 
+-- 'Numpad 9' - Прыгнуть к опасному объекту
+binds_actions[key_bindings.kDANGER] = function()
+	_sdata.jump_to_danger()
+	return true
+end
+
 -- 'Numpad 0' - Худ-маска вкл./выкл
 binds_actions[key_bindings.kMASK] = function()
 	ui_hud_mask.on_off_mask()
