@@ -712,42 +712,19 @@ function CRandomTask:action_task_show(npc, actor)
     end
   end
 end
---' Ïðîâåðêà äîñòóïåí ëè òåêóùèé òàñê äëÿ âûäà÷è
+
 function CRandomTask:task_avail(actor, npc, p1, p2, p3, calculate)
-  local task_desc = self.task_info[self.task_id_by_init_phrase_id[p3]]
-  if calculate == "reset" then    
-    self.current_parent_type_prior = {}
-    return
-  elseif calculate == true then
-    self:check_task_props(self.task_id_by_init_phrase_id[p3])
-
-    local t = task_desc.enabled and task_desc.enabled_props and task_desc.init_condition == nil
-
-    if t == true and (self.current_parent_type_prior[task_desc.complex_type] == nil or
-       self.current_parent_type_prior[task_desc.complex_type] > task_desc.prior )
-    then
-      self.current_parent_type_prior[task_desc.complex_type] = task_desc.prior
-    end
-
-    return t
-  end
-
---' printf("@@@prior %s -> %s [%s]", task_desc.complex_type, task_desc.prior, tostring(calculate))
---' print_table(self.current_parent_type_prior)
+	local task_desc = self.task_info[self.task_id_by_init_phrase_id[p3]]
 log1("TASK DESC: "..tostring(tostring_all(task_desc)))
-log1("p3: "..tostring(self.task_id_by_init_phrase_id[p3]))
-  if self.current_parent_type_prior[task_desc.complex_type] ~= nil and
-     self.current_parent_type_prior[task_desc.complex_type] < task_desc.prior then
-    return false
-  end
+log1("p3: "..tostring(p3))
+log1("task_id_by_init_phrase_id: "..tostring(self.task_id_by_init_phrase_id[p3]))
+	if calculate == "reset" then		
+		return
+	elseif calculate == true then --Åñëè calculate == true òî íóæíî ïðîâåðÿòü check_task_props, èíà÷à ïðîñòî âåðíóòü çíà÷åíèÿ.
+		self:check_task_props(self.task_id_by_init_phrase_id[p3])
+	end
 
---' printf("@@@avail %s", tostring(self.task_id_by_init_phrase_id[p3]))
---' printf("@@@enabled %s", tostring(self.task_info[self.task_id_by_init_phrase_id[p3]].enabled))
---' printf("@@@enabled_props %s", tostring(self.task_info[self.task_id_by_init_phrase_id[p3]].enabled_props))
-  
-  return task_desc.enabled and 
-       task_desc.enabled_props and
-       task_desc.init_condition == nil
+	return task_desc.enabled and task_desc.enabled_props and task_desc.init_condition == nil
 end
 --' Ïðîâåðêà ñâîéñòâ òàñêà
 function CRandomTask:check_task_props(task_id)
