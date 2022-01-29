@@ -1517,7 +1517,7 @@
 		<reputation>-75</reputation>
 		<money min="900" max="1200" infinitive="0"/>
 		
-		<visual>actors\bandit\stalker_bandit_9</visual>
+		<visual>actors\bandit\stalker_bandit_8</visual>
 		<snd_config>characters_voice\human_02\bandit\</snd_config>
 		<crouch_type>1</crouch_type>
 		<supplies>
@@ -1541,7 +1541,7 @@
 	
 	<specific_character id="bandit_10" team_default = "1">
 		<name>GENERATE_NAME_bandit</name>
-		<icon>ui_npc_u_stalker_bandit_10</icon>
+		<icon>ui_npc_u_stalker_bandit_6</icon>
 		<map_icon x="3" y="2"></map_icon>
 		<bio>val_bandit_general_bio</bio>
 
@@ -1552,7 +1552,7 @@
 		<reputation>-63</reputation>
 		<money min="900" max="1200" infinitive="0"/>
 		
-		<visual>actors\bandit\stalker_bandit_10</visual>
+		<visual>actors\bandit\stalker_bandit_6</visual>
 		<snd_config>characters_voice\human_01\bandit\</snd_config>
 		<crouch_type>1</crouch_type>
 		<supplies>
@@ -1587,7 +1587,7 @@
 		<reputation>-63</reputation>
 		<money min="1300" max="1500" infinitive="0"/>
 		
-		<visual>actors\bandit\stalker_bandit_11</visual>
+		<visual>actors\bandit\stalker_bandit_4</visual>
 		<snd_config>characters_voice\human_02\bandit\</snd_config>
 		<crouch_type>1</crouch_type>
 		<supplies>
@@ -1622,7 +1622,7 @@
 		<reputation>-63</reputation>
 		<money min="900" max="1200" infinitive="0"/>
 		
-		<visual>actors\bandit\stalker_bandit_12</visual>
+		<visual>actors\bandit\stalker_bandit_2</visual>
 		<snd_config>characters_voice\human_03\bandit\</snd_config>
 		<crouch_type>1</crouch_type>
 		<supplies>
@@ -1682,7 +1682,7 @@
 	
 	<specific_character id="bandit_camo" team_default = "1">
 		<name>GENERATE_NAME_bandit</name>
-		<icon>ui_npc_u_stalker_bandit_camo</icon>
+		<icon>ui_npc_u_stalker_bandit_8</icon>
 		<map_icon x="3" y="2"></map_icon>
 		<bio>val_bandit_general_bio</bio>
 
@@ -1693,7 +1693,7 @@
 		<reputation>-135</reputation>
 		<money min="1500" max="1800" infinitive="0"/>
 		
-		<visual>actors\bandit\stalker_bandit_camo</visual>
+		<visual>actors\bandit\stalker_bandit_8</visual>
 		<snd_config>characters_voice\human_02\bandit\</snd_config>
 		<crouch_type>1</crouch_type>
 		<supplies>
@@ -2094,7 +2094,7 @@
 		<reputation>-5</reputation>
 		<money min="900" max="1200" infinitive="0"/>
 		
-		<visual>actors\bandit\stalker_bandit_9</visual>
+		<visual>actors\bandit\stalker_bandit_8</visual>
 		<snd_config>characters_voice\human_02\bandit\</snd_config>
 		<crouch_type>1</crouch_type>
 		<supplies>
@@ -2121,7 +2121,7 @@
 	
 	<specific_character id="bratok_10" team_default = "1">
 		<name>GENERATE_NAME_bandit</name>
-		<icon>ui_npc_u_stalker_bandit_10</icon>
+		<icon>ui_npc_u_stalker_bandit_6</icon>
 		<map_icon x="3" y="2"></map_icon>
 		<bio>val_bandit_general_bio</bio>
 
@@ -2132,7 +2132,7 @@
 		<reputation>-15</reputation>
 		<money min="900" max="1200" infinitive="0"/>
 		
-		<visual>actors\bandit\stalker_bandit_10</visual>
+		<visual>actors\bandit\stalker_bandit_6</visual>
 		<snd_config>characters_voice\human_01\bandit\</snd_config>
 		<crouch_type>1</crouch_type>
 		<supplies>
@@ -2167,7 +2167,7 @@
 		<reputation>-10</reputation>
 		<money min="900" max="1200" infinitive="0"/>
 		
-		<visual>actors\bandit\stalker_bandit_11</visual>
+		<visual>actors\bandit\stalker_bandit_4</visual>
 		<snd_config>characters_voice\human_02\bandit\</snd_config>
 		<crouch_type>1</crouch_type>
 		<supplies>
@@ -2203,7 +2203,7 @@
 		<reputation>-10</reputation>
 		<money min="900" max="1200" infinitive="0"/>
 		
-		<visual>actors\bandit\stalker_bandit_12</visual>
+		<visual>actors\bandit\stalker_bandit_2</visual>
 		<snd_config>characters_voice\human_03\bandit\</snd_config>
 		<crouch_type>1</crouch_type>
 		<supplies>
@@ -2264,7 +2264,7 @@
 	
 	<specific_character id="bratok_camo" team_default = "1">
 		<name>GENERATE_NAME_bandit</name>
-		<icon>ui_npc_u_stalker_bandit_camo</icon>
+		<icon>ui_npc_u_stalker_bandit_8</icon>
 		<map_icon x="3" y="2"></map_icon>
 		<bio>val_bandit_general_bio</bio>
 
@@ -2275,7 +2275,7 @@
 		<reputation>-15</reputation>
 		<money min="2500" max="2800" infinitive="0"/>
 		
-		<visual>actors\bandit\stalker_bandit_camo</visual>
+		<visual>actors\bandit\stalker_bandit_8</visual>
 		<snd_config>characters_voice\human_01\bandit\</snd_config>
 		<crouch_type>1</crouch_type>
 		<supplies>

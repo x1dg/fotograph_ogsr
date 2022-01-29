@@ -37,10 +37,8 @@
     <texture id="ui_npc_u_stalker_bandit_4" x="165" y="540" width="165" height="108" />
     <texture id="ui_npc_u_stalker_bandit_5" x="330" y="540" width="165" height="108" />
     <texture id="ui_npc_u_stalker_bandit_8" x="495" y="540" width="165" height="108" />
-    <texture id="ui_npc_u_stalker_bandit_10" x="1650" y="1944" width="165" height="108" />
     <texture id="ui_npc_u_stalker_bandit_master" x="660" y="540" width="165" height="108" />
     <texture id="ui_npc_u_stalker_bandit_veteran" x="825" y="540" width="165" height="108" />
-    <texture id="ui_npc_u_stalker_bandit_camo" x="1650" y="1836" width="165" height="108" />
 
     <texture id="ui_npc_u_stalker_do_antigas" x="0" y="648" width="165" height="108" />
     <texture id="ui_npc_u_stalker_do_balon_8" x="165" y="648" width="165" height="108" />
