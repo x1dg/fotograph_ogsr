@@ -46,7 +46,7 @@
 		<text>Показать дневник игрока</text>
 	</string>
 	<string id="pda_btn_encyclopedia">
-		<text>Записи</text>
+		<text>Записки Фотографа</text>
 	</string>
 	<string id="pda_btn_encyclopedia_hint">
 		<text>Показать информацию о Зоне</text>
