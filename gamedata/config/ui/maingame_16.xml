@@ -28,11 +28,11 @@
 		<texture>ui_hud_frame_patron</texture>
 	</static_weapon>
 	
-	<static_ammo x="68" y="30" width="50" height="25">
+	<static_ammo x="78" y="30" width="50" height="25">
 		<text align="c" complex_mode="0" font="letterica16" r="238" g="155" b="23" a="255">Ammo</text>
 	</static_ammo>
 	
-	<static_wpn_icon x="25" y="18" width="0" height="0"/>
+	<static_wpn_icon x="5" y="18" width="10" height="10"/>
 
 	<!-- Состояние автомобиля из car_panel.xml -->
 	<car_panel x="906" y="728" width="106.4" height="6"/>

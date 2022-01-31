@@ -1,7 +1,6 @@
 <!-- ОПРЕДЕЛЕНИЕ ТЕКСТУР: ХУД -->
 <ui_texture>
     <file_name>ui\ui_hud</file_name>
-	<texture id="ui_hud_map"				x="0" y="0" width="173" height="173"/>		<!-- подложка миникарты -->
 	<texture id="ui_hud_map_arrow"			x="76" y="792" width="139" height="139"/>	<!-- компас миникарты -->
 	<texture id="ui_hud_map_counter"		x="252" y="82" width="22" height="22"/>		<!-- счетчик контактов -->
 
