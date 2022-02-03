@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding="UTF-8"?>
 <!-- ОКНО КОНТАКТОВ В КПК -->
 <window>
-	<list x="18" y="170" width="300" height="360" item_height="16">
-		<font font="letterica18" color="white_2"></font>
+	<list x="18" y="170" width="430" height="360" item_height="16">
+		<font font="letterica18" color="white_3"></font>
 	</list>
 	<window x="18" y="51" width="430" height="424"/>
 

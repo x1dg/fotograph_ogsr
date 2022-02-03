@@ -2,7 +2,7 @@
 <!-- ОБЩЕЕ ОКНО ДЛЯ КПК -->
 <window>
 	<!-- PDA OFF BUTTON -->
-	<off_button x="970" y="30" width="33" height="34" hint="st_pda_off_hint">
+	<off_button x="855" y="27" width="25.4" height="34" stretch="1" hint="st_pda_off_hint">
         <texture>ui_pda_exit_button</texture>
 		<sound_h>device\pda\pda_tap_hover</sound_h>
 		<sound_t>device\pda\pda_off</sound_t>
@@ -10,62 +10,40 @@
 
 	<!-- BACKGROUND TEXTURE -->
 	<main x="0" y="0" width="1024" height="768"/>
-	<background_static x="0" y="0" width="1024" height="768">
+	<auto_static width="128" height="768" stretch="1">
+		<texture width="170" height="768">ui\ui_sidepanels</texture>
+	</auto_static>
+	<auto_static x="895" width="130" height="768" stretch="1">
+		<texture x="171" width="170" height="768">ui\ui_sidepanels</texture>
+	</auto_static>
+	<auto_static x="155" y="60" width="715" height="29" stretch="1">
+		<texture x="0" y="924" width="955" height="29">ui\ui_pda</texture>
+	</auto_static>
+	<background_static x="128" y="0" width="767.6" height="1024" stretch="1">
 		<texture>ui\ui_pda</texture>
 	</background_static>
 
-	<!-- PDA OPTIONS BUTTON -->
-	<btn_pda_options x="37" y="60" width="75" height="25" hint="st_pda_options_hint">
-		<sound_h>device\pda\pda_tap_hover</sound_h>
-		<sound_t>device\pda\pda_off</sound_t>
-	</btn_pda_options>
-
 	<!-- DIODE ANIMATIONS -->
-	<auto_static x="820" y="0" width="8" height="16" stretch="1">
+	<auto_static x="733" y="0" width="6" height="16" stretch="1">
 		<texture>ui\seq\ui_pda_diode_yellow</texture>
 	</auto_static>
-	<auto_static x="835" y="0" width="8" height="16" stretch="1">
+	<auto_static x="748" y="0" width="6" height="16" stretch="1">
 		<texture>ui\seq\ui_pda_diode0</texture>
 	</auto_static>
-	<auto_static x="850" y="0" width="8" height="16" stretch="1">
+	<auto_static x="763" y="0" width="6" height="16" stretch="1">
 		<texture>ui\seq\ui_pda_diode_red</texture>
 	</auto_static>
-	<auto_static x="865" y="0" width="8" height="16" stretch="1">
+	<auto_static x="778" y="0" width="6" height="16" stretch="1">
 		<texture>ui\seq\ui_pda_diode_green</texture>
 	</auto_static>
-	<auto_static x="880" y="0" width="8" height="16" stretch="1">
+	<auto_static x="792" y="0" width="6" height="16" stretch="1">
 		<texture>ui\seq\ui_pda_diode0</texture>
 	</auto_static>
 
 	<!-- PDA FLASHING TEXT -->
-	<auto_static x="36" y="60" light_anim="asus_logo_01" la_alpha="1" la_texture="0" la_text="1" la_cyclic="1">
+	<auto_static x="36" y="60" width="692" stretch="1" light_anim="asus_logo_01" la_alpha="1" la_texture="0" la_text="1" la_cyclic="1">
 		<texture x="0" y="924" width="955" height="29">ui\ui_pda</texture>
-		<text font="letterica18" x="10" y="6" color="grey_1">kb_pda</text>
-	</auto_static>
-
-	<auto_static x="249" y="62">
-		<texture>ui_pda_line_d</texture>
-	</auto_static>
-	<auto_static x="325" y="62">
-		<texture>ui_pda_line_d</texture>
-	</auto_static>
-	<auto_static x="391" y="62">
-		<texture>ui_pda_line_d</texture>
-	</auto_static>
-	<auto_static x="474" y="62">
-		<texture>ui_pda_line_d</texture>
-	</auto_static>
-	<auto_static x="566" y="62">
-		<texture>ui_pda_line_d</texture>
-	</auto_static>
-	<auto_static x="632" y="62">
-		<texture>ui_pda_line_d</texture>
-	</auto_static>
-	<auto_static x="711" y="62">
-		<texture>ui_pda_line_d</texture>
-	</auto_static>
-	<auto_static x="794" y="62">
-		<texture>ui_pda_line_d</texture>
+		<text font="letterica18" x="127" y="6" color="grey_1">kb_pda</text>
 	</auto_static>
 
 	<!-- MAIN BUTTONS BACKGROUND -->
@@ -74,17 +52,23 @@
 	</mbbackground_frame_line>
 
 	<!-- TIME DISPLAY BACKGROUND -->
-	<timer_frame_line x="834" y="-60" width="161" height="32">
+	<timer_frame_line x="630" y="-60" width="120" height="32" stretch="1">
 		<texture>ui_pda_frame</texture>
 		<title x="0" y="126" width="140" height="18">
 			<text font="letterica18" color="grey_2" complex_mode="0"/>
 		</title>
 	</timer_frame_line>
 
+	<!-- PDA OPTIONS BUTTON -->
+	<btn_pda_options x="153" y="60" width="75" height="25" hint="st_pda_options_hint">
+		<sound_h>device\pda\pda_tap_hover</sound_h>
+		<sound_t>device\pda\pda_off</sound_t>
+	</btn_pda_options>
+
 	<!-- TAB CONTROL -->
-	<tab x="263" y="-38" width="1024" height="144">
+	<tab x="180" y="-38" width="768" height="144">
 		<!-- BUTTONS -->
-		<button x="0" y="6" width="36" height="120" hint="pda_btn_quests_hint">
+		<button x="6" y="6" width="36" height="120" hint="pda_btn_quests_hint">
 			<text align="l" x="0" y="46" font="letterica18" color="grey_2">pda_btn_quests</text>
 			<text_color>
 				<t color="white_4"/> <d color="grey_5"/> <e color="grey_2"/> <h color="white_4"/>
@@ -92,7 +76,7 @@
 			<sound_h>device\pda\pda_tap_hover</sound_h>
 			<sound_t>device\pda\pda_tap_active</sound_t>
 		</button>
-		<button x="0" y="6" width="40" height="120" hint="pda_btn_map_hint">
+		<button x="365" y="6" width="40" height="120" hint="pda_btn_map_hint">
 			<text align="l" x="0" y="46" font="letterica18"  color="grey_2">pda_btn_map</text>
 			<text_color>
 				<t  color="white_4"/> <d color="grey_5"/> <e color="grey_2"/> <h color="white_4"/>
@@ -100,15 +84,15 @@
 			<sound_h>device\pda\pda_tap_hover</sound_h>
 			<sound_t>device\pda\pda_tap_active</sound_t>
 		</button>
-		<button x="0" y="6" width="60" height="120" hint="pda_btn_diary_hint">
+		<button x="432" y="6" width="60" height="120" hint="pda_btn_diary_hint">
 			<text align="l" x="0" y="46" font="letterica18"  color="grey_2">pda_btn_diary</text>
 			<text_color>
-				<t r="140" g="140" b="140"/> <d color="grey_5"/> <e color="grey_2"/> <h color="white_4"/>
+				<t color="white_4"/> <d color="grey_5"/> <e color="grey_2"/> <h color="white_4"/>
 			</text_color>
 			<sound_h>device\pda\pda_tap_hover</sound_h>
 			<sound_t>device\pda\pda_tap_active</sound_t>
 		</button>
-		<button x="0" y="6" width="60" height="120" hint="pda_btn_contacts_hint">
+		<button x="595" y="6" width="60" height="120" hint="pda_btn_contacts_hint">
 			<text align="l" x="0" y="46" font="letterica18"  color="grey_2">pda_btn_contacts</text>
 			<text_color>
 				<t  color="white_4"/> <d color="grey_5"/> <e color="grey_2"/> <h color="white_4"/>
@@ -116,7 +100,7 @@
 			<sound_h>device\pda\pda_tap_hover</sound_h>
 			<sound_t>device\pda\pda_tap_active</sound_t>
 		</button>
-		<button x="0" y="6" width="53" height="120" hint="pda_btn_ranking_hint">
+		<button x="675" y="6" width="53" height="120" hint="pda_btn_ranking_hint">
 			<text align="l" x="0" y="46" font="letterica18"  color="grey_2">pda_btn_ranking</text>
 			<text_color>
 				<t  color="white_4"/> <d color="grey_5"/> <e color="grey_2"/> <h color="white_4"/>
@@ -124,7 +108,7 @@
 			<sound_h>device\pda\pda_tap_hover</sound_h>
 			<sound_t>device\pda\pda_tap_active</sound_t>
 		</button>
-		<button x="0" y="6" width="78" height="120" hint="pda_btn_statistics_hint">
+		<button x="745" y="6" width="78" height="120" hint="pda_btn_statistics_hint">
 			<text align="l" x="0" y="46" font="letterica18"  color="grey_2">pda_btn_statistics</text>
 			<text_color>
 				<t  color="white_4"/> <d color="grey_5"/> <e color="grey_2"/> <h color="white_4"/>
@@ -132,7 +116,7 @@
 			<sound_h>device\pda\pda_tap_hover</sound_h>
 			<sound_t>device\pda\pda_tap_active</sound_t>
 		</button>
-		<button x="0" y="6" width="78" height="120" hint="pda_btn_encyclopedia_hint">
+		<button x="819" y="6" width="78" height="120" hint="pda_btn_encyclopedia_hint">
 			<text align="l" x="0" y="46"  font="letterica18"  color="grey_2">pda_btn_encyclopedia</text>
 			<text_color>
 				<t  color="white_4"/> <d color="grey_5"/> <e color="grey_2"/> <h color="white_4"/>
@@ -143,9 +127,9 @@
 	</tab>
 
 	<!-- NEW MESSAGE -->
-	<updated_section_static light_anim="ui_too_slow_blinking" la_alpha="1">
+	<updated_section_static width="80" height="68" stretch="1" light_anim="ui_too_slow_blinking" la_alpha="1">
 		<texture color="pda_tab_flash">ui_pda_tab_flash</texture>
-		<texture_offset x="-12" y="0"/>
+		<texture_offset x="-9" y="0"/>
 	</updated_section_static>
 
 	<old_section_static/>

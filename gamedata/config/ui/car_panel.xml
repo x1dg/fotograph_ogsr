@@ -1,16 +1,17 @@
 <?xml version='1.0' encoding="UTF-8"?>
-<!-- ÐŸÐÐÐ•Ð›Ð¬ Ð¡ÐžÐ¡Ð¢ÐžÐ¯ÐÐ˜Ð¯ ÐÐ’Ð¢ÐžÐœÐžÐ‘Ð˜Ð›Ð¯ -->
-<!-- Ð Ð°ÑÐ¿Ð¾Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ Ð½Ð° Ñ…ÑƒÐ´Ðµ Ð² maingame.xml -->
+<!-- ÏÀÍÅËÜ ÑÎÑÒÎßÍÈß ÀÂÒÎÌÎÁÈËß -->
+<!-- Ðàñïîëîæåíèå íà õóäå â maingame_16.xml -->
 <w>
-	<!-- Ð¢ÐµÐºÑÑ‚ÑƒÑ€Ð° ÑÐ¾ÑÑ‚Ð¾ÑÐ½Ð¸Ñ Ð°Ð²Ñ‚Ð¾Ð¼Ð¾Ð±Ð¸Ð»Ñ -->
-	<car_health_static x="0" y="0">
+	<!-- Òåêñòóðà ñîñòîÿíèÿ àâòîìîáèëÿ -->
+	<car_health_static x="-0.5" y="0" width="130.5" height="5" stretch="1">
 		<texture>ui_hud_shkala_car</texture>
 	</car_health_static>
 
-	<!-- Ð¨ÐºÐ°Ð»Ð° ÑÐ¾ÑÑ‚Ð¾ÑÐ½Ð¸Ñ Ð°Ð²Ñ‚Ð¾Ð¼Ð¾Ð±Ð¸Ð»Ñ -->
-	<car_health_progress_bar x="2" y="2" width="138" height="2" horz="1" min="0" max="100" pos="0">
+	<!-- Øêàëà ñîñòîÿíèÿ àâòîìîáèëÿ -->
+	<car_health_progress_bar x="1.5" y="2" width="100" height="2" stretch="1" horz="1" min="0" max="100" pos="0">
 		<progress>
-			<texture color="hud_scale_car">ui_hud_shk_car</texture>
+			<texture>ui_hud_shk_car</texture>
 		</progress>
 	</car_health_progress_bar>
+	
 </w>

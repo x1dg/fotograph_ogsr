@@ -3,38 +3,38 @@
 <window>
 
 	<!-- JOB CAPTION, ICON AND DETAILS/MAP BUTTON -->
-	<task_root_item x="0" y="0" width="320" height="40">
-		<auto_static x="2" y="8">
-			<texture a="160">ui_pda_task_line</texture>
+	<task_root_item x="0" y="0" width="300" height="40">
+		<auto_static x="8" y="8" width="235" height="1" stretch="1">
+			<texture a="180">ui_pda_task_line</texture>
 		</auto_static>
 
-		<image x="2" y="16" width="83" height="47"/>
+		<image x="8" y="16" width="58" height="47" stretch="1"/>
 
-		<caption x="91" y="15" width="200" height="18" complex_mode="1">
+		<caption x="70" y="14" width="150" height="18" complex_mode="1">
 			<text align="l" x="0" y="0" color="white_3" font="letterica18"/>
 		</caption>
 
-		<caption_time x="91" y="86" width="230" height="18">
+		<caption_time x="70" y="86" width="160" height="16">
 			<text align="l" x="0" y="0" font="letterica16" color="grey_2"/>
 		</caption_time>
-		<rem_time x="91" y="50" width="212" height="18" light_anim="ui_too_slow_blinking" la_cyclic="1" la_texture="0" la_text="1" la_alpha="1">
+		<rem_time x="70" y="50" width="160" height="16" light_anim="ui_too_slow_blinking" la_cyclic="1" la_texture="0" la_text="1" la_alpha="1">
 			<text align="l" x="0" y="0" font="letterica16" color="grey_2"/>
 		</rem_time>
 
-		<switch_description_btn x="282" y="15" width="20" height="20" check_mode="1" hint="pda_switch_description_btn_hint">
+		<switch_description_btn x="226" y="15" width="14.9" height="20" check_mode="1" stretch="1" hint="pda_switch_description_btn_hint">
 			<texture>ui_icons_newPDA_showtext</texture>
 		</switch_description_btn>
 
-		<location_btn x="282" y="40" width="20" height="20" check_mode="1" hint="pda_show_location_btn_hint">
+		<location_btn x="226" y="40" width="14.9" height="20" check_mode="1" stretch="1" hint="pda_show_location_btn_hint">
 			<texture>ui_icons_newPDA_showMarkonmap</texture>
 		</location_btn>
 	</task_root_item>
 
 	<!-- LIST OF SUBTASKS -->
 	<task_sub_item x="0" y="0" width="320" height="38">
-		<state_image x="8" y="10" width="11" height="11"/>
+		<state_image x="9" y="10" width="8.2" height="11" stretch="1"/>
 
-		<description x="25" y="8" width="260" height="16" complex_mode="1">
+		<description x="25" y="8" width="200" height="16" complex_mode="1">
 			<text align="l" x="0" y="0" font="letterica16" color="white_3"/>
 			<text_colors>
 				<accomplished	color="pda_task_accomplished"/>
@@ -42,15 +42,15 @@
 				<active			color="pda_task_active"/>
 			</text_colors>
 		</description>
-		<active_objecttive_image x="4" y="5" light_anim="ui_too_slow_blinking" la_cyclic="1" la_texture="1" la_text="0" la_alpha="1">
+		<active_objecttive_image x="8" y="5" width="234" height="21" stretch="1" light_anim="ui_too_slow_blinking" la_cyclic="1" la_texture="1" la_text="0" la_alpha="1">
 			<texture color="pda_task_flash">ui_pda_task_flash</texture>
 		</active_objecttive_image>
 
-		<show_pointer_btn x="279" y="3" check_mode="1" hint="pda_show_pointer_btn_hint">
+		<show_pointer_btn x="224" y="3" width="18.7" height="25" stretch="1" check_mode="1" hint="pda_show_pointer_btn_hint">
 			<texture>ui_pda_go_mark</texture>
 		</show_pointer_btn>
 
-		<show_descr_btn x="279" y="3" check_mode="1" hint="pda_show_descr_btn_hint">
+		<show_descr_btn x="224" y="3" width="18.7" height="25" stretch="1" check_mode="1" hint="pda_show_descr_btn_hint">
 			<texture>ui_pda_go_mark</texture>
 		</show_descr_btn>
 	</task_sub_item>

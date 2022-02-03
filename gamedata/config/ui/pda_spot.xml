@@ -6,12 +6,12 @@
 		</auto_static-->
 	</background>
 
-	<spot_name_edit x="8" y="8" width="917" height="128">
+	<spot_name_edit x="4" y="6" width="684" height="128">
 		<text font="letterica18" color="map_add_spot"/>
 		<texture>ui_stroketextbox</texture>
 	</spot_name_edit>
 
-	<btn_apply x="357" y="144" width="117" height="28">
+	<btn_apply x="230" y="144" width="117" height="28">
 		<texture_e>ui_pda_button_e</texture_e>
 		<texture_t>ui_pda_button_t</texture_t>
 		<texture_h>ui_pda_button_h</texture_h>
@@ -20,7 +20,7 @@
 		<sound_t>device\pda\pda_tap_active</sound_t>
 	</btn_apply>
 
-	<btn_cancel x="477" y="144" width="117" height="28">
+	<btn_cancel x="346" y="144" width="117" height="28">
 		<texture_e>ui_pda_button_e</texture_e>
 		<texture_t>ui_pda_button_t</texture_t>
 		<texture_h>ui_pda_button_h</texture_h>

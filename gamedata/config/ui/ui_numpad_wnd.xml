@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- ПАНЕЛЬ ВВОДА ПАРОЛЯ -->
 <numpad>	
-	<background x="-342" y="-199" width="1024" height="1024" stretch="1">
-	<texture a="192">ui\ui_crete</texture>
+	<background x="-342" y="-199">
+	<texture></texture>
+	<auto_static x="0" y="0" width="130" height="1024" stretch="1">
+		<texture x="0" y="0" width="16" height="1024" a="192">ui\ui_crete</texture>
+	</auto_static>
+	<auto_static x="880" y="0" width="170" height="1024" stretch="1">
+		<texture x="0" y="0" width="16" height="1024" a="192">ui\ui_crete</texture>
+	</auto_static>
+	<auto_static x="130" y="0" width="750" height="1024" stretch="1">
+		<texture a="192">ui\ui_crete</texture>
+	</auto_static>
 	<auto_static x="342" y="199" width="339" height="383">
 		<texture>ui_numpad_lockframe</texture>
 	</auto_static>
 	</background>
 	
-	<edit_box x="42" y="32" width="245" height="31">
+	<edit_box x="44" y="32" width="245" height="31">
 		<text font="letterica25" a="96" color="green" align="r"></text>
 	</edit_box>
 	

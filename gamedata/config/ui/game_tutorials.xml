@@ -14,26 +14,32 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="10000" x="0" y="0" width="1024" height="768">
+				<auto_static start_time="0" length_sec="10000" x="130" y="0" width="767.6" height="1024" stretch="1">
 					<texture a="96">ui\ui_crete</texture>
+				</auto_static>
+				<auto_static start_time="0" length_sec="10000" x="0" y="0" width="130" height="1024" stretch="1">
+					<texture x="0" y="0" width="16" height="1024" a="96">ui\ui_crete</texture>
+				</auto_static>
+				<auto_static start_time="0" length_sec="10000" x="897.7" y="0" width="170" height="1024" stretch="1">
+					<texture x="0" y="0" width="16" height="1024" a="96">ui\ui_crete</texture>
 				</auto_static>
 				<auto_static start_time="0" length_sec="10000" x="0" y="0" width="3000" height="768" stretch="1"
 					light_anim="ui_btn_hint" la_cyclic="0" la_texture="1" la_alpha="1">
 					<texture>ui\ui_msg_wnd</texture>
 				</auto_static>
-				<auto_static start_time="1" length_sec="10000" x="288" y="295" width="447" height="177" stretch="1"
+				<auto_static start_time="1" length_sec="10000" x="330" y="295" width="362" height="177" stretch="1"
 					light_anim="asus_logo_01" la_cyclic="0" la_texture="1" la_alpha="1">
 					<texture color="inv_highlight">ui_message_highlight</texture>
 				</auto_static>
-				<auto_static start_time="2" length_sec="10000" x="372" y="355" width="281" height="2" stretch="1"
+				<auto_static start_time="2" length_sec="10000" x="371" y="355" width="281" height="3" stretch="1"
 					light_anim="ui_btn_hint" la_cyclic="0" la_texture="1" la_alpha="1">
 					<window_name>w2</window_name>
-					<texture x="224" y="122" width="376" height="1" color="tutorial_gameover">ui_message_frame</texture>
+					<texture x="224" y="122" width="359" height="1" color="tutorial_gameover">ui_message_frame</texture>
 				</auto_static>
-				<auto_static start_time="2" length_sec="10000" x="372" y="405" width="281" height="2" stretch="1"
+				<auto_static start_time="2" length_sec="10000" x="371" y="405" width="281" height="3" stretch="1"
 					light_anim="ui_btn_hint" la_cyclic="0" la_texture="1" la_alpha="1">
 					<window_name>w2</window_name>
-					<texture x="224" y="122" width="376" height="1" color="tutorial_gameover">ui_message_frame</texture>
+					<texture x="224" y="122" width="359" height="1" color="tutorial_gameover">ui_message_frame</texture>
 				</auto_static>
 				<auto_static start_time="1" length_sec="10000" x="300" y="354" width="425" height="56"
 					light_anim="ui_btn_hint" la_cyclic="0" la_text="1" la_alpha="1">
@@ -368,19 +374,20 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="255" y="142" width="518" height="100"
+				<auto_static start_time="0" length_sec="5000" x="317" y="142" width="388.3" height="100" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w2</window_name>
 					<texture>ui_hud_frame_tutorial</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="264" y="150" width="80" height="80"
+				<auto_static start_time="0" length_sec="5000" x="324" y="150" width="59.9" height="80" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_message_info</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="352" y="150" width="8" height="79"
+				<auto_static start_time="0" length_sec="5000" x="391" y="150" width="5.9" height="79" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_hud_frame_t_div</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="573" y="193" width="408" height="80" alignment="c"
+				<auto_static start_time="0" length_sec="5000" x="552" y="193" width="306" height="80" alignment="c"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<window_name>w1</window_name>
 					<text font="letterica16" color="tutorial_text">binoc_tutorial</text>
@@ -400,19 +407,20 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="255" y="142" width="518" height="100"
+				<auto_static start_time="0" length_sec="5000" x="317" y="142" width="388.3" height="100" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w2</window_name>
 					<texture>ui_hud_frame_tutorial</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="264" y="150" width="80" height="80"
+				<auto_static start_time="0" length_sec="5000" x="324" y="150" width="59.9" height="80" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_message_info</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="352" y="150" width="8" height="79"
+				<auto_static start_time="0" length_sec="5000" x="391" y="150" width="5.9" height="79" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_hud_frame_t_div</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="573" y="193" width="408" height="80" alignment="c"
+				<auto_static start_time="0" length_sec="5000" x="552" y="193" width="306" height="80" alignment="c"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<window_name>w1</window_name>
 					<text font="letterica16" color="tutorial_text">jump_tutorial</text>
@@ -432,19 +440,20 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="255" y="142" width="518" height="100"
+				<auto_static start_time="0" length_sec="5000" x="317" y="142" width="388.3" height="100" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w2</window_name>
 					<texture>ui_hud_frame_tutorial</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="264" y="150" width="80" height="80"
+				<auto_static start_time="0" length_sec="5000" x="324" y="150" width="59.9" height="80" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_message_info</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="352" y="150" width="8" height="79"
+				<auto_static start_time="0" length_sec="5000" x="391" y="150" width="5.9" height="79" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_hud_frame_t_div</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="573" y="193" width="408" height="80" alignment="c"
+				<auto_static start_time="0" length_sec="5000" x="552" y="193" width="306" height="80" alignment="c"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<window_name>w1</window_name>
 					<text font="letterica16" color="tutorial_text">crouch_tutorial</text>
@@ -465,19 +474,20 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="255" y="142" width="518" height="100"
+				<auto_static start_time="0" length_sec="5000" x="317" y="142" width="388.3" height="100" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w2</window_name>
 					<texture>ui_hud_frame_tutorial</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="264" y="150" width="80" height="80"
+				<auto_static start_time="0" length_sec="5000" x="324" y="150" width="59.9" height="80" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_message_info</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="352" y="150" width="8" height="79"
+				<auto_static start_time="0" length_sec="5000" x="391" y="150" width="5.9" height="79" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_hud_frame_t_div</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="573" y="193" width="408" height="80" alignment="c"
+				<auto_static start_time="0" length_sec="5000" x="552" y="193" width="306" height="80" alignment="c"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<window_name>w1</window_name>
 					<text font="letterica16" color="tutorial_text">crouch_down_tutorial</text>
@@ -497,19 +507,20 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="255" y="142" width="518" height="100"
+				<auto_static start_time="0" length_sec="5000" x="317" y="142" width="388.3" height="100" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w2</window_name>
 					<texture>ui_hud_frame_tutorial</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="264" y="150" width="80" height="80"
+				<auto_static start_time="0" length_sec="5000" x="324" y="150" width="59.9" height="80" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_message_info</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="352" y="150" width="8" height="79"
+				<auto_static start_time="0" length_sec="5000" x="391" y="150" width="5.9" height="79" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_hud_frame_t_div</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="573" y="193" width="408" height="80" alignment="c"
+				<auto_static start_time="0" length_sec="5000" x="552" y="193" width="306" height="80" alignment="c"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<window_name>w1</window_name>
 					<text font="letterica16" color="tutorial_text">radiation_tutorial</text>
@@ -529,19 +540,20 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="255" y="142" width="518" height="100"
+				<auto_static start_time="0" length_sec="5000" x="317" y="142" width="388.3" height="100" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w2</window_name>
 					<texture>ui_hud_frame_tutorial</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="264" y="150" width="80" height="80"
+				<auto_static start_time="0" length_sec="5000" x="324" y="150" width="59.9" height="80" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_message_info</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="352" y="150" width="8" height="79"
+				<auto_static start_time="0" length_sec="5000" x="391" y="150" width="5.9" height="79" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_hud_frame_t_div</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="573" y="193" width="408" height="80" alignment="c"
+				<auto_static start_time="0" length_sec="5000" x="552" y="193" width="306" height="80" alignment="c"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<window_name>w1</window_name>
 					<text font="letterica16" color="tutorial_text">radiation_tutorial</text>
@@ -561,19 +573,20 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="255" y="142" width="518" height="100"
+				<auto_static start_time="0" length_sec="5000" x="317" y="142" width="388.3" height="100" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w2</window_name>
 					<texture>ui_hud_frame_tutorial</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="264" y="150" width="80" height="80"
+				<auto_static start_time="0" length_sec="5000" x="324" y="150" width="59.9" height="80" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_message_info</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="352" y="150" width="8" height="79"
+				<auto_static start_time="0" length_sec="5000" x="391" y="150" width="5.9" height="79" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_hud_frame_t_div</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="573" y="193" width="408" height="80" alignment="c"
+				<auto_static start_time="0" length_sec="5000" x="552" y="193" width="306" height="80" alignment="c"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<window_name>w1</window_name>
 					<text font="letterica16" color="tutorial_text">wound_tutorial</text>
@@ -593,19 +606,20 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="255" y="142" width="518" height="100"
+				<auto_static start_time="0" length_sec="5000" x="317" y="142" width="388.3" height="100" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w2</window_name>
 					<texture>ui_hud_frame_tutorial</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="264" y="150" width="80" height="80"
+				<auto_static start_time="0" length_sec="5000" x="324" y="150" width="59.9" height="80" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_message_info</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="352" y="150" width="8" height="79"
+				<auto_static start_time="0" length_sec="5000" x="391" y="150" width="5.9" height="79" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_hud_frame_t_div</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="573" y="193" width="408" height="80" alignment="c"
+				<auto_static start_time="0" length_sec="5000" x="552" y="193" width="306" height="80" alignment="c"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<window_name>w1</window_name>
 					<text font="letterica16" color="tutorial_text">weapon_tutorial</text>
@@ -625,19 +639,20 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="255" y="142" width="518" height="100"
+				<auto_static start_time="0" length_sec="5000" x="317" y="142" width="388.3" height="100" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w2</window_name>
 					<texture>ui_hud_frame_tutorial</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="264" y="150" width="80" height="80"
+				<auto_static start_time="0" length_sec="5000" x="324" y="150" width="59.9" height="80" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_message_info</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="352" y="150" width="8" height="79"
+				<auto_static start_time="0" length_sec="5000" x="391" y="150" width="5.9" height="79" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_hud_frame_t_div</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="573" y="193" width="408" height="80" alignment="c"
+				<auto_static start_time="0" length_sec="5000" x="552" y="193" width="306" height="80" alignment="c"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<window_name>w1</window_name>
 					<text font="letterica16" color="tutorial_text">sprint_tutorial</text>
@@ -657,19 +672,20 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="255" y="142" width="518" height="100"
+				<auto_static start_time="0" length_sec="5000" x="317" y="142" width="388.3" height="100" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w2</window_name>
 					<texture>ui_hud_frame_tutorial</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="264" y="150" width="80" height="80"
+				<auto_static start_time="0" length_sec="5000" x="324" y="150" width="59.9" height="80" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_message_info</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="352" y="150" width="8" height="79"
+				<auto_static start_time="0" length_sec="5000" x="391" y="150" width="5.9" height="79" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_hud_frame_t_div</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="573" y="193" width="408" height="80" alignment="c"
+				<auto_static start_time="0" length_sec="5000" x="552" y="193" width="306" height="80" alignment="c"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<window_name>w1</window_name>
 					<text font="letterica16" color="tutorial_text">weakness_tutorial</text>
@@ -689,19 +705,20 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="255" y="142" width="518" height="100"
+				<auto_static start_time="0" length_sec="5000" x="317" y="142" width="388.3" height="100" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w2</window_name>
 					<texture>ui_hud_frame_tutorial</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="264" y="150" width="80" height="80"
+				<auto_static start_time="0" length_sec="5000" x="324" y="150" width="59.9" height="80" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_message_info</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="352" y="150" width="8" height="79"
+				<auto_static start_time="0" length_sec="5000" x="391" y="150" width="5.9" height="79" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_hud_frame_t_div</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="573" y="193" width="408" height="80" alignment="c"
+				<auto_static start_time="0" length_sec="5000" x="552" y="193" width="306" height="80" alignment="c"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<window_name>w1</window_name>
 					<text font="letterica16" color="tutorial_text">relation_tutorial</text>
@@ -721,19 +738,20 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="255" y="142" width="518" height="100"
+				<auto_static start_time="0" length_sec="5000" x="317" y="142" width="388.3" height="100" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w2</window_name>
 					<texture>ui_hud_frame_tutorial</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="264" y="150" width="80" height="80"
+				<auto_static start_time="0" length_sec="5000" x="324" y="150" width="59.9" height="80" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_message_info</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="352" y="150" width="8" height="79"
+				<auto_static start_time="0" length_sec="5000" x="391" y="150" width="5.9" height="79" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_hud_frame_t_div</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="573" y="193" width="408" height="80" alignment="c"
+				<auto_static start_time="0" length_sec="5000" x="552" y="193" width="306" height="80" alignment="c"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<window_name>w1</window_name>
 					<text font="letterica16" color="tutorial_text">overload_tutorial</text>
@@ -753,19 +771,20 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="255" y="142" width="518" height="100"
+				<auto_static start_time="0" length_sec="5000" x="317" y="142" width="388.3" height="100" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w2</window_name>
 					<texture>ui_hud_frame_tutorial</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="264" y="150" width="80" height="80"
+				<auto_static start_time="0" length_sec="5000" x="324" y="150" width="59.9" height="80" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_message_info</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="352" y="150" width="8" height="79"
+				<auto_static start_time="0" length_sec="5000" x="391" y="150" width="5.9" height="79" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_hud_frame_t_div</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="573" y="193" width="408" height="80" alignment="c"
+				<auto_static start_time="0" length_sec="5000" x="552" y="193" width="306" height="80" alignment="c"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<window_name>w1</window_name>
 					<text font="letterica16" color="tutorial_text">hide_weapon_tutorial</text>
@@ -785,19 +804,20 @@
 			<pda_section/>
 			<grab_input>0</grab_input>
 			<main_wnd>
-				<auto_static start_time="0" length_sec="5000" x="255" y="142" width="518" height="100"
+				<auto_static start_time="0" length_sec="5000" x="317" y="142" width="388.3" height="100" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w2</window_name>
 					<texture>ui_hud_frame_tutorial</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="264" y="150" width="80" height="80"
+				<auto_static start_time="0" length_sec="5000" x="324" y="150" width="59.9" height="80" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_message_info</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="352" y="150" width="8" height="79"
+				<auto_static start_time="0" length_sec="5000" x="391" y="150" width="5.9" height="79" stretch="1"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<texture color="tutorial_icon">ui_hud_frame_t_div</texture>
 				</auto_static>
-				<auto_static start_time="0" length_sec="5000" x="573" y="193" width="408" height="80" alignment="c"
+				<auto_static start_time="0" length_sec="5000" x="552" y="193" width="306" height="80" alignment="c"
 					light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
 					<window_name>w1</window_name>
 					<text font="letterica16" color="tutorial_text">pda_diary_tutorial</text>

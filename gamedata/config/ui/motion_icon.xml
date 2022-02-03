@@ -2,49 +2,49 @@
 <!-- ДЕЙСТВИЯ, ВИДИМОСТЬ, ШУМ, ВЫНОСЛИВОСТЬ ГГ НА ХУДЕ -->
 <window x="0" y="0" w="640" h="480" r="210" g="210" b="210" texture="1">
 
-	<background  x="-200" y="-200" width="121" height="115">
+	<background  x="-200" y="-200" width="87" height="115" stretch="1">
 		<texture>ui_hud_frame_stamina</texture>
 	</background>
-
-	<state_normal x="30" y="26" width="65" height="75">
+	
+	<state_normal x="20" y="26" width="48" height="75" stretch="1">
 		<texture>ui_hud_soldier_normal</texture>
 	</state_normal>
 
-	<state_crouch x="30" y="26" width="65" height="75">
+	<state_crouch x="20" y="26" width="48" height="75" stretch="1">
 		<texture>ui_hud_soldier_crouch</texture>
 	</state_crouch>
 
-	<state_creep x="30" y="26" width="65" height="75">
+	<state_creep x="20" y="26" width="48" height="75" stretch="1">
 		<texture>ui_hud_soldier_creep</texture>
 	</state_creep>
 
-	<state_climb x="30" y="26" width="65" height="75">
+	<state_climb x="20" y="26" width="48" height="75" stretch="1">
 		<texture>ui_hud_soldier_climb</texture>
 	</state_climb>
 
-	<state_run x="30" y="26" width="65" height="75">
+	<state_run x="20" y="26" width="48" height="75" stretch="1">
 		<texture>ui_hud_soldier_run</texture>
 	</state_run>
 
-	<state_sprint x="30" y="26" width="65" height="75">
+	<state_sprint x="20" y="26" width="48" height="75" stretch="1">
 		<texture>ui_hud_soldier_sprint</texture>
 	</state_sprint>
 	
-	<power_progress x="1069" y="948" width="138" height="2" horz="1" min="0" max="100" pos="50">
-		<progress>
-			<texture color="hud_scale_stamina">ui_hud_shk_stamina</texture>
+	<power_progress x="1108" y="948" width="100" height="2" horz="1" min="0" max="100" pos="50">
+		<progress x="9" y="-26" width="100" height="2" stretch="1">
+			<texture>ui_hud_shk_stamina</texture>
 		</progress>
 	</power_progress>
 
-	<luminosity_progress x="333" y="205" width="96" height="67" horz="1" min="0" max="200" pos="100">
+	<luminosity_progress x="300" y="205" width="57" height="67" stretch="1" horz="1" min="000" max="200" pos="100">
 		<progress>
-			<texture color="hud_scale_light">ui_hud_shk_light</texture>
+			<texture color="hud_scale_light">ui_hud_shk_light_16</texture>
 		</progress>
 	</luminosity_progress>
 	
-	<noise_progress x="333" y="337" width="96" height="67" horz="1" min="0" max="200" pos="100">
+	<noise_progress x="300" y="335" width="57" height="67" stretch="1" horz="1" min="000" max="200" pos="100">
 		<progress>
-			<texture color="hud_scale_noise">ui_hud_shk_noise</texture>
+			<texture color="hud_scale_noise">ui_hud_shk_noise_16</texture>
 		</progress>
 	</noise_progress>
 </window>
