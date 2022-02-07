@@ -43,51 +43,6 @@
 	<string id="Ammo">
 		<text>Боеприпасы</text>
 	</string>
-	<string id="ammo-11.43x23-fmj">
-		<text>Патроны .45ACP</text>
-	</string>
-	<string id="ammo-11.43x23-fmj_s">
-		<text>.45ACP</text>
-	</string>
-	<string id="ammo-11.43x23-hydro">
-		<text>.45ACP Hydro-Shock</text>
-	</string>
-	<string id="ammo-11.43x23-hydro_s">
-		<text>.45Hydro</text>
-	</string>
-	<string id="ammo-12x70-buck">
-		<text>Патроны 12х70 дробь</text>
-	</string>
-	<string id="ammo-12x70-buck_s">
-		<text>12х70мм дробь</text>
-	</string>
-	<string id="ammo-12x76-dart">
-		<text>Патроны 12x76 дротик</text>
-	</string>
-	<string id="ammo-12x76-dart_s">
-		<text>12x76мм дротик</text>
-	</string>
-	<string id="ammo-12x76-zhekan">
-		<text>Патроны 12x76 жекан</text>
-	</string>
-	<string id="ammo-12x76-zhekan_s">
-		<text>12x76мм жекан</text>
-	</string>
-	<string id="ammo-5.45x39-ap">
-		<text>Патроны 5.45x39мм БП</text>
-	</string>
-	<string id="ammo-5.45x39-ap_s">
-		<text>5.45х39мм БП</text>
-	</string>
-	<string id="ammo-5.45x39-fmj">
-		<text>Патроны 5.45x39мм</text>
-	</string>
-	<string id="ammo-5.45x39-fmj_s">
-		<text>5.45x39мм</text>
-	</string>
-	<string id="ammo-5.56x45-ap">
-		<text>Патроны 5.56x45мм AP</text>
-	</string>
 	<string id="ammo-5.56x45-ap_s">
 		<text>5.56х45мм AP</text>
 	</string>

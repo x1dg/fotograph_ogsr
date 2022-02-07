@@ -7,7 +7,7 @@
     <texture id="ui_hud_shkala_health"		x="0" y="0" width="0" height="0"/>		<!-- фоновая текстура шкалы здоровья/выносливлсти -->
     <texture id="ui_hud_shkala_car"			x="0" y="0" width="0" height="0"/>		<!-- фоновая текстура шкалы здоровья авто -->
     <texture id="ui_hud_shkala_rad"			x="0" y="0" width="0" height="0"/>	<!-- фоновая текстура шкалы радиации -->
-    <texture id="ui_hud_frame_patron"		x="0" y="200" width="176" height="65"/>		<!-- фоновая текстура патронов -->
+    <texture id="ui_hud_frame_patron"		x="0" y="186" width="141" height="75"/>		<!-- фоновая текстура патронов -->
     <texture id="ui_hud_frame_clock"		x="708" y="426" width="316" height="60"/>	<!-- фоновая текстура таймера -->
     <texture id="ui_hud_frame_flash"		x="351" y="236" width="94" height="27"/>	<!-- фоновая текстура мигающего индикатора таймера -->
     <texture id="ui_hud_frame_rank"			x="342" y="341" width="60" height="65"/>	<!-- фоновая текстура для значка ранга в мп-->
@@ -21,9 +21,10 @@
 	<texture id="ui_hud_frame_tutorial"		x="506" y="625" width="518" height="100"/>	<!-- фоновая текстура текстов обучения -->
 	<texture id="ui_hud_frame_t_div"		x="492" y="626" width="8" height="79"/>		<!-- разделитель текстов обучения -->
 
+    <texture id="ui_hud_shk_health"			x="0" y="333" width="100" height="5"/>		<!-- шкала жизни -->
+	<texture id="ui_hud_shk_armour"			x="0" y="340" width="100" height="5"/>		<!-- шкала костюма -->
+	
     <texture id="ui_hud_shk_car"			x="0" y="355" width="100" height="2"/>		<!-- шкала авто -->
-    <texture id="ui_hud_shk_health"			x="0" y="340" width="100" height="3"/>		<!-- шкала жизни -->
-	<texture id="ui_hud_shk_armour"			x="0" y="345" width="100" height="3"/>		<!-- шкала костюма -->
 	<texture id="ui_hud_shk_stamina"		x="0" y="350" width="100" height="2"/>		<!-- шкала выносливости -->
     <texture id="ui_hud_shk_light"			x="430" y="466" width="76" height="67"/>	<!-- шкала заметности -->
     <texture id="ui_hud_shk_noise"			x="430" y="533" width="76" height="67"/>	<!-- шкала шума -->

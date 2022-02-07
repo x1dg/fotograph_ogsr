@@ -6,7 +6,7 @@
 -- Last edit:	KamikaZze (11.06.14)
 -- Global Description: Отладочная информация
 
-GlobalEnable = true
+GlobalEnable = false
 
 -- ПОДРОБНОЕ ОПИСАНИЕ:
 
