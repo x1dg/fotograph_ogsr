@@ -1,0 +1,75 @@
+--[[---------------------------------------------------------------------------------------------------------------------------------
+ File			: bind_bat.script
+ Description	: Биндер летучих мышей - озвучка, и подбираемые тушки.
+ Copyright		: 2013 © boryan67
+ Author			: boryan67 - scripts & mauvais - sounds
+ Last edit		: 15.08.2013
+--]]------------------------------------------------------------------------------------------------------------------------------------
+local tbl_sounds = {
+"monsters\\bat\\bat_n_1",
+"monsters\\bat\\bat_n_2",
+"monsters\\bat\\bat_n_3",
+"monsters\\bat\\bat_n_4",
+"monsters\\bat\\bat_n_5",
+"monsters\\bat\\bat_n_6",
+"monsters\\bat\\bat_n_7",
+"monsters\\bat\\bat_n_8",
+"monsters\\bat\\bat_n_9",
+"monsters\\bat\\bat_n_10",
+"monsters\\bat\\bat_n_11"
+}
+local tbl_bat = {}	-- внешняя таблица звуков
+
+function init(obj)
+	local new_binder = bat_binder(obj)
+	obj:bind_object(new_binder)
+end
+
+class "bat_binder" (object_binder)
+
+function bat_binder:__init(obj) super(obj)
+	self.id = self.object:id()	-- собственный ИД
+	if not tbl_bat[self.id] then
+		tbl_bat[self.id] = sound_object(tbl_sounds[math.random(1,table.getn(tbl_sounds))])	-- запомним случайный звук в таблице
+	end
+	self.alive = true
+	self.new_pos = self.object:position()
+	self.corps = false
+	self.counter = math.random(5,50)
+end 
+
+function bat_binder:reinit()
+	object_binder.reinit(self)
+end
+
+function bat_binder:update(delta)
+	object_binder.update(self, delta)
+	self.alive = self.object:alive()
+	self.new_pos = self.object:position()
+	if self.alive then	-- если объект живой
+		self.counter = self.counter-1	-- уменьшаем счетчик
+		if self.counter<=0 then	-- если время вышло
+			if not tbl_bat[self.id] then
+				tbl_bat[self.id] = sound_object(tbl_sounds[math.random(1,table.getn(tbl_sounds))])	-- запомним случайный звук в таблице
+			end
+			tbl_bat[self.id]:play_at_pos(db.actor, self.new_pos)	-- включим звук в позиции объекта
+			self.counter = math.random(50,200)	-- зададим таймаут до следующего звука
+		end
+
+	else 	-- объект мертвый
+		-- создадим дохлый объект
+		local part=alife():create("mutant_mouse", self.new_pos, self.object:level_vertex_id(), self.object:game_vertex_id())
+		local sobj = alife():object(self.id)	-- получим серверный объект
+		if sobj then
+			alife():release(sobj,true)	-- удаляем себя
+		end
+	end
+end
+
+function bat_binder:net_destroy()
+	object_binder.net_destroy(self)
+end
+
+function bat_binder:net_save_relevant()
+	return true
+end

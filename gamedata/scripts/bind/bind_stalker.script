@@ -1,0 +1,775 @@
+function init (obj)
+  xr_motivator.AddToMotivator(obj)
+end
+
+function actor_init (npc)
+  npc:bind_object(actor_binder(npc))
+  -- level_tasks.add_location(707,"blue_location","Лукаш")
+  -- level_tasks.add_location(702,"blue_location","Макс")
+  -- level_tasks.add_location(728,"blue_location","Повар")
+end
+
+local game_difficulty_by_num = {
+  [0] = "gd_novice",
+  [1] = "gd_stalker",
+  [2] = "gd_veteran",
+  [3] = "gd_master"
+  }
+
+lasthealth  = 0
+lasttime  = 0
+post_process = 0
+local weapon_hide = false
+----------------------------------------------------------------------------------------------------------------------
+class "actor_binder" (object_binder)
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:__init (obj) super(obj)
+  self.bCheckStart = false
+  self.weather_manager = level_weathers.WeatherManager()
+  self.actor_detector = xr_detector.actor_detector()
+  	--/#+# [m_timers] for update timers -------------------------------
+	if (m_timers) then m_timers.start() end
+	--/<---------------------------------------------------------------
+end
+function actor_binder:__finalize()
+	ui_loader.init() -- MonolithUI
+end
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:net_spawn(data)
+  printf("actor net spawn")   
+
+  level.show_indicators()
+
+  self.bCheckStart = true
+  self.weapon_hide = false -- спрятано или нет оружие при разговоре.
+  weapon_hide = false -- устанавливаем глобальный дефолтовый флаг.
+
+  if object_binder.net_spawn(self,data) == false then
+    return false
+  end
+
+  db.add_actor(self.object)
+  
+  if self.st.disable_input_time == nil then
+    level.enable_input()
+  end
+
+  self.weather_manager:reset()
+--  game_stats.initialize ()
+
+  if(actor_stats.add_to_ranking~=nil)then
+    actor_stats.add_to_ranking(self.object:id())
+  end
+
+  
+  --' Загружаем настройки дропа
+  death_manager.init_drop_settings()
+
+  if xrs_ai then xrs_ai.actor_net_spawn(self)
+end
+ 
+  -- added by xStream for AMK miniSDK
+  amk.on_game_load(obj)
+  -- end of addition
+  
+  ui_loader.net_spawn(data)
+  
+-- sak_off_corpses.off_corpses()
+-- braad_test.mad_npc()
+-- braad_test.false_info()
+  return true
+end
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:net_destroy()
+
+  -- added by xStream for AMK miniSDK
+  amk.on_game_save(obj)
+  -- end of addition
+
+  if(actor_stats.remove_from_ranking~=nil)then
+    actor_stats.remove_from_ranking(self.object:id())
+  end
+--  game_stats.shutdown ()
+  db.del_actor(self.object)
+
+  sr_light.clean_up()
+  
+  ui_loader.net_destroy()
+
+  self.object:set_callback(callback.inventory_info, nil)
+  self.object:set_callback(callback.article_info, nil)
+  self.object:set_callback(callback.on_item_take, nil)
+  self.object:set_callback(callback.on_item_drop, nil)
+  --self.object:set_callback(callback.actor_sleep, nil)
+  self.object:set_callback(callback.task_state, nil)
+  self.object:set_callback(callback.level_border_enter, nil)
+  self.object:set_callback(callback.level_border_exit, nil)
+  self.object:set_callback(callback.take_item_from_box, nil)
+
+	self.object:set_callback(callback.on_key_press, nil) -- нажатие клавиши (MonolithUI)
+	self.object:set_callback(callback.on_key_release, nil) -- отпускание клавиши (MonolithUI)
+	self.object:set_callback(callback.on_actor_weapon_reload, nil) -- перезарядка оружия (MonolithUI)
+	self.object:set_callback(callback.on_cell_item_focus, nil) -- фокус на ячейке (MonolithUI)
+	self.object:set_callback(callback.on_cell_item_focus_lost, nil) -- потеря фокуса на ячейке (MonolithUI)
+	self.object:set_callback(callback.on_mouse_wheel, nil) -- прокрутка колесиком (MonolithUI)
+	self.object:set_callback(callback.on_ruck, nil) -- перемещение предмета в рюкзак
+	self.object:set_callback(callback.on_slot, nil) -- перемещение предмета в слот
+	self.object:set_callback(callback.on_before_use_item, nil )
+  
+  if sr_psy_antenna.psy_antenna then
+    sr_psy_antenna.psy_antenna:destroy()
+    sr_psy_antenna.psy_antenna = false
+  end
+
+  xr_sound.stop_all_sound_object()
+
+  object_binder.net_destroy(self)
+end
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:reinit()
+  object_binder.reinit(self)
+  
+  local npc_id = self.object:id()
+
+  db.storage[npc_id] = { }
+
+  self.st = db.storage[npc_id]
+  self.st.pstor = nil
+
+  self.next_restrictors_update_time = -10000
+
+  self.object:set_callback(callback.inventory_info, self.info_callback, self)
+  self.object:set_callback(callback.article_info, self.article_callback, self)
+  self.object:set_callback(callback.on_item_take, self.on_item_take, self)
+  self.object:set_callback(callback.on_item_drop, self.on_item_drop, self)
+  self.object:set_callback(callback.trade_sell_buy_item, self.on_trade, self) -- for game stats
+  --self.object:set_callback(callback.actor_sleep, self.sleep_callback, self)
+  self.object:set_callback(callback.task_state, self.task_callback, self)
+  --self.object:set_callback(callback.map_location_added, self.map_location_added_callback, self)
+  self.object:set_callback(callback.level_border_enter, self.level_border_enter, self)
+  self.object:set_callback(callback.level_border_exit, self.level_border_exit, self)
+  self.object:set_callback(callback.take_item_from_box, self.take_item_from_box, self)
+  -- added by boryan67
+  self.object:set_callback(callback.death, self.death_callback, self)
+  -- end of addition
+  
+	self.object:set_callback(callback.on_key_press, self.on_key, self) -- MonolithUI
+	self.object:set_callback(callback.on_key_release, self.on_key_free, self) -- MonolithUI
+	self.object:set_callback(callback.on_actor_weapon_reload, self.weapon_reload, self) -- MonolithUI
+	self.object:set_callback(callback.on_cell_item_focus, self.on_cell_item_focus, self) -- MonolithUI
+	self.object:set_callback(callback.on_cell_item_focus_lost, self.on_cell_item_focus_lost, self) --MonolithUI
+	self.object:set_callback(callback.on_mouse_wheel, self.on_wheel_rotation, self) -- MonolithUI
+	self.object:set_callback(callback.on_slot, self.item_to_slot, self)
+	self.object:set_callback(callback.on_ruck, self.item_to_backpack, self)
+	self.object:set_callback(callback.on_before_use_item, self.before_use, self )
+		--/#+# [lua_helper] ------------------------------------------------
+	if event then event("actor_stor"):once(true):trigger() --/#!#> событие: инициализация 'storage' актора
+	elseif lua_helper.Init_ActorPStor then lua_helper.Init_ActorPStor()
+	end
+	--/< ---------------------------------------------------------------
+end
+-- added by boryan67
+----------------------------------------------------------------------------------------------------------------------
+-- Использование объекта
+function actor_binder:on_use(obj)
+	boryan67.use_object(obj)
+	ui_loader.on_use(obj)
+end
+
+function actor_binder:on_key(dik) -- MonolithUI
+	ui_loader.on_key(dik)
+end
+
+function actor_binder:on_key_free(dik) -- MonolithUI
+	ui_loader.on_key_free(dik)
+end
+
+function actor_binder:item_to_backpack(obj)
+	laucer_items_anims.on_item_to_ruck(obj)
+end
+
+function actor_binder:item_to_slot(obj)
+	laucer_items_anims.on_item_to_slot(obj)
+end
+
+function actor_binder:weapon_reload(obj) -- MonolithUI
+	ui_loader.weapon_reload(obj)
+end
+
+function actor_binder:on_cell_item_focus(obj) -- MonolithUI
+	ui_loader.on_cell_item_focus(obj)
+end
+
+function actor_binder:on_cell_item_focus_lost(obj) -- MonolithUI
+	ui_loader.on_cell_item_focus_lost(obj)
+end
+
+function actor_binder:on_wheel_rotation( vol ) -- MonolithUI
+	ui_loader.on_wheel_rotation(vol)
+end
+----------------------------------------------------------------------------------------------------------------------
+controllerSoundPresentOnDeath = false
+function actor_binder:death_callback(victim, who)
+	controllerSoundPresentOnDeath = false
+	local actorPosition = self.object:position()
+	--local kontrikSoundAuraDistance = getIniValueFloat("m_controller_e", "PsyAura_Fake_MaxAddDist", 90)
+	local kontrikSoundAuraDistance = utils.cfg_get_number(system_ini(), "m_controller_e", "PsyAura_Fake_MaxAddDist", nil, false, 90)
+	kontrikSoundAuraDistance = kontrikSoundAuraDistance*kontrikSoundAuraDistance
+	for k,v in pairs(db.creatures) do
+		local obj = level.object_by_id(k)
+		if obj and obj:clsid() == clsid.controller_s and obj:position():distance_to_sqr(actorPosition) <= kontrikSoundAuraDistance then
+			controllerSoundPresentOnDeath = true
+			get_console():execute("cfg_save user.ltx")
+			get_console():execute("unbind quick_load")
+			get_console():execute("unbind_sec quick_load")
+			break
+		end
+	end
+end
+-- end of addition
+function actor_binder:take_item_from_box(box, item)
+  local story_id = box:story_id()
+  if story_id == nil then
+    return
+  end
+
+  treasure_manager.take_item_from_box(box, story_id)
+
+	--AMK UTILS--
+	amk.on_item_take_from_box(box,item)
+	amk_utils.actor_item_from_box(box, item)
+	--AMK UTILS--
+
+end
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:level_border_enter(npc, info_id)
+  self.actor_detector:actor_enter()
+  
+  --AMK UTILS--
+  amk_utils.actor_level_border_enter(npc, info_id)
+  --AMK UTILS--
+  
+end
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:level_border_exit(npc, info_id)
+  self.actor_detector:actor_exit()
+  
+   --AMK UTILS--
+   amk_utils.actor_level_border_exit(npc, info_id)
+   --AMK UTILS--
+   
+end
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:info_callback(npc, info_id)
+  printf("*INFO*: npc='%s' id='%s'", npc:name(), info_id)
+  --' Сюжет
+  level_tasks.proceed(self.object)
+  -- Отметки на карте
+  level_tasks.process_info_portion(info_id)
+  
+  --AMK UTILS--
+  amk.on_info(npc,info_id)
+  amk_utils.actor_info(npc, info_id)
+  inventory.on_inventory_info(info_id)
+  --foto2.info_cal(info_id)
+  --AMK UTILS--
+  ui_loader.on_info(npc,info_id) -- MonolithUI
+end
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:on_trade (item, sell_bye, money)
+    if sell_bye == true then
+       --game_stats.money_trade_update (money)
+    else       
+       --game_stats.money_trade_update (-money) 
+    end   
+end
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:article_callback(npc, group, name)
+  --printf("article_callback [%s][%s]", group, name)
+  if device().precache_frame >1 then return end
+  
+  if group == "Diary" then
+    news_manager.send_encyclopedy("diary", group)
+  else
+    news_manager.send_encyclopedy("encyclopedy", group)
+  end
+  
+  --AMK UTILS--
+  amk.on_info(npc,info_id)
+  amk_utils.actor_article(npc, group, name)
+  --AMK UTILS--
+end
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:on_item_take (obj)
+    level_tasks.proceed(self.object)
+    --game_stats.update_take_item (obj, self.object)
+          local item = obj 
+    if xrs_ai then xrs_ai.actor_item_take(obj) 
+    ui_loader.on_item_take(obj) -- MonolithUI
+end   
+  
+  --AMK UTILS--
+  amk.on_item_take(obj)
+  amk_utils.actor_item_take(obj)
+  inventory.on_item_take(item)
+-- braad_test.checking_use_item(obj)
+   fotograf.checking_fotograf_item(obj)
+   foto2.checking_use_item(obj)
+   petrograf.take_item(obj)
+   foto.take_item(obj)
+  --AMK UTILS--
+end
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:on_item_drop (obj)
+     -- Vergas ogg-player==================ON=================
+	    --razgruzka_v.lose_item(obj)
+            anom_remover.on_item_drop(obj)
+            --bomba_test.drop_pult(obj)
+	    repair.use_repair(obj)
+	-- Vergas ogg-player==================OFF================
+    level_tasks.proceed(self.object)
+    --xr_effects.func_test()
+    local item = obj
+    --game_stats.update_drop_item (obj, self.object)
+    -- if level.vertex_position(db.actor:level_vertex_id()):distance_to(db.actor:position())>1 then
+      -- amk.mylog("Здесь нет вертексов")
+    -- else
+      -- amk.mylog("Вертекс "..db.actor:level_vertex_id().." "..db.actor:game_vertex_id())
+    -- end 
+  fotograf.ZondDrop(obj)
+	tunnel.on_item_drop(obj)
+  --AMK UTILS--
+  amk.on_item_drop(obj)
+  amk_utils.actor_item_drop(obj)
+  inventory.on_item_drop(item)
+  pentagramm.on_item_drop(obj)
+  --AMK UTILS--
+if obj:section() == "zamok" then
+local box = obj:parent()
+if box ~= nil then
+get_console():execute("load ~~~ protect box")
+table.insert(amk_offline_alife.protected, box:id())
+end
+end
+ui_loader.on_item_drop(obj) -- MonolithUI
+end
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:before_use(obj)
+	laucer_items_anims.on_actor_before_use(obj)
+end
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:task_callback(_task, _objective, _state)
+  task_manager.task_callback(_task:get_id(), _objective:get_idx(), _state)
+  if _objective:get_idx() == 0 then
+    if _state == task.fail then
+      news_manager.send_task(db.actor, "fail", _task, _objective)
+    elseif _state == task.completed then
+      task_manager.reward_by_task(_task)
+      news_manager.send_task(db.actor, "complete", _task, _objective)
+    else
+      news_manager.send_task(db.actor, "new", _task, _objective)
+    end
+  else
+    if _task:get_objective(0):get_state() == task.in_progress then
+      news_manager.send_task(db.actor, "update", _task, _objective)
+    end
+  end
+  
+  --AMK UTILS--
+  amk_utils.actor_task(_task, _objective, _state)
+  --AMK UTILS--
+  
+end
+
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:map_location_added_callback(spot_type_str, object_id)
+  if (false==app_ready()) or (device().precache_frame>1) then return end
+  --'news_manager.send_task(db.actor, "new")
+end
+----------------------------------------------------------------------------------------------------------------------
+  local corspoff = true
+local update_was_never_called = true
+function actor_binder:update(delta)
+  if corspoff then
+    sak_off_corpses.off_corpses()
+	val_test.start_val()
+	crystall_spawn.check_locations()
+	observer.on_start()
+    corspoff = false
+	garry_object.fix_island()
+        garry_object.fix_palatka()
+        garry_object.fix_bluetree()
+	foto.fix_pribor()
+	cars.respawn_aero()
+	foto.check_kublo()
+  end
+  object_binder.update(self, delta)
+  
+	if update_was_never_called then
+		laucer_items_anims.on_before_first_update()
+	end
+	update_was_never_called = false
+
+  -- DEBUG slowdown
+--  slowdown.update()
+
+  local time = time_global()
+  
+  --game_stats.update (delta, self.object)
+
+	-- $DreamMod  апдейт схемы сна
+	if sleep_manager.is_sleep_active() then
+		local actor = db.actor
+		if actor:alive() then
+			xr_logic.issue_event(actor, db.storage[actor:id()]["ar_sleep"], "update")
+		else
+		sleep_manager.stopper()
+		end
+	end
+
+  -- апдейт погоды
+  self.weather_manager:update()
+
+  -- апдейт схемы детектора
+  self.actor_detector:update()
+
+  -- апдейт звуковой схемы актера
+  xr_sound.update_actor()
+  
+  --апдейт для новых квестов
+
+  -- апдейт наших функций использования пульта и ремнабора 
+  repair.use_repkit()
+  --bomba_test.use_pult()
+  --bomba_test.bada_boom()
+  
+  --' Проверка потери жизни
+--[[
+  if self.object.health - lasthealth > 0.001 or
+     self.object.health - lasthealth < -0.001 then
+    printf("%f | %f", self.object.health, self.object.health - lasthealth, game.time() - lasttime)
+    lasthealth = self.object.health
+    lasttime = game.time()
+  end
+]]  
+  -- Обновление отключения ввода с клавиатуры.
+  if self.st.disable_input_time ~= nil and
+     game.get_game_time():diffSec(self.st.disable_input_time) >= self.st.disable_input_idle 
+  then
+    level.enable_input()
+    self.st.disable_input_time = nil
+  end
+  -- Обновление сна с переносом чувака в указанную позицию
+  if self.st.sleep_relocate_time ~= nil and
+     game.get_game_time():diffSec(self.st.sleep_relocate_time) >= self.st.sleep_relocate_idle 
+  then
+    self.object:set_actor_position(self.st.sleep_relocate_point)
+    local dir = self.st.sleep_relocate_point:sub(self.st.sleep_relocate_look)
+    self.object:set_actor_direction(dir:getH())
+    self.st.sleep_relocate_time = nil
+  end
+
+  -- Апдейт прятание оружия игрока во время диалога
+  if weapon_hide == true or self.object:is_talking() then
+    if self.weapon_hide == false then
+      self.object:hide_weapon()
+      self.weapon_hide = true
+    end
+  else
+    if self.weapon_hide == true then
+      self.object:restore_weapon()
+      self.weapon_hide = false
+    end
+  end 
+
+  -- обновление рестрикторов, которые под логикой, срабатывает через интервалы времени
+  if self.next_restrictors_update_time < time then
+    bind_restrictor.actor_update(delta)
+    bind_mteleport.actor_update(delta)
+
+    self.next_restrictors_update_time = time + 200
+
+    task_manager.actor_update()
+  end
+
+  -- обновление постпроцессов
+  if post_process ~= 0 then
+    if post_process:update () == true then
+       post_process = 0
+    end
+  end
+
+  -- обновление пси-антенны
+  if sr_psy_antenna.psy_antenna then
+    sr_psy_antenna.psy_antenna:update(delta)
+  end
+          inventory.update()
+	--[[ local hud_demo = get_hud()
+    local custom_static_demo = hud_demo:GetCustomStatic("cs_demo_play")
+
+    if custom_static_demo == nil then
+		hud_demo:AddCustomStatic("cs_demo_play", true)
+		hud_demo:GetCustomStatic("cs_demo_play"):wnd():SetTextST("st_demo_play")
+	end
+	]]
+
+  --' Вывод сообщения о большой радиации
+  if self.object.radiation >= 0.7 then
+    local hud = get_hud()
+    local custom_static = hud:GetCustomStatic("cs_radiation_danger")
+    if custom_static == nil then
+      hud:AddCustomStatic("cs_radiation_danger", true)
+      hud:GetCustomStatic("cs_radiation_danger"):wnd():SetTextST("st_radiation_danger")
+    end
+  else
+    local hud = get_hud()
+    local custom_static = hud:GetCustomStatic("cs_radiation_danger")
+    if custom_static ~= nil then
+      hud:RemoveCustomStatic("cs_radiation_danger")
+    end
+  end
+
+
+  if self.bCheckStart then
+    printf("SET DEFAULT INFOS")   
+
+    if not has_alife_info("storyline_actor_start") and
+       (level.name() == "l01_escape")
+    then
+      self.object:give_info_portion("storyline_actor_start")
+      _G.g_start_avi = true
+      printf("*AVI* RUN START AVI")     
+    end
+
+--    if not has_alife_info("encyclopedy") then
+--      self.object:give_info_portion("encyclopedy")
+--    end
+
+    if not has_alife_info("global_dialogs") then
+      self.object:give_info_portion("global_dialogs")
+    end
+
+    if not has_alife_info("level_changer_icons") then
+      self.object:give_info_portion("level_changer_icons")
+    end
+
+    level_tasks.add_lchanger_location()
+
+    self.bCheckStart = false    
+  end   
+  
+  
+  --AMK UTILS--
+  amk.on_actor_upade(delta)
+  amk_utils.actor_update(delta)
+  --AMK UTILS--
+-- braad_test.dead_npc()
+-- braad_test.apply_radiation()
+-- braad_test.quest_info()  
+-- antreg.start_antreg()
+  fotograf.start_fotograf()
+  foto2.pro_info()
+  fotograf.camera_update()
+  fotograf.camera1_update()
+  transfer.GetTimeMidnight()
+  -- added by Red75. Контроль за переполнением 
+  if self.warning then
+    self.warning=nil
+    get_hud():AddCustomStatic("hud_save_warning")
+    local wnd=get_hud():GetCustomStatic("hud_save_warning"):wnd()
+    if self.critical==1 then
+      wnd:SetTextST(game.translate_string("amk_warn_trans"))
+      self.critical=nil
+    elseif self.critical==2 then
+      wnd:SetTextST(game.translate_string("amk_warn_trans_critical"))
+      self.critical=nil
+    else
+      wnd:SetTextST(game.translate_string("amk_warn_attention"))
+    end
+  elseif self.wt and self.wt<time_global() then
+    self.wt=nil
+    if get_hud():GetCustomStatic("hud_save_warning") then
+      get_hud():RemoveCustomStatic("hud_save_warning")
+    end
+  end
+    
+   if xrs_ai then xrs_ai.actor_update(delta) 
+end  
+  
+  -- end of addition
+  --fotograf.mk_distance_check()
+  if biodetector then biodetector.update()
+end
+	laucer_items_anims.on_update()
+	ui_loader.update() -- MonolithUI
+	debuger()
+end
+
+function debuger()
+  _sdata.vis_int()
+end
+
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:save(packet)
+	local size = packet:w_tell()
+  local pk1=fake_net_packet.fake_net_packet()
+  self:save_old(pk1)
+  amk.mylog("Packet size is "..pk1:w_tell())
+  if pk1:w_tell()>7500 then
+    self.warning=true
+    self.critical=1
+    self.wt=time_global()+60000
+    amk.emergency_cleanup()
+    self:save_old(packet)
+    amk.mylog("Actor packet size is "..packet:w_tell().."!")
+    amk.emergency_restore()
+  elseif pk1:w_tell()>6000 then
+    self.warning=true
+    self.wt=time_global()+60000
+    self:save_old(packet)
+  else
+    self:save_old(packet)
+    self.wt=time_global()
+  end
+  	--/#+# [m_timers] вызов сохранений во внешних модулях -------------
+	if se_stor then
+		if to_log then to_log(script_name()..":save:size=["..(packet:w_tell() - size).."]") end --/#~#
+		if event then --/ вызов через 'систему сигналов'
+			event("actor_saved"):trigger() --/#!#> событие: 'окончание сохранения данных актора'
+		elseif type(se_stor.save) == 'function' then --/ 'прямой' вызов
+			if (m_timers) then m_timers.save() end --/ for timers
+			se_stor.save()
+		end
+	elseif (m_timers) then m_timers.save() --/ for timers
+	end
+	--/<---------------------------------------------------------------
+end
+
+
+function actor_binder:save_old(packet)
+  
+	local save_treasure_manager = true
+	
+	printf("actor_binder:save(): self.object:name()='%s'", self.object:name())
+	object_binder.save(self, packet)
+
+	--' Сохраняем уровень сложности
+	if save_treasure_manager == true then
+		packet:w_u8(level.get_game_difficulty() + 128)
+	else
+		packet:w_u8(level.get_game_difficulty())
+	end
+
+	--' Сохраняем данные об отключенном вводе
+	if self.st.disable_input_time == nil then
+		packet:w_bool(false)
+	else
+		packer:w_bool(true)
+		utils.w_CTime(packet, self.st.disable_input_time)
+	end
+
+	xr_logic.pstor_save_all(self.object, packet)
+	self.weather_manager:save(packet)
+
+	sr_psy_antenna.save( packet )
+	--bomba_test.save_variable(packet)
+
+	if save_treasure_manager == true then
+	treasure_manager.save(packet)      
+	end                                  
+
+	task_manager.save(packet)
+	self.actor_detector:save(packet)
+
+end
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:load(reader)
+	local size = reader:r_tell() --/#+# for debug
+	printf("actor_binder:load(): self.object:name()='%s'", self.object:name())
+	object_binder.load(self, reader)
+	printf("actor_binder:object_binder.load(): self.object:name()='%s'", self.object:name())
+
+	--' Загружаем уровень сложности
+	local game_difficulty = reader:r_u8()
+	
+	local load_treasure_manager = false      
+	if game_difficulty >= 128 then           
+		game_difficulty = game_difficulty - 128
+		load_treasure_manager = true           
+	end                                      
+
+	get_console():execute("g_game_difficulty "..game_difficulty_by_num[game_difficulty])
+
+	if reader:r_eof() then
+          abort("[bind_stalker.script]SAVE FILE IS CORRUPT")
+	end
+
+	local stored_input_time = reader:r_u8()
+	if stored_input_time == true then
+		self.st.disable_input_time = utils.r_CTime(reader)
+	end
+
+	xr_logic.pstor_load_all(self.object, reader)
+	self.weather_manager:load(reader)
+
+	sr_psy_antenna.load(reader)
+	--bomba_test.load_variable(reader)
+
+	if load_treasure_manager == true then
+		treasure_manager.load(reader)      
+	end                                  
+
+	task_manager.load(reader)
+	self.actor_detector:load(reader)
+  if xr_logic.pstor_retrieve(self.object,"emerg",false) then -- нельзя использовать amk.load_varible(), так как db.actor ещё не определён
+    self.warning=true
+    self.critical=2
+    self.wt=time_global()+60000
+  end
+  	--/#+# [m_timers] вызов загрузки во внешних модулях ----------------
+	if se_stor then
+		if to_log then to_log(script_name()..":load:size=["..(reader:r_tell() - size).."]") end --/#~#
+		if event then --/ вызов через 'систему сигналов'
+			event("actor_load"):trigger() --/#!#> событие: 'загружены данные актора' (для инициализации стораджа актора)
+		elseif type(se_stor.load) == 'function' then --/ 'прямой' вызов
+			se_stor.load()
+			if (m_timers) then m_timers.load() end --/ for timers
+		end
+	elseif (m_timers) then m_timers.load() --/ for timers
+	end
+	--/<---------------------------------------------------------------
+end
+----------------------------------------------------------------------------------------------------------------------
+
+--старт префетча звуков
+--if string.find(command_line(), "-noprefetch") == nil then
+--  sound_prefetch.prefetch_sounds()
+--end
+
+-- Weapon functions
+function hide_weapon()
+  weapon_hide = true
+end
+function restore_weapon()
+  weapon_hide = false
+end
+
+--// this is test for section iteration
+--/**
+local function test_section_iteration(file_name, section_name)
+  printf      ("file    : %s",file_name)
+  printf      ("section : %s",section_name)
+  
+  local     file = ini_file(file_name)
+  local     n = file:line_count(section_name)
+  printf      ("lines   : %d",n)
+  
+  local     id, value = "", "", result
+  for i=0,n-1 do
+    result, id, value = file:r_line(section_name,i,"","")
+    printf    ("line %d : %s = %s",i,id,value)
+  end
+end
+
+test_section_iteration("system.ltx","space_restrictor")
+--/**/
