@@ -1,5 +1,9 @@
 local commandor_id = 1340
 
+function test_spawn()
+	spawn_commandor(db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), "commandor_predbannik_spawn")
+end
+
 function spawn_on_predbannik()
 	spawn_commandor(vector():set(-76.0466, -6.8754, -69.7093), 1, 1, "commandor_predbannik_spawn")
 end

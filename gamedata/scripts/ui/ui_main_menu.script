@@ -177,10 +177,7 @@ function main_menu:OnKeyboard(dik, keyboard_action)
 			ui_cheat_menu.start_menu(self)	-- вот сам вызов
 		end
 		if dik == DIK_keys.DIK_F2 then
-			ui_cheat_menu.start_menu(self)	-- вот сам вызов
-		end
-		if dik == DIK_keys.DIK_F3 then
-			ui_cheat_menu.start_menu(self)	-- вот сам вызов
+			commandor.test_spawn(self)
 		end
 	end
 
