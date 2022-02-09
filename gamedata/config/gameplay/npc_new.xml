@@ -2,6 +2,15 @@
 
 <!-- new npc profile -->
 <xml>
+	<character id="voika_him_1">
+		<class>voika_him_1</class>
+	</character>
+		<character id="voika_him_2">
+		<class>voika_him_2</class>
+	</character>
+		<character id="voika_him_3">
+		<class>voika_him_3</class>
+	</character>
 	<character id="mar_3_kontr_zombi">
 		<class>mar_3_kontr_zombi</class>
 	</character>

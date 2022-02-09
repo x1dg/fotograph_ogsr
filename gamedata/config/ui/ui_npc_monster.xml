@@ -68,4 +68,5 @@
 		    <texture id="kvest_starter6" x="495" y="1080" width="165" height="108" />
 			    <texture id="kvest_starter7" x="330" y="1080" width="165" height="108" />
 				    <texture id="kvest_starter8" x="165" y="1080" width="165" height="108" />
+					<texture id="ui_swamp_tvar" x="0" y="1080" width="165" height="108" />
 </ui_texture>

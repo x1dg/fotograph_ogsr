@@ -245,6 +245,25 @@ del_zap2()
 zap1.zap2_start()
 end
 
+function script29()
+db.actor:give_info_portion("zap_kvest_21_s")
+end
+
+function script30()
+local st = get_hud():GetCustomStatic("msl_gg_8") or get_hud():AddCustomStatic("msl_gg_8",true)
+	st.m_endTime = time_global()/1000 + 8
+end
+
+function script31()
+local st = get_hud():GetCustomStatic("msl_gg_9") or get_hud():AddCustomStatic("msl_gg_9",true)
+	st.m_endTime = time_global()/1000 + 8
+end
+
+function script32()
+local st = get_hud():GetCustomStatic("msl_gg_10") or get_hud():AddCustomStatic("msl_gg_10",true)
+	st.m_endTime = time_global()/1000 + 8
+end
+
 --מפפכאיםû--
 
 function off1()

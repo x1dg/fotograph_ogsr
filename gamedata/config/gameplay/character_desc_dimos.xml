@@ -136,7 +136,9 @@
 <actor_dialog>brown_start_dialog_est</actor_dialog>		
 <actor_dialog>brown_start_dialog</actor_dialog>
 <start_dialog>hello_dialog</start_dialog>	
-<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>  
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog> 
+<actor_dialog>propali_voike1</actor_dialog>
+<actor_dialog>propali_voike2</actor_dialog>
     
   </specific_character>
   
@@ -1445,5 +1447,110 @@
 <actor_dialog>pruha_priz_dialog</actor_dialog>			
 
     </specific_character>		
+
+<!---------------------------kvestoviq-----------------------> 
+<specific_character id="voika_him_1" team_default="1">
+		<name>Камерер</name>
+		<icon>ui_usa_mask1</icon>
+		<map_icon x="1" y="2"></map_icon>
+		<bio>val_soldier_regular_bio</bio>
+
+		<class>voika_him_1</class>
+		<community>usa</community> 
+		<terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>322</rank>
+		<reputation>13</reputation>
+
+		<visual>actors\soldier_usa\soldier_usa_mask1_ogsr</visual>
+		<snd_config>characters_voice\human_03\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			zheton = 1 \n
+			wpn_sig220 \n
+			ammo_11.43x23_fmj \n
+            wpn_l85 \n
+            ammo_5.56x45_ss190 = 6 \n
+			device_torch \n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+
+<start_dialog>hello_dialog</start_dialog>		
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>		
+#include "gameplay\character_criticals_1.xml"					
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+	
+	<!---------------------------kvestoviq-----------------------> 
+<specific_character id="voika_him_3" team_default="1">
+		<name>Рэба</name>
+		<icon>ui_usa_mask1</icon>
+		<map_icon x="1" y="2"></map_icon>
+		<bio>val_soldier_regular_bio</bio>
+
+		<class>voika_him_3</class>
+		<community>usa</community> 
+		<terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>322</rank>
+		<reputation>13</reputation>
+
+		<visual>actors\soldier_usa\soldier_usa_mask1_ogsr</visual>
+		<snd_config>characters_voice\human_03\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			zheton = 1 \n
+			wpn_sig220 \n
+			ammo_11.43x23_fmj \n
+            wpn_l85 \n
+            ammo_5.56x45_ss190 = 6 \n
+			device_torch \n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+
+<start_dialog>hello_dialog</start_dialog>		
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>		
+#include "gameplay\character_criticals_1.xml"					
+#include "gameplay\character_dialogs.xml"
+	</specific_character> 	
+	
+	<!---------------------------kvestoviq-----------------------> 
+<specific_character id="voika_him_2" team_default="1">
+		<name>Тоот</name>
+		<icon>ui_usa_mask1</icon>
+		<map_icon x="1" y="2"></map_icon>
+		<bio>val_soldier_regular_bio</bio>
+
+		<class>voika_him_2</class>
+		<community>usa</community> 
+		<terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>322</rank>
+		<reputation>13</reputation>
+
+		<visual>actors\soldier_usa\soldier_usa_mask1_ogsr</visual>
+		<snd_config>characters_voice\human_03\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			zheton = 1 \n
+			wpn_sig220 \n
+			ammo_11.43x23_fmj \n
+            wpn_l85 \n
+            ammo_5.56x45_ss190 = 6 \n
+			device_torch \n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+
+<start_dialog>hello_dialog</start_dialog>		
+<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>		
+#include "gameplay\character_criticals_1.xml"					
+#include "gameplay\character_dialogs.xml"
+	</specific_character> 	
 
 </xml>	

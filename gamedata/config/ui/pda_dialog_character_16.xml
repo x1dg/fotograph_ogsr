@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!-- ИНФОРМАЦИЯ О ГГ В КПК -->
+<window>
+	<!-- ICON -->
+	<icon_static x="0" y="0" width="1" height="1" stretch="1">
+		<icon x="165" y="143" width="123.6" height="108" stretch="1"/>
+		<icon_on x="626" y="0" width="41" height="89" stretch="1"/>
+		<icon_off1 x="322" y="0" width="37.2" height="88" stretch="1"/>
+		<icon_off2 x="382" y="0" width="30.6" height="88" stretch="1"/>
+		<icon_off3 x="435.5" y="0" width="42" height="88" stretch="1"/>
+		<icon_off4 x="500" y="0" width="50" height="88" stretch="1"/>
+		<icon_off5 x="572.5" y="0" width="31" height="88" stretch="1"/>
+		<icon_off6 x="689.5" y="0" width="44" height="88" stretch="1"/>
+	</icon_static>
+
+	<!-- NAME -->
+	<name_static x="-3" y="-35" width="300" height="18">
+		<text font="letterica18" color="grey_2" complex_mode="1"/>
+	</name_static>
+
+	<!-- RANK -->
+	<rank_static x="132" y="12" width="120" height="16">
+		<text x="0" y="0" font="letterica18" color="grey_5"/>
+	</rank_static>
+	<rank_caption x="132" y="0" width="120" height="15">
+		<text x="0" y="0" font="letterica16" color="grey_2">ui_st_rank</text>
+	</rank_caption>
+
+	<!-- COMMUNITY -->
+	<community_static x="132" y="52" width="120" height="15">
+		<text x="0" y="0" font="letterica18" color="grey_5"></text>
+	</community_static>
+	<community_caption x="132" y="38" width="120" height="15">
+		<text x="0" y="0" font="letterica16" color="grey_2">ui_st_community</text>
+	</community_caption>
+</window>
