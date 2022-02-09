@@ -91,10 +91,6 @@ function InventoryWindow:InitControls()
 		slots_cover = xml:InitStatic("slots_cover", self.stat)
 	end
 
-	-- Быстрые слоты
-	self.fast_use_slots_wnd = ui_fast_use_slots.FastUseSlotsWnd(self)
-	self.stat:AttachChild(self.fast_use_slots_wnd)
-
 	-- Всплывающее окно описания
 	self.DescrWnd = ui_item_hint.CUIDescriptionWnd(self.stat)
 
@@ -153,8 +149,6 @@ function update()
 			outfit:SetProgressPos(condition_outfit_progress) else
 			outfit:Show(false)
 		end
-
-		if initial then rec_wnd.fast_use_slots_wnd:Update() end
 
 		add_rad_green()	add_blood_green()
 		add_rad_yellow() add_blood_yellow()

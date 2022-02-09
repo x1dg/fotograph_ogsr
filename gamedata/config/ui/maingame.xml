@@ -153,4 +153,65 @@
 
 	<!-- Звук появления нового НПС на карте -->
 	<new_contact_snd>detectors\contact_1</new_contact_snd>
+	
+	<quick_slot0 x="10" y="719" width="29.9" height="40" stretch="1">
+	<texture>ui\ui_icon_equipment</texture>
+	    <counter x="-4" y="-2" width="25" height="15" stretch="1">
+	        <texture a="136">ui_fast_use_count_back</texture>
+	        <text x="-0.5" y="1" color="hud_slot_count" font="letterica16" align="c" vert_align="c"/>
+	    </counter>
+        <auto_frameline x="16" y="34" width="21" height="23">
+			<texture>null</texture>
+        </auto_frameline>
+	</quick_slot0>
+
+	<quick_slot1 x="51" y="719" width="29.9" height="40" stretch="1">
+	<texture>ui\ui_icon_equipment</texture>
+	    <counter x="-4" y="-2" width="25" height="15" stretch="1">
+	        <texture a="136">ui_fast_use_count_back</texture>
+	        <text x="-0.5" y="1" color="hud_slot_count" font="letterica16" align="c" vert_align="c"/>
+	    </counter>
+        <auto_frameline x="16" y="34" width="21" height="23">
+			<texture>null</texture>
+        </auto_frameline>
+	</quick_slot1>
+
+	<quick_slot2 x="91" y="719" width="29.9" height="40" stretch="1">
+	<texture>ui\ui_icon_equipment</texture>
+	    <counter x="-4" y="-2" width="25" height="15" stretch="1">
+	        <texture a="136">ui_fast_use_count_back</texture>
+	        <text x="-0.5" y="1" color="hud_slot_count" font="letterica16" align="c" vert_align="c"/>
+	    </counter>
+        <auto_frameline x="16" y="34" width="21" height="23">
+			<texture>null</texture>
+        </auto_frameline>
+	</quick_slot2>
+
+	<quick_slot3 x="131" y="719" width="29.9" height="40" stretch="1">
+	<texture>ui\ui_icon_equipment</texture>
+	    <counter x="-4" y="-2" width="25" height="15" stretch="1">
+	        <texture a="136">ui_fast_use_count_back</texture>
+	        <text x="-0.5" y="1" color="hud_slot_count" font="letterica16" align="c" vert_align="c"/>
+	    </counter>
+        <auto_frameline x="16" y="34" width="21" height="23">
+			<texture>null</texture>
+        </auto_frameline>
+	</quick_slot3>
+
+    <quick_slot0_text x="28" y="748" width="14" height="15" stretch="1">
+		<texture a="136">ui_fast_use_count_back</texture>
+        <text x="-0.5" y="1" color="hud_slot_key" align="c" vert_align="c" font="letterica16"/>
+    </quick_slot0_text>
+    <quick_slot1_text x="68" y="748" width="14" height="15" stretch="1">
+		<texture a="136">ui_fast_use_count_back</texture>
+        <text x="-0.5" y="1" color="hud_slot_key" align="c" vert_align="c" font="letterica16"/>
+    </quick_slot1_text>
+    <quick_slot2_text x="108" y="748" width="14" height="15" stretch="1">
+		<texture a="136">ui_fast_use_count_back</texture>>
+        <text x="-0.5" y="1" color="hud_slot_key" align="c" vert_align="c" font="letterica16"/>
+    </quick_slot2_text>
+    <quick_slot3_text x="148" y="748" width="14" height="15" stretch="1">
+		<texture a="136">ui_fast_use_count_back</texture>
+        <text x="-0.5" y="1" color="hud_slot_key" align="c" vert_align="c" font="letterica16"/>
+    </quick_slot3_text>
 </window>

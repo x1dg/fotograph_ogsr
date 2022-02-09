@@ -153,20 +153,6 @@ for k,v in pairs(cs_names) do
         hud:AddCustomStatic(v)
     end
 end
-cs_names = {
-	"quick_slot0",
-	"quick_slot1",
-	"quick_slot2",
-	"quick_slot3",
-	"quick_slot0_text",
-	"quick_slot1_text",
-	"quick_slot2_text",
-	"quick_slot3_text"
-}
-for k,v in pairs(cs_names) do
-    hud:RemoveCustomStatic(v)
-end
-    ui_fast_use_slots.FastUseSlotsHud()
 end
 
 local mycurrent_suithud
