@@ -163,22 +163,6 @@
 	<dragdrop_nv x="343" y="191" width="53.9" height="36" custom_placement="0"
             cell_width="26.9" cell_height="36" rows_num="1" cols_num="2"
 			virtual_cells="1" vc_vert_align="c" vc_horiz_align="c" a="0"/>
-	<dragdrop_quick_slots x="398" y="437" width="227" height="41"
-	    cell_width="33" cell_height="41" a="0" rows_num="1"	cols_num="4"
-		cell_sp_x="32" cell_sp_y="0" custom_placement="1" always_show_scroll="0"/>
-		
-    <List1_frame x="404" y="10" width="489" height="729" stretch="1">
-        <texture x="6" y="64" width="652" height="727">ui_tablist_textblack</texture>
-		<auto_static x="12" y="44" width="223.4" height="1" stretch="1">
-			<texture>ui_item_line</texture>
-		</auto_static>
-		<auto_static x="236.5" y="44" width="223.4" height="1" stretch="1">
-			<texture>ui_item_line</texture>
-		</auto_static>
-		<auto_static x="0" y="13" width="489" height="25">
-			<text align="c" font="letterica18" color="white_2" complex_mode="1">ui_fast_use_slots_wnd</text>
-		</auto_static>
-    </List1_frame>
 
 	<!-- Подсветка слотов -->
 	<highlights>

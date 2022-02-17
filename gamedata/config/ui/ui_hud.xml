@@ -7,7 +7,7 @@
     <texture id="ui_hud_shkala_health"		x="0" y="0" width="0" height="0"/>		<!-- фоновая текстура шкалы здоровья/выносливлсти -->
     <texture id="ui_hud_shkala_car"			x="0" y="0" width="0" height="0"/>		<!-- фоновая текстура шкалы здоровья авто -->
     <texture id="ui_hud_shkala_rad"			x="0" y="0" width="0" height="0"/>	<!-- фоновая текстура шкалы радиации -->
-    <texture id="ui_hud_frame_patron"		x="0" y="186" width="141" height="75"/>		<!-- фоновая текстура патронов -->
+    <texture id="ui_hud_frame_patron"		x="300" y="950" width="399" height="68"/>		<!-- фоновая текстура патронов -->
     <texture id="ui_hud_frame_clock"		x="708" y="426" width="316" height="60"/>	<!-- фоновая текстура таймера -->
     <texture id="ui_hud_frame_flash"		x="351" y="236" width="94" height="27"/>	<!-- фоновая текстура мигающего индикатора таймера -->
     <texture id="ui_hud_frame_rank"			x="342" y="341" width="60" height="65"/>	<!-- фоновая текстура для значка ранга в мп-->
