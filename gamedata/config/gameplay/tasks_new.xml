@@ -153,6 +153,34 @@
 			<infoportion_complete>zap_kvest_16_f</infoportion_complete>
 		</objective>
 	</game_task>
+	
+							<game_task id="zap_kvest_17">
+		<title>«Важный предмет»</title>
+		<objective>
+			<icon>kvest_starter7</icon>
+			<infoportion_complete>zap_kvest_22_s</infoportion_complete>
+		</objective>
+		<objective>
+				<map_location_type hint="Место">green_location</map_location_type>
+                <object_story_id>zone_item</object_story_id>
+			<text>Найти предмет</text>
+			<infoportion_complete>zap_kvest_22_s</infoportion_complete>
+		</objective>
+	</game_task>
+	
+								<game_task id="zap_kvest_18">
+		<title>«Это не ограбление»</title>
+		<objective>
+			<icon>kvest_starter7</icon>
+			<infoportion_complete>zap_kvest_23_s</infoportion_complete>
+		</objective>
+		<objective>
+				<map_location_type hint="Браун">blue_location</map_location_type>
+                <object_story_id>brown</object_story_id>
+			<text>Поговорить с Брауном</text>
+			<infoportion_complete>zap_kvest_23_s</infoportion_complete>
+		</objective>
+	</game_task>
    <!--Старое-->
 
 <game_task id="first_talk">

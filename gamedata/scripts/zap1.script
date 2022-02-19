@@ -55,3 +55,53 @@ function actor_disable_inventory()
 		wnd:GetHolder():start_stop_menu(wnd, true)
 	end
 end
+
+---васяним 2--
+function zap2_start()
+	local spwn = zap2(get_hud())
+	level.start_stop_menu(spwn,true)
+end
+
+class "zap2" (CUIScriptWnd)
+
+function zap2:__init() super()
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function zap2:__finalize()
+end
+
+function zap2:InitControls()
+	local xml = CScriptXmlInit()
+	self:Init(0,0,1024,768)
+	xml:ParseFile("zap1.xml")
+	self.Static1 = xml:InitStatic("Static1", self)
+		self.Static2 = xml:InitStatic("Static1:Static4", self.Static1)
+	-- кнопка 1
+	self.btn_1 = xml:Init3tButton("btn_1", self)
+	self:Register(self.btn_1, "btn_1")
+	self.btn_1:Enable(true)
+end
+
+function zap2:InitCallBacks()
+		self:AddCallback("btn_1", ui_events.BUTTON_CLICKED,  self.btn1, self)
+end
+
+function zap2:btn1()
+actor_disable_inventory()
+new_quest.script29()
+end
+
+function zap2:OnKeyboard(dik,keyboard_action)    --Функция закрытия окна по нажатию на клавиатуре "Escape"
+           CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)      --Инициализируем нажатие кнопки на клаве
+           if keyboard_action == ui_events.WINDOW_KEY_PRESSED then  --Условие: если нажата кнопка на клаве
+              if dik == DIK_keys.DIK_ESCAPE then                    --Условие: если нажата конкретно кнопка "Escape"
+				 new_quest.script29()
+end
+end
+end
+
+function zap2:Hide()
+	self:GetHolder():start_stop_menu(self, true)
+end

@@ -1,9 +1,12 @@
 <?xml version='1.0' encoding="UTF-8"?>
 <!-- ПОЛЬЗОВАТЕЛЬСКИЙ ХУД -->
 <header>
+	<test_static x="400" y="300" width="50" height="100" stretch="1">
+		<texture>npc_icon_bandit_outfit</texture>
+	</test_static>
+	
     <ogse_debug  x="0" y="0" width="1024" height="768" complex_mode="1">
 	</ogse_debug>
-	
 
     <logic_debug  x="100" y="210" width="470" height="350" complex_mode="1">
 		<text font="letterica18"  r="255" g="255" b="255" a="255" align="l"/>
@@ -65,9 +68,21 @@
 			<msl_gg_7 x="440" y="153" width="350" height="18">
 		<text font="graffiti22" r="255" g=" 128" b=" 64" complex_mode="1">msssl7</text>
 	</msl_gg_7>
+	
+				<msl_gg_8 x="440" y="153" width="350" height="18">
+		<text font="graffiti22" r="255" g=" 128" b=" 64" complex_mode="1">msssl8</text>
+	</msl_gg_8>
+	
+					<msl_gg_9 x="440" y="153" width="350" height="18">
+		<text font="graffiti22" r="255" g=" 128" b=" 64" complex_mode="1">msssl9</text>
+	</msl_gg_9>
+
+					<msl_gg_10 x="440" y="153" width="350" height="18">
+		<text font="graffiti22" r="255" g=" 128" b=" 64" complex_mode="1">msss20</text>
+	</msl_gg_10>
 
 	<!-- Часы на миникарте -->
-    <hud_show_time  x="592" y="748" width="98" height="19" complex_mode="1">
+    <hud_show_time x="592" y="748" width="98" height="19" complex_mode="1">
        <text align="c" font="letterica16" color="hud_game_time"/>
     </hud_show_time>
 

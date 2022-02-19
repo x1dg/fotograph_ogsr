@@ -1,0 +1,12 @@
+function ZonaCheHud()
+	if (not bind_stalker.scopeUsed) then
+		local hud = get_hud()
+		--hud:AddCustomStatic("test_static", true)
+	end
+end
+
+function remove_elements_2()
+	local hud = get_hud()
+	--hud:GetCustomStatic("test_static")
+	--hud:RemoveCustomStatic("test_static")
+end
