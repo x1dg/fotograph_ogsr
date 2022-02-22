@@ -178,6 +178,8 @@ end
 
 function actor_binder:on_key(dik) -- MonolithUI
 	ui_loader.on_key(dik)
+	ogsr_quick_saveload.quicksave(dik)
+	ogsr_quick_saveload.quickload(dik)
 end
 
 function actor_binder:on_key_free(dik) -- MonolithUI

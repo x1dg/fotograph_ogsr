@@ -181,7 +181,6 @@ binds_actions[key_bindings.kTORCH] = function()
 	end
 end
 
-
 function set_near_mode(torch, r)
 	torch_mode = "near"
 	torch:set_range(20)

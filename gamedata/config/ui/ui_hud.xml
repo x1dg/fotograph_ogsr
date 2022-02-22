@@ -2,17 +2,18 @@
 <ui_texture>
     <file_name>ui\ui_hud</file_name>
 	<texture id="ui_hud_map_arrow"			x="76" y="792" width="139" height="139"/>	<!-- компас миникарты -->
-	<texture id="ui_hud_map_counter"		x="252" y="82" width="22" height="22"/>		<!-- счетчик контактов -->
+	<texture id="ui_hud_map_counter"		x="300" y="997" width="113" height="21"/>		<!-- счетчик контактов -->
 
-    <texture id="ui_hud_shkala_health"		x="0" y="0" width="0" height="0"/>		<!-- фоновая текстура шкалы здоровья/выносливлсти -->
-    <texture id="ui_hud_shkala_car"			x="0" y="0" width="0" height="0"/>		<!-- фоновая текстура шкалы здоровья авто -->
+    <texture id="ui_hud_shkala_health"		x="60" y="250" width="26" height="21"/>		<!-- фоновая текстура шкалы здоровья/выносливлсти -->
+	<texture id="ui_hud_shkala_armor"		x="60" y="250" width="26" height="21"/>		<!-- фоновая текстура шкалы брони -->
+    <texture id="ui_hud_shkala_car"			x="60" y="250" width="26" height="21"/>		<!-- фоновая текстура шкалы здоровья авто -->
     <texture id="ui_hud_shkala_rad"			x="0" y="0" width="0" height="0"/>	<!-- фоновая текстура шкалы радиации -->
-    <texture id="ui_hud_frame_patron"		x="300" y="950" width="399" height="68"/>		<!-- фоновая текстура патронов -->
+    <texture id="ui_hud_frame_patron"		x="300" y="950" width="268" height="68"/>		<!-- фоновая текстура патронов -->
     <texture id="ui_hud_frame_clock"		x="708" y="426" width="316" height="60"/>	<!-- фоновая текстура таймера -->
     <texture id="ui_hud_frame_flash"		x="351" y="236" width="94" height="27"/>	<!-- фоновая текстура мигающего индикатора таймера -->
     <texture id="ui_hud_frame_rank"			x="342" y="341" width="60" height="65"/>	<!-- фоновая текстура для значка ранга в мп-->
     <texture id="ui_hud_frame_money"		x="402" y="341" width="100" height="65"/>	<!-- фоновая текстура суммы денег в мп -->
-	<texture id="ui_hud_frame_stamina"		x="222" y="102" width="121" height="115"/>	<!-- фоновая текстура motion_icon -->
+	<texture id="ui_hud_frame_stamina"		x="60" y="250" width="26" height="21"/>	<!-- фоновая текстура motion_icon -->
 	<texture id="ui_hud_frame_moneyNumber"	x="225" y="475" width="121" height="44"/>	<!-- фоновая текстура денег в торговле-->
     <texture id="ui_hud_frame_voting"		x="426" y="794" width="598" height="228"/>	<!-- фоновая текстура голосования -->
 	<texture id="ui_hud_frame_ammo"			x="0" y="364" width="145" height="2"/>		<!-- разделитель отображения патронов (полный) -->
@@ -166,6 +167,9 @@
     <texture id="ui_fast_use_container"					x="450" y="236" width="46" height="9"/>		<!-- быстрый слот: контейнер -->
     <texture id="ui_fast_use_count_back"				x="506" y="248" width="32" height="16"/>	<!-- быстрый слот: фон счетчика -->
     <texture id="ui_fast_use_key_back"					x="552" y="248" width="24" height="15"/>	<!-- быстрый слот: фон клавиши -->
+	
+	<texture id="ui_quick_slot_back"                    x="0" y="275" width="151" height="26"/>   <!-- фон быстрых клавиш -->
+	<texture id="ui_hud_time"	                        x="0" y="250" width="113" height="21"/>
 	
     <texture id="ui_hud_enemy_frame"					x="598" y="228" width="302" height="27"/>	<!-- шкала жизни врага: фон -->
     <texture id="ui_hud_enemy_progress"					x="598" y="264" width="294" height="9"/>	<!-- шкала жизни врага: шкала -->

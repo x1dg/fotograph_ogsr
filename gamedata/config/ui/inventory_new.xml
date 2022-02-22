@@ -464,7 +464,7 @@
 	<belt_slots/>
 
 	<!-- Выход -->
-    <exit_button x="404" y="738" width="240" height="24" highlight_text="1">
+    <exit_button x="402" y="736" width="240" height="24" highlight_text="1">
         <texture>ui_big_inventory_button</texture>
         <text font="graffiti22" color="grey_5" align="c">ui_inv_exit</text>
 		<text_color>

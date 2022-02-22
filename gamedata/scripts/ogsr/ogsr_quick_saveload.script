@@ -9,7 +9,7 @@ function quicksave(key, bind)
 if level.main_input_receiver() and not db.actor:alive() then return end
   if key == bind_to_dik(key_bindings.kQUICK_SAVE) then
   local cnt = ogse.load_var( "next_quicksave", 0 )
-  if cnt == 9 then
+  if cnt >= 5 then
     cnt = 1
   else
     cnt = cnt + 1

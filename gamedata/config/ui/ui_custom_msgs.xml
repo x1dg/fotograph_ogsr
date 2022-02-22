@@ -82,9 +82,10 @@
 	</msl_gg_10>
 
 	<!-- Часы на миникарте -->
-    <hud_show_time x="592" y="748" width="98" height="19" complex_mode="1">
-       <text align="c" font="letterica16" color="hud_game_time"/>
-    </hud_show_time>
+    <hud_show_time x="2" y="154"  width="113" height="21" complex_mode="1">
+       <texture>ui_hud_time</texture>
+       <text align="c" x="-41.5" y="3.5" font="letterica16" r="0" g="255" b="255"/>
+	</hud_show_time>
 
 	<hud_save_warning x="256" y="200" width="512" height="200" light_anim="ui_slow_blinking_alpha" la_cyclic="1" la_texture="0" la_text="1" la_alpha="1">
 		<text x="0" y="0" font="letterica18" color="red" align="c" complex_mode="1"/>

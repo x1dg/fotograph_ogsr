@@ -71,7 +71,7 @@
 		<reputation_caption x="518" y="75" width="153" height="15">
 			<text align="l" font="letterica16" color="inv_rel_caption"/>
 		</reputation_caption>
-		<reputation_static x="600" y="75" width="153" height="15">
+		<reputation_static x="593.5" y="75" width="153" height="15">
 			<text align="r" font="letterica16" color="inv_rel_text"/>
 		</reputation_static>
 	</actor_chars>
