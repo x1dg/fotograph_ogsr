@@ -1,4 +1,4 @@
-_preset Extreme
+_preset Minimum
 ai_use_torch_dynamic_lights on
 unbindall
 bind left kLEFT
@@ -104,7 +104,7 @@ hud_small_font off
 hud_weapon on
 input_exclusive_mode on
 keypress_on_start on
-load_last_save Данил_quicksave_2
+load_last_save Данил_quicksave_5
 mouse_invert off
 mouse_sens 0.12
 ph_frequency 100.00000
@@ -113,7 +113,7 @@ ph_iterations 18
 ph_timefactor 1.
 r1_detail_textures off
 r1_dlights on
-r1_dlights_clip 50.
+r1_dlights_clip 20.
 r1_fog_luminance 1.1
 r1_glows_per_frame 16
 r1_lmodel_lerp 0.1
@@ -123,10 +123,10 @@ r1_software_skinning 0
 r1_ssa_lod_a 64.
 r1_ssa_lod_b 48.
 r2_allow_r1_lights off
-r2_detail_bump on
+r2_detail_bump off
 r2_disable_hom off
 r2_dof -1.250000,1.400000,600.000000
-r2_dof_enable on
+r2_dof_enable off
 r2_dof_kernel 5.
 r2_dof_sky 30.
 r2_exp_donttest_shad off
@@ -146,7 +146,7 @@ r2_ls_depth_bias -0.0003
 r2_ls_depth_scale 1.00001
 r2_ls_dsm_kernel 0.7
 r2_ls_psm_kernel 0.7
-r2_ls_squality 1.
+r2_ls_squality 0.5
 r2_ls_ssm_kernel 0.7
 r2_mblur 0.
 r2_parallax_h 0.02
@@ -157,18 +157,18 @@ r2_rain_drops_speed 1.25
 r2_shadow_cascede_old off
 r2_shadow_cascede_zcul off
 r2_slight_fade 0.5
-r2_soft_particles on
-r2_soft_water on
+r2_soft_particles off
+r2_soft_water off
 r2_ssa_lod_a 64.
 r2_ssa_lod_b 48.
-r2_ssao st_opt_high
+r2_ssao st_opt_low
 r2_ssao_blur off
 r2_ssao_half_data off
 r2_ssao_hbao off
 r2_ssao_hdao on
 r2_ssao_mode hdao
 r2_ssao_opt_data off
-r2_steep_parallax on
+r2_steep_parallax off
 r2_sun on
 r2_sun_depth_far_bias -0.00002
 r2_sun_depth_far_scale 1.
@@ -182,7 +182,7 @@ r2_sun_lumscale_amb 1.
 r2_sun_lumscale_hemi 1.
 r2_sun_near 20.
 r2_sun_near_border 0.75
-r2_sun_quality st_opt_high
+r2_sun_quality st_opt_low
 r2_sun_tsm on
 r2_sun_tsm_bias -0.01
 r2_sun_tsm_proj 0.3
@@ -195,7 +195,7 @@ r2_visor_refl off
 r2_visor_refl_control off
 r2_visor_refl_intensity 0.39
 r2_visor_refl_radius 0.4
-r2_volumetric_lights on
+r2_volumetric_lights off
 r2_wait_sleep 0
 r2_zfill off
 r2_zfill_depth 0.25
@@ -208,22 +208,22 @@ r3_minmax_sm off
 r3_msaa st_opt_off
 r3_msaa_alphatest st_opt_off
 r3_use_dx10_1 off
-r3_volumetric_smoke on
+r3_volumetric_smoke off
 r4_enable_tessellation on
 r4_wireframe off
 r_SunShafts_Blend 0.25
 r_SunShafts_Radius 1.56
 r__actor_shadow off
-r__detail_density 0.2
+r__detail_density 0.7
 r__detail_radius 49
 r__detail_scale 1.
 r__dtex_range 50.
-r__geometry_lod 1.
+r__geometry_lod 0.5
 r__no_scale_on_fade 0
 r__smap_size 2048x2048
-r__tf_aniso 16
+r__tf_aniso 1
 r__tf_mipbias -0.5
-r__wallmark_ttl 60.
+r__wallmark_ttl 20.
 r_aa_mode st_opt_off
 r_fps_lock fpslock60
 r_ss_sunshafts_length 0.9
@@ -241,7 +241,7 @@ rs_refresh_60hz off
 rs_skeleton_update 32
 rs_stats off
 rs_v_sync off
-rs_vis_distance 1.
+rs_vis_distance 0.5
 show_wnd_rect 0
 show_wnd_rect_all 0
 snd_acceleration on
@@ -251,6 +251,6 @@ snd_efx on
 snd_targets 256
 snd_volume_eff 0.1
 snd_volume_music 0.1
-texture_lod 0
+texture_lod 3
 vid_mode 1920x1080
 wpn_aim_toggle off

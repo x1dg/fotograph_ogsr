@@ -4797,4 +4797,4 @@
 	<string id="st_wpn_ak47m_dolg_descr">
 		<text>\n \n%c[0,170,170,170]The AKM (literally translated "Kalashnikov modernized automatic rifle") is an upgraded version of the AK-47 rifle. Although it was replaced in Soviet front-line service by the AK-74 in the 1970s, the AKM is the most widely used variant of the AK series of firearms. This particular weapon belongs to the Duty faction.\n \n%c[0,140,140,140]ATTACHMENTS:\n \n%c[0,93,0,116] • %c[0,140,140,140] 7.62x39 compatible silencer\n%c[0,93,0,116] • %c[0,140,140,140] PSO series scopes (after modification)\n%c[0,93,0,116] • %c[0,140,140,140] GP-25 grenade launcher</text>
 	</string>
-</string_table>>>
+</string_table>

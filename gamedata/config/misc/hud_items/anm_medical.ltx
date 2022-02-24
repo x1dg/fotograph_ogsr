@@ -8,6 +8,14 @@ cam_effect = itemuse_anm_effects\aptechka_use.anm
 anim_timing = 4350
 item_used_timing = 2800
 
+inv_name= Medkit
+inv_name_short= Medkit
+
+inv_grid_width= 1
+inv_grid_height= 1
+inv_grid_x= 29
+inv_grid_y= 0
+
 [anm_medkit_hud]:anm_base_hud
 hands_position                           = -0.0055,-0.07, 0.36
 hands_position_16x9                      = -0.0055,-0.07, 0.36
@@ -31,6 +39,14 @@ cam_effect = itemuse_anm_effects\aptechka_use.anm
 anim_timing = 4350
 item_used_timing = 2800
 
+inv_name= Medkit_army
+inv_name_short= Medkit_army
+
+inv_grid_width= 1
+inv_grid_height= 1
+inv_grid_x= 23
+inv_grid_y= 14
+
 [anm_medkit_army_hud]:anm_medkit_hud
 hands_position                           = -0.0055,-0.07, 0.36
 hands_position_16x9                      = -0.0055,-0.07, 0.36
@@ -45,6 +61,14 @@ hud							= anm_medkit_scientic_hud
 cam_effect = itemuse_anm_effects\aptechka_use.anm
 anim_timing = 4350
 item_used_timing = 2800
+
+inv_name= Medkit_scientific
+inv_name_short= Medkit_scientific
+
+inv_grid_width= 1
+inv_grid_height= 1
+inv_grid_x= 11
+inv_grid_y= 28
 
 [anm_medkit_scientic_hud]:anm_medkit_hud
 hands_position                           = -0.0055,-0.07, 0.36
@@ -61,6 +85,14 @@ hud							= anm_antirad_hud
 cam_effect = itemuse_anm_effects\antirad_use.anm
 anim_timing = 4350
 item_used_timing = 4350
+
+inv_name= Antirad
+inv_name_short= Antirad
+
+inv_grid_width= 1
+inv_grid_height= 1
+inv_grid_x= 18
+inv_grid_y= 12
 
 [anm_antirad_hud]:anm_base_hud
 hands_position                           = -0.0055,-0.05, 0.32
@@ -85,6 +117,14 @@ cam_effect = itemuse_anm_effects\bint_use.anm
 anim_timing = 2150
 item_used_timing = 2150
 
+inv_name= bandage
+inv_name_short= bandage
+
+inv_grid_width= 1
+inv_grid_height= 1
+inv_grid_x= 3
+inv_grid_y= 18
+
 [anm_bandage_hud]:anm_base_hud
 
 hands_position                           = -0.0055,-0.05, 0.35
@@ -101,93 +141,6 @@ anm_idle_sprint				= bint_hands_eat_alt_1_invtrans, bint_wpn_eat
 anm_bore					= bint_hands_eat_alt_1_invtrans, bint_wpn_eat
 
 [anm_bandage1]:anm_bandage
-
-[anm_yod]:anm_base
-
-visual				= dynamics\weapons\wpn_eat\world_models\tabletki\tabletki_coagulant_world
-hud							= anm_yod_hud
-
-cam_effect = itemuse_anm_effects\bint_use.anm
-anim_timing = 2150
-item_used_timing = 2150
-
-[anm_yod_hud]:anm_base_hud
-hands_position                           = -0.0055,-0.07, 0.32
-hands_position_16x9                      = -0.0055,-0.07, 0.32
-
-item_visual             	= dynamics\weapons\wpn_eat\tabletki\wpn_tabletki_1_0_drug_coagulant_hud
-anm_show					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_hide					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle_aim				= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle_moving				= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle_sprint				= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_bore					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-
-[anm_ibuprophen]:anm_base
-visual				= dynamics\weapons\wpn_eat\world_models\tabletki\tabletki_coagulant_world
-hud							= anm_ibuprophen_hud
-
-cam_effect = itemuse_anm_effects\bint_use.anm
-anim_timing = 2150
-item_used_timing = 2150
-
-[anm_ibuprophen_hud]:anm_base_hud
-hands_position                           = -0.0055,-0.07, 0.32
-hands_position_16x9                      = -0.0055,-0.07, 0.32
-
-item_visual             	= dynamics\weapons\wpn_eat\tabletki\wpn_tabletki_psy_blocade_hud
-anm_show					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_hide					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle_aim				= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle_moving				= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle_sprint				= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_bore					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-
-[anm_bipsizon]:anm_base
-visual			= dynamics\weapons\wpn_eat\world_models\tabletki\tabletki_radioprotector_world
-hud							= anm_bipsizon_hud
-
-cam_effect = itemuse_anm_effects\bint_use.anm
-anim_timing = 2150
-item_used_timing = 2150
-
-[anm_bipsizon_hud]:anm_base_hud
-hands_position                           = -0.0055,-0.07, 0.32
-hands_position_16x9                      = -0.0055,-0.07, 0.32
-item_visual             = dynamics\weapons\wpn_eat\tabletki\wpn_tabletki_3_0_drug_radioprotector_hud
-
-anm_show					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_hide					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle_aim				= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle_moving				= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle_sprint				= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_bore					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-
-[anm_dix]:anm_base
-visual				= dynamics\weapons\wpn_eat\world_models\tabletki\tabletki_antidot_world
-hud							= anm_dix_hud
-
-cam_effect = itemuse_anm_effects\bint_use.anm
-anim_timing = 2150
-item_used_timing = 2150
-
-[anm_dix_hud]:anm_base_hud
-hands_position                           = -0.0055,-0.07, 0.32
-hands_position_16x9                      = -0.0055,-0.07, 0.32
-
-item_visual             	= dynamics\weapons\wpn_eat\tabletki\wpn_tabletki_2_0_drug_antidot_hud
-
-anm_show					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_hide					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle_aim				= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle_moving				= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_idle_sprint				= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-anm_bore					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
-
 
 [anm_vint]:anm_base
 visual				= dynamics\weapons\wpn_eat\world_models\injectors\injector_big_world
@@ -209,25 +162,3 @@ anm_idle_aim				= syringe_hand, syringe
 anm_idle_moving				= syringe_hand, syringe
 anm_idle_sprint				= syringe_hand, syringe
 anm_bore					= syringe_hand, syringe
-
-[anm_mikstura]:anm_base
-visual				= dynamics\weapons\wpn_eat\world_models\aptechki\aptechka_elite_world
-hud							= anm_mikstura_hud
-
-cam_effect = itemuse_anm_effects\drug_use.anm
-anim_timing = 2150
-item_used_timing = 2150
-
-[anm_mikstura_hud]:anm_base_hud
-
-hands_position                           = -0.0055,-0.07, 0.3
-hands_position_16x9                      = -0.0055,-0.07, 0.3
-item_visual             	= gwr\equipment\drug_coagulant\drug_coagulant_hud
-
-anm_show					= testww2.skls, drug_2.skls
-anm_hide					= testww2.skls, drug_2.skls
-anm_idle					= testww2.skls, drug_2.skls
-anm_idle_aim				= testww2.skls, drug_2.skls
-anm_idle_moving				= testww2.skls, drug_2.skls
-anm_idle_sprint				= testww2.skls, drug_2.skls
-anm_bore					= testww2.skls, drug_2.skls
