@@ -856,7 +856,7 @@ end
 
 --инвентарное название объекта
 function get_inv_name(section)
-  return system_ini():r_string(section,"inv_name")
+  return system_ini():r_string_wq(section,"inv_name")
 end
 
 -- Внимание! Строки в структуре не должны содержать символов с кодами 0-31.

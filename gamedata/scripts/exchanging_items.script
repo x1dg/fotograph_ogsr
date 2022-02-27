@@ -646,7 +646,7 @@ function MssgAbstractedItem()
 end
 
 function get_inv_name(section)
-    return system_ini():r_string(section, "inv_name")
+    return system_ini():r_string_wq(section, "inv_name")
 end
 
 function PrecondActorItems()

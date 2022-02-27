@@ -596,7 +596,7 @@ function update_gps_habar(boxId)
 				locObj = alife():object(v.id)
 				if locObj and locObj:section_name() then
 					secName = locObj:section_name()
-					invName = correct_name(game.translate_string(system_ini():r_string(secName, "inv_name")))
+					invName = correct_name(game.translate_string(system_ini():r_string_wq(secName, "inv_name")))
 					
 					is_yes = false
 					-- mylog("itemsbox = " .. table.getn(itemsbox))
@@ -813,19 +813,19 @@ function on_game_load()
 
 	local gps_ini = ini_file("misc\\gps_habar.ltx")
 	
-	activity_time = tonumber(gps_ini:r_string("amk_metka", "activity_time"))
-	warning_time = tonumber(gps_ini:r_string("amk_metka", "warning_time"))
-	warning_icons_time = tonumber(gps_ini:r_string("amk_metka", "warning_icons_time"))
-	habar_list_mode = toboolean(gps_ini:r_string("amk_metka", "habar_list_mode"))
-	auto_recharge = toboolean(gps_ini:r_string("amk_metka", "auto_recharge"))
-	is_show_quantity = toboolean(gps_ini:r_string("amk_metka", "show_quantity"))
-	is_update_on_time = toboolean(gps_ini:r_string("amk_metka", "update_on_time"))
-	is_color_and_sort_list = toboolean(gps_ini:r_string("amk_metka", "color_and_sort_list"))
+	activity_time = tonumber(gps_ini:r_string_wq("amk_metka", "activity_time"))
+	warning_time = tonumber(gps_ini:r_string_wq("amk_metka", "warning_time"))
+	warning_icons_time = tonumber(gps_ini:r_string_wq("amk_metka", "warning_icons_time"))
+	habar_list_mode = toboolean(gps_ini:r_string_wq("amk_metka", "habar_list_mode"))
+	auto_recharge = toboolean(gps_ini:r_string_wq("amk_metka", "auto_recharge"))
+	is_show_quantity = toboolean(gps_ini:r_string_wq("amk_metka", "show_quantity"))
+	is_update_on_time = toboolean(gps_ini:r_string_wq("amk_metka", "update_on_time"))
+	is_color_and_sort_list = toboolean(gps_ini:r_string_wq("amk_metka", "color_and_sort_list"))
 	
 	-- метки на сталкерах
-	is_set_label_on_npc = toboolean(gps_ini:r_string("amk_metka", "set_label_on_npc"))
-	is_show_health = toboolean(gps_ini:r_string("amk_metka", "show_health"))
-	is_warning_on_death = toboolean(gps_ini:r_string("amk_metka", "warning_on_death"))
+	is_set_label_on_npc = toboolean(gps_ini:r_string_wq("amk_metka", "set_label_on_npc"))
+	is_show_health = toboolean(gps_ini:r_string_wq("amk_metka", "show_health"))
+	is_warning_on_death = toboolean(gps_ini:r_string_wq("amk_metka", "warning_on_death"))
 	
 	-- загружаем таблицу привязки ящиков к меткам.
 	labels = amk.load_table("gps_labels")

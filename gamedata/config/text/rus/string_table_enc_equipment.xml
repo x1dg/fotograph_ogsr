@@ -256,4 +256,43 @@
 <string id="vodka_new_desc">
 <text>Водка Столичная. В Зоне встречается редко, поэтому и стоимость соответствующая.</text>
 </string>
-	</string_table>
+<string id="bread_bad">
+<text>Радиоактивный Хлеб</text>
+</string>
+<string id="tush_name">
+<text>Тушенка Свиная</text>
+</string>
+<string id="tush_desc">
+<text>Обычная свиная тушенка, срок годности вроде бы не истёк.</text>
+</string>
+<string id="shprots_name">
+<text>Шпроты</text>
+</string>
+<string id="shprots_desc">
+<text>Несмотря на небольшую цену, шпроты очень вкусные и питательные.</text>
+</string>
+<string id="kilka_name">
+<text>Килька в Томате</text>
+</string>
+<string id="kilka_desc">
+<text>В Зоне этого продукта немало, цена небольшая, но зато вкусно.</text>
+</string>
+<string id="gribki_name">
+<text>Грибы Маринованные</text>
+</string>
+<string id="gribki_desc">
+<text>Грибы с окраин Чернобыля, фонят очень слабо. Очень питательно, но не слишком вкусно. Зато, в закрытом состоянии, продукт может храниться годами.</text>
+</string>
+<string id="pashtet_name">
+<text>Паштет Печеночный</text>
+</string>
+<string id="pashtet_desc">
+<text>Паштет из гусиной печени с черносливом.</text>
+</string>
+<string id="sgush_name">
+<text>Сгущеное Молоко</text>
+</string>
+<string id="sgush_desc">
+<text>Сгущеное молоко - очень редкий в Зоне продукт. Да ещё в придачу к этому, срок годности составляет несколько лет, поэтому и цена у этого продукта соответствующая.</text>
+</string>
+</string_table>

@@ -213,7 +213,7 @@ function r_bool(spawn_ini, section, line, default)
 end
 
 function get_inv_name(section)
-	return system_ini():r_string(section,"inv_name")
+	return system_ini():r_string_wq(section,"inv_name")
 end
 
 function ABORT(s,...)
@@ -288,7 +288,7 @@ end
 -- class 'ini_file'
 ini_file.r_string_ex = function (ini, section, line, def)
 	if ini:line_exist(section, line) then
-		return ini:r_string(section, line)
+		return ini:r_string_wq(section, line)
 	end
 	return def
 end
@@ -406,7 +406,7 @@ function CUIDescriptionWnd:ShowDescription(item)
 
 	-- check ini-section existance
 	if sys_ini:line_exist(self.section, "description") then
-		description = get_string(sys_ini:r_string(self.section, "description"))
+		description = get_string(sys_ini:r_string_wq(self.section, "description"))
 		else description = ""
 	end
 
@@ -497,7 +497,7 @@ function CUIDescriptionWnd:ShowWeaponParams()
 	st = self.xml:InitStatic("properties", self.scroll_v)
 	st:SetTextST("%c[inv_item_lbl_prop]Боеприпасы:")
 	-- патроны
-	local ammo_class = sys_ini:r_string(self.section, 'ammo_class')
+	local ammo_class = sys_ini:r_string_wq(self.section, 'ammo_class')
 	local ammo_type = self.item:get_ammo_type()
 	local i = 0
 	local clr = nil

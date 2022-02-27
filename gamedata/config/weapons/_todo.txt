@@ -4,7 +4,7 @@ w_dynamite.ltx
 
 w_foto.ltx
 w_mounted.ltx
-ammo_7.62x51_fmj(\s*)=(\s*.*$)
+inv_name_short(\s*)=(\s*)([а-яА-Я].*)($)
 
 $$$REMOVED$$$
 wpn_tt33_sk1, wpn_ppsh, wpn_mp40, wpn_bizon, wpn_scorpion, wpn_bm16, 

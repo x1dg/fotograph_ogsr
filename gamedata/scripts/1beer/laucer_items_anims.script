@@ -154,7 +154,7 @@ function on_update()
 				anim_completed_tm = nil
 				anim_exist_tm = nil	
 				anim_exist_used_tm = nil
-				dsh.timeout(1, bino_restart)
+				dsh.timeout(100, bino_restart)
 			end
 			
 		end
