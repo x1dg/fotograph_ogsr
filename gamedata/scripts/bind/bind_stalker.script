@@ -412,14 +412,8 @@ function actor_binder:update(delta)
 	end
 	update_was_never_called = false
 
-  -- DEBUG slowdown
---  slowdown.update()
-
   local time = time_global()
-  
-  --game_stats.update (delta, self.object)
 
-	-- $DreamMod  апдейт схемы сна
 	if sleep_manager.is_sleep_active() then
 		local actor = db.actor
 		if actor:alive() then
@@ -533,8 +527,6 @@ function actor_binder:update(delta)
 
 
   if self.bCheckStart then
-    printf("SET DEFAULT INFOS")   
-
     if not has_alife_info("storyline_actor_start") and
        (level.name() == "l01_escape")
     then
@@ -542,10 +534,6 @@ function actor_binder:update(delta)
       _G.g_start_avi = true
       printf("*AVI* RUN START AVI")     
     end
-
---    if not has_alife_info("encyclopedy") then
---      self.object:give_info_portion("encyclopedy")
---    end
 
     if not has_alife_info("global_dialogs") then
       self.object:give_info_portion("global_dialogs")
@@ -564,11 +552,8 @@ function actor_binder:update(delta)
   --AMK UTILS--
   amk.on_actor_upade(delta)
   amk_utils.actor_update(delta)
-  --AMK UTILS--
--- braad_test.dead_npc()
--- braad_test.apply_radiation()
--- braad_test.quest_info()  
--- antreg.start_antreg()
+
+--FOTOGRAPH--
   fotograf.start_fotograf()
   foto2.pro_info()
   fotograf.camera_update()
@@ -595,7 +580,8 @@ function actor_binder:update(delta)
     end
   end
     
-   if xrs_ai then xrs_ai.actor_update(delta) 
+   if xrs_ai then xrs_ai.actor_update(delta)		
+	illicit_jumps.on_update(delta)
 end  
   
   -- end of addition

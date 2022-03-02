@@ -61,7 +61,7 @@
 	</game_task>
 	
 		  	<game_task id="new_portion_kkvest6_kvest">
-		<title>«Кража пива»</title>
+		<title>Кража пива</title>
 		<objective>
 			<icon>kvest_starter5</icon>
 			<infoportion_complete>new_portion_kkvest6_kvest_f</infoportion_complete>

@@ -6,8 +6,6 @@
 -- Last edit:	KamikaZze (11.06.14)
 -- Global Description: Отладочная информация
 
-GlobalEnable = false
-
 -- ПОДРОБНОЕ ОПИСАНИЕ:
 
 -- Показывает позицию актора
@@ -21,7 +19,7 @@ GlobalEnable = false
 
 local subscribed
 function subscribe()
-  GlobalEnable = true
+	db.actor:give_info_portion("debugger_enabled")
   ogse_benchmark.subscribe()
   subscribed = {
     { signal = "on_info", fun = this.infos },
@@ -39,7 +37,7 @@ function unsubscribe()
   subscribed = nil
   switch_off()
   ogse_benchmark.unsubscribe()
-  GlobalEnable = false
+  db.actor:disable_info_portion("debugger_enabled")
 end
 
 ----------------------------------------------------------------------------
@@ -183,7 +181,7 @@ end
 
 local k=0
 function infos(npc, info_id)
-	if not GlobalEnable then return end
+	if not has_alife_info"debugger_enabled" then return end
 	if bInfos then
 		local InfoCS = hud:GetCustomStatic("prs_debug")
 		if InfoCS == nil then
@@ -220,7 +218,7 @@ local danger_types = {
 }
 
 function jump_to_danger()
-  if not GlobalEnable then return end
+  if not has_alife_info"debugger_enabled" then return end
   local target_obj = level.get_current_ray_query().object
   if target_obj then
       local best_danger = target_obj:best_danger()
@@ -245,7 +243,7 @@ function jump_to_danger()
 end
 
 function info_about_npc()
-  if not GlobalEnable then return end
+  if not has_alife_info"debugger_enabled" then return end
 
   clear_info_about_npc()
   local PosLogic = hud:GetCustomStatic( "logic_debug" )
@@ -469,7 +467,7 @@ function clear_info_about_npc()
 end
 
 function vis_int()
-	if not GlobalEnable then return end
+	if not has_alife_info"debugger_enabled" then return end
 
 	if bInfoAbout then
 		info_about_npc()
