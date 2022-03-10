@@ -54,8 +54,7 @@ function opt_gameplay:InitControls(x, y, xml, handler)
 			list_icon:AddItem(_itm)
 		end
 	end
-	handler:AddCallback("list_icon", ui_events.LIST_ITEM_CLICKED, self.PreviewIcon, self)
-	handler:AddCallback("list_icon", ui_events.WINDOW_LBUTTON_DB_CLICK, self.ActorIcon, self)
+	handler:AddCallback("list_icon", ui_events.LIST_ITEM_CLICKED, self.ActorIcon, self)
 
 	-- show enemy health (MonolithUI)
 	show_health = xml:InitCheck("tab_gameplay:check_enemy_health", self.scroll_v)
@@ -225,16 +224,6 @@ function opt_gameplay:ActorIcon()
 		ui_data.save("mui_actor_icon", item_text)
 		char_icon:InitTexture(item_text)
 		accept_snd()
-	end
-end
-
-function opt_gameplay:PreviewIcon()
-	if level.present() and (db.actor ~= nil) and db.actor:alive() then
-		local item_id		= list_icon:GetFocusedItem()
-		local item			= list_icon:GetItem(item_id)
-		if item==nil then return end
-		local item_text		= item.fn:GetText()
-		char_icon:InitTexture(item_text)
 	end
 end
 

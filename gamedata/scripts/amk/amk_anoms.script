@@ -138,7 +138,7 @@ function collect_info()
 				local map = alife():level_name(game_graph():vertex(sobj.m_game_vertex_id):level_id())
 				if not check_exclusion(sobj,map) then
 					local status=get_anomaly_status(sobj)
-					if status=="" or status=="del" then
+					if status=="" or status=="del" and not string.find(obj:section(), "1beer") then
 					  -- удаляем помеченные аномалии, и несюжетные стандартные
 						alife():release(sobj,true)
 					elseif status=="on" then

@@ -7,6 +7,7 @@
 	
     <ogse_debug  x="0" y="0" width="1024" height="768" complex_mode="1">
 	</ogse_debug>
+	
 
     <logic_debug  x="100" y="210" width="470" height="350" complex_mode="1">
 		<text font="letterica18"  r="255" g="255" b="255" a="255" align="l"/>
@@ -41,9 +42,48 @@
 		</auto_static>
     </hud_timer>
 	
+ <hud_timer_kvest  x="420" y="15" width="157" height="67">
+		<text x="-15" y="23it" font="graffiti32" r="238" g="155" b="23" a="255" align="r"/>
+		<texture>ui_hud_frame_clock</texture>
+ </hud_timer_kvest>
+	
 	<hud_timer_text x="338" y="5" width="350" height="18">
 		<text font="letterica16" color="hud_timer_name" align="c"/>
 	</hud_timer_text>
+	
+<target_dot_1 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_2 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_3 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_4 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_5 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_6 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_7 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_8 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_9 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_10 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_11 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_12 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_13 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_14 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_15 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_16 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_17 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_18 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_19 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_20 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_21 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_22 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_23 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_24 x="-10" y="-10" width="4" height="4" stretch="1" />
+  <target_dot_25 x="-10" y="-10" width="4" height="4" stretch="1" />
+
+  <biomap_mess x="752" y="16" width="256" height="256" stretch="1">
+    <texture>biomap\mess</texture>
+  </biomap_mess>
+
+  <biomap x="752" y="16" width="256" height="256" stretch="1">
+    <texture>biomap\biomap_texture</texture>
+  </biomap>
 
 	<msl_gg_1 x="440" y="153" width="350" height="18">
 		<text font="graffiti22" r="255" g=" 128" b=" 64" complex_mode="1">msssl1</text>
@@ -80,6 +120,10 @@
 					<msl_gg_10 x="440" y="153" width="350" height="18">
 		<text font="graffiti22" r="255" g=" 128" b=" 64" complex_mode="1">msss20</text>
 	</msl_gg_10>
+
+					<msl_gg_11 x="440" y="153" width="350" height="18">
+		<text font="graffiti22" r="255" g=" 128" b=" 64" complex_mode="1">msss21</text>
+	</msl_gg_11>
 
 	<!-- Часы на миникарте -->
     <hud_show_time x="2" y="154"  width="113" height="21" complex_mode="1">

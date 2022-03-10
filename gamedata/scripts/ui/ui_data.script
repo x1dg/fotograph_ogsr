@@ -17,7 +17,9 @@ local defaults = {
 	["mui_blood_enable"]		= true, -- включить эффект ранения
 	["mui_bleed_enable"]		= false, -- включить эффект плохого самочувствия
 	["mui_description_delay"]	= 800, -- появления окна описания при наведении курсора, ms
-	["mui_actor_icon"]			= "ui\\ui_noise"} -- иконка ГГ
+	["mui_actor_icon"]			= "ui\\ui_noise", -- иконка ГГ
+	["debug_enabled"]			= false
+}
 
 -- Загружаем переменную
 function load(name)

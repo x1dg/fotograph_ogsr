@@ -1,0 +1,5 @@
+Map size X x Z:            [253 x 302]
+Max static vertex per m^2: 2458
+Total static vertices:     400371
+Max mu vertex per m^2:     0
+Total mu vertices:         0

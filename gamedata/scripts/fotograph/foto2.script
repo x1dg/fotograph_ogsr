@@ -168,7 +168,6 @@ function create_anom(name_anom, posit_anom, lvid_anom, gvid_anom, radius_anom, p
  packet:w_u32(object_flags) 
  packet:w_stringZ(custom_data) 
  packet:w_u32(get_story_id_not_replay()) 
- packet:w_u32(get_story_id_not_replay()) 
 
  -- cse_shape 
  packet:w_u8(1) -- количество фигур 

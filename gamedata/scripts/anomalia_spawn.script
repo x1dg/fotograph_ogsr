@@ -206,9 +206,3 @@ alife():create("dushelov2",vector():set(-174.468,6.506,399.645),12377,247)
 alife():create("dushelov2",vector():set(-183.369,6.434,391.089),12377,247)
 alife():create("dushelov2",vector():set(-183.465,5.641,408.311),12377,247)
 end
-
-
-
-
-
-

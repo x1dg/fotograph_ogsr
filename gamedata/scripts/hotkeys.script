@@ -107,7 +107,12 @@ end
 
 -- 'Numpad 9' - Прыгнуть к опасному объекту
 binds_actions[key_bindings.kDANGER] = function()
-	_sdata.jump_to_danger()
+			if ui_data.load("debug_enabled") then
+				ui_data.save("debug_enabled", false)
+			else
+				ui_data.save("debug_enabled", true)
+			end
+	--_sdata.jump_to_danger()
 	return true
 end
 

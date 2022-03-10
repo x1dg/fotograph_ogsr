@@ -52,7 +52,7 @@
 			<sound>characters_voice\scenario\video\intro_zona_che</sound>
 			<pause_state>on</pause_state>
 			<video_wnd x="0" y="0" width="1024" height="768" stretch="1">
-				<texture x="0" y="1" width="1024" height="768">intro\intro_stalker</texture>
+				<texture x="0" y="0" width="1920" height="1080">intro\intro_stalker</texture>
 			</video_wnd>
 		</item>
 	</intro_game>

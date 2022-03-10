@@ -192,6 +192,7 @@ end
 function script23()
 db.actor:give_info_portion("final_alternative_2_s")
 db.actor:disable_info_portion("zap_kvest_14_s")
+db.actor:set_character_community("actor", 0, 0)
 local st = get_hud():GetCustomStatic("msl_gg_7") or get_hud():AddCustomStatic("msl_gg_7",true)
 	st.m_endTime = time_global()/1000 + 8
 end
@@ -262,6 +263,15 @@ end
 function script32()
 local st = get_hud():GetCustomStatic("msl_gg_10") or get_hud():AddCustomStatic("msl_gg_10",true)
 	st.m_endTime = time_global()/1000 + 8
+end
+
+function script33()
+start_game_timer(1, "new_quest.script34")
+end
+
+function script34()
+start_game_timer(1, "new_quest.del_mar_11111")
+start_game_timer(1, "new_quest.del_mar_11112")
 end
 
 --מפפכאיםû--
@@ -524,6 +534,22 @@ end
 function del_flame_test()
 local sim = alife()
 local se_obj = sim:story_object(9132)
+if se_obj then
+sim:release(se_obj, true)
+end
+end
+
+function del_mar_11111()
+local sim = alife()
+local se_obj = sim:story_object(9134)
+if se_obj then
+sim:release(se_obj, true)
+end
+end
+
+function del_mar_11112()
+local sim = alife()
+local se_obj = sim:story_object(9135)
 if se_obj then
 sim:release(se_obj, true)
 end

@@ -5,7 +5,7 @@ function get_anoms(npc, radius)
 	local pos = npc:position()
 	for i= 1, 65534 do
 		local obj = level.object_by_id(i)
-		if obj ~= nil and obj:clsid() >= 168 and obj:clsid() <= 181 then
+		if obj ~= nil and obj:clsid() >= 168 and obj:clsid() <= 181 and not string.find(obj:section(), "teleport") then
 			local dist = pos:distance_to(obj:position())
 			if dist < radius then
 				table.insert(anoms, obj)
