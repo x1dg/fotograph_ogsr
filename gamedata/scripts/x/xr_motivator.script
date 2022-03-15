@@ -571,9 +571,6 @@ if xrs_ai then xrs_ai.addCommonPrecondition(action) end
 
 end
 
-function play_particle(obj,params)
-if not particles[obj:id()] then
-particles[obj:id()]={}
-end
-table.insert(particles[obj:id()],params)
+function play_particle(...)
+  dsh_particles.play_particle( ... )
 end

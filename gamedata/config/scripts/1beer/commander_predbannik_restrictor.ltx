@@ -1,0 +1,12 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_info = {+commandor_predbannik_spawn} sr_particle
+
+[srparticle]
+name = anomaly2\burn_attack
+path = new_partic
+mode = 2
+looped = true
+on_signal = particle_end | nil 

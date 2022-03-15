@@ -1,5 +1,5 @@
 function on_update()
-    	spawn_predbannik_teleports()
+    	--spawn_predbannik_teleports()
 end
 
 function spawn_predbannik_teleports()
@@ -9,7 +9,8 @@ function spawn_predbannik_teleports()
 				db.actor:give_info_portion("predbannik_tp_spawned")
     	end
     	if not has_alife_info("predbannik_tp_spawned2") and level.name()=="predbannik" then
-        		spawn_anom("1beer_teleport_predbannik3", vector():set(-535.88, 1.1, -170.1), 124386, 627, vector():set(0,3.0,0))		
+        		spawn_anom("1beer_teleport_predbannik3", vector():set(-535.88, 1.1, -170.1), 124386, 627, vector():set(0,3.0,0))
+        		spawn_anom("1beer_teleport_predbannik4", vector():set(-52.55, -2.54, 337.63), 861625, 727, vector():set(0,-1.5,0))
 				db.actor:give_info_portion("predbannik_tp_spawned2")
     	end
 end

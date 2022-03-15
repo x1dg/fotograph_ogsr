@@ -105,13 +105,25 @@ binds_actions[key_bindings.kUSE_BIPSIZON] = function()
 	return true
 end
 
--- 'Numpad 9' - Прыгнуть к опасному объекту
+-- 'Numpad 9' - Дебаг
 binds_actions[key_bindings.kDANGER] = function()
-			if ui_data.load("debug_enabled") then
-				ui_data.save("debug_enabled", false)
-			else
-				ui_data.save("debug_enabled", true)
-			end
+        local c_id = amk.load_variable("COMMANDOR_ID", nil)
+		local obj = level.object_by_id(c_id)
+		dsh_particles.play_particle(
+			obj, {
+				obj      = obj,
+				--particle = "ghoul\\fx-02-man_fired-up",
+				particle = "ghoul\\anomal-02-or-fire",
+				bone     = "bip01_spine",
+				stop_on_death = true,
+				looped = true
+			})
+		local debug_enabled = ui_data.load("debug_enabled")
+		if debug_enabled and debug_enabled == true then
+			ui_data.save("debug_enabled", false)
+		else
+			ui_data.save("debug_enabled", true)
+		end
 	--_sdata.jump_to_danger()
 	return true
 end

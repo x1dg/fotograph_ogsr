@@ -23,7 +23,7 @@
 			wpn_l86 \n
     </supplies>
 	
-	<start_dialog>ebnituy_dialog</start_dialog>
+	<actor_dialog>ebnituy_dialog</actor_dialog>
 	
 	</specific_character>
 </xml>

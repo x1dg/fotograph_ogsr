@@ -1,35 +1,70 @@
 local commandor_id = 1340
 
 function test_spawn()
-	spawn_commandor(db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), "commandor_predbannik_spawn")
+	spawn_commandor(db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), "commandor_predbannik_spawn", vector():set(0,3.0,0))
 end
 
 function spawn_on_predbannik()
-	spawn_commandor(vector():set(-76.0466, -6.8754, -69.7093), 1, 1, "commandor_predbannik_spawn")
+	local commandor_position = vector():set(-52.55, -2.54, 337.63)
+	local commandor_game_vertex = 861625
+	local commandor_level_vertex = 727
+	spawn_commandor(commandor_position, commandor_game_vertex, commandor_level_vertex, "commandor_predbannik_spawn")
+	--create_restrictor(commandor_position, commandor_game_vertex, commandor_level_vertex, "scripts\\1beer\\commander_predbannik_restrictor.ltx") 
+	start_game_timer(3, "commandor.attach_particles")
 end
 
-function spawn_commandor(commandor_position, level_vertex, game_vertex, infoportion)
-	local semecky_position = vector():set(-76.0466, -6.8754, -69.7093)
+function attach_particles()
+    local c_id = amk.load_variable("COMMANDOR_ID", nil)
+	local obj = level.object_by_id(c_id)
+	dsh_particles.play_particle(
+		obj, {
+			obj      = obj,
+			--particle = "ghoul\\fx-02-man_fired-up",
+			particle = "ghoul\\anomal-02-or-fire",
+			bone     = "bip01_spine",
+			stop_on_death = true,
+			looped = true
+		})
+end
+
+function release_predbannik()
+	local c_id = amk.load_variable("COMMANDOR_ID", nil)
+	local se_obj = alife():object(c_id)
+	db.actor:stop_talk()
+	
+	commandor.actor_punch()
+	start_game_timer(5, "commandor.kill_commander")
+	start_game_timer(7, "illicit_jumps.spawn_predbannik_teleports")
+end
+
+function kill_commander()
+	local c_id = amk.load_variable("COMMANDOR_ID", nil)
+	local se_obj = alife():object(c_id)
+	if se_obj then
+		alife():release(se_obj, true)
+	end
+end
+
+function spawn_commandor(commandor_position, level_vertex, game_vertex, infoportion, angle)
 	db.actor:give_info_portion(infoportion)
 	local sobj = alife():create("commander_kontuzheniy", commandor_position, level_vertex, game_vertex)
+	if angle then
+		sobj.angle = angle
+	end
 	local params = sobj and amk.read_stalker_params(sobj)
 	if params then
 		params.sid = commandor_id
 		amk.write_stalker_params(params,sobj)
 	end
+	amk.save_variable("COMMANDOR_ID", sobj.id) --сохраняем ИД
+	return sobj
 end
 
---временая заглушка если ты не вставил ещё--
-function zaglyxa()
-	start_game_timer(1, "new_quest.del_semetskiq")
-end
-----
+function actor_punch()
+    local snd_obj = xr_sound.get_safe_sound_object([[affects\hit_fist]])
+    if snd_obj then
+        snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+    end
 
----удаляем его---
-function del_semetskiq()
-	local sim = alife()
-	local se_obj = sim:story_object(commandor_id)
-	if se_obj then
-		sim:release(se_obj, true)
-	end
+    level.add_cam_effector("camera_effects\\fusker.anm", 999, false, "")        
 end

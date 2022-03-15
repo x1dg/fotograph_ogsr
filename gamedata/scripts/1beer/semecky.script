@@ -70,7 +70,7 @@ end
 
 --временая заглушка если ты не вставил ещё--
 function zaglyxa()
-start_game_timer(1, "new_quest.del_semetskiq")
+start_game_timer(1, "semecky.del_semetskiq")
 end
 ----
 

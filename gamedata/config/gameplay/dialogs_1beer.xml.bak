@@ -75,9 +75,10 @@
 			</phrase>
 			<phrase id="111111111">
 				<text>ebnituy_dialog_111111111</text>
-				<give_info>commander_first_meet</give_info>
-				<action>commandor.release_predbannik()</action>
+				<next>1111111111</next>
+			</phrase>
+			<phrase id="1111111111">
+				<text>ebnituy_dialog_1111111111</text>
 			</phrase>
 		</phrase_list>
-	</dialog>
-	</game_dialogs>
+	</dialog>/game_dialogs>

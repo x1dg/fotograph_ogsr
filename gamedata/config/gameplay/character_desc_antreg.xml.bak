@@ -863,13 +863,13 @@
 			wpn_knife \n
 		</supplies>
 		
-		<actor_dialog>sidor_kont</actor_dialog>
-		<actor_dialog>sidorovich_one_dialog</actor_dialog>
+		<actor_dialog>sidor_kont</actor_dialog>		
+		<actor_dialog>sidorovich_one_dialog</actor_dialog>		
 		<actor_dialog>sidorovich_start_dialog</actor_dialog>
-		<start_dialog>sidorovich_commandor_dialog</start_dialog>
+		<actor_dialog>sidorovich_commandor_dialog</actor_dialog>
 		<actor_dialog>tm_trader_dialog</actor_dialog>
-		<actor_dialog>tm_trader_reward</actor_dialog>
-		<actor_dialog>escape_trader_repair</actor_dialog>
+        <actor_dialog>tm_trader_reward</actor_dialog>
+        <actor_dialog>escape_trader_repair</actor_dialog>
 	</specific_character>	
 	
 <!---------------------------DOLG ATAKA BAR---------------------->	

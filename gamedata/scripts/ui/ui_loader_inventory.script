@@ -51,7 +51,6 @@ function InventoryWindow:InitControls()
 
 	-- Характеристики ГГ
 	icon_s = xml:InitStatic("actor_chars:icon_static", self.stat)
-	log1("ICON_ACTOR: "..ui_data.load("mui_actor_icon"))
 	icon_s:InitTexture(ui_data.load("mui_actor_icon"))
 	l_char = xml:InitStatic("actor_chars:layer_actor", self.stat)
 	l_char:InitTexture("ui_icon_layer")
