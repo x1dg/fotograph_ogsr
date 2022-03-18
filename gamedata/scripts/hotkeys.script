@@ -107,17 +107,12 @@ end
 
 -- 'Numpad 9' - Дебаг
 binds_actions[key_bindings.kDANGER] = function()
-        local c_id = amk.load_variable("COMMANDOR_ID", nil)
-		local obj = level.object_by_id(c_id)
-		dsh_particles.play_particle(
-			obj, {
-				obj      = obj,
-				--particle = "ghoul\\fx-02-man_fired-up",
-				particle = "ghoul\\anomal-02-or-fire",
-				bone     = "bip01_spine",
-				stop_on_death = true,
-				looped = true
-			})
+		for a=10,65634,1 do
+			local obj=alife():object(a)
+			if obj and string.find(obj:name(),"1beer_teleport_predbannik") then
+				alife():release(obj, true)
+			end
+		end
 		local debug_enabled = ui_data.load("debug_enabled")
 		if debug_enabled and debug_enabled == true then
 			ui_data.save("debug_enabled", false)

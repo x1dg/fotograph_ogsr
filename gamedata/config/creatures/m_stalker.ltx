@@ -1018,3 +1018,32 @@ chemical_burn_immunity	= 0.1
 explosion_immunity		= 0.15
 fire_wound_immunity		= 0.1
 wound_2_immunity        = 0.0
+
+[stalker_inferno]:stalker
+$spawn = "stalkers\stalker_inferno"      ; option for Level Editor
+use_single_item_rule = off
+can_select_items   = on
+bones_particles = inferno_particles
+
+[inferno_particles]
+inferno_particles_lfoot = inferno_particles_lhand
+inferno_particles_rfoot = inferno_particles_rhand
+inferno_particles_spine = inferno_particles_spine
+
+[inferno_particles_lhand]
+particle = explosions\campfire_boar_grill
+sound = anomaly\bfuzz_blowout
+bone = bip01_l_hand
+stop_on_death = true
+
+[inferno_particles_rhand]
+particle = explosions\campfire_boar_grill
+sound = anomaly\bfuzz_blowout
+bone = bip01_r_hand
+stop_on_death = true
+
+[inferno_particles_spine]
+particle = ghoul\anomal-02-or-fire
+bone = bip01_spine
+sound = anomaly\bfuzz_blowout
+stop_on_death = true

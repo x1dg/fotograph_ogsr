@@ -77,11 +77,11 @@
   <target_dot_24 x="-10" y="-10" width="4" height="4" stretch="1" />
   <target_dot_25 x="-10" y="-10" width="4" height="4" stretch="1" />
 
-  <biomap_mess x="752" y="16" width="256" height="256" stretch="1">
+  <biomap_mess x="752" y="16" width="135" height="170" stretch="1">
     <texture>biomap\mess</texture>
   </biomap_mess>
 
-  <biomap x="752" y="16" width="256" height="256" stretch="1">
+  <biomap x="752" y="16" width="135" height="170" stretch="1">
     <texture>biomap\biomap_texture</texture>
   </biomap>
 

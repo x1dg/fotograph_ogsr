@@ -1,7 +1,7 @@
-local counter = 1
+local counter = 0
 local max_count = 25 --количество меток максимум
 local max_dist = 60 --макс расстояние до цели
-local screen_max_dist = 100 --макс расстояние в пикселях радара
+local screen_max_dist = 50 --макс расстояние в пикселях радара
 local center_x = 876 --отсюда отсчитываем, центр радара
 local center_y = 140 --отсюда отсчитываем, центр радара
 local tex_arr = {}
@@ -63,7 +63,7 @@ function update()
 		hud:AddCustomStatic("biomap", true)
 	end
 	local biomap_static=hud:GetCustomStatic("biomap")
-	biomap_static:wnd():SetWndPos(752,16)
+	biomap_static:wnd():SetWndPos(890.7,2)
 	counter = 1
 	local stalker, monster, x, y, o, so
 	for id,obj in pairs(db.storage) do

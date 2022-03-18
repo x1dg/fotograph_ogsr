@@ -10,7 +10,6 @@ function spawn_on_predbannik()
 	local commandor_level_vertex = 727
 	spawn_commandor(commandor_position, commandor_game_vertex, commandor_level_vertex, "commandor_predbannik_spawn")
 	--create_restrictor(commandor_position, commandor_game_vertex, commandor_level_vertex, "scripts\\1beer\\commander_predbannik_restrictor.ltx") 
-	start_game_timer(3, "commandor.attach_particles")
 end
 
 function attach_particles()
@@ -25,6 +24,11 @@ function attach_particles()
 			stop_on_death = true,
 			looped = true
 		})
+	local params = sobj and amk.read_stalker_params(sobj)
+	if params then
+		params.sid = commandor_id
+		amk.write_stalker_params(params,sobj)
+	end
 end
 
 function release_predbannik()
