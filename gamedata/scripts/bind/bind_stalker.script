@@ -114,7 +114,8 @@ function actor_binder:net_destroy()
 	self.object:set_callback(callback.on_mouse_wheel, nil) -- прокрутка колесиком (MonolithUI)
 	self.object:set_callback(callback.on_ruck, nil) -- перемещение предмета в рюкзак
 	self.object:set_callback(callback.on_slot, nil) -- перемещение предмета в слот
-	self.object:set_callback(callback.on_before_use_item, nil )
+	self.object:set_callback(callback.on_before_use_item, nil)
+	self.object:set_callback(callback.on_cell_item_mouse, nil)
   
   if sr_psy_antenna.psy_antenna then
     sr_psy_antenna.psy_antenna:destroy()
@@ -162,6 +163,7 @@ function actor_binder:reinit()
 	self.object:set_callback(callback.on_slot, self.item_to_slot, self)
 	self.object:set_callback(callback.on_ruck, self.item_to_backpack, self)
 	self.object:set_callback(callback.on_before_use_item, self.before_use, self )
+	self.object:set_callback(callback.on_cell_item_mouse, self.on_cell_item_mouse, self )
 		--/#+# [lua_helper] ------------------------------------------------
 	if event then event("actor_stor"):once(true):trigger() --/#!#> событие: инициализация 'storage' актора
 	elseif lua_helper.Init_ActorPStor then lua_helper.Init_ActorPStor()
@@ -198,16 +200,22 @@ function actor_binder:weapon_reload(obj) -- MonolithUI
 	ui_loader.weapon_reload(obj)
 end
 
-function actor_binder:on_cell_item_focus(obj) -- MonolithUI
+function actor_binder:on_cell_item_focus(obj)
+	dsh_drag_drop.on_cell_item_focus(obj)
 	ui_loader.on_cell_item_focus(obj)
 end
 
 function actor_binder:on_cell_item_focus_lost(obj) -- MonolithUI
+	dsh_drag_drop.on_cell_item_focus_lost(obj)
 	ui_loader.on_cell_item_focus_lost(obj)
 end
 
 function actor_binder:on_wheel_rotation( vol ) -- MonolithUI
 	ui_loader.on_wheel_rotation(vol)
+end
+
+function actor_binder:on_cell_item_mouse(obj, x, y, action)
+	dsh_drag_drop.on_cell_item_mouse(obj, x, y, action)
 end
 ----------------------------------------------------------------------------------------------------------------------
 controllerSoundPresentOnDeath = false
@@ -353,6 +361,7 @@ get_console():execute("load ~~~ protect box")
 table.insert(amk_offline_alife.protected, box:id())
 end
 end
+dsh_drag_drop.on_drop(obj)
 ui_loader.on_item_drop(obj) -- MonolithUI
 end
 ----------------------------------------------------------------------------------------------------------------------

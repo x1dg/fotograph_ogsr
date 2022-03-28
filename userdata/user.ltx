@@ -1,4 +1,4 @@
-_preset High
+_preset Extreme
 ai_use_torch_dynamic_lights on
 unbindall
 bind left kLEFT
@@ -7,28 +7,24 @@ bind up kUP
 bind down kDOWN
 bind jump kSPACE
 bind crouch kLCONTROL
-bind accel kX
-bind sprint_toggle kLSHIFT
+bind accel kLSHIFT
+bind sprint_toggle kX
 bind forward kW
 bind back kS
 bind lstrafe kA
 bind rstrafe kD
 bind llookout kQ
 bind rlookout kE
-bind cam_1 kNUMPAD4
-bind cam_2 kNUMPAD5
-bind cam_3 kNUMPAD6
 bind cam_zoom_in kADD
 bind cam_zoom_out kSUBTRACT
 bind torch kL
 bind night_vision kN
-bind wpn_1 k3
+bind wpn_1 k1
 bind wpn_2 k2
-bind wpn_3 k1
+bind wpn_3 k3
 bind wpn_4 k4
 bind wpn_5 k5
 bind wpn_6 k6
-bind wpn_8 kO
 bind wpn_next kY
 bind wpn_fire mouse1
 bind wpn_zoom mouse2
@@ -46,11 +42,14 @@ bind quit kESCAPE
 bind console kGRAVE
 bind inventory kI
 bind buy_menu kB
+bind skin_menu kO
 bind team_menu kU
 bind active_jobs kP
 bind map kM
 bind contacts kH
+bind vote_begin kF5
 bind vote kF6
+bind vote_yes kF7
 bind vote_no kF8
 bind speech_menu_0 kC
 bind speech_menu_1 kZ
@@ -65,13 +64,11 @@ bind set_godmode kNUMPAD1
 bind set_unlimitedammo kNUMPAD2
 bind set_hudmask kNUMPAD0
 bind jump_to_danger kNUMPAD9
-bind quicksave kF5
-bind quickload kF7
 cam_inert 0.
 cam_slide_inert 0.25
 cl_dynamiccrosshair on
 fov 82.
-g_3d_scopes on
+g_3d_scopes off
 g_3d_scopes_fps_factor 2
 g_always_run on
 g_ammunition_on_belt off
@@ -91,11 +88,11 @@ g_unlimitedammo on
 g_vertex_dbg off
 g_zones_dbg off
 hud_adjust_delta_rot 0.05
-hud_adjust_delta_value 0.0045
+hud_adjust_delta_value 0.0015
 hud_adjust_mode 0
 hud_crosshair on
 hud_crosshair_build off
-hud_crosshair_dist off
+hud_crosshair_dist on
 hud_crosshair_hard off
 hud_draw on
 hud_fov 0.54
@@ -113,7 +110,7 @@ ph_iterations 18
 ph_timefactor 1.
 r1_detail_textures off
 r1_dlights on
-r1_dlights_clip 40.
+r1_dlights_clip 50.
 r1_fog_luminance 1.1
 r1_glows_per_frame 16
 r1_lmodel_lerp 0.1
@@ -135,7 +132,7 @@ r2_gi_clip 0.001
 r2_gi_depth 1
 r2_gi_photons 16
 r2_gi_refl 0.9
-r2_gloss_factor 0.
+r2_gloss_factor 1.
 r2_ls_bloom_fast off
 r2_ls_bloom_kernel_b 0.7
 r2_ls_bloom_kernel_g 3.
@@ -150,7 +147,7 @@ r2_ls_squality 1.
 r2_ls_ssm_kernel 0.7
 r2_mblur 0.
 r2_parallax_h 0.02
-r2_rain_drops on
+r2_rain_drops off
 r2_rain_drops_control on
 r2_rain_drops_intensity 0.00025
 r2_rain_drops_speed 1.25
@@ -161,7 +158,7 @@ r2_soft_particles on
 r2_soft_water on
 r2_ssa_lod_a 64.
 r2_ssa_lod_b 48.
-r2_ssao st_opt_medium
+r2_ssao st_opt_high
 r2_ssao_blur off
 r2_ssao_half_data off
 r2_ssao_hbao off
@@ -177,12 +174,12 @@ r2_sun_depth_near_scale 1.
 r2_sun_details off
 r2_sun_far 100.
 r2_sun_focus on
-r2_sun_lumscale 0.3
-r2_sun_lumscale_amb 1.
-r2_sun_lumscale_hemi 1.
+r2_sun_lumscale 1.55
+r2_sun_lumscale_amb 1.9
+r2_sun_lumscale_hemi 1.3
 r2_sun_near 20.
 r2_sun_near_border 0.75
-r2_sun_quality st_opt_medium
+r2_sun_quality st_opt_high
 r2_sun_tsm on
 r2_sun_tsm_bias -0.01
 r2_sun_tsm_proj 0.3
@@ -214,28 +211,28 @@ r4_wireframe off
 r_SunShafts_Blend 0.25
 r_SunShafts_Radius 1.56
 r__actor_shadow off
-r__detail_density 0.3
-r__detail_radius 49
+r__detail_density 0.18
+r__detail_radius 221
 r__detail_scale 1.
 r__dtex_range 50.
-r__geometry_lod 0.75
+r__geometry_lod 1.
 r__no_scale_on_fade 0
 r__smap_size 2048x2048
-r__tf_aniso 8
+r__tf_aniso 16
 r__tf_mipbias -0.5
-r__wallmark_ttl 50.
-r_aa_mode st_opt_off
+r__wallmark_ttl 60.
+r_aa_mode st_opt_smaa
 r_fps_lock fpslock60
 r_ss_sunshafts_length 0.9
 r_ss_sunshafts_radius 2.
-r_sunshafts_mode ss_ogse
+r_sunshafts_mode volumetric
 renderer renderer_r2
 rs_always_active off
 rs_c_brightness 1.
 rs_c_contrast 1.
-rs_c_gamma 1.
+rs_c_gamma 1.3
 rs_cam_pos off
-rs_fullscreen off
+rs_fullscreen on
 rs_hw_stats off
 rs_refresh_60hz off
 rs_skeleton_update 32
@@ -249,7 +246,7 @@ snd_cache_size 32
 snd_device OpenAL Soft
 snd_efx on
 snd_targets 256
-snd_volume_eff 0.1
+snd_volume_eff 0.5
 snd_volume_music 0.1
 texture_lod 0
 vid_mode 1920x1080
