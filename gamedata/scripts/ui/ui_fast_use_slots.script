@@ -22,10 +22,10 @@ local eat_items = {
 	["medkit_scientic"] = true}
 
 local strings = {}
-local strings_1 = {[1] = {text = "", keybind = key_bindings.kUSE_ANTIRAD}}
-local strings_2 = {[1] = {text = "", keybind = key_bindings.kUSE_ENERGY_DRINK}}
-local strings_3 = {[1] = {text = "", keybind = key_bindings.kUSE_B190}}
-local strings_4 = {[1] = {text = "", keybind = key_bindings.kUSE_BIPSIZON}}
+local strings_1 = {[1] = {text = "", keybind = key_bindings.kQUICK_SLOT_1}}
+local strings_2 = {[1] = {text = "", keybind = key_bindings.kQUICK_SLOT_2}}
+local strings_3 = {[1] = {text = "", keybind = key_bindings.kQUICK_SLOT_1}}
+local strings_4 = {[1] = {text = "", keybind = key_bindings.kQUICK_SLOT_4}}
 
 --------------------
 -- Fast use slots --

@@ -92,14 +92,14 @@ end
 -- Взятие предмета в инвентарь
 function on_item_take(obj)
 	xr_statistic.addArtefact(obj)
-	ogsr_quick_slots.on_item_take(obj, obj:section())
+	ogsr_quick_slots.on_item_take(obj)
 	ui_hud_weight.item_take(obj)
 	xr_signals.on_event("item_take", obj)
 end
 
 -- Сброс предмета из инвентаря
 function on_item_drop(obj)
-	ogsr_quick_slots.on_item_drop(obj, obj:section())
+	ogsr_quick_slots.on_item_drop(obj)
 	ui_hud_weight.on_item_drop(obj)
 	xr_signals.on_event("item_drop", obj)
 end
@@ -109,7 +109,7 @@ function update()
 	xr_signals.on_update(delta)
 	rx_shoot_enable.shoot_effect()
 	ui_pda_options.timer_update(delta)
-	ogsr_quick_slots.on_update()
+	ogsr_quick_slots.add_hud()
 	ui_zona_che.ZonaCheHud()
 	ui_hud_weight.update()
 	ui_hud_time.update()

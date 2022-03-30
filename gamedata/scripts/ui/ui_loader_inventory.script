@@ -121,6 +121,7 @@ function on_info(info_id)
 	elseif info_id=="ui_inventory_hide" then
 		dsh_drag_drop.on_hide_inventory()
 		if rec_wnd then rec_wnd:DetachWnd() end
+		ogsr_quick_slots.inventory_hide()
 	end
 end
 
