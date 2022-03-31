@@ -121,10 +121,7 @@ function add_hud()
 
 	for i = 1, 4 do   
 		local section = item_in_slot[i]()
-		if section == "EMPTY" then
-		section = "medkit"
-		 ogse.save_var( "item_in_slot_"..i, "medkit")
-		 end
+
 		local quick_slot_static = hud:GetCustomStatic("quick_slot_"..i) or hud:AddCustomStatic("quick_slot_"..i, true)
 		CIconParams( section ):set_shader( quick_slot_static:wnd() )
 		quick_slot_static:wnd():SetColor( db.actor:object(section) and GetARGB(255,255,255,255) or GetARGB(128,255,255,255) )
