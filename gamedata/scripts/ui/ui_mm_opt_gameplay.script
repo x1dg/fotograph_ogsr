@@ -77,6 +77,12 @@ function opt_gameplay:InitControls(x, y, xml, handler)
 	-- show fast use slots (MonolithUI)
 	xml:InitCheck("tab_gameplay:check_show_fast_slots", self.scroll_v)
 
+	-- zoom fx enable (MonolithUI)
+	hide_hud = xml:InitCheck("tab_gameplay:check_hide_hud", self.scroll_v)
+	handler:Register(hide_hud,"hide_hud")
+	hide_hud:SetCheck(ui_data.load("1beer_hide_hud"))
+	handler:AddCallback("hide_hud", ui_events.BUTTON_CLICKED, self.HideHud, self.scroll_v)
+
 	-- shoot fx enable (MonolithUI)
 	shoot_enable = xml:InitCheck("tab_gameplay:check_shoot_enable", self.scroll_v)
 	handler:Register(shoot_enable,"shoot_enable")
@@ -85,15 +91,6 @@ function opt_gameplay:InitControls(x, y, xml, handler)
 		else shoot_enable:Enable(false)
 	end
 	handler:AddCallback("shoot_enable", ui_events.BUTTON_CLICKED, self.ShootEffect, self.scroll_v)
-
-	-- zoom fx enable (MonolithUI)
-	zoom_enable = xml:InitCheck("tab_gameplay:check_zoom_enable", self.scroll_v)
-	handler:Register(zoom_enable,"zoom_enable")
-	if level.present() and (db.actor ~= nil) and db.actor:alive()
-		then zoom_enable:SetCheck(ui_data.load("mui_zoom_enable"))
-		else zoom_enable:Enable(false)
-	end
-	handler:AddCallback("zoom_enable", ui_events.BUTTON_CLICKED, self.ZoomEffect, self.scroll_v)
 
 	-- blood fx enable (MonolithUI)
 	blood_enable = xml:InitCheck("tab_gameplay:check_blood_enable", self.scroll_v)
@@ -158,13 +155,13 @@ function opt_gameplay:ShootEffect()
 	end
 end
 
-function opt_gameplay:ZoomEffect()
-	zoom_enable:SetCheck(ui_data.load("mui_zoom_enable"))
-	if zoom_enable:GetCheck() then
-		ui_data.save("mui_zoom_enable", false)
-		zoom_enable:SetCheck(false) else 
-		ui_data.save("mui_zoom_enable", true)
-		zoom_enable:SetCheck(true)
+function opt_gameplay:HideHud()
+	hide_hud:SetCheck(ui_data.load("1beer_hide_hud"))
+	if hide_hud:GetCheck() then
+		ui_data.save("1beer_hide_hud", false)
+		hide_hud:SetCheck(false) else 
+		ui_data.save("1beer_hide_hud", true)
+		hide_hud:SetCheck(true)
 	end
 end
 

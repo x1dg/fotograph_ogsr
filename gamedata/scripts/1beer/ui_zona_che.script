@@ -10,3 +10,15 @@ function remove_elements_2()
 	--hud:GetCustomStatic("test_static")
 	--hud:RemoveCustomStatic("test_static")
 end
+
+function add_binoc()
+	local hud = get_hud()
+	local hud = get_hud()
+	hud:AddCustomStatic("zona_binoc_static", true)
+end
+
+function remove_binoc()
+	local hud = get_hud()
+	hud:GetCustomStatic("zona_binoc_static")
+	hud:RemoveCustomStatic("zona_binoc_static")
+end

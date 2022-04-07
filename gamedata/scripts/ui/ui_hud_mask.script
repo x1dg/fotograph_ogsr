@@ -122,8 +122,6 @@ function update()
 		bleedcondition()
 	end
 
-	if ui_data.load("mui_zoom_enable") == true then zoom_hud(_time) end
-
 	if freemem2 == 0 then
 		freemem2 = _time + 40
 	elseif _time > freemem2 then

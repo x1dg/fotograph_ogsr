@@ -12,5 +12,5 @@ backup_gamedates/
 gamedata_*/
 userdata/screenshots/
 userdata/savedgames/
-###changed_files###/
+*changed_files*/
 unpacked/

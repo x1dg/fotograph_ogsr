@@ -1,0 +1,14 @@
+function update()	
+	local console = get_console()
+	local hud = get_hud()
+    if hud:GetCustomStatic("main_task") or ui_data.load("1beer_hide_hud") == false then
+		console:execute("hud_draw 1")
+		ogsr_quick_slots.add_hud()
+	else
+		console:execute("hud_draw 0")
+		local hud = get_hud()
+		ogsr_quick_slots.remove_hud()
+		if not hud then return end
+		hud:RemoveCustomStatic("hud_show_time")
+	end
+end

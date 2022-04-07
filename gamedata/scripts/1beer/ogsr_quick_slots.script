@@ -126,8 +126,8 @@ function add_hud()
 		CIconParams( section ):set_shader( quick_slot_static:wnd() )
 		quick_slot_static:wnd():SetColor( db.actor:object(section) and GetARGB(255,255,255,255) or GetARGB(128,255,255,255) )
 
-		counters[i] = counters[i] or xml:InitStatic("quick_slot_"..i..":counter", quick_slot_static:wnd() )
-		counters[i]:SetText("x"..count_item_slot[i])
+		counter = xml:InitStatic("quick_slot_"..i..":counter", quick_slot_static:wnd() )
+		counter:SetText("x"..count_item_slot[i])
 
 		local quick_slot_key_static = hud:GetCustomStatic("quick_slot"..i.."_text") or hud:AddCustomStatic("quick_slot"..i.."_text", true)
 		local dik = bind_to_dik(key_bindings["kQUICK_SLOT_"..i])
@@ -142,8 +142,10 @@ function remove_hud()
 
 	for i = 1, 4 do   
 		hud:RemoveCustomStatic("quick_slot_"..i)
-		hud:RemoveCustomStatic("quick_slot_item_number_"..i)
-		hud:RemoveCustomStatic("quick_slot_key_"..i)
+		hud:RemoveCustomStatic("quick_slot"..i.."_text")
+		if hud:GetCustomStatic("quick_slot_"..i..":counter") then
+			hud:RemoveCustomStatic("quick_slot_"..i..":counter")
+		end
 	end
 end
 

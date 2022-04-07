@@ -165,8 +165,8 @@
 <string id="ui_mm_blurs_enable">
 <text>Ёффект запотевани€ маски</text>
 </string>
-<string id="ui_mm_zoom_enable">
-<text>Ёффект прицеливани€</text>
+<string id="ui_mm_hide_hud">
+<text>’уд по нажатию TAB</text>
 </string>
 <string id="ui_mm_blood_enable">
 <text>Ёффект ранени€</text>

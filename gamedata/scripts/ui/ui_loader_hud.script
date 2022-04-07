@@ -34,11 +34,13 @@ function check_binoc()
 		or string.find(act_it:section(), "wpn_binoc")) then
 	ogsr_quick_slots.remove_hud()
 	ui_zona_che.remove_elements_2(false)
+	ui_zona_che.add_binoc()
 	ui_hud_weight.remove_elements_3(false)
 	if get_hud():GetCustomStatic("hud_show_time") then get_hud():RemoveCustomStatic("hud_show_time") end
 	return
 	else end else end else
 	ogsr_quick_slots.remove_hud()
+	ui_zona_che.add_binoc()
 	ui_zona_che.remove_elements_2(false)
 	ui_hud_weight.remove_elements_3(false)
 	if get_hud():GetCustomStatic("hud_show_time") then get_hud():RemoveCustomStatic("hud_show_time") end

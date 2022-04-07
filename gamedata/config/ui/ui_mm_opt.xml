@@ -775,13 +775,13 @@
 			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_show_fast_slots</text>
 		</check_show_fast_slots>
 
-		<check_shoot_enable x="0" y="288" width="344" height="21">
+		<check_hide_hud x="0" y="288" width="344" height="21">
+			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_hide_hud</text>
+		</check_hide_hud>
+		
+		<check_shoot_enable x="0" y="318" width="344" height="21">
 			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_shoot_enable</text>
 		</check_shoot_enable>
-
-		<check_zoom_enable x="0" y="348" width="344" height="21">
-			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_zoom_enable</text>
-		</check_zoom_enable>
 
 		<check_blood_enable x="0" y="378" width="344" height="21">
 			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_blood_enable</text>
