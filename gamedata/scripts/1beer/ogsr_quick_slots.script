@@ -56,9 +56,10 @@ function CUI_InvButton:__init( slot_num ) super()
 	self:AddCallback(id, ui_events.STATIC_FOCUS_LOST, function() slot_focus = false end)
 end
 function CUI_InvButton:__finalize()
+	--log1("--delete CUI_InvButton")
 end
 
-function on_drag_drop( obj )
+local function on_drag_drop( obj )
 	local section = obj:section()
 	local quickslot = get_string( section, "quick_slot" )
 	if not quickslot or not slot_focus then return end
@@ -71,7 +72,7 @@ function on_drag_drop( obj )
 	snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 0.7)
 end
 
-function on_item_take(obj)
+local function on_item_take(obj)
 	for i = 1, 4 do
 		local item = item_in_slot[i]()
 		if obj:section() == item then
@@ -80,7 +81,7 @@ function on_item_take(obj)
 	end
 end
 
-function on_item_drop(obj)
+local function on_item_drop(obj)
 	for i = 1, 4 do
 		local item = item_in_slot[i]()
 		if obj:section() == item then
@@ -89,7 +90,7 @@ function on_item_drop(obj)
 	end
 end
 
-function inventory_open()
+local function inventory_open()
 	local inv_wnd = level.get_inventory_wnd()
 
 	for i = 1, 4 do   
@@ -99,7 +100,7 @@ function inventory_open()
 	end
 end
 
-function inventory_hide()
+local function inventory_hide()
 	local inv_wnd = level.get_inventory_wnd()
 
 	for i = 1, 4 do   
@@ -110,7 +111,6 @@ function inventory_hide()
 	slots_wnd_storage = {}
 end
 
-local counters = {}
 
 function add_hud()
 	local hud = get_hud()
@@ -150,7 +150,7 @@ function remove_hud()
 end
 
 
-function eat_qs_item(slot)
+local function eat_qs_item(slot)
 	local section = item_in_slot[slot]()
 	if section then
 		local item = db.actor:object(section)
@@ -168,7 +168,18 @@ local binds_table = {
 	[key_bindings.kQUICK_SLOT_4] = function() return eat_qs_item(4) end,
 }
 
-function on_key_down(key, bind)
+local function on_update(delta) 
+	if level.main_input_receiver() 
+		or not db.actor:alive() 
+		or device().precache_frame > 1 
+		or ui_data.load("1beer_hide_hud") == true 
+	then 
+		return 
+	end
+	add_hud()
+end
+
+local function on_key_down(key, bind)
 	if level.main_input_receiver() or not db.actor:alive() or device().precache_frame > 1 then return end
 
 	local fun = binds_table[bind]
@@ -178,7 +189,6 @@ function on_key_down(key, bind)
 	end
 end
 
-
 function attach(sm)
 	sm:subscribe({ signal = "on_inventory_open", fun = inventory_open }) 
 	sm:subscribe({ signal = "on_inventory_hide", fun = inventory_hide }) 
@@ -187,4 +197,5 @@ function attach(sm)
 	sm:subscribe({ signal = "on_drop",           fun = on_item_drop   })
 	sm:subscribe({ signal = "on_use",            fun = on_item_drop   })
 	sm:subscribe({ signal = "on_key_down",	     fun = on_key_down    })
+	sm:subscribe({ signal = "on_update",	     fun = on_update      })
 end

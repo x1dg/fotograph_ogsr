@@ -1,0 +1,96 @@
+--[[-----------------------------------------------------------------------------------------------
+ File			: coldkey.script
+ Description 	: Холодные Клавиши
+--]]-----------------------------------------------------------------------------------------------
+
+local get_wnd = level.main_input_receiver
+local debug_enabled = ui_data.load("debug_enabled")
+local g_god_mode = get_console():get_string("g_god")
+local ammo_mode = get_console():get_string("g_unlimitedammo")
+local god_sound = xr_sound.get_safe_sound_object([[intro\godmode]])
+local ammo_sound = xr_sound.get_safe_sound_object([[intro\unlimited_ammo]])
+local pda_sound = xr_sound.get_safe_sound_object([[device\pda\pda_tip]])
+
+function on_key_down(key, bind)
+	if level.main_input_receiver() and not db.actor:alive() then return end
+	
+	if key == bind_to_dik(key_bindings.kDANGER) then -- 'Numpad 9' - Дебаг
+  		if debug_enabled and debug_enabled == true then
+			ui_data.save("debug_enabled", false)
+		else
+			ui_data.save("debug_enabled", true)
+		end
+	elseif key == bind_to_dik(key_bindings.kMASK) then -- 'Numpad 0' - Худ-маска вкл./выкл
+		ui_hud_mask.on_off_mask()
+	elseif key == bind_to_dik(key_bindings.kGOD_MODE) then -- 'Numpad 1' - Бессмертие вкл./выкл
+		if g_god_mode == "off" then
+			get_console():execute("g_god on")
+			this.hud_msg("func_task", game.translate_string("st_ui_godmode_on"))
+			god_sound:play(db.actor, 0, sound_object.s2d)
+		else
+			get_console():execute("g_god off")
+			this.hud_msg("func_task", game.translate_string("st_ui_godmode_off"))
+			pda_sound:play(db.actor, 0, sound_object.s2d)
+		end
+	elseif key == bind_to_dik(key_bindings.kUN_AMMO) then -- 'Numpad 2' - Бесконечные патроны вкл./выкл
+		if ammo_mode == "off" then
+			get_console():execute("g_unlimitedammo on")
+			this.hud_msg("func_task", game.translate_string("st_ui_un_ammo_on"))
+			ammo_sound:play(db.actor, 0, sound_object.s2d)
+		else
+			get_console():execute("g_unlimitedammo off")
+			this.hud_msg("func_task", game.translate_string("st_ui_un_ammo_off"))
+			pda_sound:play(db.actor, 0, sound_object.s2d)
+		end
+	elseif key == bind_to_dik(key_bindings.kTORCH) then -- 'Numpad 2' - Бесконечные патроны вкл./выкл
+		local on = xr_sound.get_safe_sound_object([[interface\inv_torch_on]])
+		local off = xr_sound.get_safe_sound_object([[interface\inv_torch_off]])
+		if db.actor:alive() then
+			local torch = db.actor:item_in_slot(9)
+			if torch and torch:is_torch() then
+				torch = get_torch_obj(torch)
+				if torch.on then
+					if torch_mode == "near" then
+						on:play(db.actor, 0, sound_object.s2d)
+						set_far_mode(torch)
+						torch:switch(true)
+					else
+						torch_mode = "off"
+						off:play(db.actor, 0, sound_object.s2d)
+					end
+					torch:switch(true)
+				else
+					set_near_mode(torch)
+					torch:switch(true)
+				end
+				torch:switch(true)
+			end
+		end
+		if db.actor:item_in_slot(9) then
+			on:play(db.actor, 0, sound_object.s2d)
+		end
+	end
+end
+
+function hud_msg(xml, txt)
+	local hud = get_hud()
+	hud:AddCustomStatic(xml, true)
+	local wnd = hud:GetCustomStatic(xml):wnd()
+	wnd:SetText(txt)
+end
+
+function set_near_mode(torch, r)
+	torch_mode = "near"
+	torch:set_range(20)
+	torch:set_angle(math.rad(50))
+end
+
+function set_far_mode(torch, r)
+	torch_mode = "far"
+	torch:set_range(60)
+	torch:set_angle( math.rad(40))
+end
+
+function attach(sm)
+  sm:subscribe({ signal = "on_key_down", fun = this.on_key_down })
+end

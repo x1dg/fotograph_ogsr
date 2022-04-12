@@ -535,4 +535,28 @@
 	<hud_exo_red3 x="0" y="0" width="1024" height="768" stretch="1" light_anim="ui_slow_blinking_alpha" la_cyclic="1" la_texture="0" la_text="1" la_alpha="1">
 		<texture>hud\hud_helmet6</texture>
 	</hud_exo_red3>
+	
+	<infect_green x="5" y="400" width="50" height="50" complex_mode="1">
+	<texture x="352" y="224" width="64" height="64" r="0" g="255" b="0" a="255">ui\ui_hud</texture>
+	</infect_green>
+
+	<infect_yellow x="5" y="400" width="50" height="50" complex_mode="1">
+	<texture x="352" y="224" width="64" height="64" r="255" g="255" b="0" a="255">ui\ui_hud</texture>
+	</infect_yellow>
+
+	<infect_red x="5" y="400" width="50" height="50" complex_mode="1">
+	<texture x="352" y="224" width="64" height="64" r="255" g="0" b="0" a="255">ui\ui_hud</texture>
+	</infect_red>
+ 
+	<water_green x="5" y="500" width="50" height="50" complex_mode="1">
+	<texture x="352" y="288" width="64" height="64" r="0" g="255" b="0" a="255">ui\ui_hud</texture>
+	</water_green>
+
+	<water_yellow x="5" y="500" width="50" height="50" complex_mode="1">
+	<texture x="352" y="288" width="64" height="64" r="255" g="255" b="0" a="255">ui\ui_hud</texture>
+	</water_yellow>
+
+	<water_red x="5" y="500" width="50" height="50" complex_mode="1">
+	<texture x="352" y="288" width="64" height="64" r="255" g="0" b="0" a="255">ui\ui_hud</texture>
+	</water_red>
 </header>

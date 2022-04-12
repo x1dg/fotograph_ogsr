@@ -306,6 +306,7 @@ ammo_12x70_buck = 1 \n
 
 <start_dialog>alka_dial1</start_dialog>
 <actor_dialog>alka_dial2</actor_dialog>
+<actor_dialog>alka_dial3</actor_dialog>
 #include "gameplay\character_dialogs.xml"
 </specific_character>
 

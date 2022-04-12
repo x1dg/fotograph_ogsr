@@ -2,19 +2,19 @@
 <string_table>
 
     <string id="radio_start_0">
-    <text>Порядок.</text>
+    <text>Здравствуй, Фотограф.</text>
   </string> 
     <string id="radio_start_1">
-    <text>Привет?</text>
+    <text>Кто ты?</text>
   </string>
     <string id="radio_start_2">
-    <text>Честь.</text>
+    <text>Сейчас не важно.</text>
   </string>
     <string id="radio_start_3">
-    <text>?</text>
+    <text>Как я здесь оказался, что вы от меня хотите?</text>
   </string>  
     <string id="radio_start_4">
-    <text>СПРАВЕДЛИВОСТЬ.</text>
+    <text>Зона выбрала тебя.</text>
   </string>
   
  <string id="radio_end_0">
@@ -700,7 +700,7 @@
      <text>Верно говоришь. Держи тридцатку.</text>  
   </string>
 	<string id="semecky_start_41">
-		<text>Ладно.. Где мне его найти?</text>
+		<text>???</text>
 	</string>
 	<string id="sidorovich_commandor_dialog_411">
 		<text>Недавно ребята видели, как он ошивался в одном из домов деревни..</text>

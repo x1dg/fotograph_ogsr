@@ -117,16 +117,13 @@ function on_info(info_id)
 		if not initial then	rec_wnd = InventoryWindow(level.main_input_receiver()) end
 		if not rec_wnd.stat:IsShown() then rec_wnd:ShowWnd() end
 		dsh_drag_drop.on_show_inventory()
-		ogsr_quick_slots.inventory_open()
 	elseif info_id=="ui_inventory_hide" then
 		dsh_drag_drop.on_hide_inventory()
 		if rec_wnd then rec_wnd:DetachWnd() end
-		ogsr_quick_slots.inventory_hide()
 	end
 end
 
 function drag_drop(obj)
-	ogsr_quick_slots.on_item_drop(obj)
 end
 
 function update()

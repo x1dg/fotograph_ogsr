@@ -14,7 +14,7 @@ function on_show_inventory()
       { signal = "on_cell_item_focus", fun = this.on_cell_item_focus },
       { signal = "on_cell_item_focus_lost", fun = this.on_cell_item_focus_lost },
       { signal = "on_cell_item_mouse", fun = this.on_cell_item_mouse },
-      { signal = "on_drop_before_all", fun = this.on_drop            },
+      { signal = "on_drop", fun = this.on_drop },
       { signal = "on_inventory_hide",  fun = this.on_hide_inventory  },
     }
     local sm = ogse_signals.get_mgr()
@@ -55,11 +55,11 @@ end
 
 function on_cell_item_mouse( obj, x, y, action )
   if action ~= ui_events.DRAG_DROP_ITEM_DROP then return end
-  ogsr_quick_slots.on_drag_drop(obj)
+  ogse_signals.get_mgr():call( "on_fake_drag_drop", obj, drop_on_obj )
   if drop_on_id then
     local drop_on_obj = level.object_by_id( drop_on_id )
     if drop_on_obj then
-      ogsr_quick_slots.on_drag_drop(obj)
+      ogse_signals.get_mgr():call( "on_drag_drop", obj, drop_on_obj )
     end
     drop_on_id = false
   end

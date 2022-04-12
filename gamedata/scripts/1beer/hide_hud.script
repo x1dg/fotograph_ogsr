@@ -1,14 +1,54 @@
-function update()	
-	local console = get_console()
-	local hud = get_hud()
-    if hud:GetCustomStatic("main_task") or ui_data.load("1beer_hide_hud") == false then
-		console:execute("hud_draw 1")
+local function switch_hide_hud(mode, force)
+    if get_console():get_integer("hud_draw") ~= mode or force then
+        cmd("hud_draw "..mode)
+    end
+end
+
+local function on_key_down(key, bind)
+	if level.main_input_receiver() or not db.actor:alive() or device().precache_frame > 1 then return end
+
+	if bind == key_bindings.kSCORES and ui_data.load("1beer_hide_hud") == true then
+		switch_hide_hud(1)
 		ogsr_quick_slots.add_hud()
-	else
-		console:execute("hud_draw 0")
-		local hud = get_hud()
+	end
+end
+
+local function on_key_up(key, bind)
+	if bind == key_bindings.kSCORES and ui_data.load("1beer_hide_hud") == true then
 		ogsr_quick_slots.remove_hud()
+		switch_hide_hud(0)
+		local hud = get_hud()
+		
 		if not hud then return end
 		hud:RemoveCustomStatic("hud_show_time")
 	end
+end
+
+local first_update = true
+
+local function on_update(delta) 
+	if ui_data.load("1beer_hide_hud") == false then 
+		switch_hide_hud(1)
+		return
+	end
+	
+	if level.main_input_receiver() 
+		or not db.actor:alive() 
+		or device().precache_frame > 1
+		or first_update == false
+	then return end
+	
+	ogsr_quick_slots.remove_hud()
+	switch_hide_hud(0)
+	local hud = get_hud()
+	if not hud then return end
+	hud:RemoveCustomStatic("hud_show_time")
+	first_update = false
+end
+
+
+function attach(sm)
+	sm:subscribe({ signal = "on_key_down",	     fun = on_key_down    })
+	sm:subscribe({ signal = "on_key_up",	     fun = on_key_up      })
+	sm:subscribe({ signal = "on_update",	     fun = on_update      })
 end

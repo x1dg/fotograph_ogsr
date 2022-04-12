@@ -17,7 +17,6 @@ function on_key(dik)
 	if kShifts[dik] then _G.ShiftPressed = true end
 	local bind = dik_to_bind(dik)
 	hotkeys.on_key(dik, bind)
-	ogsr_quick_slots.on_key_down(dik, bind)
 	xr_signals.on_event( "key_press", key, bind )
 end
 
@@ -92,14 +91,12 @@ end
 -- Взятие предмета в инвентарь
 function on_item_take(obj)
 	xr_statistic.addArtefact(obj)
-	ogsr_quick_slots.on_item_take(obj)
 	ui_hud_weight.item_take(obj)
 	xr_signals.on_event("item_take", obj)
 end
 
 -- Сброс предмета из инвентаря
 function on_item_drop(obj)
-	ogsr_quick_slots.on_item_drop(obj)
 	ui_hud_weight.on_item_drop(obj)
 	xr_signals.on_event("item_drop", obj)
 end
@@ -118,6 +115,5 @@ function update()
 	ui_loader_carbody.update()
 	ui_loader_trade.update()
 	ui_loader_pda.update()
-	hide_hud.update()
 	ui_loader_hud.update()
 end

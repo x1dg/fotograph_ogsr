@@ -11,4 +11,5 @@ function update()
 	sMsg = string.format(" %02d:%02d\n", iTimeHourse, iTimeMinutes) else
 	sMsg = string.format(" %02d:%02d\n", iTimeHourse, iTimeMinutes) end
 	if oCustomStatic ~= nil then oCustomStatic:wnd():SetText(sMsg) end
+	if get_console():get_integer("hud_draw") == 0 and oHud:GetCustomStatic("hud_show_time") then oHud:RemoveCustomStatic("hud_show_time") end
 end

@@ -275,10 +275,7 @@
 			   
 			   			   			   			   			   			   			   			   	<info_portion id="test_flaim2">
 															<action>new_quest.del_flame_test</action>
-			   </info_portion>			 
-			   			   <info_portion id="commandor_predbannik_spawn2">
-			   </info_portion> 
-			   
+			   </info_portion>			 	   
 			   			   			   			   			   			   	<info_portion id="zap_kvest_fin_mar_s">
 																			<action>new_quest.script33</action>
 			   </info_portion>

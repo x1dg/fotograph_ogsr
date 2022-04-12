@@ -47,8 +47,6 @@ bind team_menu kU
 bind active_jobs kP
 bind map kM
 bind contacts kH
-bind vote_begin kF5
-bind vote kF6
 bind vote_yes kF7
 bind vote_no kF8
 bind speech_menu_0 kC
@@ -64,6 +62,8 @@ bind set_godmode kNUMPAD1
 bind set_unlimitedammo kNUMPAD2
 bind set_hudmask kNUMPAD0
 bind jump_to_danger kNUMPAD9
+bind quicksave kF5
+bind quickload kF6
 cam_inert 0.
 cam_slide_inert 0.25
 cl_dynamiccrosshair on
@@ -101,7 +101,7 @@ hud_small_font off
 hud_weapon on
 input_exclusive_mode on
 keypress_on_start on
-load_last_save Данил_autosave
+load_last_save Данил_quicksave_3
 mouse_invert off
 mouse_sens 0.12
 ph_frequency 100.00000
@@ -246,7 +246,7 @@ snd_cache_size 32
 snd_device OpenAL Soft
 snd_efx on
 snd_targets 256
-snd_volume_eff 0.5
+snd_volume_eff 0.1
 snd_volume_music 0.1
 texture_lod 0
 vid_mode 1920x1080

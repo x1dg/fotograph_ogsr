@@ -17,9 +17,9 @@ or val
 end
 local function get_inv_name( section, def )
 if sys_ini:section_exist( section ) and sys_ini:line_exist( section, "inv_name" ) then
-return translate( get_string( section, "inv_name" ) )
+return tostring(translate( get_string( section, "inv_name" ) ))
 end
-return translate( def )
+return tostring(translate( def ))
 end
 function get_icon( section )
 if sys_ini:section_exist( section ) and sys_ini:line_exist( section, "inv_grid_x" ) then
