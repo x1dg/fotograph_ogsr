@@ -301,7 +301,6 @@ function signals_mgr:call( signal_name, ... )
   end
 end
 
-
 local time_limited_cnt   = 0
 local time_limited_delay = 0
 local time_limited_max   = 10

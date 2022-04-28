@@ -4,9 +4,8 @@
 --]]-----------------------------------------------------------------------------------------------
 
 local get_wnd = level.main_input_receiver
-local debug_enabled = ui_data.load("debug_enabled")
-local g_god_mode = get_console():get_string("g_god")
-local ammo_mode = get_console():get_string("g_unlimitedammo")
+
+
 local god_sound = xr_sound.get_safe_sound_object([[intro\godmode]])
 local ammo_sound = xr_sound.get_safe_sound_object([[intro\unlimited_ammo]])
 local pda_sound = xr_sound.get_safe_sound_object([[device\pda\pda_tip]])
@@ -15,14 +14,16 @@ function on_key_down(key, bind)
 	if level.main_input_receiver() and not db.actor:alive() then return end
 	
 	if key == bind_to_dik(key_bindings.kDANGER) then -- 'Numpad 9' - Дебаг
+		local debug_enabled = ui_data.load("debug_enabled")
   		if debug_enabled and debug_enabled == true then
 			ui_data.save("debug_enabled", false)
 		else
 			ui_data.save("debug_enabled", true)
 		end
 	elseif key == bind_to_dik(key_bindings.kMASK) then -- 'Numpad 0' - Худ-маска вкл./выкл
-		ui_hud_mask.on_off_mask()
+		--ui_hud_mask.on_off_mask()
 	elseif key == bind_to_dik(key_bindings.kGOD_MODE) then -- 'Numpad 1' - Бессмертие вкл./выкл
+		local g_god_mode = get_console():get_string("g_god")
 		if g_god_mode == "off" then
 			get_console():execute("g_god on")
 			this.hud_msg("func_task", game.translate_string("st_ui_godmode_on"))
@@ -33,6 +34,7 @@ function on_key_down(key, bind)
 			pda_sound:play(db.actor, 0, sound_object.s2d)
 		end
 	elseif key == bind_to_dik(key_bindings.kUN_AMMO) then -- 'Numpad 2' - Бесконечные патроны вкл./выкл
+		local ammo_mode = get_console():get_string("g_unlimitedammo")	
 		if ammo_mode == "off" then
 			get_console():execute("g_unlimitedammo on")
 			this.hud_msg("func_task", game.translate_string("st_ui_un_ammo_on"))

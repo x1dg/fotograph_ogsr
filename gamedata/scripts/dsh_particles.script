@@ -7,15 +7,16 @@ function attach( sm )
   sm:subscribe({ signal = "on_npc_net_destroy", fun = this.on_net_destroy })
 end
 
-
 function on_init( obj, binder )
   binder.particles = {}
 end
 
-
 function on_update( obj, delta )
   local binder      = obj:binded_object()
   local unsubscribe = true
+  if not binder then
+	return
+  end
   for k, v in pairs( binder.particles ) do
     if v:is_finished() then
       binder.particles[ k ] = nil
@@ -43,21 +44,6 @@ function on_update( obj, delta )
         end
       end
     end
-  end
-  if unsubscribe then
-    local s = binder[ "dsh_particles.subscribed" ]
-    ASSERT( s, "not subscribed: %s", obj:name() )
-    ogse_signals.get_mgr():unsubscribe( s )
-    binder[ "dsh_particles.subscribed" ] = nil
-  else
-    local dist = obj:position():distance_to( db.actor:position() )
-    ogse_signals.get_mgr():reschedule(
-      ( dist < 25 and 100 )
-      or ( dist <  50 and 200 )
-      or ( dist < 100 and 500 )
-      or ( dist < 200 and math.random( 1000, 2000 ) )
-      or math.random( 2000, 4000 )
-    )
   end
 end
 

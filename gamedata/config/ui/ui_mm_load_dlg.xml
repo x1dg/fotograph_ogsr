@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- ОКНО ЗАГРУЗКИ СОХРАНЕНИЙ -->
 <window>
-	<background x="0" y="0" width="1024" height="768">
+	<background_1beer x="0" y="0" width="1024" height="768">
 		<auto_static x="127.5" y="13" width="767.6" height="742" stretch="1">
-			<texture width="1024" height="742">ui\video_mainmenu</texture>
+			<texture width="1024" height="742">ui\video_mainmenu_1beer</texture>
 		</auto_static>
 		<auto_static x="127.5" y="0" width="770" height="768" stretch="1">
 			<texture>ui_menu_background</texture>
@@ -14,7 +14,22 @@
 		<auto_static x="897" width="127.4" height="768" stretch="1">
 			<texture x="510" width="170" height="768">ui\ui_sidepanels</texture>
 		</auto_static>
-	</background>
+	</background_1beer>
+	
+	<background_zonache x="0" y="0" width="1024" height="768">
+		<auto_static x="127.5" y="13" width="767.6" height="742" stretch="1">
+			<texture width="1024" height="742">ui\video_mainmenu_zonache</texture>
+		</auto_static>
+		<auto_static x="127.5" y="0" width="770" height="768" stretch="1">
+			<texture>ui_menu_background</texture>
+		</auto_static>
+		<auto_static width="127.4" height="768" stretch="1">
+			<texture x="340" width="170" height="768">ui\ui_sidepanels</texture>
+		</auto_static>
+		<auto_static x="897" width="127.4" height="768" stretch="1">
+			<texture x="510" width="170" height="768">ui\ui_sidepanels</texture>
+		</auto_static>
+	</background_zonache>
 
 	<back_movie/>
 	<back_video/>

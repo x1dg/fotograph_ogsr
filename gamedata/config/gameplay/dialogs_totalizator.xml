@@ -99,112 +99,6 @@
             </phrase>
         </phrase_list>
     </dialog>
-    <dialog id="start_dial_kent1">
-        <dont_has_info>new_portion_kkvest2_s</dont_has_info>
-        <phrase_list>
-            <phrase id="4">
-                <text>start_dial_kent1_4</text>
-                <next>5</next>
-            </phrase>
-            <phrase id="5">
-                <text>start_dial_kent1_5</text>
-                <next>6</next>
-            </phrase>
-            <phrase id="6">
-                <text>start_dial_kent1_6</text>
-                <next>7</next>
-            </phrase>
-            <phrase id="7">
-                <text>start_dial_kent1_7</text>
-                <next>8</next>
-            </phrase>
-            <phrase id="8">
-                <text>start_dial_kent1_8</text>
-                <next>9</next>
-            </phrase>
-            <phrase id="9">
-                <text>start_dial_kent1_9</text>
-                <next>10</next>
-            </phrase>
-            <phrase id="2">
-                <text>start_dial_kent1_2</text>
-                <next>3</next>
-            </phrase>
-            <phrase id="10">
-                <text>start_dial_kent1_10</text>
-                <give_info>new_portion_kkvest2_s</give_info>
-            </phrase>
-            <phrase id="1">
-                <text>start_dial_kent1_1</text>
-                <next>2</next>
-            </phrase>
-            <phrase id="3">
-                <text>start_dial_kent1_3</text>
-                <next>4</next>
-            </phrase>
-            <phrase id="0">
-                <text>start_dial_kent1_0</text>
-                <next>1</next>
-            </phrase>
-        </phrase_list>
-    </dialog>
-    <dialog id="stepa_dial1">
-        <has_info>zap_kvest_16_p</has_info>
-        <dont_has_info>zap_kvest_16_f</dont_has_info>
-        <phrase_list>
-            <phrase id="1">
-                <text>stepa_dial1_1</text>
-                <next>2</next>
-            </phrase>
-            <phrase id="2">
-                <text>stepa_dial1_2</text>
-                <next>3</next>
-            </phrase>
-            <phrase id="4">
-                <text>stepa_dial1_4</text>
-                <next>5</next>
-            </phrase>
-            <phrase id="5">
-                <text>stepa_dial1_5</text>
-                <next>6</next>
-            </phrase>
-            <phrase id="6">
-                <text>stepa_dial1_6</text>
-                <next>7</next>
-            </phrase>
-            <phrase id="7">
-                <text>stepa_dial1_7</text>
-                <next>8</next>
-            </phrase>
-            <phrase id="8">
-                <text>stepa_dial1_8</text>
-                <next>9</next>
-            </phrase>
-            <phrase id="9">
-                <text>stepa_dial1_9</text>
-                <next>10</next>
-            </phrase>
-            <phrase id="10">
-                <text>stepa_dial1_10</text>
-                <action>new_quest.del_zomb1</action>
-                <action>new_quest.del_zomb2</action>
-                <action>new_quest.del_kontr1</action>
-                <action>new_quest.tel_2</action>
-                <action>new_quest.del_mar1</action>
-                <action>new_quest.zaglyxa1</action>
-                <give_info>zap_kvest_16_f</give_info>
-                <give_info>tp_pehera</give_info>
-            </phrase>
-            <phrase id="3">
-                <text>stepa_dial1_3</text>
-                <next>4</next>
-            </phrase>
-            <phrase id="0">
-                <text>stepa_dial1_0</text>
-                <next>1</next>
-            </phrase>
-        </phrase_list>
-    </dialog>
     <dialog id="take_deposit">
         <precondition>totalizator.precond_4</precondition>
         <phrase_list>
@@ -271,84 +165,6 @@
             <phrase id="5">
                 <text>propali_voike2_5</text>
                 <give_info>zap_kvest_25_s</give_info>
-            </phrase>
-        </phrase_list>
-    </dialog>
-    <dialog id="alka_dial1">
-        <dont_has_info>new_portion_kkvest6_s</dont_has_info>
-        <phrase_list>
-            <phrase id="6">
-                <text>alka_dial1_6</text>
-                <next>7</next>
-            </phrase>
-            <phrase id="4">
-                <text>alka_dial1_4</text>
-                <next>5</next>
-            </phrase>
-            <phrase id="3">
-                <text>alka_dial1_3</text>
-                <next>4</next>
-            </phrase>
-            <phrase id="7">
-                <text>alka_dial1_7</text>
-                <give_info>new_portion_kkvest6_s</give_info>
-            </phrase>
-            <phrase id="2">
-                <text>alka_dial1_2</text>
-                <next>3</next>
-            </phrase>
-            <phrase id="5">
-                <text>alka_dial1_5</text>
-                <next>6</next>
-            </phrase>
-            <phrase id="0">
-                <text>alka_dial1_0</text>
-                <next>1</next>
-                <next>11</next>
-            </phrase>
-            <phrase id="11">
-                <text>alka_dial1_11</text>
-                <has_info>new_portion_kkvest4_f</has_info>
-                <next>2</next>
-            </phrase>
-            <phrase id="1">
-                <text>alka_dial1_1</text>
-            </phrase>
-        </phrase_list>
-    </dialog>
-    <dialog id="kent_dial_3">
-        <has_info>new_portion_kkvest3_s</has_info>
-        <dont_has_info>new_portion_kkvest3_f</dont_has_info>
-        <phrase_list>
-            <phrase id="1">
-                <text>kent_dial_3_1</text>
-                <next>2</next>
-            </phrase>
-            <phrase id="2">
-                <text>kent_dial_3_2</text>
-                <give_info>new_portion_kkvest3_f</give_info>
-            </phrase>
-            <phrase id="0">
-                <text>kent_dial_3_0</text>
-                <next>1</next>
-            </phrase>
-        </phrase_list>
-    </dialog>
-    <dialog id="kent_dial_4">
-        <has_info>new_portion_kkvest4_pf</has_info>
-        <dont_has_info>new_portion_kkvest4_f</dont_has_info>
-        <phrase_list>
-            <phrase id="2">
-                <text>kent_dial_4_2</text>
-                <give_info>new_portion_kkvest4_f</give_info>
-            </phrase>
-            <phrase id="1">
-                <text>kent_dial_4_1</text>
-                <next>2</next>
-            </phrase>
-            <phrase id="0">
-                <text>kent_dial_4_0</text>
-                <next>1</next>
             </phrase>
         </phrase_list>
     </dialog>
@@ -477,57 +293,6 @@
             </phrase>
         </phrase_list>
     </dialog>
-    <dialog id="alka_dial2">
-        <has_info>new_portion_kkvest6_kvest_pf</has_info>
-        <dont_has_info>new_portion_kkvest6_kvest_f</dont_has_info>
-        <phrase_list>
-            <phrase id="2">
-                <text>alka_dial2_2</text>
-                <next>3</next>
-            </phrase>
-            <phrase id="3">
-                <text>alka_dial2_3</text>
-                <next>4</next>
-            </phrase>
-            <phrase id="4">
-                <text>alka_dial2_4</text>
-                <next>5</next>
-            </phrase>
-            <phrase id="5">
-                <text>alka_dial2_5</text>
-                <next>6</next>
-            </phrase>
-            <phrase id="6">
-                <text>alka_dial2_6</text>
-                <next>7</next>
-            </phrase>
-            <phrase id="7">
-                <text>alka_dial2_7</text>
-                <next>8</next>
-            </phrase>
-            <phrase id="8">
-                <text>alka_dial2_8</text>
-                <next>9</next>
-            </phrase>
-            <phrase id="9">
-                <text>alka_dial2_9</text>
-                <next>10</next>
-            </phrase>
-            <phrase id="1">
-                <text>alka_dial2_1</text>
-                <next>2</next>
-            </phrase>
-            <phrase id="10">
-                <text>alka_dial2_10</text>
-                <action>dialogs.break_dialog</action>
-                <give_info>new_portion_kkvest6_kvest_f</give_info>
-            </phrase>
-            <phrase id="0">
-                <text>alka_dial2_0</text>
-                <next>1</next>
-            </phrase>
-        </phrase_list>
-    </dialog>
     <dialog id="give_dolg">
         <precondition>totalizator.precond_3</precondition>
         <phrase_list>
@@ -570,43 +335,6 @@
             <phrase id="1">
                 <text>give_prize_1</text>
                 <next>2</next>
-            </phrase>
-        </phrase_list>
-    </dialog>
-    <dialog id="kd_5">
-        <has_info>new_portion_kkvest6_kvest_f</has_info>
-        <dont_has_info>new_portion_kkvest7_s</dont_has_info>
-        <phrase_list>
-            <phrase id="0">
-                <text>kd_5_0</text>
-                <next>1</next>
-            </phrase>
-            <phrase id="1">
-                <text>kd_5_1</text>
-                <next>2</next>
-            </phrase>
-            <phrase id="2">
-                <text>kd_5_2</text>
-                <give_info>new_portion_kkvest7_s</give_info>
-            </phrase>
-        </phrase_list>
-    </dialog>
-    <dialog id="kent_dial2">
-        <has_info>new_portion_kkvest2_pf</has_info>
-        <dont_has_info>new_portion_kkvest2_f</dont_has_info>
-        <phrase_list>
-            <phrase id="1">
-                <text>kent_dial2_1</text>
-                <next>2</next>
-            </phrase>
-            <phrase id="0">
-                <text>kent_dial2_0</text>
-                <next>1</next>
-            </phrase>
-            <phrase id="2">
-                <text>kent_dial2_2</text>
-                <action>new_quest.script3</action>
-                <give_info>new_portion_kkvest2_f</give_info>
             </phrase>
         </phrase_list>
     </dialog>
@@ -774,6 +502,285 @@
                 <text>mar1_fin_dial_12</text>
                 <action>dialogs.break_dialog</action>
                 <give_info>zap_kvest_fin_mar_s</give_info>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="alka_dial1">
+        <dont_has_info>new_portion_kkvest6_s</dont_has_info>
+        <phrase_list>
+            <phrase id="6">
+                <text>alka_dial1_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="4">
+                <text>alka_dial1_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="3">
+                <text>alka_dial1_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="7">
+                <text>alka_dial1_7</text>
+                <give_info>new_portion_kkvest6_s</give_info>
+            </phrase>
+            <phrase id="2">
+                <text>alka_dial1_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="5">
+                <text>alka_dial1_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="11">
+                <text>alka_dial1_11</text>
+                <has_info>new_portion_kkvest4_f</has_info>
+                <next>2</next>
+            </phrase>
+            <phrase id="1">
+                <text>alka_dial1_1</text>
+            </phrase>
+            <phrase id="0">
+                <text>alka_dial1_0</text>
+                <next>1</next>
+                <next>11</next>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="alka_dial2">
+        <has_info>new_portion_kkvest6_kvest_pf</has_info>
+        <dont_has_info>new_portion_kkvest6_kvest_f</dont_has_info>
+        <phrase_list>
+            <phrase id="2">
+                <text>alka_dial2_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>alka_dial2_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>alka_dial2_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>alka_dial2_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>alka_dial2_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>alka_dial2_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>alka_dial2_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>alka_dial2_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="1">
+                <text>alka_dial2_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="0">
+                <text>alka_dial2_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="10">
+                <text>alka_dial2_10</text>
+                <action>dialogs.break_dialog</action>
+                <give_info>new_portion_kkvest6_kvest_f</give_info>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="kent_dial_4">
+        <has_info>new_portion_kkvest4_pf</has_info>
+        <dont_has_info>new_portion_kkvest4_f</dont_has_info>
+        <phrase_list>
+            <phrase id="2">
+                <text>kent_dial_4_2</text>
+                <give_info>new_portion_kkvest4_f</give_info>
+            </phrase>
+            <phrase id="0">
+                <text>kent_dial_4_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>kent_dial_4_1</text>
+                <next>2</next>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="kent_dial2">
+        <has_info>new_portion_kkvest2_pf</has_info>
+        <dont_has_info>new_portion_kkvest2_f</dont_has_info>
+        <phrase_list>
+            <phrase id="2">
+                <text>kent_dial2_2</text>
+                <action>new_quest.script3</action>
+                <give_info>new_portion_kkvest2_f</give_info>
+            </phrase>
+            <phrase id="1">
+                <text>kent_dial2_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="0">
+                <text>kent_dial2_0</text>
+                <next>1</next>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="start_dial_kent1">
+        <dont_has_info>new_portion_kkvest2_s</dont_has_info>
+        <phrase_list>
+            <phrase id="4">
+                <text>start_dial_kent1_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>start_dial_kent1_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>start_dial_kent1_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>start_dial_kent1_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="9">
+                <text>start_dial_kent1_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="2">
+                <text>start_dial_kent1_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="1">
+                <text>start_dial_kent1_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="3">
+                <text>start_dial_kent1_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="0">
+                <text>start_dial_kent1_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="8">
+                <text>start_dial_kent1_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="10">
+                <text>start_dial_kent1_10</text>
+                <give_info>new_portion_kkvest2_s</give_info>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="stepa_dial1">
+        <has_info>zap_kvest_16_p</has_info>
+        <dont_has_info>zap_kvest_16_f</dont_has_info>
+        <phrase_list>
+            <phrase id="1">
+                <text>stepa_dial1_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>stepa_dial1_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="4">
+                <text>stepa_dial1_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>stepa_dial1_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>stepa_dial1_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>stepa_dial1_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>stepa_dial1_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="3">
+                <text>stepa_dial1_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="0">
+                <text>stepa_dial1_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="10">
+                <text>stepa_dial1_10</text>
+                <action>new_quest.del_zomb1</action>
+                <action>new_quest.del_zomb2</action>
+                <action>new_quest.del_kontr1</action>
+                <action>new_quest.tel_2</action>
+                <action>new_quest.del_mar1</action>
+                <action>new_quest.zaglyxa1</action>
+                <give_info>zap_kvest_16_f</give_info>
+                <give_info>tp_pehera</give_info>
+            </phrase>
+            <phrase id="9">
+                <text>stepa_dial1_9</text>
+                <next>10</next>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="kent_dial_3">
+        <has_info>new_portion_kkvest3_s</has_info>
+        <dont_has_info>new_portion_kkvest3_f</dont_has_info>
+        <phrase_list>
+            <phrase id="1">
+                <text>kent_dial_3_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>kent_dial_3_2</text>
+                <give_info>new_portion_kkvest3_f</give_info>
+            </phrase>
+            <phrase id="0">
+                <text>kent_dial_3_0</text>
+                <next>1</next>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="kd_5">
+        <has_info>new_portion_kkvest6_kvest_f</has_info>
+        <dont_has_info>new_portion_kkvest7_s</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>kd_5_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>kd_5_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>kd_5_2</text>
+                <give_info>new_portion_kkvest7_s</give_info>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="alka_dial3">
+        <phrase_list>
+            <phrase id="0">
+                <text>alka_dial3_0</text>
             </phrase>
         </phrase_list>
     </dialog>

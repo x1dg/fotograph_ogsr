@@ -37,3 +37,22 @@ function delete(name)
 		db.storage[db.actor:id()].pstor[name] = nil
 	end
 end
+
+function save_game_options()
+	-- Отсортируем по алфавиту для удобства
+	local tmp = {}
+	for k,v in pairs( _G[ script_name() ] ) do
+		if type( v ) ~= 'function' then
+			table.insert( tmp, { k, v } )
+		end
+	end
+	table.sort( tmp, function( t1, t2 )
+		return t1[1] < t2[1]
+	end )
+
+	local file = io.open( getFS():update_path( "$app_data_root$", "game.options" ), "w" )
+	for i,v in ipairs( tmp ) do
+		file:write( v[1], " = ", tostring( v[2] ), "\n" )
+	end
+	file:close( file )
+end

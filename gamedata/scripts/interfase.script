@@ -68,11 +68,3 @@ function ui_repair:repair_3()
 	repair.repair_armora()
 	self:on_quit()
 	end
-
- 
-
-
-
-
-
-

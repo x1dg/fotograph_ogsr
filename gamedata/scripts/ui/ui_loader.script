@@ -16,7 +16,6 @@ local kShifts = {
 function on_key(dik)
 	if kShifts[dik] then _G.ShiftPressed = true end
 	local bind = dik_to_bind(dik)
-	hotkeys.on_key(dik, bind)
 	xr_signals.on_event( "key_press", key, bind )
 end
 

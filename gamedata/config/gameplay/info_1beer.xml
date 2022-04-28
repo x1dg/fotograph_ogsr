@@ -4,8 +4,8 @@
 <info_portion id="debugger_enabled"></info_portion>
 
 <info_portion id="predbannik_tp_spawned"></info_portion>
-<info_portion id="predbannik_tp_spawned2"></info_portion>
-
+<info_portion id="predbannik_tp_spawned2">
+    <article>1beer_fast_movement_predbannik</article></info_portion>
 <info_portion id="semecky_first_meet"></info_portion>
 <info_portion id="semecky_talk_done"><task>misty_stalker_task</task></info_portion> 
 

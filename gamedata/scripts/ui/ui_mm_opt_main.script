@@ -17,7 +17,6 @@ function options_dialog:__init() super()
 end
 
 function options_dialog:__finalize()
-	--log1("--options_dialog:__finalize() called!")
 end
 
 function options_dialog:InitControls()
@@ -28,7 +27,7 @@ function options_dialog:InitControls()
 	xml:ParseFile("ui_mm_opt.xml")
 
 	xml:InitStatic("back_video", self)
-	xml:InitStatic("background", self)
+	xml:InitStatic(game_options.background, self)
 	xml:InitStatic("rug_video", self)
 	self.dialog = xml:InitStatic("main_dialog:dialog", self)
 

@@ -24,8 +24,6 @@ function on_actor_before_use( obj )
 	local sect = obj:section()
 	if animation_enable == true then
 		local snd = get_string( sect, "use_sound_anm" )
-		log1("before use")
-		log1("anim_in_action="..tostring(anim_in_action))
 		if not(db.actor.inventory:is_active_slot_blocked()) and snd and not( anim_in_action ) then
 			  local slot4 = db.actor:item_in_slot(4)
 		    if slot4 then 
@@ -95,7 +93,6 @@ function on_item_to_slot( obj )
 		return
 	end
 	if not( string.find( obj:section(), "anm_" ) ) then return end
-	log1("laucer item_to_slot")
 	db.actor:activate_slot(4)
 	anim_in_action = true
 end

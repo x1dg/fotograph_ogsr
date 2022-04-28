@@ -147,6 +147,9 @@
 <string id="ui_mm_need_load">
 <text>Некоторые настройки будут доступны после загрузки сохранения</text>
 </string>
+<string id="ui_mm_mainbackground">
+<text>Выберите заставку:</text>
+</string>
 <string id="ui_mm_description_delay">
 <text>Время появления окна описания</text>
 </string>

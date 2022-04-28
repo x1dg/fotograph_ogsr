@@ -56,7 +56,6 @@ function CUI_InvButton:__init( slot_num ) super()
 	self:AddCallback(id, ui_events.STATIC_FOCUS_LOST, function() slot_focus = false end)
 end
 function CUI_InvButton:__finalize()
-	--log1("--delete CUI_InvButton")
 end
 
 local function on_drag_drop( obj )

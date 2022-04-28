@@ -93,7 +93,6 @@ function opt_video_adv:__init() super()
 end
 
 function opt_video_adv:__finalize()
-	--log1("--opt_video_adv:__finalize() called!")
 end
 
 function opt_video_adv:InitControls(x, y, xml, handler)

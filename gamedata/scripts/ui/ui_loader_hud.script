@@ -4,114 +4,166 @@
  Copyright		: SGM Mod, Call Of Chernobyl
  Date			: 07.10.2020
  Last edit		: 19.11.2021
---]]-----------------------------------------------------------------------------------------------
+--]] -----------------------------------------------------------------------------------------------
 
 function update()
-	check_binoc()
-	init_ranks_reps()
-	check_actor_rank_change()
-	check_actor_reputation_change()
+    check_binoc()
+    init_ranks_reps()
+    check_actor_rank_change()
+    check_actor_reputation_change()
 end
 
 -- Универсальная анимация камеры для перезарядки
 function reload()
-	level.add_cam_effector("camera_effects\\item_use_fast.anm", 515, false, "")
+    level.add_cam_effector("camera_effects\\item_use_fast.anm", 515, false, "")
 end
 
 -- Убирание худа при использовании оптического прицела или бинокля -- scope_texture
 function check_binoc()
-    if db.actor and db.actor.health > 0 then
 	local act_it = db.actor:active_item()
-	if act_it and (string.find(act_it:section(), "wpn_")) then
-		if system_ini():line_exist(act_it:section(), "scope_status") then
-		scope = system_ini():r_u32(act_it:section(), "scope_status")
+    if db.actor and db.actor.health > 0 then
+        if act_it and (string.find(act_it:section(), "wpn_")) then
+            if system_ini():line_exist(act_it:section(), "scope_status") then
+                scope = system_ini():r_u32(act_it:section(), "scope_status")
+            end
+            local addonf = rx_utils.get_weapon_data(alife():object(act_it:id())).addon_flags
+            local zoom = 67.5 / device().fov
+            zoom = (zoom - 1) * 1.5 + 1
+            if zoom < 1.001 then
+                zoom = 1.001
+            end
+            if
+                zoom > 1.3 and
+                    (scope == 1 or (scope == 2 and bit_and(addonf, 1) == 1) or
+                        string.find(act_it:section(), "wpn_binoc"))
+             then
+                ogsr_quick_slots.remove_hud()
+                ui_zona_che.remove_elements_2(false)
+				if string.find(act_it:section(), "wpn_binoc") then
+				    ui_zona_che.add_binoc()
+				end
+                ui_hud_weight.remove_elements_3(false)
+                if get_hud():GetCustomStatic("hud_show_time") then
+                    get_hud():RemoveCustomStatic("hud_show_time")
+                end
+                return
+            else
+            end
+        else
+        end
+    else
+        ogsr_quick_slots.remove_hud()
+		if act_it ~= nil and string.find(act_it:section(), "wpn_binoc") then
+			ui_zona_che.add_binoc()
 		end
-		local addonf = rx_utils.get_weapon_data(alife():object(act_it:id())).addon_flags
-		local zoom=67.5/device().fov
-		zoom=(zoom-1)*1.5+1
-		if zoom<1.001 then zoom=1.001 end
-		if zoom > 1.3 and (scope == 1 or (scope == 2 and bit_and(addonf, 1) == 1)
-		or string.find(act_it:section(), "wpn_binoc")) then
-	ogsr_quick_slots.remove_hud()
-	ui_zona_che.remove_elements_2(false)
-	ui_zona_che.add_binoc()
-	ui_hud_weight.remove_elements_3(false)
-	if get_hud():GetCustomStatic("hud_show_time") then get_hud():RemoveCustomStatic("hud_show_time") end
-	return
-	else end else end else
-	ogsr_quick_slots.remove_hud()
-	ui_zona_che.add_binoc()
-	ui_zona_che.remove_elements_2(false)
-	ui_hud_weight.remove_elements_3(false)
-	if get_hud():GetCustomStatic("hud_show_time") then get_hud():RemoveCustomStatic("hud_show_time") end
-	return
-	end
+        ui_zona_che.remove_elements_2(false)
+        ui_hud_weight.remove_elements_3(false)
+        if get_hud():GetCustomStatic("hud_show_time") then
+            get_hud():RemoveCustomStatic("hud_show_time")
+        end
+        return
+    end
 end
 
 local init = true
 local ranks, reputations = {}, {}
 local actor_statistic = {
-	actual_rank = db.actor:character_rank(),
-	actual_reputation = db.actor:character_reputation()}
+    actual_rank = db.actor:character_rank(),
+    actual_reputation = db.actor:character_reputation()
+}
 function init_ranks_reps()
-	if init == false then return end
-	local function parse_str(s)
-		local t = {}
-		for name in string.gmatch( s, "([%w_%-.\\]+)[%,%s]*" ) do table.insert( t, name ) end
-		return t
-	end
-	local ini = ini_file("creatures\\game_relations.ltx")
-	local tbl = parse_str(ini:r_string("game_relations","rating"))
-	local tbl2 = parse_str(ini:r_string("game_relations","reputation"))
-	for i=2, #tbl, 2 do
-		table.insert(ranks, tonumber(tbl[i]))
-	end
-	for i=2, #tbl2, 2 do
-		table.insert(reputations, tonumber(tbl2[i]))
-	end
-	init = false
+    if init == false then
+        return
+    end
+    local function parse_str(s)
+        local t = {}
+        for name in string.gmatch(s, "([%w_%-.\\]+)[%,%s]*") do
+            table.insert(t, name)
+        end
+        return t
+    end
+    local ini = ini_file("creatures\\game_relations.ltx")
+    local tbl = parse_str(ini:r_string("game_relations", "rating"))
+    local tbl2 = parse_str(ini:r_string("game_relations", "reputation"))
+    for i = 2, #tbl, 2 do
+        table.insert(ranks, tonumber(tbl[i]))
+    end
+    for i = 2, #tbl2, 2 do
+        table.insert(reputations, tonumber(tbl2[i]))
+    end
+    init = false
 end
 
 -- Check for actor rank change.
 function check_actor_rank_change()
-	local current_rank = db.actor:character_rank()
-	local new, old = 0, 0
-	for i=1,#ranks do
-		if current_rank <= ranks[i] then break end
-		new = new + 1
-	end
-	for i=1,#ranks do
-		if actor_statistic.actual_rank <= ranks[i] then break end
-		old = old + 1
-	end
-	if old > new then
-		ui_pda_dialogs.send_tip(game.translate_string("st_rank_decreased"),
-		game.translate_string("st_pda_statistic_score"), nil, nil, "rank", "rank")
-	elseif new > old then
-		ui_pda_dialogs.send_tip(game.translate_string("st_rank_increased"),
-		game.translate_string("st_pda_statistic_score"), nil, nil, "rank", "rank")
-	end
-	actor_statistic.actual_rank = current_rank
+    local current_rank = db.actor:character_rank()
+    local new, old = 0, 0
+    for i = 1, #ranks do
+        if current_rank <= ranks[i] then
+            break
+        end
+        new = new + 1
+    end
+    for i = 1, #ranks do
+        if actor_statistic.actual_rank <= ranks[i] then
+            break
+        end
+        old = old + 1
+    end
+    if old > new then
+        ui_pda_dialogs.send_tip(
+            game.translate_string("st_rank_decreased"),
+            game.translate_string("st_pda_statistic_score"),
+            nil,
+            nil,
+            "rank",
+            "rank"
+        )
+    elseif new > old then
+        ui_pda_dialogs.send_tip(
+            game.translate_string("st_rank_increased"),
+            game.translate_string("st_pda_statistic_score"),
+            nil,
+            nil,
+            "rank",
+            "rank"
+        )
+    end
+    actor_statistic.actual_rank = current_rank
 end
 
 -- Check for actor reputation change.
 function check_actor_reputation_change()
-	local current_reputation = db.actor:character_reputation()
-	local new, old = 0, 0
-	for i=1,#reputations do
-		if current_reputation <= reputations[i] then break end
-		new = new + 1
-	end
-	for i=1,#reputations do
-		if actor_statistic.actual_reputation <= reputations[i] then break end
-		old = old + 1
-	end
-	if old > new then
-		ui_pda_dialogs.send_tip(game.translate_string("st_reputation_decreased"),
-		game.translate_string("st_pda_statistic_score"), nil, nil, "reputation_down")
-	elseif new > old then
-		ui_pda_dialogs.send_tip(game.translate_string("st_reputation_increased"),
-		game.translate_string("st_pda_statistic_score"), nil, nil, "reputation_up")
-	end
-	actor_statistic.actual_reputation = current_reputation
- end
+    local current_reputation = db.actor:character_reputation()
+    local new, old = 0, 0
+    for i = 1, #reputations do
+        if current_reputation <= reputations[i] then
+            break
+        end
+        new = new + 1
+    end
+    for i = 1, #reputations do
+        if actor_statistic.actual_reputation <= reputations[i] then
+            break
+        end
+        old = old + 1
+    end
+    if old > new then
+        ui_pda_dialogs.send_tip(
+            game.translate_string("st_reputation_decreased"),
+            game.translate_string("st_pda_statistic_score"),
+            nil,
+            nil,
+            "reputation_down"
+        )
+    elseif new > old then
+        ui_pda_dialogs.send_tip(
+            game.translate_string("st_reputation_increased"),
+            game.translate_string("st_pda_statistic_score"),
+            nil,
+            nil,
+            "reputation_up"
+        )
+    end
+    actor_statistic.actual_reputation = current_reputation
+end

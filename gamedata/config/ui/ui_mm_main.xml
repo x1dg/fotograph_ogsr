@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- ГЛАВНОЕ МЕНЮ -->
 <window>
-	<background width="1024" height="768">
+	<background_1beer width="1024" height="768">
 		<auto_static x="0" y="0" width="1024" height="768" stretch="1">
-			 <texture width="1920" height="1080">ui\video_mainmenu</texture>
+			 <texture width="1920" height="1080">ui\video_mainmenu_1beer</texture>
 		</auto_static>
 		<auto_static x="900" y="12" width="119" height="68" stretch="1" la_cyclic="0" la_texture="1" la_alpha="1">
 			<texture>ui\ui_fotograph_logo2</texture>
@@ -11,7 +11,19 @@
 		<auto_static x="113" y="300" width="170" height="300" stretch="1" la_cyclic="0" la_texture="1" la_alpha="1">
 			<texture>ui\ui_mm_main_board</texture>
 		</auto_static>
-	</background>
+	</background_1beer>
+	
+	<background_zonache width="1024" height="768">
+		<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+			 <texture width="1920" height="1080">ui\video_mainmenu_zonache</texture>
+		</auto_static>
+		<auto_static x="900" y="12" width="119" height="68" stretch="1" la_cyclic="0" la_texture="1" la_alpha="1">
+			<texture>ui\ui_fotograph_logo2</texture>
+		</auto_static>
+		<auto_static x="113" y="300" width="170" height="300" stretch="1" la_cyclic="0" la_texture="1" la_alpha="1">
+			<texture>ui\ui_mm_main_board</texture>
+		</auto_static>
+	</background_zonache>
 
 	<fire_movie/>
 

@@ -1,106 +1,108 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <kontr_1>
-    <Static1 x="279" y="98" width="428" height="605" stretch="1">
-        <texture x="500" y="750" width="300" height="600">ui\ui_npc_foto</texture>
-        <Static2 x="162" y="48" width="79" height="19" stretch="1">
-            <text font="letterica25" r="255" g=" 128" b=" 64" complex_mode="1">Сущность</text>
+    <Static1 x="273" y="0" width="475.2" height="760" stretch="1">
+	    <auto_static x="214" y="512" width="47" height="4" stretch="1">
+	    	<texture color="talk_connect">ui\seq\ui_dialog_connect</texture>
+	    </auto_static>
+        <texture>ui_talk_dialogue</texture>
+        <Static2 x="200" y="48" width="79" height="19" stretch="1">
+            <text font="letterica25"  align="c" color="talk_log_npcname" complex_mode="1">Сущность</text>
         </Static2>
-		        <Static11 x="162" y="48" width="79" height="19" stretch="1">
-            <text font="letterica25" r="255" g=" 128" b=" 64" complex_mode="1">Мутант</text>
+		<Static11 x="200" y="48" width="79" height="19" stretch="1">
+            <text font="letterica25"  align="c" color="talk_log_npcname" complex_mode="1">Мутант</text>
         </Static11>
-        <button3 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Какого?!</text>
+        <button3 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">Какого?!</text>
         </button3>
-        <Static6 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Здравствуй, Фотограф.</text>
+        <Static6 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">Здравствуй, Фотограф.</text>
         </Static6>
-		        <Static12 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Брат. Не хочешь помочь несчастному человеку? Точнее, бывшему человеку.</text>
+		<Static12 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">Брат. Не хочешь помочь несчастному человеку? Точнее, бывшему человеку.</text>
         </Static12>
-		        <Static7 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Ох, я дико извиняюсь... Забыл сказать, я заблокировал все твои движения. Так что пока обойдёмся без слов, просто думай… Боже, какой ты некультурный. Сколько мата.</text>
+		<Static7 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">Ох, я дико извиняюсь... Забыл сказать, я заблокировал все твои движения. Так что пока обойдёмся без слов, просто думай… Боже, какой ты некультурный. Сколько мата.</text>
         </Static7>
-				        <Static9 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">А я всегда такой. Но ты не обращай внимание, главное же внутренний мир. Правильно?</text>
+		<Static9 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">А я всегда такой. Но ты не обращай внимания, главное же, внутренний мир. Правильно?</text>
         </Static9>
-						        <Static8 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Для начала, чтобы ты успокоился. Ты же военный корреспондент, должен уметь держать себя в руках</text>
+		<Static8 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">Для начала, я хочу чтобы ты успокоился. Ты же военный корреспондент, должен уметь держать себя в руках.</text>
         </Static8>
-								        <Static10 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Я с тебя блок сниму сейчас. Приходи в себя, затем подходи ко мне и продолжим диалог. Только давай без резких движений! Они все равно у тебя не получатся. Кхе-кхе.</text>
+		<Static10 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">Сейчас, я сниму с тебя блок. Приходи в себя, затем подходи ко мне и продолжим диалог. Только, давай без резких движений! Они все равно у тебя не получатся. Кхе-кхе.</text>
         </Static10>
-		        <button4 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Что тебе нужно?</text>
+		<button4 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">Что тебе нужно?</text>
         </button4>
-				        <button5 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Постараюсь. Тебе бы тоже успокоиться, а то, судя по голосу, ты дёрганный какой-то.</text>
+		<button5 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">Постараюсь. Тебе бы тоже успокоиться, а то, судя по голосу, ты дёрганный какой-то.</text>
         </button5>
-				        <button6 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Не поспоришь.</text>
+		<button6 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">Не поспоришь.</text>
         </button6>
-						        <button7 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Ладно, попробую.</text>
+		<button7 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">Ладно, попробую.</text>
         </button7>
-								        <button8 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Выбора у меня нет, как я могу предположить.</text>
+		<button8 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">Выбора у меня нет, как я могу предположить?</text>
         </button8>
-			<Static13 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Выбора у тебя нет, правильно. Надеюсь ты и дальше такой смышлёный будешь. Да и нужна мне от тебя малость. Всего-лишь пару людей.</text>
+		<Static13 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">Выбора у тебя нет, правильно. Надеюсь ты и дальше такой смышлёный будешь. Да и нужна мне от тебя малость. Всего-лишь пару людей.</text>
         </Static13>
-					<Static14 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Каких угодно. Можно самых плохих. У меня на службе было три человека, но что-то они совсем уже загнили. А мне куда-то ходить вообще не с руки, сам понимаешь, внешность не позволяет. </text>
+		<Static14 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">Каких угодно. Можно самых плохих. У меня на службе было три человека, но что-то они совсем уж загнили. А мне куда-то ходить вообще не с руки, сам понимаешь, внешность не позволяет. </text>
         </Static14>
-							<Static15 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Сам станешь моим секретарём. Соответственно ты не сделаешь свой репортаж о Зоне или не выполнишь своё секретное задание. Какую там из версий можно озвучивать?</text>
+		<Static15 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">Сам станешь моим секретарём. Соответственно ты не сделаешь свой репортаж о Зоне или не выполнишь своё секретное задание. Какую там из версий можно озвучивать?</text>
         </Static15>
-									<Static16 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Вот и отлично. Взамен я тебе расскажу где можно разжиться кучей редких артефактов. Можешь даже меня сфотографировать, сделать репортаж об этой ситуации. Как тебе такое вознаграждение?</text>
+		<Static16 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">Вот и отлично. Взамен я тебе расскажу где можно разжиться кучей редких артефактов. Можешь даже меня сфотографировать, сделать репортаж об этой ситуации. Как тебе такое вознаграждение?</text>
         </Static16>
-											<Static17 x="20" y="176" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Только не задерживайся. Отложи все свои задания на потом. И главное, никому не говори об этой ситуации. Если ты только заикнёшься, у тебя мозги вскипят.</text>
+		<Static17 x="50" y="176" width="400" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">Только не задерживайся. Отложи все свои задания на потом. И главное, никому не говори об этой ситуации. Если ты только заикнёшься, у тебя мозги вскипят.</text>
         </Static17>
-											<Static18 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Умничка. Ты все сделал правильно, не переживай. Здесь война, здесь либо ты, либо тебя.</text>
+		<Static18 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">Умничка. Ты всё сделал правильно, не переживай. Здесь война, здесь либо ты, либо тебя.</text>
         </Static18>
-													<Static19 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">А как же репортаж? Не будешь меня фоткать? Я специально надел свой самый красивый плащ.</text>
+		<Static19 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">А как же репортаж? Не будешь меня фоткать? Я специально надел свой самый красивый плащ.</text>
         </Static19>
-															<Static20 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Я и не собирался их тебе давать. Я про них, так, для красного словца вставил.</text>
+		<Static20 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">Я и не собирался их тебе давать. Я про них, так, для красного словца вставил.</text>
         </Static20>
-																	<Static21 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Ладно не ворчи. У меня для тебя есть полезная инфа. Миротворцы, на которых ты работаешь, тебя воспринимают как расходный материал. Если ты узнаешь какие-то серьезные тайны, пойдешь в расход. Тебя просто утилизируют как перестанешь быть полезен.
-</text>
+		<Static21 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">Ладно не ворчи. У меня для тебя есть полезная инфа. Миротворцы, на которых ты работаешь, тебя воспринимают как расходный материал. Если ты узнаешь какие-то серьёзные тайны, пойдёшь в расход. Тебя просто утилизируют, как перестанешь быть полезен.</text>
         </Static21>
-																	<Static22 x="20" y="76" width="204" height="19" stretch="1">
-            <text font="letterica16" r="215" g="195" b="170" complex_mode="1">Не верь. Просто оглядывайся чаще. И всё, ты меня утомил. До свидания! Ещё увидимся!</text>
+		<Static22 x="50" y="76" width="390" height="19" stretch="1">
+            <text font="letterica16" color="talk_log_npcreplica" complex_mode="1">Не верь. Просто оглядывайся чаще. И всё, ты меня утомил. До свидания! Ещё увидимся!</text>
         </Static22>
-										        <button9 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Каких людей?</text>
+		<button9 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">Каких людей?</text>
         </button9>
-												        <button10 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Интересная просьба. Что будет если я откажусь?</text>
+		<button10 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">Интересная просьба. Что будет если я откажусь?</text>
         </button10>
-														        <button11 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Хорошо, я согласен.</text>
+		<button11 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">Хорошо, я согласен.</text>
         </button11>
-																        <button12 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Я могу идти?</text>
+		<button12 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">Я могу идти?</text>
         </button12>
-																		        <button13 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">С этим как-нибудь сам разберусь. Я могу быть свободен?</text>
+		<button13 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">С этим как-нибудь сам разберусь. Я могу быть свободен?</text>
         </button13>
-																				        <button14 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Не буду. Я просто хочу свалить отсюда. Даже артов не надо.</text>
+		<button14 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">Не буду. Я просто хочу свалить отсюда. Даже артов не надо...</text>
         </button14>
-																				        <button15 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Ах какая неожиданность!</text>
+		<button15 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">Ах, какая неожиданность!</text>
         </button15>
-																						        <button16 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Ты только что сознался в обмане. С чего бы мне верить тебе сейчас?</text>
+		<button16 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">Ты только что сознался в обмане. С чего бы мне верить тебе сейчас?</text>
         </button16>
-																								        <button17 x="152" y="470" width="117" height="29">
-            <text font="letterica16" x="0" y="0" align="c" vert_align="c" r="255" g="255" b="255">Угу</text>
+		<button17 x="0" y="525" width="477" height="29">
+            <text font="letterica16" x="0" y="0" align="c" vert_align="c" color="talk_log_heroreplica">Угу</text>
         </button17>
     </Static1>
 </kontr_1>

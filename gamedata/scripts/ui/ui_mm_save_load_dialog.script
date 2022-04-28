@@ -92,7 +92,6 @@ function save_load_item:__init() super()
 	self.fage:SetTextAlign(CGameFont.alLeft)								  
 end
 function save_load_item:__finalize()
-	--log1("--save_load_item:__finalize() called!")
 end
 
 
@@ -109,7 +108,6 @@ function save_load_dialog:__init( is_save_dlg ) super()
 end
 
 function save_load_dialog:__finalize()
-	--log1("--save_load_dialog:__finalize() called!")
 end
 
 
@@ -156,7 +154,7 @@ function save_load_dialog:InitControlsLoad()
 	xml:ParseFile("ui_mm_load_dlg.xml")
 
 	xml:InitStatic("back_video", self)
-	xml:InitStatic("background", self)
+	xml:InitStatic(game_options.background, self)
 	xml:InitStatic("newspaper_video", self)
 
 	self.form = xml:InitStatic("form", self)

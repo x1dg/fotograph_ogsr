@@ -637,7 +637,6 @@ function actor_binder:update( delta )
   
   illicit_jumps.on_update(delta)  
   laucer_items_anims.on_update()
-  ui_loader.update() -- MonolithUI
   debuger()
 
   if update_was_never_called then
@@ -653,6 +652,7 @@ function actor_binder:update( delta )
   end
 
   self.am:call( "on_update", delta )
+  ui_loader.update() -- MonolithUI
 end
 
 function actor_binder:on_key(key, bind)

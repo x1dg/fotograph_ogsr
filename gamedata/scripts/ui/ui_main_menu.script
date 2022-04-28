@@ -12,7 +12,6 @@ function main_menu:__init() super()
 end
 
 function main_menu:__finalize()
-	--log1("--main_menu:__finalize() called!")
 end
 
 function main_menu:InitControls()
@@ -21,7 +20,7 @@ function main_menu:InitControls()
 	xml:ParseFile("ui_mm_main.xml")
 
 	-- xml:InitStatic("back_movie", self)
-	xml:InitStatic("background", self)
+	xml:InitStatic(game_options.background, self)
 	xml:InitStatic("fire_movie", self)
 	self.shniaga = xml:InitMMShniaga("shniaga_wnd", self)
 

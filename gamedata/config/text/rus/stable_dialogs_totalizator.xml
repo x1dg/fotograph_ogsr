@@ -60,6 +60,9 @@
     <string id="alka_dial2_9">
         <text>Получается согласен. Ты ещё тысячу вопросов задашь или может быть я всё-таки пойду собираться?</text>
     </string>
+    <string id="alka_dial3_0">
+        <text>default text</text>
+    </string>
     <string id="dial_mar_1_kont2_0">
         <text>Расскажи о себе.</text>
     </string>

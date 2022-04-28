@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- ОПЦИИ -->
 <window>
-	<background x="0" y="0" width="1024" height="768">
+	<background_1beer x="0" y="0" width="1024" height="768">
 		<auto_static x="127.5" y="13" width="767.6" height="742" stretch="1">
-			<texture width="1024" height="742">ui\video_mainmenu</texture>
+			<texture width="1024" height="742">ui\video_mainmenu_1beer</texture>
 		</auto_static>
 		<auto_static x="127.5" y="0" width="770" height="768" stretch="1">
 			<texture>ui_menu_background</texture>
@@ -14,7 +14,22 @@
 		<auto_static x="897" width="127.4" height="768" stretch="1">
 			<texture x="510" width="170" height="768">ui\ui_sidepanels</texture>
 		</auto_static>
-	</background>
+	</background_1beer>
+	
+	<background_zonache x="0" y="0" width="1024" height="768">
+		<auto_static x="127.5" y="13" width="767.6" height="742" stretch="1">
+			<texture width="1024" height="742">ui\video_mainmenu_zonache</texture>
+		</auto_static>
+		<auto_static x="127.5" y="0" width="770" height="768" stretch="1">
+			<texture>ui_menu_background</texture>
+		</auto_static>
+		<auto_static width="127.4" height="768" stretch="1">
+			<texture x="340" width="170" height="768">ui\ui_sidepanels</texture>
+		</auto_static>
+		<auto_static x="897" width="127.4" height="768" stretch="1">
+			<texture x="510" width="170" height="768">ui\ui_sidepanels</texture>
+		</auto_static>
+	</background_zonache>
 
 	<back_video/>
 	<rug_video/>
@@ -706,7 +721,7 @@
 
 	<!-- [GAMEPLAY] tab specified -->
 	<tab_gameplay>
-		<scroll_v	x="-23" y="188" width="311.5" height="428"
+		<scroll_v	x="-23" y="218" width="311.5" height="428"
 					right_ident="0" left_ident="0" top_indent="0" bottom_indent="0"
 					vert_interval="12" always_show_scroll="1"/>
 					
@@ -761,25 +776,37 @@
 			<list_font_s color="white_3"/>
 			<list_font	 color="grey_5" font="letterica16"/>
 		</list_difficulty>
+		
+		<cap_mainbackground x="-22.5" y="198" width="143" height="21">
+			<text font="letterica16" color="grey_5">ui_mm_difficulty</text>
+		</cap_mainbackground>
+		<list_mainbackground x="114" y="195" width="176.5" height="21" list_length="4">
+			<text_color>
+				<e color="grey_5"/>
+				<d color="gray_5"/>
+			</text_color>
+			<list_font_s color="white_3"/>
+			<list_font	 color="grey_5" font="letterica16"/>
+		</list_mainbackground>
 
-		<check_enemy_health x="0" y="198" width="344" height="21">
+		<check_enemy_health x="0" y="228" width="344" height="21">
 			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_show_enemy_health</text>
 		</check_enemy_health>
 
-		<check_show_condition x="0" y="228" width="344" height="21">
+		<check_show_condition x="0" y="258" width="344" height="21">
 			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_show_condition</text>
 		</check_show_condition>
 
-		<check_show_fast_slots x="0" y="258" width="344" height="21">
+		<check_show_fast_slots x="0" y="288" width="344" height="21">
 			<options_item entry="g_3d_scopes" group="mm_opt_gameplay"/>
 			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_show_fast_slots</text>
 		</check_show_fast_slots>
 
-		<check_hide_hud x="0" y="288" width="344" height="21">
+		<check_hide_hud x="0" y="318" width="344" height="21">
 			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_hide_hud</text>
 		</check_hide_hud>
 		
-		<check_shoot_enable x="0" y="318" width="344" height="21">
+		<check_shoot_enable x="0" y="348" width="344" height="21">
 			<text font="letterica16" color="grey_5" x="6" y="2">ui_mm_shoot_enable</text>
 		</check_shoot_enable>
 

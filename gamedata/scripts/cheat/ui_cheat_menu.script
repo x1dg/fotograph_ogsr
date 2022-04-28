@@ -877,7 +877,6 @@ local tmp = collect_sections.main()
 local name
 for i, v in ipairs(index2type) do
 local tbl = tmp[v]
---log1("CHEAT TABLE "..v..": "..tostring_all(tbl))
 if tbl then
 local t = {}
 cheat_list[v] = t

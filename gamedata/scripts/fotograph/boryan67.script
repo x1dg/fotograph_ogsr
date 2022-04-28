@@ -183,7 +183,6 @@ function GlukUpdate()
 	OldSec = NowSec
 	OverEnable=true
 	GG_Move = GGspeed() -- определяем скорость движения ГГ
-	DrinkUpdate() -- проверяем жажду
 	InfectUpdate() -- проверяем заразу
 	-- проверяем наличие кристаллов у ГГ
 	has_absolut,has_talisman,has_obereg = 0,0,false

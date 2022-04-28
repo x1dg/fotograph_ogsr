@@ -5,7 +5,7 @@ $npc			 		= on						; option for Level Editor
 $prefetch 		 		= 8
 scheduled               = off    				; option for ALife Simulator
 cform                   = skeleton
-class                   = WP_SHOTG
+class                   = WP_BM16
 
 description				= st_wpn_duplet_descr
 
@@ -13,32 +13,34 @@ ef_main_weapon_type		= 1
 ef_weapon_type			= 9
 
 ;-----------------------------------------------------------------------------
-cost					= 5000
+cost					= 2000
 weapon_class			= shotgun
-inv_weight				= 3.13
+inv_weight				= 2.73
+
+upgrades                = up_gr_firstab_bm16, up_gr_seconab_bm16, up_gr_thirdab_bm16
+installed_upgrades      = 
+upgrade_scheme          = upgrade_scheme_bm16
 
 ;---TTX-------------------------------------------------------------------------
-hit_power       = 0.73, 0.73, 0.73, 0.73
+hit_power       = 0.67, 0.67, 0.67, 0.67
 hit_impulse     = 15
 hit_type 		= fire_wound
 fire_distance       	= 200
 bullet_speed			= 220
 rpm                 	= 800
 
-hud                      		= wpn_duplet_hud
+hud                      		= wpn_obrez_hud
 
-misfire_start_condition		= 0.825
+misfire_start_condition		= 0.7
 misfire_end_condition		= 0.1
-misfire_start_prob = 0.004 ;	     	= 0.008
+misfire_start_prob = 0.003 ;	     	= 0.008
 misfire_end_prob = 0.05 ;	     	= 0.08
-condition_shot_dec      	= 0.0024
-condition_queue_shot_dec	= 0.0024
+condition_shot_dec      	= 0.00175
+condition_queue_shot_dec	= 0.00175
 
-ammo_elapsed		 	= 3
-ammo_mag_size		 	= 3
-fire_modes				= 1
-
-ammo_class		 		= ammo_12x76_dart,ammo_12x76_zhekan,ammo_12x70_buck
+ammo_elapsed		 	= 2
+ammo_mag_size		 	= 2
+ammo_class		 	= ammo_12x70_buck, ammo_12x76_zhekan
 hand_dependence 		= 1
 single_handed			= 0
 
@@ -47,34 +49,33 @@ zoom_dof			    = 0.5, 1.0, 180
 ;reload_dof           = 0.0, 0.5, 5, 1.7
 ;----дисперсия--------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 1.5  	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor    	= 1.075f
-crosshair_inertion			= 4.9
+fire_dispersion_base		= 1.35
+misfire_probability 		= 0.0005    ;вероятность осечки при максимальном износе 
+misfire_condition_k		= 0.01
+control_inertion_factor    	= 1.11f
+crosshair_inertion			= 5.1
 
 ;отдача
 cam_return = 0 ;				= 0
 cam_relax_speed			= 2		;???????? ???????? ? ???????? ?????????
 cam_relax_speed_ai      = 360
-cam_dispersion          = 7.86		;?????????? ???? (? ????????) ? ?????? ?????????
-cam_dispersion_inc      = 7.5		;?????????e cam_dispersion ? ?????? ?????????
+cam_dispersion          = 7.1		;?????????? ???? (? ????????) ? ?????? ?????????
+cam_dispersion_inc      = 7.0		;?????????e cam_dispersion ? ?????? ?????????
 cam_dispersion_frac     = 1.1		;????? ????? ?????????? ?? cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
 cam_max_angle        	= 50.0		;???????????? ???? ??????
 cam_max_angle_horz      = 50.0		;(degree) maximum shot horizontal degree
-cam_step_angle_horz     = 7.3		;(degree) size of step camera moved in horizontal position while shooting
+cam_step_angle_horz     = 6.9		;(degree) size of step camera moved in horizontal position while shooting
 
 zoom_cam_relax_speed		= 0.85     ; scope & ironsight
 zoom_cam_relax_speed_ai		= 360
-zoom_cam_dispersion			= 7.86
-zoom_cam_dispersion_inc		= 7.2
+zoom_cam_dispersion			= 7.1
+zoom_cam_dispersion_inc		= 7.0
 zoom_cam_dispersion_frac	= 1.1
 zoom_cam_max_angle			= 50.0
 zoom_cam_max_angle_horz		= 50.0
-zoom_cam_step_angle_horz	= 7.3
+zoom_cam_step_angle_horz	= 6.8
 
 fire_dispersion_condition_factor = 0.015 ; 0.001 ; = 0.01 ; 2	
-
-misfire_probability 		= 0.0005    ;вероятность осечки при максимальном износе 
-misfire_condition_k		= 0.01
 
 ;-------------------------------------------------------------------------------
 holder_range_modifier	= 1.0     ; во сколько раз увеличивается eye_range
@@ -106,16 +107,15 @@ kill_msg_width			= 54
 kill_msg_height			= 16
 
 position                   = -0.023,-0.09, 0.05
-orientation                = 0, 30, 0      ;значение устанавливается в градусах
+orientation                = 0, 30, 0
 
-shell_point      = 0.0, 0.183, 0.07
-fire_point       = 0.0, 0.168, 0.755
-fire_point2      = 0.0, 0.168, 0.755		;l
+shell_point				= 0.0, 0.136, 0.07
+fire_point              = 0.000000,0.136000,0.390000     ;r
+fire_point2             = 0.000000,0.136000,0.390000		;l
 
-flame_particles				= weapons\generic_weapon05
 smoke_particles     			= weapons\new_effects\smoke_muzzle_shotgun
+flame_particles				= weapons\generic_weapon05
 silencer_smoke_particles   		= weapons\new_effects\smoke_silencer_rifle
-
 rpm_empty_click = 200
 
 PDM_disp_base 				= 1.35
@@ -133,7 +133,7 @@ strap_bone0							= bip01_spine2
 strap_bone1							= bip01_spine1
 
 startup_ammo             		= 10
-visual                   		= dynamics\weapons\wpn_duplet\wpn_duplet.ogf
+visual                   		= dynamics\weapons\wpn_izh43\wpn_izh43_short.ogf
 
 light_color		 					= 0.6,0.5,0.3
 light_range		 					= 6.0
@@ -152,91 +152,85 @@ zoom_enabled						= true
 scope_zoom_factor       = 80 ; 	    			= 85
 
 ;звуки
-snd_draw				        = weapons\duplet\duplet_deploy
-snd_holster			            = weapons\duplet\duplet_holster
-snd_shoot						= weapons\duplet\duplet_1
-snd_shoot1						= weapons\duplet\duplet_2
-snd_shoot2						= weapons\duplet\duplet_3
-snd_shoot3						= weapons\duplet\duplet_4
-snd_empty			            = weapons\duplet\duplet_empty
-snd_reload			            = weapons\duplet\duplet_reload_lr_new		;reload both
-snd_shoot_duplet				= weapons\duplet\duplet_1
-snd_shoot_1						= weapons\duplet\duplet_2
-snd_reload_1		            = weapons\duplet\duplet_reload_l		;reload left
+snd_draw			= weapons\bm16\bm16_deploy
+snd_holster			= weapons\bm16\bm16_holster
+snd_shoot			= weapons\bm16\bm16_1
+snd_shoot1			= weapons\bm16\bm16_2
+snd_shoot2			= weapons\bm16\bm16_3
+snd_shoot3			= weapons\bm16\bm16_4
+snd_empty			= weapons\bm16\bm16_trigger
+snd_reload				= weapons\bm16\bm16_silver_reload_lr1
+snd_reload1				= weapons\bm16\bm16_silver_reload_lr2
+snd_reload2				= weapons\bm16\bm16_silver_reload_lr1
+snd_shoot_duplet	= weapons\bm16\bm16_1
+snd_shoot_1			= weapons\bm16\bm16_2
+snd_reload_1			= weapons\bm16\bm16_silver_reload_l1
+snd_reload_2			= weapons\bm16\bm16_silver_reload_l2
+snd_reload_3			= weapons\bm16\bm16_silver_reload_l3
 
-
-[wpn_duplet_hud]:hud_base
+[wpn_obrez_hud]:hud_base
 zoom_hide_crosshair				= true
 
-
-hands_position			= 0.156500,-0.096000,-0.004000
-hands_orientation		= 0.300000,1.350000,-2.599999
-
-
-hands_position_16x9				= 0.156500,-0.096000,-0.004000
-hands_orientation_16x9			= 0.300000,1.350000,-2.599999
-
-item_position						= -0.003178,0.002246,0.000581
-item_orientation					= -181.191742,180.482727,-180.330688
-
-shell_point							= 0,0,0
-shell_dir                    		= 0.0, 1.0, 0.0
-shell_bone							= wpn_body
-
-fire_point		= 0, 0.066, 0.514
-fire_bone                     = wpn_body
-
 attach_place_idx					= 0
-item_visual							= dynamics\weapons\wpn_duplet\wpn_duplet_hud.ogf
+item_visual							= dynamics\weapons\wpn_izh43\wpn_izh43_short_hud
+
+hands_position				= 0.121000,-0.063000,0.050000
+hands_orientation			= 0.000000,0.000000,0.000000
+
+hands_position_16x9				= 0.121000,-0.063000,0.050000
+hands_orientation_16x9			= 0.000000,0.000000,0.000000
 
 item_position						= 0,0,0
 item_orientation					= 0,0,0
 
+shell_point      = 0.0, 0.183, 0.07
+shell_dir                     	= 0.0, 1.0, 0.0
+shell_bone						= wpn_body
+
 fire_bone                     		= muzzle
-fire_point							= 0,0,0
+fire_point       = 0.0, 0.168, 0.755
 
+anm_show_0			            = izh43_draw
+anm_show_1			            = izh43_draw
+anm_show_2			            = izh43_draw
 
-anm_show_0			            = duplet_draw
-anm_show_1			            = duplet_draw
-anm_show_2			            = duplet_draw
+anm_hide_0			            = izh43_holster
+anm_hide_1			            = izh43_holster
+anm_hide_2			            = izh43_holster
 
-anm_hide_0			            = duplet_holster
-anm_hide_1			            = duplet_holster
-anm_hide_2			            = duplet_holster
+anm_idle_0			            = izh43_idle
+anm_idle_1			            = izh43_idle
+anm_idle_2			            = izh43_idle
 
-anm_idle_0			            = duplet_idle
-anm_idle_1			            = duplet_idle
-anm_idle_2			            = duplet_idle
+anm_idle_aim_0			         = izh43_aim
+anm_idle_aim_1			         = izh43_aim
+anm_idle_aim_2			         = izh43_aim
 
-anm_idle_aim_0			         = duplet_aim
-anm_idle_aim_1			         = duplet_aim
-anm_idle_aim_2			         = duplet_aim
+anm_idle_moving_0		         = izh43_move
+anm_idle_moving_1		         = izh43_move
+anm_idle_moving_2		         = izh43_move
 
-anm_idle_moving_0		         = duplet_move
-anm_idle_moving_1		         = duplet_move
-anm_idle_moving_2		         = duplet_move
+anm_idle_sprint_0		         = izh43_sprint
+anm_idle_sprint_1		         = izh43_sprint
+anm_idle_sprint_2		         = izh43_sprint
 
-anm_idle_sprint_0		         = duplet_sprint
-anm_idle_sprint_1		         = duplet_sprint
-anm_idle_sprint_2		         = duplet_sprint
+anm_reload_1						= izh43_reload_l, reload_l
+anm_reload_2						= izh43_reload_lr, reload_lr
+anm_shot_1							= izh43_shoot, shoot
+anm_shot_2							= izh43_shoot, shoot
 
-anm_reload_1						= duplet_reload_l, reload_l
-anm_reload_2						= duplet_reload_lr, reload_lr
-anm_shot_1							= duplet_shoot, shoot
-anm_shot_2							= duplet_shoot, shoot
+anm_bore_0							= izh43_aim
+anm_bore_1							= izh43_aim
+anm_bore_2							= izh43_aim
 
-anm_bore_0							= duplet_aim
-anm_bore_1							= duplet_aim
-anm_bore_2							= duplet_aim
+aim_hud_offset_pos		= -0.124000,0.069000,-0.150000
+aim_hud_offset_rot		= 0.001000,0.000500,0.000000
 
-aim_hud_offset_pos = -0.153600,0.103000,-0.029000
-aim_hud_offset_rot = 0.023000,0.006200,-0.036000
+aim_hud_offset_pos_16x9				= -0.124000,0.069000,-0.150000
+aim_hud_offset_rot_16x9				= 0.001000,0.000500,0.000000
 
-aim_hud_offset_pos_16x9 = -0.153600,0.103000,-0.029000
-aim_hud_offset_rot_16x9 = 0.023000,0.006200,-0.036000
-
-gl_hud_offset_pos					= 0,0,0
-gl_hud_offset_rot					= 0,0,0
+gl_hud_offset_pos				= 0,0,0
+gl_hud_offset_rot				= 0,0,0
 
 lean_hud_offset_pos				= 0,0,0
 lean_hud_offset_rot				= 0,0,0

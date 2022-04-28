@@ -1577,8 +1577,8 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_ak74u \n
-			ammo_5.45x39_fmj = 2 \n
+			wpn_microuzi \n
+			ammo_9x19_fmj = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -1845,7 +1845,7 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_sayga12k \n
+			wpn_obrez \n
 			ammo_12x70_buck = 1 \n
 			maloy_pda \n
 			device_torch \n

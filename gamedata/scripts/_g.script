@@ -11,6 +11,7 @@ math.randomseed(os.time())
 --=======================================[LuaXML]===============================================
 --_luaxml.script должен быть в папке scripts.
 --prefetch("_luaxml")
+game_options.load_game_options()
 --===================[string.lower и string.upper с поддержкой русских букв]====================
 --[=[--KRodin: Из-за setlocale могут возникать проблемы.
 os.setlocale("", "ctype") --Для старых версий LuaJIT достаточно установить правильную локаль.

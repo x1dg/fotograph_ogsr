@@ -5,7 +5,6 @@ function opt_video:__init() super()
 end
 
 function opt_video:__finalize()
-	--log1("--opt_video:__finalize() called!")
 end
 
 function opt_video:InitControls(x, y, xml, handler)
