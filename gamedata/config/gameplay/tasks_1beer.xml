@@ -1,15 +1,21 @@
 <game_task id="misty_stalker_task">
-<title>Таинственный Незнакомец</title>
+<title>Что здесь происходит?</title>
 <objective>
-<text>Таинственный Незнакомец</text>
+<text>Что здесь происходит?</text>
 <icon>ui_npc_u_barman</icon>
-<infoportion_complete>graf_second_dialog_done</infoportion_complete>
+<infoportion_complete>1beer_strange_done</infoportion_complete>
 <article>graf_prince</article>
 </objective>
 <objective>
-<text>С кем я столкнулся? Нужно узнать больше информации про таинственного сталкера.</text>
+<text>С кем я столкнулся? Что это было? Может глюки..</text>
 <icon>ui_npc_u_barman</icon>
-<infoportion_complete>graf_second_dialog_done</infoportion_complete>
+<infoportion_complete>1beer_strange_first_part</infoportion_complete>
+<article>graf_prince</article>
+</objective>
+<objective>
+<text>Тут определенно творится что-то неладное.</text>
+<icon>ui_npc_u_barman</icon>
+<infoportion_complete>1beer_strange_second_part</infoportion_complete>
 <article>graf_prince</article>
 </objective>
 </game_task>

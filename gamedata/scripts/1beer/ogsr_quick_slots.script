@@ -109,14 +109,10 @@ local function inventory_hide()
 
 	slots_wnd_storage = {}
 end
-
-
+	
 function add_hud()
 	local hud = get_hud()
 	if not hud then return end
-
-	local xml = CScriptXmlInit()
-	xml:ParseFile("ui_custom_msgs.xml")
 
 	for i = 1, 4 do   
 		local section = item_in_slot[i]()
@@ -125,8 +121,8 @@ function add_hud()
 		CIconParams( section ):set_shader( quick_slot_static:wnd() )
 		quick_slot_static:wnd():SetColor( db.actor:object(section) and GetARGB(255,255,255,255) or GetARGB(128,255,255,255) )
 
-		counter = xml:InitStatic("quick_slot_"..i..":counter", quick_slot_static:wnd() )
-		counter:SetText("x"..count_item_slot[i])
+		local counter = hud:GetCustomStatic("quick_slot_"..i.."_counter") or hud:AddCustomStatic("quick_slot_"..i.."_counter", true)
+		counter:wnd():SetText("x"..count_item_slot[i])
 
 		local quick_slot_key_static = hud:GetCustomStatic("quick_slot"..i.."_text") or hud:AddCustomStatic("quick_slot"..i.."_text", true)
 		local dik = bind_to_dik(key_bindings["kQUICK_SLOT_"..i])
@@ -147,7 +143,6 @@ function remove_hud()
 		end
 	end
 end
-
 
 local function eat_qs_item(slot)
 	local section = item_in_slot[slot]()
@@ -170,8 +165,7 @@ local binds_table = {
 local function on_update(delta) 
 	if level.main_input_receiver() 
 		or not db.actor:alive() 
-		or device().precache_frame > 1 
-		or ui_data.load("1beer_hide_hud") == true 
+		or game_options.hide_hud == true 
 	then 
 		return 
 	end
@@ -179,7 +173,7 @@ local function on_update(delta)
 end
 
 local function on_key_down(key, bind)
-	if level.main_input_receiver() or not db.actor:alive() or device().precache_frame > 1 then return end
+	if level.main_input_receiver() or not db.actor:alive() then return end
 
 	local fun = binds_table[bind]
 

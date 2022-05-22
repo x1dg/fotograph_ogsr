@@ -283,20 +283,24 @@
     <texture id="ui_mapPDA_above"					x="725" y="695" width="19" height="19"/>	<!-- карта: цель наверху -->
     <texture id="ui_mapPDA_below"					x="725" y="710" width="19" height="19"/>	<!-- карта: цель внизу -->
 	<texture id="ui_mapPDA_companion"				x="800" y="895" width="25" height="25"/>	<!-- карта: компаньон -->
-	<texture id="ui_mapPDA_quest_highlight"			x="897" y="777" width="23" height="23"/>	<!-- карта: курсор задания -->
+	<!--texture id="ui_mapPDA_quest_highlight"			x="897" y="777" width="23" height="23"/>	<!-- карта: курсор задания -->
+	<texture id="ui_mapPDA_quest_highlight"			x="1350" y="700" width="113" height="113"/>
+	<!--texture id="ui_mapPDA_quest_highlight_PDA"	    x="1250" y="450" width="113" height="113"/-->
+	<texture id="ui_mapPDA_quest_highlight_PDA"	    x="897" y="777" width="23" height="23"/>
 	<texture id="ui_mapPDA_quest_pointer"			x="730" y="733" width="10" height="23"/>	<!-- карта: указатель (стрелка) -->
     <texture id="ui_mapPDA_quest_task"				x="795" y="741" width="17" height="17"/>	<!-- карта: квестовый предмет/зона/действие -->
     <texture id="ui_mapPDA_quest_task_npc"			x="775" y="741" width="17" height="17"/>	<!-- карта: квестовый персонаж -->
     <texture id="ui_mapPDA_quest_task_spot"			x="815" y="741" width="17" height="17"/>	<!-- карта: метка (флажок) -->
-	<texture id="ui_mapPDA_treasure"				x="855" y="741" width="17" height="17"/>	<!-- карта: тайник -->
+	<texture id="ui_mapPDA_treasure"				x="722" y="795" width="25" height="25"/>	<!-- карта: тайник -->
     <texture id="ui_mapPDA_treasure_empty"			x="835" y="741" width="17" height="17"/>	<!-- карта: пустой тайник с gps-маячком -->
     <texture id="ui_mapPDA_grenade"					x="875" y="741" width="17" height="17"/>	<!-- карта: летящая граната -->
 	<texture id="ui_sm_mapPDA_companion"			x="800" y="922" width="15" height="15"/>	<!-- миникарта: компаньон -->
 	<texture id="ui_sm_mapPDA_quest_task"			x="854" y="759" width="15" height="15"/>	<!-- миникарта: квестовый предмет/зона/действие -->
+	<texture id="ui_sm_mapPDA_quest_task_PDA"		x="1400" y="450" width="15" height="15"/>	<!-- миникарта: квестовый предмет/зона/действие -->
 	<texture id="ui_sm_mapPDA_quest_task_npc"		x="944" y="759" width="15" height="15"/>	<!-- миникарта: квестовый персонаж -->
 	<texture id="ui_sm_mapPDA_quest_task_spot"		x="908" y="759" width="15" height="15"/>	<!-- миникарта: метка (флажок) -->
 	<texture id="ui_sm_mapPDA_quest_highlight"		x="847" y="796" width="19" height="19"/>	<!-- миникарта: курсор задания -->
-	<texture id="ui_sm_mapPDA_treasure"				x="872" y="759" width="15" height="15"/>	<!-- миникарта: тайник -->
+	<texture id="ui_sm_mapPDA_treasure"				x="722" y="795" width="25" height="25"/>	<!-- миникарта: тайник -->
 	<texture id="ui_sm_mapPDA_treasure_empty"		x="890" y="759" width="15" height="15"/>	<!-- миникарта: пустой тайник с gps-маячком -->
 	<texture id="ui_sm_mapPDA_grenade"				x="926" y="759" width="15" height="15"/>	<!-- миникарта: летящая граната -->
 

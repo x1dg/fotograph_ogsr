@@ -5,7 +5,10 @@
 
 <info_portion id="predbannik_tp_spawned"></info_portion>
 <info_portion id="predbannik_tp_spawned2">
-    <article>1beer_fast_movement_predbannik</article></info_portion>
+	<action>illicit_jumps.sms_strange_predbannik</action>
+    <article>1beer_fast_movement_predbannik</article>
+</info_portion>
+
 <info_portion id="semecky_first_meet"></info_portion>
 <info_portion id="semecky_talk_done"><task>misty_stalker_task</task></info_portion> 
 
@@ -13,4 +16,8 @@
 <info_portion id="commander_first_meet"></info_portion>
 <info_portion id="commandor_predbannik_spawn"></info_portion>
 <info_portion id="commandor_predbannik_spawn2"></info_portion> 
+
+<info_portion id="1beer_strange_first_part"></info_portion>
+<info_portion id="1beer_strange_second_part"></info_portion>
+<info_portion id="1beer_strange_done"></info_portion>
 </game_information_portions>

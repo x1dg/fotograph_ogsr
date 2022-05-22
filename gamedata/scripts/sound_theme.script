@@ -82,6 +82,22 @@ ph_snd_themes["doctor_music"] = {"characters_voice\\scenario\\doctor_music\\stin
 ph_snd_themes["sidor_music"] = {"characters_voice\\scenario\\sidor_music\\sidor1",
                                 "characters_voice\\scenario\\sidor_music\\sidor2"
 }
+
+if game_options.streamer_mode then
+ph_snd_themes["nato_music"] = {"$no_sound"}
+ph_snd_themes["brown_music"] = {"$no_sound"}
+ph_snd_themes["dolg_music"] = {"$no_sound"}
+ph_snd_themes["osvedom_music"] = {"$no_sound"}
+ph_snd_themes["lektor_music"] = {"$no_sound"}
+ph_snd_themes["maloy_music"] = {"$no_sound"}
+ph_snd_themes["hunter_music"] = {"$no_sound"}
+ph_snd_themes["lesnik_music"] = {"$no_sound"}
+ph_snd_themes["koldun_music"] = {"$no_sound"}
+ph_snd_themes["tankist_music"] = {"$no_sound"}
+ph_snd_themes["baza2_music"] = {"$no_sound"}
+ph_snd_themes["edik_music"] = {"$no_sound"}
+ph_snd_themes["x18_music"] = {"$no_sound"}
+else
 ph_snd_themes["nato_music"] = {"characters_voice\\scenario\\nato_music\\usa"}
 ph_snd_themes["brown_music"] = {"characters_voice\\scenario\\brown_music\\brown"}
 ph_snd_themes["dolg_music"] = {"characters_voice\\scenario\\dolg_music\\dolg"}
@@ -95,6 +111,7 @@ ph_snd_themes["tankist_music"] = {"characters_voice\\scenario\\tankist_music\\ta
 ph_snd_themes["baza2_music"] = {"characters_voice\\scenario\\baza2_music\\baza2"}
 ph_snd_themes["edik_music"] = {"characters_voice\\scenario\\edik_music\\edik_music"}
 ph_snd_themes["x18_music"] = {"characters_voice\\scenario\\x18_music\\x18_music"}
+end
 ph_snd_themes["fan1"] = {"ambient\\new\\fan1"}
 ph_snd_themes["fan2"] = {"ambient\\new\\fan2"}
 ph_snd_themes["fan3"] = {"ambient\\new\\fan3"}

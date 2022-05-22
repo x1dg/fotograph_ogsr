@@ -244,6 +244,18 @@
 <string id="old_melnik_desc">
 <text>Пиво крепкое 'Старый Мельник'. Слегка кислое.</text>
 </string>
+<string id="craft_beer_one_name">
+<text>STAMMBEER - LIMIT BREAK</text>
+</string>
+<string id="craft_beer_one_desc">
+<text>Limit Break — термин из японских игр, манги и аниме, когда самые мощные способности появляются только после получения достаточного урона. Иными словами, чем больше вас бьют, тем сильнее вы становитесь. Triple New England IPA, на который вы смотрите, по задумке как раз для подобных случаев, только в более привычном для нас контексте. Поэтому когда уже все, ты устал и совсем плох — мы подключаем наш русский Limit Break, срабатывающий по всем японским канонам. Проверено.</text>
+</string>
+<string id="craft_beer_shabash_name">
+<text>PALINDROME - Шабаш #2 Мичелада (Апельсин)</text>
+</string>
+<string id="craft_beer_shabash_desc">
+<text>Томатный Гозе с Апельсином, черным и красным перцем (совсем легкая дозировка Trinidad Scorpion) + капелька устричного соуса</text>
+</string>
 <string id="cognac_name">
 <text>Коньяк</text>
 </string>

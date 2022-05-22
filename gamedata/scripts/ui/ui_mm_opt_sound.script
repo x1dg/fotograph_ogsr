@@ -8,9 +8,9 @@ function opt_sound:__finalize()
 end
 
 function opt_sound:InitControls(x, y, xml, handler)
+	self.handler = handler
 	self:Init(x,y, 738, 712) -- изменено MonolithUI
 	self:SetAutoDelete(true)
-
 	xml:InitFrame("frame", self)
 
 	xml:InitStatic("tab_sound:cap_mastervolume", self)
@@ -27,4 +27,26 @@ function opt_sound:InitControls(x, y, xml, handler)
 	local ctl = xml:InitCheck("tab_sound:check_eax", self)
 	handler:Register(ctl, "tab_sound:check_eax")
 	handler:AddCallback( "tab_sound:check_eax", ui_events.BUTTON_CLICKED, handler.show_need_restart_wnd, handler )
+	
+	streamer = xml:InitCheck("tab_sound:check_streamer", self)
+	log1("STEAMER_MODE2: "..tostring(game_options.streamer_mode))
+	streamer:SetCheck(game_options.streamer_mode)
+	
+	handler:Register(streamer, "tab_sound:check_streamer")
+	handler:AddCallback("tab_sound:check_streamer", ui_events.BUTTON_CLICKED, self.StreamerMode, self)
+end
+
+function opt_sound:StreamerMode()
+	streamer:SetCheck(game_options.streamer_mode)
+	if streamer:GetCheck() then
+		game_options.streamer_mode = false
+		streamer:SetCheck(false) 
+	else 
+		game_options.streamer_mode = true
+		streamer:SetCheck(true)
+	end
+	log1("SAVESTREAMER")
+	game_options.save_game_options()
+	_G.main_menu.get_main_menu():PlaySound("device\\pda\\pda_tip")
+	self.handler:show_need_restart_wnd()
 end

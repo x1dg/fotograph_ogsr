@@ -1,4 +1,8 @@
---РњРµРЅСЋ РЅР°СЃС‚СЂРѕРµРє РіРµР№РјРїР»РµСЏ. РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ СЃРєСЂРёРїС‚РѕРј ui_mm_opt_main.script
+local backgrounds_table = {
+	{ visible = "Привал у костра", data = "background_1beer" }, 
+	{ visible = "Падающий вертолет", data = "background_zonache" } 
+}
+	
 class "opt_gameplay" (CUIWindow)
 function opt_gameplay:__init() super()
 end
@@ -7,7 +11,7 @@ function opt_gameplay:__finalize()
 end
 
 function opt_gameplay:InitControls(x, y, xml, handler)
-	self:Init(x, y, 738, 712) -- РёР·РјРµРЅРµРЅРѕ MonolithUI
+	self:Init(x, y, 738, 712)
 	self:SetAutoDelete(true)
 	
 	xml:InitFrame("frame_gameplay", self)
@@ -55,7 +59,22 @@ function opt_gameplay:InitControls(x, y, xml, handler)
 		end
 	end
 	handler:AddCallback("list_icon", ui_events.LIST_ITEM_CLICKED, self.ActorIcon, self)
-
+	
+	xml:InitStatic("tab_gameplay:cap_mainbackground", self)
+	background_list = xml:InitComboBox("tab_gameplay:list_mainbackground", self)
+	background_list:SetAutoDelete(true)
+	background_list:SetListLength(2)
+	handler:Register(background_list, "background_list")
+	for i=1,#backgrounds_table do
+		background_list:AddItem(backgrounds_table[i].visible, i - 1)
+		if game_options.background == backgrounds_table[i].data then
+			background_list:SetCurrentID(i - 1)
+		end
+	end
+	handler:AddCallback("background_list", ui_events.LIST_ITEM_SELECT, self.Background, self)
+	handler:Register(background_list, "background_list2")
+	handler:AddCallback( "background_list2", ui_events.LIST_ITEM_SELECT, handler.show_need_restart_wnd, handler )
+	
 	-- show enemy health (MonolithUI)
 	show_health = xml:InitCheck("tab_gameplay:check_enemy_health", self.scroll_v)
 	handler:Register(show_health,"show_health")
@@ -80,7 +99,7 @@ function opt_gameplay:InitControls(x, y, xml, handler)
 	-- zoom fx enable (MonolithUI)
 	hide_hud = xml:InitCheck("tab_gameplay:check_hide_hud", self.scroll_v)
 	handler:Register(hide_hud,"hide_hud")
-	hide_hud:SetCheck(ui_data.load("1beer_hide_hud"))
+	hide_hud:SetCheck(game_options.hide_hud)
 	handler:AddCallback("hide_hud", ui_events.BUTTON_CLICKED, self.HideHud, self.scroll_v)
 
 	-- shoot fx enable (MonolithUI)
@@ -156,11 +175,13 @@ function opt_gameplay:ShootEffect()
 end
 
 function opt_gameplay:HideHud()
-	hide_hud:SetCheck(ui_data.load("1beer_hide_hud"))
+	hide_hud:SetCheck(game_options.hide_hud)
 	if hide_hud:GetCheck() then
-		ui_data.save("1beer_hide_hud", false)
+		game_options.hide_hud = false
+		game_options.save_game_options()
 		hide_hud:SetCheck(false) else 
-		ui_data.save("1beer_hide_hud", true)
+		game_options.hide_hud = true
+		game_options.save_game_options()
 		hide_hud:SetCheck(true)
 	end
 end
@@ -208,9 +229,20 @@ function opt_gameplay:ActorIcon()
 	end
 end
 
+function opt_gameplay:Background()
+		local background = backgrounds_table[background_list:CurrentID() + 1].data
+		game_options.background = background
+		game_options.save_game_options()
+		accept_snd_safe()
+end
+
 function accept_snd()
 	start = xr_sound.get_safe_sound_object([[device\pda\pda_tip]])
 	start:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+end
+
+function accept_snd_safe()
+	_G.main_menu.get_main_menu():PlaySound("device\\pda\\pda_tip")
 end
 
 class "text_item" (CUIListItemEx)

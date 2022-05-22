@@ -1,3 +1,6 @@
-<article id="1beer_fast_movement_predbannik" name="Êנמעמגûו ִûנû" group="enc_1beer_strange">
-	<text>enc_predbannik_teleport_text</text>
-</article>
+<?xml version='1.0' encoding="UTF-8"?>
+<encyclopedia>
+	<article id="1beer_fast_movement_predbannik" name="enc_predbannik_teleports" group="enc_1beer_strange">
+		<text>enc_predbannik_teleport_text</text>
+	</article>
+</encyclopedia>

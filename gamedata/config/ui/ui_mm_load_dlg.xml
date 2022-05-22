@@ -44,7 +44,7 @@
 			<texture x="0" y="0" width="16" height="1024" a="128">ui\ui_crete</texture>
 		</auto_static>
 
-		<picture x="0" y="41" width="95.9" height="127" clipper="1">
+		<picture x="0" y="41" width="95.9" height="127" stretch="1">
 			<texture>ui\ui_noise</texture>
 		</picture>
 

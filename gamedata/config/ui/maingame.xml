@@ -34,6 +34,17 @@
 	
 	<static_wpn_icon x="113" y="5" width="10" height="10"/>
 
+
+	<static_grenade_text x="831" y="702.5" width="100" height="100" r="102" g="255" b="122" a="255"/>
+	<static_grenade_icon x="829" y="699.5" width="33" height="23" stretch="1">
+		<texture>ui_ammo_grenade_hand</texture>
+	</static_grenade_icon>
+
+    <static_ammo_grenade_text x="844.5" y="726.5" width="100" height="100" r="102" g="255" b="122" a="255"/>
+    <static_ammo_grenade_icon x="829" y="720" width="33" height="23" stretch="1">
+        <texture>ui_ammo_grenade_launch</texture>
+    </static_ammo_grenade_icon>
+
 	<!-- Состояние автомобиля из car_panel.xml -->
 	<car_panel x="755.6" y="746" width="106.4" height="6"/>
 

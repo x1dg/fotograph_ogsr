@@ -534,6 +534,9 @@
 	<string id="ui_mm_eax">
 		<text>EAX</text>
 	</string>
+	<string id="ui_mm_streamer">
+		<text>Режим "Стримера"</text>
+	</string>
 	<!-- неактивные настройки звука -->
 	<string id="ui_mm_sound_quality">
 		<text>Качество звука</text>
@@ -544,6 +547,9 @@
 	</string>
 	<string id="ui_mm_difficulty">
 		<text>Сложность</text>
+	</string>
+	<string id="ui_mm_background">
+		<text>Фон меню</text>
 	</string>
 	<string id="gd_novice">
 		<text>Новичок</text>

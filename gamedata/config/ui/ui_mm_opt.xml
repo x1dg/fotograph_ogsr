@@ -693,7 +693,7 @@
 			<options_item entry="snd_freq" group="mm_opt_sound"/>
 		</_list_soundquality>
 
-		<cap_snd_device x="-20" y="100" width="143" height="21">
+		<cap_snd_device x="-20" y="97" width="143" height="21">
             <text font="letterica16" color="grey_5">ui_mm_snd_device</text>
         </cap_snd_device>
         <list_snd_device x="98" y="97" width="195" height="21" always_show_scroll="1">
@@ -705,6 +705,12 @@
 			<list_font_s color="white_3"/>
 			<list_font color="grey_5" font="letterica16"/>
         </list_snd_device>
+		
+		<check_streamer x="-26" y="126" width="420" height="21">
+			<options_item entry="snd_efx" group="mm_opt_sound"/>
+			<text font="letterica16" color="grey_5">ui_mm_streamer</text>
+		</check_streamer>
+		
 		<btn_default_set x="221" y="607" width="80.9" height="24" stretch="1">
             <texture>ui_button_menu_extended</texture>
 			<sound_h>device\pda\menu_button_h</sound_h>
@@ -778,7 +784,7 @@
 		</list_difficulty>
 		
 		<cap_mainbackground x="-22.5" y="198" width="143" height="21">
-			<text font="letterica16" color="grey_5">ui_mm_difficulty</text>
+			<text font="letterica16" color="grey_5">ui_mm_background</text>
 		</cap_mainbackground>
 		<list_mainbackground x="114" y="195" width="176.5" height="21" list_length="4">
 			<text_color>

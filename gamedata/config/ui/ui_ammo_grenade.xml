@@ -1,0 +1,5 @@
+<ui_texture>
+    <file_name>ui\ui_ammo_grenade</file_name>
+        <texture id="ui_ammo_grenade_launch"				x="0" y="0" width="460" height="237"/> <!--граната подствол-->
+		<texture id="ui_ammo_grenade_hand"				    x="500" y="0" width="460" height="237"/> <!--ручная граната-->
+</ui_texture>

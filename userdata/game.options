@@ -1,5 +1,6 @@
-_M = table: 0x018ef55a33e0
+_M = table: 0x017bf7fc5090
 _NAME = game_options
-_PACKAGE = 
-background = background_zonache
-num = 76
+_PACKAGE =  
+background = background_1beer
+num = 24
+streamer_mode = false

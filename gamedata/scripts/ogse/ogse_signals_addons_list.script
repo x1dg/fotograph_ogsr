@@ -7,5 +7,6 @@ addons = {
 	"ogsr_quick_slots",
 	"ogsr_quick_saveload",
 	"hide_hud",
-	"coldkeys"
+	"coldkeys",
+	"ogsr_memory_control"
 }

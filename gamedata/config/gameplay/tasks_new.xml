@@ -93,7 +93,7 @@
 	</game_task>
 	
 				  	<game_task id="zap_kvest_14">
-		<title>«Пси пещера»</title>
+		<title>Пси пещера</title>
 		<objective>
 			<icon>kvest_starter6</icon>
 			<infoportion_complete>zap_kvest_14_f</infoportion_complete>
@@ -122,7 +122,7 @@
 	</game_task>
 	
 						  	<game_task id="kvest_kent_poisk">
-		<title>«Друг»</title>
+		<title>Друг</title>
 		<objective>
 			<icon>kvest_starter2</icon>
 			<infoportion_complete>new_portion_kkvest2_s</infoportion_complete>
@@ -161,7 +161,7 @@
 			<infoportion_complete>zap_kvest_22_s</infoportion_complete>
 		</objective>
 		<objective>
-				<map_location_type hint="Место">green_location</map_location_type>
+				<map_location_type hint="Место поиска">green_location</map_location_type>
                 <object_story_id>zone_item</object_story_id>
 			<text>Найти предмет</text>
 			<infoportion_complete>zap_kvest_22_s</infoportion_complete>
@@ -3030,9 +3030,6 @@
 <infoportion_complete>snake_dialog_have</infoportion_complete>
 </objective>
 </game_task>
-
-
-
 
 <game_task id="amulet_dialog">
                 <title>Собрать шесть Амулетов</title>

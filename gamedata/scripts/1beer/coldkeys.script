@@ -15,6 +15,7 @@ function on_key_down(key, bind)
 	
 	if key == bind_to_dik(key_bindings.kDANGER) then -- 'Numpad 9' - Дебаг
 		local debug_enabled = ui_data.load("debug_enabled")
+		log1("DEBUG_ENABLED: "..tostring(debug_enabled))
   		if debug_enabled and debug_enabled == true then
 			ui_data.save("debug_enabled", false)
 		else

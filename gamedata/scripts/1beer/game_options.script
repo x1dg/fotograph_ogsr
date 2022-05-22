@@ -19,6 +19,9 @@ else
 	background			= "background_zonache"
 end
 
+streamer_mode = false
+hide_hud = false
+
 -- Вызывается один раз при загрузке скриптов
 function load_game_options()
 	local fs = getFS()

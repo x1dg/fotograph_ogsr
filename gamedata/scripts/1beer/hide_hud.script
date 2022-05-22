@@ -7,14 +7,14 @@ end
 local function on_key_down(key, bind)
 	if level.main_input_receiver() or not db.actor:alive() or device().precache_frame > 1 then return end
 
-	if bind == key_bindings.kSCORES and ui_data.load("1beer_hide_hud") == true then
+	if bind == key_bindings.kSCORES and game_options.hide_hud == true then
 		switch_hide_hud(1)
 		ogsr_quick_slots.add_hud()
 	end
 end
 
 local function on_key_up(key, bind)
-	if bind == key_bindings.kSCORES and ui_data.load("1beer_hide_hud") == true then
+	if bind == key_bindings.kSCORES and game_options.hide_hud == true then
 		ogsr_quick_slots.remove_hud()
 		switch_hide_hud(0)
 		local hud = get_hud()
@@ -27,7 +27,7 @@ end
 local first_update = true
 
 local function on_update(delta) 
-	if ui_data.load("1beer_hide_hud") == false then 
+	if game_options.hide_hud == false then 
 		switch_hide_hud(1)
 		return
 	end
