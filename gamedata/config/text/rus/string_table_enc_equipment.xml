@@ -32,6 +32,9 @@
 	<string id="Binocul">
 		<text>Бинокль</text>
 	</string>
+	<string id="BinoculFoto">
+		<text>Бинокль Фотографа</text>
+	</string>
 	<string id="Bread">
 		<text>Хлеб</text>
 	</string>

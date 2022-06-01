@@ -2,5 +2,6 @@ _M = table: 0x017bf7fc5090
 _NAME = game_options
 _PACKAGE =  
 background = background_1beer
+hide_hud = false
 num = 24
 streamer_mode = false

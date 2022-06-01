@@ -138,9 +138,7 @@ function remove_hud()
 	for i = 1, 4 do   
 		hud:RemoveCustomStatic("quick_slot_"..i)
 		hud:RemoveCustomStatic("quick_slot"..i.."_text")
-		if hud:GetCustomStatic("quick_slot_"..i..":counter") then
-			hud:RemoveCustomStatic("quick_slot_"..i..":counter")
-		end
+		hud:RemoveCustomStatic("quick_slot_"..i.."_counter")
 	end
 end
 

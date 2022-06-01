@@ -633,6 +633,7 @@ function actor_binder:update( delta )
   end
     
   if xrs_ai then xrs_ai.actor_update(delta) end		
+  if biodetector then biodetector.update() end
   
   illicit_jumps.on_update(delta)  
   laucer_items_anims.on_update()
